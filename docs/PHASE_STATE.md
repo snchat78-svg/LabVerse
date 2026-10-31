@@ -68,3 +68,42 @@ Continue Phase 1 by obtaining the current 2027 RBSE PDFs through an accessible r
 
 ## Update protocol
 For each phase update, add date, status, exact commit SHA/PR/CI link, files changed, tests run with pass/fail counts, remaining blockers and next phase. Repository evidence wins over chat history. Do not infer completion from a conversation statement.
+
+
+## Phase 1 update — 2026-10-31 (continued)
+
+### Additional source-audit work completed
+- [x] Opened official NCERT-CIET Grade 11 and Grade 12 activity catalogues and mapped the displayed Physics, Chemistry and Biology rows into a separate NCERT crosswalk.
+- [x] Inspected parsed text for official NCERT Class XI Physics, Chemistry and Biology laboratory manuals marked 2025–26.
+- [x] Recorded NCERT manual copyright/all-rights-reserved notices and the need to create original assets/content or obtain permission.
+- [x] Inspected parsed text from the RBSE 2026 Higher Secondary practical-instruction PDF for Physics and Chemistry examination format and Biology instructions. This is a 2026 Class XII baseline only.
+- [x] Created the initial subject-wise apparatus and 3D asset family inventory for Physics, Chemistry and Biology.
+- [x] Recorded PDF screenshot-access failures rather than claiming visual screenshot inspection.
+
+### New Phase 1 documents
+- docs/PHASE_1_NCERT_CROSSWALK.md
+- docs/PHASE_1_EQUIPMENT_INVENTORY.md
+
+### Important limitations
+- RBSE 2027 Class 11 and Class 12 PDFs remain unread because the official files exceed the current retrieval route's size limit; repository Issue #1 tracks the blocker.
+- NCERT CIET pages are a separate official NCERT digital-resource index, not a substitute for RBSE syllabus requirements.
+- NCERT Class XI manual parsed text was inspected; Class XII manual page-level extraction and all kit specifications remain open.
+- The RBSE 2026 practical instruction PDF applies to Higher Secondary practical examination 2026. It is not evidence of 2027 or Class XI requirements.
+- Inventory categories are preliminary and not yet fully mapped item-by-item to each official practical.
+
+### Test status
+- No application source code exists yet.
+- No software tests or scientific-engine regression tests can be run at this stage.
+- No tests are claimed as passed. This phase is a source and content audit.
+
+### Remaining exit gate
+- [ ] Obtain and audit RBSE Class 11 examination 2027 PDF.
+- [ ] Obtain and audit RBSE Class 12 examination 2027 PDF.
+- [ ] Extract page-level 2027 practical requirements for each subject.
+- [ ] Inspect NCERT Class XII Physics/Chemistry/Biology manual content and kit specifications.
+- [ ] Build final apparatus/material inventory with quantity/specification and source page.
+- [ ] Validate research-source licences, terms, API limits, data citation and update policies.
+- [ ] Complete source-to-practical-to-inventory-to-asset-to-test coverage matrix.
+- [ ] Obtain subject-teacher/expert review for disputed/unclear records.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
