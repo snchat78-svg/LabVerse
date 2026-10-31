@@ -238,3 +238,37 @@ Physics and Chemistry kit manuals explicitly display all-rights-reserved notices
 ## 14. Updated Phase 1 finding
 
 Class XI/XII combined NCERT Physics and Chemistry kit manuals provide stronger item-level apparatus evidence than a generic shopping list. Their exact item names, sizes, quantities, uses and linked exercises should become the source of truth for NCERT kit inventory records. RBSE board-specific inventory remains separate. Biology kit manual page-level extraction remains open.
+
+
+## 15. Next retrieval attempt for RBSE Examination 2027 PDFs
+
+On 2026-10-31 the official syllabus index was re-opened:
+https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm
+
+It still lists separate Class 11 and Class 12 links under Syllabus 2027:
+- Class 11 link target: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/11_2027.pdf
+- Class 12 link target: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/12_2027.pdf
+
+A browser open/click attempt against each direct PDF returned a timeout (HTTP 400 timeout from the retrieval service). A separate direct-download attempt from the execution container failed DNS resolution for rajeduboard.rajasthan.gov.in. Therefore, the files were not obtained by this attempt and their contents remain unaudited. This is an access-path failure, not evidence that the PDFs do not exist.
+
+No alternative unofficial mirror has been used as a replacement for the official board document.
+
+## 16. Practical-to-equipment-to-result mapping
+
+A first representative mapping slice was created in PHASE_1_PRACTICAL_COVERAGE_MATRIX.md:
+- Physics: Class XI Vernier calipers and pendulum; Class XII metre bridge and p-n junction.
+- Chemistry: Class XI pH dilution and equilibrium; Class XII redox titration and kinetics.
+- Biology: Class XI microscope/mitosis and plasmolysis; Class XII quadrat and pedigree.
+
+For each mapping the matrix records apparatus/materials, student actions, input variables, observations/calculations, visual/dashboard behaviour and mapping status. All rows are DESIGN_ONLY; no engine or 3D functionality has been implemented. The matrix explicitly separates NCERT-CIET references from RBSE mapping.
+
+The matrix is a representative slice, not exhaustive coverage. Remaining practicals, source page references, final item specifications, model rules and tests still need to be completed.
+
+## 17. Current source audit conclusion
+
+- NCERT-CIET Grade 11 and Grade 12 practical index pages have been inspected as separate NCERT resource packs.
+- NCERT Grades XI/XII Physics kit manual text and NCERT Classes XI/XII Micro-scale Chemistry kit manual text have been inspected.
+- The official Higher Secondary Biology kit manual is identified in NCERT's catalogue (publication code 13163), but its complete PDF has not been obtained/inspected.
+- The RBSE Examination 2027 Class 11 and Class 12 syllabus PDFs remain blocked by retrieval timeout/DNS access failure.
+- No source or practical is marked VERIFIED_FOR_USE solely from discovery or index listing.
+- Phase 1 remains IN PROGRESS; Phase 2 remains blocked.
