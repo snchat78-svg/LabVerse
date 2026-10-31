@@ -26,3 +26,12 @@ Status: Accepted. Include question, literature/source links, hypothesis, alterna
 
 ## ADR-009 — No unsupported discovery claims
 Status: Accepted. Distinguish measured/imported/simulated/calculated/approximate/predicted results. Hypotheses remain candidates until evidence and independent review support them. Reason: protect scientific integrity and prevent fabricated conclusions.
+
+
+## ADR-010 — User-selected 3-hour practical assessment preset; learner-paced experiment workbench
+Status: Accepted (user decision, 2026-10-31).
+
+- The LabVerse timed practical-assessment preset is 180 minutes (3 hours).
+- The virtual lab/workbench is learner-paced; users may run, inspect, repeat and record an experiment without the scientific simulation being coupled to an exam countdown.
+- This is a product configuration, not an official RBSE syllabus correction. RBSE Class XI Physics PDF p.114 retains its source-level Hindi 4-hour / English 3-hour discrepancy in the audit record.
+- Timer expiry may end a timed assessment session, but must not corrupt experiment state, erase notebook data or alter calculated scientific outcomes.
