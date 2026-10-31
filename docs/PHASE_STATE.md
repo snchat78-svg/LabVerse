@@ -36,10 +36,10 @@ This is the single source of truth for the current phase. Update it in the same 
 - [x] Added model-expansion levels and requirements for new validated scientific domain packs.
 
 ### Mandatory remaining checklist
-- [ ] Retrieve and inspect the official RBSE Class 11 examination 2027 syllabus PDF.
-- [ ] Retrieve and inspect the official RBSE Class 12 examination 2027 syllabus PDF.
-- [ ] Confirm exact page/section references for all six current-session subject/class practical catalogues.
-- [ ] Extract every current practical, activity, project, spotting, slide/specimen, record and viva requirement.
+- [x] Retrieve and inspect the official RBSE Class 11 examination 2027 syllabus PDF (user-supplied 155-page PDF inspected).
+- [x] Retrieve and inspect the official RBSE Class 12 examination 2027 syllabus PDF (user-supplied 169-page PDF inspected).
+- [x] Confirm exact PDF page ranges for all six current-session subject/class practical catalogues.
+- [x] Extract the listed practicals, activities, projects, spotting, slide/specimen, record and viva requirements into the official audit document.
 - [ ] Obtain and inspect the NCERT Physics XI/XII kit manual.
 - [ ] Obtain and inspect the NCERT Biology XI/XII kit manual.
 - [ ] Obtain and inspect the NCERT Micro-scale Chemistry XI/XII kit manual.
@@ -51,7 +51,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - [ ] Complete scientific source and curriculum coverage review before Phase 1 sign-off.
 
 ## Current blocker
-The official RBSE syllabus index lists 2027 Class 11 and Class 12 PDF links. Attempts to retrieve those large files through the current browsing retrieval route returned file-too-large errors (approximately 23.3 MB for Class 11 and 17.6 MB for Class 12). Those documents have NOT been audited. The official 2026 PDFs are used only as a preliminary comparison baseline, not as proof of the 2027 curriculum.
+At the time of the earlier entries, the RBSE 2027 PDFs could not be retrieved through the browser route. This retrieval blocker was later resolved when the user supplied both full PDFs in this conversation. The latest audit update below supersedes the earlier 'not audited' status.
 
 Tracking issue: https://github.com/snchat78-svg/LabVerse/issues/1
 
@@ -64,7 +64,7 @@ See docs/PHASE_1_SOURCE_AUDIT.md and docs/PHASE_1_INITIAL_CATALOGUE.md.
 - Current curriculum catalogue status: PRELIMINARY / NEEDS_REVIEW, not VERIFIED or PUBLISHED.
 
 ## Next action
-Continue Phase 1 by obtaining the current 2027 RBSE PDFs through an accessible route, extracting exact pages/sections, inspecting NCERT kit manuals and completing the coverage/inventory matrix. Do not start Phase 2 while the Phase 1 exit gate remains open.
+Continue Phase 1 by completing NCERT kit/specification inspection, detailed asset specifications, complete source-to-practical-to-test coverage, source terms sampling and subject-expert review. Do not start Phase 2 while the Phase 1 exit gate remains open.
 
 ## Update protocol
 For each phase update, add date, status, exact commit SHA/PR/CI link, files changed, tests run with pass/fail counts, remaining blockers and next phase. Repository evidence wins over chat history. Do not infer completion from a conversation statement.
@@ -240,3 +240,50 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 - Software tests: NOT RUN; no tests are claimed as passed.
 
 Next: obtain accessible original RBSE PDFs (or have the official copies supplied), verify Class 12 pointer pages against the source, and continue Class 11/12 full practical extraction. Do not start Phase 2 until the Phase 1 exit gate is met.
+
+
+## Phase 1 update — RBSE 2026–2027 official PDFs received and audited (2026-10-31)
+
+### Current-session primary-source audit completed
+- [x] Received and opened the 155-page Class XI syllabus PDF supplied as `11_2027_copy.pdf`.
+- [x] Received and opened the 169-page Class XII syllabus PDF supplied as `12_2027_copy.pdf`.
+- [x] Read and visually checked the practical sections for all six mainstream class/subject packs.
+- [x] Recorded page ranges: XI Physics 114–119; XI Chemistry 123–126; XI Biology 132–134; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–147.
+- [x] Extracted subject codes 40/41/42 and practical marks/assessment structures, listed experiments/activities/projects, spotting/specimens, and Annexure-B–F selection guidance where present.
+- [x] Verified the old secondary Class XII page pointers against the supplied original PDF. The verified *practical* page ranges are 124–129 (Physics), 137–140 (Chemistry) and 144–147 (Biology); the previously recorded pointers 119/130/141 are navigation anchors, not the complete practical page ranges.
+- [x] Created `docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md`.
+- [x] Created `docs/PHASE_1_RBSE_2027_ASSET_DELTA.md`.
+
+### Source issues requiring human confirmation
+- Class XI Physics p.114: Hindi heading states 4 hours; English evaluation scheme on the same page states 3 hours. Keep this conflict unresolved until RBSE/subject teacher confirms.
+- Class XI Chemistry pp.123–126: overview allocates titration 8, organic N/S/halogen tests 2, project 4, record 3 and viva 3; detailed sections allocate 6, 3, 3, 4 and 4 respectively. Both distributions total 30, but they conflict internally. Do not select one silently.
+- PDF branding and session labels match RBSE Ajmer 2026–2027. Upload origin/digital signature was not independently authenticated; record as user-supplied official-link copies, not a cryptographic authenticity check.
+- Extracted text has occasional OCR/text-layer artefacts; formulas, chemical symbols and final learner-facing text need page-image/teacher confirmation before publication.
+
+### What this resolves / what it does not
+- The RBSE current-session PDF retrieval and practical-page discovery blocker is RESOLVED.
+- The six practical catalogues are now SOURCE-EXTRACTED from the supplied current-session PDFs.
+- The previous 28-row practical design matrix remains a representative NCERT/CIET design slice, all DESIGN_ONLY; it is not the exhaustive RBSE matrix and was not automatically marked VERIFIED.
+- Board practical lists do not constitute full instrument specification sheets. Exact size/range/precision/quantity, complete reagent specifications, asset provenance/licences, validated simulation rules and test vectors remain open.
+- NCERT Higher Secondary Biology kit manual and selected Class XII manuals/specifications still require inspection.
+- Subject-expert review of the two discrepancies and scientific asset/model coverage remains outstanding.
+
+### Test and implementation status
+- Application code: NOT STARTED.
+- 3D assets: NOT CREATED.
+- Physics/Chemistry/Biology simulation engines: NOT IMPLEMENTED.
+- Source/API connectors: NOT IMPLEMENTED or load-tested.
+- Software tests: NOT RUN; no test pass is claimed.
+
+### Current gate
+- Phase 0: DONE (documentation baseline only).
+- Phase 1: IN PROGRESS.
+- Phase 2: BLOCKED until every Phase 1 exit criterion and expert review is complete.
+
+### Next actions
+1. Resolve Class XI Physics time and Chemistry mark-distribution source conflicts with subject reviewers.
+2. Inspect the full NCERT Higher Secondary Biology kit manual and current kit specifications.
+3. Expand the 28-row representative matrix into exhaustive RBSE/NCERT source-separated practical mappings.
+4. Finalise item-level inventory with dimensions, ranges, precision, quantities and source evidence.
+5. Complete the source → practical → equipment → asset → scientific rule → test traceability chain.
+6. Finish source/API rights sampling and teacher/expert review before Phase 1 sign-off.
