@@ -107,3 +107,35 @@ For each phase update, add date, status, exact commit SHA/PR/CI link, files chan
 - [ ] Obtain subject-teacher/expert review for disputed/unclear records.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — additional kit-manual audit (2026-10-31)
+
+### Newly completed source work
+- [x] Inspected the official NCERT combined Grades XI/XII Physics Laboratory Kit PDF text: item table, experiment/activity index, circuit and multimeter activities, LDR and optical-bench assembly.
+- [x] Inspected the official NCERT Micro Scale Chemistry Laboratory Kit PDF text for Classes XI/XII: apparatus families, dimensions/quantities where supplied, micro-scale sample handling, qualitative-analysis and other experiment categories.
+- [x] Confirmed the NCERT Higher Secondary Biology Laboratory Kit title/code 13163 in the official publications catalogue; direct PDF retrieval from the NCERT kit page returned HTTP 502, so full content is still not inspected.
+- [x] Rechecked NCERT Class XI Biology manual content for dissection equipment and safety.
+- [x] Expanded the item-level Physics/Chemistry/initial Biology equipment inventory with source references and interaction implications.
+- [x] Added detailed kit-manual evidence, usage restrictions and source-status vocabulary to the source audit/registry.
+
+### New source limitations
+- The NCERT Physics and Chemistry kit PDFs carry all-rights-reserved notices. LabVerse must create original 3D assets and learner-facing text or obtain permission; public availability is not reuse permission.
+- PDF screenshot attempts failed with HTTP 502, so the parsed text layer was used and no screenshot-based visual audit is claimed.
+- Biology kit manual direct retrieval remains blocked; the Class XI Biology manual and official title/catalogue listing provide only partial evidence.
+- RBSE 2027 PDF retrieval blocker remains open under Issue #1.
+
+### Test status
+- Still a documentation/source-audit phase. There is no application code or simulation engine to test.
+- No software test passes are claimed.
+
+### Next unchecked work
+- [ ] Obtain accessible RBSE Class 11 examination 2027 syllabus PDF and inspect practical sections.
+- [ ] Obtain accessible RBSE Class 12 examination 2027 syllabus PDF and inspect practical sections.
+- [ ] Obtain the official NCERT Biology Grade 11–12 kit manual PDF through a working official route.
+- [ ] Inspect NCERT Grade XII manual content and kit specifications at page/section level.
+- [ ] Complete the per-practical source-to-apparatus-to-asset mapping, including final item counts/specifications.
+- [ ] Complete scientific database API/licence/attribution/rate-limit review before integrating connectors.
+- [ ] Obtain subject-teacher review for ambiguous entries and coverage gaps.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. The latest additions improve source and inventory detail but do not close the current-session RBSE syllabus audit.
