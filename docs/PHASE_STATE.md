@@ -173,3 +173,45 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. The latest additions impro
 - [ ] Obtain subject-matter teacher/expert review for unclear records and model assumptions.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — 2026-10-31 (CIET index, compliance and expanded mapping)
+
+### Newly completed source/design work
+- [x] Inspected the complete Physics, Chemistry and Biology sections visible on the NCERT-CIET Grade 11 activity index.
+- [x] Inspected the complete Physics, Chemistry and Biology sections visible on the NCERT-CIET Grade 12 activity index.
+- [x] Recorded the full index summary, duplicates/alternate links and separation from RBSE in docs/PHASE_1_NCERT_CIET_INDEX_AUDIT.md.
+- [x] Opened the official NCERT School Kits overview PDF and visually inspected PDF pages 8–9; documented the Higher Secondary Physics, Chemistry and Biology kit families.
+- [x] Confirmed the NCERT Higher Secondary Biology kit overview mentions laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. Exact counts/specifications remain unavailable from the full manual.
+- [x] Documented source-specific usage, attribution, licence and rate-limit policies for PubChem, NIST, NCBI, GBIF, Crossref, Europe PMC/PMC and NCERT.
+- [x] Added docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md.
+- [x] Expanded the practical-to-equipment-to-result design matrix from 12 to 25 representative mappings across the three subjects and two grade levels.
+
+### New Phase 1 documents
+- docs/PHASE_1_NCERT_CIET_INDEX_AUDIT.md
+- docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md
+
+### New mapping status
+- Practical coverage design mappings: 25 representative rows.
+- Mapping state: DESIGN_ONLY (not code, not rule-verified).
+- Full source-to-practical coverage: NOT COMPLETE.
+- Full RBSE 2027 syllabus audit: BLOCKED.
+- Biology kit exact item-level inventory: BLOCKED by manual retrieval/access issue.
+- API connector integration and load tests: NOT IMPLEMENTED.
+
+### Remaining Phase 1 exit criteria
+- [ ] Obtain and inspect official RBSE Class 11 examination 2027 PDF; current direct route times out.
+- [ ] Obtain and inspect official RBSE Class 12 examination 2027 PDF; current direct route times out.
+- [ ] Obtain and inspect full NCERT Higher Secondary Biology kit manual, including item specifications.
+- [ ] Obtain and inspect exact NCERT Class XII manuals where required; publication catalogue confirms Class XII Biology code 1593, Chemistry code 1592 and Physics code 13044, but manual content has not been inspected in this audit.
+- [ ] Extract exact page/section references from the current board syllabus and detailed kit manuals.
+- [ ] Complete every practical/activity/project/spotting/record/viva mapping for the six RBSE class/subject combinations.
+- [ ] Complete all apparatus/material IDs with exact size/range/quantity and source pages.
+- [ ] Complete record-level research dataset licence and quality sampling; source policies are documented but connectors are not implemented/tested.
+- [ ] Obtain subject expert review for ambiguous entries and scientific model assumptions.
+
+### Test and completion truth
+- This is still a documentation/source-audit phase.
+- No application source code, simulation engine, 3D model asset or API connector exists.
+- No software tests have been run; no test pass is claimed.
+- Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
