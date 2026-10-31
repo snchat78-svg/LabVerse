@@ -6,7 +6,7 @@ LabVerse is an expandable, evidence-grounded science platform for Physics, Chemi
 
 The long-term goal is to let learners and researchers explore scientific questions, construct models, run virtual experiments, import real datasets, analyse observations, compare hypotheses and discover promising questions for further investigation.
 
-## The platform has four connected workspaces
+## Four connected workspaces
 
 1. **Learning Lab** — Class 11–12 practicals first, then separately versioned school, college and advanced topic packs.
 2. **Virtual Experiment Lab** — an empty 3D workbench where real 3D apparatus, samples, specimens and instruments are placed by tap or drag-and-drop, then moved, rotated, inspected, connected and used.
@@ -27,12 +27,12 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 ## Project status
 
-- Product/design baseline: documented in docs/.
 - Phase 0: DONE — planning/documentation baseline only.
 - Current phase: Phase 1 — source, scope and initial catalogue audit (IN PROGRESS).
 - Application code, 3D assets and scientific simulation engines: NOT IMPLEMENTED.
+- Phase 2 remains blocked until Phase 1 exit criteria pass.
 
-## Start here
+## Main documentation
 
 - [Master roadmap](docs/ROADMAP.md)
 - [Phase state tracker](docs/PHASE_STATE.md)
@@ -47,16 +47,17 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [Scientific source registry](docs/SCIENTIFIC_SOURCE_REGISTRY.md)
 - [Research data pipeline](docs/RESEARCH_DATA_PIPELINE.md)
 - [Scientific method and discovery integrity](docs/SCIENTIFIC_METHOD_AND_DISCOVERY.md)
+- [Expandable domain model](docs/DOMAIN_EXPANSION_MODEL.md)
 - [Phase 1 source audit](docs/PHASE_1_SOURCE_AUDIT.md)
 - [Phase 1 initial catalogue](docs/PHASE_1_INITIAL_CATALOGUE.md)
 
 ## Proposed technology direction
 
-React + TypeScript + Vite, Three.js, IndexedDB, a deterministic simulation core, validated data/content schemas, and later PWA/Capacitor packaging. Scientific analysis may use local calculation modules and, where practical, sandboxed WebAssembly/Web Workers. Technology is provisional until the architecture/performance phases test it.
+React + TypeScript + Vite, Three.js, IndexedDB, a deterministic simulation core, validated data/content schemas, and later PWA/Capacitor packaging. Scientific analysis may use local calculation modules and, where practical, sandboxed WebAssembly/Web Workers. Technology is provisional until architecture/performance phases test it.
 
 No paid AI API or mandatory cloud backend is required for core experiments. Optional AI-assisted literature summarisation or language explanations may be considered later, but cannot be the source of scientific truth or replace citations, calculations, evidence review or human experimental validation.
 
-## Official starting sources
+## Official and scientific starting sources
 
 - [RBSE syllabus index](https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm)
 - [NCERT Grade 11–12 laboratory kit manuals](https://ncert.nic.in/division/dek/kit-manuals.php?ln=en)
@@ -70,3 +71,7 @@ No paid AI API or mandatory cloud backend is required for core experiments. Opti
 - [GBIF occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence)
 
 The scientific source registry records each source's role, limitations, licence/usage checks and citation requirements. Discovery and ingestion are not the same as verification.
+
+## Active Phase 1 blocker
+
+[Issue #1 — Retrieve and audit RBSE 2027 Class 11/12 syllabus PDFs](https://github.com/snchat78-svg/LabVerse/issues/1)
