@@ -347,3 +347,17 @@ The user supplied both current-session RBSE syllabus PDFs for direct inspection:
 See `docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md` for the complete extracted requirements and the two internal inconsistencies; see `docs/PHASE_1_RBSE_2027_ASSET_DELTA.md` for source-mapped candidate equipment/specimen/asset families.
 
 This resolves the earlier RBSE PDF retrieval blocker. It does not close Phase 1: the full NCERT Higher Secondary Biology kit manual and remaining kit specifications, exhaustive practical-to-asset-to-test mappings, data-source rights sampling and subject-expert review are still pending. The practical matrix's 28 records remain representative DESIGN_ONLY mappings; no record is promoted to VERIFIED by this PDF audit alone.
+
+
+## NCERT Higher Secondary Biology kit source discovery — 2026-10-31
+
+Official NCERT source pages rechecked:
+- Revised kit manual index lists a “Manual of Secondary Stage Biology Laboratory Kit for Grades 11th and 12th” (English): https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
+- Official catalogue lists publication code 13163, “Manual of Higher Secondary Biology Laboratory Kit”: https://ncert.nic.in/uploads/publication/other_books_new.pdf
+- Official specifications index separately lists Biology kit with microscope and without microscope for Grades XI/XII: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
+- NCERT School Kits overview describes laboratory instruments, glassware, compound microscope, permanent slides, stains and cards: https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf
+
+The official kit-manual/specification pages could not be read in full in this browser retrieval pass (502/time-out). A secondary-hosted transcription of a 141-page manual was used to discover item families and quantities. It is not promoted to official primary-source verification. Provisional grouped contents and mappings are recorded in `docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md`.
+
+The manual transcription reports 58 reagent/stain entries and says they are not supplied with the kit, but managed by the school/institution/teacher. Treat this only as a source-discovery clue until primary verification. The presence of hazardous substances in such lists does not authorise real-world use; LabVerse representations remain virtual-only and modelled.
+
