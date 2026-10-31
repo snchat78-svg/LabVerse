@@ -1,70 +1,86 @@
-# Product Requirements
+# LabVerse Requirements — Scientific Discovery Platform
 
-## Scope
+## Product scope
 
-- Primary board: Rajasthan/RBSE. NCERT laboratory manuals support procedures and apparatus understanding. CBSE may be separately tagged; it must not be silently merged with RBSE.
-- Classes: 11 and 12.
-- Subjects: Physics, Chemistry and Biology.
-- Platform: mobile-first web/PWA first; Android package after the web app is stable.
-- Languages: English initially; Hindi and English localisation planned.
-- Cost: target ₹0 for initial development and core runtime. No paid AI API is required. Hosting and store fees can change and cannot be promised free forever.
+LabVerse is an expandable, evidence-grounded platform for Physics, Chemistry and Biology. RBSE/NCERT Class 11–12 is the first curriculum pack, not the full product boundary. Future packs can add other boards, school/college levels, interdisciplinary science and advanced research topics.
+
+## Core workspaces
+
+- Learning Lab
+- Interactive 3D Virtual Experiment Lab
+- Scientific Analysis Workspace
+- Research Studio
 
 ## Functional requirements
 
-### FR-01 — Class and subject selection
-Dashboard provides Class 11 / Class 12 and Physics / Chemistry / Biology. The selected class filters practicals, inventory and exams.
+### FR-01 — Curriculum packs
+Select class, board, session and subject. Each curriculum pack is source-mapped, versioned and independently auditable. Class 11–12 must not constrain future content packs.
 
 ### FR-02 — Practical catalogue
-Search, filter and browse the official-source-mapped catalogue. Each entry shows class, subject, board, syllabus year, learning outcomes, apparatus/materials, duration, mode and readiness status.
+Search and filter experiments, activities, projects, spotting, specimen/slide work, investigatory work, record and viva. Show exact source, academic year, status and required equipment.
 
-### FR-03 — Equipment and material inventory
-Each lab has categories, search, item descriptions, safety labels, 3D preview and compatibility metadata. Inventory covers apparatus, instruments, glassware, chemicals, specimens, slides, models, reagents and consumables required by the mapped practicals.
+### FR-03 — Scientific knowledge and source registry
+Maintain a source catalogue for scientific literature, reference data, constants, chemical properties, biological taxonomy/sequences, species observations, standards and official curricula. Each connector records authority, scope, update date, API/format, rate limits, licence/terms, attribution and known limitations.
 
-### FR-04 — Empty 3D workbench
-The lab opens with an empty or explicitly reset workbench, a 3D scene, camera controls and equipment tray.
+### FR-04 — Equipment/material inventory
+Versioned inventory for Physics instruments, Chemistry glassware/reagents/materials, Biology microscopes/slides/specimens/models, sensors and future research apparatus. Stable IDs connect content, 3D assets and experiment rules.
 
-### FR-05 — Add and manipulate objects
-Users tap an inventory item or drag it onto the bench. The actual 3D asset appears. It can be selected, moved, rotated, zoomed/inspected, removed and reset. Touch devices also have tap-to-add.
+### FR-05 — Real 3D workbench
+Open with an empty bench. Tap or drag inventory items into it; show actual 3D objects. Support selection, move, rotate, zoom/inspect, connect, use, remove and reset. Tap-to-add is mandatory on touch screens.
 
-### FR-06 — Experiment actions
-Depending on the practical, the student can connect leads, adjust a meter, place a lens, align apparatus, transfer liquid, add a reagent, swirl, heat virtually, focus a microscope, prepare a slide or select a specimen. Only supported and safe actions are enabled.
+### FR-06 — Experiment action model
+Actions are typed and validated against the active experiment, apparatus compatibility, quantities, conditions, role and safety policy. Invalid actions explain why and do not mutate the scientific state.
 
 ### FR-07 — Live simulation
-The simulation updates apparatus, sample and dashboard in response to actions. Supported effects may include readings, colour, precipitate, bubbles/gas, pH indicator, temperature trend, flame appearance, optical image, specimen view and graph.
+A deterministic domain engine updates experiment state from meaningful actions and modelled time/conditions. The 3D scene and dashboard render the same authoritative state. Effects may include meter values, graphs, colour, precipitate, bubbles, pH, temperature, flame appearance, optical views, microscope views, growth/ecological trends or other explicitly supported outputs.
 
-### FR-08 — Context-aware analysis
-Analysis uses actual inputs: material IDs, quantities/concentrations, temperature, pH, apparatus, action order, readings and known constraints. It separates observation, inference, explanation, calculation and uncertainty.
+### FR-08 — Context-aware scientific analysis
+Analyse selected material/specimen, apparatus, quantity, concentration, modelled environment, action sequence, measurements, source data and model constraints. Separate observed facts, calculations, interpretations, hypotheses and uncertainties.
 
-### FR-09 — Modes
-Guided Practice (hints and steps), Free Practice (minimal assistance) and Practical Exam (timed, scored, hints hidden by default).
+### FR-09 — Research question and hypothesis
+Create a research question, rationale, hypothesis, alternative explanations, measurable predictions, required variables and potential falsification tests. Link each background claim to a source.
 
-### FR-10 — Observation notebook
-Record raw observations, readings, units, repeat trials, calculations, graphs, result and conclusion. Keep observation separate from interpretation.
+### FR-10 — Experimental design
+Define independent/dependent/control variables, sample size, controls, method, instruments, calibration, safety level, inclusion/exclusion criteria and stopping rules. Support virtual experiments and recorded/imported real experiments. Do not present an unsafe or unreviewed method as approved.
 
-### FR-11 — Viva
-Questions come from the practical's approved knowledge pack. Score answers and show explanations.
+### FR-11 — Dataset import and provenance
+Import supported CSV/TSV/JSON files in later implementation, inspect schema and units, track source/licence, checksum, missing data, transformations and version. Preserve immutable raw data and derived datasets separately.
 
-### FR-12 — Progress
-Track completed practicals, accuracy, time, weak skills/topics, attempts and record completion locally.
+### FR-12 — Analysis and visualisation
+Provide scientific calculator/formula engine, unit conversion, tables, charts, descriptive statistics, uncertainty, regression/model fitting and comparisons appropriate to the dataset. Advanced methods are added by tested modules, not as unvalidated free-form answers.
 
-### FR-13 — Offline support
-After a content pack is installed, catalogue, apparatus assets, experiment rules and learner records work offline. Sync is optional and later.
+### FR-13 — Evidence-backed research synthesis
+Search and connect literature/data records, compare claims and findings, expose conflicting evidence, preserve citations and distinguish primary/secondary sources, full text/abstract/metadata and open/restricted content.
 
-### FR-14 — Accessibility and resilience
-Readable labels, clear touch targets, keyboard alternatives, low-end device mode, reduced-motion option, recoverable session state and graceful unsupported-action handling.
+### FR-14 — Novelty and hypothesis assistance
+Suggest patterns, gaps, contradictions and possible new questions from reviewed sources and user data. Label suggestions as candidates. Never state that a result is novel or proven without adequate review and external evidence.
+
+### FR-15 — Notebook and reproducibility
+Store protocol, raw observations, units, parameters, data transformations, source IDs, rule/model versions, random seed, code/calculation version, graphs, analysis, conclusion and limitations. Reproduce a run from the stored session.
+
+### FR-16 — Learning and assessment
+Guided Practice, Free Practice, timed Practical Exam, viva, scoring, observation notebook, progress and weak-topic insights.
+
+### FR-17 — Offline/local-first
+Core educational packs and selected simulations work offline. Research search connectors may require internet; downloaded content must preserve source date and citation. Sync is optional.
+
+### FR-18 — Safety and permissions
+Virtual-only boundary for hazardous content; tiered risk labels; reject unsupported dangerous operations; consent/privacy for user datasets; protect sensitive biological/medical data. No clinical diagnosis or unsupervised wet-lab recipe generator.
+
+### FR-19 — Extensibility
+New scientific domains enter via typed content/rule/data packs with source, schema, tests, licence, safety review and versioning. No hard-coded assumption that the system covers all science.
 
 ## Non-functional requirements
 
-- Responsive mobile-first layout for Android devices with limited RAM/GPU.
-- Fast shell load; lazy-load 3D assets by subject/practical.
-- No mandatory sign-in for first release.
-- No external service call required for a core experiment.
-- Deterministic results for the same initial state, action sequence and content version.
-- Version all syllabus content, rules and experiment definitions.
-- Every result is explainable and testable.
-- Unknown result states are explicit; do not fabricate.
-- Automated unit, integration, visual smoke and device-performance tests.
+- Scientific results deterministic where the model is deterministic.
+- Every result labels its epistemic type: MEASURED, IMPORTED, SIMULATED, CALCULATED, APPROXIMATION, PREDICTED, NOT_MODELLED or NEEDS_REVIEW.
+- Traceable source/model/version, units, assumptions and uncertainty.
+- Reproducible datasets and experiment sessions.
+- Mobile-first and low-end device fallback for the 3D lab.
+- Offline educational core and no mandatory paid AI API.
+- Accessibility, localisation and reliable recovery.
+- Unit, integration, scientific regression, security, data provenance, performance and usability testing.
 
 ## Acceptance principle
 
-A feature is not accepted because a screen exists. It must work end-to-end, pass tests and document unsupported states. See TEST_STRATEGY.md and phase gates in ROADMAP.md.
+A screen or fluent explanation is not proof. Accept only working flows with traceable inputs, correct calculations/models, tests, documented limits and reproducible results.
