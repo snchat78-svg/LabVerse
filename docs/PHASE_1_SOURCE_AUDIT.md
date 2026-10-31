@@ -306,3 +306,29 @@ The source-specific usage rules and attribution requirements have now been recor
 - NCERT: manual rights restrictions; original LabVerse explanations and assets required unless permission is obtained.
 
 This is a policy review, not an integration test. No API connectors have been implemented or tested.
+
+
+## 21. RBSE Examination 2027 secondary discovery cross-check (2026-10-31)
+
+The official RBSE syllabus index was reopened:
+https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm
+
+It lists Class 11 and Class 12 PDFs for examination year 2027:
+- https://rajeduboard.rajasthan.gov.in/anudeshika-etc/11_2027.pdf
+- https://rajeduboard.rajasthan.gov.in/anudeshika-etc/12_2027.pdf
+
+Current retrieval attempts again failed because the browser retrieval route rejected the 23,287,223-byte Class 11 PDF and 17,565,238-byte Class 12 PDF as too large. Neither original file was downloaded or audited.
+
+A secondary discovery index was found at:
+https://bodhiscore.com/hi/rajasthan-board/class-12/syllabus/
+
+It points to official PDF pages 119 (Physics), 130 (Chemistry) and 141 (Biology), with separate secondary subject summaries. Those summaries report a 4-hour, 30-mark practical and 56 theory-paper marks plus 14 sessional marks (70 total) for each of the three Class 12 science subjects. They are recorded only as SECONDARY_CROSSCHECK pointers. These page positions and exam-scheme details have not been independently checked against the original RBSE PDF. The summaries do not provide the full official practical lists; no practical is verified from them.
+
+Subject summary URLs:
+- Physics: https://bodhiscore.com/hi/rajasthan-board/class-12/physics/syllabus/
+- Chemistry: https://bodhiscore.com/hi/rajasthan-board/class-12/chemistry/syllabus/
+- Biology: https://bodhiscore.com/hi/rajasthan-board/class-12/biology/syllabus/
+
+No equivalent reliable Class 11 subject-page pointer set was identified during this search. The official Class 11 and Class 12 syllabus audit remains blocked. Full details and interpretation controls are in docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md.
+
+NCERT's official publications catalogue again confirms the title/code 13163, Manual of Higher Secondary Biology Laboratory Kit, but the catalogue entry is not the full manual. Full item-level Biology kit inspection remains open.
