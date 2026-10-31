@@ -74,3 +74,70 @@ Any real sensor connection is a future feature requiring permission, calibration
 5. Test tap-to-add and drag-drop, movement, rotation, zoom/inspection, remove and reset.
 6. Connectors, snap points and allowed actions must be experiment-specific.
 7. The inventory is not final until every official practical has been traced to required items and every item to a source.
+
+
+## NCERT kit-derived item details added (2026-10-31)
+
+### Physics — combined Grades XI/XII NCERT laboratory kit
+
+Primary source: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+
+Item-level additions/confirmation:
+- Measurement: Vernier caliper, screw gauge, spherometer, beam balance, measuring cylinder, stopwatch.
+- Stand/support: MS rod, boss head, G clamp, clamps, base plate, sliding bases/uprights.
+- Mechanics: inclined plane, steel and aluminium rollers, helical spring, slotted weights, wooden block with hook, S-pulley, steel balls, pendulum bob.
+- Fluids/thermal: capillary tube, boiling tube, beakers, thermometer/calorimetry-related apparatus, wire gauze.
+- Sound/waves: sonometer, tuning forks, resonance-tube support parts, pinch clip.
+- Electrical/electronic: battery eliminator, multimeter, resistor, rheostat, plug key, connecting wires, bulbs, fuse, diode, LED, transistor, IC, capacitor and LDR.
+- Optics: optical-bench scales, joining strips/pins, sliding bases/uprights, lens/mirror holders, screen, object/image pencils, mirrors, lenses, prism/glass slab and spirit level.
+
+Interaction implications:
+- Vernier/screw-gauge jaws and ratchet need constrained movement and scale readout.
+- Stand assemblies need stable snap/anchor points.
+- Pendulum length, load, inclined-plane angle, wire tension and capillary radius/height must be experiment state variables.
+- Circuit parts need terminal anchors and connection validation; ammeter is series, voltmeter parallel. Wrong polarity/loose connection should produce a diagnostic state.
+- Multimeter must expose mode/range, leads, input terminals and units.
+- LDR must respond to a modelled incident-light variable.
+- Optical bench items need linear constrained movement, alignment and ray/image rendering.
+- The Physics kit manual is copyrighted; create original meshes/materials and interaction logic.
+
+### Chemistry — NCERT Micro Scale Chemistry kit, Classes XI/XII
+
+Primary source: https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf
+
+Item-level additions/confirmation:
+- 50 mL graduated beaker.
+- Borosilicate boiling tube.
+- Capillary tube for melting/boiling-point apparatus.
+- China dish/water-bath vessel.
+- 25 mL, 50 mL and 100 mL conical flasks.
+- Labelled 15 mL squeeze dispensing bottles.
+- Graduated 3 mL Pasteur dropper/pipette and glass dropper.
+- Ignition/fusion tubes.
+- Glass stirring rod.
+- 32 mm micro funnel and micro-filtration unit.
+- Multi-well plate (the manual describes the multi-well format).
+- W-tube, micro test tubes, micro test-tube stand and micro-spatula.
+- Burner/water bath and thermometer where an approved experiment definition requires them.
+
+Interaction/data implications:
+- Reagent transfer should support drop-count and volume units, with sample identity and source reagent ID.
+- A well plate is a multi-position sample container; each well tracks its own sample state.
+- W-tube belongs to specific, reviewed gas-observation workflows; no general gas-generation sandbox.
+- Micro-filtration should model filter/filtrate/residue states only for mapped experiments.
+- Colour/precipitate observation is emitted by the relevant reaction/confirmatory-test rule and shown in both scene and analysis panel.
+- Microscale quantities must be visible in the notebook and should not silently be converted to macro quantities.
+- All chemical operations remain virtual and safety-labelled.
+
+### Biology — manual identification and first-class assets
+
+Sources:
+- NCERT Class XI Biology manual: https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+- NCERT Higher Secondary Biology Lab Kit catalogue code 13163: https://ncert.nic.in/uploads/publication/other_books_new.pdf
+- NCERT Grade 11/12 Biology CIET activity index: https://ciet.ncert.gov.in/activity/grade11 and https://ciet.ncert.gov.in/activity/grade12
+
+Additional initial items: scissors (fine-tip and larger), scalpel, fine/blunt forceps, dissecting needles, razor, hand lens, dropper, fine brush, prepared slides, cover slips and labelling/record tools. Handle sharp implements in a supervised virtual context. Final kit-specific quantities and detailed item list are pending Biology kit PDF retrieval.
+
+## Inventory status
+
+This file is an item-family and source-grounded preliminary inventory. Stable IDs, final counts, sizes, licence status, exact source pages, class/session applicability and item-to-practical mapping remain to be completed before inventory sign-off.
