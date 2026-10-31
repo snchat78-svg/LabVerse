@@ -189,3 +189,31 @@ NCERT official pages confirm the Grades XI–XII Biology kit/manual and separate
 
 The kit inventory may contain material beyond the RBSE board list. Keep the NCERT kit pack and RBSE curriculum pack separate; add no extra NCERT exercises to RBSE exam requirements without an explicit mapping.
 
+
+
+## Biology kit candidate item groups and stable-ID proposal (2026-10-31)
+
+These IDs are proposed domain identifiers, not implemented objects. The quantities below come from a secondary transcription and remain provisional until official NCERT item-specification PDFs are checked.
+
+| Candidate ID family | Contents | Candidate quantity/specification evidence | Source mapping |
+|---|---|---|---|
+| BIO-CORE-OPTICS-* | Student microscope, dissecting microscope, magnifiers, lens-cleaning supplies | Microscope optional (1); dissecting microscope (1); magnifiers (2) | XI microscope spotting; XI/XII slide practicals |
+| BIO-CORE-DISSECTION-* | Scalpel, scissors, forceps, needles, spatula, stand/clamp system, tripod | Forceps (2); dissecting needles (4); G-clamps (2); stand components individually listed | Flower dissections, controlled pollination, plant/animal samples |
+| BIO-GLASS-SLIDE-* | Glass slides, cover slips, cavity slides, slide box, droppers, pipettes, test tubes | Slides 2 × 50; coverslips 40; cavity slides 12; droppers 10; test tubes 12 | XI tissue/mitosis/plasmolysis; XII pollen/meiosis/spotting |
+| BIO-GLASS-MEASURE-* | Beakers, measuring cylinders, flasks, thermometer, glass rods/tubes, capillary tubes | Candidate nominal capacities and counts recorded in Biology kit review | XI osmosis/respiration; XII sample analysis |
+| BIO-PLASTIC-CONSUMABLE-* | Sample boxes, reagent/dispensing bottles, Petri dishes, funnels, paper, bags, labels, gloves, thread, cloth | Multiple quantities and dimensions in the secondary transcription; not yet specification-verified | XI/XII slide prep, chromatography, field sampling |
+| BIO-FIELD-QUADRAT-* | Measuring tape, thread, nails, hammer, bags and label cards | Tape 1; nails 5; hammer 1; thread 1 roll (provisional) | XII quadrat density/frequency and field projects |
+| BIO-GENETICS-CUBES-* | Coloured inheritance cubes | Four colours × 72 each (provisional) | XII Mendel laws; digital phenotype/genotype representation |
+| BIO-SPECIMEN-ACRYLIC-* | Embedded plant specimen models | Utricularia, Funaria, Dryopteris, Marsilea, Salvinia, Hydrilla, Pistia | XI/XII botany specimens and adaptation comparisons |
+| BIO-SLIDE-PERMANENT-* | Plant/animal/microbial permanent slide sets, mitosis/meiosis stages | Individual candidate slide catalogue; full counts require official manual check | XI cell/tissue and spotting; XII mitosis/meiosis/spotting |
+| BIO-VISUAL-AID-CARD-* | Plant/animal/microbe specimen and structure cards | Only subset visible in the retrieved transcription; exact complete list pending | XI/XII spotting and identification |
+| BIO-REAGENT-VIRTUAL-* | Biology stains, indicators, enzyme/substrate/urine test reagents | 58 listed names in the transcription; manual says reagents are separately managed, not kit-supplied | XI enzyme/urine/food tests; XII stain/slide practicals |
+
+### Asset acceptance rules specific to Biology
+- Model taxonomy, common/scientific name and identity source are required before a specimen/card is published.
+- Microscopy assets must state image resolution and which structures are actually visible.
+- Slide states must distinguish temporary preparation, permanent slide and diagram/model.
+- Reagent identities are versioned records with hazard metadata; unsafe chemistry is not exposed as real-world instruction.
+- Quadrat and ecological analysis must preserve sample coordinates/area, replicate count, dataset provenance and uncertainty.
+- The NCERT kit is a reference inventory, not a mandate to copy kit imagery or reproduce copyrighted manual pages. Create original meshes, slide art and lesson text or obtain permission.
+
