@@ -1,40 +1,52 @@
-# Product Vision
+# Product Vision — LabVerse
 
-## What LabVerse is
+## North star
 
-LabVerse is a digital practical-lab environment for school students in Classes 11 and 12. It combines a 3D laboratory, a science-behaviour engine, structured experiment guidance and practical-exam assessment.
+LabVerse is an expandable scientific exploration platform for Physics, Chemistry and Biology. It should help a student move from learning an established practical to asking a new question, designing a controlled investigation, analysing evidence and identifying a promising next experiment.
 
-The student should feel that they have entered a usable laboratory: an empty bench, an inventory of apparatus and materials, interactive controls, an experiment board, live observations and a results notebook.
+RBSE/NCERT Class 11–12 is the first carefully scoped curriculum pack. It is not a ceiling on the product: future content packs may cover other school boards, undergraduate concepts, advanced models and carefully bounded research workflows.
 
-## What makes it different from a basic lab app
+## Four connected workspaces
 
-| Basic lab catalogue | LabVerse target |
-|---|---|
-| Shows a picture/name of a beaker | Adds a 3D beaker to a manipulable workbench |
-| Shows written steps only | Lets the learner place, connect, measure, add, heat or focus objects where the model permits |
-| Plays a fixed animation | Updates animation from a validated experiment state |
-| Displays a predetermined answer | Derives the outcome from materials, amounts, conditions and action sequence |
-| Gives a generic explanation | Explains why this specific result follows from the student's actions and readings |
-| Contains a few sample activities | Builds a versioned catalogue mapped to the applicable RBSE/NCERT practical scope |
+### 1. Learning Lab
+Officially mapped practicals, demonstrations, equipment, procedures, theory, records, viva and practical-exam practice. Content is board/session/version-specific.
 
-## Learning outcomes
+### 2. Virtual Experiment Lab
+An initially empty 3D workbench with tap and drag-and-drop placement, apparatus manipulation, connections, samples, environment controls and experiment actions. A real 3D asset must appear and be manipulable; a catalogue card alone is not an implementation.
 
-Students should be able to identify and select correct apparatus; assemble a valid setup; understand instrument scale, least count, zero error and uncertainty; choose and use materials correctly in a safe simulated setting; distinguish observation, inference, calculation and conclusion; interpret colour, precipitate, gas, temperature, pH, light, current, voltage, image and specimen changes; correct a wrong setup; and prepare a complete practical record and answer viva questions.
+### 3. Scientific Analysis
+Domain models calculate or interpret only what they are designed to support:
+- Physics: equations, mechanics, optics, waves, circuits, material properties, measurement and uncertainty.
+- Chemistry: identity/properties from trusted data, stoichiometry, equilibrium, kinetics, pH, spectra and curated reaction rules.
+- Biology: anatomy, cell/tissue observation, taxonomy, genetics, physiology and ecology models.
+- Cross-domain: environmental measurements, materials, biophysics, bio/chemical interactions and other source-backed topics as new content packs are validated.
+
+### 4. Research Studio
+A structured workspace for research questions and literature discovery; hypothesis and competing explanations; variables, controls, experimental design and safety review; virtual simulation or imported/recorded real observations; data cleaning, calculations, plots and statistical analysis; model-vs-observation comparison, uncertainty and reproducibility; evidence-backed interpretation and candidate follow-up questions; exportable notebooks/reports with sources and method versions.
+
+## What “new research” means in LabVerse
+
+The platform should help identify patterns, contradictions, gaps and testable hypotheses from source-backed literature, models and datasets. It can suggest candidate explanations and simulations to distinguish them. It must not claim that an idea is a scientific discovery merely because an algorithm produced it.
+
+A new finding requires suitable evidence, controls, repeatability, independent review and, where necessary, real-world experimental validation. A virtual result proves only what follows inside its declared model and assumptions.
 
 ## Product principles
 
-1. Scientific truth over spectacle. The engine can say a phenomenon is not modelled or evidence is insufficient.
-2. Visible causality. A student action has an understandable effect on the bench, instrument, sample or live dashboard.
-3. Manipulation before automation. Guided mode can coach; free mode lets a learner perform the steps.
-4. Syllabus traceability. No practical is advertised as an RBSE practical without an official source mapping.
-5. Accessible learning. English and Hindi labels/explanations are planned; scientific symbols and units stay standard.
-6. Offline-first. Core practicals do not depend on accounts, continuous internet or an LLM.
-7. Incremental delivery. Build one tested vertical slice before expanding all experiments.
+1. Science before spectacle.
+2. Every important result is traceable to a source, dataset, rule or model.
+3. Measured, imported, simulated, calculated, approximated and predicted values are visibly different.
+4. Observation, inference and hypothesis remain separate.
+5. Unknown and conflicting evidence are shown, not silently resolved.
+6. Models declare their validity range, assumptions, units and limitations.
+7. Research is reproducible: preserve input data, processing, parameter values, versions and random seeds.
+8. Offline-first for core labs; cloud is optional rather than mandatory.
+9. A human researcher/teacher remains responsible for safety and scientific sign-off.
+10. Expand the platform by validated domain packs instead of pretending one engine knows all science.
 
-## Initial non-goals
+## First release boundaries
 
-- Full computational fluid dynamics or molecular dynamics.
-- General-purpose chemical prediction for arbitrary chemicals.
-- Replacing a supervised physical laboratory or teacher safety instructions.
-- AI-generated chemistry facts without source validation.
-- Unlimited cloud services or paid AI APIs.
+- Classes 11–12 syllabus-backed virtual practicals.
+- One complete end-to-end practical in each subject as pilot, then expand from the audited catalogue.
+- Bounded and verified Physics, Chemistry and Biology simulation domains.
+- Basic Research Studio with structured hypothesis, dataset, calculations, plots, citations and reproducibility.
+- No claim of autonomous laboratory operation, universal reaction prediction, clinical diagnosis, or automatic proof of new scientific discoveries.
