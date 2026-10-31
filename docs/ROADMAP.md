@@ -1,48 +1,53 @@
-# LabVerse Master Roadmap
+# LabVerse Master Roadmap — Scientific Discovery Platform
 
-This is the controlling phase order. Do not skip a phase because a later screen is easier to build. A phase can be complete only when its exit gate is evidenced in the repository.
+This roadmap controls phase order. Class 11–12 is the first content pack; Research Studio and expandable scientific domains are part of the product vision, not optional decoration. Do not skip phases.
 
-| Phase | Name | Main outcome | Initial status |
+| Phase | Name | Main outcome | Status |
 |---|---|---|---|
-| 0 | Product definition and design baseline | Scope, requirements, architecture, risks and phase rules | DONE — documentation baseline only |
-| 1 | Official syllabus audit and full practical catalogue | RBSE Class 11/12 catalogue, sources, year/version and coverage matrix | NEXT |
-| 2 | Domain model and contracts | Typed schemas for experiments, assets, substances, actions, rules and observations | BLOCKED by Phase 1 |
-| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release skeleton | NOT STARTED |
-| 4 | Dashboard and navigation | Class/subject dashboard, catalogue, filters and progress shell | NOT STARTED |
-| 5 | 3D workbench and inventory | Empty bench, real model placement, tap/drag, manipulation and reset | NOT STARTED |
-| 6 | Real-time simulation kernel | Deterministic state machine, event loop, action validation and replay | NOT STARTED |
-| 7 | Chemistry behaviour and visual engine | Validated reaction rules and synchronized visual observations | NOT STARTED |
-| 8 | Physics experiment engine | Instruments, circuits, mechanics, optics, readings and uncertainty | NOT STARTED |
-| 9 | Biology observation engine | Microscope, slides, specimens, models and structured observations | NOT STARTED |
-| 10 | Full experiment/content packs | Practical-specific setup, actions, hints, observations and assessment | NOT STARTED |
-| 11 | Observation notebook and calculations | Raw readings, formula evaluator, tables, graphs and report | NOT STARTED |
-| 12 | Guided, free and practical-exam modes | Timers, scoring, viva, rubric and review | NOT STARTED |
-| 13 | Live analysis and explanation layer | Context-aware interpretation, evidence trace and uncertainty | NOT STARTED |
-| 14 | Offline storage and content delivery | IndexedDB, installable content bundles and recovery | NOT STARTED |
-| 15 | Learner progress and personal practice | Weak-skill insights, attempt history and recommendations | NOT STARTED |
-| 16 | Accessibility, Hindi/English and performance | Mobile optimisation, translation, low-end mode and accessibility | NOT STARTED |
-| 17 | Scientific, syllabus and safety QA | Expert-reviewed outcomes, regression suite and content sign-off | NOT STARTED |
-| 18 | PWA and Android packaging | Installable PWA, Capacitor Android build and device tests | NOT STARTED |
-| 19 | Release, maintenance and optional sync | Versioned release, feedback process, optional cloud sync later | NOT STARTED |
+| 0 | Product definition and design baseline | Product vision, requirements, architecture, rules and phase process | DONE — docs only |
+| 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
+| 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | BLOCKED by Phase 1 |
+| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | NOT STARTED |
+| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | NOT STARTED |
+| 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
+| 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
+| 7 | Chemistry property and reaction engine | Trusted property lookup, curated reactions, stoichiometry, kinetics, equilibrium and visual states | NOT STARTED |
+| 8 | Physics modelling engine | Mechanics, circuits, optics, waves, measurement, material properties and uncertainty | NOT STARTED |
+| 9 | Biology observation and model engine | Cells, tissues, microscopy, taxonomy, genetics, physiology and ecology | NOT STARTED |
+| 10 | Curriculum pack — Class 11/12 | Complete source-verified practicals, inventory, guides and assessments | NOT STARTED |
+| 11 | Research Studio — question to experiment | Literature links, question, hypothesis, alternatives, variables, method and safety review | NOT STARTED |
+| 12 | Scientific data workspace | Import/record datasets, schema, provenance, cleaning, units and immutable raw data | NOT STARTED |
+| 13 | Analysis, statistics and visualisation | Equations, calculations, graphs, uncertainty, regression and model comparison | NOT STARTED |
+| 14 | Evidence graph and research synthesis | Source retrieval, citations, contradictions, claim evidence and knowledge links | NOT STARTED |
+| 15 | Hypothesis and discovery assistance | Pattern/gap detection, candidate explanations and proposed discriminating tests | NOT STARTED |
+| 16 | Notebook and reproducibility | Replayable experiment/data lineage, protocol, report and export | NOT STARTED |
+| 17 | Practical learning and assessment | Guided/free/exam, viva, rubric, progress and recommendations | NOT STARTED |
+| 18 | Offline storage and content packs | IndexedDB, signed/versioned bundles, caching, recovery and sync-ready contracts | NOT STARTED |
+| 19 | Safety, privacy and governance | Hazard tiers, source licensing, dataset privacy and safe refusal/fallback | NOT STARTED |
+| 20 | Accessibility, multilingual UI and performance | Hindi/English, low-end Android 3D tier, accessibility and optimisation | NOT STARTED |
+| 21 | Scientific validation and independent review | Domain test vectors, source audit, educator/expert sign-off and regression | NOT STARTED |
+| 22 | PWA and Android packaging | Installable PWA, Capacitor Android build and device tests | NOT STARTED |
+| 23 | Release, feedback and platform expansion | Versioned release, maintenance, additional science packs and optional cloud sync | NOT STARTED |
 
-## Phase gates
+## Phase gate requirements
 
-Every phase must provide: scope and files changed; tests run and actual results; acceptance checklist; unresolved issues and risks; updated PHASE_STATE.md; evidence such as test output, CI link, screenshots or reproducible steps; and explicit next phase/dependencies.
+Every phase must record: scope and files changed; evidence and sources used; tests/commands and actual pass/fail counts; scientific, safety, privacy and licensing review where applicable; unresolved blockers and risks; updated PHASE_STATE.md; commit SHA/PR/CI evidence; and explicit next phase/dependencies.
 
-## Phase 0 exit evidence
+## Phase 0 — done boundary
 
-Phase 0 is complete only as a planning/documentation baseline: vision, requirements, architecture, science/safety rules, interaction specification, roadmap and tracking docs are stored. It does not imply an application implementation or experiment engine.
+Phase 0 is complete only as a planning/documentation baseline. It does not mean software, 3D assets, research connectors or scientific engines exist.
 
-## Phase 1 expected work — next phase
+## Phase 1 — current phase
 
-- Retrieve current official RBSE Class 11 and 12 subject/practical syllabus documents for the active session.
-- Collect NCERT XI/XII Physics, Chemistry and Biology laboratory manuals and relevant practical kit manuals.
-- Build a row-per-practical catalogue with source URL, page/section, class, subject, academic year, marks/assessment where applicable, apparatus/materials, procedure, measurable outcomes and asset needs.
-- Include practicals, activities, projects, investigatory work, spotting/slide work and record/viva wherever required.
-- Compare RBSE against NCERT without silently adding or removing board requirements.
-- Flag uncertain, missing or changed items for review.
-- Produce a coverage report and obtain review before Phase 2.
+- Confirm broad platform scope and research workflow.
+- Audit RBSE Class 11 and 12 official syllabus for the current listed session; use earlier official syllabi only as comparison until current documents are read.
+- Audit NCERT XI/XII Physics, Chemistry and Biology laboratory manuals and kit specifications.
+- Extract all practicals, activities, investigatory projects, equipment, observations, calculations, spotting and viva requirements with exact page/section references.
+- Catalogue trusted data/literature sources for Chemistry, Physics and Biology, with API, licence, update and citation constraints.
+- Map research workflow needs: hypothesis, experiment design, data ingestion, analysis, evidence graph and reproducibility.
+- Create source/coverage matrix, initial practical catalogue and explicit unresolved items.
+- Phase 1 cannot close while the current official RBSE syllabus documents are unreviewed or any source/licence and catalogue gaps remain unexplained.
 
-## Change control
+## No-skip rule
 
-When a requirement is added, update REQUIREMENTS.md, the relevant architecture document, this roadmap if phase scope changes, and DECISIONS.md. Preserve completed evidence. Never rewrite phase history to make incomplete work appear complete.
+At a new session, read PHASE_STATE.md, inspect actual GitHub contents and evidence, resume the first unchecked task, and update state only after verified work. Never mark a phase done merely because a document or screen was drafted.
