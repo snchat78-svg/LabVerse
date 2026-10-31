@@ -141,3 +141,8 @@ Additional initial items: scissors (fine-tip and larger), scalpel, fine/blunt fo
 ## Inventory status
 
 This file is an item-family and source-grounded preliminary inventory. Stable IDs, final counts, sizes, licence status, exact source pages, class/session applicability and item-to-practical mapping remain to be completed before inventory sign-off.
+
+
+## Link to experiment outcome mappings
+
+The first 10 representative mappings connecting equipment to actions, inputs, observations and dashboard behaviour are in PHASE_1_PRACTICAL_COVERAGE_MATRIX.md. The current inventory categories are not yet final; the completed item-level catalogue must be derived from the complete official practical list and NCERT kit specifications.
