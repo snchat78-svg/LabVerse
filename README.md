@@ -72,15 +72,17 @@ No paid AI API or mandatory cloud backend is required for core experiments. Opti
 
 The scientific source registry records each source's role, limitations, licence/usage checks and citation requirements. Discovery and ingestion are not the same as verification.
 
-## Active Phase 1 blocker
+## Phase 1 tracking issue
 
-[Issue #1 — Retrieve and audit RBSE 2027 Class 11/12 syllabus PDFs](https://github.com/snchat78-svg/LabVerse/issues/1)
+The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for all six Physics/Chemistry/Biology practical sections. [Issue #1](https://github.com/snchat78-svg/LabVerse/issues/1) remains open for the remaining inventory, specification and expert-review work; it is no longer a PDF-retrieval blocker.
 
 
 ## Current Phase 1 working documents
 
 - [NCERT-CIET practical crosswalk](docs/PHASE_1_NCERT_CROSSWALK.md)
 - [Preliminary equipment and 3D asset inventory](docs/PHASE_1_EQUIPMENT_INVENTORY.md)
+- [RBSE 2026–2027 official practical audit](docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md)
+- [RBSE-to-asset mapping delta](docs/PHASE_1_RBSE_2027_ASSET_DELTA.md)
 - [RBSE 2027 syllabus retrieval issue](https://github.com/snchat78-svg/LabVerse/issues/1)
 
 
@@ -91,4 +93,6 @@ The scientific source registry records each source's role, limitations, licence/
 
 - [NCERT-CIET full Grade 11/12 Science index audit](docs/PHASE_1_NCERT_CIET_INDEX_AUDIT.md)
 - [Scientific source usage, licences and API limits](docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md)
-- [RBSE 2027 secondary cross-check pointers — not official verification](docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md)
+- [RBSE 2027 secondary cross-check history and official-page verification](docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md)
+- [RBSE 2026–2027 official Class XI/XII practical syllabus audit](docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md)
+- [RBSE practical-to-3D asset inventory delta](docs/PHASE_1_RBSE_2027_ASSET_DELTA.md)
