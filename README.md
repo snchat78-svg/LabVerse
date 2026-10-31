@@ -4,11 +4,11 @@
 
 A mobile-first, interactive virtual laboratory for Rajasthan/RBSE and NCERT-aligned Classes 11–12 Physics, Chemistry and Biology.
 
-LabVerse is intended to be much more than an MCQ app or a catalogue of laboratory items. Students will assemble a real 3D workbench, place and manipulate apparatus, perform guided or free experiments, observe changing visual states, take readings, and receive an evidence-based explanation of what happened.
+LabVerse is much more than an MCQ app or a catalogue of laboratory items. Students will assemble a real 3D workbench, place and manipulate apparatus, perform guided or free experiments, observe changing visual states, take readings, and receive an evidence-based explanation of what happened.
 
 ## Core promise
 
-- Three complete subject labs: Physics, Chemistry and Biology, for Classes 11 and 12.
+- Three subject labs: Physics, Chemistry and Biology, for Classes 11 and 12.
 - Real 3D workbench: tap or drag equipment from the inventory into an initially empty workspace. Objects appear as manipulable 3D models, not just labels or cards.
 - Live experiment behaviour: valid actions update the scene and experiment state. Examples include meter readings changing as a circuit changes, an indicator changing colour near a titration endpoint, precipitate or gas appearing when a validated reaction is selected, a characteristic flame colour in a virtual flame-test activity, or a microscope image changing with focus.
 - Reasoned analysis: explain the observed result using selected materials, quantities, conditions and experiment rules. Never invent an observation when data is unknown.
@@ -27,19 +27,36 @@ LabVerse is intended to be much more than an MCQ app or a catalogue of laborator
 
 ## Current project status
 
-- Planning and product-design baseline: stored in docs/.
+- Planning and product-design baseline: committed in docs/.
 - Application code: not started at this baseline.
 - Current phase: Phase 1 — Official syllabus mapping and practical catalogue.
 - Phase 0 is complete for planning/documentation only; it does not mean an app has been built.
 
-Start with:
-- [Roadmap](docs/ROADMAP.md)
-- [Phase state](docs/PHASE_STATE.md)
+## Project documents
+
+- [Master roadmap](docs/ROADMAP.md)
+- [Phase state tracker](docs/PHASE_STATE.md)
+- [Phase execution workflow](docs/PHASE_WORKFLOW.md)
+- [Product vision](docs/PRODUCT_VISION.md)
 - [Requirements](docs/REQUIREMENTS.md)
 - [System architecture](docs/SYSTEM_ARCHITECTURE.md)
+- [3D workbench and drag-drop](docs/INTERACTION_3D_WORKBENCH.md)
 - [Real-time simulation engine](docs/REALTIME_SIMULATION_ENGINE.md)
-- [3D workbench](docs/INTERACTION_3D_WORKBENCH.md)
-- [Scientific safety and integrity](docs/SAFETY_AND_SCIENTIFIC_INTEGRITY.md)
+- [Chemistry reaction and visual engine](docs/CHEMISTRY_REACTION_AND_VISUAL_ENGINE.md)
+- [Live analysis and environment model](docs/ANALYSIS_AND_ENVIRONMENT_MODEL.md)
+- [Physics simulation model](docs/PHYSICS_SIMULATION_MODEL.md)
+- [Biology simulation model](docs/BIOLOGY_SIMULATION_MODEL.md)
+- [Experiment/content schema](docs/CONTENT_SCHEMA.md)
+- [Practical catalogue template](docs/EXPERIMENT_CATALOG_TEMPLATE.md)
+- [Syllabus and source policy](docs/SYLLABUS_AND_CATALOG_POLICY.md)
+- [Safety and scientific integrity](docs/SAFETY_AND_SCIENTIFIC_INTEGRITY.md)
+- [UI/UX specification](docs/UI_UX_SPEC.md)
+- [Test strategy](docs/TEST_STRATEGY.md)
+- [Technology and cost strategy](docs/TECH_STACK.md)
+- [Decision log](docs/DECISIONS.md)
+- [Backlog](docs/BACKLOG.md)
+- [Known issues](docs/KNOWN_ISSUES.md)
+- [Release plan](docs/RELEASE_PLAN.md)
 
 ## Proposed technical direction
 
@@ -53,4 +70,4 @@ React + TypeScript + Vite for the app shell, Three.js for the interactive 3D sce
 - NCERT science laboratory manual index: https://ncert.ncert.org.in/science-laboratory-manual.php?ln=en
 - CBSE 2026–27 curriculum, cross-check only: https://cbseacademic.nic.in/curriculum_2027.html
 
-The catalogue must be rechecked against the latest official RBSE session before a practical is labelled current. See the syllabus policy in docs/SYLLABUS_AND_CATALOG_POLICY.md.
+The catalogue must be rechecked against the latest official RBSE session before a practical is labelled current.
