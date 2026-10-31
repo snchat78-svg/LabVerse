@@ -146,3 +146,24 @@ This file is an item-family and source-grounded preliminary inventory. Stable ID
 ## Link to experiment outcome mappings
 
 The first 10 representative mappings connecting equipment to actions, inputs, observations and dashboard behaviour are in PHASE_1_PRACTICAL_COVERAGE_MATRIX.md. The current inventory categories are not yet final; the completed item-level catalogue must be derived from the complete official practical list and NCERT kit specifications.
+
+
+## NCERT Higher Secondary Biology kit overview evidence
+
+The official NCERT School Kits overview PDF (pages 8–9) describes the Higher Secondary Biology Lab Kit as having equipment for Biology syllabus experiments in Classes XI and XII. The overview specifically mentions:
+- laboratory instruments;
+- glassware;
+- compound microscope;
+- permanent slides;
+- stains;
+- cards.
+
+This is broad kit evidence, not a complete item count/specification. The detailed Biology kit manual itself remains unavailable through the current PDF retrieval route. Do not infer exact slide/specimen counts, model types or sizes from the overview photograph. Source: https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf (PDF pages 8–9).
+
+## NCERT Higher Secondary Physics kit overview cross-check
+
+The same official overview names optical bench, metre bridge, potentiometer, Boyle's-law apparatus, resonance-of-sound apparatus, diode/transistor characteristic apparatus, sonometer, resistance box and pan balance. The full Physics kit manual remains the stronger item-level source for exact apparatus details.
+
+## NCERT Higher Secondary Chemistry kit overview cross-check
+
+The overview confirms the micro-scale kit's intent to limit liquid reagent and solid chemical quantities and use plastic containers and unbreakable droppers instead of conventional racks/bottles. This supports a first-class micro-scale inventory and quantity-tracking model. The full micro-scale manual remains the detailed source.
