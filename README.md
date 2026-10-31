@@ -75,3 +75,10 @@ The scientific source registry records each source's role, limitations, licence/
 ## Active Phase 1 blocker
 
 [Issue #1 — Retrieve and audit RBSE 2027 Class 11/12 syllabus PDFs](https://github.com/snchat78-svg/LabVerse/issues/1)
+
+
+## Current Phase 1 working documents
+
+- [NCERT-CIET practical crosswalk](docs/PHASE_1_NCERT_CROSSWALK.md)
+- [Preliminary equipment and 3D asset inventory](docs/PHASE_1_EQUIPMENT_INVENTORY.md)
+- [RBSE 2027 syllabus retrieval issue](https://github.com/snchat78-svg/LabVerse/issues/1)
