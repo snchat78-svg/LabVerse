@@ -82,3 +82,6 @@ The scientific source registry records each source's role, limitations, licence/
 - [NCERT-CIET practical crosswalk](docs/PHASE_1_NCERT_CROSSWALK.md)
 - [Preliminary equipment and 3D asset inventory](docs/PHASE_1_EQUIPMENT_INVENTORY.md)
 - [RBSE 2027 syllabus retrieval issue](https://github.com/snchat78-svg/LabVerse/issues/1)
+
+
+- [Phase 1 practical-to-equipment-to-result coverage matrix](docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md)
