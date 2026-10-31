@@ -136,5 +136,33 @@ The six board practical catalogues below are now extracted directly from the sup
 - `SOURCE_EXTRACTED` means the listed curriculum items and page ranges were read from the supplied RBSE PDFs. It does not mean a scientific simulation is verified.
 - The original 28 representative NCERT/CIET mappings remain `DESIGN_ONLY`; the RBSE register is a separate current-session source pack.
 - Board source choices must be modelled explicitly: Chemistry alternatives marked OR and Biology “any one/any three” selection groups must not be flattened into mandatory sequential experiments.
-- The XI Physics practical-time conflict and XI Chemistry marks conflict are recorded in the official audit and must remain unresolved until reviewed.
+- The XI Physics time conflict and XI Chemistry marks conflict remain recorded as source discrepancies. The user-selected LabVerse timer is 180 minutes; this product setting does not alter the RBSE source. The Chemistry XI component-mark split must remain unconfigured until reviewed.
 - The exhaustive practical-to-apparatus-to-asset-to-test mapping remains an open Phase 1 task. Do not promote any row to `VERIFIED` solely because it appears in the syllabus.
+
+
+## RBSE Biology practical → NCERT kit candidate crosswalk (2026–2027)
+
+These rows connect board practical needs to candidate kit assets discovered in the NCERT Higher Secondary Biology kit transcription. The official NCERT source confirms the kit/manual family; the individual item counts and detailed catalogue are still secondary-transcription evidence pending official PDF/specification verification. Every row remains `DESIGN_ONLY`.
+
+| Mapping ID | RBSE practical source | Candidate assets / transcription quantities where visible | Interaction and model acceptance | Status |
+|---|---|---|---|---|
+| BIO-XI-MICROSCOPE-PARTS | XI Biology p.133, microscope spotting | Student microscope (1, optional); dissecting microscope (1); magnifier (2); lens paper and lens-cleaning materials | Objective selection, focus controls, illumination, lens-cleaning state; only visible structures may be labelled | DESIGN_ONLY; quantities unverified |
+| BIO-XI-ROOT-STEM-TS | XI Biology p.132, dicot/monocot root and stem T.S. | Glass slides (2 packets × 50), coverslips (40), slide box (1), forceps, needles, temporary/permanent slide candidates | Specimen type, section plane and magnification control the visual; slide preparation is a bounded workflow | DESIGN_ONLY |
+| BIO-XI-PLASMOLYSIS | XI Biology p.132, epidermal peel / plasmolysis | Slides, coverslips, droppers (10), pipettes (1 mL and 10 mL; 2 each per transcription), cavity slides (12) | Concentration and specimen identity control qualitative cell-state representation; exact kinetics remain NOT_MODELLED unless validated | DESIGN_ONLY |
+| BIO-XI-POTATO-OSMOSIS | XI Biology p.133, potato osmometer | Pins (50), corks, glassware, pipettes, measuring tools | Track initial/final level or mass only where a reviewed protocol supplies geometry and units | DESIGN_ONLY |
+| BIO-XI-CHROMATOGRAPHY | XI Biology p.133, plant-pigment paper chromatography | Capillary tubes (1 packet), chromatography paper (6), split cork, glassware | Track sample lane, solvent-front distance and pigment bands; do not infer solvent composition from kit list | DESIGN_ONLY |
+| BIO-XI-TRANSPIRATION | XI Biology p.133, upper/lower leaf transpiration and suction setup | Rubber tube (1), rubber bands (30), glass tubes (6), glass pipettes, thread and sample containers | Show apparatus state and time-series readings only under a reviewed model/protocol | DESIGN_ONLY |
+| BIO-XI-ENZYME-ASSAY | XI Biology p.132, salivary amylase on starch | Cavity-block tiles (2), test tubes (12), dropper/pipette family, digital pocket balance (1); amylase/starch listed among reagents | Only predefined enzyme/substrate assay; input conditions and visual endpoint tied to a reviewed reaction rule | DESIGN_ONLY; chemical rule review required |
+| BIO-XII-QUADRAT-SAMPLING | XII Biology p.144, quadrat density/frequency | Measuring tape (1), thread (1 roll), nails (5), claw hammer (1), sample bags/labels | Quadrat area, placement, replicate count and species counts drive density/frequency; do not invent field data | DESIGN_ONLY |
+| BIO-XII-SOIL-WATER-TEST | XII Biology pp.144–145, soil texture/water-holding, water/soil pH, microorganisms/turbidity, SPM | Plastic beakers (50/100/250 mL, 2 each), measuring cylinders (10/50/100 mL, 1 each), pH papers (narrow/broad range), plastic funnels (2), sample boxes (12), wash bottle (1), filter paper | Track sample ID, location, units, observation method and uncertainty; SPM needs a validated collection/measurement method or clearly labelled supplied dataset | DESIGN_ONLY; method details pending |
+| BIO-XII-GENETICS | XII Biology pp.145–147, Mendel laws and pedigree | Yellow/green/red/white cubes (72 each per transcription), pedigree cards/visual aids (exact catalogue pending) | Each colour must map to a documented allele/state before use; random sampling and probability calculations must be reproducible | DESIGN_ONLY |
+| BIO-XII-CONTROLLED-POLLINATION | XII Biology p.146, emasculation/bagging/tagging | U-clips (12), zipper bags (10), tags (20), brush (3), thread and flower models | Stage-labelled and reversible workflow; do not claim seed set, pollination success or offspring outcome without a biological model | DESIGN_ONLY |
+| BIO-XI-XII-SPOTTING-CATALOGUE | XI pp.133–134 and XII pp.145–147, plant/animal/microbial spotting and slide studies | Acrylic-embedded plants, permanent slides and visual-aid card families; manual transcription identifies examples including algae, fungi, protists, plants and animals | Every specimen/slide needs canonical identity, taxonomy/source, diagnostic visible traits and confidence bounds; card list remains incomplete until primary audit | DESIGN_ONLY; identity review required |
+
+### Assessment timer configuration
+- LabVerse timed practical-assessment preset: 180 minutes (3 hours), selected by the user.
+- Virtual experiment workbench is learner-paced; simulation state is independent of the timer.
+- This configuration does not resolve or rewrite the RBSE XI Physics p.114 source discrepancy. See `PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md` and `docs/DECISIONS.md`.
+
+### Release gate
+The RBSE Biology source rows are extracted, but these candidate mappings cannot be published as VERIFIED until NCERT kit items/specs are confirmed, biological identities and methods are reviewed, and each implemented model has test vectors.
