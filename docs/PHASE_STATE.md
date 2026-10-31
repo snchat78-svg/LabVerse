@@ -139,3 +139,37 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 - [ ] Obtain subject-teacher review for ambiguous entries and coverage gaps.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. The latest additions improve source and inventory detail but do not close the current-session RBSE syllabus audit.
+
+
+## Phase 1 update — 2026-10-31 (coverage mapping and retrieval retry)
+
+### Newly completed work
+- [x] Re-opened the official RBSE syllabus index and reconfirmed the current displayed 2027 Class 11 and 12 syllabus links.
+- [x] Retried both 2027 direct PDF links through the browser retrieval route; each timed out.
+- [x] Retried direct PDF download from the execution container; DNS resolution for the RBSE host failed.
+- [x] Kept the official 2026 material as historical comparison only; no unsupported substitution.
+- [x] Created a representative practical-to-equipment-to-result matrix with 10 mappings across Physics, Chemistry and Biology.
+- [x] Connected each representative activity to input variables, student actions, observations/calculations, 3D assets and live dashboard requirements.
+
+### New file
+- docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md
+
+### Current status
+- Representative mapping slice: DONE as documentation.
+- Complete RBSE/NCERT coverage matrix: NOT DONE.
+- RBSE 2027 syllabus verification: BLOCKED by current retrieval timeout/DNS failure.
+- NCERT Biology Higher Secondary kit manual: title/catalogue identified but complete manual not retrieved.
+- Application code, 3D assets and scientific engines: NOT IMPLEMENTED.
+- Software tests: NOT RUN because there is no application code/test suite. No passed tests are claimed.
+
+### Remaining Phase 1 exit criteria
+- [ ] Obtain and inspect official RBSE Class 11 examination 2027 PDF.
+- [ ] Obtain and inspect official RBSE Class 12 examination 2027 PDF.
+- [ ] Obtain and inspect full NCERT Biology Grade XI/XII kit manual.
+- [ ] Extract exact page/section references from current official syllabus and relevant manuals.
+- [ ] Complete all practical/activity/project/spotting/record/viva mappings for all six board/subject/class combinations.
+- [ ] Complete final apparatus/material inventory with item sizes, ranges, quantities, source evidence and asset specifications.
+- [ ] Review research-source API terms, licence, attribution, rate limits and data update practices.
+- [ ] Obtain subject-matter teacher/expert review for unclear records and model assumptions.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
