@@ -91,3 +91,4 @@ The scientific source registry records each source's role, limitations, licence/
 
 - [NCERT-CIET full Grade 11/12 Science index audit](docs/PHASE_1_NCERT_CIET_INDEX_AUDIT.md)
 - [Scientific source usage, licences and API limits](docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md)
+- [RBSE 2027 secondary cross-check pointers — not official verification](docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md)
