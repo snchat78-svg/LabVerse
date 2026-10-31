@@ -41,13 +41,13 @@ This is the single source of truth for the current phase. Update it in the same 
 - [x] Confirm exact PDF page ranges for all six current-session subject/class practical catalogues.
 - [x] Extract the listed practicals, activities, projects, spotting, slide/specimen, record and viva requirements into the official audit document.
 - [x] Inspect the official NCERT combined Physics Grades XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
-- [ ] Obtain and inspect the NCERT Biology XI/XII kit manual.
+- [ ] Obtain and inspect the official NCERT Biology XI/XII kit manual (manual listing confirmed; detailed secondary-transcription inventory captured, official item-by-item verification pending).
 - [x] Inspect the NCERT Micro-scale Chemistry XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
 - [ ] Reconcile RBSE practical requirements with NCERT manuals without silently merging or removing requirements.
 - [ ] Build complete apparatus, instruments, glassware, chemicals, specimens, slides, models and consumables inventory.
 - [ ] Review API/data terms, licence, attribution and update policy for each candidate research source.
 - [ ] Build source -> claim/data -> catalogue item -> asset -> test coverage matrix.
-- [ ] Resolve source wording inconsistencies with a teacher/subject reviewer.
+- [ ] Preserve source wording conflicts; obtain expert clarification before publishing disputed board exam timing/mark allocations. The user-selected LabVerse timed-assessment preset is 180 minutes and does not claim to correct RBSE.
 - [ ] Complete scientific source and curriculum coverage review before Phase 1 sign-off.
 
 ## Current blocker
@@ -321,3 +321,21 @@ Next: obtain accessible original RBSE PDFs (or have the official copies supplied
 - [ ] Complete all source → curriculum item → apparatus/material → 3D asset → model/rule → test mappings.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — RBSE Biology kit-to-practical candidate crosswalk (2026-10-31)
+
+- [x] Added 12 candidate Biology mappings linking RBSE XI/XII practical pages to NCERT kit item families, provisional quantities and interaction/model acceptance criteria in `docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md`.
+- [x] Kept every new mapping DESIGN_ONLY; no biological simulation, asset or rule is marked VERIFIED.
+- [x] Preserved NCERT and RBSE as separate source packs and recorded where the detailed kit inventory is secondary-transcription evidence only.
+- [x] Recorded the user's 180-minute (3-hour) timed practical-assessment preset in ADR-010; the open experiment workbench remains learner-paced and simulation results are timer-independent.
+- [x] Kept the RBSE XI Physics PDF time discrepancy intact as an official-source note; the app setting is not an RBSE correction.
+
+### Current active work
+- Verify the NCERT Biology manual/specification attachments from official files.
+- Audit official current specifications for all three Grades XI/XII kit families.
+- Convert candidate families into complete stable-ID inventory and RBSE/NCERT crosswalks.
+- Define safe bounded chemistry/biology model scope and acceptance test vectors.
+- Complete expert review and scientific source rights/attribution checks.
+
+Phase 1: IN PROGRESS. Phase 2: BLOCKED.
