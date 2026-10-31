@@ -117,3 +117,24 @@ These extend the first 12 mappings. All are still DESIGN_ONLY, not implemented o
 - Total in this design matrix: 28 representative mappings (12 first-slice rows + 16 second-slice rows).
 - This is still not exhaustive coverage of all current RBSE or NCERT practical items.
 - All mappings remain DESIGN_ONLY. No rule, simulation, 3D model or software test is implemented by this document.
+
+
+## RBSE current-session source mapping index — 2026–2027
+
+The six board practical catalogues below are now extracted directly from the supplied current-session PDFs. This index is a subject-level source register; it does not convert every practical into an implemented experiment model. Detailed lists and assessment splits are in `PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md`; candidate apparatus/specimen mapping is in `PHASE_1_RBSE_2027_ASSET_DELTA.md`.
+
+| Source pack ID | Class / subject code | Official PDF pages | Source-extracted practical structure | State |
+|---|---|---:|---|---|
+| RBSE-2027-XI-PHY | XI Physics / 40 | 114–119 | 17 experiments; 7 Section A + 6 Section B activities; 11 projects; minimum record requirement 12 experiments + 8 activities; 30-mark scheme | SOURCE_EXTRACTED; time conflict needs review |
+| RBSE-2027-XI-CHEM | XI Chemistry / 41 | 123–126 | A–E laboratory practice; titrimetry; systematic qualitative analysis; organic N/S/halogen test; 8 project topics; record and viva | SOURCE_EXTRACTED; internal marks discrepancy needs review |
+| RBSE-2027-XI-BIO | XI Biology / 42 | 132–134 | Botany/Zoology major and minor exercises; 8-mark spotting list with organisms, slides, tissues and models; record and viva | SOURCE_EXTRACTED; asset/specimen list needs expert review |
+| RBSE-2027-XII-PHY | XII Physics / 40 | 124–129 | 18 experiments; 6 Section A + 8 Section B activities; 7 projects; minimum record requirement 12 experiments + 8 activities; 30-mark scheme | SOURCE_EXTRACTED; model and apparatus specs pending |
+| RBSE-2027-XII-CHEM | XII Chemistry / 41 | 137–140 | Redox titrimetry; one-cation/one-anion qualitative analysis; option group for functional groups/preparations/biomolecule tests; content-based kinetics/thermochemistry/electrochemistry | SOURCE_EXTRACTED; reaction rules and safety review pending |
+| RBSE-2027-XII-BIO | XII Biology / 42 | 144–147 | Botany/Zoology major/minor lists; 3 Botany + 3 Zoology spots; investigatory project, record and viva; selection annexures B–F | SOURCE_EXTRACTED; specimen/model validation pending |
+
+### Interpretation and guardrails
+- `SOURCE_EXTRACTED` means the listed curriculum items and page ranges were read from the supplied RBSE PDFs. It does not mean a scientific simulation is verified.
+- The original 28 representative NCERT/CIET mappings remain `DESIGN_ONLY`; the RBSE register is a separate current-session source pack.
+- Board source choices must be modelled explicitly: Chemistry alternatives marked OR and Biology “any one/any three” selection groups must not be flattened into mandatory sequential experiments.
+- The XI Physics practical-time conflict and XI Chemistry marks conflict are recorded in the official audit and must remain unresolved until reviewed.
+- The exhaustive practical-to-apparatus-to-asset-to-test mapping remains an open Phase 1 task. Do not promote any row to `VERIFIED` solely because it appears in the syllabus.
