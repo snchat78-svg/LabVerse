@@ -13,16 +13,17 @@ This is the single source of truth for the current phase. Update it in the same 
 - 3D workbench: not implemented
 - Simulation engine: not implemented
 - Experiment catalogue: not yet audited or imported
-- Latest baseline date: 2026-10-31
+- Baseline date: 2026-10-31
 
 ## Completed phase log
 
 ### Phase 0 — Product definition and design baseline
-- Status: DONE (documentation only)
-- Evidence: README.md and the product vision, requirements, roadmap, phase state, system architecture, simulation, subject-engine, interaction, content, syllabus, safety, test, stack, UX, decision, backlog, issue and release documents in docs/.
-- Boundary: no UI, model asset, experiment content or application code was built in this phase.
+- Status: DONE (documentation only).
+- Evidence: README.md plus docs for product vision, requirements, roadmap, phase tracking, execution workflow, system architecture, real-time simulation, Chemistry/Physics/Biology models, analysis/environment, 3D interaction, content schema, practical catalogue template, syllabus policy, safety, UI/UX, tests, stack, decisions, backlog, known issues and release plan.
+- Repository note: design documents were committed to the main branch in the initial documentation commit sequence. The last initial design-file commit was 55a87101d2c8bd2f2c83e9a8fad9856efd899123.
+- Boundary: no UI, model asset, experiment content, 3D implementation or application code was built in this phase.
 
-## Phase 1 checklist
+## Phase 1 checklist — current next phase
 
 - [ ] Identify latest official RBSE Class 11 Physics syllabus and practical requirements.
 - [ ] Identify latest official RBSE Class 11 Chemistry syllabus and practical requirements.
