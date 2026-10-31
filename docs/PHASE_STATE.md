@@ -185,14 +185,14 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 - [x] Confirmed the NCERT Higher Secondary Biology kit overview mentions laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. Exact counts/specifications remain unavailable from the full manual.
 - [x] Documented source-specific usage, attribution, licence and rate-limit policies for PubChem, NIST, NCBI, GBIF, Crossref, Europe PMC/PMC and NCERT.
 - [x] Added docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md.
-- [x] Expanded the practical-to-equipment-to-result design matrix from 12 to 25 representative mappings across the three subjects and two grade levels.
+- [x] Expanded the practical-to-equipment-to-result design matrix; a direct row-ID recount on 2026-10-31 corrected the total to 28 representative mappings (12 first slice + 16 second slice).
 
 ### New Phase 1 documents
 - docs/PHASE_1_NCERT_CIET_INDEX_AUDIT.md
 - docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md
 
 ### New mapping status
-- Practical coverage design mappings: 25 representative rows.
+- Practical coverage design mappings: 28 representative rows; all DESIGN_ONLY.
 - Mapping state: DESIGN_ONLY (not code, not rule-verified).
 - Full source-to-practical coverage: NOT COMPLETE.
 - Full RBSE 2027 syllabus audit: BLOCKED.
@@ -215,3 +215,28 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 - No application source code, simulation engine, 3D model asset or API connector exists.
 - No software tests have been run; no test pass is claimed.
 - Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — 2026-10-31 (count correction and RBSE 2027 cross-check)
+
+### Count correction
+- [x] Recounted the actual mapping IDs in docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md: 28 rows total.
+- [x] Corrected the second-slice count from 13 to 16. The first slice remains 12; total is 28.
+- Mapping state remains DESIGN_ONLY. This is a document row-count correction, not scientific validation or software implementation.
+
+### Additional source discovery
+- [x] Reopened the official RBSE examination 2027 syllabus index and confirmed its Class 11 and Class 12 PDF links.
+- [x] Retried official PDF retrieval. The route rejected the 23,287,223-byte Class 11 file and 17,565,238-byte Class 12 file as too large; neither original PDF was inspected.
+- [x] Recorded secondary Class 12 subject-page pointers to official PDF pages 119 (Physics), 130 (Chemistry) and 141 (Biology), plus their reported exam scheme, in docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md.
+- [x] Kept those page pointers and transcribed exam details labelled SECONDARY_CROSSCHECK only; no RBSE practical is verified from secondary material.
+- [x] Reconfirmed NCERT catalogue code 13163 for the Higher Secondary Biology kit manual; full manual remains unavailable.
+
+### Current gate
+- Phase 1: IN PROGRESS.
+- Phase 2: BLOCKED.
+- RBSE 2027 Class 11 and Class 12 official PDF inspection: NOT DONE.
+- Full practical lists, full inventory reconciliation, final source-to-asset/test coverage and subject-expert review: NOT DONE.
+- Application code, 3D assets, science engines and API connectors: NOT IMPLEMENTED.
+- Software tests: NOT RUN; no tests are claimed as passed.
+
+Next: obtain accessible original RBSE PDFs (or have the official copies supplied), verify Class 12 pointer pages against the source, and continue Class 11/12 full practical extraction. Do not start Phase 2 until the Phase 1 exit gate is met.
