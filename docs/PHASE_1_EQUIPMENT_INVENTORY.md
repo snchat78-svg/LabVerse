@@ -167,3 +167,25 @@ The same official overview names optical bench, metre bridge, potentiometer, Boy
 ## NCERT Higher Secondary Chemistry kit overview cross-check
 
 The overview confirms the micro-scale kit's intent to limit liquid reagent and solid chemical quantities and use plastic containers and unbreakable droppers instead of conventional racks/bottles. This supports a first-class micro-scale inventory and quantity-tracking model. The full micro-scale manual remains the detailed source.
+
+
+## NCERT Higher Secondary Biology kit — provisional detailed inventory (2026-10-31)
+
+Detailed evidence and source-confidence boundaries are recorded in `PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md`.
+
+NCERT official pages confirm the Grades XI–XII Biology kit/manual and separately list kit specification options with and without microscope. A secondary-hosted transcription of the 2018 141-page manual supplies candidate item-level names and quantities. Until verified against NCERT-hosted PDF/specification attachments, all counts below remain provisional.
+
+### Candidate object and equipment groups
+- **Core equipment:** storage kit box, optional student microscope, dissecting microscope, human skeleton, digital pocket balance, mortar/pestle, cavity-block tiles and porcelain dish.
+- **Tools/supports:** modular stand/base/rod/clamp/boss head, G-clamps, scalpel, surgical/dissecting scissors, forceps, dissecting needles, spatula, tripod, test-tube holders, wire gauze, spirit lamp, pins and U-clips.
+- **Glassware/optics:** capillary tubes, 1 mL and 10 mL graduated pipettes, cavity slides, glass slides, cover slips, magnifiers, droppers, conical flasks, rods/tubes, watch glasses, −10 to 110 °C thermometers, test tubes and boiling tubes.
+- **Plasticware/consumables:** 50/100/250 mL beakers; 10/50/100 mL measuring cylinders; reagent/dropper bottles; Petri dishes; sample boxes; test-tube stands; plastic funnels; 3 mL Pasteur pipettes; coloured Mendelian cubes; zipper bags; corks; gloves; rubber bands; tape; herbarium sheets; chromatography/graph/filter/blotting/lens paper; pH paper; labels/tags; rope/thread/cotton/muslin; wash and lens-cleaning materials.
+- **Specimens/models:** seven acrylic-embedded plant specimen examples, a list of permanent plant/animal/microbial slides, visual-aid cards for representative animal/plant groups, and human skeleton.
+- **Chemistry reagent/stain inventory:** transcription reports 58 listed entries, but says they are not supplied as part of the kit and are managed by the school/teacher. Do not treat this as permission to run arbitrary reagent combinations.
+
+### RBSE links added
+- Class XI Biology: microscope, plant/animal tissues, root/stem T.S., mitosis, plasmolysis, stomata, potato osmometer, chromatography, transpiration, imbibition, flower families, skeleton and animal/plant spotting.
+- Class XII Biology: flower reproduction, onion mitosis, quadrat density/frequency, soil/water sampling, pH/turbidity, pollen and meiosis, Mendelian genetics, pedigree, xeric/hydric adaptations and controlled pollination.
+
+The kit inventory may contain material beyond the RBSE board list. Keep the NCERT kit pack and RBSE curriculum pack separate; add no extra NCERT exercises to RBSE exam requirements without an explicit mapping.
+
