@@ -152,3 +152,89 @@ New accepted deliverables:
 - Preliminary three-subject equipment/3D object families recorded in PHASE_1_EQUIPMENT_INVENTORY.md.
 
 Still open: RBSE 2027 PDF inspection, Class XII manual extraction, exact page-level crosswalk, final item counts, rights/terms check for research databases and independent subject review.
+
+
+## 13. Detailed Grade XI–XII NCERT kit manual text audit (2026-10-31)
+
+### Physics laboratory kit manual — Grades XI and XII
+
+Official PDF:
+https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+
+The PDF text was inspected. It is the NCERT Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII; first edition October 2018, reprints include August 2024. It carries an all-rights-reserved notice (front matter lines 22–43).
+
+The manual's contents include Grade XI experiments, Grade XII experiments, activities, demonstrations and a detailed “List of Secondary Physics Laboratory Kit Items”. Extracted item families include:
+- Vernier caliper, screw gauge, spherometer, beam balance.
+- Laboratory stand assembly: MS rod, boss heads, G clamp, clamps and base plate.
+- Measuring cylinder, stopwatch, inclined plane, steel/aluminium rollers.
+- Helical spring, slotted weights, wooden block, S-type pulley and steel balls.
+- Capillary tube, simple pendulum bob, mirror strips, wire samples/weight boxes.
+- Sonometer, tuning forks, battery eliminator, beakers, funnel and additional apparatus.
+- Electrical activity parts: multimeter, battery/cell, resistor, rheostat, key, wires, bulbs, fuse, diode, LED, transistor, IC, capacitor and LDR.
+- Optical bench system: joined scales, interlocking pins, sliding bases/uprights, lens/mirror holders, screen and object/image pencils; spirit level is required for alignment.
+
+The manual explicitly shows the correct circuit logic: ammeter in series and voltmeter in parallel with the resistor, polarity/continuity checks, and modelled LDR resistance change with incident-light intensity. These are useful future Physics action-validator and instrument-state tests.
+
+Relevant text locations include:
+- Contents and experiment/activity index around lines 142–289.
+- Kit item list around lines 289–745.
+- Electrical activity/circuit verification around lines 6287–6348.
+- Multimeter measurements and continuity around lines 6513–6538.
+- LDR activity around lines 6657–6719.
+- Optical bench assembly around lines 7103–7130.
+
+The browser PDF screenshot attempts for cover/item pages failed with HTTP 502, so the audit used the parsed text layer only; no visual screenshot inspection is claimed.
+
+### Micro Scale Chemistry Laboratory Kit — Classes XI and XII
+
+Official NCERT-hosted PDF:
+https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf
+
+The PDF front matter identifies the NCERT Manual of Microscale Chemistry Laboratory Kit for Classes XI and XII, first edition April 2018, with all-rights-reserved notice (lines 0–35). Its text layer was inspected.
+
+The manual describes lower-volume chemistry as a way to reduce chemical use, fumes, waste and exposure, while retaining observation/experimental concepts. It identifies special kit apparatus:
+- small portable storage box;
+- squeeze-type polyethylene dispensing bottles;
+- multi-well plates;
+- W-tubes for small-quantity gas experiments;
+- barrel pipettes;
+- miniature glassware;
+- micro-filtration unit;
+- micro-spatulas.
+
+Detailed equipment table includes:
+- graduated 50 mL beakers;
+- borosilicate boiling tubes;
+- capillary tubes;
+- China dishes/water-bath vessels;
+- 25/50/100 mL conical flasks;
+- labelled 15 mL dispensing bottles;
+- graduated 3 mL Pasteur droppers/pipettes and glass droppers;
+- ignition/fusion tubes;
+- glass rods;
+- micro funnels and micro-filtration units;
+- well plates and W-tubes;
+- micro test tubes, stands, burners/water baths and related micro-scale equipment.
+
+The manual's contents include boiling/melting point, crystallisation, standard solutions, titrations, inorganic cation/anion qualitative analysis, organic extra-element and functional-group tests, biomolecule tests and other curriculum-linked experiments.
+
+The visual/result logic is particularly useful for later rule packs: the manual gives test-specific colour/precipitate observations and confirmatory tests. The app must encode each supported observation only with the correct sample, quantities, conditions and reviewed rule; it must not turn a single colour into an unrestricted identification engine.
+
+The NCERT kit text specifies milligram quantities for solids and drop-scale reagent use for liquids. LabVerse must track units and amounts and clearly label all hazardous/reagent interactions as virtual and supervised. Do not reproduce hazardous procedural details as home-lab directions.
+
+The browser PDF screenshot attempts failed with HTTP 502, so no screenshot-based visual audit is claimed.
+
+### Biology laboratory resources
+
+- The NCERT official publications catalogue confirms publication code 13163, “Manual of Higher Secondary Biology Laboratory Kit” (searchable official catalogue entry): https://ncert.nic.in/uploads/publication/other_books_new.pdf
+- The NCERT kit-manual page lists a “Manual of Secondary Stage Biology Laboratory Kit for Grades 11 and 12”: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
+- Direct PDF retrieval from the official kit page returned HTTP 502 in this audit. Therefore, the kit manual has been identified but not text-audited.
+- NCERT Class XI Biology Laboratory Manual (2025–26 online edition): https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf. Its parsed text identifies a dissection box with scissors, scalpels, forceps, dissecting needles, razor, hand lens, dropper and fine brush, plus lab record, lab coat/apron and towel. It calls for teacher/instructor guidance and care with sharp instruments and labelled reagents.
+
+### Source rights
+
+Physics and Chemistry kit manuals explicitly display all-rights-reserved notices. LabVerse may use their bibliographic facts and item names for traceability, but should not copy full manual text, tables, illustrations or figures into the product without permission. Create original 3D assets and original learner-facing explanations, or obtain a suitable licence/permission.
+
+## 14. Updated Phase 1 finding
+
+Class XI/XII combined NCERT Physics and Chemistry kit manuals provide stronger item-level apparatus evidence than a generic shopping list. Their exact item names, sizes, quantities, uses and linked exercises should become the source of truth for NCERT kit inventory records. RBSE board-specific inventory remains separate. Biology kit manual page-level extraction remains open.
