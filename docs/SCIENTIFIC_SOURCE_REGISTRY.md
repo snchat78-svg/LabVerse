@@ -79,3 +79,24 @@ A search result, abstract or contributed annotation is not automatically a verif
 ## Source access policy
 
 Manual text and index listings can be used for catalogue traceability; full reproduction of copyrighted manual text, figures, tables or illustrations is not authorised by merely having a public URL. Create original app text and 3D assets or obtain permission/licences. Source attribution must remain attached to derived catalogue records.
+
+
+## Detailed Grades XI/XII kit manual records
+
+| Source | URL | Evidence retrieved | Important constraints |
+|---|---|---|---|
+| NCERT Secondary Stage Physics Laboratory Kit manual | https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf | PDF text inspected; combined Grades XI/XII item list and experiments/activities; reprints through Aug 2024 indicated in front matter | All rights reserved. Do not republish manual contents/figures without permission. Screenshot attempts returned HTTP 502. |
+| NCERT Micro Scale Chemistry Laboratory Kit manual | https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf | PDF text inspected; Classes XI/XII; special micro apparatus, item details and experiments; first edition 2018 | All rights reserved. Preserve small-quantity/microscale context; screenshot attempts returned HTTP 502. |
+| NCERT Higher Secondary Biology Laboratory Kit manual, catalogue code 13163 | https://ncert.nic.in/uploads/publication/other_books_new.pdf | Official publications catalogue confirms the title/code; manual page lists its availability | Direct manual PDF from official kit-manual page returned HTTP 502 during audit; content not yet inspected. |
+| NCERT Class XI Biology Laboratory Manual, online edition 2025–26 | https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf | PDF text inspected; lab equipment, safety and practical record expectations | Do not copy protected manual text/figures wholesale; use original content and cite the source. |
+
+## API/source status vocabulary
+
+- DISCOVERED: URL/title identified.
+- METADATA_READ: basic publication/API metadata verified.
+- CONTENT_INSPECTED: accessible content text or data reviewed.
+- TERMS_REVIEWED: licence, reuse and attribution rules checked.
+- CONNECTOR_TESTED: API behaviour tested against documented examples/rate limits.
+- VERIFIED_FOR_USE: source scope, content and terms reviewed for a specific use case.
+
+Do not mark a source VERIFIED_FOR_USE just because its page is public or search results are visible.
