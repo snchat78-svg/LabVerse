@@ -1,7 +1,7 @@
 # Phase 1 — RBSE Examination 2027 Secondary Cross-check Register
 
 Audit date: 2026-10-31  
-Status: SECONDARY POINTERS FOUND / OFFICIAL PDFs NOT INSPECTED. This document is not a board-syllabus verification.
+Status: HISTORICAL SECONDARY POINTERS RETAINED / OFFICIAL PDFs NOW INSPECTED. See the verification update at the end of this document.
 
 ## Purpose
 
@@ -67,3 +67,37 @@ The catalogue entry confirms the title exists, but it does not provide the full 
 - Exact RBSE practical catalogue and assessment requirements: NOT VERIFIED.
 - Phase 1: IN PROGRESS.
 - Phase 2: BLOCKED.
+
+
+## Official PDF verification update — 2026-10-31
+
+The two original current-session syllabus documents were subsequently supplied as files in the LabVerse project conversation and inspected:
+- Class XI: `11_2027_copy.pdf`, 155 pages.
+- Class XII: `12_2027_copy.pdf`, 169 pages.
+
+The PDFs display Board of Secondary Education Rajasthan, Ajmer branding and session 2026–2027. Upload provenance/digital signature was not independently authenticated.
+
+### Verified PDF practical sections
+| Class | Subject | Official PDF practical pages inspected |
+|---|---|---:|
+| XI | Physics (40) | 114–119 |
+| XI | Chemistry (41) | 123–126 |
+| XI | Biology (42) | 132–134 |
+| XII | Physics (40) | 124–129 |
+| XII | Chemistry (41) | 137–140 |
+| XII | Biology (42) | 144–147 |
+
+The secondary page pointers 119 (Physics), 130 (Chemistry) and 141 (Biology) are retained only as discovery/navigation references. They are not the full practical-page ranges. The complete practical sections above have now been read directly from the supplied PDF copies.
+
+### Confirmed source anomalies
+- Class XI Physics p.114: Hindi time heading says 4 hours; English practical evaluation scheme says 3 hours.
+- Class XI Chemistry pp.123–126: overview and detailed section allocate the 30 practical marks differently. Both variants and their component-level values are recorded in `PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md`.
+
+### Status after verification
+- Class XI official PDF: RECEIVED / PRACTICAL SECTIONS INSPECTED.
+- Class XII official PDF: RECEIVED / PRACTICAL SECTIONS INSPECTED.
+- Class XII secondary pointers: VERIFIED as navigation hints; practical ranges corrected above.
+- Full board practical list extraction: RECORDED in `PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md`.
+- Source-to-equipment candidate mapping: RECORDED in `PHASE_1_RBSE_2027_ASSET_DELTA.md`.
+- Full specification inventory, exhaustive asset/test coverage, NCERT kit manual review and teacher adjudication: STILL OPEN.
+- Phase 1: IN PROGRESS. Phase 2: BLOCKED.
