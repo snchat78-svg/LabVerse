@@ -113,7 +113,7 @@ These extend the first 12 mappings. All are still DESIGN_ONLY, not implemented o
 ## Expanded coverage status
 
 - First slice: 12 representative mappings.
-- Second slice: 13 additional representative mappings.
-- Total in this design matrix: 25 representative mappings.
+- Second slice: 16 additional representative mappings (row IDs counted directly on 2026-10-31).
+- Total in this design matrix: 28 representative mappings (12 first-slice rows + 16 second-slice rows).
 - This is still not exhaustive coverage of all current RBSE or NCERT practical items.
 - All mappings remain DESIGN_ONLY. No rule, simulation, 3D model or software test is implemented by this document.
