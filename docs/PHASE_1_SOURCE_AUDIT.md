@@ -272,3 +272,37 @@ The matrix is a representative slice, not exhaustive coverage. Remaining practic
 - The RBSE Examination 2027 Class 11 and Class 12 syllabus PDFs remain blocked by retrieval timeout/DNS access failure.
 - No source or practical is marked VERIFIED_FOR_USE solely from discovery or index listing.
 - Phase 1 remains IN PROGRESS; Phase 2 remains blocked.
+
+
+## 18. Full NCERT-CIET Grade 11/12 index and source compliance extension
+
+The complete Science subject sections visible on the NCERT-CIET Grade 11/12 pages were inspected and transcribed into PHASE_1_NCERT_CIET_INDEX_AUDIT.md. The audit preserves Physics, Chemistry and Biology separately, notes duplicated/alternate activity links and does not merge them into RBSE board coverage.
+
+- Grade 11: https://ciet.ncert.gov.in/activity/grade11
+- Grade 12: https://ciet.ncert.gov.in/activity/grade12
+
+The index includes additional Grade 11 Physics demonstrations (atmospheric pressure, Bernoulli, coupled-pendulum resonance, standing waves, projectile motion), Grade 11 Chemistry glass-working and endpoint/pH resources, Grade 12 Physics transformer/eddy-current/interference/radioactive-decay resources, Grade 12 Chemistry colloids/thermochemistry/EMF/chromatography/kinetics, and Grade 12 Biology pollen/gametophyte/meiosis/genetics/soil/water/air and quadrat activities.
+
+The entries were audited at index level only. Linked activity procedures, calculations, safety and asset fidelity still need review before individual entries are VERIFIED.
+
+## 19. NCERT Higher Secondary Biology kit overview
+
+The official NCERT School Kits overview PDF was opened and PDF page images 8–9 were inspected. It describes the Higher Secondary Biology kit as including laboratory instruments, glassware, compound microscope, permanent slides, stains and cards for Class XI/XII Biology practicals. This is broad equipment-family evidence, not a detailed item count/specification. The full Biology kit manual remains inaccessible via the current retrieval path.
+
+The same pages confirm the Physics kit families (optical bench, metre bridge, potentiometer, Boyle's apparatus, resonance apparatus, diode/transistor apparatus, sonometer, resistance box, pan balance) and the Chemistry kit's low-volume/micro-scale approach using plastic containers and unbreakable droppers.
+
+PDF: https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf (pages 8–9).
+The screenshot/page images support only the overview description and do not authorise copying the photographs or layout into LabVerse.
+
+## 20. Research-source access/usage-policy review
+
+The source-specific usage rules and attribution requirements have now been recorded in PHASE_1_SOURCE_USAGE_COMPLIANCE.md, including:
+- PubChem: max 5 requests/second and record/original contributor citations.
+- NCBI E-utilities: default 3 requests/second; API key policy for higher rates; NCBI Datasets default 5 requests/second / up to 10 with key.
+- Crossref: public/polite rate and concurrency limits; some abstracts may remain copyrighted.
+- GBIF: record-level CC0/CC BY/CC BY-NC licence, dataset DOI citation and dynamic query throttling.
+- NIST: versioned constants and reference-data citations; CODATA 2022 is the latest published set identified in this audit and 2026 adjustment should be monitored.
+- Europe PMC/PMC: use permitted API routes and check article-specific licences; not all full text is reusable.
+- NCERT: manual rights restrictions; original LabVerse explanations and assets required unless permission is obtained.
+
+This is a policy review, not an integration test. No API connectors have been implemented or tested.
