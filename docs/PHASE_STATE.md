@@ -8,7 +8,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Repository: https://github.com/snchat78-svg/LabVerse
 - Current phase: Phase 1 — Platform scope, source audit and first science catalogue
 - Phase 0: DONE — planning/documentation baseline only
-- Phase 1: IN PROGRESS — preliminary source audit and catalogue started
+- Phase 1: IN PROGRESS — RBSE 2026–27 practical sources extracted; NCERT kit inventory/specification and source-to-asset coverage are now the active work
 - Phase 2: BLOCKED until Phase 1 exit criteria are met
 - Application code: not started
 - 3D workbench/assets: not implemented
@@ -40,9 +40,9 @@ This is the single source of truth for the current phase. Update it in the same 
 - [x] Retrieve and inspect the official RBSE Class 12 examination 2027 syllabus PDF (user-supplied 169-page PDF inspected).
 - [x] Confirm exact PDF page ranges for all six current-session subject/class practical catalogues.
 - [x] Extract the listed practicals, activities, projects, spotting, slide/specimen, record and viva requirements into the official audit document.
-- [ ] Obtain and inspect the NCERT Physics XI/XII kit manual.
+- [x] Inspect the official NCERT combined Physics Grades XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
 - [ ] Obtain and inspect the NCERT Biology XI/XII kit manual.
-- [ ] Obtain and inspect the NCERT Micro-scale Chemistry XI/XII kit manual.
+- [x] Inspect the NCERT Micro-scale Chemistry XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
 - [ ] Reconcile RBSE practical requirements with NCERT manuals without silently merging or removing requirements.
 - [ ] Build complete apparatus, instruments, glassware, chemicals, specimens, slides, models and consumables inventory.
 - [ ] Review API/data terms, licence, attribution and update policy for each candidate research source.
@@ -287,3 +287,37 @@ Next: obtain accessible original RBSE PDFs (or have the official copies supplied
 4. Finalise item-level inventory with dimensions, ranges, precision, quantities and source evidence.
 5. Complete the source → practical → equipment → asset → scientific rule → test traceability chain.
 6. Finish source/API rights sampling and teacher/expert review before Phase 1 sign-off.
+
+
+## Phase 1 update — NCERT Biology kit inventory discovery and LabVerse timer decision (2026-10-31)
+
+### User product decision
+- [x] Set LabVerse timed practical-assessment preset to 180 minutes (3 hours).
+- [x] Keep the 3D experiment workbench learner-paced; scientific model outputs must not depend on the countdown.
+- The RBSE XI Physics PDF p.114 Hindi/English time conflict remains recorded as a source discrepancy. The app's 180-minute preset is a user configuration, not an official RBSE correction.
+
+### NCERT Biology kit research progress
+- [x] Rechecked the official NCERT School Kits manual index: it lists a revised Manual of Secondary Stage Biology Laboratory Kit for Grades 11–12 (English).
+- [x] Rechecked the official NCERT publications catalogue: publication code 13163 is Manual of Higher Secondary Biology Laboratory Kit.
+- [x] Rechecked official kit specification index categories: Biology kit with microscope and without microscope are separately listed for Grades 11–12.
+- [x] Recorded the NCERT School Kits overview's high-level Biology kit description.
+- [x] Extracted a provisional item-group inventory from an accessible secondary-hosted transcription of the 141-page 2018 manual: key items, tools, glassware, plasticware/consumables, specimen models, slide catalogue, visual-aid examples and 58 reagent entries.
+- [x] Added a source-confidence warning: the detailed list is DISCOVERY ONLY until matched against official NCERT manual/specification files.
+- [x] Created `docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md`.
+
+### Active limitations
+- Official manual listing/catalogue are confirmed, but the detailed official manual PDF bytes/pages were not successfully fetched in this pass.
+- Secondary transcription may not reflect latest kit revisions; verify every quantity and specification against official NCERT files.
+- Chemical/reagent list is not a licence or safety approval. Several entries are hazardous; LabVerse's content remains virtual-only and rule-bounded.
+- The detailed Biology asset inventory is still provisional; no 3D assets or simulation logic were created.
+
+### Current Phase 1 tasks
+- [ ] Verify the Biology manual's item list and 58 reagent entries against an accessible official NCERT copy.
+- [ ] Inspect official Biology kit specification PDFs (with/without microscope).
+- [ ] Audit latest Physics and Micro-scale Chemistry specification attachments and crosswalk exact items.
+- [ ] Reconcile RBSE practicals and NCERT kit items, distinguishing kit-supplied vs school-supplied vs inferred items.
+- [ ] Assign canonical asset IDs, source references, scale, dimensions, LOD, interactions, licence and acceptance tests.
+- [ ] Complete research-source terms/attribution sampling and subject-expert review.
+- [ ] Complete all source → curriculum item → apparatus/material → 3D asset → model/rule → test mappings.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
