@@ -113,3 +113,23 @@ For each practical, create stable item IDs with:
 - source page/section, licence and reviewer status.
 
 The catalogue must not be published as complete until 2027 syllabus documents, NCERT kit manuals and coverage checks are finished.
+
+
+## NCERT-CIET cross-reference added (2026-10-31)
+
+The following official NCERT-CIET pages were inspected to extend the preliminary catalogue beyond the earlier RBSE-only summary:
+
+- Grade 11: https://ciet.ncert.gov.in/activity/grade11
+- Grade 12: https://ciet.ncert.gov.in/activity/grade12
+
+Highlights:
+- Grade 11 Physics: measurement instruments, mechanics, pendulum, friction, elasticity, spring, Boyle's law, surface tension, viscosity, cooling curve, sonometer, resonance tube and specific heat.
+- Grade 11 Chemistry: qualitative cation/anion analysis, standard solutions, melting/boiling points, crystallisation, equilibrium, pH, VSEPR, Lassaigne's test, titration and endpoint detection.
+- Grade 11 Biology: microscope, mitosis, organism/plant morphology, plant structures, osmosis, plasmolysis, stomata, transpiration, biomolecule tests, respiration and selected urine tests.
+- Grade 12 Physics: resistance, metre bridge, cells/EMF, potentiometer, galvanometer, AC, mirrors/lenses, prism, refractive index, semiconductor devices, diffraction and electromagnetic demonstrations.
+- Grade 12 Chemistry: colloids, redox titration, thermochemistry, EMF, chromatography, preparation work, biomolecule tests, reaction kinetics and emulsions.
+- Grade 12 Biology: pedigree, soil/water analysis, pollen/gametophyte, meiosis, Mendelian inheritance, hybridisation, staining, specimen identification, pollution and quadrat ecology.
+
+Do not merge these NCERT references into the RBSE list as though they are identical. Preserve board/source_pack for every practical record. Full entry-by-entry mapping and exact official source pages remain a Phase 1 task.
+
+Detailed lists and source context are in PHASE_1_NCERT_CROSSWALK.md.
