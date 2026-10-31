@@ -73,3 +73,47 @@ VERIFIED can be assigned only after domain review and test vectors pass; none of
 - [ ] Reconcile all source-to-practical-to-equipment-to-result gaps before Phase 1 completion.
 
 This is the first representative mapping slice. It is not the final exhaustive coverage matrix.
+
+
+## Expanded representative mappings — second slice (2026-10-31)
+
+These extend the first 12 mappings. All are still DESIGN_ONLY, not implemented or scientifically verified.
+
+### Additional Physics mappings
+
+| Mapping ID | NCERT-CIET item | Required apparatus | Key actions/inputs | Results and visual behaviour | Status |
+|---|---|---|---|---|---|
+| PHY-XI-BOYLE | Grade 11 Experiment 11 — Boyle's law | Boyle apparatus, pressure gauge/manometer, volume scale, temperature indicator | Change volume in a closed model at constant temperature; record P and V pairs | Check P×V trend, plot P–V and P–1/V; visual gas volume and pressure indicator must use the same state | DESIGN_ONLY |
+| PHY-XI-CAPILLARY | Grade 11 Experiment 12 — capillary rise/surface tension | Capillary tube, liquid vessel, scale, radius measurement tool | Select known liquid and capillary radius, observe modelled rise; vary supported radius/liquid property | Rise height and derived surface-tension estimate only under declared assumptions; 3D meniscus, capillary ruler and formula panel | DESIGN_ONLY |
+| PHY-XI-SONOMETER | Grade 11 Experiment 15 — frequency/length/tension | Sonometer, bridges, wire, pulley, weights, tuning fork/frequency reference | Adjust vibrating length or tension, select known wire linear density and record resonance | Compare frequency with the stated string relation; show stationary-wave nodes and graph; no uncalibrated audio estimate | DESIGN_ONLY |
+| PHY-XII-POTENTIOMETER | Grade 12 Experiment 5 — internal resistance of a cell | Potentiometer wire, primary cell, galvanometer, jockey, resistance box, key and leads | Configure correct circuit, obtain balance lengths under defined conditions | Derive internal resistance using approved relation, show null point and raw balance lengths; enforce polarity/connection checks | DESIGN_ONLY |
+| PHY-XII-PRISM | Grade 12 Experiment 13 — minimum deviation | Glass prism, optical bench, light source, screen, angular scale/goniometer | Rotate prism/measure angle of incidence and deviation | Plot deviation versus incidence/derive refractive index with assumptions; 3D prism rotation, ray path and angle readout | DESIGN_ONLY |
+
+### Additional Chemistry mappings
+
+| Mapping ID | NCERT-CIET item | Required apparatus/materials | Key inputs/actions | Results and visual behaviour | Status |
+|---|---|---|---|---|---|
+| CHEM-XI-QUALITATIVE | Grade 11 Unit 1 — qualitative anion/cation analysis | Well plate/micro test tube, dropper, labelled sample/reagent records, test-tube stand | Select a syllabus-approved unknown from a closed curated set, run permitted virtual test sequence | Report only observations and confirmatory evidence encoded in reviewed rules; never infer identity from one colour alone | DESIGN_ONLY; rule review required |
+| CHEM-XI-CRYSTALLISATION | Grade 11 Unit 3 — purification by crystallisation | Beaker, heating/water-bath model, evaporating/crystallisation vessel, filter funnel, solvent/sample model | Select pre-approved compound/solvent and modelled temperature/cooling states | Qualitative crystal formation/purification model; purity claims only when linked to a supported melting point or assay | DESIGN_ONLY |
+| CHEM-XII-THERMOCHEM | Grade 12 Unit 3 — dissolution/neutralisation enthalpy | Insulated calorimeter, thermometer/probe, sample containers, approved virtual solution records | Select a defined reaction/dissolution pack, record initial/final temperature and amounts | q=mcΔT or declared calorimeter model; ΔH per mole only with balanced stoichiometry and heat-loss assumptions; show temperature curve | DESIGN_ONLY; exact reaction pack required |
+| CHEM-XII-CHROMATOGRAPHY | Grade 12 Exercise 23 — paper chromatography of leaf/flower pigments | Chromatography paper, capillary/dropper, solvent chamber, sample spot and ruler | Place sample spot, run supported solvent-front model, measure spots and solvent front | Rf = spot travel / solvent front; 3D/2D chromatogram band separation linked to solvent/sample model; no identity beyond reference standards | DESIGN_ONLY |
+| CHEM-XII-COLLOID | Grade 12 Unit 1 — lyophilic/lyophobic sol | Micro vessels/well plate, droppers, sample records and observation light | Select a curated virtual sol preparation/model and compare declared stability/dispersion conditions | Tyndall/dispersion or stability observations only where a reviewed rule supports them; visual particles are schematic, not molecular-scale truth | DESIGN_ONLY |
+
+### Additional Biology mappings
+
+| Mapping ID | NCERT-CIET item | Apparatus/specimens | Key actions/inputs | Results and visual behaviour | Status |
+|---|---|---|---|---|---|
+| BIO-XI-STOMATA | Grade 11 Exercise 18 — stomatal distribution | Microscope, leaf epidermal slides, count grid | Select leaf surface and magnification, count stomata in defined fields | Stomatal density per area and upper/lower comparison only with declared field area and sampling protocol; microscope view shows actual reviewed slide assets | DESIGN_ONLY |
+| BIO-XI-TRANSPIRATION | Grade 11 Exercise 19 — rate of transpiration | Potometer/demonstration setup, leafy shoot model, time/scale | Change supported virtual conditions such as light, airflow or humidity where modelled | Water uptake/time as proxy with clear limitation that uptake is not identical to transpiration under all conditions; live trend and labelled inputs | DESIGN_ONLY |
+| BIO-XI-ENZYME | Grade 11 activity — salivary amylase on starch | Virtual sample tubes, timer, substrate/enzyme records and approved indicator model | Select validated enzyme/substrate condition and observe a modelled time point | Qualitative substrate-change result only from reviewed rule; temperature/pH affects output only when explicitly modelled | DESIGN_ONLY |
+| BIO-XII-POLLEN | Grade 12 Exercise 2 — pollen germination percentage | Microscope, slide, pollen sample asset, field-count grid | Inspect defined fields, count germinated/total pollen grains using a consistent inclusion rule | Percentage = germinated/total ×100; sample size and field selection recorded; 3D/slide image only supports visible features | DESIGN_ONLY |
+| BIO-XII-SOIL-WATER | Grade 12 Exercise 1 — soil water-holding capacity / soil texture | Soil samples, weighing vessels, balance, filter/collection vessel, measuring tools | Select a labelled sample dataset or run virtual sample protocol; enter dry/wet mass or water volume | Water-holding capacity from declared mass/volume definition; texture classification only when measurement scheme and category thresholds are explicit | DESIGN_ONLY |
+| BIO-XII-SPM | Grade 12 Exercise 22 — suspended particulate matter in air | Filter/sample card, mass measurement model, area/time/site metadata | Compare site samples or permitted preloaded dataset; define area and sampling duration | Concentration only if sampled air volume and measurement units are known; site comparison and uncertainty; no claim of live air monitoring unless a calibrated sensor is connected | DESIGN_ONLY |
+
+## Expanded coverage status
+
+- First slice: 12 representative mappings.
+- Second slice: 13 additional representative mappings.
+- Total in this design matrix: 25 representative mappings.
+- This is still not exhaustive coverage of all current RBSE or NCERT practical items.
+- All mappings remain DESIGN_ONLY. No rule, simulation, 3D model or software test is implemented by this document.
