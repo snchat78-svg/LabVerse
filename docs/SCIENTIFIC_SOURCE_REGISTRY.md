@@ -100,3 +100,67 @@ Manual text and index listings can be used for catalogue traceability; full repr
 - VERIFIED_FOR_USE: source scope, content and terms reviewed for a specific use case.
 
 Do not mark a source VERIFIED_FOR_USE just because its page is public or search results are visible.
+
+
+## Source terms and usage details audited on 2026-10-31
+
+### PubChem
+- PUG REST usage policy requests no more than 5 requests/second.
+- Citation guidance asks users to cite PubChem and/or trace the original contributing source from the individual record.
+- Official policy: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest
+- Citation guidance: https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines
+- LabVerse status: source policy discovered; no connector tested.
+
+### NIST Chemistry WebBook and CODATA
+- Chemistry WebBook SRD 69 contains thermochemical, thermophysical and ion-energetics data, with a disclaimer that NIST uses best efforts but does not warrant error-free data.
+- WebBook: https://webbook.nist.gov/chemistry/
+- CODATA version history identifies the 2022 recommended values, Web Version 9.0, as the latest published set available in this audit. The 2026 adjustment is the next scheduled set; data cut-off for consideration is 31 December 2026.
+- Version history: https://physics.nist.gov/cuu/Reference/versioncon.html
+- NIST copyright policy says material not marked copyrighted is generally public information, with appropriate credits; individual dataset or software terms may add restrictions.
+- NIST use/citation: https://www.nist.gov/copyrights-disclaimers and https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications
+- LabVerse status: version/citation policy recorded; source connector not tested.
+
+### NCBI E-utilities and Datasets
+- E-utilities default guidance: no more than 3 requests per second. An API key permits 3–10 requests/second; above 10 requires additional approval/request. Tool identity/contact registration may be required.
+- Guidance: https://eutilities.github.io/site/API_Key/usageandkey/
+- NCBI Datasets API: default 5 requests/second; API key increases to 10 requests/second.
+- Datasets policy: https://www.ncbi.nlm.nih.gov/datasets/docs/v2/api/api-keys/ and https://www.ncbi.nlm.nih.gov/datasets/docs/v2/troubleshooting/faq/
+- PMC full-text content is not uniformly available for text mining or reuse; use only permitted automated services and check each article licence.
+- PMC developer rules: https://pmc.ncbi.nlm.nih.gov/tools/developers/
+- LabVerse status: policies documented; connectors not tested.
+
+### GBIF
+- Open-access occurrence datasets use CC0, CC BY or CC BY-NC licensing. Licence applies at dataset/record level and must be retained.
+- Terms: https://www.gbif.org/terms
+- Rapid or numerous API queries may be throttled dynamically; large queries should use the download API, which supports citation/DOI.
+- API/data use: https://techdocs.gbif.org/en/openapi/ and https://techdocs.gbif.org/en/data-use/
+- LabVerse status: licence/rate-limit policy recorded; connector not tested.
+
+### Crossref
+- Public REST API requires no account; polite pool uses mailto/agent identification.
+- Documented limits: public pool 5 requests/sec and 1 concurrent; polite pool 10/sec and 3 concurrent; Metadata Plus is a paid tier.
+- Metadata is generally reusable, while some abstracts may be copyright-protected.
+- API docs: https://www.crossref.org/documentation/retrieve-metadata/rest-api/
+- Access/rate limits: https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication
+- LabVerse status: source terms recorded; no connector tested.
+
+### Europe PMC / PMC
+- Europe PMC REST exposes literature metadata and access to a subset of open full-text articles; metadata, abstract and full-text use must be distinguished.
+- API: https://dev.europepmc.org/RestfulWebService
+- PMC states not all articles are available for text mining/reuse, and article licence terms apply individually.
+- PMC developer rules: https://pmc.ncbi.nlm.nih.gov/tools/developers/
+- LabVerse status: API identified; article-level licence workflow required; no connector tested.
+
+### NCERT
+- Official kit-manual index lists Grades 11–12 Physics, Biology and Micro Scale Chemistry kits.
+- A published NCERT School Kits overview describes the Higher Secondary Physics kit as including optical bench, metre bridge, potentiometer, Boyle's-law apparatus, resonance apparatus, diode/transistor-characteristic apparatus, sonometer, resistance box and pan balance.
+- It describes the Chemistry kit as using special low-volume apparatus, plastic containers and unbreakable droppers.
+- It describes the Biology kit as including laboratory instruments, glassware, compound microscope, permanent slides, stains and cards.
+- Overview PDF: https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf (PDF pages 8–9)
+- Manual index: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
+- NCERT Lab manuals displayed all-rights-reserved notices. The overview does not grant reuse rights for images, text, or manual figures.
+- LabVerse status: kit family descriptions inspected; full Biology kit manual remains inaccessible; reproduce neither NCERT's photographs nor its full text without permission.
+
+## Compliance status summary
+
+The source-specific policies are documented, but this does not mean the services are integrated or that every record is safe/accurate to use. No source is CONNECTOR_TESTED or VERIFIED_FOR_USE. Phase 1 still needs a record-level licence/quality sample review and Phase 2 must implement throttling/caching contracts before connector code.
