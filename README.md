@@ -97,4 +97,3 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 - [RBSE 2026–2027 official Class XI/XII practical syllabus audit](docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md)
 - [RBSE practical-to-3D asset inventory delta](docs/PHASE_1_RBSE_2027_ASSET_DELTA.md)
 - [NCERT Higher Secondary Biology Kit review](docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md)
-- [NCERT Higher Secondary Biology Kit review](docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md)
