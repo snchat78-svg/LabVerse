@@ -1,7 +1,7 @@
 # Phase 1 — Source Audit and Research Platform Scope
 
 Audit date: 2026-10-31  
-Status: IN PROGRESS — preliminary sources found; current syllabus PDFs and full coverage not yet verified.
+Status: IN PROGRESS — RBSE 2026–2027 official PDFs inspected; source coverage and broader inventory/review remain open.
 
 ## 1. RBSE current-session discovery
 
@@ -332,3 +332,18 @@ Subject summary URLs:
 No equivalent reliable Class 11 subject-page pointer set was identified during this search. The official Class 11 and Class 12 syllabus audit remains blocked. Full details and interpretation controls are in docs/PHASE_1_RBSE_2027_SECONDARY_CROSSCHECK.md.
 
 NCERT's official publications catalogue again confirms the title/code 13163, Manual of Higher Secondary Biology Laboratory Kit, but the catalogue entry is not the full manual. Full item-level Biology kit inspection remains open.
+
+
+## Current-session RBSE primary-source audit update — 2026-10-31
+
+The user supplied both current-session RBSE syllabus PDFs for direct inspection: Class XI (155 pages) and Class XII (169 pages). The practical source pages for all six mainstream subject/class combinations have now been read and recorded:
+- XI Physics: PDF 114–119.
+- XI Chemistry: PDF 123–126.
+- XI Biology: PDF 132–134.
+- XII Physics: PDF 124–129.
+- XII Chemistry: PDF 137–140.
+- XII Biology: PDF 144–147.
+
+See `docs/PHASE_1_RBSE_2027_OFFICIAL_AUDIT.md` for the complete extracted requirements and the two internal inconsistencies; see `docs/PHASE_1_RBSE_2027_ASSET_DELTA.md` for source-mapped candidate equipment/specimen/asset families.
+
+This resolves the earlier RBSE PDF retrieval blocker. It does not close Phase 1: the full NCERT Higher Secondary Biology kit manual and remaining kit specifications, exhaustive practical-to-asset-to-test mappings, data-source rights sampling and subject-expert review are still pending. The practical matrix's 28 records remain representative DESIGN_ONLY mappings; no record is promoted to VERIFIED by this PDF audit alone.
