@@ -62,3 +62,20 @@ Every future source connector or dataset record should capture:
 - source-quality review state and reviewer notes.
 
 A search result, abstract or contributed annotation is not automatically a verified scientific fact. Conflicting sources must remain traceable.
+
+
+## Additional official NCERT learning and manual sources
+
+| Source | Domain | Role | Constraints / audit note |
+|---|---|---|---|
+| NCERT-CIET Grade 11 activities | https://ciet.ncert.gov.in/activity/grade11 | Indexed Physics, Chemistry and Biology manual exercises and activities | Preserve exercise IDs and link targets; duplicates/alternate links need canonicalisation |
+| NCERT-CIET Grade 12 activities | https://ciet.ncert.gov.in/activity/grade12 | Indexed Physics, Chemistry and Biology manual exercises, projects and demonstrations | Preserve source pack and do not assume every item maps to RBSE |
+| NCERT Class XI Physics Lab Manual | https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/physics/kelm101.pdf | Experiments, activities, projects, demonstrations and measurement/graph/reporting skills | Parsed text labels the online edition 2025–26; all-rights-reserved notice |
+| NCERT Class XI Chemistry Lab Manual | https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/chemistry/kelm201.pdf | Equipment, handling, heating, filtration, basic techniques, titrimetry and qualitative analysis | Parsed text labels the online edition 2025–26; all-rights-reserved notice |
+| NCERT Class XI Biology Lab Manual | https://ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf | Microscope, specimen and practical-work skills; dissection equipment and safety | Parsed text labels the online edition 2025–26; all-rights-reserved notice |
+| NCERT School Kit Manuals index | https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | Physics, Biology and Micro-scale Chemistry Grade 11–12 kit manuals | Manual listing confirmed; direct full manual page retrieval/asset reuse rights remain to be checked |
+| NCERT Kit Specifications index | https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Physics, Biology with/without microscope, Chemistry and Molecular Model kit specification documents | Use specifications to ground inventory; confirm latest edition and reuse permissions |
+
+## Source access policy
+
+Manual text and index listings can be used for catalogue traceability; full reproduction of copyrighted manual text, figures, tables or illustrations is not authorised by merely having a public URL. Create original app text and 3D assets or obtain permission/licences. Source attribution must remain attached to derived catalogue records.
