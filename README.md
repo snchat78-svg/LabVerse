@@ -1,38 +1,38 @@
-# LabVerse — Virtual Science Laboratory
+# LabVerse — Scientific Discovery & Virtual Research Platform
 
-**Explore. Experiment. Understand.**
+**Explore. Experiment. Analyse. Discover.**
 
-A mobile-first, interactive virtual laboratory for Rajasthan/RBSE and NCERT-aligned Classes 11–12 Physics, Chemistry and Biology.
+LabVerse is an expandable, evidence-grounded science platform for Physics, Chemistry and Biology. School practicals for Rajasthan/RBSE and NCERT Classes 11–12 are the first learning pack—not the limit of the platform.
 
-LabVerse is much more than an MCQ app or a catalogue of laboratory items. Students will assemble a real 3D workbench, place and manipulate apparatus, perform guided or free experiments, observe changing visual states, take readings, and receive an evidence-based explanation of what happened.
+The long-term goal is to let learners and researchers explore scientific questions, construct models, run virtual experiments, import real datasets, analyse observations, compare hypotheses and discover promising questions for further investigation.
 
-## Core promise
+## The platform has four connected workspaces
 
-- Three subject labs: Physics, Chemistry and Biology, for Classes 11 and 12.
-- Real 3D workbench: tap or drag equipment from the inventory into an initially empty workspace. Objects appear as manipulable 3D models, not just labels or cards.
-- Live experiment behaviour: valid actions update the scene and experiment state. Examples include meter readings changing as a circuit changes, an indicator changing colour near a titration endpoint, precipitate or gas appearing when a validated reaction is selected, a characteristic flame colour in a virtual flame-test activity, or a microscope image changing with focus.
-- Reasoned analysis: explain the observed result using selected materials, quantities, conditions and experiment rules. Never invent an observation when data is unknown.
-- Practical-exam preparation: guided practice, free practice, timed practical exam, observation notebook, calculations, graphs, viva and progress.
-- Offline-first and cost-conscious: core lessons and simulations should work locally without a paid AI API or mandatory account.
+1. **Learning Lab** — Class 11–12 practicals first, then separately versioned school, college and advanced topic packs.
+2. **Virtual Experiment Lab** — an empty 3D workbench where real 3D apparatus, samples, specimens and instruments are placed by tap or drag-and-drop, then moved, rotated, inspected, connected and used.
+3. **Scientific Analysis** — rule-based and equation-based calculations, material/chemical properties, conditions, measurements, graphs, uncertainty and cross-domain interpretation.
+4. **Research Studio** — research question, literature/source search, hypothesis, experimental design, variables, datasets, statistical analysis, comparison of results, reproducible reports and candidate next questions.
 
 ## Non-negotiable product rules
 
-1. The workbench starts empty. Tap-to-add and drag-and-drop are both supported.
-2. Placed objects can be selected, moved, rotated, inspected/zoomed, connected or used where the experiment permits, removed and reset.
-3. A visual effect must be driven by a scientific rule and experiment state. Animation alone is not a result.
-4. Every practical is mapped to a named syllabus source, board, class, academic year and version.
-5. Unknown or unverified chemistry returns NOT_MODELLED or NEEDS_REVIEW, not a made-up product or colour.
-6. Virtual hazardous activities are clearly labelled as simulations. The app never tells students to reproduce unsafe experiments at home.
-7. A phase is complete only after its exit criteria, tests and documentation are checked.
+- The workbench begins empty. Tap-to-add and drag-and-drop both work; a placed item is a manipulable 3D asset, not a text card.
+- Physics, Chemistry and Biology outcomes come from explicit scientific models, reviewed rules or cited data—not decorative animations.
+- Live visuals, dashboard observations, calculations and explanations refer to the same experiment-state events.
+- A result clearly identifies whether it is measured, imported from a source, simulated, calculated, approximated, predicted or not modelled.
+- Each scientific claim carries provenance: source/data version, model or rule version, assumptions, units and uncertainty.
+- New hypotheses may be suggested, but are not labelled discoveries or facts until independently tested and reviewed.
+- Unknown, unsupported, conflicting or unsafe cases are surfaced honestly. The platform does not invent reaction products, readings, biological facts or citations.
+- Curriculum items are mapped to board, class, academic year, exact source and content version.
+- Hazardous operations remain virtual, bounded and safety-reviewed; the platform does not direct unsupervised real-world experiments.
 
-## Current project status
+## Project status
 
-- Planning and product-design baseline: committed in docs/.
-- Application code: not started at this baseline.
-- Current phase: Phase 1 — Official syllabus mapping and practical catalogue.
-- Phase 0 is complete for planning/documentation only; it does not mean an app has been built.
+- Product/design baseline: documented in docs/.
+- Phase 0: DONE — planning/documentation baseline only.
+- Current phase: Phase 1 — source, scope and initial catalogue audit (IN PROGRESS).
+- Application code, 3D assets and scientific simulation engines: NOT IMPLEMENTED.
 
-## Project documents
+## Start here
 
 - [Master roadmap](docs/ROADMAP.md)
 - [Phase state tracker](docs/PHASE_STATE.md)
@@ -40,34 +40,33 @@ LabVerse is much more than an MCQ app or a catalogue of laboratory items. Studen
 - [Product vision](docs/PRODUCT_VISION.md)
 - [Requirements](docs/REQUIREMENTS.md)
 - [System architecture](docs/SYSTEM_ARCHITECTURE.md)
-- [3D workbench and drag-drop](docs/INTERACTION_3D_WORKBENCH.md)
+- [3D workbench](docs/INTERACTION_3D_WORKBENCH.md)
 - [Real-time simulation engine](docs/REALTIME_SIMULATION_ENGINE.md)
-- [Chemistry reaction and visual engine](docs/CHEMISTRY_REACTION_AND_VISUAL_ENGINE.md)
 - [Live analysis and environment model](docs/ANALYSIS_AND_ENVIRONMENT_MODEL.md)
-- [Physics simulation model](docs/PHYSICS_SIMULATION_MODEL.md)
-- [Biology simulation model](docs/BIOLOGY_SIMULATION_MODEL.md)
-- [Experiment/content schema](docs/CONTENT_SCHEMA.md)
-- [Practical catalogue template](docs/EXPERIMENT_CATALOG_TEMPLATE.md)
-- [Syllabus and source policy](docs/SYLLABUS_AND_CATALOG_POLICY.md)
-- [Safety and scientific integrity](docs/SAFETY_AND_SCIENTIFIC_INTEGRITY.md)
-- [UI/UX specification](docs/UI_UX_SPEC.md)
-- [Test strategy](docs/TEST_STRATEGY.md)
-- [Technology and cost strategy](docs/TECH_STACK.md)
-- [Decision log](docs/DECISIONS.md)
-- [Backlog](docs/BACKLOG.md)
-- [Known issues](docs/KNOWN_ISSUES.md)
-- [Release plan](docs/RELEASE_PLAN.md)
+- [Research Studio](docs/RESEARCH_STUDIO.md)
+- [Scientific source registry](docs/SCIENTIFIC_SOURCE_REGISTRY.md)
+- [Research data pipeline](docs/RESEARCH_DATA_PIPELINE.md)
+- [Scientific method and discovery integrity](docs/SCIENTIFIC_METHOD_AND_DISCOVERY.md)
+- [Phase 1 source audit](docs/PHASE_1_SOURCE_AUDIT.md)
+- [Phase 1 initial catalogue](docs/PHASE_1_INITIAL_CATALOGUE.md)
 
-## Proposed technical direction
+## Proposed technology direction
 
-React + TypeScript + Vite for the app shell, Three.js for the interactive 3D scene, IndexedDB for offline data, and Capacitor for a later Android package. This stack is provisional until Phase 2 validates device performance and build constraints. Core experiment behaviour is deterministic, data-driven and testable; a generative AI service is not required to perform experiments.
+React + TypeScript + Vite, Three.js, IndexedDB, a deterministic simulation core, validated data/content schemas, and later PWA/Capacitor packaging. Scientific analysis may use local calculation modules and, where practical, sandboxed WebAssembly/Web Workers. Technology is provisional until the architecture/performance phases test it.
 
-## Official curriculum starting points
+No paid AI API or mandatory cloud backend is required for core experiments. Optional AI-assisted literature summarisation or language explanations may be considered later, but cannot be the source of scientific truth or replace citations, calculations, evidence review or human experimental validation.
 
-- RBSE syllabus/instructions: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm
-- RBSE practical syllabus surfaced for Examination 2026: https://rajeduboard.rajasthan.gov.in/SRS_INST_PRAC.pdf
-- NCERT school and kit manuals: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
-- NCERT science laboratory manual index: https://ncert.ncert.org.in/science-laboratory-manual.php?ln=en
-- CBSE 2026–27 curriculum, cross-check only: https://cbseacademic.nic.in/curriculum_2027.html
+## Official starting sources
 
-The catalogue must be rechecked against the latest official RBSE session before a practical is labelled current.
+- [RBSE syllabus index](https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm)
+- [NCERT Grade 11–12 laboratory kit manuals](https://ncert.nic.in/division/dek/kit-manuals.php?ln=en)
+- [NCERT kit specification documents](https://ncert.nic.in/division/dek/specification_documents.php?ln=en)
+- [PubChem](https://pubchem.ncbi.nlm.nih.gov/docs/about)
+- [NIST Chemistry WebBook](https://webbook.nist.gov/)
+- [NIST CODATA physical constants](https://www.nist.gov/programs-projects/codata-values-fundamental-physical-constants)
+- [NCBI data resources](https://www.ncbi.nlm.nih.gov/comparative-genomics-resource/data-resources/)
+- [Europe PMC REST API](https://dev.europepmc.org/RestfulWebService)
+- [Crossref REST API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/)
+- [GBIF occurrence API](https://techdocs.gbif.org/en/openapi/v1/occurrence)
+
+The scientific source registry records each source's role, limitations, licence/usage checks and citation requirements. Discovery and ingestion are not the same as verification.
