@@ -109,3 +109,5 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 
 - [RBSE 2026–2027 all-six-pack practical coverage register](docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md)
 - [NCERT official School Kits brochure audit — Biology kit category evidence](docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md)
+
+- [NCERT Biology kit slide and visual-aid candidate register](docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md)
