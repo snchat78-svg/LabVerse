@@ -198,3 +198,14 @@ Important boundary: this is the manual's item schedule, not the approved procure
 ## 12. Machine-readable Physics catalogue
 
 The 106-row manual item register now has a CSV export at data/catalogues/ncert_physics_kit_manual_items.csv. It preserves source-row IDs, manual row number, source item label, provisional LabVerse family and separate status columns for manual-text evidence, procurement specification, asset, scientific model and test vector. This file is a starting data contract; no procurement or software verification status is promoted by creating the CSV.
+
+
+## 13. User-uploaded NCERT specification copies — analysis completed (2026-11-01)
+
+Two scanned copies were uploaded in chat and inspected directly:
+- Micro Scale Chemistry Laboratory Kit specification (65 pages): docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md; CSV data/catalogues/ncert_mscl_spec_items.csv.
+- Secondary Stage Biology Laboratory Kit with microscope (199 pages): docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md; CSV data/catalogues/ncert_biology_with_microscope_spec_items.csv.
+
+Cross-document summary and file SHA-256 metadata: docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md.
+
+The uploaded contents materially close item-level inspection for these two copies. They are recorded as uploaded NCERT-branded specification copies; the SHA-256 values have not been compared against NCERT-hosted downloads, so byte-level official-source authentication remains OPEN. The Biology-without-microscope and Physics procurement specification attachments remain outstanding. The phase gate is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
