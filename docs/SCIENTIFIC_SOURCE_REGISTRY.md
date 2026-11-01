@@ -199,3 +199,21 @@ The Class XI Biology learning manual must remain a separate source pack from RBS
 Crosswalk and raw comparison: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md
 
 DIKSHA's official FAQ lists licence families accepted on the platform, but this is not the licence of any specific resource. Inspect each individual item's metadata before reusing content or assets. See https://api.diksha.gov.in/help/faqs/user/index.html.
+
+
+## NCERT Class XI Biology legacy chapter-wise exercise sources (2026-11-01)
+
+Current 2025–26 contents reference: https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf  
+Legacy chapter PDFs below show 23-04-2018 stamps. These are official NCERT-hosted source files, but their procedure text has not been matched page-by-page to the current manual revision.
+
+| Source ID | URL | Review state |
+|---|---|---|
+| NCERT_XI_BIO_EX02_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm302.pdf | Body text + screenshot inspected |
+| NCERT_XI_BIO_EX03_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm303.pdf | Body text + screenshot inspected |
+| NCERT_XI_BIO_EX04_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm304.pdf | Text inspected; screenshot retrieval failed |
+| NCERT_XI_BIO_EX05_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm305.pdf | Partial text only; later retrieval returned HTTP 502 |
+| NCERT_XI_BIO_EX06_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm306.pdf | Body text + screenshot inspected |
+
+Source-specific safety flags recorded in docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md: fungal culture/spore exposure; formalin-preserved animal specimens; corrosive/chromium(VI) maceration chemistry; human cheek/blood sampling with needle/lancet; and permanent-slide mitosis observation. These are not approved real-world learner instructions.
+
+NCERT rights notices apply; use original explanations/assets or obtain permission. Do not copy diagrams, tables or manual text into LabVerse.
