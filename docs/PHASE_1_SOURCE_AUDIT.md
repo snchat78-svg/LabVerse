@@ -361,3 +361,14 @@ The official kit-manual/specification pages could not be read in full in this br
 
 The manual transcription reports 58 reagent/stain entries and says they are not supplied with the kit, but managed by the school/institution/teacher. Treat this only as a source-discovery clue until primary verification. The presence of hazardous substances in such lists does not authorise real-world use; LabVerse representations remain virtual-only and modelled.
 
+
+
+## 22. Crossref REST API request-type limit correction (2026-11-01)
+
+The source-usage audit now distinguishes Crossref single-record DOI lookups from multi-record list/query requests. Crossref's 21 July 2026 announcement specifies 5 requests/sec public and 10 polite for single-record requests, but 1 public and 3 polite for list queries. The general documentation also exposes live rate and concurrency headers. Therefore LabVerse must use header-driven throttling, route-specific limits, caching and 429 backoff rather than assuming one global QPS.
+
+References:
+- https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication
+- https://community.crossref.org/t/refining-rest-api-limits-for-improved-stability-and-reliability/16137
+
+This is an audit correction only; no connector has been implemented or tested.
