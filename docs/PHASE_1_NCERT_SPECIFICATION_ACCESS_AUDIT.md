@@ -108,3 +108,16 @@ This is a procurement bid record, not the NCERT master specification; the attach
 A tender mirror exposes candidate attachment filenames for the Physics kit, Micro Scale Chemistry kit and Biology kit without microscope, but file bytes/signatures/content were not inspected. The filenames are recorded as discovery locators only. Actual official procurement attachments and the Biology-with-microscope variant remain open.
 
 Phase 1.1 status: IN PROGRESS. Physics manual content is inspected; all procurement attachments and the official complete Higher Secondary Biology kit manual remain unverified. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. No code, assets or software tests are claimed.
+
+## 9. Exact official attachment URLs followed from the NCERT specification page (2026-11-01)
+
+The English NCERT specification page directly links the following PDF targets:
+
+- Micro Scale Chemistry Laboratory Kit: https://ncert.nic.in/division/dek/pdf/MSCL.pdf
+- Secondary Stage Biology Kit with Microscope: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf
+- Secondary Stage Biology Kit without Microscope: https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf
+- Secondary Stage Physics Laboratory Kit: https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf
+
+These URLs are confirmed link targets from NCERT's official page, but the attachment payloads were not inspected. Original-host retrieval attempts returned HTTP 502. On the www.ncert.nic.in host, Micro Scale Chemistry and Physics timed out, Biology-with-microscope remained inaccessible, and Biology-without-microscope was reported as 63,918,957 bytes (too large for the current retrieval route). These are access/transport limitations, not evidence that the files are missing or empty.
+
+The Physics kit manual previously inspected is a separate document from the Physics procurement specification attachment. Do not substitute one for the other. Actual attachments remain NOT_INSPECTED until their bytes are obtained and checked.
