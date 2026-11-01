@@ -167,3 +167,22 @@ The official English NCERT specification page was opened and its four PDF link t
 This closes the task of identifying the exact direct attachment URLs from the NCERT page, but it does not close the actual attachment-inspection gate. Do not infer item counts or specifications from these URLs or filenames. The Physics kit manual is a separate document and was text-inspected in Section 3; that manual is not a substitute for the procurement specification attachment.
 
 Next recovery routes: use a browser session that can download large NCERT payloads, or retrieve the same attachment from an authenticated GeM tender record and compare file metadata (filename, byte size, hash, PDF metadata and revision) against the NCERT listing. A third-party mirror remains discovery-only until byte-level identity is established.
+
+
+## 10. Repeated GeM tender attachment discovery — 2026 tender copies (2026-11-01)
+
+Two additional GeM tender records list the same three NCERT kit attachment filenames and the same displayed file sizes:
+
+| Attachment filename | TenderKart-displayed size | Kit |
+|---|---:|---|
+| ss_phy_laboratory_kit_2025-08-05-14-27-28_7159927680c0a63ae4624c30ec52c8b8.pdf | 11.63 MB | Secondary Stage Physics |
+| mscl_2025-08-05-14-26-21_3a5a681bb380b96ec69bc9e461f50115.pdf | 18.89 MB | Micro Scale Chemistry |
+| ssbk_without_microscope_2025-08-05-14-23-11_a136470235d8a05b047e905400caead5.pdf | 17.60 MB | Secondary Stage Biology without microscope |
+
+Records:
+- GeM/2026/B/7498690, tender record 9283608, Etah, Uttar Pradesh; published 04 May 2026, closed 14 May 2026, contract awarded 22 July 2026: https://tenderkart.in/tender/9c2d3976-3ef0-415d-baef-16dbe9826d30
+- GeM/2026/B/7413934, tender record 9188847, Fatehpur, Uttar Pradesh; published 24 April 2026; technical evaluation shown 22 September 2026: https://tenderkart.in/tender/04da282b-7f7e-4a80-978c-6afc1dd7af28
+
+Both are third-party tender-record displays of GeM bid documents and additional-document filenames/sizes. This is corroborating discovery metadata only: the actual three PDF bytes have not been downloaded, hashed, inspected or authenticated against the official NCERT attachments. Neither record lists the Biology-with-microscope attachment. The repeated filenames/sizes are not a substitute for SHA-256 equality or PDF metadata inspection.
+
+The 15 March 2026 GeM Physics bid is a separate record; it explicitly states 105 items per kit in an attached list. The 106-row NCERT manual schedule remains a separate count. Keep the difference open until the item schedule attachment itself is inspected.
