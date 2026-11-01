@@ -346,3 +346,8 @@ See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md. Source files are offi
 - EX06: BIO-XII-SPECIMEN-ONION-ROOT-TIP-VIRTUAL, BIO-XII-SLIDE-ONION-ROOT-MITOSIS, BIO-XII-CELL-STAGE-*, BIO-XII-MITOTIC-INDEX-COUNTER. Use pre-prepared/synthetic virtual slide and a modelled timeline. The source requires acid, solvent/fixative, stain and heating for physical preparation; never expose that as a home workflow.
 
 These are Class XII domain IDs, separate from the corresponding Class XI exercise IDs. All remain DESIGN_ONLY.
+
+
+## Exercise 2 — bacterial ultrastructure claim hold (2026-11-01)
+
+Do not add a universal mesosome component to BIO-SLIDE-BACTERIA-REP or any bacterial 3D model. The NCERT source statement is retained as SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED. Classical mesosome-like structures may be fixation/preparation artifacts; a source-linked historical microscopy comparison may be shown only with method and caveat labels. See docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
