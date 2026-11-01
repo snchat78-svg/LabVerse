@@ -152,3 +152,18 @@ No application code, 3D mesh, simulation engine or software test was created or 
 3. Recover the official Higher Secondary Biology kit manual and compare the secondary transcript row-by-row; keep the transcript as secondary until then.
 4. Build a machine-checkable item register with UNKNOWN values preserved, then finish full six-pack practical traceability and independent review.
 5. Only after Phase 1 exit criteria pass, begin Phase 2 scientific domain schemas/contracts.
+
+## 9. Direct NCERT attachment links — source-page verification and retrieval results (2026-11-01)
+
+The official English NCERT specification page was opened and its four PDF link targets were followed directly. This establishes that the URLs below are the attachment links published by the official NCERT page; it does not establish the contents of the PDFs.
+
+| NCERT attachment | Direct URL published by NCERT | Retrieval result in this audit | Evidence state |
+|---|---|---|---|
+| Micro Scale Chemistry Laboratory Kit | https://ncert.nic.in/division/dek/pdf/MSCL.pdf | Original host returned HTTP 502; www.ncert.nic.in route timed out | OFFICIAL_LINK_CONFIRMED / FILE_NOT_INSPECTED |
+| Secondary Stage Biology Kit — with microscope | https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf | Original host returned HTTP 502; alternate www route remained inaccessible | OFFICIAL_LINK_CONFIRMED / FILE_NOT_INSPECTED |
+| Secondary Stage Biology Kit — without microscope | https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf | Original host returned HTTP 502; alternate www route reported 63,918,957 bytes, above the current retrieval route's limit | OFFICIAL_LINK_CONFIRMED / FILE_TOO_LARGE_FOR_CURRENT_RETRIEVAL |
+| Secondary Stage Physics Laboratory Kit | https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf | Original host returned HTTP 502; alternate www route timed out | OFFICIAL_LINK_CONFIRMED / FILE_NOT_INSPECTED |
+
+This closes the task of identifying the exact direct attachment URLs from the NCERT page, but it does not close the actual attachment-inspection gate. Do not infer item counts or specifications from these URLs or filenames. The Physics kit manual is a separate document and was text-inspected in Section 3; that manual is not a substitute for the procurement specification attachment.
+
+Next recovery routes: use a browser session that can download large NCERT payloads, or retrieve the same attachment from an authenticated GeM tender record and compare file metadata (filename, byte size, hash, PDF metadata and revision) against the NCERT listing. A third-party mirror remains discovery-only until byte-level identity is established.
