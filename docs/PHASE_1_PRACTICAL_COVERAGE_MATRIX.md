@@ -166,3 +166,26 @@ These rows connect board practical needs to candidate kit assets discovered in t
 
 ### Release gate
 The RBSE Biology source rows are extracted, but these candidate mappings cannot be published as VERIFIED until NCERT kit items/specs are confirmed, biological identities and methods are reviewed, and each implemented model has test vectors.
+
+
+## NCERT Class XI Biology Laboratory Manual — 34-exercise index coverage baseline (2026-11-01)
+
+Primary source: NCERT *Laboratory Manual: Biology, Class XI*, online label 2025–26, contents section:
+https://www.ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The manual contents list 34 exercises. The list is recorded in `PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md`. The following coverage groups are now explicitly in the Phase 1 source-to-asset backlog:
+
+| NCERT manual exercise IDs | Coverage group | Candidate inventory families | Status |
+|---|---|---|---|
+| NCERT-XI-BIO-EX-01 | Compound microscope parts | BIO-OPTIC-* | EXERCISE 1 TEXT INSPECTED; MODEL DESIGN ONLY |
+| NCERT-XI-BIO-EX-02–06 | Microbial/plant/animal morphology, plant/animal tissues, mitosis | BIO-SPECIMEN-*, BIO-SLIDE-*, BIO-OPTIC-*, BIO-DISSECT-* | INDEXED ONLY; identity/procedure review pending |
+| NCERT-XI-BIO-EX-07–14 | Root/stem/leaf modifications, inflorescences, flowering families, anatomy, herbarium and animal models | BIO-PLANT-*, BIO-SPECIMEN-*, BIO-SLIDE-*, BIO-GEN-* | INDEXED ONLY; asset-level mapping pending |
+| NCERT-XI-BIO-EX-15–19 | Osmosis, plasmolysis, imbibition, stomata and transpiration | BIO-PLANT-*, BIO-SLIDE-*, BIO-OPTIC-*, BIO-TRANSFER-* | INDEXED ONLY; protocol and variable review pending |
+| NCERT-XI-BIO-EX-20–24 | Carbohydrate/protein/lipid tests, chromatography and respiration | BIO-PLANT-*, BIO-SLIDE-*, BIO-TRANSFER-*, CHEM-REAGENT-* | INDEXED ONLY; reagent rules and safety review pending |
+| NCERT-XI-BIO-EX-25–28 | Experimental setup observation and salivary amylase tests with starch, temperature and pH | BIO-PLANT-*, BIO-SLIDE-*, CHEM-REAGENT-* | INDEXED ONLY; finite reviewed assay models required |
+| NCERT-XI-BIO-EX-29–32 | Urine tests for urea, sugar, albumin and bile salts | CHEM-REAGENT-*, CHEM-GLASS-*, BIO-SLIDE-* | INDEXED ONLY; simulated sample/reaction models require expert review |
+| NCERT-XI-BIO-EX-33–34 | Human skeleton and joints | BIO-SPECIMEN-*, BIO-GEN-* | INDEXED ONLY; model identity/articulation review pending |
+
+This source pack is distinct from RBSE 2026–27 Board practical requirements and from NCERT's Higher Secondary Biology Kit procurement specification. The source contents list is evidence of exercise titles only. Only Exercise 1's microscope description received a detailed text review in this pass; the other 33 exercises still require procedure, materials, safety, observation and calculation extraction.
+
+All exercise rows/groups remain non-verified. No 3D assets, model rules or tests are implemented.
