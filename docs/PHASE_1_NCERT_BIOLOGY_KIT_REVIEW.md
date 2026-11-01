@@ -1,7 +1,7 @@
 # NCERT Higher Secondary Biology Kit — Phase 1 Review
 
 Audit date: 2026-10-31  
-Status: PARTIAL INVENTORY / OFFICIAL MANUAL PDF CONTENT NOT YET VERIFIED  
+Status: DETAILED SECONDARY INVENTORY INSPECTED / OFFICIAL MANUAL & PROCUREMENT SPECS NOT PRIMARY-VERIFIED  
 Curriculum scope: NCERT Secondary Stage Biology Laboratory Kit, Grades XI–XII.
 
 ## 1. Source register and confidence
@@ -12,7 +12,7 @@ Curriculum scope: NCERT Secondary Stage Biology Laboratory Kit, Grades XI–XII.
 | NCERT publications catalogue: https://ncert.nic.in/uploads/publication/other_books_new.pdf | Publication code 13163 is “Manual of Higher Secondary Biology Laboratory Kit” | Official catalogue metadata confirmed |
 | NCERT Specification Documents: https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Lists Secondary Stage Biology Kit with microscope and without microscope (Grades 11–12), plus Physics and Chemistry kit families | Official kit families confirmed; detailed attachment payloads not fetched in this review |
 | NCERT School Kits overview: https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf | Describes Higher Secondary Biology kit as supporting XI/XII experiments and names instruments, glassware, compound microscope, permanent slides, stains and cards | Official high-level description |
-| Secondary-hosted transcription of the 141-page NCERT manual: https://www.scribd.com/document/870673944/Manual-Secondary-Stage-Biology-Laboratory-Kit-11-12-En | Exposes a detailed contents extract, item categories, quantities, slide/specimen catalogue and reagents | DISCOVERY ONLY / NOT PRIMARY VERIFIED |
+| Secondary-hosted transcription of the 141-page NCERT manual: https://www.scribd.com/document/870673944/Manual-Secondary-Stage-Biology-Laboratory-Kit-11-12-En | Full 141-page text transcript was inspected for front matter, contents, 84 numbered kit items, specimen/slide/VA lists and 58 reagent entries | SECONDARY_FULL_TEXT_INSPECTED / NOT PRIMARY VERIFIED |
 
 The official NCERT manual index and catalogue confirm that the manual exists. The direct official manual PDF and the detailed specification attachments were not successfully opened in this work (NCERT page retrieval returned 502/time-out). The detailed item list below is therefore a candidate extraction from a secondary-hosted transcription of an NCERT manual copy, not an independently authenticated official PDF audit. Do not mark these counts VERIFIED until the official copy or an independently accessible NCERT source is inspected.
 
@@ -81,7 +81,7 @@ This list should become a controlled slide catalogue with one domain ID per slid
 
 ### G. Visual-aid card candidates
 
-The available transcription excerpt identifies cards for common animal, plant, fungal, algal and bacterial examples, including Amoeba, Plasmodium, Hydra, liver fluke, Ascaris, earthworm, leech, cockroach, honeybee, silkworm, prawn, snail, starfish, dogfish, Rohu, frog, lizard, pigeon, rabbit, Escherichia, Oscillatoria, Spirogyra, mushroom, lichen, Marchantia, Funaria, Dryopteris and Pinus. It also shows cards for reproductive structures, plant modifications, and homologous/analogous organs. The full card list was not available in the retrieved excerpt; do not invent missing card IDs/items.
+The full VA-1 to VA-50 list is now available in the inspected 141-page transcript. The complete candidate card index and LabVerse candidate IDs are in docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md. This supersedes the earlier statement that the full card list was unavailable. The manual's card artwork must not be copied; create original visuals or use appropriately licensed material.
 
 ### H. Reagents, chemicals and stains
 
@@ -131,7 +131,9 @@ User product decision (2026-10-31):
 ### Completion status
 - Official manual listing/catalogue: CONFIRMED.
 - Official biology kit family and overview: CONFIRMED.
-- Detailed secondary item transcription: DISCOVERY ONLY.
+- Detailed 141-page secondary transcription: FULL TEXT INSPECTED / NOT PRIMARY VERIFIED.
+- Candidate item schedule: 84 numbered entries; 7 acrylic specimens; 35 slides; 50 visual-aid cards; 58 school-managed reagent entries.
+- Candidate slide and visual-aid register: CREATED / DESIGN_ONLY; primary match pending.
 - Official manual file/page audit: NOT DONE.
 - Current specification attachment audit: NOT DONE.
 - Final Biology inventory and verified 3D assets: NOT DONE.
@@ -286,3 +288,8 @@ The secondary transcript's kit-manual table of contents numbers Grade XI tasks 1
 | Rights to reproduce manual content/artwork | NOT GRANTED; manual states all rights reserved / distribution with kit |
 
 Phase 1 can now treat the Biology kit's provisional secondary-derived inventory as a well-developed candidate list, not a verified official bill of materials. Keep the official item-level specification gate open.
+
+
+## Candidate slide and visual-aid ID register (2026-11-01)
+
+The 35-slide catalogue and complete VA-1–VA-50 sequence from the secondary transcription have now been assigned LabVerse candidate IDs in `docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md`. It also records seven acrylic-embedded specimen candidates, taxonomy-review requirements and asset acceptance fields. The IDs are provisional internal identifiers—not NCERT codes—and all remain PRIMARY_MATCH_PENDING.
