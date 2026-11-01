@@ -260,3 +260,18 @@ Current evidence state:
 - Exercise 4 and 5: NCERT contents title/page verified; no link surfaced in the inspected Grade 11 CIET table.
 - Exercise 6: NCERT manual labels mitosis as Exercise 6, while the CIET index labels the mitosis row Exercise 1. Preserve both raw records until reconciled.
 - All apparatus families are title-level DESIGN_ONLY. Do not infer species, slide contents, stain/reagent concentrations or quantities.
+
+
+## Evidence update — detailed NCERT Class XI Biology Exercises 2–6 audit (2026-11-01)
+
+Detailed source notes: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md.
+
+| Exercise | Body-level evidence now available | Candidate coverage | Required status |
+|---|---|---|---|
+| EX-02 p.8 | Legacy NCERT chapter text inspected; current 2025–26 title/page cross-check | Bacterial/fungal/plant-group slides and models | LEGACY BODY INSPECTED / DESIGN_ONLY |
+| EX-03 p.16 | Legacy NCERT chapter text inspected; current title/page cross-check | Animal external morphology models/images | LEGACY BODY INSPECTED / DESIGN_ONLY |
+| EX-04 p.30 | Legacy chapter text inspected; screenshot unavailable | Plant tissue/section slides; high-hazard source chemistry flagged | LEGACY BODY INSPECTED / DESIGN_ONLY |
+| EX-05 p.33 | Partial legacy body text only; later retrieval blocked | Synthetic/pre-prepared animal tissue slides | PARTIAL LEGACY BODY / DESIGN_ONLY |
+| EX-06 p.39 | Legacy chapter text and screenshot inspected; current title/page cross-check | Permanent mitosis slide, stages and cytokinesis | LEGACY BODY INSPECTED / DESIGN_ONLY |
+
+The 2018 legacy PDFs have not been page-by-page matched to the current 2025–26 manual. Candidate assets are not scientific validation or implementation. Retain raw source and edition provenance. Human sample, formalin, fungal culture/spores, chromium(VI)/corrosive chemistry remain virtual-only or prepared-slide-only.
