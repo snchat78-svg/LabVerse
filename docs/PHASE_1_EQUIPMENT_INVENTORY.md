@@ -416,3 +416,26 @@ The official specification index lists separate with-microscope and without-micr
 ## Biology slide/specimen/visual-aid candidate register link
 
 Candidate LabVerse IDs for all 7 acrylic-embedded specimens, 35 permanent slides and VA-1–VA-50 are recorded in `docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md`. They are derived from a secondary-hosted transcript; source numbering and item quantities remain provisional until matched to NCERT's official full manual and both Biology procurement-specification variants.
+
+
+## Phase 1.1 — NCERT Physics manual details and provisional interaction IDs (2026-11-01)
+
+Primary manual: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+
+The manual front matter identifies NCERT code 13164, ISBN 978-93-5292-653-4, first edition October 2018 and reprints through August 2024. Its item schedule numbers 106 rows. The schedule gives names and uses but is not a full procurement bill of materials; item-specific delivered quantities, tolerances, make/model and acceptance criteria remain open. The manual carries an ALL RIGHTS RESERVED notice. Build original assets; do not copy its illustrations.
+
+New evidence-backed candidate records:
+
+| Candidate stable ID | Source item / practical | Interaction/model requirement | Verification boundary |
+|---|---|---|---|
+| PHY-MEAS-VERNIER-CALIPER | Manual item 3; Grade XI Physics measurement practical | Sliding jaw, main/vernier scales, zero correction, unit-aware measurement | Name/use confirmed; range and least count not established by item schedule |
+| PHY-MEAS-SCREW-GAUGE | Manual item 4; Grade XII metre-bridge resistivity uses wire diameter | Spindle/ratchet, sleeve/circular scale, zero correction, diameter-to-area propagation | Name/use confirmed; range and least count open |
+| PHY-ELEC-METER-BRIDGE | Manual item 106; Grade XII experiments on wire resistance and resistance combinations | Two joinable halves, 0–100 cm wire, jockey, bridge balance point, resistance result | Two halves about 55 cm × 7.5 cm each and total 1 m scale stated; tolerances/material open |
+| PHY-ELEC-POTENTIOMETER | Manual item 88; Grade XII cell emf/internal resistance | 500 cm uniform wire, jockey, null balance, cell selection and ratio output | Manual describes 500 cm wire on board and 50 cm scale; material/tolerance open |
+| PHY-RES-SOUND-RESONANCE-TUBE | Manual item 33; Grade XI resonance/speed-of-sound practical | Water reservoir, variable water column, air-column length, tuning-fork frequency and resonance state | Tube is 60 cm long, about 5 cm diameter, centimetre scale; material/tolerances open |
+| PHY-OPT-OPTICAL-BENCH | Manual item 81; Grade XII optics practicals | Linear sliders, upright holders, lens/mirror holder, screen alignment and ray/image model | Four 50 cm scales, four pins, four joining strips, four sliding bases, four upright holders, two lens/mirror holders, one 12 cm × 12 cm screen and two pencils stated |
+| PHY-ELEC-MULTIMETER | Manual item 80; Grade XII measurement/electronics activities | COM/VΩmA/10 A DC terminals, mode and range selection, polarity, continuity and unit display | Modes/terminal roles described; range, accuracy and safety category open |
+
+Important reconciliation note: a 15-03-2026 GeM bid record for six Physics kits says 105 items per kit in an attached list. The NCERT manual schedule lists items 1–106. The GeM attachment itself has not been inspected, so this discrepancy remains open; do not silently change the inventory count. See docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md.
+
+These are source-grounded candidate IDs only. No 3D assets or simulation code have been created or tested.
