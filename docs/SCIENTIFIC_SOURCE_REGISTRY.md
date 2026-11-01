@@ -354,3 +354,16 @@ The NCERT kit index separately lists Biology-with-microscope and Biology-without
 The Physics manual schedule enumerates 106 rows. The separate GeM bid record says 105 items. Preserve this as an unresolved attachment/version discrepancy; do not infer which row is omitted or collapse a compound entry to force agreement.
 
 A tender mirror page lists candidate attachment filenames for Physics, Micro Scale Chemistry and Biology without microscope, but those file payloads and signatures were not retrieved. Record these as discovery locators only, not as official content-inspected sources.
+
+## GeM tender records exposing repeated NCERT kit attachment filenames (2026-11-01)
+
+| Record | Products | Attachments displayed | Evidence / limit |
+|---|---|---|---|
+| GEM/2026/B/7498690 (tender 9283608), Etah | Physics, Micro Scale Chemistry, Biology without microscope | Physics file 11.63 MB; MSCL file 18.89 MB; Biology-without-microscope file 17.60 MB | Third-party tender page displays filenames/sizes; bytes not downloaded or hashed |
+| GEM/2026/B/7413934 (tender 9188847), Fatehpur | Physics, Biology without microscope, Micro Scale Chemistry | Same three filenames and same displayed sizes | Independent tender-record occurrence; file identity still unverified |
+
+URLs:
+- https://tenderkart.in/tender/9c2d3976-3ef0-415d-baef-16dbe9826d30
+- https://tenderkart.in/tender/04da282b-7f7e-4a80-978c-6afc1dd7af28
+
+This is procurement discovery metadata, not proof that the PDF bytes are official NCERT files. Before using the content, obtain the actual files, calculate SHA-256, inspect PDF metadata/revision and compare the attachment contents to the official NCERT link targets. Biology with microscope is not present in these two records.
