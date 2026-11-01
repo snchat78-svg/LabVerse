@@ -81,3 +81,11 @@ The parsed PDF text was accessible, but screenshot/page-image retrieval for the 
 - Biology kit contents/quantities: NOT_VERIFIED.
 - Software implementation and software tests: NOT_STARTED / NOT_RUN.
 - Phase 1: IN PROGRESS. Phase 2: BLOCKED.
+## 7. Additional primary-source evidence — NCERT School Kits brochure (2026-11-01)
+
+The official NCERT *NCERT School Kits* brochure was retrieved and both text and the relevant page image were inspected:
+https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf
+
+Printed page 8 identifies the Higher Secondary Biology Lab Kit (HSBLK), intended for Biology experiments in Classes XI and XII, and names broad categories: laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. This is high-level category evidence only; the brochure does not give an item-by-item bill of materials, quantity, dimensions, material/tolerance, acceptance criteria or microscope/no-microscope variant differences. The retrieved PDF text does not expose a clear publication/reprint date or ISBN.
+
+The official index still lists separate Biology-with-microscope and Biology-without-microscope variants. Treat microscope inclusion as variant-dependent until the specifications themselves are inspected. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md` for the full evidence boundary.
