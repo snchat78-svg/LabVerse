@@ -340,3 +340,17 @@ The transcript's own front matter says ALL RIGHTS RESERVED and that the manual i
 | NCERT_SCHOOL_KITS_BROCHURE | https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf | Official brochure, printed p. 8: HSBLK purpose for Classes XI/XII and broad categories (instruments, glassware, compound microscope, permanent slides, stains, cards); text and page image inspected | CONTENT_INSPECTED; no publication/reprint date identified in retrieved PDF text; not an item-level bill of materials; not evidence for exact variant contents |
 
 The NCERT kit index separately lists Biology-with-microscope and Biology-without-microscope variants. Keep the microscope item conditional on the selected variant. The brochure photograph is contextual only and must not be used to infer item IDs or quantities. Full manual/specification attachment contents remain NOT_INSPECTED. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md`.
+
+
+## NCERT Higher Secondary Physics kit manual — primary-host text inspection (2026-11-01)
+
+| Source ID | URL | Evidence inspected | Status / limit |
+|---|---|---|---|
+| NCERT_XI_XII_PHYSICS_KIT_MANUAL_13164 | https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf | NCERT-hosted PDF front matter: code 13164, ISBN 978-93-5292-653-4, October 2018 first edition, reprints through August 2024; searchable item schedule 1–106 and experiment descriptions | CONTENT_INSPECTED via text; PDF screenshot endpoint returned HTTP 502; not a procurement BOM; all-rights-reserved |
+| NCERT_XI_XII_KIT_SPECIFICATION_INDEX | https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Official Grade XI–XII listing for Micro Scale Chemistry, Biology with/without microscope, Physics and Molecular Model kit families | INDEX_CONFIRMED; actual attachment payloads not inspected |
+| NCERT_XI_XII_KIT_MANUAL_INDEX | https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | Revised English manual listings for Physics, Biology and Micro Scale Chemistry Grade XI/XII kits | INDEX_CONFIRMED; Biology/Chemistry complete kit-manual payloads remain uninspected in this pass |
+| GEM_PHYSICS_KIT_BID_2026_03 | https://docs.primetenders.com/documents/tender/2026/03/31/12491799102179779884/GeM-Bidding-9125140.pdf | 15-03-2026 GeM bid for six Secondary Stage Physics kits states 105 items per kit and quantities as per an attached list | PROCUREMENT_CROSSCHECK_ONLY; attached item list not inspected and not the NCERT master spec |
+
+The Physics manual schedule enumerates 106 rows. The separate GeM bid record says 105 items. Preserve this as an unresolved attachment/version discrepancy; do not infer which row is omitted or collapse a compound entry to force agreement.
+
+A tender mirror page lists candidate attachment filenames for Physics, Micro Scale Chemistry and Biology without microscope, but those file payloads and signatures were not retrieved. Record these as discovery locators only, not as official content-inspected sources.
