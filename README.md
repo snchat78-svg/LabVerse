@@ -126,3 +126,13 @@ The register assigns LabVerse source-row IDs and provisional equipment families 
 
 
 - [Machine-readable NCERT Physics kit item catalogue (CSV, 106 rows)](data/catalogues/ncert_physics_kit_manual_items.csv)
+
+
+## Phase 1.1 — uploaded NCERT specification analysis
+- [Uploaded PDF analysis and source boundaries](docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md)
+- [Micro Scale Chemistry kit specification register](docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md)
+- [MSCL item catalogue CSV — 55 index rows](data/catalogues/ncert_mscl_spec_items.csv)
+- [Biology with microscope specification register](docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md)
+- [Biology with microscope item catalogue CSV — 177 index rows](data/catalogues/ncert_biology_with_microscope_spec_items.csv)
+
+Uploaded copies were inspected as scanned NCERT-branded specification documents. Their SHA-256 hashes are recorded in the audit; a hash match to NCERT-hosted originals is still pending.
