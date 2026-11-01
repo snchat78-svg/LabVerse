@@ -46,7 +46,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - [ ] Obtain and inspect the complete official NCERT Higher Secondary Biology kit manual, plus both Biology kit specification attachments (with microscope / without microscope); official listing/variant names are confirmed, but attachment contents are not.
 - [ ] Audit current official procurement specification attachments for Physics and micro-scale Chemistry kits, including item quantities, material, dimensions, tolerances and revision.
 - [ ] Complete current-edition body audit for missing/legacy Class XII Biology Exercise 7 and match legacy Exercises 11, 17–20 and Project Work against the current edition.
-- [ ] Complete exercise-by-exercise apparatus/material and asset coverage for all six RBSE class/subject packs; the current 28 mappings and later Biology additions are still a representative/design slice, not exhaustive coverage.
+- [x] Consolidate all RBSE practical task names, choices/OR branches and source page ranges for all six XI/XII Physics/Chemistry/Biology packs in docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md.
+- [ ] Complete item-by-item apparatus/material and 3D-asset mapping for every task in that master register; the task index is complete, but detailed source-to-asset/model/test mappings remain incomplete.
 - [ ] Complete stable item IDs and a verified source page/specification, quantity, measurement, range, material and acceptance rule for every required apparatus, specimen, slide, reagent and consumable.
 - [ ] Complete source → claim/data → RBSE/NCERT catalogue item → asset → scientific model/rule → test-vector traceability for every publishable experiment.
 - [ ] Perform record-level licence/attribution sampling and quality review for candidate external datasets; general policy notes alone are insufficient.
@@ -56,7 +57,7 @@ This is the single source of truth for the current phase. Update it in the same 
 
 
 ## Current blocker
-The earlier RBSE PDF retrieval blocker is resolved: the user supplied both full PDFs and the six practical page ranges were audited. Current blockers are the unavailable item-level Biology kit manual/specification files, incomplete exhaustive mapping/inventory, legacy-versus-current Biology manual matching and the need for independent subject-expert review.
+The earlier RBSE PDF retrieval blocker is resolved: the user supplied both full PDFs and the six practical page ranges were audited. The six-pack task-name register is now complete at source-index level. Current blockers are direct official NCERT kit-manual/specification retrieval (a full 141-page secondary-hosted Biology manual transcription is read but not primary-authenticated), item-level Physics/Chemistry/Biology procurement specifications, the remaining legacy/current Biology edition matches, full task-to-asset/model/test traceability, rights sampling, scientific/safety validation and independent subject-expert review.
 
 Tracking issue: https://github.com/snchat78-svg/LabVerse/issues/1
 
@@ -751,3 +752,20 @@ Post-write refetch:
 - [x] Issue #1 remains OPEN.
 
 These are GitHub documentation/refetch checks, not application tests. No app, assets or scientific model were implemented; no software test was run. The phase gate is unchanged: Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## Latest repository verification and commit record — 2026-11-01
+
+### New Phase 1 records
+- All-six RBSE task index: commit `2bf40b5045cbd2fb5ab28dc361ca64380b59dd9f`.
+- RBSE index navigation/state/matrix links: `c21df24f7445721278840a02ed88a05444b1a938`, `c3dc41902ad2e02a0c6a045e8a22f4a65823003c`, `2d9f5f6cb21efbfe621f28e9b49f2f1024721b68`.
+- Crossref request-type policy correction: `f4f698b2047f8eae0899d4d2e7ce0d75809a320a`.
+- Biology kit manual evidence refinement: `f2dbce4ea8d3be583028418e16735f21868ef9a5`, with equipment inventory/registry updates `0b90d2126a0d64cfc8fe914d37c44b5add236d64`, `5d85251fc1233e585d41816a7475b8edfd0d6431`.
+- Biology slide/visual-aid candidate ID register: `261999e524e52d6307db1d28fb11d82db8bbd39c`; README and inventory navigation `ab59693a6524f0d968b3059e57e860c56ca5b587`, `0b90d2126a0d64cfc8fe914d37c44b5add236d64`.
+
+### Verification
+After refetching the relevant files from GitHub main, **10/10 repository-document checks passed**: Crossref request-type row and header handling, Biology manual evidence boundary, 35-slide and VA-50 ID presence, inventory links, registry status, all-six RBSE task IDs, Phase 2 blocked state, and README navigation. These are document consistency checks only; no software test is claimed.
+
+Tracking Issue #1 was updated with the current evidence and blockers: https://github.com/snchat78-svg/LabVerse/issues/1#issuecomment-6556167457
+
+The repository remains at Phase 1 IN PROGRESS / Phase 2 BLOCKED. No code, 3D assets, simulation engines or API connectors were implemented.
