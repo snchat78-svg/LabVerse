@@ -664,3 +664,23 @@ Documentation consistency checks: **5/5 passed** (required Phase 1/Phase 2 state
 - This corrects policy documentation from primary Crossref guidance; it is not a working connector or load test.
 - Source terms are not yet fully closed: per-record/per-dataset licences, attribution and data-quality sampling remain outstanding.
 - Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — complete RBSE six-pack task index baseline (2026-11-01)
+
+### Newly completed
+- [x] Created `docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md` covering all six supplied/audited mainstream packs (XI/XII Physics, Chemistry, Biology).
+- [x] Captured task names and source page ranges for the 17 XI Physics experiments, 13 XI Physics activities, 11 XI Physics project options, XI Chemistry task groups and 8 projects, XI Biology major/minor/spotting scope, 18 XII Physics experiments, 14 XII Physics activities, 7 XII Physics projects, XII Chemistry redox/qualitative/OR/content-based groups and XII Biology major/minor/spotting/project scope.
+- [x] Preserved examination selection logic, alternative branches and both known RBSE source conflicts.
+- [x] Explicitly labelled the register as task-level coverage only; it does not claim item-level bills of materials, 3D assets, validated scientific rules or test vectors.
+- [x] Added the register to README navigation.
+
+### New file
+- `docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md`
+
+### Remaining gap
+- Task index is now centralised, but the source → exact kit item/specification → asset → model/rule → independent test-vector mapping is NOT COMPLETE. Items with inferred apparatus remain tagged as unverified; exact quantities/dimensions/material/ranges cannot be invented from task titles.
+- The Biology kit manual/specification attachments and Physics/Chemistry official procurement-spec attachments still need item-by-item retrieval and review.
+- Subject-expert review, record-level dataset licence/attribution checks, scientific model validation and safety review remain open.
+
+Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. Do not treat the new task register as a Phase 1 sign-off.
