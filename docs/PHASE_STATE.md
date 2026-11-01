@@ -731,3 +731,23 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No software or scientific-
 - No 3D card/slide/specimen assets, microscope renderer or biological simulation has been built or tested.
 
 Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+## Repository write and verification record — NCERT brochure continuation (2026-11-01)
+
+Direct-to-main documentation commits:
+- Official brochure audit: `ad6412ab7d3cfa5c783de85abadb4d7d113e670a`
+- Specification access audit: `ad4c63093bda05347f86a27db83f894b361952e1`
+- Equipment inventory: `d22781a927faf82064ea097b5257e780122e9f40`
+- Scientific source registry: `7f5f6726f8787152d18e88456935eba12068d64a`
+- README navigation: `2ab0ff33a8d5780bc89d7b5cd77b90f940d665cc`
+
+Tracking Issue #1 comment: https://github.com/snchat78-svg/LabVerse/issues/1#issuecomment-6556159903
+
+Post-write refetch:
+- [x] New brochure audit exists and includes printed-page evidence and the Phase 1/Phase 2 gate.
+- [x] Specification access audit includes the brochure evidence and explicitly retains item-level attachment blockers.
+- [x] Equipment inventory includes broad category evidence and variant-dependent microscope status.
+- [x] Source registry includes the brochure as CONTENT_INSPECTED with metadata limitations.
+- [x] README links the new audit.
+- [x] Issue #1 remains OPEN.
+
+These are GitHub documentation/refetch checks, not application tests. No app, assets or scientific model were implemented; no software test was run. The phase gate is unchanged: Phase 1 IN PROGRESS; Phase 2 BLOCKED.
