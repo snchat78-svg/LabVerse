@@ -217,3 +217,20 @@ Legacy chapter PDFs below show 23-04-2018 stamps. These are official NCERT-hoste
 Source-specific safety flags recorded in docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md: fungal culture/spore exposure; formalin-preserved animal specimens; corrosive/chromium(VI) maceration chemistry; human cheek/blood sampling with needle/lancet; and permanent-slide mitosis observation. These are not approved real-world learner instructions.
 
 NCERT rights notices apply; use original explanations/assets or obtain permission. Do not copy diagrams, tables or manual text into LabVerse.
+
+
+## Current-edition NCERT Class XI Biology exercise PDFs — Exercises 2–6 (2026-11-01)
+
+Direct official current-host PDF sources; PDF text carries 2025–26 markers:
+
+| Source ID | URL | Page count / evidence | Status |
+|---|---|---|---|
+| NCERT_XI_BIO_EX02_2025_26 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm302.pdf | 8 pages, text extracted; first two pages visually inspected | CONTENT_INSPECTED |
+| NCERT_XI_BIO_EX03_2025_26 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm303.pdf | 14 pages, text extracted; first page visually inspected | CONTENT_INSPECTED |
+| NCERT_XI_BIO_EX04_2025_26 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm304.pdf | 3 pages, text extracted; screenshot returned HTTP 502 | CONTENT_INSPECTED / visual audit pending |
+| NCERT_XI_BIO_EX05_2025_26 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm305.pdf | 6 pages, full text extracted; screenshot returned HTTP 502 | CONTENT_INSPECTED / visual audit pending |
+| NCERT_XI_BIO_EX06_2025_26 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm306.pdf | 3 pages, text extracted; first two pages visually inspected | CONTENT_INSPECTED |
+
+The corresponding 2018 n20-host copies remain legacy sources, not the primary text for current audit. The current manual cover states ALL RIGHTS RESERVED. No redistribution of NCERT prose, figures, tables or diagrams is authorised by public access alone.
+
+The exercise content raises safety flags that must remain attached to source records: microbial/fungal culture/spore exposure (EX02); formalin-preserved animal specimens (EX03); corrosive/chromium(VI) maceration chemistry and heating (EX04); human cheek/blood sampling, lancet/needle and animal tissue handling (EX05). LabVerse learner workflows remain virtual/pre-prepared only unless a separate qualified institutional safety approval is documented.
