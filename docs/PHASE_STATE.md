@@ -864,3 +864,37 @@ A read-back validation was run on data/catalogues/ncert_physics_kit_manual_items
 - [x] Source URL is consistent across all rows: PASS
 
 Result: 9/9 data-integrity checks passed. This is a one-off catalogue data validation, not an application test suite, scientific validation or procurement acceptance test. The CSV remains source-manual evidence only.
+
+
+## Phase 1.1 update — user-uploaded NCERT MSCL and Biology-with-microscope specification copies (2026-11-01)
+
+### Newly inspected source files
+- [x] Inspected the 65-page uploaded MSCL specification copy (SHA-256 recorded in docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md); OCR recovered 55 index rows, of which 1 is a document-credit row and 54 are kit/manual index entries.
+- [x] Inspected the 199-page uploaded Biology-with-microscope specification copy (SHA-256 recorded in the upload audit); index reconciled to 177 rows: 83 initial manual/equipment rows, 50 visual cards, 7 embedded specimens, 35 permanent slides, 1 student laboratory microscope and 1 document-credit row.
+- [x] OCR-extracted source specifications for the 54 MSCL kit/manual rows and the first 83 Biology index rows; visually checked representative pages and the separate Student Laboratory Microscope item.
+- [x] Added machine-readable item catalogues for both uploaded documents.
+- [x] Preserved OCR-only/index-only status separately from visual sample checks; no claim that all 50 card, 7 specimen and 35 slide pages were individually transcribed.
+- [x] Flagged asbestos-centred wire gauze in both source specifications, mercury thermometer in MSCL, and sharp/heat/gas-generator workflows for safety review.
+- [x] Recorded SHA-256 and PDF file metadata; uploaded byte identity against NCERT-hosted URLs is not yet verified.
+
+### New repository files
+- docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md
+- docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md
+- data/catalogues/ncert_mscl_spec_items.csv
+- docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md
+- data/catalogues/ncert_biology_with_microscope_spec_items.csv
+
+### Remaining Phase 1.1 work
+- [ ] Authenticate the uploaded copies against NCERT-hosted originals using exact-byte hashes or authoritative file metadata.
+- [ ] Obtain the Biology-without-microscope specification and compare it against the with-microscope variant; do not infer differences from the variant name.
+- [ ] Obtain the Physics procurement specification attachment and reconcile the manual/GeM 105-versus-106 item-count question.
+- [ ] Individually inspect the remaining 49 visual-card pages, 6 embedded-specimen pages and 34 permanent-slide pages; row names are currently index-derived and only representative sample pages were visually checked.
+- [ ] Resolve ambiguous technical wording, including the Dissecting Microscope base/rack phrase, with a subject reviewer.
+- [ ] Complete complete source-to-RBSE-practical-to-asset-to-model-to-test traceability and expert safety/rights review.
+
+### Gate
+- Phase 1.1: IN PROGRESS.
+- Phase 1: IN PROGRESS.
+- Phase 2: BLOCKED.
+- Application code, 3D assets and scientific engines: NOT IMPLEMENTED.
+- No application/software tests were run. Catalogue OCR/structural checks are not application tests.
