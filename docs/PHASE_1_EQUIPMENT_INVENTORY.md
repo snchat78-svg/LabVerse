@@ -245,3 +245,20 @@ The following are **manual-described component/interaction candidates**, not a v
 **Optics acceptance checks still required:** test focus direction, valid magnification combinations, coarse/fine focus behaviour, slide clipping, illumination/aperture response, objective-slide collision prevention, variant-dependent condenser/100X lens presence, and clear distinction between simulated optical appearance and a physically captured microscope image.
 
 No 3D asset has been created and no microscope simulation has been implemented or tested.
+
+
+## Exercise 1 — microscope source-specific interaction constraints (2026-11-01)
+
+Official source: NCERT Class XI Biology Laboratory Manual, Exercise 1, printed pp. 5–7:
+https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The accessible Exercise 1 figure and text describe candidate components: eyepiece, body tube, nosepiece/objectives, coarse/fine adjustment, stage and slide clips, stage aperture, iris diaphragm/condenser, mirror, vertical arm, inclination joint and basal foot. The source describes condenser absence on some microscopes, 5X/10X/15X eyepieces, 10X and 40X/45X objectives, and an optional third 100X oil-immersion objective on some microscopes.
+
+New model constraints:
+- Microscope asset variants must allow optional condenser and optional 100X objective; do not force both into every asset.
+- At higher magnification, expose fine focus as the valid focus action; do not permit arbitrary coarse-focus jumps if the virtual model is intended to follow the cited exercise.
+- Prevent objective-slide collision in the virtual interaction and present a diagnostic rather than silently passing through the slide.
+- Do not expose a "focus direct sunlight into the tube" action. Keep illumination simulated and bounded.
+- The exercise gives no numerical instrument dimensions, tolerances, resolution or calibration standard; none is added here.
+
+Acceptance design remains DESIGN_ONLY. No microscope mesh, optical simulation or tests exist yet.
