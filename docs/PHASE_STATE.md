@@ -814,3 +814,12 @@ New document: docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md
 - [ ] Authenticate corresponding GeM attachment copies with byte size/hash/PDF metadata before treating them as equivalent to NCERT attachments.
 
 The exact links and retrieval outcomes are in docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md and docs/PHASE_1_NCERT_SPECIFICATION_ACCESS_AUDIT.md. This update does not change the phase gate: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+### Phase 1.1 — repeated tender attachment locators found (2026-11-01)
+- [x] Find a second GeM tender record that repeats the same Physics, Micro Scale Chemistry and Biology-without-microscope attachment filenames and displayed file sizes.
+- [x] Record both tender IDs, dates, locations and attachment sizes in the Phase 1.1 audit and scientific source registry.
+- [ ] Retrieve the actual attachment payloads and verify SHA-256/PDF metadata; repeated filename/size metadata does not establish byte identity or NCERT origin.
+- [ ] Obtain a Biology-with-microscope specification attachment from a separate verified source.
+
+The new tender records improve source discovery but do not change verification status: procurement attachment payloads remain NOT_INSPECTED; Phase 1.1 and Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
