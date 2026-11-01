@@ -312,3 +312,16 @@ The PDF files are hosted by NCERT, but their precise edition/revision date was n
 - Status: SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED.
 - Supporting references and display/record schema: docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
 - Acceptance: source literal retained; scientific interpretation separately sourced; taxonomy framework named/versioned; expert approval before VERIFIED_FOR_USE.
+
+
+## NCERT Class XII Biology Exercises 8–25 — source and RBSE mapping extension (2026-11-01)
+
+Detailed exercise-body evidence, source URLs, class-specific IDs and safety limits are recorded in docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md.
+
+Current body inspections:
+- EX08 blastula; EX09 segregation-bead model; EX10 independent-assortment bead model.
+- EX12 controlled pollination; EX13 acetocarmine staining; EX14 pathogen identification.
+- EX15 soil texture; EX16 water-holding capacity.
+- EX21 aquatic organisms; EX22 SPM; EX23 density; EX24 frequency; EX25 homology/analogy.
+
+EX17–20 and EX07/11 remain incomplete at body level. RBSE Class XII relationships are mapped in a separate table in the new audit, preserving board's Botany/Zoology major/minor/spotting categories. Each mapping remains DESIGN_ONLY; no app rule/assets/tests have been implemented.
