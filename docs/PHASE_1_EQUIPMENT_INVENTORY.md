@@ -282,3 +282,42 @@ The NCERT contents index provides exercise titles/page starts, but the body page
 **Do not infer:** onion-root-tip material, tissue type, organism species, stains, concentrations, apparatus quantities or timings. In particular, a Class XII onion-root-tip mitosis resource must not be silently substituted for the Class XI Exercise 6 protocol.
 
 No apparatus record in this table is a verified procurement requirement. Each family remains DESIGN_ONLY pending official body-page extraction and Biology-teacher review.
+
+
+## NCERT Biology Exercises 2–6 — body-level asset inventory extension (2026-11-01)
+
+Evidence and confidence details: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md. Current manual contents are 2025–26; body-level detail comes from NCERT legacy chapter-wise PDFs stamped 23-04-2018. Candidate IDs remain DESIGN_ONLY pending current-edition body matching, taxonomy review and expert/safety approval.
+
+### Exercise 2 — microbial and plant-group morphology
+- BIO-SLIDE-BACTERIA-REP, BIO-SLIDE-OSCILLATORIA, BIO-SLIDE-SPIROGYRA, BIO-SLIDE-RHIZOPUS and BIO-SLIDE-YEAST.
+- BIO-SPECIMEN-AGARICUS, BIO-SPECIMEN-LICHEN-FORMS, BIO-SPECIMEN-MARCHANTIA, BIO-SPECIMEN-FUNARIA, BIO-SPECIMEN-DRYOPTERIS, BIO-SPECIMEN-PINUS.
+- BIO-SPECIMEN-ANGIOSPERM-MONOCOT and BIO-SPECIMEN-ANGIOSPERM-DICOT.
+- Use prepared/virtual slides only; no culturing fungi/bacteria or spore-handling.
+
+### Exercise 3 — animal external morphology
+- BIO-ANIMAL-AMOEBA, BIO-ANIMAL-HYDRA, BIO-ANIMAL-FASCIOLA, BIO-ANIMAL-ASCARIS.
+- BIO-ANIMAL-PHERETIMA, BIO-ANIMAL-HIRUDINARIA, BIO-ANIMAL-PALAEMON, BIO-ANIMAL-INSECT-EXAMPLES.
+- BIO-ANIMAL-PILA, BIO-ANIMAL-ASTERIAS, BIO-ANIMAL-SCOLOIDON, BIO-ANIMAL-ROHU.
+- BIO-ANIMAL-FROG, BIO-ANIMAL-CALOTES, BIO-ANIMAL-COLUMBA, BIO-ANIMAL-ORYCTOLAGUS.
+- Use virtual/approved representations only; no animal collection or formalin handling.
+
+### Exercise 4 — plant tissue/section assets
+- BIO-SLIDE-TS-NERIUM-LEAF, BIO-SLIDE-TS-LOTUS-LEAF, BIO-SLIDE-TS-LOTUS-PETIOLE.
+- BIO-SLIDE-VS-SHOOT-APEX, BIO-SLIDE-VS-ROOT-APEX, BIO-SLIDE-TS-CUCURBITA-MENTHA-STEM.
+- BIO-SPECIMEN-MACERATED-PLANT-CELLS.
+- BIO-TISSUE-PARENCHYMA, BIO-TISSUE-COLLENCHYMA, BIO-TISSUE-SCLERENCHYMA, BIO-TISSUE-XYLEM-PHLOEM, BIO-TISSUE-PALISADE-SPONGY, BIO-TISSUE-AERENCHYMA.
+- Maceration chemistry in the legacy procedure is high hazard (corrosive acid/chromium(VI)); no real preparation ratios or heating instructions in the learner UI. Prepared slide or virtual tissue only.
+
+### Exercise 5 — animal tissue slides (partial source retrieval)
+- BIO-SLIDE-CHEEK-EPITHELIUM, BIO-SLIDE-BLOOD-CELL-MIX.
+- BIO-SLIDE-MUSCLE-STRIATED, BIO-SLIDE-MUSCLE-SMOOTH, BIO-SLIDE-MUSCLE-CARDIAC.
+- BIO-SLIDE-KIT-CONSUMABLES.
+- Source retrieval is partial. Use synthetic/pre-prepared specimens; no student cheek scraping, finger-prick, lancet/needle or real blood smear.
+
+### Exercise 6 — mitosis
+- BIO-SLIDE-MITOSIS-PERMANENT.
+- BIO-CELL-STAGE-INTERPHASE, BIO-CELL-STAGE-PROPHASE, BIO-CELL-STAGE-METAPHASE, BIO-CELL-STAGE-ANAPHASE, BIO-CELL-STAGE-TELOPHASE.
+- BIO-CYTOKINESIS-PLANT, BIO-CYTOKINESIS-ANIMAL.
+- Permanent-slide observation is source-supported; do not substitute an onion-root-tip preparation from a Class XII resource.
+
+These are candidate IDs and design requirements, not a verified procurement list or built assets.
