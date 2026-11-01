@@ -367,3 +367,23 @@ URLs:
 - https://tenderkart.in/tender/04da282b-7f7e-4a80-978c-6afc1dd7af28
 
 This is procurement discovery metadata, not proof that the PDF bytes are official NCERT files. Before using the content, obtain the actual files, calculate SHA-256, inspect PDF metadata/revision and compare the attachment contents to the official NCERT link targets. Biology with microscope is not present in these two records.
+
+
+## User-supplied NCERT kit specification copies — OCR inspected (2026-11-01)
+
+| Source ID | Uploaded file | Source content inspected | Verification state / limitation |
+|---|---|---|---|
+| NCERT_MSCL_SPEC_UPLOAD_2026_11_01 | MSCL_copy.pdf | NCERT-branded Micro Scale Chemistry Laboratory Kit Grades 11 & 12 specification; 65 scanned pages; 55 index rows incl. one documentation credit; OCR item specifications for rows 1–54 | USER_UPLOADED_COPY / OCR_INSPECTED; SHA-256 recorded; exact identity to official NCERT-hosted attachment not yet matched |
+| NCERT_BIO_WITH_MICROSCOPE_SPEC_UPLOAD_2026_11_01 | SSBK_with_Microscope_copy.pdf | NCERT-branded Secondary Stage Biology Laboratory Kit (with microscope), Grades 11 & 12; 199 scanned pages; 177 index rows incl. one documentation credit; OCR detailed text rows 1–83 and sample visual inspection of card/specimen/slide/microscope pages | USER_UPLOADED_COPY / PARTIAL_PAGE_AUDIT; SHA-256 recorded; remaining 49 visual cards, 6 embedded specimens and 34 slides require individual-page review; exact identity to official NCERT-hosted attachment not yet matched |
+
+Audit and registers:
+- docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md
+- docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md
+- data/catalogues/ncert_mscl_spec_items.csv
+- docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md
+- data/catalogues/ncert_biology_with_microscope_spec_items.csv
+
+Important source facts:
+- Both MSCL and Biology-with-microscope wire-gauze rows explicitly specify an asbestos centre; retain as a source hazard, not a LabVerse real-world asset.
+- MSCL includes a mercury-filled thermometer; virtual/digital sensor preferred.
+- The Biology-with-microscope index includes a student microscope as row 176 even though the index heading says “Permanent Slide”; the body text and image identify a microscope. Preserve the discrepancy.
