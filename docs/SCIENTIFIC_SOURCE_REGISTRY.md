@@ -174,3 +174,14 @@ The source-specific policies are documented, but this does not mean the services
 | NCERT Higher Secondary kit Specification Documents index | https://ncert.nic.in/division/dek/specification_documents.php?ln=en — search-indexed official page text lists separate Biology-with-microscope and Biology-without-microscope variants, Physics Laboratory Kit and Micro Scale Chemistry Laboratory Kit for Grades XI–XII, plus Molecular Model Kit | DISCOVERED | Direct page open returned HTTP 502; specification attachment payloads/URLs and detailed procurement requirements were not inspected. Do not infer item counts or dimensions from the index. |
 
 The Class XI Biology learning manual must remain a separate source pack from RBSE curriculum requirements and from the official Biology kit procurement document. The official index's two Biology kit variants mean that microscope inclusion must be represented as a kit-variant property until the actual specification attachments are inspected.
+
+
+## Official NCERT Class XI Biology manual retrieval extension (2026-11-01)
+
+- Alternate official PDF host: https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+- Source identity: Laboratory Manual: Biology, Class XI, ISBN 978-93-5007-064-2, online label 2025–26, ALL RIGHTS RESERVED.
+- Evidence from returned PDF: contents index lists 34 exercise titles with printed page starts; Introduction describes the practical-record schema; Exercise 1 body and figure (printed pp. 5–7) were text- and screenshot-inspected.
+- Retrieval limitation: available PDF representation exposed 17 parsed pages only, covering front matter, contents, Introduction and Exercise 1. Exercise body content for 2–34 was not available in the returned representation.
+- Status: CONTENT_INSPECTED (partial; Exercise 1 only); 34 exercise titles are INDEXED. Not a full 34-exercise procedure audit.
+- Reuse: ALL RIGHTS RESERVED; create original prose and 3D assets, and seek permission before reproducing manual text/illustrations.
+- Classification: this is the Class XI learning/practical manual, not the separate Higher Secondary Biology Kit manual or its procurement specification. Do not use it as proof of kit-supplied quantities.
