@@ -823,3 +823,17 @@ The exact links and retrieval outcomes are in docs/PHASE_1_1_NCERT_KIT_SPECIFICA
 - [ ] Obtain a Biology-with-microscope specification attachment from a separate verified source.
 
 The new tender records improve source discovery but do not change verification status: procurement attachment payloads remain NOT_INSPECTED; Phase 1.1 and Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+### Phase 1.1 — Physics kit manual row register added (2026-11-01)
+- [x] Extract all 106 numbered item labels from the NCERT-hosted Physics kit manual's searchable text.
+- [x] Assign stable LabVerse source-row IDs NCERT-PHY-KIT-001 to NCERT-PHY-KIT-106.
+- [x] Classify all 106 rows into provisional equipment families and preserve source spellings/ambiguous labels for review.
+- [x] Record item-specific nominal values and keep technical fields UNKNOWN where the item schedule does not establish them.
+- [ ] Reconcile all 106 manual rows against the actual Physics procurement attachment, including the separate 105-item GeM bid claim.
+- [ ] Review source label normalisation and all provisional family classifications.
+- [ ] Complete per-item RBSE practical, 3D asset, model/rule and test-vector traceability.
+
+Register: docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md
+
+This is a source-row catalogue only; it does not assert that all 106 rows are separate 3D models or that procurement specifications are complete. Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
