@@ -234,3 +234,17 @@ Direct official current-host PDF sources; PDF text carries 2025–26 markers:
 The corresponding 2018 n20-host copies remain legacy sources, not the primary text for current audit. The current manual cover states ALL RIGHTS RESERVED. No redistribution of NCERT prose, figures, tables or diagrams is authorised by public access alone.
 
 The exercise content raises safety flags that must remain attached to source records: microbial/fungal culture/spore exposure (EX02); formalin-preserved animal specimens (EX03); corrosive/chromium(VI) maceration chemistry and heating (EX04); human cheek/blood sampling, lancet/needle and animal tissue handling (EX05). LabVerse learner workflows remain virtual/pre-prepared only unless a separate qualified institutional safety approval is documented.
+
+
+## NCERT Class XII Biology Exercises 4–6 — official-host sources (2026-11-01)
+
+NCERT Laboratory Manuals index: https://ncert.nic.in/science-laboratory-manual.php
+
+| Source ID | URL | Evidence inspected | Limitation |
+|---|---|---|---|
+| NCERT_XII_BIO_EX04_EX05 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm203.pdf | Four-page chapter file; text extracted for Exercise 4 and Exercise 5 | Page-image screenshot retrieval returned HTTP 502; publication/revision date not confirmed |
+| NCERT_XII_BIO_EX06 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm204.pdf | Five-page chapter file; text extracted and selected page images inspected | Publication/revision date not confirmed from accessible pages |
+
+The NCERT manual index groups Class XII Biology resources by Exercise 4 & 5 and Exercise 6. The NCERT-CIET Grade 12 index separately lists Exercise 4 gametogenesis, Exercise 5 female gametophyte development and Exercise 7 stages of meiosis. Use the actual manual exercise labels and preserve CIET metadata as a separate layer.
+
+Exercise 6 includes root-tip preparation reagents/heat; store a hazard record and keep it virtual/pre-prepared only. Do not turn the source method into real chemical instructions.
