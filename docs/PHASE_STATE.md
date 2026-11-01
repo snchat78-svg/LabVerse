@@ -339,3 +339,38 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 - Complete expert review and scientific source rights/attribution checks.
 
 Phase 1: IN PROGRESS. Phase 2: BLOCKED.
+
+
+## Phase 1 update — official NCERT specification index and Class XI Biology manual audit (2026-11-01)
+
+### Newly completed source work
+- [x] Rechecked the official NCERT Grade XI–XII kit specification index using its indexed official page content.
+- [x] Recorded separate official Biology kit variants: with microscope and without microscope.
+- [x] Recorded official Physics Laboratory Kit and Micro Scale Chemistry Laboratory Kit Grade XI–XII specification families.
+- [x] Opened the separate NCERT Class XI Biology Laboratory Manual PDF and inspected its front matter, contents list (34 exercises), Introduction and Exercise 1 microscope text in the parsed text layer.
+- [x] Added source-derived microscope component, magnification and interaction candidates to the equipment inventory, while distinguishing learning-manual recommendations from items actually supplied in a kit.
+- [x] Added the 34-exercise NCERT Class XI Biology manual index to the coverage backlog as INDEXED ONLY.
+
+### Retrieval limitations
+- Direct opens of the NCERT kit specification and manual index pages returned HTTP 502 in the current retrieval route. Search-indexed official page text exposed the specification family names; detailed attachment payloads/URLs were not inspected.
+- NCERT Class XI Biology manual text was extractable, but PDF screenshot/page-image retrieval for relevant pages returned HTTP 502. No visual figure audit is claimed.
+- The Class XI Biology Laboratory Manual is not the Higher Secondary Biology Kit manual (catalogue code 13163). The latter's detailed item list and the two kit-variant specifications remain unverified.
+
+### Files added/updated in this work
+- docs/PHASE_1_NCERT_SPECIFICATION_ACCESS_AUDIT.md
+- docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md
+- docs/PHASE_1_EQUIPMENT_INVENTORY.md
+- docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md
+- docs/SCIENTIFIC_SOURCE_REGISTRY.md
+- docs/PHASE_STATE.md
+- README.md
+
+### Gate status
+- NCERT kit specification families: DISCOVERED; detailed specifications NOT_INSPECTED.
+- NCERT Class XI Biology manual: CONTENT_INSPECTED at front matter/contents/Introduction/Exercise 1 only.
+- Higher Secondary Biology kit manual and item-level kit quantities: NOT_VERIFIED.
+- 34-exercise NCERT XI Biology contents coverage: INDEXED ONLY; 33 exercise procedures remain unaudited.
+- Application code, 3D assets, simulation engines and API connectors: NOT_IMPLEMENTED.
+- Software tests: NOT_RUN; no test passes are claimed.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
