@@ -123,3 +123,6 @@ Current gate: Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. The Physics 
 - [NCERT Physics manual 106-row item register](docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md)
 
 The register assigns LabVerse source-row IDs and provisional equipment families to the NCERT manual's 106 numbered item rows. Procurement quantities, tolerances and acceptance specifications remain open unless explicitly evidenced.
+
+
+- [Machine-readable NCERT Physics kit item catalogue (CSV, 106 rows)](data/catalogues/ncert_physics_kit_manual_items.csv)
