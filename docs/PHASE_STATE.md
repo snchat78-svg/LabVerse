@@ -702,3 +702,16 @@ Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. Do not treat the new task 
 - The current official kit-specification attachments for Biology with microscope / without microscope remain uninspected. Physics and Chemistry kit specification attachments also remain open.
 
 Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+## Phase 1 update — official NCERT School Kits brochure inspected (2026-11-01)
+
+### New evidence
+- [x] Retrieved and inspected NCERT's official *NCERT School Kits* brochure, including text and printed page 8 image.
+- [x] Confirmed the NCERT Higher Secondary Biology Lab Kit (HSBLK) is intended for Biology experiments in Classes XI/XII and that the brochure names broad categories: laboratory instruments, glassware, compound microscope, permanent slides, stains and cards.
+- [x] Reconciled the brochure with the official kit specification index: separate with-microscope / without-microscope variants remain distinct; microscope inclusion is variant-dependent.
+- [x] Recorded that the brochure is not an item-level bill of materials and does not establish exact quantity, material, dimension, tolerances, acceptance tests or the variant-specific contents.
+- [x] Added `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md` and cross-linked inventory, specification access audit and source registry.
+
+### Gate decision
+This closes only a high-level Biology kit source-evidence gap. It does not close the missing manual/specification attachment blocker. The brochure's retrieved text has no clear publication/reprint date. The existing secondary transcription remains discovery evidence, not primary-source verification.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No software or scientific-engine tests were run.
