@@ -212,3 +212,30 @@ The same manual describes a student dissection box with two pairs of scissors, t
 - Screenshot/page-image retrieval attempts for PDF pages 5–6 returned HTTP 502; no visual audit of the manual's figures is claimed.
 - The PDF states ALL RIGHTS RESERVED. This manual may be cited as a source, but its diagrams, illustrations, tables and prose must not be copied into LabVerse without permission.
 - The detailed 141-page secondary-hosted Biology kit transcription remains DISCOVERY ONLY. Its counts and reagents are still not primary-verified.
+
+
+## Retrieval route and exercise-level audit update (2026-11-01)
+
+### Alternate official host found
+The NCERT Class XI Biology Laboratory Manual is also indexed at:
+https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The returned document exposes the same manual identity (ISBN 978-93-5007-064-2; online label 2025–26; first edition June 2010; reprints through July 2023; ALL RIGHTS RESERVED). The available PDF extraction returned 17 parsed pages: front matter, contents, Introduction and Exercise 1 through its questions. Its contents page lists the 34 exercises through printed page 129, but body text for Exercises 2–34 was not present in the retrieved representation. This is a retrieval limitation, not evidence those exercises are absent from the physical publication.
+
+### Exercise 1 — visual and text audit extended
+The accessible printed pages 5–7 were visually inspected as well as text-parsed. The figure labels the eyepiece, body tube, objective lens, nosepiece, stage, slide clip, hole, iris diaphragm/condenser, mirror, arm, inclination joint, basal foot and coarse/fine adjustment knobs.
+
+Exercise 1's source-listed requirements are compound microscope, silk cloth, lens-cleaning fluid and lens-cleaning paper. The procedure includes cleaning the body/lenses, identifying and drawing parts, placing and clipping a permanent or temporary slide, tilting the arm, and observing coarse/fine focus controls.
+
+The text gives eyepiece options 5X/10X/15X; objectives 10X and 40X or 45X; some microscopes may have a 100X oil-immersion lens. It states that some microscopes do not have a condenser. It recommends coarse focus at lower magnification and fine focus only at higher magnification, and warns against objective-slide contact. A question specifically asks about direct sunlight focused through the mirror; LabVerse must not offer unsafe direct-sun focusing as a learner operation.
+
+No microscope dimensions, physical tolerance, optical resolving power or universally required objective set are specified by this exercise.
+
+### NCERT's practical-record structure captured
+The manual's Introduction describes: Aim, Principle, Material Required, Procedure, Observation and Result, Discussion, and Precautions. Material details include sample identity, apparatus, glassware type/quantity, reagent/solution concentration/specification and preparation method. It refers to tables, graphs/histograms and units for recording data. This structure is now the extraction template in the coverage matrix; it is not copied lesson content.
+
+### Next batch status
+- Exercise 1: PARTIAL BODY AUDIT + VISUAL PAGE CHECK.
+- Exercises 2–34: CONTENTS TITLE/PAGE START ONLY.
+- Detailed kit procurement specification and the separate Higher Secondary Biology Kit manual: still not retrieved.
+- Full manual procedure extraction is not claimed complete.
