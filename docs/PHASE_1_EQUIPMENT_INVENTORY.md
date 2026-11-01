@@ -306,13 +306,13 @@ Evidence and confidence details: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DET
 - BIO-SLIDE-VS-SHOOT-APEX, BIO-SLIDE-VS-ROOT-APEX, BIO-SLIDE-TS-CUCURBITA-MENTHA-STEM.
 - BIO-SPECIMEN-MACERATED-PLANT-CELLS.
 - BIO-TISSUE-PARENCHYMA, BIO-TISSUE-COLLENCHYMA, BIO-TISSUE-SCLERENCHYMA, BIO-TISSUE-XYLEM-PHLOEM, BIO-TISSUE-PALISADE-SPONGY, BIO-TISSUE-AERENCHYMA.
-- Maceration chemistry in the legacy procedure is high hazard (corrosive acid/chromium(VI)); no real preparation ratios or heating instructions in the learner UI. Prepared slide or virtual tissue only.
+- Maceration chemistry in the current 2025–26 exercise is high hazard (corrosive acid/chromium(VI)); no real preparation ratios or heating instructions in the learner UI. Prepared slide or virtual tissue only.
 
-### Exercise 5 — animal tissue slides (partial source retrieval)
+### Exercise 5 — animal tissue slides (full current 2025–26 text extraction)
 - BIO-SLIDE-CHEEK-EPITHELIUM, BIO-SLIDE-BLOOD-CELL-MIX.
 - BIO-SLIDE-MUSCLE-STRIATED, BIO-SLIDE-MUSCLE-SMOOTH, BIO-SLIDE-MUSCLE-CARDIAC.
 - BIO-SLIDE-KIT-CONSUMABLES.
-- Source retrieval is partial. Use synthetic/pre-prepared specimens; no student cheek scraping, finger-prick, lancet/needle or real blood smear.
+- Full current 2025–26 text extraction covers epithelial/cheek-cell, blood/connective and striated/smooth/cardiac muscle content. Use synthetic/pre-prepared specimens only; no student cheek scraping, finger-prick, lancet/needle, real blood smear or animal dissection. Screenshot retrieval remains blocked.
 
 ### Exercise 6 — mitosis
 - BIO-SLIDE-MITOSIS-PERMANENT.
