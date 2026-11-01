@@ -217,3 +217,31 @@ These IDs are proposed domain identifiers, not implemented objects. The quantiti
 - Quadrat and ecological analysis must preserve sample coordinates/area, replicate count, dataset provenance and uncertainty.
 - The NCERT kit is a reference inventory, not a mandate to copy kit imagery or reproduce copyrighted manual pages. Create original meshes, slide art and lesson text or obtain permission.
 
+
+## Official NCERT Class XI Biology manual — evidence-based asset detail (2026-11-01)
+
+Source: NCERT, *Laboratory Manual: Biology, Class XI*, online label 2025–26, Exercise 1 and Introduction:
+https://www.ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The following are **manual-described component/interaction candidates**, not a verified NCERT kit bill of materials:
+
+| Stable candidate IDs | Evidence-based component/behaviour | LabVerse interaction/specification note | Verification |
+|---|---|---|---|
+| BIO-OPTIC-COMPOUND-MICROSCOPE | Monocular compound microscope; body tube, revolving nosepiece, stage, base/foot, arm and inclination joint | Tilt arm where supported; select eyepiece/objective; inspect named components; model the specific asset variant, not an assumed universal build | DESIGN_ONLY |
+| BIO-OPTIC-EYEPIECE-* | Manual describes 5X, 10X and 15X eyepiece options | Lens magnification is discrete metadata; total magnification calculated as ocular × objective | DESIGN_ONLY |
+| BIO-OPTIC-OBJECTIVE-* | Manual describes 10X, 40X or 45X objectives; some microscopes may add a 100X oil-immersion objective | Revolving nosepiece selection; 100X oil immersion is optional/variant-specific and must not be enabled without a supported slide/procedure model | DESIGN_ONLY |
+| BIO-OPTIC-STAGE-FOCUS-* | Stage with slide clips, coarse/fine focus, iris diaphragm and condenser; some microscopes may omit condenser | Move slide, lock clips, adjust illumination/aperture, use coarse focus at low power and fine focus at high power; no unsupported mechanical precision claim | DESIGN_ONLY |
+| BIO-OPTIC-ILLUMINATION-* | Adjustable mirror below condenser described for illumination | Illumination/aperture state changes visibility; avoid direct-sunlight focusing behaviour in learner actions | DESIGN_ONLY |
+| BIO-OPTIC-CLEANING-* | Silk cloth, lens-cleaning fluid and lens-cleaning paper named for Exercise 1 | Cleaning interaction can alter a simulated “lens clean/dirty” state; do not model chemical handling beyond approved bounded virtual behaviour | DESIGN_ONLY |
+| BIO-DISSECT-SCISSORS-* | Student dissection-box recommendation: two pairs (fine-tip/small and larger) | Sharp-tool handling is supervised/virtual-only; not a general free-form cutting capability | DESIGN_ONLY |
+| BIO-DISSECT-SCALPELS-* | Student dissection-box recommendation: one small and one medium scalpel | Hazard-tagged, virtual-only, teacher-supervised workflows | DESIGN_ONLY |
+| BIO-DISSECT-FORCEPS-* | Student dissection-box recommendation: two forceps, one fine sharp-tip and one medium blunt-tip | Tool geometry/interaction should match reviewed specimen protocols | DESIGN_ONLY |
+| BIO-DISSECT-NEEDLES-* | Student dissection-box recommendation: two dissecting needles | Hazard-tagged, virtual-only, no unconstrained live-tissue action | DESIGN_ONLY |
+| BIO-DISSECT-HANDLENS / BIO-DISSECT-DROPPER / BIO-DISSECT-BRUSH | Hand lens, dropper and fine brush listed in the dissection-box recommendation | Use only in named reviewed activity workflows | DESIGN_ONLY |
+| BIO-SAFETY-APPAREL-* | Laboratory coat/apron and hand towel listed as student preparation | Represent as readiness/safety checklist state, not as kit-supplied inventory | DESIGN_ONLY |
+
+**Supply boundary:** the manual's Introduction describes student preparation and laboratory equipment; it does not establish that these items are supplied with NCERT's Higher Secondary Biology kit. Kit-supplied, institution-supplied and learner-prepared items must remain separate inventory fields.
+
+**Optics acceptance checks still required:** test focus direction, valid magnification combinations, coarse/fine focus behaviour, slide clipping, illumination/aperture response, objective-slide collision prevention, variant-dependent condenser/100X lens presence, and clear distinction between simulated optical appearance and a physically captured microscope image.
+
+No 3D asset has been created and no microscope simulation has been implemented or tested.
