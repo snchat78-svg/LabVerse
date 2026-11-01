@@ -574,3 +574,32 @@ Continue source-claim sampling across other NCERT/RBSE practical chapters; ident
 
 New document: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md
 Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — Class XII Biology Exercises 11 and 17–20 + Project Work (2026-11-01)
+
+### Newly inspected
+- [x] Exercise 11 pedigree chart preparation/analysis (lelm208.pdf, six pages, 21/04/2018 stamp).
+- [x] Exercise 17 plant ecological adaptations in xeric/hydric conditions (lelm212.pdf).
+- [x] Exercise 18 animal ecological adaptations in xeric/hydric conditions (lelm212.pdf).
+- [x] Exercise 19 water/soil pH via indicator, electrometric and colorimetric methods (lelm212.pdf).
+- [x] Exercise 20 water turbidity via Secchi-disc and settling-cylinder methods (lelm212.pdf).
+- [x] Investigatory Project Work guidance and report format (lelm216.pdf).
+- [x] Preserved CIET Exercise 1 / manual Exercise 11 pedigree mismatch.
+
+### Science, privacy and safety review
+- [x] Added an independent review of tongue rolling, widow's peak, cheek dimples, earlobe attachment and ear/pinna hypertrichosis; do not treat them as universal simple Mendelian examples without evidence.
+- [x] Synthetic pedigree datasets are the default; no identifiable family/health/genetic information collection in the student app.
+- [x] Added Research Studio source-derived record contract: question/hypothesis, variables/controls, raw results, replicates, error log, analysis, discussion, conclusion and references.
+- [x] Added safe boundaries for water/plankton sampling, field observations, industry/pollution study and chemicals/mitotic-index projects.
+
+### Edition and retrieval limits
+- Legacy NCERT n20-host files show 21/04/2018 stamps. Current-edition body match is NOT_CONFIRMED.
+- Exercise 7 meiosis file lelm205.pdf remains inaccessible on tested route; CIET link does not replace body audit.
+- Teacher review remains required; all assets are DESIGN_ONLY. No code or software tests.
+
+New documents:
+- docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md
+- docs/PHASE_1_SCIENCE_CLAIM_REVIEW_XII_BIO_EX11.md
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
