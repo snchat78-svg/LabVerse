@@ -335,3 +335,14 @@ Corrections and exact boundaries:
 - EX06: current manual confirms permanent slides, compound microscope, initial 10X and higher 40X observation, mitotic stages and plant/animal cytokinesis. Candidate 3D model must not pretend the student is preparing an onion-root-tip slide.
 
 These remain candidate asset families and interaction requirements, not built or scientifically signed-off assets.
+
+
+## Class XII Biology Exercises 4–6 — candidate equipment/asset extension (2026-11-01)
+
+See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md. Source files are official NCERT-hosted chapter PDFs; revision date is not confirmed in the extracted pages.
+
+- EX04: BIO-XII-SLIDE-TESTIS-TS, BIO-XII-SLIDE-OVARY-TS, BIO-XII-GAMETOGENESIS-SPERMATOGENESIS-STAGES, BIO-XII-GAMETOGENESIS-OOGENESIS-STAGES. Use pre-prepared/virtual histology only; no real tissue collection/dissection.
+- EX05: BIO-XII-SLIDE-OVULE-VS, BIO-XII-FEMALE-GAMETOPHYTE-STAGE-*, BIO-XII-OVULE-STRUCTURE-MODEL. Visualise ovule anatomy and embryo-sac developmental stages from a cited species/source.
+- EX06: BIO-XII-SPECIMEN-ONION-ROOT-TIP-VIRTUAL, BIO-XII-SLIDE-ONION-ROOT-MITOSIS, BIO-XII-CELL-STAGE-*, BIO-XII-MITOTIC-INDEX-COUNTER. Use pre-prepared/synthetic virtual slide and a modelled timeline. The source requires acid, solvent/fixative, stain and heating for physical preparation; never expose that as a home workflow.
+
+These are Class XII domain IDs, separate from the corresponding Class XI exercise IDs. All remain DESIGN_ONLY.
