@@ -419,3 +419,33 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D as
 - [ ] Map verified materials, safety, observations and candidate asset requirements into the coverage matrix.
 
 This is an index-level traceability update only. No practical procedure, apparatus, reagent, or result was verified from the 25 CIET labels. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — NCERT Class XI Biology Exercises 2–6 crosswalk (2026-11-01)
+
+### Newly completed source reconciliation
+- [x] Compared the NCERT Class XI manual contents titles/page starts for Exercises 2–6 with the current NCERT-CIET Grade 11 Biology index.
+- [x] Captured the DIKSHA content IDs for the CIET morphology, external-animal-features and mitosis entries.
+- [x] Cross-checked the external-animal-features resource against row 212 in the SCERT Delhi circular annexure dated 13 May 2025.
+- [x] Identified a specific metadata mismatch: the NCERT manual contents list mitosis as Exercise 6 (p.39), while the CIET index labels its mitosis resource as Exercise 1.
+- [x] Recorded that Exercises 4 and 5 are not surfaced in the inspected CIET Grade 11 Biology table or SCERT selected-resource rows; this is not proof of global DIKSHA unavailability.
+- [x] Added title-level placeholder asset families for Exercises 2–6 without inventing specimen lists, materials, reagents or quantities.
+
+### New document
+- docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md
+
+### Evidence boundary
+- Exercise title/page start: SOURCE INDEX VERIFIED.
+- DIKSHA content body and per-item licence: NOT INSPECTED; viewer/API route did not expose extractable item body in this audit.
+- Full manual body procedures for Exercises 2–6: NOT INSPECTED in the accessible official PDF representation.
+- Candidate asset families: TITLE-LEVEL / DESIGN_ONLY.
+- No Exercise 2–6 content is promoted to VERIFIED_FOR_USE.
+
+### Remaining
+- Obtain complete official manual pages 8–41.
+- Inspect each exercise's procedure, apparatus, samples, observations, precautions and figures.
+- Retrieve DIKSHA metadata and per-resource licence for the three content IDs.
+- Resolve the Exercise 6 vs CIET Exercise 1 index mismatch at record level.
+- Obtain Biology-teacher review.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D assets or simulation engines were implemented; no software tests are claimed.
