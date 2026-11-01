@@ -684,3 +684,21 @@ Documentation consistency checks: **5/5 passed** (required Phase 1/Phase 2 state
 - Subject-expert review, record-level dataset licence/attribution checks, scientific model validation and safety review remain open.
 
 Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. Do not treat the new task register as a Phase 1 sign-off.
+
+
+## Phase 1 update — NCERT Biology kit full secondary-transcript recovery (2026-11-01)
+
+### Newly inspected
+- [x] Opened and inspected the 141-page secondary-hosted transcription of the NCERT Manual of Secondary Stage Biology Laboratory Kit for Grades XI/XII.
+- [x] Captured its title/ISBN/edition/reprint metadata as shown in the transcription and matched the title to the official NCERT listing/catalogue.
+- [x] Read the contents index showing kit-manual exercise namespace XI 1–34 and XII 35–60; documented that these IDs must not be conflated with later NCERT Lab Manual / CIET / RBSE IDs.
+- [x] Reconciled the provisional item-count summary: 84 numbered equipment entries, 7 acrylic specimens, 35 permanent-slide entries, 50 visual aids and 58 school-managed reagents/stains.
+- [x] Confirmed from the transcription that reagent entries are not supplied with the kit and the blade entry is school-managed/not supplied.
+- [x] Updated `docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md`, `docs/PHASE_1_EQUIPMENT_INVENTORY.md` and `docs/SCIENTIFIC_SOURCE_REGISTRY.md`.
+
+### Primary-evidence boundary
+- The transcription is hosted on Scribd, not directly on NCERT. The title/ISBN matches NCERT catalogue/manual listing metadata, but its page content and counts remain SECONDARY_TRANSCRIPTION_ONLY until compared to the official full manual and the two procurement specification attachments.
+- No manual figures/artwork have been copied. The manual front matter states ALL RIGHTS RESERVED and says the manual is distributed only with the kit.
+- The current official kit-specification attachments for Biology with microscope / without microscope remain uninspected. Physics and Chemistry kit specification attachments also remain open.
+
+Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
