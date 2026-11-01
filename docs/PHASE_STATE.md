@@ -837,3 +837,13 @@ The new tender records improve source discovery but do not change verification s
 Register: docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md
 
 This is a source-row catalogue only; it does not assert that all 106 rows are separate 3D models or that procurement specifications are complete. Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+### Phase 1.1 — machine-readable Physics item catalogue (2026-11-01)
+- [x] Export the 106 source rows to data/catalogues/ncert_physics_kit_manual_items.csv.
+- [x] Include 11 explicit columns separating source identity/text evidence from procurement, asset, scientific-model and test-vector status.
+- [x] Link the CSV from README and the Physics manual item register.
+- [ ] Add automated schema/uniqueness validation for the CSV and stable source-row IDs.
+- [ ] Reconcile the CSV against the actual NCERT procurement specification attachment when retrieved.
+
+CSV: data/catalogues/ncert_physics_kit_manual_items.csv. The 106 data rows are still a source-manual register; no row is marked procurement-verified, asset-built, model-validated or test-passed.
