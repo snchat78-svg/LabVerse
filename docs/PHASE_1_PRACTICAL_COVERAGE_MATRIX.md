@@ -290,3 +290,16 @@ Current NCERT-hosted 2025–26 PDFs have now been text-extracted for all five ex
 | EX-06 | Full 3-page text | BIO-SLIDE-MITOSIS-PERMANENT, BIO-CELL-STAGE-*, BIO-CYTOKINESIS-* | 10X/40X observation model; no onion-root-tip protocol inferred |
 
 All records remain DESIGN_ONLY. Current-edition source text inspection is not expert validation, simulation implementation or software testing. See the detailed audit document for evidence limits and the visual screenshot status.
+
+
+## NCERT Class XII Biology Exercises 4–6 — source-mapped candidate records (2026-11-01)
+
+Detailed source notes: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md.
+
+| Source ID | NCERT manual exercise | Official-host PDF | Candidate asset/model families | Evidence state |
+|---|---|---|---|---|
+| NCERT-XII-BIO-EX-04 | Gametogenesis in mammalian testis and ovary | lelm203.pdf, page text extracted | BIO-XII-SLIDE-TESTIS-TS; BIO-XII-SLIDE-OVARY-TS; BIO-XII-GAMETOGENESIS-* | BODY TEXT INSPECTED / DESIGN_ONLY |
+| NCERT-XII-BIO-EX-05 | Female gametophyte development | lelm203.pdf, page text extracted | BIO-XII-SLIDE-OVULE-VS; BIO-XII-FEMALE-GAMETOPHYTE-* | BODY TEXT INSPECTED / DESIGN_ONLY |
+| NCERT-XII-BIO-EX-06 | Onion root-tip mitosis | lelm204.pdf, page text + selected visuals inspected | BIO-XII-SLIDE-ONION-ROOT-MITOSIS; BIO-XII-CELL-STAGE-*; BIO-XII-MITOTIC-INDEX-COUNTER | BODY TEXT + SELECTED VISUALS / DESIGN_ONLY |
+
+The PDF files are hosted by NCERT, but their precise edition/revision date was not confirmed from the accessible chapter pages. Do not label them 2025–26 verified. Keep the Class XII onion-root-tip activity distinct from Class XI Exercise 6 permanent-slide observation.
