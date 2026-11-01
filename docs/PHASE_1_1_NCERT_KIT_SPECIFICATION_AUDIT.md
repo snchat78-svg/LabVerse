@@ -209,3 +209,18 @@ Two scanned copies were uploaded in chat and inspected directly:
 Cross-document summary and file SHA-256 metadata: docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md.
 
 The uploaded contents materially close item-level inspection for these two copies. They are recorded as uploaded NCERT-branded specification copies; the SHA-256 values have not been compared against NCERT-hosted downloads, so byte-level official-source authentication remains OPEN. The Biology-without-microscope and Physics procurement specification attachments remain outstanding. The phase gate is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## 14. Uploaded NCERT MSCL and Biology-with-microscope specifications
+
+Two scanned PDF copies supplied by the user have now been analysed:
+
+- MSCL, 65 pages: docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md and data/catalogues/ncert_mscl_spec_items.csv.
+- Biology with microscope, 199 pages: docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md and data/catalogues/ncert_biology_with_microscope_spec_items.csv.
+- Cross-file report and upload hashes: docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md.
+
+Both PDF text layers were empty; OCR and selected page-image checks were used. The uploaded files are NCERT-branded specification copies, but their SHA-256 values have not been compared with files downloaded from the official NCERT attachment URLs. Record them as USER_UPLOADED_COPY / OCR_INSPECTED, not source-authenticated.
+
+The MSCL index contains 54 kit/manual entries plus one document-credit row. The Biology index contains 83 first-section entries, 50 visual cards, 7 embedded specimens, 35 permanent slides, one student microscope and one document-credit row. The Biology row 176 heading/body mismatch and asbestos-centred wire gauze in both files are preserved as explicit review flags.
+
+Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
