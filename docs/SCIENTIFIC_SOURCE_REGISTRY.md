@@ -248,3 +248,18 @@ NCERT Laboratory Manuals index: https://ncert.nic.in/science-laboratory-manual.p
 The NCERT manual index groups Class XII Biology resources by Exercise 4 & 5 and Exercise 6. The NCERT-CIET Grade 12 index separately lists Exercise 4 gametogenesis, Exercise 5 female gametophyte development and Exercise 7 stages of meiosis. Use the actual manual exercise labels and preserve CIET metadata as a separate layer.
 
 Exercise 6 includes root-tip preparation reagents/heat; store a hazard record and keep it virtual/pre-prepared only. Do not turn the source method into real chemical instructions.
+
+
+## Science-claim review sources — NCERT Biology Exercise 2 (2026-11-01)
+
+| Source | Claim/role | Evidence status |
+|---|---|---|
+| NCERT Class XI Biology manual, Exercise 2, 2025–26 label | Source statement about bacterial mesosomes and historical Monera classification | Curriculum source; retain literal wording, do not treat as standalone scientific validation |
+| Ebersold, Cordier & Lüthy (1981), *Bacterial mesosomes: method dependent artifacts*, DOI 10.1007/BF00527066; https://pubmed.ncbi.nlm.nih.gov/6796029/ | Classical mesosome-like structures associated with conventional EM preparation in *Bacillus cereus* | Peer-reviewed primary study; supports method-dependent artifact caution |
+| Pilhofer et al. (2010), *Bacterial TEM: new insights from cryo-microscopy*, DOI 10.1016/S0091-679X(10)96002-0; https://pubmed.ncbi.nlm.nih.gov/20869517/ | Dehydration/metal stains can generate misleading artifacts; cryo-EM preserves near-native structures | Peer-reviewed methods review |
+| NCBI Medical Microbiology, “Structure”; https://www.ncbi.nlm.nih.gov/books/NBK8477/ | Notes uncertainty about mesosome interpretation/function and possible fixation artifacts | Scientific textbook reference |
+| Woese, Kandler & Wheelis (1990), *Towards a natural system of organisms*, DOI 10.1073/pnas.87.12.4576; https://pubmed.ncbi.nlm.nih.gov/2112744/ | Molecular basis and proposal of a domain rank with Archaea, Bacteria and Eucarya | Foundational primary taxonomy paper |
+| Current Biology (2020), “Evolution: Two Domains of Life or Three?”; https://www.sciencedirect.com/science/article/pii/S0960982220300105 | Reviews evidence that eukaryotes arose from within Archaea | Phylogenetic model context; preserve framework as a versioned scientific decision |
+| Nature (2024), “The emerging view on the origin and early evolution of eukaryotic cells”; https://www.nature.com/articles/s41586-024-07677-6 | Reviews current research on eukaryotic origins/Asgard archaeal relatives | Recent review; not an all-purpose taxonomic authority |
+
+All of these are research references only; the content remains awaiting a domain expert review. See docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
