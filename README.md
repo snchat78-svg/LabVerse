@@ -106,3 +106,5 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 - [NCERT Class XII Biology Exercises 11, 17–20 and Project Work audit](docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md)
 - [Science claim review — Class XII pedigree traits](docs/PHASE_1_SCIENCE_CLAIM_REVIEW_XII_BIO_EX11.md)
 - [Exercise 2 scientific claim review — mesosomes and taxonomy](docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md)
+
+- [RBSE 2026–2027 all-six-pack practical coverage register](docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md)
