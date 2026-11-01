@@ -156,3 +156,14 @@ These values are text-evidence only. They are not acceptance tolerances, manufac
 3. Preserve unknowns explicitly; do not copy values from the source manual into procurement fields unless that source actually states them.
 4. Obtain Biology-with-microscope and without-microscope specifications separately; retain conditional microscope inclusion.
 5. Apply the same item-register method to Micro Scale Chemistry and Biology after primary PDF retrieval.
+
+## 6. Machine-readable export
+
+CSV export: data/catalogues/ncert_physics_kit_manual_items.csv
+
+The CSV has 106 data rows and 11 columns:
+- source_row_id, manual_row, source_item_label, labverse_family;
+- explicit_source_attribute_note, source_document_url;
+- source_text_status, procurement_spec_status, asset_status, scientific_model_status, test_vector_status.
+
+Status values intentionally distinguish manual-text inspection from procurement verification and implementation. The CSV is an inventory seed, not a final BoM or release-ready catalogue.
