@@ -181,3 +181,52 @@ Duplicate turbidity, soil/biology and quadrat entries should be canonicalised wi
 - Grade 12 Physics/Chemistry/Biology entries: https://ciet.ncert.gov.in/activity/grade12
 
 The live page's displayed date was 31/10/2026 for Grade 11 and 30/10/2026 for Grade 12 during this audit.
+
+
+## Grade 12 Biology — raw CIET index row audit (2026-11-01)
+
+Primary index: https://ciet.ncert.gov.in/activity/grade12?lang=en  
+The displayed page date at audit time was 31/10/2026. This is an NCERT-CIET activity index containing linked DIKSHA/experience resources; it is not itself the full NCERT Class XII Biology manual and not an RBSE board syllabus.
+
+The live index exposes 25 Biology rows (24 marked Lab Manual plus one additional resource). Preserve the raw rows rather than deduplicating away the source inconsistencies:
+
+| Raw index row | Index category | Exercise field shown | Link title shown |
+|---:|---|---|---|
+| 1 | Lab Manual | Exercise 1 | Pedigree-Construction and analysis |
+| 2 | Lab Manual | Exercise 1 | Study of water-holding capacity of soils |
+| 3 | Lab Manual | Exercise 2 | Calculation of percentage of pollen germination |
+| 4 | Lab Manual | Exercise 3 | Pollen tube growth on stigma |
+| 5 | Lab Manual | Exercise 3 | Study Pollen Tube Growth on Stigma |
+| 6 | Lab Manual | Exercise 4 | Gametogenesis in mammalian testis and ovary |
+| 7 | Lab Manual | Exercise 5 | Female gametophyte development in a flower |
+| 8 | Lab Manual | Exercise 7 | Stages of meiosis |
+| 9 | Lab Manual | Exercise 9 | Verification of Law of Segregation |
+| 10 | Lab Manual | Exercise 10 | Law of independent assortment |
+| 11 | Lab Manual | Exercise 12 | Study of artificial hybridization |
+| 12 | Lab Manual | Exercise 13 | Staining of Nucleic Acid by Acetocarmine |
+| 13 | Lab Manual | Exercise 14 | Common Disease-Causing Organisms and Symptoms of the Disease |
+| 14 | Lab Manual | Exercise 15 | Study of texture of soil samples |
+| 15 | Lab Manual | Exercise 15 | Study of turbidity of water sample |
+| 16 | Lab Manual | Exercise 17 | Study of adaptations-xerophytes and hydrophytes |
+| 17 | Lab Manual | Exercise 20 | Study of turbidity of water samples |
+| 18 | Lab Manual | Exercise 20 | Study of turbidity of water samples |
+| 19 | Lab Manual | Exercise 22 | Determination of SPM in air at different sites |
+| 20 | Lab Manual | Exercise 22 | Study of pollutants in Air |
+| 21 | Lab Manual | Exercise 23 | Plant population density-quadrat method |
+| 22 | Lab Manual | Exercise 24 | Plant population frequency-quadrat method |
+| 23 | Lab Manual | Exercise 24 | Study of plant population density by quadrat method |
+| 24 | Lab Manual | Exercise 23 | Study of plant population frequency by quadrat method |
+| 25 | Additional Resource | — | Flower Gametophyte Development |
+
+### Raw-index anomalies to preserve and resolve at resource level
+
+1. Two different entries both use Exercise 1: pedigree construction and soil water-holding capacity.
+2. Rows 4–5 both use Exercise 3 for pollen-tube growth, with slightly different link titles.
+3. Exercise 15 is used for both soil texture and water turbidity.
+4. Rows 17–18 repeat the same Exercise 20 water-turbidity title.
+5. Exercise 22 is used for both SPM determination and air-pollutant study.
+6. The quadrat entries disagree on the exercise number/title pairing: row 21 assigns density to Exercise 23, row 22 assigns frequency to Exercise 24, row 23 assigns density to Exercise 24, and row 24 assigns frequency to Exercise 23.
+
+Do not silently correct the index exercise numbers or merge distinct linked resources. Keep stable raw source-row IDs and later add a canonical activity ID only after opening and comparing the linked DIKSHA resources and the underlying Class XII manual. The current CIET index supports these 25 row labels only; it does not verify procedures, materials, scientific outcomes or current procurement contents.
+
+The existing Grade 12 Biology summary above is a canonical topic-level summary; this raw table is the authoritative transcription of the 25 displayed index rows for traceability.
