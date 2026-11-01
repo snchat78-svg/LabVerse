@@ -333,3 +333,10 @@ The connector implementation must use header-driven throttling and separate endp
 | NCERT_BIO_KIT_SPECIFICATIONS_INDEX | https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Official index lists Biology kit with microscope and Biology kit without microscope for Grades XI/XII | OFFICIAL_VARIANTS_CONFIRMED; attachments are not yet inspected |
 
 The transcript's own front matter says ALL RIGHTS RESERVED and that the manual is distributed only with its kit. The chemistry list is explicitly school-managed/not supplied, and a blade entry is explicitly not supplied. Treat the full transcript as provisional evidence for inventory planning only; do not redistribute its prose/figures or label it official primary evidence.
+## NCERT official School Kits brochure — higher-secondary Biology category evidence (2026-11-01)
+
+| Source ID | URL | Evidence inspected | Status / limit |
+|---|---|---|---|
+| NCERT_SCHOOL_KITS_BROCHURE | https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf | Official brochure, printed p. 8: HSBLK purpose for Classes XI/XII and broad categories (instruments, glassware, compound microscope, permanent slides, stains, cards); text and page image inspected | CONTENT_INSPECTED; no publication/reprint date identified in retrieved PDF text; not an item-level bill of materials; not evidence for exact variant contents |
+
+The NCERT kit index separately lists Biology-with-microscope and Biology-without-microscope variants. Keep the microscope item conditional on the selected variant. The brochure photograph is contextual only and must not be used to infer item IDs or quantities. Full manual/specification attachment contents remain NOT_INSPECTED. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md`.
