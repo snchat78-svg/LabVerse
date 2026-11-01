@@ -185,3 +185,17 @@ The Class XI Biology learning manual must remain a separate source pack from RBS
 - Status: CONTENT_INSPECTED (partial; Exercise 1 only); 34 exercise titles are INDEXED. Not a full 34-exercise procedure audit.
 - Reuse: ALL RIGHTS RESERVED; create original prose and 3D assets, and seek permission before reproducing manual text/illustrations.
 - Classification: this is the Class XI learning/practical manual, not the separate Higher Secondary Biology Kit manual or its procurement specification. Do not use it as proof of kit-supplied quantities.
+
+
+## NCERT Class XI Biology Exercises 2–6 and DIKSHA crosswalk (2026-11-01)
+
+| Source | Evidence read | Status | Limit |
+|---|---|---|---|
+| NCERT Class XI Biology Laboratory Manual (2025–26 label) | Official PDF contents list titles/page starts for Exercises 2–6 (pp.8, 16, 30, 33, 39) | SOURCE INDEX VERIFIED | Body extraction accessible only through Exercise 1 in this audit; no procedure/material assertions for 2–6 |
+| NCERT-CIET Grade 11 activity index | Exercise 2 morphology link, Exercise 3 animal external-features link, and a mitosis link whose exercise field is shown as Exercise 1 | INDEX CONTENT INSPECTED | DIKSHA viewer returned an application shell; linked content body and licence not inspected |
+| SCERT Delhi circular F 3(2)/ET/ICT in Education/DIKSHA/SCERT/2025-26/2043-52 (13 May 2025) | Annexure lists selected Class XI Biology OLABS resources, including row 212 external features of animals | SECONDARY ADMINISTRATIVE CROSS-CHECK | Selected list only; not exhaustive NCERT manual coverage or proof that omitted resources do not exist |
+| DIKSHA content IDs | do_3145708682307010561283; do_431395072902686310419344; do_31457142767262105613385 | IDENTIFIERS DISCOVERED | Per-resource metadata, version, creator, language and licence remain uninspected |
+
+Crosswalk and raw comparison: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md
+
+DIKSHA's official FAQ lists licence families accepted on the platform, but this is not the licence of any specific resource. Inspect each individual item's metadata before reusing content or assets. See https://api.diksha.gov.in/help/faqs/user/index.html.
