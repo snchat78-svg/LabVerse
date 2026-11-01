@@ -193,3 +193,8 @@ The 15 March 2026 GeM Physics bid is a separate record; it explicitly states 105
 The 106 numbered Physics kit-manual item rows are now normalised into source-row IDs and LabVerse-authored equipment families in docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md. This creates a stable reference for subsequent reconciliation against the actual procurement specification attachment and all six RBSE practical packs.
 
 Important boundary: this is the manual's item schedule, not the approved procurement BOM. Every row remains open for actual supplied quantity, material, dimensions, tolerance, acceptance method, source revision, asset licence, scientific model and test-vector unless those fields are separately evidenced. No 3D asset or model is approved by this register.
+
+
+## 12. Machine-readable Physics catalogue
+
+The 106-row manual item register now has a CSV export at data/catalogues/ncert_physics_kit_manual_items.csv. It preserves source-row IDs, manual row number, source item label, provisional LabVerse family and separate status columns for manual-text evidence, procurement specification, asset, scientific model and test vector. This file is a starting data contract; no procurement or software verification status is promoted by creating the CSV.
