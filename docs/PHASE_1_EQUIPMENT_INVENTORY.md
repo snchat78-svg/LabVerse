@@ -439,3 +439,9 @@ New evidence-backed candidate records:
 Important reconciliation note: a 15-03-2026 GeM bid record for six Physics kits says 105 items per kit in an attached list. The NCERT manual schedule lists items 1–106. The GeM attachment itself has not been inspected, so this discrepancy remains open; do not silently change the inventory count. See docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md.
 
 These are source-grounded candidate IDs only. No 3D assets or simulation code have been created or tested.
+
+## NCERT Physics manual row-level register — Phase 1.1
+
+All 106 numbered item labels from the NCERT Secondary Stage Physics kit manual have been given LabVerse source-row identifiers and provisional equipment-family classifications in docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md.
+
+Do not replace this register's source-row IDs with 3D asset IDs. One manual row may describe a composite assembly or multiple physical parts. Procurement quantity, material, tolerance, source revision, final asset count and scientific acceptance test are separate fields and remain open until primary attachment inspection and review.
