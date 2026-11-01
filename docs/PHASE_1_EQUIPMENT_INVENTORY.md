@@ -403,3 +403,11 @@ The existing section above records the equipment families, quantities, dimension
 Important namespace control: the kit manual's Grade XI exercise IDs 1–34 and Grade XII IDs 35–60 are not the later NCERT Biology Lab Manual / CIET IDs and are not RBSE exercise numbers. Link records by topic, edition and source ID; never by exercise number alone.
 
 Primary gate remains open: official NCERT Biology kit manual file and with-microscope / without-microscope specification attachments still need direct retrieval and comparison.
+## NCERT official Higher Secondary Biology kit brochure — confirmed category layer (2026-11-01)
+
+Primary source: NCERT, *NCERT School Kits*, printed p. 8:
+https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing-UN278.pdf
+
+NCERT identifies the Higher Secondary Biology Lab Kit (HSBLK) for Class XI/XII Biology and names broad categories: laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. These categories support the existing provisional Biology inventory families only; they do not validate individual item IDs, quantities, materials, dimensions, specifications or variant membership.
+
+The official specification index lists separate with-microscope and without-microscope variants. Therefore the microscope is a variant-dependent item. Do not infer exact contents from the brochure photograph. Item-level verification remains blocked until the full kit manual and both specification attachments are inspected. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md`.
