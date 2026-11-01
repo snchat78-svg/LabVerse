@@ -372,3 +372,8 @@ References:
 - https://community.crossref.org/t/refining-rest-api-limits-for-improved-stability-and-reliability/16137
 
 This is an audit correction only; no connector has been implemented or tested.
+
+
+## 23. Master six-pack task register (2026-11-01)
+
+The task names and assessment-choice groupings for all six user-supplied RBSE 2026–2027 practical sections are consolidated in `docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md`. This closes a task-index/documentation gap but not the Phase 1 evidence gate: item-level kit specifications, exact quantities/dimensions, full asset/model/test traceability and subject-expert approval remain open. Do not treat task-name capture as scientific validation or implementation.
