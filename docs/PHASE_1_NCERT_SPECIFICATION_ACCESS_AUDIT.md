@@ -121,3 +121,14 @@ The English NCERT specification page directly links the following PDF targets:
 These URLs are confirmed link targets from NCERT's official page, but the attachment payloads were not inspected. Original-host retrieval attempts returned HTTP 502. On the www.ncert.nic.in host, Micro Scale Chemistry and Physics timed out, Biology-with-microscope remained inaccessible, and Biology-without-microscope was reported as 63,918,957 bytes (too large for the current retrieval route). These are access/transport limitations, not evidence that the files are missing or empty.
 
 The Physics kit manual previously inspected is a separate document from the Physics procurement specification attachment. Do not substitute one for the other. Actual attachments remain NOT_INSPECTED until their bytes are obtained and checked.
+
+
+## 10. Uploaded specification copy recovery (2026-11-01)
+
+The user supplied local copies for two previously inaccessible official-index attachment families:
+- Micro Scale Chemistry Laboratory Kit specification copy — 65 pages, 19,798,501 bytes, SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
+- Secondary Stage Biology Kit with Microscope specification copy — 199 pages, 59,620,970 bytes, SHA-256 c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2.
+
+Both are scanned page-image PDFs and were OCR-processed. The actual item registers are linked from README and stored in the Phase 1.1 upload-analysis document. They have not been byte-compared against NCERT-hosted downloads; record them as user-uploaded NCERT-branded copies until authentication completes.
+
+The Biology-without-microscope and Physics specification attachments remain NOT_RECEIVED / NOT_INSPECTED.
