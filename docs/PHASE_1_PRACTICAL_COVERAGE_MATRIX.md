@@ -177,7 +177,7 @@ The manual contents list 34 exercises. The list is recorded in `PHASE_1_NCERT_BI
 
 | NCERT manual exercise IDs | Coverage group | Candidate inventory families | Status |
 |---|---|---|---|
-| NCERT-XI-BIO-EX-01 | Compound microscope parts | BIO-OPTIC-* | EXERCISE 1 TEXT INSPECTED; MODEL DESIGN ONLY |
+| NCERT-XI-BIO-MICROSCOPE-MAP | Compound microscope parts (design mapping record; source exercise is NCERT-XI-BIO-EX-01) | BIO-OPTIC-* | EXERCISE 1 TEXT INSPECTED; MODEL DESIGN ONLY |
 | NCERT-XI-BIO-EX-02–06 | Microbial/plant/animal morphology, plant/animal tissues, mitosis | BIO-SPECIMEN-*, BIO-SLIDE-*, BIO-OPTIC-*, BIO-DISSECT-* | INDEXED ONLY; identity/procedure review pending |
 | NCERT-XI-BIO-EX-07–14 | Root/stem/leaf modifications, inflorescences, flowering families, anatomy, herbarium and animal models | BIO-PLANT-*, BIO-SPECIMEN-*, BIO-SLIDE-*, BIO-GEN-* | INDEXED ONLY; asset-level mapping pending |
 | NCERT-XI-BIO-EX-15–19 | Osmosis, plasmolysis, imbibition, stomata and transpiration | BIO-PLANT-*, BIO-SLIDE-*, BIO-OPTIC-*, BIO-TRANSFER-* | INDEXED ONLY; protocol and variable review pending |
