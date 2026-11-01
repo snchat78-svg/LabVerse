@@ -102,3 +102,4 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 - [NCERT Class XI Biology Exercises 2–6 detailed audit](docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md)
 - [NCERT Class XI Biology Exercises 2–6 current-edition source audit](docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md)
 - [NCERT Class XII Biology Exercises 4–6 audit](docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md)
+- [Exercise 2 scientific claim review — mesosomes and taxonomy](docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md)
