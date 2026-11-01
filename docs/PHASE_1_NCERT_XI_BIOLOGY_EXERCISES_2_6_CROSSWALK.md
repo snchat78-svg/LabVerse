@@ -114,3 +114,22 @@ Do not import an onion-root-tip protocol from a Class XII resource into this Cla
 The earlier crosswalk recorded only title/index matches because the current PDF text extraction did not expose the exercise bodies. Since then, NCERT-hosted legacy chapter PDFs kelm302–kelm306 were located and inspected. Exercises 2, 3, 4 and 6 have legacy body text available; Exercise 5 is partial. The legacy files show 23-04-2018 stamps and have not been page-by-page matched to the current 2025–26 manual. See docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md for the exercise-level details, safety flags and candidate asset families.
 
 This evidence update supersedes the earlier "body not extractable" status only for the legacy 2018 files. It does not promote any procedure to current-edition verified or scientific validation.
+
+
+## Superseding update — current 2025–26 PDF bodies now available (2026-11-01)
+
+The earlier audit relied on 2018 legacy chapter PDFs because current exercise body files were not accessible. A direct current NCERT-host route is now available for every exercise file:
+
+| Manual ID | Current PDF | Current body evidence |
+|---|---|---|
+| NCERT-XI-BIO-EX-02 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm302.pdf | Full 8-page text extracted; first two pages screenshot-inspected |
+| NCERT-XI-BIO-EX-03 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm303.pdf | Full 14-page text extracted; first page screenshot-inspected |
+| NCERT-XI-BIO-EX-04 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm304.pdf | Full 3-page text extracted; screenshot retrieval returned HTTP 502 |
+| NCERT-XI-BIO-EX-05 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm305.pdf | Full 6-page text extracted; screenshot retrieval returned HTTP 502 |
+| NCERT-XI-BIO-EX-06 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm306.pdf | Full 3-page text extracted; first two pages screenshot-inspected |
+
+This supersedes the prior evidence state of “legacy body inspected/current-edition match pending”. The legacy 2018 PDFs remain historical evidence only. Exercises 2–6 now have current-edition text inspection, but the mappings still remain DESIGN_ONLY pending science/taxonomy/safety review, implementation and test vectors.
+
+Exercise 5 is complete at text-extraction level; it includes epithelial, connective (blood smear), striated, smooth and cardiac tissue. The current exercise file does not give a nervous-tissue procedure despite the general introductory statement listing nervous tissue as a broad tissue class. Do not infer an additional exercise.
+
+See docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md for high-hazard chemistry, human sampling/formalin/culture safety constraints and exact source evidence.
