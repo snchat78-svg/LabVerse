@@ -374,3 +374,31 @@ Phase 1: IN PROGRESS. Phase 2: BLOCKED.
 - Software tests: NOT_RUN; no test passes are claimed.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — NCERT Biology exercise register and microscope audit (2026-11-01)
+
+### Newly completed
+- [x] Found the alternate official NCERT PDF host for the Class XI Biology Laboratory Manual.
+- [x] Captured the official contents index as 34 stable exercise IDs with printed page starts in the practical coverage matrix.
+- [x] Captured the manual's practical-record schema: aim, principle, materials, procedure, observations/results, discussion and precautions.
+- [x] Visually inspected accessible Exercise 1 pages (printed pp. 5–7) and recorded diagram labels, optional microscope features, magnification options and interaction constraints.
+- [x] Added a source-specific safety constraint against a direct-sunlight-to-mirror focusing operation.
+- [x] Preserved the distinction between the Class XI Biology learning manual, RBSE 2026–27 Board practicals and the separate NCERT Higher Secondary Biology Kit procurement manual.
+
+### Evidence boundary
+- The official PDF representation returned 17 parsed pages and contains body-level material only through Exercise 1; the contents index lists later exercise pages through printed p.129.
+- Exercise 1: PARTIAL BODY AUDIT + VISUAL PAGE CHECK.
+- Exercises 2–34: TITLE_ONLY / page-start index entries; procedures, materials, reagents, outputs and precautions remain unaudited.
+- Official kit specification attachments and the full Higher Secondary Biology Kit manual remain NOT_INSPECTED.
+- All 34 NCERT exercise records remain non-verified; no curriculum or experiment has been promoted to VERIFIED_FOR_USE.
+
+### Updated files
+- docs/PHASE_1_NCERT_BIOLOGY_KIT_REVIEW.md
+- docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md
+- docs/PHASE_1_EQUIPMENT_INVENTORY.md
+- docs/SCIENTIFIC_SOURCE_REGISTRY.md
+- docs/PHASE_STATE.md
+
+### Current gate
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D asset, simulator or API connector was created; software tests remain NOT RUN.
