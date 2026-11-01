@@ -847,3 +847,20 @@ This is a source-row catalogue only; it does not assert that all 106 rows are se
 - [ ] Reconcile the CSV against the actual NCERT procurement specification attachment when retrieved.
 
 CSV: data/catalogues/ncert_physics_kit_manual_items.csv. The 106 data rows are still a source-manual register; no row is marked procurement-verified, asset-built, model-validated or test-passed.
+
+
+### Phase 1.1 — Physics CSV integrity check (2026-11-01)
+
+A read-back validation was run on data/catalogues/ncert_physics_kit_manual_items.csv after its GitHub commit.
+
+- [x] Exact 11-column header: PASS
+- [x] Exactly 106 data rows: PASS
+- [x] Every row has 11 columns: PASS
+- [x] 106 unique source-row IDs: PASS
+- [x] IDs are contiguous NCERT-PHY-KIT-001 through NCERT-PHY-KIT-106: PASS
+- [x] Manual row numbers are contiguous 1–106: PASS
+- [x] Required identity/source/status fields are non-empty: PASS
+- [x] Asset/model/test statuses do not falsely claim implementation: PASS
+- [x] Source URL is consistent across all rows: PASS
+
+Result: 9/9 data-integrity checks passed. This is a one-off catalogue data validation, not an application test suite, scientific validation or procurement acceptance test. The CSV remains source-manual evidence only.
