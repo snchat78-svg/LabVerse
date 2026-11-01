@@ -186,3 +186,10 @@ Records:
 Both are third-party tender-record displays of GeM bid documents and additional-document filenames/sizes. This is corroborating discovery metadata only: the actual three PDF bytes have not been downloaded, hashed, inspected or authenticated against the official NCERT attachments. Neither record lists the Biology-with-microscope attachment. The repeated filenames/sizes are not a substitute for SHA-256 equality or PDF metadata inspection.
 
 The 15 March 2026 GeM Physics bid is a separate record; it explicitly states 105 items per kit in an attached list. The 106-row NCERT manual schedule remains a separate count. Keep the difference open until the item schedule attachment itself is inspected.
+
+
+## 11. Full Physics manual row register
+
+The 106 numbered Physics kit-manual item rows are now normalised into source-row IDs and LabVerse-authored equipment families in docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md. This creates a stable reference for subsequent reconciliation against the actual procurement specification attachment and all six RBSE practical packs.
+
+Important boundary: this is the manual's item schedule, not the approved procurement BOM. Every row remains open for actual supplied quantity, material, dimensions, tolerance, acceptance method, source revision, asset licence, scientific model and test-vector unless those fields are separately evidenced. No 3D asset or model is approved by this register.
