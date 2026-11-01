@@ -164,3 +164,13 @@ Do not mark a source VERIFIED_FOR_USE just because its page is public or search 
 ## Compliance status summary
 
 The source-specific policies are documented, but this does not mean the services are integrated or that every record is safe/accurate to use. No source is CONNECTOR_TESTED or VERIFIED_FOR_USE. Phase 1 still needs a record-level licence/quality sample review and Phase 2 must implement throttling/caching contracts before connector code.
+
+
+## NCERT source additions — 2026-11-01
+
+| Source | Evidence retrieved | Status | Limits |
+|---|---|---|---|
+| NCERT Class XI Biology Laboratory Manual, *Laboratory Manual: Biology, Class XI* | https://www.ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf — PDF front matter, contents list (34 exercises), Introduction and Exercise 1 microscope description inspected in parsed text; online label 2025–26; ISBN 978-93-5007-064-2 | CONTENT_INSPECTED (partial exercise-level audit) | All Rights Reserved; no reproduction of manual text/figures without permission. Screenshot retrieval for relevant PDF pages failed with HTTP 502. It is not the Higher Secondary Biology Kit manual and does not verify kit bill of materials. |
+| NCERT Higher Secondary kit Specification Documents index | https://ncert.nic.in/division/dek/specification_documents.php?ln=en — search-indexed official page text lists separate Biology-with-microscope and Biology-without-microscope variants, Physics Laboratory Kit and Micro Scale Chemistry Laboratory Kit for Grades XI–XII, plus Molecular Model Kit | DISCOVERED | Direct page open returned HTTP 502; specification attachment payloads/URLs and detailed procurement requirements were not inspected. Do not infer item counts or dimensions from the index. |
+
+The Class XI Biology learning manual must remain a separate source pack from RBSE curriculum requirements and from the official Biology kit procurement document. The official index's two Biology kit variants mean that microscope inclusion must be represented as a kit-variant property until the actual specification attachments are inspected.
