@@ -898,3 +898,35 @@ Result: 9/9 data-integrity checks passed. This is a one-off catalogue data valid
 - Phase 2: BLOCKED.
 - Application code, 3D assets and scientific engines: NOT IMPLEMENTED.
 - No application/software tests were run. Catalogue OCR/structural checks are not application tests.
+
+
+## Phase 1.1 update — two uploaded NCERT kit specifications analysed (2026-11-01)
+
+### Newly completed
+- [x] Inspected uploaded MSCL_copy.pdf (65 pages; 19,798,501 bytes; SHA-256 recorded) using page-image OCR because the PDF text layer was empty.
+- [x] Reconciled its 55 index rows: 54 kit/manual entries and one documentation credit. Row 1 is the manual publication, not apparatus.
+- [x] Created item-level MSCL source register and CSV for index rows 1–55, preserving OCR status and safety fields.
+- [x] Inspected uploaded SSBK_with_Microscope_copy.pdf (199 pages; 59,620,970 bytes; SHA-256 recorded) using OCR and selected visual page checks.
+- [x] Reconciled its 177 index rows: rows 1–83 initial equipment/manual entries, 84–133 50 visual cards, 134–140 7 embedded specimens, 141–175 35 permanent slides, row 176 student laboratory microscope, row 177 documentation credit.
+- [x] Created Biology-with-microscope item register and CSV for all 177 index rows. Individual specification detail is OCR-transcribed for rows 1–83; the visual-card/specimen/slide groups are index-derived except representative visually checked pages.
+- [x] Preserved the row 176 heading/body inconsistency: index says “Permanent Slide: Student Laboratory Microscope” but text/photo show a physical microscope.
+- [x] Flagged asbestos-centred wire gauze in both uploaded kit specifications and mercury thermometer in MSCL; no unsafe real-world learner workflow is approved.
+- [x] Read back both CSVs from GitHub and validated exact 11-column header, expected row count, 11 cells per row, unique and contiguous stable IDs, contiguous index numbers, non-empty labels/category and documentation-credit status: MSCL 7/7; Biology 7/7.
+
+### New files
+- docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md
+- docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md
+- data/catalogues/ncert_mscl_spec_items.csv
+- docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md
+- data/catalogues/ncert_biology_with_microscope_spec_items.csv
+
+### Boundaries / remaining blockers
+- [ ] Compare both uploaded file SHA-256 hashes with the exact official NCERT-hosted attachment bytes; current hash identifies the uploaded files but does not authenticate source origin.
+- [ ] Obtain Biology-without-microscope specification and compare actual item differences with the with-microscope version.
+- [ ] Obtain Physics procurement specification attachment; reconcile its item list against the 106-row manual schedule and 105-item GeM bid statement.
+- [ ] Visually inspect all remaining 49 visual-card, 6 specimen and 34 permanent-slide pages; their names are index-derived and do not imply each page was fully audited.
+- [ ] Resolve the unclear dimensions for the Biology dissecting microscope with a qualified reviewer.
+- [ ] Finish RBSE six-pack practical-to-item-to-asset-to-model-to-test traceability and expert/safety/licensing sign-off.
+
+### Gate
+Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. No application code, 3D assets, simulation engine or application test suite were created or run in this PDF-analysis pass.
