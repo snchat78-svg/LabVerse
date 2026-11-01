@@ -526,3 +526,26 @@ Recover remaining Exercise 5 pages, obtain the complete current-edition body, va
 - Map all six RBSE subject/class practical packs to apparatus/material/model/test records and obtain teacher review.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — scientific claim review for NCERT Biology Exercise 2 (2026-11-01)
+
+### Newly completed evidence review
+- [x] Flagged the manual's bacterial mesosome description as a source claim requiring scientific review, rather than a default canonical bacterial organelle.
+- [x] Added peer-reviewed evidence on conventional electron-microscopy preparation artifacts and cryo-microscopy to the claim review.
+- [x] Preserved the NCERT Kingdom Monera wording as curriculum/historical source metadata and introduced an explicit taxonomic-framework/version requirement.
+- [x] Recorded that phylogenetic frameworks themselves may differ (three-domain proposal and subsequent evidence relating eukaryotes within Archaea); no unversioned “one true taxonomy” is imposed.
+- [x] Added source-claim vs scientific-claim record fields and acceptance checks for learner-facing content.
+
+### New document
+- docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md
+
+### Gate
+- Mesosome claim: SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED.
+- Monera classification wording: CURRICULUM_SOURCE_LABEL / VERSIONED_TAXONOMY_MAPPING_REQUIRED.
+- Exercise 2 candidate models and slide records remain DESIGN_ONLY.
+- No app code or schema implementation was added; no software tests were run.
+- Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+### Next action
+Continue source-claim sampling across other NCERT/RBSE practical chapters; identify historical/ambiguous scientific statements, attach independent references, and keep all disputed content outside VERIFIED_FOR_USE until expert sign-off.
