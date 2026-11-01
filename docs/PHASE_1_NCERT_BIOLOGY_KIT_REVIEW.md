@@ -239,3 +239,50 @@ The manual's Introduction describes: Aim, Principle, Material Required, Procedur
 - Exercises 2–34: CONTENTS TITLE/PAGE START ONLY.
 - Detailed kit procurement specification and the separate Higher Secondary Biology Kit manual: still not retrieved.
 - Full manual procedure extraction is not claimed complete.
+
+
+## Full secondary-host transcription inspection — 2026-11-01 (new evidence; primary verification still open)
+
+The 141-page Scribd-hosted transcript at https://www.scribd.com/document/870673944/Manual-Secondary-Stage-Biology-Laboratory-Kit-11-12-En was opened and its contents pages, item lists and selected exercise bodies were inspected. The transcribed front matter identifies:
+- Title: Manual of Secondary Stage Biology Laboratory Kit, Grades 11th & 12th.
+- First edition: March 2018; ISBN 978-93-5292-528-5.
+- Reprints shown: October 2018, January 2019 and March 2020.
+- Copyright notice: ALL RIGHTS RESERVED.
+- The front matter says the manual may be distributed only with the kit.
+- Contents structure: Grade XI Exercises 1–34; Grade XII Exercises 35–60.
+- Kit schedule: 84 numbered key/tool/glassware/plasticware item entries; 7 acrylic-embedded specimens; 35 permanent-slide entries; visual aids VA-1 through VA-50; 58 chemical/reagent/stain entries.
+- The source explicitly marks the blade as not supplied in the kit and states the listed chemicals/reagents/stains are not supplied; they are to be managed by the institution/school/teacher.
+
+This improves the secondary evidence from a brief excerpt to a near-complete readable transcript. It does **not** change the source-quality state: Scribd is a secondary hosting platform and the upload is not an NCERT-hosted file or cryptographically authenticated copy. Names, quantities, OCR/typing, and page-level figures must still be checked against the official NCERT manual/specification before being treated as procurement facts. The manual publication/reprint metadata appears internally consistent with NCERT catalogue entry 13163, but the official catalogue does not authenticate the secondary transcription's full content.
+
+### Complete visual-aid ID range now visible in the transcript
+
+The full VA-1 to VA-50 sequence is visible in the inspected transcription: animal and microorganism cards; plant/fungal/algal examples; reproductive structures; root/stem/leaf modifications; mitosis/meiosis; spermatogenesis/oogenesis; blastocyst; tissue/blood imagery; xeric/hydric adaptations; and homologous/analogous organs. The previous statement that the complete card list was not available in the retrieved excerpt is superseded. Do not copy the source card artwork; each LabVerse visual must be newly created or appropriately licensed.
+
+### Kit-manual exercise numbering is a separate curriculum namespace
+
+The secondary transcript's kit-manual table of contents numbers Grade XI tasks 1–34 and Grade XII tasks 35–60. It is a kit-use/manual exercise namespace, not the same as the newer NCERT Biology Lab Manual / CIET exercise numbers, and not the RBSE numbering. For example, the kit manual's Exercise 45 is pedigree, while the later lab manual body discussed in the NCERT XII source audit uses Exercise 11 for pedigree. Map by canonical topic + source edition + source exercise ID; never join by number alone.
+
+### High-priority safety and procurement distinctions
+
+- The 58 chemical/reagent/stain names are a school-managed list, not included kit stock. Do not display them as available inventory or as a permitted recipe list.
+- The blade is explicitly noted as school-managed/not supplied. Keep sharp tools non-actionable in learner workspaces.
+- Some other tool rows are hazardous even if listed in a school kit; inclusion in a historical manual does not mean LabVerse should expose real-world use.
+- Quantities/dimensions from the transcription remain candidate source fields only. The separate official specification PDFs may supersede or qualify the manual's quantities.
+
+### Exact source confidence update
+
+| Evidence item | Status after this inspection |
+|---|---|
+| Official existence/title of the kit manual | CONFIRMED by NCERT manual index and catalogue |
+| ISBN/edition/reprint data | READ IN SECONDARY TRANSCRIPTION; catalogue title match; primary front matter not directly inspected |
+| Item entries 1–84 | FULL SECONDARY TEXT READ; PRIMARY MATCH PENDING |
+| Acrylic specimens 7 | FULL SECONDARY LIST READ; PRIMARY MATCH PENDING |
+| Permanent slides 35 | FULL SECONDARY LIST READ; PRIMARY MATCH PENDING |
+| Visual-aid cards VA-1–VA-50 | FULL SECONDARY LIST READ; PRIMARY MATCH PENDING |
+| Chemical/reagent/stain entries 58 | FULL SECONDARY LIST READ; primary match pending; these are not supplied with kit |
+| Official with-microscope / without-microscope procurement specs | NOT INSPECTED |
+| Figure/diagram visual accuracy and all detailed exercise figures | NOT FULLY VISUALLY AUDITED |
+| Rights to reproduce manual content/artwork | NOT GRANTED; manual states all rights reserved / distribution with kit |
+
+Phase 1 can now treat the Biology kit's provisional secondary-derived inventory as a well-developed candidate list, not a verified official bill of materials. Keep the official item-level specification gate open.
