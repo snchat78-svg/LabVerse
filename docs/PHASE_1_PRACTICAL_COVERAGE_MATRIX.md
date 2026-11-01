@@ -303,3 +303,12 @@ Detailed source notes: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md.
 | NCERT-XII-BIO-EX-06 | Onion root-tip mitosis | lelm204.pdf, page text + selected visuals inspected | BIO-XII-SLIDE-ONION-ROOT-MITOSIS; BIO-XII-CELL-STAGE-*; BIO-XII-MITOTIC-INDEX-COUNTER | BODY TEXT + SELECTED VISUALS / DESIGN_ONLY |
 
 The PDF files are hosted by NCERT, but their precise edition/revision date was not confirmed from the accessible chapter pages. Do not label them 2025–26 verified. Keep the Class XII onion-root-tip activity distinct from Class XI Exercise 6 permanent-slide observation.
+
+
+## Exercise 2 scientific-claim gate (2026-11-01)
+
+- Source claim: NCERT Exercise 2 describes bacterial mesosomes and uses Kingdom Monera wording.
+- Canonical science: do not model a universal bacterial mesosome or auto-map Monera into an unversioned modern taxonomy.
+- Status: SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED.
+- Supporting references and display/record schema: docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
+- Acceptance: source literal retained; scientific interpretation separately sourced; taxonomy framework named/versioned; expert approval before VERIFIED_FOR_USE.
