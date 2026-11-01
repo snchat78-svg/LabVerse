@@ -498,3 +498,31 @@ Recover remaining Exercise 5 pages, obtain the complete current-edition body, va
 - Taxonomy/biological assertions review: PENDING.
 - Exact assets, simulation behaviour and tests: DESIGN_ONLY / NOT IMPLEMENTED.
 - Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — NCERT Class XII Biology Exercises 4–6 audit (2026-11-01)
+
+### Newly completed source work
+- [x] Located the NCERT official laboratory-manual index's Class XII Biology grouped exercise sections.
+- [x] Retrieved official-host Class XII Biology chapter file lelm203.pdf and extracted text for Exercises 4 and 5.
+- [x] Retrieved official-host Class XII Biology chapter file lelm204.pdf and extracted text for Exercise 6; selected page images visually inspected.
+- [x] Cross-checked manual exercise titles against the NCERT-CIET Grade 12 index.
+- [x] Separated Class XI Exercise 6 permanent-slide mitosis from Class XII Exercise 6 onion-root-tip mitosis.
+- [x] Added separate Class XII candidate asset IDs and hazard constraints for the onion-root-tip chemical preparation.
+
+### Evidence limits
+- Exact issue/reprint date of the chapter-wise Class XII PDFs is not confirmed from the extracted document pages.
+- lelm203 screenshot retrieval returned HTTP 502; text extraction succeeded.
+- lelm204 selected visual pages were inspected.
+- The Class XII Exercise 6 chemical fixative/stain/heat method is documented only as a safety/provenance warning; LabVerse uses virtual/pre-prepared slide only.
+- All candidate models/assets remain DESIGN_ONLY; no code or tests exist.
+
+### New document
+- docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_4_6_AUDIT.md
+
+### Next
+- Retrieve Class XII Biology Exercises 1–3 and 7 onward using official sources.
+- Resolve remaining CIET-to-manual exercise-number mismatches.
+- Map all six RBSE subject/class practical packs to apparatus/material/model/test records and obtain teacher review.
+
+Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
