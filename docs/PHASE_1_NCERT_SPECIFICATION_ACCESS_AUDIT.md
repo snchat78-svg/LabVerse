@@ -132,3 +132,11 @@ The user supplied local copies for two previously inaccessible official-index at
 Both are scanned page-image PDFs and were OCR-processed. The actual item registers are linked from README and stored in the Phase 1.1 upload-analysis document. They have not been byte-compared against NCERT-hosted downloads; record them as user-uploaded NCERT-branded copies until authentication completes.
 
 The Biology-without-microscope and Physics specification attachments remain NOT_RECEIVED / NOT_INSPECTED.
+
+
+## 11. Two user-uploaded kit specification copies recovered (2026-11-01)
+
+- MSCL_copy.pdf: 65 pages, 19,798,501 bytes, SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. OCR item register covers index rows 1–55.
+- SSBK_with_Microscope_copy.pdf: 199 pages, 59,620,970 bytes, SHA-256 c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2. OCR register covers 177 index rows; detailed row specifications 1–83 and index-derived names for card/specimen/slide groups, with selected visual checks.
+
+Both are scanned image-only PDFs; exact file-byte authentication against NCERT's official hosted attachments remains incomplete. See docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md for evidence boundaries.
