@@ -89,3 +89,22 @@ https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing
 Printed page 8 identifies the Higher Secondary Biology Lab Kit (HSBLK), intended for Biology experiments in Classes XI and XII, and names broad categories: laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. This is high-level category evidence only; the brochure does not give an item-by-item bill of materials, quantity, dimensions, material/tolerance, acceptance criteria or microscope/no-microscope variant differences. The retrieved PDF text does not expose a clear publication/reprint date or ISBN.
 
 The official index still lists separate Biology-with-microscope and Biology-without-microscope variants. Treat microscope inclusion as variant-dependent until the specifications themselves are inspected. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md` for the full evidence boundary.
+
+
+## 8. Phase 1.1 continuation — official Physics manual and procurement cross-check (2026-11-01)
+
+The official NCERT-hosted Physics kit manual was recovered at:
+https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+
+Its front matter identifies code 13164, ISBN 978-93-5292-653-4, first edition October 2018, reprints January 2019, March 2020 and August 2024, and an ALL RIGHTS RESERVED notice. The searchable PDF text was inspected. Attempts to use the PDF screenshot endpoint returned HTTP 502; no visual page audit is claimed.
+
+The manual item schedule enumerates 106 rows (1–106). It is a kit-item/use list, not a complete procurement BOM: most rows do not establish delivered quantities, technical ranges, tolerances, materials or acceptance criteria. Selected text-supported details and the initial LabVerse candidate IDs are recorded in docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md.
+
+A separate GeM bid document dated 15-03-2026 for six Secondary Stage Physics Laboratory Kits states that each kit/set contains 105 items in an attached list and that quantities follow that list:
+https://docs.primetenders.com/documents/tender/2026/03/31/12491799102179779884/GeM-Bidding-9125140.pdf
+
+This is a procurement bid record, not the NCERT master specification; the attached item list was not inspected. The 105-versus-106 count difference is therefore an OPEN SOURCE VERSION / ATTACHMENT RECONCILIATION issue, not grounds to remove or merge item 106.
+
+A tender mirror exposes candidate attachment filenames for the Physics kit, Micro Scale Chemistry kit and Biology kit without microscope, but file bytes/signatures/content were not inspected. The filenames are recorded as discovery locators only. Actual official procurement attachments and the Biology-with-microscope variant remain open.
+
+Phase 1.1 status: IN PROGRESS. Physics manual content is inspected; all procurement attachments and the official complete Higher Secondary Biology kit manual remain unverified. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. No code, assets or software tests are claimed.
