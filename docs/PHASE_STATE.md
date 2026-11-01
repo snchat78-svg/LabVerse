@@ -649,3 +649,18 @@ Latest Phase 1 documentation update committed directly to `main` in this sequenc
 Files checked again after writes: `PHASE_STATE.md`, `PHASE_1_PRACTICAL_COVERAGE_MATRIX.md`, `SCIENTIFIC_SOURCE_REGISTRY.md`, `PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md`, `README.md`.
 
 Documentation consistency checks: **5/5 passed** (required Phase 1/Phase 2 state, new matrix rows, legacy source registry rows, superseding note and README links were found after refetch). These are repository-document checks only. Application tests: **not applicable / not run**; the app, 3D assets and scientific engines do not exist yet.
+
+
+## Phase 1 update — Crossref API policy correction (2026-11-01)
+
+### Newly verified
+- [x] Rechecked Crossref's official access/authentication documentation for response-provided rate and concurrency headers.
+- [x] Read the 21 July 2026 Crossref notice that distinguishes single DOI lookups from multi-record/list queries.
+- [x] Corrected the source usage table: list queries use lower public/polite request ceilings than single-record lookups.
+- [x] Added header-driven throttling, separate endpoint-class limits, caching and HTTP 429 backoff acceptance rules.
+- [x] Updated `docs/PHASE_1_SOURCE_USAGE_COMPLIANCE.md`, `docs/SCIENTIFIC_SOURCE_REGISTRY.md` and `docs/PHASE_1_SOURCE_AUDIT.md`.
+
+### Verification boundary
+- This corrects policy documentation from primary Crossref guidance; it is not a working connector or load test.
+- Source terms are not yet fully closed: per-record/per-dataset licences, attribution and data-quality sampling remain outstanding.
+- Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
