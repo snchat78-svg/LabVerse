@@ -351,3 +351,22 @@ These are Class XII domain IDs, separate from the corresponding Class XI exercis
 ## Exercise 2 — bacterial ultrastructure claim hold (2026-11-01)
 
 Do not add a universal mesosome component to BIO-SLIDE-BACTERIA-REP or any bacterial 3D model. The NCERT source statement is retained as SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED. Classical mesosome-like structures may be fixation/preparation artifacts; a source-linked historical microscopy comparison may be shown only with method and caveat labels. See docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
+
+
+## Class XII Biology Exercises 8–25 — additional candidate assets (2026-11-01)
+
+Source, evidence and safety details: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md.
+
+- EX08 blastula: BIO-XII-SLIDE-BLASTULA-TS, BIO-XII-MODEL-BLASTULA.
+- EX09 segregation: BIO-XII-GENETICS-SEGREGATION-BEAD-SET, F1/F2 pairing, ratio-analysis records.
+- EX10 independent assortment: four-colour bead sets, dihybrid-cluster records, linkage-caveat metadata; expected 9:3:3:1 is theoretical, not forced observed data.
+- EX12 controlled pollination: flower model, emasculation/bagging/tagging and pollen-transfer states; sharp tools virtual only.
+- EX13 acetocarmine staining: pre-prepared/synthetic virtual slide only; no real stain or heat learner workflow.
+- EX14 pathogens: prepared/virtual morphology cards for Entamoeba, Plasmodium vivax, Ascaris and Trichophyton; educational identification only.
+- EX15/16 soil: sieve classes 2 mm/0.05 mm/0.002 mm, texture triangle, Gooch crucible/mass ledger and water-holding formula.
+- EX21 aquatic sample: prepared/virtual organism slides and catalogue; FAA preservative/formalin-acetic-alcohol virtual-only.
+- EX22 SPM: leaf/site dataset, sample mass/area analysis; never invent field measurements.
+- EX23/24 quadrat: 1m × 1m quadrat, species-count table, density and frequency as separate calculations.
+- EX25 comparison: plant/animal homologous/analogous organ comparison set.
+
+All IDs are candidate design inventory only. No physical 3D asset or simulator exists.
