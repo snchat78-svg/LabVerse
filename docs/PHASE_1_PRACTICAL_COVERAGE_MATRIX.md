@@ -325,3 +325,19 @@ Current body inspections:
 - EX21 aquatic organisms; EX22 SPM; EX23 density; EX24 frequency; EX25 homology/analogy.
 
 EX17–20 and EX07/11 remain incomplete at body level. RBSE Class XII relationships are mapped in a separate table in the new audit, preserving board's Botany/Zoology major/minor/spotting categories. Each mapping remains DESIGN_ONLY; no app rule/assets/tests have been implemented.
+
+
+## NCERT Class XII Biology additional crosswalk — Exercises 11 and 17–20 / project work (2026-11-01)
+
+Detailed source body evidence and revision caveats: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md.
+
+| NCERT manual exercise | Source topic | RBSE Class XII relationship | Evidence state |
+|---|---|---|---|
+| EX11 | Pedigree chart preparation and analysis | Zoology minor: pedigree chart | Legacy body text inspected; 21/04/2018; human trait models need science review |
+| EX17 | Plant xeric/hydric adaptations | Botany spotting: xeric/hydric plants | Legacy body text inspected; current-edition match pending |
+| EX18 | Animal xeric/hydric adaptations | Zoology spotting: xeric/hydric animals | Legacy body text inspected; current-edition match pending |
+| EX19 | pH of water and soil samples | Zoology major: pH in water/soil | Legacy body text inspected; method precision kept separate |
+| EX20 | Turbidity of water samples | Zoology major: turbidity | Legacy body text inspected; CIET duplicate exercise label preserved |
+| Project Work | Open-ended investigation/reporting framework | RBSE XII practical list requires a project (topic teacher-assigned) | NCERT legacy guide inspected; not an RBSE prescribed project-topic list |
+
+EX11 raw CIET tag currently says Exercise 1 while the manual file says Exercise 11. Preserve both records. All mappings remain DESIGN_ONLY.
