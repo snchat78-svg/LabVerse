@@ -107,3 +107,10 @@ Do not import an onion-root-tip protocol from a Class XII resource into this Cla
 - Asset inventory: TITLE-LEVEL DESIGN PLACEHOLDERS ONLY.
 - 3D assets, simulations and tests: NOT IMPLEMENTED.
 - Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Body-level legacy-source evidence update (2026-11-01)
+
+The earlier crosswalk recorded only title/index matches because the current PDF text extraction did not expose the exercise bodies. Since then, NCERT-hosted legacy chapter PDFs kelm302–kelm306 were located and inspected. Exercises 2, 3, 4 and 6 have legacy body text available; Exercise 5 is partial. The legacy files show 23-04-2018 stamps and have not been page-by-page matched to the current 2025–26 manual. See docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md for the exercise-level details, safety flags and candidate asset families.
+
+This evidence update supersedes the earlier "body not extractable" status only for the legacy 2018 files. It does not promote any procedure to current-edition verified or scientific validation.
