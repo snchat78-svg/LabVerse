@@ -282,3 +282,14 @@ All of these are research references only; the content remains awaiting a domain
 The official NCERT-host files do not expose a clear publication/reprint date in the retrieved chapter pages. Their precise revision date remains NOT_CONFIRMED. Exercise 7 (lelm205), Exercise 11 (lelm208) and Investigatory Project Work (lelm216) did not retrieve successfully. Do not infer content for these files from filename sequence.
 
 See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md.
+
+
+## NCERT Class XII Biology additional chapter and project sources (2026-11-01)
+
+| Source ID | URL | Content inspected | Revision / limit |
+|---|---|---|---|
+| NCERT_XII_BIO_EX11_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm208.pdf | Six-page Exercise 11 pedigree chart text | 21/04/2018 stamp; current-edition body match not confirmed |
+| NCERT_XII_BIO_EX17_TO_20_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm212.pdf | Exercise 17, 18, 19 and 20 body sections located and text-inspected | 21/04/2018 stamp; current-edition match not confirmed |
+| NCERT_XII_BIO_PROJECT_WORK_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm216.pdf | Project guidance, reporting format and example project areas | 21/04/2018 stamp; current-edition match not confirmed |
+
+See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md. Do not mark these historical chapter bodies as confirmed 2025–26 revisions.
