@@ -13,6 +13,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Application code: not started
 - 3D workbench/assets: not implemented
 - Simulation/research engines: not implemented
+- Phase 1.1: IN PROGRESS — NCERT official kit-family listings reconfirmed; Physics manual text inspected; official procurement attachments and complete Biology kit manual remain unverified
 - Last phase-state review: 2026-11-01
 
 ## Phase 0 — completed log
@@ -769,3 +770,38 @@ After refetching the relevant files from GitHub main, **10/10 repository-documen
 Tracking Issue #1 was updated with the current evidence and blockers: https://github.com/snchat78-svg/LabVerse/issues/1#issuecomment-6556167457
 
 The repository remains at Phase 1 IN PROGRESS / Phase 2 BLOCKED. No code, 3D assets, simulation engines or API connectors were implemented.
+
+
+## Phase 1.1 update — NCERT kit specification recovery (2026-11-01)
+
+### Completed in this execution
+- [x] Reconfirmed NCERT's official Grades XI–XII kit specification index and preserved Biology with-microscope / without-microscope as separate variants.
+- [x] Reconfirmed NCERT's revised manual-index entries and publication catalogue codes for Physics (13164), Biology (13163) and Micro Scale Chemistry (13166).
+- [x] Retrieved the NCERT-hosted Physics kit manual text; recorded code, ISBN, first-edition/reprint metadata and ALL RIGHTS RESERVED status.
+- [x] Inspected the Physics item schedule, which enumerates rows 1–106, and mapped selected tools/assemblies to practicals and 3D interaction requirements.
+- [x] Recorded primary-manual details for the metre bridge, potentiometer, resonance tube and optical bench.
+- [x] Identified a 105-versus-106 item-count discrepancy between the Physics manual and a separate March 2026 GeM bid document. The GeM attached item list is not inspected; no reconciliation is asserted.
+- [x] Added a dedicated audit document, updated the NCERT specification access audit, equipment inventory and source registry, and linked the audit from README.
+
+### Evidence boundary / blockers
+- Official NCERT specification index and manual index are confirmed, but the actual Physics, Micro Scale Chemistry, Biology-with-microscope and Biology-without-microscope procurement attachments have not been inspected.
+- The official complete Higher Secondary Biology kit manual is still not retrieved; the 141-page secondary transcript remains discovery-only.
+- Chemistry item families recorded in earlier work still require current primary-manual/official-specification reconciliation.
+- Physics manual PDF text is inspectable, but the screenshot route returned HTTP 502; no visual PDF audit is claimed.
+- Source-to-practical-to-item-to-asset-to-model-to-test mapping remains incomplete for all six RBSE packs.
+- No application code, 3D asset, simulation engine or software tests were created/run.
+
+### Subphase gate
+- Phase 1.1: IN PROGRESS (partial evidence recovery).
+- Phase 1: IN PROGRESS.
+- Phase 2: BLOCKED.
+- No software-test pass is claimed.
+
+### Next unchecked work
+- [ ] Retrieve and authenticate the official four procurement specification attachment variants.
+- [ ] Inspect the official full Higher Secondary Biology kit manual and compare the secondary transcript row-by-row.
+- [ ] Resolve the Physics 105/106 discrepancy from the attached item schedule and source revision.
+- [ ] Reconcile current primary Chemistry/Biology manuals with their procurement specifications.
+- [ ] Complete all six RBSE practical-to-item/asset/model/test mappings and obtain qualified subject-expert review.
+
+New document: docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md
