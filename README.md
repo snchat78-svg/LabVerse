@@ -111,3 +111,9 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 - [NCERT official School Kits brochure audit — Biology kit category evidence](docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md)
 
 - [NCERT Biology kit slide and visual-aid candidate register](docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md)
+
+
+## Phase 1.1 — NCERT kit specification recovery
+- [Phase 1.1 NCERT kit specification audit](docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md)
+
+Current gate: Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. The Physics manual has been text-inspected, while official kit procurement attachments and the complete Higher Secondary Biology kit manual remain open.
