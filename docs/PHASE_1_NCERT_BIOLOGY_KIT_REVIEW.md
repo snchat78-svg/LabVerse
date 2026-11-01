@@ -136,3 +136,79 @@ User product decision (2026-10-31):
 - Current specification attachment audit: NOT DONE.
 - Final Biology inventory and verified 3D assets: NOT DONE.
 - Simulation logic/tests: NOT IMPLEMENTED.
+
+
+## Official NCERT Class XI Biology Laboratory Manual — separate source audit (2026-11-01)
+
+A separate NCERT-hosted Class XI Biology Laboratory Manual PDF was retrieved and its parsed text inspected:
+https://www.ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+Source identity from the PDF front matter:
+- Title: Laboratory Manual — Biology, Class XI.
+- Online label: 2025–26.
+- ISBN: 978-93-5007-064-2.
+- First edition: June 2010; reprints listed through July 2023.
+- Copyright: © NCERT 2010; the PDF states ALL RIGHTS RESERVED.
+
+**Important distinction:** this is the Class XI Biology learning/practical manual. It is not the separate Higher Secondary Biology Laboratory Kit manual (catalogue code 13163), and it is not the kit procurement specification. It cannot authenticate the provisional kit item quantities above.
+
+### Contents index — 34 NCERT Class XI exercises
+
+The official manual contents list these exercise topics:
+1. Parts of a compound microscope.
+2. Morphology of representative bacteria, fungi and plant groups.
+3. Selected animals on the basis of external features.
+4. Plant tissues and diversity in plant-cell shapes and sizes.
+5. Preparation and study of temporary slides of animal tissues.
+6. Mitosis.
+7. Root modifications.
+8. Stem modifications.
+9. Leaf modifications.
+10. Types of inflorescences.
+11. Flowering plants of Solanaceae, Fabaceae and Liliaceae.
+12. Anatomy of monocot and dicot stems and roots.
+13. Herbarium sheets of flowering plants.
+14. External morphology of animals through models.
+15. Osmosis by potato osmometer.
+16. Plasmolysis in leaf epidermal peel.
+17. Imbibition in raisins or seeds.
+18. Stomata on upper and lower leaf surfaces.
+19. Difference in transpiration rate between two leaf surfaces.
+20. Carbohydrates including glucose, sucrose and starch.
+21. Proteins.
+22. Fats/lipids in plant and animal materials.
+23. Separation of plant pigments by paper chromatography.
+24. Respiration rate in flower buds/germinating seeds.
+25. Observation and comment on an experimental setup.
+26. Salivary amylase action on starch.
+27. Effect of temperature on salivary amylase.
+28. Effect of pH on salivary amylase.
+29. Urea in a urine sample.
+30. Sugar in a urine sample.
+31. Albumin in a urine sample.
+32. Bile salts in a urine sample.
+33. Human skeleton.
+34. Types of joints in the human skeleton.
+
+The list above is a transcription of the manual's contents section, not a claim that all 34 are RBSE requirements or that every procedure has been audited. Keep these 34 exercises in a separate NCERT source pack.
+
+### Exercise 1 — microscope model details inspected
+
+The retrieved Exercise 1 text describes a normally used monocular compound microscope and identifies its major parts and operations:
+- eyepiece options 5X, 10X or 15X;
+- objective options 10X, 40X or 45X; some microscopes may also have a 100X oil-immersion objective;
+- revolving nosepiece, body tube, stage, slide clips, iris diaphragm, condenser (not present on all microscopes), adjustable mirror and coarse/fine adjustment;
+- total magnification = eyepiece magnification × objective magnification;
+- at higher magnification, use fine adjustment for focus; avoid contact between objective and slide;
+- clean lenses using lens-cleaning fluid and lens-cleaning paper.
+
+These are options/examples described by the learning manual, not procurement tolerances or a universal specification. Do not force every variant into the first LabVerse microscope asset.
+
+The same manual describes a student dissection box with two pairs of scissors, two scalpels, two forceps, two dissecting needles, razor, hand lens, dropper and fine brush, plus laboratory coat/apron, hand towel and first-aid awareness. Those are student/laboratory preparation recommendations; they do not prove inclusion in the Higher Secondary Biology kit.
+
+### Retrieval and rights limits
+
+- Parsed text was available from the NCERT-hosted PDF.
+- Screenshot/page-image retrieval attempts for PDF pages 5–6 returned HTTP 502; no visual audit of the manual's figures is claimed.
+- The PDF states ALL RIGHTS RESERVED. This manual may be cited as a source, but its diagrams, illustrations, tables and prose must not be copied into LabVerse without permission.
+- The detailed 141-page secondary-hosted Biology kit transcription remains DISCOVERY ONLY. Its counts and reagents are still not primary-verified.
