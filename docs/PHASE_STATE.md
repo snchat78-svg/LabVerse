@@ -473,3 +473,28 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D as
 
 ### Next action
 Recover remaining Exercise 5 pages, obtain the complete current-edition body, validate taxonomy and safety with a Biology teacher, then extend the full RBSE/NCERT coverage matrix. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — current-edition NCERT Biology Exercises 2–6 text audit (2026-11-01)
+
+### Source recovery improvement
+- [x] Retrieved current NCERT-host PDFs kelm302–kelm306 from ncert.nic.in; each carries 2025–26 page markers.
+- [x] Extracted complete PDF text for Exercises 2 (8 pages), 3 (14 pages), 4 (3 pages), 5 (6 pages) and 6 (3 pages).
+- [x] Visually inspected accessible pages from Exercises 2, 3 and 6.
+- [x] Attempted screenshot retrieval for Exercises 4 and 5; screenshot tool returned HTTP 502. Their text extraction succeeded.
+- [x] Updated Exercise 5 from PARTIAL legacy evidence to FULL CURRENT-EDITION TEXT EXTRACTED.
+- [x] Identified that Exercise 5's body provides epithelial, blood/connective, striated, smooth and cardiac content; no nervous-tissue procedure is present in the retrieved Exercise 5 PDF, despite a general introductory mention of nervous tissue.
+- [x] Retained the formalin, corrosive/chromium(VI) chemistry, microbial culture/spore and human-sample safety restrictions.
+
+### Superseded evidence labels
+- Previous legacy-only/current-edition-not-matched status for Exercises 2–6 is superseded by current 2025–26 PDF extraction.
+- Legacy 2018 chapter files are retained as historical source versions only.
+- The current PDFs' text extraction does not constitute Biology-teacher scientific approval or visual verification of every figure.
+
+### Current gate
+- Exercises 2–6 current 2025–26 text: INSPECTED.
+- Exercises 2, 3, 6 page-image inspection: PARTIAL / successful on selected pages.
+- Exercises 4, 5 page-image inspection: BLOCKED by HTTP 502.
+- Taxonomy/biological assertions review: PENDING.
+- Exact assets, simulation behaviour and tests: DESIGN_ONLY / NOT IMPLEMENTED.
+- Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
