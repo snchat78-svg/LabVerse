@@ -308,3 +308,17 @@ See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md. Do not m
 | NCERT_PUBLICATIONS_CATALOGUE_13163 | https://ncertbooks.ncert.gov.in/static/NCERT%20GENERAL.pdf | Catalogue lists code 13163, Manual of Higher Secondary Biology Laboratory Kit | METADATA_CONFIRMED; catalogue entry is not the item-level manual/specification |
 
 The source bodies above were accessed via NCERT's legacy n20 host. Their 2018 stamp is retained as source-version metadata; do not silently promote them to current NCERT edition. The NCERT kit manual/specification pages are official listing evidence only, not an item-level procurement audit.
+
+
+## Crossref REST request-type limit update (2026-11-01)
+
+Crossref's current general access page describes Public pool 5 requests/sec (concurrency 1) and Polite pool 10 requests/sec (concurrency 3), but the 21 July 2026 Crossref announcement makes an important request-type distinction:
+- Single-record DOI lookups: 5/sec Public, 10/sec Polite.
+- Multi-record/list/query requests: 1/sec Public, 3/sec Polite.
+- Clients should read `x-rate-limit-limit`, `x-rate-limit-interval`, `x-rate-limit-type`, and `x-concurrency-limit` from live responses; 429 requires pause/backoff.
+
+Primary policy references:
+- https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication
+- https://community.crossref.org/t/refining-rest-api-limits-for-improved-stability-and-reliability/16137
+
+The connector implementation must use header-driven throttling and separate endpoint classes. This replaces any interpretation of the general pool limit as a single global QPS applicable to every request. Policy review only; connector is not implemented/tested.
