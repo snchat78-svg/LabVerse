@@ -384,3 +384,22 @@ Detailed requirements/evidence: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_2
 - Research Studio: question/hypothesis, controls/variables, measurement/replicate ledger, error/deviation log, analysis, interpretation, discussion, conclusion, references and provenance records.
 
 All IDs are candidate design inventory only; no meshes or simulator code exist.
+
+
+## Secondary NCERT Biology kit transcription — candidate count and ID-family reconciliation (2026-11-01)
+
+Source: https://www.scribd.com/document/870673944/Manual-Secondary-Stage-Biology-Laboratory-Kit-11-12-En (141-page secondary-hosted transcript; title/ISBN matches the official NCERT catalogue/manual listing; primary file comparison pending).
+
+Provisional counts exposed by the transcript:
+- 84 numbered key/tool/glassware/plasticware inventory entries.
+- 7 acrylic-embedded specimen names.
+- 35 permanent-slide entries.
+- 50 visual-aid cards (VA-1 to VA-50).
+- 58 chemical/reagent/stain entries, explicitly school/institution/teacher-managed and not supplied with the kit.
+- One blade entry explicitly marked as not supplied with the kit.
+
+The existing section above records the equipment families, quantities, dimensions and named examples in the transcript. These values remain SECONDARY_TRANSCRIPTION_ONLY. Do not copy the manual's figures or card artwork. Use provisional IDs for LabVerse assets and require item-by-item primary-source/specification verification before marking any quantity or physical dimension as an official procurement fact.
+
+Important namespace control: the kit manual's Grade XI exercise IDs 1–34 and Grade XII IDs 35–60 are not the later NCERT Biology Lab Manual / CIET IDs and are not RBSE exercise numbers. Link records by topic, edition and source ID; never by exercise number alone.
+
+Primary gate remains open: official NCERT Biology kit manual file and with-microscope / without-microscope specification attachments still need direct retrieval and comparison.
