@@ -293,3 +293,18 @@ See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md.
 | NCERT_XII_BIO_PROJECT_WORK_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm216.pdf | Project guidance, reporting format and example project areas | 21/04/2018 stamp; current-edition match not confirmed |
 
 See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md. Do not mark these historical chapter bodies as confirmed 2025–26 revisions.
+
+
+## NCERT Class XII Biology legacy chapter evidence and kit-index recheck (2026-11-01)
+
+| Source ID | Official/discovery URL | Evidence read | Current-use status / limitation |
+|---|---|---|---|
+| NCERT_CIET_GRADE12_INDEX_2026 | https://ciet.ncert.gov.in/activity/grade12 | Current CIET Grade 12 index page; Biology rows include pedigree, pollen, gametophyte, genetics, adaptations, soil/water, SPM and quadrat entries | INDEX_ONLY; duplicated/contradictory exercise labels preserved; index is not the RBSE syllabus |
+| NCERT_XII_BIO_EX11_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm208.pdf | Six-page text extraction; pedigree chart construction/analysis; visible stamp 21/04/2018 | LEGACY BODY INSPECTED; 2025–26 match NOT_CONFIRMED |
+| NCERT_XII_BIO_EX17_TO_20_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm212.pdf | Exercise 17 plant adaptations, 18 animal adaptations, 19 soil/water pH and 20 water turbidity body text; visible stamp 21/04/2018 | LEGACY BODY INSPECTED; 2025–26 match NOT_CONFIRMED |
+| NCERT_XII_BIO_PROJECT_WORK_LEGACY | https://n20.ncert.org.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm216.pdf | Investigatory project framework, planning and report structure; visible stamp 21/04/2018 | LEGACY BODY INSPECTED; not a list of RBSE-prescribed project topics; 2025–26 match NOT_CONFIRMED |
+| NCERT_BIO_KIT_MANUALS_INDEX | https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | Official NCERT page lists “Manual of Secondary Stage Biology Laboratory Kit for Grades 11th and 12th” (English) | LISTING_CONFIRMED; full Biology kit manual bytes/page text not inspected |
+| NCERT_BIO_KIT_SPECIFICATIONS_INDEX | https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Official NCERT index lists separate Secondary Stage Biology Kit with Microscope and without Microscope (Grades 11 & 12) | VARIANTS_CONFIRMED; downloadable specification attachment contents, item counts and revision not inspected |
+| NCERT_PUBLICATIONS_CATALOGUE_13163 | https://ncertbooks.ncert.gov.in/static/NCERT%20GENERAL.pdf | Catalogue lists code 13163, Manual of Higher Secondary Biology Laboratory Kit | METADATA_CONFIRMED; catalogue entry is not the item-level manual/specification |
+
+The source bodies above were accessed via NCERT's legacy n20 host. Their 2018 stamp is retained as source-version metadata; do not silently promote them to current NCERT edition. The NCERT kit manual/specification pages are official listing evidence only, not an item-level procurement audit.
