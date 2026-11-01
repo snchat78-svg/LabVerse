@@ -805,3 +805,12 @@ The repository remains at Phase 1 IN PROGRESS / Phase 2 BLOCKED. No code, 3D ass
 - [ ] Complete all six RBSE practical-to-item/asset/model/test mappings and obtain qualified subject-expert review.
 
 New document: docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md
+
+
+### Phase 1.1 — exact official specification links identified (2026-11-01)
+- [x] Follow the four PDF link targets directly from NCERT's English specification index and preserve exact URLs for MSCL, Biology with microscope, Biology without microscope and Physics.
+- [x] Record per-attachment transport outcome; distinguish official-link confirmation from actual PDF-content inspection.
+- [ ] Obtain PDF bytes for all four official attachment links; one Biology-without-microscope file is 63,918,957 bytes and exceeds the current retrieval route's file-size limit, while other attempts timed out/returned 502.
+- [ ] Authenticate corresponding GeM attachment copies with byte size/hash/PDF metadata before treating them as equivalent to NCERT attachments.
+
+The exact links and retrieval outcomes are in docs/PHASE_1_1_NCERT_KIT_SPECIFICATION_AUDIT.md and docs/PHASE_1_NCERT_SPECIFICATION_ACCESS_AUDIT.md. This update does not change the phase gate: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
