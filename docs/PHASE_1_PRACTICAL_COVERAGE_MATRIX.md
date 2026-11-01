@@ -363,3 +363,8 @@ Source body audit: `docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AU
 - CIET also has duplicated/contradictory labels for soil texture, turbidity and quadrat density/frequency. Do not repair those labels by inference. Record the manual chapter, linked DIKSHA item and RBSE item as distinct identifiers until reconciled.
 - The legacy source bodies are not current-edition confirmation. Current manual match, subject-teacher review, domain validation and test vectors remain required.
 - No row in this table is VERIFIED; no experiment model, 3D asset, data connector or software test is implemented.
+
+
+## Master RBSE task-register link (2026-11-01)
+
+The complete source task index for all six mainstream RBSE 2026–2027 class/subject packs now lives in `docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md`. The matrix above remains the representative design traceability slice and does not become exhaustive merely because the master task index exists. Next work is to fill every task row with evidence-backed item IDs, asset specifications, scientific models/rules, test vectors and reviewer approval.
