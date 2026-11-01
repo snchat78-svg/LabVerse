@@ -449,3 +449,27 @@ This is an index-level traceability update only. No practical procedure, apparat
 - Obtain Biology-teacher review.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D assets or simulation engines were implemented; no software tests are claimed.
+
+
+## Phase 1 update — legacy NCERT Biology Exercises 2–6 body audit (2026-11-01)
+
+### Newly completed
+- [x] Found separate NCERT-hosted legacy chapter PDFs kelm302–kelm306 for Class XI Biology Exercises 2–6.
+- [x] Inspected legacy body text for Exercises 2, 3, 4 and 6; screenshots succeeded for Exercises 2, 3 and 6.
+- [x] Inspected only a partial body extraction for Exercise 5; later pages/screenshot access remain blocked.
+- [x] Cross-checked exercise titles and numbers against the current 2025–26 contents page.
+- [x] Added specimen, slide, tissue and mitosis candidate IDs with explicit edition and safety boundaries.
+- [x] Preserved the Exercise 6 vs CIET Exercise 1 metadata conflict.
+
+### Evidence boundary
+- Legacy files show 23-04-2018 stamps; body text is not page-by-page matched to the current 2025–26 revision.
+- Exercises 2, 3, 4 and 6: LEGACY BODY TEXT INSPECTED / CURRENT-EDITION BODY MATCH PENDING.
+- Exercise 5: PARTIAL LEGACY BODY TEXT / REMAINDER NOT RETRIEVED.
+- All mappings and assets remain DESIGN_ONLY / NEEDS_REVIEW.
+- No application code, 3D assets, simulations or software tests exist.
+
+### New document
+- docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md
+
+### Next action
+Recover remaining Exercise 5 pages, obtain the complete current-edition body, validate taxonomy and safety with a Biology teacher, then extend the full RBSE/NCERT coverage matrix. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
