@@ -263,3 +263,22 @@ Exercise 6 includes root-tip preparation reagents/heat; store a hazard record an
 | Nature (2024), “The emerging view on the origin and early evolution of eukaryotic cells”; https://www.nature.com/articles/s41586-024-07677-6 | Reviews current research on eukaryotic origins/Asgard archaeal relatives | Recent review; not an all-purpose taxonomic authority |
 
 All of these are research references only; the content remains awaiting a domain expert review. See docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
+
+
+## NCERT Class XII Biology additional chapter sources (2026-11-01)
+
+| Source ID | URL | Exercise(s) | Evidence state / limitation |
+|---|---|---|---|
+| NCERT_XII_BIO_EX08_EX09 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm206.pdf | 8–9 | Five-page PDF; text inspected; screenshot 502 |
+| NCERT_XII_BIO_EX10 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm207.pdf | 10 | Four-page PDF; text inspected; screenshot 502 |
+| NCERT_XII_BIO_EX12_EX13 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm209.pdf | 12–13 | Four-page PDF; text inspected; EX12 first page visually inspected |
+| NCERT_XII_BIO_EX14 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm210.pdf | 14 | Four-page PDF; text inspected; first page visually inspected |
+| NCERT_XII_BIO_EX15 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm211.pdf | 15 | Six-page PDF; text inspected; first page visually inspected |
+| NCERT_XII_BIO_EX16_TO_20 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm212.pdf | 16–20 | Sixteen-page PDF; EX16 body inspected; later individual exercise audit incomplete; first page visually inspected |
+| NCERT_XII_BIO_EX21 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm213.pdf | 21 | Eight-page PDF; text inspected; screenshot timed out |
+| NCERT_XII_BIO_EX22_TO_24 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm214.pdf | 22–24 | Five-page PDF; text inspected; screenshot 502 |
+| NCERT_XII_BIO_EX25 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXII/biology/lelm215.pdf | 25 | Three-page PDF; text inspected; first page visually inspected |
+
+The official NCERT-host files do not expose a clear publication/reprint date in the retrieved chapter pages. Their precise revision date remains NOT_CONFIRMED. Exercise 7 (lelm205), Exercise 11 (lelm208) and Investigatory Project Work (lelm216) did not retrieve successfully. Do not infer content for these files from filename sequence.
+
+See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md.
