@@ -230,3 +230,8 @@ The live index exposes 25 Biology rows (24 marked Lab Manual plus one additional
 Do not silently correct the index exercise numbers or merge distinct linked resources. Keep stable raw source-row IDs and later add a canonical activity ID only after opening and comparing the linked DIKSHA resources and the underlying Class XII manual. The current CIET index supports these 25 row labels only; it does not verify procedures, materials, scientific outcomes or current procurement contents.
 
 The existing Grade 12 Biology summary above is a canonical topic-level summary; this raw table is the authoritative transcription of the 25 displayed index rows for traceability.
+
+
+## CIET Grade 12 Biology — Exercise 11 pedigree index mismatch (2026-11-01)
+
+The NCERT Class XII legacy chapter lelm208.pdf identifies pedigree chart preparation/analysis as Exercise 11. The CIET Grade 12 raw table currently lists “Pedigree-Construction and analysis” under Exercise 1. Preserve the two raw records and their mismatch; do not silently renumber. See docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md.
