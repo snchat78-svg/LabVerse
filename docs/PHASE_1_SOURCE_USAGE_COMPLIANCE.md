@@ -37,3 +37,22 @@ Status: DOCUMENTATION REVIEW / PRE-INTEGRATION. No API connectors have been impl
 Initial learning runtime should not make continuous research-source calls. Curated, versioned content packs will carry the minimum reviewed data required for offline practicals. Research Studio can query source APIs when online and use caching with provenance.
 
 No source is marked CONNECTOR_TESTED or VERIFIED_FOR_USE by this audit. Phase 1 compliance research is documented; technical integration and per-record use review remain future tasks.
+
+
+## Crossref REST — request-type limits update (2026-11-01)
+
+The general Crossref access page lists Public pool 5 requests/sec with concurrency 1 and Polite pool 10 requests/sec with concurrency 3, and explicitly instructs clients to read the live response headers for rate and concurrency limits.
+
+A Crossref forum announcement dated 21 July 2026 clarifies that rate limits differ by request type:
+- Single-record lookup (for example, one DOI): Public 5 requests/sec; Polite 10 requests/sec.
+- Multi-record/list/query requests using filters: Public 1 request/sec; Polite 3 requests/sec.
+- Headers: `x-rate-limit-limit`, `x-rate-limit-interval`, `x-rate-limit-type`; concurrency is still exposed as `x-concurrency-limit`.
+- HTTP 429 means the client has been rate-limited and must pause/back off.
+
+Sources:
+- Official access/authentication and general limit documentation: https://www.crossref.org/documentation/retrieve-metadata/rest-api/access-and-authentication (page last updated 2025-10-16 in the page footer).
+- Crossref API request-type announcement, 21 July 2026: https://community.crossref.org/t/refining-rest-api-limits-for-improved-stability-and-reliability/16137
+
+**Implementation acceptance rule:** do not hard-code one global Crossref QPS. Read all rate/concurrency headers on each response, distinguish single-record vs multi-record routes, use the conservative limits above when headers are absent, apply exponential/backoff on 429, cache repeated responses, and test behaviour separately for each endpoint class before labelling the connector CONNECTOR_TESTED.
+
+This remains policy documentation only. No API calls, connector code or load tests were added to LabVerse in this update.
