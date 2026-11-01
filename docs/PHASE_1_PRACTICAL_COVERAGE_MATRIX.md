@@ -248,3 +248,15 @@ The manual explicitly emphasises correct observation and honest data recording. 
 The alternate official ncert.gov.in PDF route was found. The indexed PDF representation available in this audit exposes the front matter, contents, Introduction and Exercise 1 only (17 parsed PDF pages; contents page itself refers to later printed pages through 129). The procedures/body text for Exercises 2–34 were not available from the retrieved representation. Screenshots of the accessible Exercise 1 pages (printed pp. 5–7) were visually inspected.
 
 Therefore all 34 titles/page starts are recorded; only Exercise 1 has a partial body-level audit; Exercises 2–34 remain TITLE_ONLY; no apparatus, reagents, procedure or scientific outcome is inferred from their titles. The title index remains a separate NCERT learning-manual source pack, not an RBSE 2026–27 exam requirement list.
+
+
+## NCERT Class XI Biology Exercises 2–6 — cross-source traceability
+
+Exercise-level mapping, DIKSHA IDs, the mitosis index-number conflict, title-only asset families and retrieval limitations are recorded in:
+- docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md
+
+Current evidence state:
+- Exercise 2 and 3: NCERT contents title/page plus CIET index link located; DIKSHA body not audited.
+- Exercise 4 and 5: NCERT contents title/page verified; no link surfaced in the inspected Grade 11 CIET table.
+- Exercise 6: NCERT manual labels mitosis as Exercise 6, while the CIET index labels the mitosis row Exercise 1. Preserve both raw records until reconciled.
+- All apparatus families are title-level DESIGN_ONLY. Do not infer species, slide contents, stain/reagent concentrations or quantities.
