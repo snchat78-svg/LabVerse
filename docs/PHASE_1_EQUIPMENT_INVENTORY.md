@@ -370,3 +370,17 @@ Source, evidence and safety details: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_
 - EX25 comparison: plant/animal homologous/analogous organ comparison set.
 
 All IDs are candidate design inventory only. No physical 3D asset or simulator exists.
+
+
+## Class XII Biology Exercises 11 and 17–20 + Investigatory Project asset requirements (2026-11-01)
+
+Detailed requirements/evidence: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md.
+
+- EX11 pedigree: BIO-XII-PEDIGREE-SYMBOL-SET, GENERATION-NODE, RELATIONSHIP-EDGE, INHERITANCE-PATTERN-CLASSIFIER, UNCERTAINTY-ANNOTATION. Synthetic pedigrees only by default.
+- EX17 plants: BIO-XII-PLANT-ADAPTATION-SPECIMEN-CATALOGUE, XEROPHYTE/HYDROPHYTE models, cross-section and observation matrix. Prepared virtual slides only.
+- EX18 animals: BIO-XII-ANIMAL-ADAPTATION-SPECIMEN-CATALOGUE, XERIC/HYDRIC models and comparison panel; no live animal handling/stress testing.
+- EX19 pH: ENV-SAMPLE-WATER-PH, ENV-SAMPLE-SOIL-PH, indicator-dye/paper, electrometric and colorimetric method records; method precision stays separate.
+- EX20 turbidity: ENV-WATER-SECCHI-DISC, photic-zone depth, settling cylinders. Field method simulated or approved data only; no unsupervised boat/pond activity.
+- Research Studio: question/hypothesis, controls/variables, measurement/replicate ledger, error/deviation log, analysis, interpretation, discussion, conclusion, references and provenance records.
+
+All IDs are candidate design inventory only; no meshes or simulator code exist.
