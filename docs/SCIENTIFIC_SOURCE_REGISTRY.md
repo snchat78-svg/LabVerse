@@ -387,3 +387,22 @@ Important source facts:
 - Both MSCL and Biology-with-microscope wire-gauze rows explicitly specify an asbestos centre; retain as a source hazard, not a LabVerse real-world asset.
 - MSCL includes a mercury-filled thermometer; virtual/digital sensor preferred.
 - The Biology-with-microscope index includes a student microscope as row 176 even though the index heading says “Permanent Slide”; the body text and image identify a microscope. Preserve the discrepancy.
+
+
+## User-supplied NCERT kit specification copies — extended audit (2026-11-01)
+
+The user uploaded two NCERT-branded specification copies. OCR and page-image inspection were required because the PDFs had no useful text layer.
+
+| Source ID | Uploaded file | Structural finding | Status |
+|---|---|---|---|
+| NCERT_MSCL_SPEC_UPLOAD_2026_11_01 | MSCL_copy.pdf | 65 pages; 55 index rows; 54 kit/manual entries plus one documentation-credit row; specification rows represented in CSV | USER_UPLOADED_COPY / OCR_INSPECTED; SHA-256 recorded; origin not byte-authenticated |
+| NCERT_BIO_WITH_MICROSCOPE_SPEC_UPLOAD_2026_11_01 | SSBK_with_Microscope_copy.pdf | 199 pages; 177 index rows; 83 first-section entries, 50 cards, 7 specimens, 35 slides, one student microscope and one documentation-credit row | USER_UPLOADED_COPY / PARTIAL_PAGE_AUDIT; first-section specifications OCR-transcribed; remaining card/specimen/slide pages primarily index-derived |
+
+Associated files:
+- docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md
+- docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md
+- data/catalogues/ncert_mscl_spec_items.csv
+- docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md
+- data/catalogues/ncert_biology_with_microscope_spec_items.csv
+
+Both specifications explicitly contain asbestos-centred wire gauze. The uploaded MSCL specification also contains a mercury-filled thermometer. Flag these as source hazards; no asbestos or mercury real-world use is to be exposed to learners. The Biology row 176 index label/body mismatch is retained rather than silently corrected.
