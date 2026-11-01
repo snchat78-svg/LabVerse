@@ -275,3 +275,18 @@ Detailed source notes: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDI
 | EX-06 p.39 | Legacy chapter text and screenshot inspected; current title/page cross-check | Permanent mitosis slide, stages and cytokinesis | LEGACY BODY INSPECTED / DESIGN_ONLY |
 
 The 2018 legacy PDFs have not been page-by-page matched to the current 2025–26 manual. Candidate assets are not scientific validation or implementation. Retain raw source and edition provenance. Human sample, formalin, fungal culture/spores, chromium(VI)/corrosive chemistry remain virtual-only or prepared-slide-only.
+
+
+## Current-edition evidence correction — NCERT Biology Exercises 2–6 (2026-11-01)
+
+Current NCERT-hosted 2025–26 PDFs have now been text-extracted for all five exercises (kelm302–kelm306). This supersedes the legacy-only evidence state recorded earlier.
+
+| Exercise | Current-edition body extraction | Main asset families | Remaining gate |
+|---|---|---|---|
+| EX-02 | Full 8-page text | BIO-SLIDE-BACTERIA-REP, BIO-SLIDE-OSCILLATORIA, BIO-SLIDE-SPIROGYRA, BIO-SLIDE-RHIZOPUS, BIO-SLIDE-YEAST; plant-group specimen families | Taxonomy and outdated claims review; prepared slides only |
+| EX-03 | Full 14-page text | BIO-ANIMAL-* model/slide families | Identity/taxonomy review; formalin remains virtual-only |
+| EX-04 | Full 3-page text; screenshot unavailable | BIO-SLIDE-TS-*, BIO-SLIDE-VS-*, BIO-TISSUE-* | HIGH_HAZARD source method; use pre-prepared/virtual slides |
+| EX-05 | Full 6-page text; screenshot unavailable | BIO-SLIDE-CHEEK-EPITHELIUM, BLOOD-CELL-MIX, MUSCLE-* | Human cheek/blood sampling and animal tissue handling replaced by synthetic/prepared slides only |
+| EX-06 | Full 3-page text | BIO-SLIDE-MITOSIS-PERMANENT, BIO-CELL-STAGE-*, BIO-CYTOKINESIS-* | 10X/40X observation model; no onion-root-tip protocol inferred |
+
+All records remain DESIGN_ONLY. Current-edition source text inspection is not expert validation, simulation implementation or software testing. See the detailed audit document for evidence limits and the visual screenshot status.
