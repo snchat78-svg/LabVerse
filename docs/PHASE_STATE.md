@@ -402,3 +402,20 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 
 ### Current gate
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No application code, 3D asset, simulator or API connector was created; software tests remain NOT RUN.
+
+
+## Phase 1 update — NCERT-CIET Grade 12 Biology raw-index anomaly audit (2026-11-01)
+
+### Newly completed
+- [x] Reopened the live official NCERT-CIET Grade 12 index and checked the displayed Biology section.
+- [x] Recorded all 25 raw Biology rows (24 Lab Manual links plus one Additional Resource).
+- [x] Preserved repeated/ambiguous exercise-number assignments, including duplicate pollen-tube, turbidity and quadrat entries and the two different Exercise 1 titles.
+- [x] Kept CIET Grade 12 as a separate source pack; no automatic mapping to RBSE board practical requirements.
+
+### Remaining
+- [ ] Open the linked DIKSHA resources and inspect content for each raw row.
+- [ ] Compare the rows against the actual NCERT Class XII Biology manual text and page numbering.
+- [ ] Establish canonical activity IDs only after the source links are compared; do not silently repair CIET labels.
+- [ ] Map verified materials, safety, observations and candidate asset requirements into the coverage matrix.
+
+This is an index-level traceability update only. No practical procedure, apparatus, reagent, or result was verified from the 25 CIET labels. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
