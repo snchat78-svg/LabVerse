@@ -411,3 +411,8 @@ https://www.ncert.nic.in/division/dek/pdf/NCERT_Educational_School_Kit-Enhancing
 NCERT identifies the Higher Secondary Biology Lab Kit (HSBLK) for Class XI/XII Biology and names broad categories: laboratory instruments, glassware, compound microscope, permanent slides, stains and cards. These categories support the existing provisional Biology inventory families only; they do not validate individual item IDs, quantities, materials, dimensions, specifications or variant membership.
 
 The official specification index lists separate with-microscope and without-microscope variants. Therefore the microscope is a variant-dependent item. Do not infer exact contents from the brochure photograph. Item-level verification remains blocked until the full kit manual and both specification attachments are inspected. See `docs/PHASE_1_NCERT_OFFICIAL_SCHOOL_KITS_BROCHURE_AUDIT.md`.
+
+
+## Biology slide/specimen/visual-aid candidate register link
+
+Candidate LabVerse IDs for all 7 acrylic-embedded specimens, 35 permanent slides and VA-1–VA-50 are recorded in `docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md`. They are derived from a secondary-hosted transcript; source numbering and item quantities remain provisional until matched to NCERT's official full manual and both Biology procurement-specification variants.
