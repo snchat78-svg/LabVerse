@@ -322,3 +322,14 @@ Primary policy references:
 - https://community.crossref.org/t/refining-rest-api-limits-for-improved-stability-and-reliability/16137
 
 The connector implementation must use header-driven throttling and separate endpoint classes. This replaces any interpretation of the general pool limit as a single global QPS applicable to every request. Policy review only; connector is not implemented/tested.
+
+
+## NCERT Biology kit manual — full secondary transcript evidence (2026-11-01)
+
+| Source ID | URL | Evidence inspected | Status / limitation |
+|---|---|---|---|
+| NCERT_BIO_KIT_MANUAL_SECONDARY_TRANSCRIPT | https://www.scribd.com/document/870673944/Manual-Secondary-Stage-Biology-Laboratory-Kit-11-12-En | Readable 141-page transcript; front matter shows ISBN 978-93-5292-528-5, March 2018 first edition, reprints October 2018 / January 2019 / March 2020; contents list XI exercises 1–34 and XII 35–60; item schedule lists 84 item rows, 7 acrylic specimens, 35 permanent slides, VA-1 to VA-50 and 58 school-managed reagent entries | SECONDARY_FULL_TEXT_INSPECTED / NOT PRIMARY VERIFIED; quantity, OCR and specification matching still pending |
+| NCERT_BIO_KIT_MANUAL_OFFICIAL_LISTING | https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | Official NCERT page lists the Grade XI/XII Secondary Stage Biology Laboratory Kit manual in English | OFFICIAL_LISTING_CONFIRMED; page returned 502 to full open in this research route |
+| NCERT_BIO_KIT_SPECIFICATIONS_INDEX | https://ncert.nic.in/division/dek/specification_documents.php?ln=en | Official index lists Biology kit with microscope and Biology kit without microscope for Grades XI/XII | OFFICIAL_VARIANTS_CONFIRMED; attachments are not yet inspected |
+
+The transcript's own front matter says ALL RIGHTS RESERVED and that the manual is distributed only with its kit. The chemistry list is explicitly school-managed/not supplied, and a blade entry is explicitly not supplied. Treat the full transcript as provisional evidence for inventory planning only; do not redistribute its prose/figures or label it official primary evidence.
