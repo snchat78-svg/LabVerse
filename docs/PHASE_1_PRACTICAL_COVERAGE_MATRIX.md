@@ -189,3 +189,62 @@ The manual contents list 34 exercises. The list is recorded in `PHASE_1_NCERT_BI
 This source pack is distinct from RBSE 2026–27 Board practical requirements and from NCERT's Higher Secondary Biology Kit procurement specification. The source contents list is evidence of exercise titles only. Only Exercise 1's microscope description received a detailed text review in this pass; the other 33 exercises still require procedure, materials, safety, observation and calculation extraction.
 
 All exercise rows/groups remain non-verified. No 3D assets, model rules or tests are implemented.
+
+
+## NCERT Class XI Biology — granular exercise register (official contents index, 2026-11-01)
+
+Primary source: NCERT, Laboratory Manual: Biology, Class XI, ISBN 978-93-5007-064-2, online label 2025–26.
+Official PDF: https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The official contents index exposes 34 exercise titles and printed page starts. This register creates a stable source ID for each title. The status means title/page start read from the contents page; it does not mean the body procedure, apparatus, reagents, scientific model or result has been audited.
+
+| Source ID | Official contents title (transcribed) | Printed page start | Evidence state |
+|---|---|---:|---|
+| NCERT-XI-BIO-EX-01 | To study parts of a compound microscope | 5 | TITLE + EXERCISE BODY PARTIALLY AUDITED |
+| NCERT-XI-BIO-EX-02 | To identify and study the morphology of representative types of bacteria, fungi and different plant groups | 8 | TITLE ONLY |
+| NCERT-XI-BIO-EX-03 | To study some selected animals on the basis of their external features | 16 | TITLE ONLY |
+| NCERT-XI-BIO-EX-04 | Study of tissues and diversity in shapes and sizes of plant cells | 30 | TITLE ONLY |
+| NCERT-XI-BIO-EX-05 | Preparation of temporary slide of animal tissues and their study | 33 | TITLE ONLY |
+| NCERT-XI-BIO-EX-06 | Study of mitosis | 39 | TITLE ONLY |
+| NCERT-XI-BIO-EX-07 | To study modifications of root | 42 | TITLE ONLY |
+| NCERT-XI-BIO-EX-08 | To study modifications of stem | 44 | TITLE ONLY |
+| NCERT-XI-BIO-EX-09 | To study modifications of leaf | 46 | TITLE ONLY |
+| NCERT-XI-BIO-EX-10 | To study and identify different types of inflorescences | 48 | TITLE ONLY |
+| NCERT-XI-BIO-EX-11 | Study and describe flowering plants of families Solanaceae, Fabaceae and Liliaceae | 52 | TITLE ONLY |
+| NCERT-XI-BIO-EX-12 | To study anatomy of stem and root of monocots and dicots | 66 | TITLE ONLY |
+| NCERT-XI-BIO-EX-13 | Preparation of herbarium sheets of flowering plants | 74 | TITLE ONLY |
+| NCERT-XI-BIO-EX-14 | Study of external morphology of animals through models | 76 | TITLE ONLY |
+| NCERT-XI-BIO-EX-15 | To demonstrate osmosis by potato osmometer | 81 | TITLE ONLY |
+| NCERT-XI-BIO-EX-16 | Study of plasmolysis in epidermal peel of leaf | 83 | TITLE ONLY |
+| NCERT-XI-BIO-EX-17 | Study of imbibition in raisins or seeds | 85 | TITLE ONLY |
+| NCERT-XI-BIO-EX-18 | To study the distribution of stomata on the upper and lower surfaces of leaves | 87 | TITLE ONLY |
+| NCERT-XI-BIO-EX-19 | To demonstrate difference in rate of transpiration between two surfaces of leaf | 89 | TITLE ONLY |
+| NCERT-XI-BIO-EX-20 | To detect the presence of carbohydrates like glucose, sucrose and starch | 91 | TITLE ONLY |
+| NCERT-XI-BIO-EX-21 | To detect the presence of proteins | 95 | TITLE ONLY |
+| NCERT-XI-BIO-EX-22 | To detect the presence of fats (lipid) in different plants and animal materials | 97 | TITLE ONLY |
+| NCERT-XI-BIO-EX-23 | Separation of plant pigments (chloroplast pigments) by paper chromatography | 98 | TITLE ONLY |
+| NCERT-XI-BIO-EX-24 | To study the rate of respiration in flower buds/germinating seeds | 101 | TITLE ONLY |
+| NCERT-XI-BIO-EX-25 | Observation and comment on the setup | 103 | TITLE ONLY |
+| NCERT-XI-BIO-EX-26 | To study the enzymatic action of salivary amylase on starch | 107 | TITLE ONLY |
+| NCERT-XI-BIO-EX-27 | To study the effect of temperature on the activity of salivary amylase | 110 | TITLE ONLY |
+| NCERT-XI-BIO-EX-28 | To study the effect of pH on the action of salivary amylase | 112 | TITLE ONLY |
+| NCERT-XI-BIO-EX-29 | To detect the presence of urea in the given sample of urine | 114 | TITLE ONLY |
+| NCERT-XI-BIO-EX-30 | To test the presence of sugar in the given sample of urine | 117 | TITLE ONLY |
+| NCERT-XI-BIO-EX-31 | To detect the presence of albumin in the given sample of urine | 120 | TITLE ONLY |
+| NCERT-XI-BIO-EX-32 | To detect the presence of bile salts in the given sample of urine | 122 | TITLE ONLY |
+| NCERT-XI-BIO-EX-33 | To study the human skeleton | 124 | TITLE ONLY |
+| NCERT-XI-BIO-EX-34 | To study different types of joints in human skeleton | 129 | TITLE ONLY |
+
+### Exercise extraction contract from the NCERT manual's Introduction
+
+The manual describes a standard practical record structure: aim, principle, required materials, stepwise procedure, observation/result, discussion and precautions. Its description of required materials calls for sample identity, apparatus type, glassware type and quantity, reagents/solutions, concentrations/specifications, preparation method and acceptable alternatives where supplied. Results can use tables, graphs or histograms and should retain units.
+
+LabVerse will use this as an original structured extraction template, not copy NCERT prose or diagrams. Each exercise record must separately capture exact sample/specimen identity and provenance; apparatus, glassware quantity and supported variant; reagent identity/concentration only where the full source and safety review support it; step sequence and hazard/precaution tags; raw observation fields, units and uncertainty; inference/discussion separated from observations; and modelled vs not-modelled outcomes with test vectors.
+
+The manual explicitly emphasises correct observation and honest data recording. LabVerse must not prefill simulated values as if observed by the learner.
+
+### Retrieval boundary and next extraction batch
+
+The alternate official ncert.gov.in PDF route was found. The indexed PDF representation available in this audit exposes the front matter, contents, Introduction and Exercise 1 only (17 parsed PDF pages; contents page itself refers to later printed pages through 129). The procedures/body text for Exercises 2–34 were not available from the retrieved representation. Screenshots of the accessible Exercise 1 pages (printed pp. 5–7) were visually inspected.
+
+Therefore all 34 titles/page starts are recorded; only Exercise 1 has a partial body-level audit; Exercises 2–34 remain TITLE_ONLY; no apparatus, reagents, procedure or scientific outcome is inferred from their titles. The title index remains a separate NCERT learning-manual source pack, not an RBSE 2026–27 exam requirement list.
