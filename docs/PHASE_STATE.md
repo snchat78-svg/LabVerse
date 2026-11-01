@@ -715,3 +715,19 @@ Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
 This closes only a high-level Biology kit source-evidence gap. It does not close the missing manual/specification attachment blocker. The brochure's retrieved text has no clear publication/reprint date. The existing secondary transcription remains discovery evidence, not primary-source verification.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED. No software or scientific-engine tests were run.
+
+
+## Phase 1 update — NCERT Biology kit asset catalogue identifiers (2026-11-01)
+
+### Newly completed
+- [x] Created `docs/PHASE_1_NCERT_BIOLOGY_KIT_SLIDE_AND_VISUAL_AID_REGISTER.md` with provisional IDs for 7 acrylic specimens, 35 permanent slides and 50 visual-aid card records.
+- [x] Recorded source card quantities where visible, separate candidate asset acceptance fields, taxonomy-review requirements and copyright boundary.
+- [x] Corrected the Biology kit review's earlier statement that the full visual-aid card list was not available; the full VA-1–VA-50 sequence is now inspected in the secondary transcript.
+- [x] Added the slide/specimen/visual-aid register to README and equipment-inventory navigation.
+
+### Limitations
+- These IDs are LabVerse candidates; they are not NCERT official item codes.
+- Full secondary transcript is not the same as an authenticated NCERT file. Primary content/specification comparison remains open.
+- No 3D card/slide/specimen assets, microscope renderer or biological simulation has been built or tested.
+
+Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
