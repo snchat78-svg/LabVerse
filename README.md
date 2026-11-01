@@ -100,3 +100,4 @@ The user-supplied RBSE 2026–2027 Class XI/XII PDFs have now been inspected for
 - [NCERT Grade XI–XII kit specification access audit](docs/PHASE_1_NCERT_SPECIFICATION_ACCESS_AUDIT.md)
 - [NCERT Class XI Biology Exercises 2–6 crosswalk](docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md)
 - [NCERT Class XI Biology Exercises 2–6 detailed audit](docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md)
+- [NCERT Class XI Biology Exercises 2–6 current-edition source audit](docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md)
