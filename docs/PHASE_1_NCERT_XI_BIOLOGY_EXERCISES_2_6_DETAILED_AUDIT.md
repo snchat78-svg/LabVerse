@@ -138,3 +138,56 @@ Identity correction: the current NCERT contents index and legacy chapter identif
 | Code, 3D assets, simulation tests | NOT IMPLEMENTED |
 
 Next: retrieve remaining Exercise 5 pages; cross-check legacy chapter PDFs against the complete current edition if NCERT exposes it; obtain Biology-teacher review; continue the broader RBSE/NCERT item-to-asset-to-test matrix. Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Superseding evidence update — current 2025–26 exercise PDFs retrieved (2026-11-01)
+
+This section supersedes the earlier limitation that Exercises 2–6 had only legacy 2018 body evidence. A direct NCERT current-host PDF route was successfully opened for all five chapter files. The PDF page markers show 2025–26.
+
+| Exercise | Current NCERT-hosted file | PDF pages | Current-edition text | Screenshot/page-image check |
+|---|---|---:|---|---|
+| 2 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm302.pdf | 8 | FULL TEXT EXTRACTED | First two pages inspected |
+| 3 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm303.pdf | 14 | FULL TEXT EXTRACTED | First page inspected |
+| 4 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm304.pdf | 3 | FULL TEXT EXTRACTED | Screenshot retrieval returned HTTP 502 |
+| 5 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm305.pdf | 6 | FULL TEXT EXTRACTED | Screenshot retrieval returned HTTP 502 |
+| 6 | https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm306.pdf | 3 | FULL TEXT EXTRACTED | First two pages inspected |
+
+The older 2018 chapter files remain historical duplicates, but are no longer the body-text basis for this audit. Use current-host 2025–26 text as the primary procedure source. Visual screenshot failure for Exercises 4 and 5 is not a text-extraction failure; page-image-specific visual verification remains pending.
+
+### Exercise 2 — current-edition body confirmation
+Current PDF 2025–26 confirms permanent slides, hand sections/photographs and representative specimens. The text includes representative bacteria, Oscillatoria, Spirogyra, Rhizopus, yeast, mushroom, lichens, Funaria, Marchantia, Dryopteris/fern, Pinus and monocot/dicot angiosperm examples. The text also includes historical systematics and biological assertions such as mesosome references. Preserve those as source statements, but require a modern authoritative science review before using disputed/dated taxonomy or cell-biology claims as canonical LabVerse facts.
+
+Learner-facing boundary remains prepared-slide/virtual model only for bacteria/fungi; no culturing, unknown-spore handling or specimen collection.
+
+### Exercise 3 — current-edition body confirmation
+Current PDF 2025–26 confirms representative animal slides, museum specimens, models, photographs/charts and microscope. It explicitly describes 5–10% formalin-preserved specimens for naked-eye observation. This is a source method, not an approved LabVerse learner instruction. Use virtual models, approved museum/slide imagery or licensed prepared specimens only; no formalin handling or animal collection.
+
+### Exercise 4 — current-edition body confirmation
+Current PDF 2025–26 confirms permanent slides/sections for Nerium leaf, lotus leaf and petiole/stem, shoot/root apex and Cucurbita/Mentha stem, plus macerated plant material. It discusses parenchyma, collenchyma, sclerenchyma, xylem/phloem, palisade/spongy tissue and aerenchyma.
+
+The current manual's maceration section contains nitric/chromic acid and concentrated sulfuric acid/potassium dichromate chemistry, followed by heating and tissue handling. Treat this as HIGH_HAZARD / VIRTUAL_ONLY. Do not place recipe ratios, reagent-preparation steps, heating instructions or sharp-knife workflow in learner-facing LabVerse. Use permanent slides or safe virtual tissue models. PDF text is extracted; screenshot retrieval failed.
+
+### Exercise 5 — current-edition complete text confirmation
+Current PDF 2025–26 is six pages and the full text extraction includes:
+- epithelial/cheek-cell material;
+- connective tissue using a human blood smear, with RBC, WBC subtypes and platelets;
+- striated muscle fibres (including a preserved animal sample or preserved tissue);
+- smooth muscle represented by a permanent slide from urinary-bladder wall;
+- cardiac muscle represented by a permanent slide/heart section.
+
+The source lists slide/coverslip, watch glass, dropper, stain, glycerine, 0.9% saline, needle/forceps/brush/toothpick, microscope and other basic materials. It describes cheek scraping, finger-prick/lancet blood collection and animal tissue handling. These are not allowed as unsupervised learner actions in LabVerse.
+
+**LabVerse boundary:** use synthetic/pre-prepared cheek-cell and blood-cell slides only; never prompt learners to scrape their cheek, prick a finger, use a lancet/needle, prepare real blood films, dissect animals or handle human biological material. Keep stains and any tissue preparation virtual-only. The Introduction names four broad tissue groups including nervous tissue, but the retrieved Exercise 5 procedures provide sections for epithelial, connective and muscular tissue; no nervous-tissue procedure/slide is specified in this exercise file. Do not add one from assumption.
+
+PDF text is complete; screenshot retrieval for pages returned HTTP 502.
+
+### Exercise 6 — current-edition body confirmation
+Current PDF 2025–26 confirms permanent slides and compound microscope; the source uses 10X objective for initial search and 40X for higher magnification. It discusses interphase, prophase, metaphase, anaphase, telophase and plant/animal cytokinesis. Potential sources of mitotically dividing cells include growing root tips, shoot apex, vertebrate bone marrow, fish gill epithelium and growing tadpole tail. The exercise does not specify an onion-root-tip slide-preparation protocol. Do not silently import one from another class or source.
+
+### Updated audit status
+- Exercises 2–6: CURRENT 2025–26 PDF TEXT INSPECTED.
+- Exercises 2, 3 and 6: first-page visuals inspected; Exercise 2 second page and Exercise 6 second page also visually inspected.
+- Exercises 4 and 5: text extracted; screenshot retrieval failed, so visual figure review pending.
+- Exercise 5 is no longer partial at text level; its full six-page text is available.
+- Candidate assets remain DESIGN_ONLY; taxonomy/science review, 3D asset creation, simulation rules, acceptance tests and teacher review remain outstanding.
+- Copyright: current files state ALL RIGHTS RESERVED; do not reproduce NCERT diagrams, tables or prose in LabVerse without permission.
