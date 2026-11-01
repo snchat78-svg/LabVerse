@@ -262,3 +262,23 @@ New model constraints:
 - The exercise gives no numerical instrument dimensions, tolerances, resolution or calibration standard; none is added here.
 
 Acceptance design remains DESIGN_ONLY. No microscope mesh, optical simulation or tests exist yet.
+
+
+## NCERT Class XI Biology Exercises 2–6 — title-level asset families only (2026-11-01)
+
+Crosswalk: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_CROSSWALK.md  
+Official manual: https://www.ncert.gov.in/pdf/publication/sciencelaboratorymanuals/classXI/biology/kelm301.pdf
+
+The NCERT contents index provides exercise titles/page starts, but the body pages for Exercises 2–6 were not retrieved. The following are placeholder families inferred only from those titles; they are not confirmed bill-of-materials entries:
+
+| Exercise | Placeholder family IDs | Evidence state / hold |
+|---|---|---|
+| NCERT-XI-BIO-EX-02 — bacteria, fungi and plant-group morphology | BIO-SPECIMEN-MICROBE-*; BIO-SPECIMEN-PLANT-GROUP-*; BIO-OPTIC-*; BIO-SLIDE-* | TITLE_ONLY; do not assign taxa, quantities or slide types yet |
+| NCERT-XI-BIO-EX-03 — selected animals by external features | BIO-SPECIMEN-ANIMAL-*; BIO-MODEL-ANIMAL-*; BIO-SPOTTING-* | TITLE_ONLY; animal list/diagnostic features pending |
+| NCERT-XI-BIO-EX-04 — plant tissues and cell-shape diversity | BIO-SLIDE-PLANT-TISSUE-*; BIO-OPTIC-* | TITLE_ONLY; tissue list, plant parts and staining pending |
+| NCERT-XI-BIO-EX-05 — temporary slide of animal tissues | BIO-SLIDE-ANIMAL-TISSUE-*; BIO-OPTIC-*; BIO-TRANSFER-* | TITLE_ONLY; sample, preparation, stain and precautions pending |
+| NCERT-XI-BIO-EX-06 — mitosis | BIO-SLIDE-MITOSIS-*; BIO-OPTIC-*; BIO-STAIN-* | TITLE_ONLY; biological material and stage-preparation method pending |
+
+**Do not infer:** onion-root-tip material, tissue type, organism species, stains, concentrations, apparatus quantities or timings. In particular, a Class XII onion-root-tip mitosis resource must not be silently substituted for the Class XI Exercise 6 protocol.
+
+No apparatus record in this table is a verified procurement requirement. Each family remains DESIGN_ONLY pending official body-page extraction and Biology-teacher review.
