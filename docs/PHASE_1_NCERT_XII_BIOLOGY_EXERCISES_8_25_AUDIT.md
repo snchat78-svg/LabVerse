@@ -240,3 +240,10 @@ RBSE mapping remains a separate board pack with its own major/minor/spotting cho
 6. All assets remain DESIGN_ONLY; code, 3D meshes and tests are not implemented.
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Superseding source update — Exercises 17–20 and Project Work (2026-11-01)
+
+The earlier statement that body pages 17–20 were not individually audited is superseded for the readable NCERT legacy-host file. The 16-page lelm212.pdf text includes Exercise 17 plant adaptations, Exercise 18 animal adaptations, Exercise 19 water/soil pH and Exercise 20 water turbidity. The lelm216.pdf Investigatory Project Work text has also been extracted for project guidance, report format and example areas.
+
+These files show 21/04/2018 stamps and are NOT confirmed current-edition revisions. Detailed source evidence, Research Studio contract and safety requirements are now in docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md.
