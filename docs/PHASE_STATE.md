@@ -8,12 +8,12 @@ This is the single source of truth for the current phase. Update it in the same 
 - Repository: https://github.com/snchat78-svg/LabVerse
 - Current phase: Phase 1 — Platform scope, source audit and first science catalogue
 - Phase 0: DONE — planning/documentation baseline only
-- Phase 1: IN PROGRESS — RBSE 2026–27 practical sources extracted; NCERT kit inventory/specification and source-to-asset coverage are now the active work
+- Phase 1: IN PROGRESS — RBSE 2026–27 practical sections audited; NCERT source mapping expanded, but full kit specification audit, exhaustive traceability and independent expert review remain open
 - Phase 2: BLOCKED until Phase 1 exit criteria are met
 - Application code: not started
 - 3D workbench/assets: not implemented
 - Simulation/research engines: not implemented
-- Last phase-state review: 2026-10-31
+- Last phase-state review: 2026-11-01
 
 ## Phase 0 — completed log
 
@@ -35,23 +35,28 @@ This is the single source of truth for the current phase. Update it in the same 
 - [x] Defined research question, hypothesis, protocol, dataset provenance, analysis and reproducibility workflow.
 - [x] Added model-expansion levels and requirements for new validated scientific domain packs.
 
-### Mandatory remaining checklist
-- [x] Retrieve and inspect the official RBSE Class 11 examination 2027 syllabus PDF (user-supplied 155-page PDF inspected).
-- [x] Retrieve and inspect the official RBSE Class 12 examination 2027 syllabus PDF (user-supplied 169-page PDF inspected).
-- [x] Confirm exact PDF page ranges for all six current-session subject/class practical catalogues.
-- [x] Extract the listed practicals, activities, projects, spotting, slide/specimen, record and viva requirements into the official audit document.
-- [x] Inspect the official NCERT combined Physics Grades XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
-- [ ] Obtain and inspect the official NCERT Biology XI/XII kit manual (manual listing confirmed; detailed secondary-transcription inventory captured, official item-by-item verification pending).
-- [x] Inspect the NCERT Micro-scale Chemistry XI/XII kit manual text (earlier source audit; exact procurement-spec attachment audit remains open).
-- [ ] Reconcile RBSE practical requirements with NCERT manuals without silently merging or removing requirements.
-- [ ] Build complete apparatus, instruments, glassware, chemicals, specimens, slides, models and consumables inventory.
-- [ ] Review API/data terms, licence, attribution and update policy for each candidate research source.
-- [ ] Build source -> claim/data -> catalogue item -> asset -> test coverage matrix.
-- [ ] Preserve source wording conflicts; obtain expert clarification before publishing disputed board exam timing/mark allocations. The user-selected LabVerse timed-assessment preset is 180 minutes and does not claim to correct RBSE.
-- [ ] Complete scientific source and curriculum coverage review before Phase 1 sign-off.
+### Mandatory remaining checklist — reconciled status (2026-11-01)
+
+- [x] Inspect the user-supplied RBSE Class XI and Class XII examination 2027 PDFs and extract the practical sections for Physics, Chemistry and Biology (all six source page ranges recorded).
+- [x] Inspect the NCERT-CIET Grade 11 and Grade 12 index pages and preserve them as separate NCERT resource packs.
+- [x] Inspect NCERT Grade XI Physics and Chemistry laboratory-manual text, NCERT combined XI/XII Physics kit-manual text and NCERT micro-scale Chemistry kit-manual text.
+- [x] Record source-use/copyright and high-level API rate/attribution policies for candidate research sources; this is a policy discovery pass, not per-record legal clearance or an integration test.
+- [x] Create initial catalogue, source registry, source usage policy, equipment inventory and representative practical coverage matrix.
+- [x] Inspect NCERT Class XII Biology legacy-host body text for Exercises 11 and 17–20 and Investigatory Project Work; preserve 21/04/2018 revision stamp and current-edition mismatch.
+- [ ] Obtain and inspect the complete official NCERT Higher Secondary Biology kit manual, plus both Biology kit specification attachments (with microscope / without microscope); official listing/variant names are confirmed, but attachment contents are not.
+- [ ] Audit current official procurement specification attachments for Physics and micro-scale Chemistry kits, including item quantities, material, dimensions, tolerances and revision.
+- [ ] Complete current-edition body audit for missing/legacy Class XII Biology Exercise 7 and match legacy Exercises 11, 17–20 and Project Work against the current edition.
+- [ ] Complete exercise-by-exercise apparatus/material and asset coverage for all six RBSE class/subject packs; the current 28 mappings and later Biology additions are still a representative/design slice, not exhaustive coverage.
+- [ ] Complete stable item IDs and a verified source page/specification, quantity, measurement, range, material and acceptance rule for every required apparatus, specimen, slide, reagent and consumable.
+- [ ] Complete source → claim/data → RBSE/NCERT catalogue item → asset → scientific model/rule → test-vector traceability for every publishable experiment.
+- [ ] Perform record-level licence/attribution sampling and quality review for candidate external datasets; general policy notes alone are insufficient.
+- [ ] Obtain qualified subject-teacher/domain-expert review for scientific claims, model assumptions, practical selection and unresolved RBSE source conflicts.
+- [ ] Resolve or formally keep blocked the Class XI Physics time conflict (Hindi 4 hours / English 3 hours) and Class XI Chemistry component-mark discrepancy; do not set official scoring from an unreviewed interpretation.
+- [ ] Complete safety review for all proposed Chemistry/Biology workflows and confirm that hazardous procedures remain virtual/pre-prepared only.
+
 
 ## Current blocker
-At the time of the earlier entries, the RBSE 2027 PDFs could not be retrieved through the browser route. This retrieval blocker was later resolved when the user supplied both full PDFs in this conversation. The latest audit update below supersedes the earlier 'not audited' status.
+The earlier RBSE PDF retrieval blocker is resolved: the user supplied both full PDFs and the six practical page ranges were audited. Current blockers are the unavailable item-level Biology kit manual/specification files, incomplete exhaustive mapping/inventory, legacy-versus-current Biology manual matching and the need for independent subject-expert review.
 
 Tracking issue: https://github.com/snchat78-svg/LabVerse/issues/1
 
@@ -603,3 +608,29 @@ New documents:
 - docs/PHASE_1_SCIENCE_CLAIM_REVIEW_XII_BIO_EX11.md
 
 Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
+
+
+## Phase 1 update — Biology legacy exercise audit and current NCERT kit-index verification (2026-11-01)
+
+### Newly completed evidence and traceability
+- [x] Reconciled the Class XII Biology pedigree label conflict: CIET index raw label = Exercise 1; readable NCERT legacy manual body = Exercise 11. Both labels are retained.
+- [x] Inspected legacy NCERT Class XII Biology Exercise 11 (pedigree), Exercises 17 (plant adaptation), 18 (animal adaptation), 19 (soil/water pH), 20 (water turbidity) and Investigatory Project Work text.
+- [x] Added explicit synthetic-pedigree/privacy constraints; no student family/health/genetic data collection.
+- [x] Added method-specific pH accuracy/calibration and water-turbidity method boundaries.
+- [x] Added the project data contract: question/hypothesis, variables/controls, raw values, units, replicates, error/deviation log, analysis, interpretation, limitations and references.
+- [x] Added these source-to-asset/model/result mappings to `docs/PHASE_1_PRACTICAL_COVERAGE_MATRIX.md`.
+- [x] Added the legacy-source records to `docs/SCIENTIFIC_SOURCE_REGISTRY.md`; provisional asset families are recorded in `docs/PHASE_1_EQUIPMENT_INVENTORY.md`.
+- [x] Rechecked official NCERT kit index metadata: the Biology manual listing is present, and separate Grades XI/XII with-microscope / without-microscope kit specification variants are listed.
+
+### Evidence and retrieval limits
+- The Biology exercise/project body files are NCERT legacy-host copies with visible 21/04/2018 stamps. Their match to the current 2025–26 manual is NOT_CONFIRMED.
+- The official Biology kit manual and specification pages identify titles/variants, but their complete PDF attachment contents were not retrieved or inspected. No item counts/specifications are inferred from their titles.
+- Current CIET Grade 12 index contains duplicate/mismatched Biology exercise numbering, including pedigree (CIET Exercise 1 vs manual Exercise 11) and other duplicated soil/water/quadrat labels. Raw source labels remain preserved pending canonical reconciliation.
+- These mappings are DESIGN_ONLY. No application code, models, 3D meshes, API connectors or automated tests were implemented.
+
+### Current exit gate
+- Phase 0: DONE (documentation baseline).
+- Phase 1: IN PROGRESS; not signed off.
+- Phase 2: BLOCKED.
+- No software tests are applicable/passed because there is no application implementation yet.
+- The next actionable work is to retrieve official kit specification attachments, finish the six-pack exhaustive traceability matrix and inventory, complete record-level source checks, and obtain expert review. Do not start Phase 2 until the exit gate is genuinely met.
