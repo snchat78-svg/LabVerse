@@ -191,3 +191,14 @@ Current PDF 2025–26 confirms permanent slides and compound microscope; the sou
 - Exercise 5 is no longer partial at text level; its full six-page text is available.
 - Candidate assets remain DESIGN_ONLY; taxonomy/science review, 3D asset creation, simulation rules, acceptance tests and teacher review remain outstanding.
 - Copyright: current files state ALL RIGHTS RESERVED; do not reproduce NCERT diagrams, tables or prose in LabVerse without permission.
+
+
+## Scientific claim review flag — Exercise 2 (2026-11-01)
+
+Exercise 2's current manual describes bacterial mesosomes as membrane structures/infoldings and uses the historical school grouping Kingdom Monera. These source statements must be preserved as source text, but they must not be automatically promoted to unqualified canonical science facts.
+
+- Mesosome claim: store as SOURCE_STATEMENT_ONLY / SCIENTIFIC_REVIEW_REQUIRED. Classical mesosome-like structures in conventionally fixed bacterial electron micrographs have been reported as preparation artifacts; see Ebersold et al. (1981), DOI 10.1007/BF00527066, and Pilhofer et al. (2010), DOI 10.1016/S0091-679X(10)96002-0. The NCBI Medical Microbiology chapter records the historical uncertainty and lack of satisfactory evidence for a unique function. Do not render a universal mesosome organelle or function.
+- Kingdom Monera: preserve as a historical/curriculum classification label attached to the manual edition. Any modern taxonomy mapping must use a named framework and independent evidence; do not silently equate all Monera with Bacteria or present one phylogenetic framework as unversioned fact.
+- Review details and source links: docs/PHASE_1_SCIENCE_CLAIM_REVIEW_BIO_EX02.md.
+
+EX02's prepared-slide/model asset records must not label mesosomes as a standard bacterial visible structure. Keep the claim unresolved until Biology/microbiology review.
