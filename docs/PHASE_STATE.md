@@ -549,3 +549,28 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 
 ### Next action
 Continue source-claim sampling across other NCERT/RBSE practical chapters; identify historical/ambiguous scientific statements, attach independent references, and keep all disputed content outside VERIFIED_FOR_USE until expert sign-off.
+
+
+## Phase 1 update — NCERT Class XII Biology continuation and RBSE crosswalk (2026-11-01)
+
+### Newly inspected
+- [x] Exercises 8–9: mammalian blastula and Mendelian segregation bead simulation (lelm206.pdf).
+- [x] Exercise 10: independent-assortment bead simulation and linkage caveat (lelm207.pdf).
+- [x] Exercises 12–13: controlled pollination and acetocarmine nucleic-acid staining (lelm209.pdf).
+- [x] Exercise 14: prepared pathogen-identification content (lelm210.pdf).
+- [x] Exercise 15: soil texture, particle fractions and textural triangle (lelm211.pdf).
+- [x] Exercise 16: soil water-holding capacity; screenshot confirms 108°C and resolves text extraction's “1080C” artefact.
+- [x] Exercise 21: aquatic organism observation catalogue (lelm213.pdf).
+- [x] Exercises 22–24: SPM analysis, quadrat density and quadrat frequency (lelm214.pdf).
+- [x] Exercise 25: homologous/analogous organs (lelm215.pdf).
+- [x] Added a separate RBSE Class XII Biology crosswalk preserving Botany-major, Zoology-major, Botany-minor, Zoology-minor and spotting structures.
+
+### Evidence and safety limits
+- Exercises 7, 11 and project-work PDF retrieval remain blocked/timed out; Exercises 17–20 are in a 16-page chapter file but only Exercise 16 is fully audited in this pass.
+- Precise Class XII manual chapter publication/reprint date remains NOT_CONFIRMED.
+- Screenshot review succeeded for selected pages of Exercises 12, 14, 15, 16 and 25; other page-image routes returned 502/timeouts.
+- Formalin/FAA preservatives, biological collection and acetocarmine/heat workflows remain virtual/pre-prepared only.
+- All new assets/models remain DESIGN_ONLY; no code or tests were created.
+
+New document: docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_8_25_AUDIT.md
+Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
