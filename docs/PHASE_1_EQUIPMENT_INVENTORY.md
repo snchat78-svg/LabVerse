@@ -321,3 +321,17 @@ Evidence and confidence details: docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DET
 - Permanent-slide observation is source-supported; do not substitute an onion-root-tip preparation from a Class XII resource.
 
 These are candidate IDs and design requirements, not a verified procurement list or built assets.
+
+
+## Current-edition NCERT Class XI Biology Exercises 2–6 confirmation (2026-11-01)
+
+The direct current NCERT host PDFs kelm302–kelm306 are now text-extracted; see docs/PHASE_1_NCERT_XI_BIOLOGY_EXERCISES_2_6_DETAILED_AUDIT.md.
+
+Corrections and exact boundaries:
+- EX02: current manual confirms permanent slides/hand sections/photographs and named bacteria, fungi and plant-group examples. Keep only virtual/prepared representations; no live microbial culture/spore handling. Historical taxonomy/biological statements need modern science review.
+- EX03: current manual confirms slides, museum specimens, models, photographs/charts and microscope; it describes formalin-preserved specimens. No real specimen collection/preservation/formalin handling in LabVerse.
+- EX04: current manual confirms prepared sections and macerated plant material; high-hazard nitric/chromic/sulfuric acid and potassium dichromate method. Keep reagent prep/heating/sharp-tool actions out of learner-facing content; use prepared slides/virtual tissue models.
+- EX05: full current 6-page text confirms epithelial, connective/blood, striated, smooth and cardiac muscle content. Use synthetic/pre-prepared slides only. No cheek scraping, finger-prick, lancet/needle, real blood smear or animal dissection in LabVerse. The file does not provide a nervous-tissue procedure despite the general introductory list of four tissue groups.
+- EX06: current manual confirms permanent slides, compound microscope, initial 10X and higher 40X observation, mitotic stages and plant/animal cytokinesis. Candidate 3D model must not pretend the student is preparing an onion-root-tip slide.
+
+These remain candidate asset families and interaction requirements, not built or scientifically signed-off assets.
