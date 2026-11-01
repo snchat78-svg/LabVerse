@@ -247,3 +247,8 @@ Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.
 The earlier statement that body pages 17–20 were not individually audited is superseded for the readable NCERT legacy-host file. The 16-page lelm212.pdf text includes Exercise 17 plant adaptations, Exercise 18 animal adaptations, Exercise 19 water/soil pH and Exercise 20 water turbidity. The lelm216.pdf Investigatory Project Work text has also been extracted for project guidance, report format and example areas.
 
 These files show 21/04/2018 stamps and are NOT confirmed current-edition revisions. Detailed source evidence, Research Studio contract and safety requirements are now in docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md.
+
+
+## Superseding cross-reference — Exercises 11 and 17–20 / Project Work (2026-11-01)
+
+The previous section 10 statement that Exercise 17–20 body text was not individually inspected is superseded by the separate NCERT legacy-host audit at `docs/PHASE_1_NCERT_XII_BIOLOGY_EXERCISES_11_17_20_PROJECT_AUDIT.md`. That document contains extracted body evidence for Exercises 11 and 17–20 and the Investigatory Project Work guide. The files carry a 21/04/2018 stamp; current-edition match is NOT_CONFIRMED. Keep this addendum as a correction notice rather than treating those legacy chapters as current 2025–26 verified sources.
