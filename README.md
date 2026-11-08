@@ -226,3 +226,10 @@ The summary preserves OCR versus index-only evidence and the unauthenticated upl
 - [Experiment traceability CSV — 18 rows](data/catalogues/rbse_xii_physics_experiment_traceability.csv)
 
 The travelling microscope required for RBSE-XII-PHY-EXP-14 is not listed in the currently available NCERT Physics manual item schedule. No source item was invented. All assets/models/tests remain proposed or planned only. Next: Class XII Physics activities.
+
+
+## Phase 1.1 — RBSE Class XII Physics activity traceability (2026-11-08)
+- [Activity traceability register — 14 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_ACTIVITY_TRACEABILITY.md)
+- [Activity traceability CSV — 14 rows](data/catalogues/rbse_xii_physics_activity_traceability.csv)
+
+Activity mappings remain candidate-only; exact procurement specs, model implementation, scientific tests and expert review remain open. Household mains wiring and physical blade handling are not permitted app workflows. Next: Class XII Physics projects.
