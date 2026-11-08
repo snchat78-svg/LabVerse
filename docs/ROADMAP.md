@@ -48,7 +48,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Latest bounded result (2026-11-08): Class XI Physics task-level documentary coverage is reconciled at 41/41 (17 experiments, 13 activities, 11 projects) in one normalized CSV. 52 distinct candidate manual item IDs and one explicit no-source match (Fortin barometer) are recorded. This is DESIGN_ONLY, not a source-verified or implemented Physics product.
 - Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 have a candidate MSCL apparatus crosswalk (19/19). Evidence is OCR-derived from an unauthenticated uploaded MSCL copy; it does not include a reagent BOM. All mappings remain DESIGN_ONLY.
 - Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 and projects PRJ-01–PRJ-08 now have candidate apparatus/model/test crosswalks. The OCR-derived MSCL catalogue is unauthenticated and does not establish chemical reagents, datasets or sample methods.
-- Next work unit: consolidate the 19 practical groups + 8 projects into one 27-task Class XI Chemistry register while retaining the scoring discrepancy and all source/reagent gaps.
+- Latest bounded result (2026-11-08): Class XI Chemistry 19 practical groups + 8 projects = 27/27 tasks reconciled in one normalized CSV. The RBSE overview/detailed marks split is retained as unresolved; MSCL apparatus evidence remains OCR-derived and unauthenticated.
+- Next work unit: start Class XI Biology practical/spotting traceability against the Biology-with-microscope OCR catalogue; preserve index-only versus individually inspected rows and missing reagent/source requirements.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -211,3 +212,17 @@ Next task: Class XI Chemistry projects PRJ-01–PRJ-08.
 Evidence: docs/PHASE_1_1_RBSE_XI_CHEMISTRY_PROJECT_TRACEABILITY.md; data/catalogues/rbse_xi_chemistry_project_traceability.csv. Commits: 5d6dce0ff1aea56c220204e38c55c09c03f7af0e; 5e5cff3c5037fa6ec825f93716b3cce87b239162.
 
 Next: consolidated Class XI Chemistry 27-task coverage register.
+
+
+## Class XI Chemistry consolidated reconciliation — 2026-11-08
+
+- 19 practical groups + 8 projects = 27/27 task IDs reconciled.
+- Unified 17-column CSV: data/catalogues/rbse_xi_chemistry_traceability.csv.
+- Aggregate: 179 candidate item refs / 37 distinct MSCL IDs; 134 proposed asset refs / 57 distinct assets; 27 proposed model/rule IDs; 108 planned test vectors.
+- 9/9 read-back checks passed.
+- RBSE marking conflict remains unresolved; no canonical scheme selected.
+- MSCL item rows remain unauthenticated OCR evidence; no reagent BOM or analytical-method validation is claimed.
+
+Evidence: docs/PHASE_1_1_RBSE_XI_CHEMISTRY_TRACEABILITY_SUMMARY.md; commit 0eed1589993dfa05b45adef52e89589d7fa440d6; CSV commit 75d6fa269bb0919ded1af09ac0866e05dc562f62.
+
+Next source-order task: Class XI Biology task/spotting mapping.
