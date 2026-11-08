@@ -265,3 +265,16 @@ Next: Class XII Physics activities A01–A06 and B01–B08.
 Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_ACTIVITY_TRACEABILITY.md; data/catalogues/rbse_xii_physics_activity_traceability.csv. Commits: 8d3cb4032436321f1eedd56e47e1a1c22cfcdc68; 550408aec93d68fa5a4b6871d50af4c8509589eb.
 
 Next: Class XII Physics projects PRJ-01–PRJ-07.
+
+
+## Class XII Physics consolidated traceability update — 2026-11-08
+
+- 39/39 tasks reconciled: 18 experiments, 14 activities, 7 projects.
+- 331 candidate source item refs / 55 distinct Physics manual item IDs; 219 proposed asset refs / 99 distinct assets; 39 model/rule IDs; 165 planned test vectors.
+- 11/11 consolidated read-back checks passed.
+- Missing instrument flags: EXP-14 travelling microscope; PRJ-04 phototransistor and IR sources. No substitute or fictional kit item claimed.
+- All mapping remains DESIGN_ONLY; no scientific model/app/test implementation.
+
+Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md; summary commit 3ebd05b79cec3b171c9fa8dec956d79c8bb6ba6f; CSV commit b4598033c75c65a832f95e53099eba57463451cf.
+
+Next source-order task: Class XII Chemistry practical groups and OR branches.
