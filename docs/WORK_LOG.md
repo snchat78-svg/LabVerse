@@ -91,3 +91,20 @@ Continue in RBSE source order with Class XI Physics activities A01–A07 and B01
 ## Next work unit
 
 Continue in source order with the 11 RBSE Class XI Physics project tasks. After the project crosswalk is read-back checked, close the Class XI Physics pack's task-level documentary mapping and proceed to Class XI Chemistry.
+
+
+## 2026-11-08 — RBSE Class XI Physics project traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Bounded work unit:** crosswalk all 11 RBSE XI Physics project task IDs to candidate source items, proposed original asset IDs, model/rule IDs, planned tests and gaps.
+- **Files:** docs/PHASE_1_1_RBSE_XI_PHYSICS_PROJECT_TRACEABILITY.md; data/catalogues/rbse_xi_physics_project_traceability.csv.
+- **Coverage:** 11/11 projects; 56 candidate source-item references across 28 distinct item IDs; 48 proposed asset references; 11 proposed model/rule IDs; 44 planned test vectors.
+- **Important source finding:** Fortin barometer (PRJ-08) has no matching item in the current 106-row Physics manual register. The row is explicitly NO_SOURCE_ITEM_MATCH; no fictional NCERT item ID was created.
+- **Checks:** 8/8 repository read-back consistency checks passed, including 11 ordered task IDs, 17-column CSV schema, existing source-item IDs, explicit Fortin mismatch and status/gap fields.
+- **Status boundary:** DESIGN_ONLY/CANDIDATE_MATCH; no procurement authentication, runtime asset, model implementation, test execution or expert sign-off.
+- **Commits:** doc https://github.com/snchat78-svg/LabVerse/commit/3b8042e2b402168c13de8028130ac812f2ecf25d; CSV https://github.com/snchat78-svg/LabVerse/commit/910337e0550dc2a7b4b8bd81cd5684adc231fe49.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Create a consolidated Class XI Physics traceability summary covering 17 experiments + 13 activities + 11 projects (41/41 tasks). Reconcile IDs and counts across the three detail documents and CSV files, list source-unmatched and review-pending tasks, and only then move to Class XI Chemistry.
