@@ -219,3 +219,10 @@ The summary preserves the RBSE marks discrepancy and the unauthenticated MSCL so
 - [Biology consolidated CSV — 22 rows](data/catalogues/rbse_xi_biology_traceability_consolidated.csv)
 
 The summary preserves OCR versus index-only evidence and the unauthenticated upload boundary. The RBSE XI Biology task register has no separate investigatory-project component. Next: Class XII Physics source-to-task mapping.
+
+
+## Phase 1.1 — RBSE Class XII Physics experiment traceability (2026-11-08)
+- [Experiment traceability register — 18 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_EXPERIMENT_TRACEABILITY.md)
+- [Experiment traceability CSV — 18 rows](data/catalogues/rbse_xii_physics_experiment_traceability.csv)
+
+The travelling microscope required for RBSE-XII-PHY-EXP-14 is not listed in the currently available NCERT Physics manual item schedule. No source item was invented. All assets/models/tests remain proposed or planned only. Next: Class XII Physics activities.
