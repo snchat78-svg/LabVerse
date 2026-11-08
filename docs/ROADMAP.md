@@ -45,7 +45,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Latest bounded result (2026-11-08): RBSE Class XI Physics experiments 17/17 now have candidate NCERT Physics manual row links, proposed original asset IDs, proposed model/rule IDs, planned test vectors and explicit source gaps. See docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. This is DESIGN_ONLY, not a verified kit equivalence or implementation.
 - Latest bounded results (2026-11-08): Class XI Physics experiments 17/17 and activities 13/13 now have candidate source-item, proposed asset, model/rule and planned test crosswalks. See the XI Physics experiment and activity traceability documents/CSVs. Both remain DESIGN_ONLY and are not verified for learner use.
 - Latest bounded results (2026-11-08): Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have task-level candidate crosswalks. The project register explicitly records that Fortin barometer has no matching item in the current 106-row Physics manual catalogue.
-- Next work unit: consolidate and reconcile the three Class XI Physics traceability groups (41 tasks) into one coverage summary, then move to Class XI Chemistry.
+- Latest bounded result (2026-11-08): Class XI Physics task-level documentary coverage is reconciled at 41/41 (17 experiments, 13 activities, 11 projects) in one normalized CSV. 52 distinct candidate manual item IDs and one explicit no-source match (Fortin barometer) are recorded. This is DESIGN_ONLY, not a source-verified or implemented Physics product.
+- Next work unit: start Class XI Chemistry practical groups PRA-01 through PRA-19, then its eight project tasks; treat the OCR-derived MSCL specification copy as unauthenticated candidate evidence.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -170,3 +171,15 @@ Next task: Class XI Physics projects (11 rows).
 Evidence: docs/PHASE_1_1_RBSE_XI_PHYSICS_PROJECT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_project_traceability.csv. Commits: 3b8042e2b402168c13de8028130ac812f2ecf25d; 910337e0550dc2a7b4b8bd81cd5684adc231fe49.
 
 Next: consolidate the Class XI Physics groups to 41/41 tasks.
+
+
+## Class XI Physics consolidated reconciliation — 2026-11-08
+
+- 41/41 RBSE Class XI Physics task IDs reconciled: 17 experiments, 13 activities and 11 projects.
+- Unified machine-readable register: data/catalogues/rbse_xi_physics_traceability.csv (41 rows, 18 columns).
+- 219 candidate item references / 52 distinct source item IDs; 184 proposed asset references / 111 distinct asset IDs; 44 proposed model/rule IDs; 164 planned test vectors.
+- One explicit unmatched source row: Fortin barometer (RBSE-XI-PHY-PRJ-08).
+- 9/9 repository reconciliation checks passed. No software/scientific engine tests were run.
+- Evidence: docs/PHASE_1_1_RBSE_XI_PHYSICS_TRACEABILITY_SUMMARY.md; commit 23fc70bc40ec7dad7a68beab34c3c025f470e468; CSV commit 6e6ac0eee8a31c13c97fe25ef62b9353788fe149.
+
+Next phase-1 work unit: Class XI Chemistry practical traceability, PRA-01 to PRA-19.
