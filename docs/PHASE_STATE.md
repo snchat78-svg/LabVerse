@@ -1181,3 +1181,22 @@ Evidence:
 - Roadmap: 58b7c7e122c0bf72f8d7435226743c8313d18fef
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XII Physics activity traceability (2026-11-08)
+
+- [x] Map A01–A06 and B01–B08 (14/14) in source order.
+- [x] Create activity traceability Markdown and 14-row CSV.
+- [x] Verify all activity IDs and candidate Physics source item IDs against repository master/catalogue.
+- [x] Preserve mains/blade safety boundaries and missing source equipment.
+- [x] Read back files and pass 8/8 documentary consistency checks.
+- [ ] Procurement, apparatus equivalence, scientific models, executable tests, source rights, safety and expert review remain open.
+- [ ] Next: Class XII Physics projects PRJ-01–PRJ-07.
+
+Evidence:
+- Activity register: 8d3cb4032436321f1eedd56e47e1a1c22cfcdc68
+- Activity CSV: 550408aec93d68fa5a4b6871d50af4c8509589eb
+- Work log: 4f9f2df56aadc1c9d649e17c327d479a0e2716f5
+- Roadmap: c40d5146733813368029b4b2b7dd8da9eb5c6666
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
