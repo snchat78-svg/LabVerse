@@ -177,3 +177,21 @@ Reconcile 19 Class XI Chemistry practical groups + 8 projects into a normalized 
 ## Next work unit
 
 Start RBSE Class XI Biology in source order. Map all practical task groups/spotting groups from the RBSE master register against candidate Biology kit apparatus/cards/specimens/slides. The Biology-with-microscope specification is also an unauthenticated OCR upload; distinguish index-derived names from individually inspected specifications and do not infer slide/card details not in the catalogue.
+
+
+## 2026-11-08 — Class XI Biology traceability and pack reconciliation
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** map all 22 RBSE XI Biology task groups (4 Botany major, 2 Zoology major, 5 Botany minor, 2 Zoology minor, 9 spotting groups) against candidate Biology kit source items; create one consolidated register.
+- **Files:** docs/PHASE_1_1_RBSE_XI_BIOLOGY_TRACEABILITY.md; data/catalogues/rbse_xi_biology_traceability.csv; docs/PHASE_1_1_RBSE_XI_BIOLOGY_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xi_biology_traceability_consolidated.csv.
+- **Coverage:** 22/22 tasks; 158 source-item refs / 96 distinct item IDs; 87 proposed asset refs / 64 distinct assets; 22 model/rule IDs; 88 planned test vectors.
+- **Evidence distribution among the 96 referenced catalogue items:** 36 OCR_TEXT; 1 OCR_TEXT + VISUAL_CHECK; 1 VISUAL_CHECK; 1 INDEX_CONFIRMED sample; 57 index-only rows (19 slide pages, 36 card pages, 2 additional card/specimen page rows).
+- **Important limits:** the user-uploaded Biology-with-microscope source remains NOT_BYTE_AUTHENTICATED. Most card, embedded-specimen and slide pages are index-only. Biology without microscope variant not compared. No separate RBSE XI Biology project component is listed.
+- **Safety/rights:** no human urine/blood/saliva collection, live pathogen culture, animal capture/dissection or unsafe specimen preparation. Source artwork requires rights clearance; use original assets.
+- **Checks:** initial crosswalk 8/9 (one wording-specific check did not match the document phrase; source boundary itself is present), then 7/7 source-ID/schema checks; consolidated read-back 10/10 PASS. The consolidated file mirrors the verified 22-row, 17-column source crosswalk.
+- **Commits:** task register https://github.com/snchat78-svg/LabVerse/commit/9e3d8dd80f010d3c360be809fb253a8b238e3aa3; task CSV https://github.com/snchat78-svg/LabVerse/commit/08ff621c130c5ac98e15a598d63722bdca9ad226; summary https://github.com/snchat78-svg/LabVerse/commit/39da276f374ade474dabee95fc10dd99d2548180; consolidated CSV https://github.com/snchat78-svg/LabVerse/commit/8e7d3d577da046757a986e479d70061479dda463.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Start RBSE Class XII Physics traceability from the all-six-pack master register (PDF pages 124–129): 18 experiments, 14 activities and 7 project choices. Reconcile the RBSE task IDs against the Physics manual candidate item IDs; preserve unsupported instrument/source matches as explicit gaps.
