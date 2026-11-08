@@ -175,3 +175,10 @@ The mapping is DESIGN_ONLY: source IDs exist in the current manual catalogue, bu
 - [Activity traceability CSV — 13 rows](data/catalogues/rbse_xi_physics_activity_traceability.csv)
 
 All rows are DESIGN_ONLY candidate mappings, not verified apparatus equivalence or implemented simulation. Next source-order task: Class XI Physics projects (11 rows).
+
+
+## Phase 1.1 — RBSE Class XI Physics project traceability (2026-11-08)
+- [Project traceability register — 11 tasks](docs/PHASE_1_1_RBSE_XI_PHYSICS_PROJECT_TRACEABILITY.md)
+- [Project traceability CSV — 11 rows](data/catalogues/rbse_xi_physics_project_traceability.csv)
+
+The Fortin barometer project has no matching item in the current NCERT Physics manual item catalogue. The crosswalk is DESIGN_ONLY and does not imply procurement verification or implementation. Next: reconcile all 41 Class XI Physics tasks.
