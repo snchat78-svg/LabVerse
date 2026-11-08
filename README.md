@@ -203,3 +203,10 @@ The mapping is candidate-only and uses OCR-derived rows from an unauthenticated 
 - [Chemistry project traceability CSV — 8 rows](data/catalogues/rbse_xi_chemistry_project_traceability.csv)
 
 These are candidate apparatus links only. Source/reagent/sample/data and analytical-method verification remains open. Next: consolidate the Class XI Chemistry 27-task pack.
+
+
+## Phase 1.1 — RBSE Class XI Chemistry consolidated traceability (2026-11-08)
+- [Chemistry coverage summary — 27 tasks](docs/PHASE_1_1_RBSE_XI_CHEMISTRY_TRACEABILITY_SUMMARY.md)
+- [Consolidated Chemistry traceability CSV — 27 rows](data/catalogues/rbse_xi_chemistry_traceability.csv)
+
+The summary preserves the RBSE marks discrepancy and the unauthenticated MSCL source boundary. Reagent supply/method validation is not implied. Next: Class XI Biology source-to-task mapping.
