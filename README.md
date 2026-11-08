@@ -243,3 +243,11 @@ Activity mappings remain candidate-only; exact procurement specs, model implemen
 - [Consolidated XII Physics CSV — 39 rows](data/catalogues/rbse_xii_physics_traceability.csv)
 
 Two known missing-instrument flags remain: travelling microscope (EXP-14) and phototransistor/IR source (PRJ-04). All mapped models/assets/tests remain design-only or planned.
+
+
+## Phase 1.1 — RBSE Class XII Chemistry traceability (2026-11-08)
+- [Class XII Chemistry traceability register](docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY.md)
+- [Class XII Chemistry traceability CSV](data/catalogues/rbse_xii_chemistry_traceability.csv)
+- [Class XII Chemistry option/choice summary](docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md)
+
+The register preserves redox alternatives, the four-mark OR choices and the content-based alternatives. The uploaded MSCL apparatus list is not treated as a reagent BOM. Next: Class XII Biology task mapping.
