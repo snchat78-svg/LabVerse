@@ -253,3 +253,15 @@ Next task: Class XII Physics task mapping.
 Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_EXPERIMENT_TRACEABILITY.md; data/catalogues/rbse_xii_physics_experiment_traceability.csv. Commits: 6169a2b3ef3f44e218eb94940945fc0180fdc6ee; ba27e6f24bfa982539998c2d5f50c667738951f7.
 
 Next: Class XII Physics activities A01–A06 and B01–B08.
+
+
+## Class XII Physics activity traceability update — 2026-11-08
+
+- 14/14 activities mapped: A01–A06 and B01–B08.
+- 126 candidate manual item refs / 40 distinct item IDs; 81 proposed asset refs / 49 distinct assets; 14 proposed model/rule IDs; 58 planned test vectors.
+- 8/8 repository read-back checks passed.
+- Household wiring is virtual-only; blade/slit diffraction is not exposed as a physical blade interaction. AC source, lux sensor, polariser fixture and other exact apparatus gaps remain explicit.
+
+Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_ACTIVITY_TRACEABILITY.md; data/catalogues/rbse_xii_physics_activity_traceability.csv. Commits: 8d3cb4032436321f1eedd56e47e1a1c22cfcdc68; 550408aec93d68fa5a4b6871d50af4c8509589eb.
+
+Next: Class XII Physics projects PRJ-01–PRJ-07.
