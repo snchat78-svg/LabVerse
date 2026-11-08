@@ -143,3 +143,20 @@ Begin Class XI Chemistry traceability from the first task in source order: RBSE-
 ## Next work unit
 
 Map the eight Class XI Chemistry project tasks RBSE-XI-CHEM-PRJ-01 through PRJ-08. Keep regional water samples/datasets and reagent lists separate from NCERT apparatus evidence; require source/provenance before numerical or chemical-result claims.
+
+
+## 2026-11-08 — RBSE Class XI Chemistry project traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Work unit:** map all eight RBSE XI Chemistry project task IDs to candidate MSCL apparatus items, proposed original assets, model/rule IDs, planned test vectors and unresolved analytical/data/safety requirements.
+- **Files:** docs/PHASE_1_1_RBSE_XI_CHEMISTRY_PROJECT_TRACEABILITY.md; data/catalogues/rbse_xi_chemistry_project_traceability.csv.
+- **Coverage:** 8/8 projects; 48 candidate apparatus item references across 21 distinct MSCL item IDs; 42 proposed asset references; 8 proposed model/rule IDs; 32 planned test-vector IDs.
+- **Checks:** 8/8 repository read-back checks passed; all task IDs exist in the RBSE master, all candidate item IDs exist in OCR catalogue, unauthenticated source state is retained.
+- **Scientific integrity:** water quality needs sample/method/calibration provenance; purification needs analyte-specific performance; regulatory limits need named/current standards; tea pH differs from titratable acidity; food mineral content is not inferred from pH; fibre tensile tests lack apparatus/specimen data.
+- **Source/status boundary:** OCR-derived uploaded MSCL source is not byte-authenticated. These are candidate apparatus links only; samples, chemicals, methods, datasets and standards require separate sources. All models/tests remain proposed/not run.
+- **Commits:** document https://github.com/snchat78-svg/LabVerse/commit/5d6dce0ff1aea56c220204e38c55c09c03f7af0e; CSV https://github.com/snchat78-svg/LabVerse/commit/5e5cff3c5037fa6ec825f93716b3cce87b239162.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Reconcile 19 Class XI Chemistry practical groups + 8 projects into a normalized 27-task register. Preserve the unresolved overview/detailed marks allocation conflict and the boundary between apparatus, reagents, samples and external research datasets.
