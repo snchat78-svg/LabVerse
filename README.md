@@ -210,3 +210,12 @@ These are candidate apparatus links only. Source/reagent/sample/data and analyti
 - [Consolidated Chemistry traceability CSV — 27 rows](data/catalogues/rbse_xi_chemistry_traceability.csv)
 
 The summary preserves the RBSE marks discrepancy and the unauthenticated MSCL source boundary. Reagent supply/method validation is not implied. Next: Class XI Biology source-to-task mapping.
+
+
+## Phase 1.1 — RBSE Class XI Biology traceability (2026-11-08)
+- [Biology task-level traceability register — 22 groups](docs/PHASE_1_1_RBSE_XI_BIOLOGY_TRACEABILITY.md)
+- [Biology task-level CSV — 22 rows](data/catalogues/rbse_xi_biology_traceability.csv)
+- [Biology consolidated traceability summary](docs/PHASE_1_1_RBSE_XI_BIOLOGY_TRACEABILITY_SUMMARY.md)
+- [Biology consolidated CSV — 22 rows](data/catalogues/rbse_xi_biology_traceability_consolidated.csv)
+
+The summary preserves OCR versus index-only evidence and the unauthenticated upload boundary. The RBSE XI Biology task register has no separate investigatory-project component. Next: Class XII Physics source-to-task mapping.
