@@ -126,3 +126,20 @@ Create a consolidated Class XI Physics traceability summary covering 17 experime
 ## Next work unit
 
 Begin Class XI Chemistry traceability from the first task in source order: RBSE-XI-CHEM-PRA-01 through PRA-19, then the eight Class XI Chemistry project tasks. Use the uploaded MSCL item register only as unauthenticated OCR-derived candidate evidence; keep school-managed/unknown reagent requirements separate and virtual-only where hazardous.
+
+
+## 2026-11-08 — RBSE Class XI Chemistry practical traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Work unit:** map all 19 RBSE XI Chemistry practical task groups PRA-01–PRA-19 to candidate MSCL apparatus item IDs, proposed original LabVerse asset IDs, model/rule IDs, planned test vectors, safety status and explicit gaps.
+- **Files:** docs/PHASE_1_1_RBSE_XI_CHEMISTRY_PRACTICAL_TRACEABILITY.md; data/catalogues/rbse_xi_chemistry_practical_traceability.csv.
+- **Coverage:** 19/19 task groups; 131 candidate source-item references across 36 distinct MSCL item IDs; 92 proposed asset references; 19 proposed model/rule IDs; 76 planned test-vector IDs.
+- **Source boundary:** the MSCL rows are OCR-derived from a user-uploaded scanned copy; exact-byte identity with NCERT-hosted official attachment remains NOT VERIFIED. The MSCL CSV is an apparatus/specification register, not a reagent inventory.
+- **Integrity/safety:** task-named acids, bases, salts, indicators and organic samples remain unverified unless supported separately. PRA-19, heating, gas generation and hazardous tests are virtual-only; mercury thermometer and asbestos-centred wire gauze are not usable assets.
+- **Checks:** 8/8 read-back consistency checks passed, including source-order task IDs, CSV schema, all candidate source item IDs and unauthenticated source status.
+- **Commits:** doc https://github.com/snchat78-svg/LabVerse/commit/ffe8ec9207b7bb6b9d6df2f95f0b627c2ab33325; CSV https://github.com/snchat78-svg/LabVerse/commit/b88fc4abd1fcd0b3cbefca3511ce0039ba02d965.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Map the eight Class XI Chemistry project tasks RBSE-XI-CHEM-PRJ-01 through PRJ-08. Keep regional water samples/datasets and reagent lists separate from NCERT apparatus evidence; require source/provenance before numerical or chemical-result claims.
