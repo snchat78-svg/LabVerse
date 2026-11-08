@@ -49,7 +49,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 have a candidate MSCL apparatus crosswalk (19/19). Evidence is OCR-derived from an unauthenticated uploaded MSCL copy; it does not include a reagent BOM. All mappings remain DESIGN_ONLY.
 - Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 and projects PRJ-01–PRJ-08 now have candidate apparatus/model/test crosswalks. The OCR-derived MSCL catalogue is unauthenticated and does not establish chemical reagents, datasets or sample methods.
 - Latest bounded result (2026-11-08): Class XI Chemistry 19 practical groups + 8 projects = 27/27 tasks reconciled in one normalized CSV. The RBSE overview/detailed marks split is retained as unresolved; MSCL apparatus evidence remains OCR-derived and unauthenticated.
-- Next work unit: start Class XI Biology practical/spotting traceability against the Biology-with-microscope OCR catalogue; preserve index-only versus individually inspected rows and missing reagent/source requirements.
+- Latest bounded result (2026-11-08): Class XI Biology has 22/22 task groups mapped and consolidated. 96 distinct catalogue items are referenced; 57 remain index-only and must not be treated as individually verified. The uploaded Biology-with-microscope copy remains unauthenticated; no separate XI Biology project component is present in the RBSE register.
+- Next work unit: start Class XII Physics traceability from RBSE PDF pages 124–129 (18 experiments, 14 activities, 7 projects/choices), against candidate Physics manual item rows. Keep missing matches explicit.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -226,3 +227,17 @@ Next: consolidated Class XI Chemistry 27-task coverage register.
 Evidence: docs/PHASE_1_1_RBSE_XI_CHEMISTRY_TRACEABILITY_SUMMARY.md; commit 0eed1589993dfa05b45adef52e89589d7fa440d6; CSV commit 75d6fa269bb0919ded1af09ac0866e05dc562f62.
 
 Next source-order task: Class XI Biology task/spotting mapping.
+
+
+## Class XI Biology traceability update — 2026-11-08
+
+- 22/22 RBSE task groups mapped: 4 Botany major, 2 Zoology major, 5 Botany minor, 2 Zoology minor, 9 spotting groups.
+- 158 candidate catalogue references / 96 distinct item IDs; 87 proposed asset refs / 64 distinct assets; 22 proposed model/rule IDs; 88 planned test vectors.
+- Catalogue evidence among referenced items: 36 OCR_TEXT, 1 OCR_TEXT+VISUAL_CHECK, 1 VISUAL_CHECK, 1 INDEX_CONFIRMED sample, 57 index-only.
+- 10/10 consolidated read-back checks passed.
+- Evidence: docs/PHASE_1_1_RBSE_XI_BIOLOGY_TRACEABILITY_SUMMARY.md and data/catalogues/rbse_xi_biology_traceability_consolidated.csv.
+- Uploaded source remains NOT_BYTE_AUTHENTICATED; Biology-without-microscope variant not compared; no separate XI Biology project requirement appears in RBSE master register.
+
+Commits: 39da276f374ade474dabee95fc10dd99d2548180; 8e7d3d577da046757a986e479d70061479dda463.
+
+Next task: Class XII Physics task mapping.
