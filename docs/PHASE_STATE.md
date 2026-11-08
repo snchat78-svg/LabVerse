@@ -17,7 +17,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
 - Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
-- Current next work unit: RBSE Class XI Physics projects (11 rows). After read-back verification, perform a Class XI Physics pack coverage reconciliation before moving to Class XI Chemistry. Preserve candidate/inferred/unknown states.
+- Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
+- Current next work unit: consolidate the three Class XI Physics groups into one 41-task coverage summary; reconcile exact task IDs, catalogue refs, missing items and review status before moving to Class XI Chemistry.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1040,3 +1041,22 @@ Evidence:
 - Roadmap: 4ab9a5866239fbe90195e4b4a4f8a26a3e15430d
 
 Phase 1.1/Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED. No app code or scientific simulation code was implemented.
+
+
+## Phase 1.1 update — Class XI Physics project traceability (2026-11-08)
+
+- [x] Map all 11 RBSE Class XI Physics project IDs in source order.
+- [x] Create the project traceability Markdown and 11-row CSV.
+- [x] Check all 11 task IDs and all non-empty NCERT item IDs against the repository master registers.
+- [x] Preserve Fortin barometer as NO_SOURCE_ITEM_MATCH in the available Physics kit catalogue.
+- [x] Read back the files and pass 8/8 documentary checks.
+- [ ] Resolve procurement/specification equivalence and all scientific, asset, model, test, safety, rights and expert-review items.
+- [ ] Next: reconcile all XI Physics experiments, activities and projects into one 41-task coverage summary.
+
+Evidence:
+- Project register: 3b8042e2b402168c13de8028130ac812f2ecf25d
+- Project CSV: 910337e0550dc2a7b4b8bd81cd5684adc231fe49
+- Work log: a1eaebfba03c325a4dbac84f1a43c62c2b2924a1
+- Roadmap: b4467e278966ad5d8a7139d8d153d3e524d8a816
+
+Phase 1.1/Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
