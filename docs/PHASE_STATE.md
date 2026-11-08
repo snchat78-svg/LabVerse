@@ -16,7 +16,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 1.1: IN PROGRESS — 2026-11-08 NCERT official index rechecked; four Grade XI–XII specification PDF targets identified, but all direct follow attempts returned HTTP 502; uploaded copies remain unauthenticated. A three-subject RBSE→NCERT item→proposed-asset traceability pilot is committed; full mapping remains open
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
 - Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
-- Current next work unit: RBSE Class XI Physics activities A01–A07 and B01–B06 (13 rows); then the 11 Class XI Physics project tasks. Preserve candidate/inferred/unknown states.
+- Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
+- Current next work unit: RBSE Class XI Physics projects (11 rows). After read-back verification, perform a Class XI Physics pack coverage reconciliation before moving to Class XI Chemistry. Preserve candidate/inferred/unknown states.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1021,3 +1022,21 @@ Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOC
 - [x] Run 12/12 repository consistency checks covering task order, source IDs, CSV structure, status fields, roadmap/state/log/README and tracking issue state.
 - [x] Preserve the test boundary: documentary checks only; no software/model/scientific test run.
 - Latest verification log commit: e55dcf10723e15caa81f0f4be751f123eaf9e9fd
+
+
+## Phase 1.1 update — Class XI Physics activity traceability (2026-11-08)
+
+- [x] Map RBSE XI Physics activity A01–A07 and B01–B06 (13/13) to candidate Physics source items.
+- [x] Create a 13-row machine-readable activity CSV.
+- [x] Verify every task ID against the RBSE master register and every candidate source item ID against the Physics manual CSV.
+- [x] Read back both files and pass 8/8 documentary consistency checks.
+- [ ] Complete apparatus equivalence, procurement specifications, scientific models, tests, rights and expert/safety reviews.
+- [ ] Next: Class XI Physics projects (11 rows).
+
+Evidence:
+- Activity register: 8033885b431b3c36a283a12d67df0011776bebd9
+- Activity CSV: e78ad4f4810c2df611ed6ad3a9663ccd37d3d0a5
+- Work log: 27d91e4e73f68acc43b8ceaa7dff44fd156d76cb
+- Roadmap: 4ab9a5866239fbe90195e4b4a4f8a26a3e15430d
+
+Phase 1.1/Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED. No app code or scientific simulation code was implemented.
