@@ -42,7 +42,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Main phase: Phase 1 — IN PROGRESS.
 - Active subphase: Phase 1.1 — NCERT kit specification recovery and source-to-asset traceability.
 - Phase 1.1 current evidence: the four official NCERT specification link targets are listed, but direct PDF retrieval attempts returned HTTP 502 on 2026-11-08; uploaded MSCL and Biology-with-microscope copies remain unauthenticated. A three-subject traceability pilot exists as DESIGN_ONLY.
-- Next work unit: extend the pilot to all six RBSE packs, one practical/activity/project/spotting/OR branch at a time, using source-confidence labels and explicit unknowns.
+- Latest bounded result (2026-11-08): RBSE Class XI Physics experiments 17/17 now have candidate NCERT Physics manual row links, proposed original asset IDs, proposed model/rule IDs, planned test vectors and explicit source gaps. See docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. This is DESIGN_ONLY, not a verified kit equivalence or implementation.
+- Next work unit: RBSE Class XI Physics activities A01–A07 and B01–B06 (13 rows), followed by its 11 project rows. Continue one bounded group at a time before moving to Class XI Chemistry.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -129,3 +130,15 @@ Do not try to implement all science at once. After the foundations, build comple
 4. One Research Studio workflow that takes a question through cited literature, hypothesis alternatives, imported data, analysis, reproducible report and candidate next experiment.
 
 Only after these slices pass tests and review should catalogue breadth and advanced research capabilities expand. This keeps quality ahead of feature count.
+
+
+## Traceability execution update — 2026-11-08
+
+Class XI Physics experiment group: **17/17 task rows crosswalked** to candidate Physics-manual item IDs and proposed original assets/models/test vectors. The mapping references 43 distinct source item IDs. Every source ID was found in the existing manual register. This is only a documentary candidate mapping: procurement attachment authentication, item/task equivalence review, exact measurements/quantities, scientific model implementation, tests, safety and expert sign-off remain open.
+
+Evidence:
+- docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md
+- data/catalogues/rbse_xi_physics_experiment_traceability.csv
+- Commit: c7c45bb5994419ff937e18254e860d837383bdf2 (document); 73136cff1e7553e2e2d1a125daba5e1bd9aab240 (CSV)
+
+Next source-order unit: Class XI Physics activities A01–A07 and B01–B06.
