@@ -37,6 +37,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [Master roadmap](docs/ROADMAP.md)
 - [Phase state tracker](docs/PHASE_STATE.md)
 - [Phase execution workflow](docs/PHASE_WORKFLOW.md)
+- [Append-only work log](docs/WORK_LOG.md)
 - [Product vision](docs/PRODUCT_VISION.md)
 - [Requirements](docs/REQUIREMENTS.md)
 - [System architecture](docs/SYSTEM_ARCHITECTURE.md)
@@ -153,3 +154,10 @@ The two uploaded PDFs are scanned NCERT-branded copies. Their hashes and OCR lim
 - [Three-subject RBSE-to-NCERT-to-asset traceability pilot](docs/PHASE_1_1_RBSE_NCERT_ASSET_TRACEABILITY_PILOT.md)
 
 The NCERT index links were confirmed, but all four direct attachment downloads returned HTTP 502 in the 2026-11-08 re-check. Previously uploaded copies remain unauthenticated. The traceability pilot is DESIGN_ONLY and does not indicate that 3D assets or scientific models are implemented.
+
+
+## Roadmap execution and research-quality governance (2026-11-08)
+
+Every completed and verified work unit is recorded in [WORK_LOG.md](docs/WORK_LOG.md), reflected in [PHASE_STATE.md](docs/PHASE_STATE.md), and aligned with the [master roadmap](docs/ROADMAP.md). The workflow forbids phase skipping and requires evidence, test counts, blockers and the next task to be committed and read back.
+
+LabVerse is designed as a research-useful scientific platform: traceable sources, immutable raw data, reproducible analyses, explicit uncertainty, versioned scientific models, literature/evidence review, bounded simulations and independent human review. Current implementation status remains documentation/source-audit only; no app code, 3D assets or simulation engines are yet implemented.
