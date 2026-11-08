@@ -161,3 +161,10 @@ The NCERT index links were confirmed, but all four direct attachment downloads r
 Every completed and verified work unit is recorded in [WORK_LOG.md](docs/WORK_LOG.md), reflected in [PHASE_STATE.md](docs/PHASE_STATE.md), and aligned with the [master roadmap](docs/ROADMAP.md). The workflow forbids phase skipping and requires evidence, test counts, blockers and the next task to be committed and read back.
 
 LabVerse is designed as a research-useful scientific platform: traceable sources, immutable raw data, reproducible analyses, explicit uncertainty, versioned scientific models, literature/evidence review, bounded simulations and independent human review. Current implementation status remains documentation/source-audit only; no app code, 3D assets or simulation engines are yet implemented.
+
+
+## Phase 1.1 — RBSE Class XI Physics experiment traceability (2026-11-08)
+- [Class XI Physics experiment traceability register — 17 tasks](docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md)
+- [Class XI Physics experiment traceability CSV — 17 rows](data/catalogues/rbse_xi_physics_experiment_traceability.csv)
+
+The mapping is DESIGN_ONLY: source IDs exist in the current manual catalogue, but task equivalence, procurement specifications, scientific model implementation, test execution, safety and expert review remain open. Next: Class XI Physics activities A01–A07 and B01–B06.
