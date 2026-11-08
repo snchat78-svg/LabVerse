@@ -108,3 +108,21 @@ Continue in source order with the 11 RBSE Class XI Physics project tasks. After 
 ## Next work unit
 
 Create a consolidated Class XI Physics traceability summary covering 17 experiments + 13 activities + 11 projects (41/41 tasks). Reconcile IDs and counts across the three detail documents and CSV files, list source-unmatched and review-pending tasks, and only then move to Class XI Chemistry.
+
+
+## 2026-11-08 — Class XI Physics consolidated traceability reconciliation
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** consolidate the experiment, activity and project traceability CSVs into a normalized 18-column pack-level register.
+- **Files:** docs/PHASE_1_1_RBSE_XI_PHYSICS_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xi_physics_traceability.csv.
+- **Reconciliation:** 17 experiments + 13 activities + 11 projects = 41/41 tasks; all 41 IDs are unique, in source order and present in the RBSE master register.
+- **Aggregate counts:** 219 source-item references across 52 distinct Physics manual item IDs; 184 proposed asset references across 111 distinct asset IDs; 44 proposed model/rule IDs; 164 planned test-vector IDs.
+- **Source gap:** only RBSE-XI-PHY-PRJ-08 Fortin barometer has NO_SOURCE_ITEM_MATCH in the currently available Physics manual item schedule. It remains explicitly unmatched.
+- **Checks:** 9/9 read-back/reconciliation checks passed, including normalized 18-column schema, all source ID references, task order, group subtotals and unmatched source status.
+- **Status boundary:** all mappings remain DESIGN_ONLY/CANDIDATE_MATCH. No item is procurement-authenticated; no 3D assets or simulation models are implemented; tests and expert review remain pending.
+- **Commits:** summary https://github.com/snchat78-svg/LabVerse/commit/23fc70bc40ec7dad7a68beab34c3c025f470e468; consolidated CSV https://github.com/snchat78-svg/LabVerse/commit/6e6ac0eee8a31c13c97fe25ef62b9353788fe149.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Begin Class XI Chemistry traceability from the first task in source order: RBSE-XI-CHEM-PRA-01 through PRA-19, then the eight Class XI Chemistry project tasks. Use the uploaded MSCL item register only as unauthenticated OCR-derived candidate evidence; keep school-managed/unknown reagent requirements separate and virtual-only where hazardous.
