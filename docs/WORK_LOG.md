@@ -231,3 +231,37 @@ Continue in source order with Class XII Physics activities A01–A06 and B01–B
 ## Next work unit
 
 Map the seven RBSE Class XII Physics project tasks PRJ-01–PRJ-07. Include missing laser/radiation/phototransistor/logic/timing/LCR instrumentation as explicit source gaps where not identified in the manual item register.
+
+
+## 2026-11-08 — RBSE Class XII Physics complete task traceability
+
+### Experiments
+- 18/18 experiment tasks mapped to candidate Physics manual rows, proposed assets, proposed model/rule IDs and planned tests.
+- 132 item refs / 42 distinct source item IDs; 92 asset refs / 51 distinct assets; 18 model IDs; 72 test vectors.
+- EXP-14 requires a travelling microscope; no such item appears in the available 106-row manual schedule.
+
+### Activities
+- 14/14 activities mapped (A01–A06 and B01–B08).
+- 126 item refs / 40 distinct source items; 81 asset refs / 49 distinct assets; 14 model IDs; 58 test vectors.
+- Low-voltage virtual-only electrical scope, no mains wiring, and no learner-usable physical blade for diffraction.
+
+### Projects
+- 7/7 projects mapped.
+- 73 item refs / 32 distinct source items; 46 asset refs / 39 distinct assets; 7 model IDs; 35 test vectors.
+- PRJ-04 requires a phototransistor and IR source; neither is in the current Physics manual catalogue. LDR/LED rows are not treated as equivalent.
+
+### Consolidated pack
+- **39 tasks** = 18 experiments + 14 activities + 7 projects.
+- 331 candidate item references / 55 distinct manual item IDs.
+- 219 proposed asset references / 99 distinct asset IDs.
+- 39 model/rule IDs; 165 planned test vectors.
+- Consolidated 18-column register: docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xii_physics_traceability.csv.
+- Read-back: 11/11 reconciliation checks passed, including all source task IDs, item IDs, source order, row counts, section subtotals and the two missing-instrument flags.
+- **Evidence boundary:** DESIGN_ONLY/CANDIDATE_MATCH; Physics manual schedule is not procurement specification; models/assets/tests are not implemented/run; expert, safety and rights review remain open.
+- **Commits:** experiment doc 6169a2b3ef3f44e218eb94940945fc0180fdc6ee / CSV ba27e6f24bfa982539998c2d5f50c667738951f7; activity doc 8d3cb4032436321f1eedd56e47e1a1c22cfcdc68 / CSV 550408aec93d68fa5a4b6871d50af4c8509589eb; project doc bf633636c42e15dc6a2a6d33592bccb1eefb7709 / CSV b7c41a78c94eee775e161423650d749cc5be22bf; summary 3ebd05b79cec3b171c9fa8dec956d79c8bb6ba6f / consolidated CSV b4598033c75c65a832f95e53099eba57463451cf.
+- Latest consolidated read-back commit blob SHAs: summary 0693616487cc1386b26c9695c9246b2e12dbaffa; CSV 54b055a43d8e74fb8a1c025c5de6da57714c088d.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Start Class XII Chemistry practical task groups and OR branches from RBSE master PDF pages 137–140. Keep cation/anion reagent identities, salt source, concentrations, preparation methods and chemical product/colour outcomes separate from apparatus source evidence; do not turn the task list into an unbounded reagent-mixing generator.
