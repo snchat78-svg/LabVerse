@@ -213,3 +213,21 @@ Start RBSE Class XII Physics traceability from the all-six-pack master register 
 ## Next work unit
 
 Continue in source order with Class XII Physics activities A01–A06 and B01–B08 (14 rows); then map the seven projects before consolidating the 39-task XII Physics pack.
+
+
+## 2026-11-08 — RBSE Class XII Physics activity traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Work unit:** map all 14 RBSE XII Physics activities (A01–A06 and B01–B08) to candidate manual items, proposed original LabVerse assets, model/rule IDs, planned tests and explicit gaps.
+- **Files:** docs/PHASE_1_1_RBSE_XII_PHYSICS_ACTIVITY_TRACEABILITY.md; data/catalogues/rbse_xii_physics_activity_traceability.csv.
+- **Coverage:** 14/14; 126 source-item references / 40 distinct manual item IDs; 81 proposed asset references / 49 distinct assets; 14 proposed model/rule IDs; 58 planned test vectors.
+- **Checks:** 8/8 repository read-back checks passed, including A/B source order, task/source-ID existence, 18-column schema and explicit safety boundaries.
+- **Safety:** household wiring remains low-voltage virtual-only; the manual blade for diffraction is not a learner-usable physical asset; no mains instructions.
+- **Source gaps:** AC source for the inductor experiment; calibrated lux sensor for LDR; polariser pair/rotation mount/intensity sensor; slit/light source for diffraction; exact component ratings and optical calibration.
+- **Status boundary:** DESIGN_ONLY/CANDIDATE_MATCH; manual schedule not procurement attachment, proposed assets/models unimplemented, tests not run, expert/safety/rights review pending.
+- **Commits:** doc https://github.com/snchat78-svg/LabVerse/commit/8d3cb4032436321f1eedd56e47e1a1c22cfcdc68; CSV https://github.com/snchat78-svg/LabVerse/commit/550408aec93d68fa5a4b6871d50af4c8509589eb.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Map the seven RBSE Class XII Physics project tasks PRJ-01–PRJ-07. Include missing laser/radiation/phototransistor/logic/timing/LCR instrumentation as explicit source gaps where not identified in the manual item register.
