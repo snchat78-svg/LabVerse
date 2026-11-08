@@ -168,3 +168,10 @@ LabVerse is designed as a research-useful scientific platform: traceable sources
 - [Class XI Physics experiment traceability CSV — 17 rows](data/catalogues/rbse_xi_physics_experiment_traceability.csv)
 
 The mapping is DESIGN_ONLY: source IDs exist in the current manual catalogue, but task equivalence, procurement specifications, scientific model implementation, test execution, safety and expert review remain open. Next: Class XI Physics activities A01–A07 and B01–B06.
+
+
+## Phase 1.1 — RBSE Class XI Physics activity traceability (2026-11-08)
+- [Activity traceability register — 13 tasks](docs/PHASE_1_1_RBSE_XI_PHYSICS_ACTIVITY_TRACEABILITY.md)
+- [Activity traceability CSV — 13 rows](data/catalogues/rbse_xi_physics_activity_traceability.csv)
+
+All rows are DESIGN_ONLY candidate mappings, not verified apparatus equivalence or implemented simulation. Next source-order task: Class XI Physics projects (11 rows).
