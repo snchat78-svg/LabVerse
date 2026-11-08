@@ -975,11 +975,22 @@ Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. Do not mark any 
 - [x] Added the Research MVP vertical-slice strategy: Physics, Chemistry and Biology end-to-end slices plus one Research Studio workflow.
 - [x] Rewrote docs/PHASE_WORKFLOW.md as the required procedure for session start, phase discipline, work-unit updates, verification, phase exit and hand-off.
 - [x] Create the append-only docs/WORK_LOG.md execution history.
-- [ ] Refetch and check all updated governance files and ensure README navigation is consistent.
+- [x] Refetch and check all updated governance files and ensure README navigation is consistent; 10/10 repository consistency checks passed.
 
 Evidence commits:
 - Phase workflow: 7da118e36ae0215b92fc2b2121beca755aa23f2d
 - Master roadmap: 172fd33d81b2f35e3bfdcb8f7a64989aa3c595ed
-- Work log: 248ccdcb7456a2c0f2d4a534e319dcc705d635a6
+- Work log creation: 248ccdcb7456a2c0f2d4a534e319dcc705d635a6
+- Work log verification update: d5050c5ee232bfd7e0ac4ded69f03c4530730e97
+- README navigation update: 7673a88b745802ddf8a3923507cac61fe3a92d39
 
 Phase status is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+### Governance read-back result — 2026-11-08
+- [x] ROADMAP.md: research quality bar, Phase 1.1 gate and continuous update protocol present.
+- [x] PHASE_WORKFLOW.md: first-unchecked-task, per-work-unit update, verification and session hand-off rules present.
+- [x] WORK_LOG.md: append-only history and exact next task present.
+- [x] README.md: master roadmap, phase state, workflow and work log navigation present.
+- [x] Phase status consistency: Phase 1.1 IN PROGRESS / Phase 1 IN PROGRESS / Phase 2 BLOCKED.
+- [x] Repository consistency read-back: 10/10 checks passed.
