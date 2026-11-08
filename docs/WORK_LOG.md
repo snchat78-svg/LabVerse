@@ -265,3 +265,20 @@ Map the seven RBSE Class XII Physics project tasks PRJ-01–PRJ-07. Include miss
 ## Next work unit
 
 Start Class XII Chemistry practical task groups and OR branches from RBSE master PDF pages 137–140. Keep cation/anion reagent identities, salt source, concentrations, preparation methods and chemical product/colour outcomes separate from apparatus source evidence; do not turn the task list into an unbounded reagent-mixing generator.
+
+
+## 2026-11-08 — RBSE Class XII Chemistry practical/OR-branch traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** map 14 source task/choice records from RBSE XII Chemistry pages 137–140: 2 redox alternatives, 1 qualitative-analysis group, 4 mutually exclusive four-mark OR branches, and 7 content-based practical alternatives/groups.
+- **Files:** docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY.md; data/catalogues/rbse_xii_chemistry_traceability.csv; docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md.
+- **Coverage:** 14 task/choice records; 167 candidate apparatus references / 38 distinct OCR MSCL item IDs; 82 proposed asset references; 14 proposed model/rule IDs; 62 planned test vectors.
+- **Option preservation:** redox alternatives are not treated as two mandatory tasks; OPT-01..04 are preserved as the four-mark OR block; the 7 kinetics/thermochemistry/electrochemistry rows remain source-listed content-block alternatives, not a claim that all are required in one exam sitting.
+- **Source boundary:** uploaded MSCL_copy.pdf OCR catalogue is USER_UPLOADED_COPY / NOT_BYTE_AUTHENTICATED, not a reagent BOM. Acids, bases, salts, organic reagents, indicators, concentrations, analytical methods and standards are not assumed supplied.
+- **Safety/integrity:** qualitative analysis is a finite curated decision graph only. Chloroform/acetone and corrosive, volatile, gas-generating or hot workflows remain virtual/reference-only. Mercury thermometer and asbestos-centred wire gauze are not learner-usable assets.
+- **Checks:** 10 documentary read-back assertions were authored for row count/schema/order, RBSE IDs, MSCL source IDs, option structure, unauthenticated source state, safety/review/gap fields and summary source boundaries. These are not scientific/software tests.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Start RBSE Class XII Biology task/spotting coverage from the master register pages 144–147. Distinguish the Biology-with-microscope OCR upload's page-level evidence states from index-only cards/slides/specimens; do not infer image content or reagent availability from index names.
