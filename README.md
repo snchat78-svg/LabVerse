@@ -196,3 +196,10 @@ Task coverage is reconciled at documentary level only; apparatus equivalence, pr
 - [Chemistry practical traceability CSV — 19 rows](data/catalogues/rbse_xi_chemistry_practical_traceability.csv)
 
 The mapping is candidate-only and uses OCR-derived rows from an unauthenticated MSCL upload. The apparatus catalogue does not establish reagent supply or validate reaction results. Next: Class XI Chemistry project tasks.
+
+
+## Phase 1.1 — RBSE Class XI Chemistry project traceability (2026-11-08)
+- [Chemistry project traceability register — 8 projects](docs/PHASE_1_1_RBSE_XI_CHEMISTRY_PROJECT_TRACEABILITY.md)
+- [Chemistry project traceability CSV — 8 rows](data/catalogues/rbse_xi_chemistry_project_traceability.csv)
+
+These are candidate apparatus links only. Source/reagent/sample/data and analytical-method verification remains open. Next: consolidate the Class XI Chemistry 27-task pack.
