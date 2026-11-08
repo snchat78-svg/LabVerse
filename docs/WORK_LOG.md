@@ -195,3 +195,21 @@ Start RBSE Class XI Biology in source order. Map all practical task groups/spott
 ## Next work unit
 
 Start RBSE Class XII Physics traceability from the all-six-pack master register (PDF pages 124–129): 18 experiments, 14 activities and 7 project choices. Reconcile the RBSE task IDs against the Physics manual candidate item IDs; preserve unsupported instrument/source matches as explicit gaps.
+
+
+## 2026-11-08 — RBSE Class XII Physics experiment traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Work unit:** map all 18 RBSE XII Physics experiment task IDs to candidate Physics manual item rows, proposed original LabVerse assets, model/rule IDs, planned test vectors and explicit gaps.
+- **Files:** docs/PHASE_1_1_RBSE_XII_PHYSICS_EXPERIMENT_TRACEABILITY.md; data/catalogues/rbse_xii_physics_experiment_traceability.csv.
+- **Coverage:** 18/18 tasks; 132 candidate item references across 42 distinct manual item IDs; 92 proposed asset references across 51 distinct asset IDs; 18 proposed model/rule IDs; 72 planned test vectors.
+- **Important source mismatch:** RBSE-XII-PHY-EXP-14 requires a travelling microscope. No travelling microscope label/item exists in the available 106-row NCERT Physics manual catalogue. The row is PARTIAL_MATCH_TRAVELLING_MICROSCOPE_NO_SOURCE_ITEM; the glass slab remains a candidate match only.
+- **Other gaps:** AC electromagnet/supply for sonometer, shunt/multiplier values, semiconductor part numbers/ratings, meter ranges and optical calibration remain open.
+- **Checks:** initial read-back 7/8 (the travelling-microscope assertion used an overly broad test because EXP-14 legitimately references the available glass slab); corrected source-gap assertions passed 6/6. All 18 IDs, CSV schema and source item IDs were verified.
+- **Status boundary:** DESIGN_ONLY/CANDIDATE_MATCH. Procurement spec not retrieved; proposed assets/models not implemented; planned tests not run; expert/safety/rights review open.
+- **Commits:** document https://github.com/snchat78-svg/LabVerse/commit/6169a2b3ef3f44e218eb94940945fc0180fdc6ee; CSV https://github.com/snchat78-svg/LabVerse/commit/ba27e6f24bfa982539998c2d5f50c667738951f7.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Continue in source order with Class XII Physics activities A01–A06 and B01–B08 (14 rows); then map the seven projects before consolidating the 39-task XII Physics pack.
