@@ -1162,3 +1162,22 @@ Evidence commits:
 - Roadmap: 33cdfe0919c643ce4ba380ead8f836a6308bc94c
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XII Physics experiment traceability (2026-11-08)
+
+- [x] Map all 18 RBSE Class XII Physics experiment IDs to candidate Physics manual items or explicit missing-source status.
+- [x] Create experiment traceability Markdown and 18-row CSV.
+- [x] Verify task IDs against RBSE master and candidate manual item IDs against Physics catalogue.
+- [x] Explicitly record missing travelling microscope for EXP-14; do not invent an NCERT catalogue item.
+- [x] Read back source-gap checks (6/6 corrected checks passed).
+- [ ] Procurement specifications, apparatus equivalence, model implementation, executable tests, rights/safety and Physics expert review remain open.
+- [ ] Next: Class XII Physics activities A01–A06 and B01–B08.
+
+Evidence:
+- Register: 6169a2b3ef3f44e218eb94940945fc0180fdc6ee
+- CSV: ba27e6f24bfa982539998c2d5f50c667738951f7
+- Work log: 1ec34dc24af9beb3ef51da04792c6805ec4be11b
+- Roadmap: 58b7c7e122c0bf72f8d7435226743c8313d18fef
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
