@@ -1200,3 +1200,23 @@ Evidence:
 - Roadmap: c40d5146733813368029b4b2b7dd8da9eb5c6666
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XII Physics pack reconciliation (2026-11-08)
+
+- [x] Map all 18 experiments, 14 activities and 7 projects.
+- [x] Create three task-family traceability documents/CSVs.
+- [x] Consolidate 39 tasks into a normalized 18-column CSV and summary.
+- [x] Verify every task ID against RBSE master and all source IDs against 106-row Physics manual catalogue.
+- [x] Preserve EXP-14 travelling microscope and PRJ-04 phototransistor/IR-source absence; no fictitious catalogue row or substitution.
+- [x] Read back and pass 11/11 pack reconciliation checks.
+- [ ] Procurement specification, exact apparatus equivalence, technical values, scientific model implementation/tests, rights, safety and expert reviews remain open.
+- [ ] Next: Class XII Chemistry practical tasks/OR branches.
+
+Evidence:
+- XII Physics summary: 3ebd05b79cec3b171c9fa8dec956d79c8bb6ba6f
+- Consolidated CSV: b4598033c75c65a832f95e53099eba57463451cf
+- Work log: c49faed22aba72334b7c474fa1ebdf27b5814db2
+- Roadmap: cac686265bb91d89ab7a3c9886cd3f47fbd76bb2
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
