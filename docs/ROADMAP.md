@@ -1,6 +1,6 @@
 # LabVerse Master Roadmap — Scientific Discovery Platform
 
-This roadmap controls phase order. Class 11–12 is the first content pack; Research Studio and expandable scientific domains are part of the product vision, not optional decoration. Do not skip phases.
+This roadmap controls phase order and is the master execution contract. Class 11–12 is the first content pack; Research Studio and expandable scientific domains are core product capabilities, not optional decoration. All implementation and documentation work must map to a phase and a verifiable deliverable. Do not skip, repeat or silently reorder phases.
 
 | Phase | Name | Main outcome | Status |
 |---|---|---|---|
@@ -37,6 +37,14 @@ Every phase must record: scope and files changed; evidence and sources used; tes
 
 Phase 0 is complete only as a planning/documentation baseline. It does not mean software, 3D assets, research connectors or scientific engines exist.
 
+## Current execution focus — 2026-11-08
+
+- Main phase: Phase 1 — IN PROGRESS.
+- Active subphase: Phase 1.1 — NCERT kit specification recovery and source-to-asset traceability.
+- Phase 1.1 current evidence: the four official NCERT specification link targets are listed, but direct PDF retrieval attempts returned HTTP 502 on 2026-11-08; uploaded MSCL and Biology-with-microscope copies remain unauthenticated. A three-subject traceability pilot exists as DESIGN_ONLY.
+- Next work unit: extend the pilot to all six RBSE packs, one practical/activity/project/spotting/OR branch at a time, using source-confidence labels and explicit unknowns.
+- Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
+
 ## Phase 1 — current phase
 
 - Confirm broad platform scope and research workflow.
@@ -48,6 +56,76 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Create source/coverage matrix, initial practical catalogue and explicit unresolved items.
 - Phase 1 cannot close while the current official RBSE syllabus documents are unreviewed or any source/licence and catalogue gaps remain unexplained.
 
+## Phase 1.1 — active subphase of Phase 1
+
+Phase 1.1 is not a new top-level phase and does not authorise bypassing the Phase 1 gate.
+
+Required outputs:
+- Reconcile official NCERT kit/manual listing pages with actual attachment bytes. Keep LISTED, RETRIEVED, CONTENT_INSPECTED and BYTE_AUTHENTICATED as separate evidence states.
+- Maintain Physics, Micro Scale Chemistry, Biology-with-microscope and Biology-without-microscope as separate kit variants.
+- Reconcile NCERT manual item schedules against procurement specification attachment rows. Preserve discrepancies such as Physics manual 106 rows versus a separate 105-item tender statement until the actual attachment resolves them.
+- Preserve uploaded-copy hashes as identifiers of uploaded bytes only; do not call them NCERT-authenticated without exact-byte or authoritative metadata comparison.
+- Finish the pending item-level page audit of Biology visual cards, specimens and permanent slides; keep index-derived rows visibly distinct from inspected specification rows.
+- Extend traceability from each RBSE task to candidate source item(s), original LabVerse asset, scientific model/rule, test vectors, safety and reviewer status.
+- Use explicit evidence statuses: PRIMARY_OFFICIAL, OFFICIAL_INDEX_ONLY, USER_UPLOADED_UNAUTHENTICATED, SECONDARY, INFERRED, DESIGN_ONLY, NEEDS_REVIEW and VERIFIED_FOR_USE.
+
+Phase 1.1 exit criteria:
+1. All currently available primary sources are inspected or recorded with a named retrieval blocker and retry route.
+2. All source/catalogue gaps and variant differences are explicit; no inferred item is silently promoted to verified.
+3. All six RBSE packs have complete task-level traceability or a documented, reasoned exception for every unresolved row.
+4. Hazard, rights, subject-review and scientific-model gaps are recorded and assigned a status.
+5. Phase 1 master exit criteria are independently checked before any Phase 2 work begins.
+
+## Research-grade product quality bar
+
+LabVerse must become useful for real scientific learning and structured research, not merely display attractive simulations.
+
+- **Evidence integrity:** every external claim, reference value, dataset and curriculum item records source identity, source type, retrieval/version date, licence/usage conditions, attribution and limitations. Keep conflicting claims visible.
+- **Scientific provenance:** every result records whether it is MEASURED, IMPORTED, SIMULATED, CALCULATED, APPROXIMATION, PREDICTED, NOT_MODELLED or NEEDS_REVIEW, along with units, uncertainty, method/model version and assumptions.
+- **Reproducibility:** preserve immutable raw data, explicit transformation steps, experiment actions, parameters, environment, calibration, software/content versions and deterministic seeds where relevant. A saved session must be replayable or explain why it cannot be.
+- **Research workflow:** support question framing, literature discovery, prior-art/related-work checks, competing hypotheses, variables and controls, protocol design, safety review, observations, dataset analysis, model comparison, limitations and exportable reports.
+- **Data quality:** validate schemas, units, missingness, duplicates, ranges, outliers and provenance; never overwrite raw imports. Keep derived datasets linked to their parent data and transformation history.
+- **Model quality:** each scientific model declares equations/rules, domain of validity, calibration, boundary conditions, numerical method, uncertainty and known failure modes. Unsupported combinations return NOT_MODELLED or NEEDS_REVIEW.
+- **Research integrity:** distinguish a promising hypothesis from a supported conclusion and a simulated outcome from a real observation. No automatic “first discovery” or causal claim from similarity, generated text or simulation alone.
+- **Safety and ethics:** include hazard tiers, virtual-only operations, data privacy, specimen/sample provenance and human review. No unrestricted reagent mixing, pathogen/toxin workflows or unsupervised hazardous instructions.
+- **AI boundary:** AI may assist search, summarisation, translation and explanation only over retrieved, cited evidence. Deterministic models and source records remain authoritative. Core practicals must not require paid AI APIs.
+- **Accessible deployment:** progressive fidelity for low-end Android devices, keyboard/touch accessibility, Hindi/English content and offline operation for downloaded core packs.
+
+## Continuous roadmap and GitHub update rule
+
+For every work session:
+1. Read the latest ROADMAP.md, PHASE_STATE.md, WORK_LOG.md, current issue(s), branch and recent commits.
+2. Select the first unchecked item in the active phase; record its acceptance checks before changing files.
+3. Work only on that item and its direct dependencies. Do not start a later phase because it is more interesting or easier.
+4. When a deliverable is actually complete, update the relevant catalogue/design/code/tests and record it in WORK_LOG.md. Update PHASE_STATE.md and ROADMAP.md status/next action; update README navigation and tracking issue when relevant.
+5. Refetch the changed files from GitHub and verify the committed content. Record the actual commit SHA(s), test counts, CI state and blockers. If a check cannot run, say NOT RUN and why.
+6. Leave incomplete items unchecked. A draft, failed retrieval, index listing, unverified upload or design-only mapping is not completion.
+7. At session end, record one precise next action so the next session resumes without asking the user to repeat context.
+
+Do not mark a whole phase DONE because an individual task or subphase progressed. Update status only to the level supported by evidence.
+
 ## No-skip rule
 
 At a new session, read PHASE_STATE.md, inspect actual GitHub contents and evidence, resume the first unchecked task, and update state only after verified work. Never mark a phase done merely because a document or screen was drafted.
+
+
+## Phase completion checklist — applies to every phase
+
+A phase is eligible for DONE only when all of the following are true:
+
+- Deliverables listed in this roadmap exist in the repository and are internally consistent.
+- Acceptance criteria are met with reproducible evidence; all critical tests pass.
+- Scientific claims, source rights, safety, privacy and accessibility have been reviewed where applicable.
+- Unknowns and residual risks are either resolved or explicitly accepted by the proper reviewer; critical blockers cannot be waived by a chat response.
+- README navigation, ROADMAP.md, PHASE_STATE.md and WORK_LOG.md point to the same current state.
+- The final commit/PR and CI evidence are recorded, and the next phase dependencies are satisfied.
+
+## Research MVP strategy
+
+Do not try to implement all science at once. After the foundations, build complete vertical slices that run end-to-end:
+1. One source-backed Physics practical with measurement, uncertainty, graph and reproducible notebook.
+2. One bounded Chemistry practical with curated substances/reaction or pH rules, visible observations and explicit unsupported states.
+3. One Biology microscopy/spotting workflow with original visual assets, magnification/scale metadata and reviewed identification labels.
+4. One Research Studio workflow that takes a question through cited literature, hypothesis alternatives, imported data, analysis, reproducible report and candidate next experiment.
+
+Only after these slices pass tests and review should catalogue breadth and advanced research capabilities expand. This keeps quality ahead of feature count.
