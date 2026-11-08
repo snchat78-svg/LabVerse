@@ -44,7 +44,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Phase 1.1 current evidence: the four official NCERT specification link targets are listed, but direct PDF retrieval attempts returned HTTP 502 on 2026-11-08; uploaded MSCL and Biology-with-microscope copies remain unauthenticated. A three-subject traceability pilot exists as DESIGN_ONLY.
 - Latest bounded result (2026-11-08): RBSE Class XI Physics experiments 17/17 now have candidate NCERT Physics manual row links, proposed original asset IDs, proposed model/rule IDs, planned test vectors and explicit source gaps. See docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. This is DESIGN_ONLY, not a verified kit equivalence or implementation.
 - Latest bounded results (2026-11-08): Class XI Physics experiments 17/17 and activities 13/13 now have candidate source-item, proposed asset, model/rule and planned test crosswalks. See the XI Physics experiment and activity traceability documents/CSVs. Both remain DESIGN_ONLY and are not verified for learner use.
-- Next work unit: RBSE Class XI Physics projects (11 rows). Then verify the complete XI Physics documentary register and move to Class XI Chemistry.
+- Latest bounded results (2026-11-08): Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have task-level candidate crosswalks. The project register explicitly records that Fortin barometer has no matching item in the current 106-row Physics manual catalogue.
+- Next work unit: consolidate and reconcile the three Class XI Physics traceability groups (41 tasks) into one coverage summary, then move to Class XI Chemistry.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -156,3 +157,16 @@ Next source-order unit: Class XI Physics activities A01–A07 and B01–B06.
 Evidence: docs/PHASE_1_1_RBSE_XI_PHYSICS_ACTIVITY_TRACEABILITY.md and data/catalogues/rbse_xi_physics_activity_traceability.csv. Commits: 8033885b431b3c36a283a12d67df0011776bebd9; e78ad4f4810c2df611ed6ad3a9663ccd37d3d0a5.
 
 Next task: Class XI Physics projects (11 rows).
+
+
+## Class XI Physics project traceability update — 2026-11-08
+
+- 11/11 project tasks crosswalked to candidate source rows or explicit NO_SOURCE_ITEM_MATCH, proposed assets, model/rule IDs and planned test vectors.
+- 28 distinct Physics manual source item IDs used across 56 references.
+- 8/8 repository read-back checks passed.
+- Fortin barometer has no source item in the current 106-row manual register; do not imply it is included in the kit.
+- DESIGN_ONLY only; models/tests/assets/reviews remain incomplete.
+
+Evidence: docs/PHASE_1_1_RBSE_XI_PHYSICS_PROJECT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_project_traceability.csv. Commits: 3b8042e2b402168c13de8028130ac812f2ecf25d; 910337e0550dc2a7b4b8bd81cd5684adc231fe49.
+
+Next: consolidate the Class XI Physics groups to 41/41 tasks.
