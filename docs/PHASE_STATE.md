@@ -13,8 +13,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Application code: not started
 - 3D workbench/assets: not implemented
 - Simulation/research engines: not implemented
-- Phase 1.1: IN PROGRESS — NCERT official kit-family listings reconfirmed; Physics manual text inspected; official procurement attachments and complete Biology kit manual remain unverified
-- Last phase-state review: 2026-11-01
+- Phase 1.1: IN PROGRESS — 2026-11-08 NCERT official index rechecked; four Grade XI–XII specification PDF targets identified, but all direct follow attempts returned HTTP 502; uploaded copies remain unauthenticated. A three-subject RBSE→NCERT item→proposed-asset traceability pilot is committed; full mapping remains open
+- Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
 
@@ -58,7 +58,7 @@ This is the single source of truth for the current phase. Update it in the same 
 
 
 ## Current blocker
-The earlier RBSE PDF retrieval blocker is resolved: the user supplied both full PDFs and the six practical page ranges were audited. The six-pack task-name register is now complete at source-index level. Current blockers are direct official NCERT kit-manual/specification retrieval (a full 141-page secondary-hosted Biology manual transcription is read but not primary-authenticated), item-level Physics/Chemistry/Biology procurement specifications, the remaining legacy/current Biology edition matches, full task-to-asset/model/test traceability, rights sampling, scientific/safety validation and independent subject-expert review.
+The earlier RBSE PDF retrieval blocker is resolved: the user supplied both full PDFs and the six practical page ranges were audited. The six-pack task-name register is complete at source-index level. On 2026-11-08 the current NCERT specification index again showed the four Grade XI–XII attachments, but all four direct PDF link follows returned HTTP 502; the alternate direct download attempt for Biology-without-microscope also failed. Existing uploaded copies therefore remain unauthenticated. Other blockers are the full official Biology kit manual, item-level Physics/Chemistry/Biology procurement specifications, remaining legacy/current Biology edition matches, full task-to-asset/model/test traceability, rights sampling, scientific/safety validation and independent subject-expert review.
 
 Tracking issue: https://github.com/snchat78-svg/LabVerse/issues/1
 
@@ -71,7 +71,7 @@ See docs/PHASE_1_SOURCE_AUDIT.md and docs/PHASE_1_INITIAL_CATALOGUE.md.
 - Current curriculum catalogue status: PRELIMINARY / NEEDS_REVIEW, not VERIFIED or PUBLISHED.
 
 ## Next action
-Continue Phase 1 by completing NCERT kit/specification inspection, detailed asset specifications, complete source-to-practical-to-test coverage, source terms sampling and subject-expert review. Do not start Phase 2 while the Phase 1 exit gate remains open.
+Continue Phase 1 by expanding the 2026-11-08 three-subject traceability pilot to all six RBSE packs (experiments, activities, projects, spotting groups and OR branches), while separately retrying official NCERT attachment retrieval only through verifiable routes. Complete detailed asset specifications, source-to-practical-to-model-to-test coverage, source terms sampling and subject-expert review. Do not start Phase 2 while the Phase 1 exit gate remains open.
 
 ## Update protocol
 For each phase update, add date, status, exact commit SHA/PR/CI link, files changed, tests run with pass/fail counts, remaining blockers and next phase. Repository evidence wins over chat history. Do not infer completion from a conversation statement.
@@ -930,3 +930,30 @@ Result: 9/9 data-integrity checks passed. This is a one-off catalogue data valid
 
 ### Gate
 Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. No application code, 3D assets, simulation engine or application test suite were created or run in this PDF-analysis pass.
+
+
+## Phase 1.1 update — official attachment retrieval re-check and traceability pilot (2026-11-08)
+
+### Work performed
+- [x] Re-opened the official NCERT Grade XI–XII kit specification index and followed its four exact specification link targets (MSCL, Biology with microscope, Biology without microscope and Physics).
+- [x] Recorded exact official link targets and the retrieval result for each; all four direct PDF follows returned HTTP 502 in this pass.
+- [x] Attempted a separate direct download of the Biology-without-microscope PDF; the download failed. The execution container also could not resolve the NCERT hostname for alternate route checks.
+- [x] Preserved the distinction between official index listing, retrieved attachment bytes and authentication of previously uploaded copies. No new attachment bytes, hashes or PDF metadata were obtained.
+- [x] Added docs/PHASE_1_1_OFFICIAL_RETRIEVAL_RECHECK_2026_11_08.md.
+- [x] Built a three-subject RBSE → NCERT source item → proposed original asset → model/test-status traceability pilot for one Physics, one Chemistry and one Biology task.
+- [x] Added docs/PHASE_1_1_RBSE_NCERT_ASSET_TRACEABILITY_PILOT.md.
+
+### Pilot result
+- 3 task rows added as DESIGN_ONLY.
+- Source item identities are present in the existing Physics, MSCL and Biology CSV catalogues.
+- Candidate source matches remain subject to source-authentication and expert review.
+- All proposed asset IDs are reservations only; no 3D model or runtime asset is implemented.
+- Model rules remain pending; test vectors are planned, not run.
+- These are repository/document consistency checks, not software or scientific-engine tests.
+
+### Commits
+- Official retrieval re-check: 29e5c96abd468621eb8d302f8dd83c17d3cb53a5
+- Three-subject traceability pilot: 8e5a7e3346923cf7dba0d388e972b4a171e16865
+
+### Remaining gate
+Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. Do not mark any uploaded specification copy as authenticated. Continue by expanding the pilot to all six RBSE packs and obtaining/validating missing primary procurement attachments.
