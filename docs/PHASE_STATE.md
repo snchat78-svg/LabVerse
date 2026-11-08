@@ -1220,3 +1220,22 @@ Evidence:
 - Roadmap: cac686265bb91d89ab7a3c9886cd3f47fbd76bb2
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XII Chemistry option/choice traceability (2026-11-08)
+
+- [x] Map two redox titration alternatives.
+- [x] Map systematic qualitative-analysis task group and preserve source-listed ion set.
+- [x] Preserve four mutually exclusive four-mark OR branches.
+- [x] Preserve seven content-based kinetics/thermochemistry/electrochemistry alternatives/groups.
+- [x] Create detail Markdown, 18-column machine-readable CSV and pack summary.
+- [ ] Official MSCL attachment authentication, full reagent BOM, source-backed methods/constants, expert/safety/rights review and scientific test vectors remain open.
+- [ ] Next: Class XII Biology source/task traceability.
+
+Evidence:
+- Detailed register and CSV paths: docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY.md; data/catalogues/rbse_xii_chemistry_traceability.csv
+- Summary: docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md
+- Work log: a6f12051390b331eabbe44f5c57e3c82bddc2556
+- Roadmap: 64db0f56270f2db116fcd71c78f2ef1013dbdd26
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
