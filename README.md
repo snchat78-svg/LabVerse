@@ -182,3 +182,10 @@ All rows are DESIGN_ONLY candidate mappings, not verified apparatus equivalence 
 - [Project traceability CSV — 11 rows](data/catalogues/rbse_xi_physics_project_traceability.csv)
 
 The Fortin barometer project has no matching item in the current NCERT Physics manual item catalogue. The crosswalk is DESIGN_ONLY and does not imply procurement verification or implementation. Next: reconcile all 41 Class XI Physics tasks.
+
+
+## Phase 1.1 — RBSE Class XI Physics consolidated traceability (2026-11-08)
+- [Consolidated Physics coverage summary — 41 tasks](docs/PHASE_1_1_RBSE_XI_PHYSICS_TRACEABILITY_SUMMARY.md)
+- [Consolidated Physics traceability CSV — 41 rows](data/catalogues/rbse_xi_physics_traceability.csv)
+
+Task coverage is reconciled at documentary level only; apparatus equivalence, procurement specifications, scientific models, executable tests and expert approval are still pending. Next roadmap item: Class XI Chemistry practical traceability.
