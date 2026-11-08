@@ -20,7 +20,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Chemistry practical groups PRA-01–PRA-19 have a 19/19 candidate apparatus crosswalk with 8/8 documentary checks; MSCL source is OCR-derived and unauthenticated, and reagent identities are not established by the apparatus catalogue.
-- Current next work unit: Class XI Chemistry projects PRJ-01–PRJ-08. Preserve sample/data-source, reagent, rights, safety and expert-review gaps.
+- Latest bounded progress: Class XI Chemistry practicals 19/19 and projects 8/8 have separate candidate apparatus/model/test crosswalks; both use unauthenticated OCR source rows and preserve reagent/sample/data gaps.
+- Current next work unit: consolidate Class XI Chemistry into one 27-task register (19 practical groups + 8 projects), preserving mark-allocation conflict and source boundaries.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1099,5 +1100,24 @@ Evidence:
 - Practical CSV: b88fc4abd1fcd0b3cbefca3511ce0039ba02d965
 - Work log: 781238eddc7e4020260640fb75db5ba4ea59bb05
 - Roadmap: d66aaceec6cec5c2287ead5466410db41faa46c3
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XI Chemistry project traceability (2026-11-08)
+
+- [x] Map all eight RBSE XI Chemistry project task IDs PRJ-01–PRJ-08.
+- [x] Create project traceability Markdown and 8-row CSV.
+- [x] Verify every task ID and non-empty candidate MSCL item ID against repository master/catalogue.
+- [x] Retain water/food/fibre/project data-method gaps and unauthenticated source state.
+- [x] Read back files; 8/8 documentary checks passed.
+- [ ] Analytical-method/source provenance, reagent availability, scientific models, tests, licensing, safety and expert approval remain open.
+- [ ] Next: consolidate 19 practical groups + 8 projects into 27-task Chemistry pack summary and CSV.
+
+Evidence:
+- Project register: 5d6dce0ff1aea56c220204e38c55c09c03f7af0e
+- Project CSV: 5e5cff3c5037fa6ec825f93716b3cce87b239162
+- Work log: 475341b6fb3197090f57c0bc18fa9b957d667cdc
+- Roadmap: 07a32ada064824cfb22713af466c3a2ef214d53b
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
