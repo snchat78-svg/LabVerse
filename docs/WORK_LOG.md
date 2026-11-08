@@ -67,3 +67,10 @@ Extend docs/PHASE_1_1_RBSE_NCERT_ASSET_TRACEABILITY_PILOT.md into a complete six
 ## Next work unit
 
 Continue in RBSE source order with Class XI Physics activities A01–A07 and B01–B06 (13 rows). Only after that bounded activity crosswalk is read back and checked, proceed to the 11 Class XI Physics project tasks.
+
+
+### Read-back verification — XI Physics experiments (2026-11-08)
+
+- **Result:** 12/12 repository consistency checks passed after refetching the committed register, CSV, roadmap, phase state, work log and README.
+- **Verified:** 17 ordered rows; 17 CSV columns; all task IDs link to the RBSE master register; all candidate item IDs appear in the source-row catalogue/document; no duplicate proposed asset ID within a task; all evidence/status fields populated; roadmap/state/log/README links and next task consistent.
+- **Interpretation:** this validates documentary references and CSV shape only. It does not verify apparatus equivalence, formulas as implemented, scientific outcomes, procurement specifications or expert approval. No software/scientific tests were run.
