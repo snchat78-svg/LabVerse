@@ -160,3 +160,20 @@ Map the eight Class XI Chemistry project tasks RBSE-XI-CHEM-PRJ-01 through PRJ-0
 ## Next work unit
 
 Reconcile 19 Class XI Chemistry practical groups + 8 projects into a normalized 27-task register. Preserve the unresolved overview/detailed marks allocation conflict and the boundary between apparatus, reagents, samples and external research datasets.
+
+
+## 2026-11-08 — Class XI Chemistry consolidated traceability reconciliation
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** merge practical PRA-01–PRA-19 and project PRJ-01–PRJ-08 component CSVs into one normalized 17-column pack register.
+- **Files:** docs/PHASE_1_1_RBSE_XI_CHEMISTRY_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xi_chemistry_traceability.csv.
+- **Coverage:** 19 + 8 = 27/27 tasks; 179 candidate apparatus references across 37 distinct MSCL OCR item IDs; 134 proposed asset references across 57 distinct asset IDs; 27 proposed model/rule IDs; 108 planned test vectors.
+- **Checks:** 9/9 repository reconciliation checks passed: task order and uniqueness, master register membership, source item IDs, unauthenticated source status, group counts, normalized schema and mark-conflict evidence.
+- **Marking conflict retained:** overview vs detailed pages differ for titrimetry, elemental detection, projects, record and viva; both total 30. No canonical rubric chosen.
+- **Source boundary:** uploaded MSCL copy remains USER_UPLOADED_COPY / NOT_BYTE_AUTHENTICATED and is an apparatus register, not a reagent BOM. Samples, chemical reagents, analytical methods and external datasets require separate sources.
+- **Commits:** summary https://github.com/snchat78-svg/LabVerse/commit/0eed1589993dfa05b45adef52e89589d7fa440d6; CSV https://github.com/snchat78-svg/LabVerse/commit/75d6fa269bb0919ded1af09ac0866e05dc562f62.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Start RBSE Class XI Biology in source order. Map all practical task groups/spotting groups from the RBSE master register against candidate Biology kit apparatus/cards/specimens/slides. The Biology-with-microscope specification is also an unauthenticated OCR upload; distinguish index-derived names from individually inspected specifications and do not infer slide/card details not in the catalogue.
