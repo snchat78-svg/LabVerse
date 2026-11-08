@@ -18,7 +18,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
-- Current next work unit: consolidate the three Class XI Physics groups into one 41-task coverage summary; reconcile exact task IDs, catalogue refs, missing items and review status before moving to Class XI Chemistry.
+- Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
+- Current next work unit: start Class XI Chemistry practical traceability in source order (PRA-01 through PRA-19), then its eight project tasks. MSCL uploaded-copy rows are unauthenticated OCR-derived candidates only.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1060,3 +1061,23 @@ Evidence:
 - Roadmap: b4467e278966ad5d8a7139d8d153d3e524d8a816
 
 Phase 1.1/Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XI Physics pack reconciliation (2026-11-08)
+
+- [x] Reconcile 17 experiments, 13 activities and 11 projects into one 41-task register.
+- [x] Create normalized 18-column CSV with section and source-status fields retained.
+- [x] Confirm all 41 IDs exist in RBSE master register and preserve source order.
+- [x] Verify all 219 source-item references against the 106-row Physics manual catalogue; 52 distinct IDs.
+- [x] Record one unmatched source task (Fortin barometer) without inventing a catalogue row.
+- [x] Read back the summary and CSV; 9/9 repository checks passed.
+- [ ] Procurement specifications, apparatus equivalence, scientific rules, implementation, tests, rights, safety and expert approval remain open.
+- [ ] Next: Class XI Chemistry practical tasks PRA-01–PRA-19.
+
+Evidence:
+- Summary: 23fc70bc40ec7dad7a68beab34c3c025f470e468
+- Consolidated CSV: 6e6ac0eee8a31c13c97fe25ef62b9353788fe149
+- Work log: 11f572898e7c7cd90d5a4a8ec682be09339eb7b2
+- Roadmap: ff6b165ac9031402beea3715ac475c10627cf3e0
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
