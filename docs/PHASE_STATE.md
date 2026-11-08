@@ -15,7 +15,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Simulation/research engines: not implemented
 - Phase 1.1: IN PROGRESS — 2026-11-08 NCERT official index rechecked; four Grade XI–XII specification PDF targets identified, but all direct follow attempts returned HTTP 502; uploaded copies remain unauthenticated. A three-subject RBSE→NCERT item→proposed-asset traceability pilot is committed; full mapping remains open
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
-- Current next work unit: extend the three-row cross-subject traceability pilot to the remaining tasks/activities/projects/spotting/OR branches in the six RBSE packs; keep source confidence and unknowns explicit
+- Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
+- Current next work unit: RBSE Class XI Physics activities A01–A07 and B01–B06 (13 rows); then the 11 Class XI Physics project tasks. Preserve candidate/inferred/unknown states.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -994,3 +995,22 @@ Phase status is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 B
 - [x] README.md: master roadmap, phase state, workflow and work log navigation present.
 - [x] Phase status consistency: Phase 1.1 IN PROGRESS / Phase 1 IN PROGRESS / Phase 2 BLOCKED.
 - [x] Repository consistency read-back: 10/10 checks passed.
+
+
+## Phase 1.1 update — Class XI Physics experiment traceability (2026-11-08)
+
+- [x] Create a task-level traceability document for all 17 RBSE Class XI Physics experiments.
+- [x] Create a machine-readable 17-row CSV crosswalk.
+- [x] Check that all 17 RBSE task IDs exist in the six-pack master register.
+- [x] Check that all 43 distinct referenced NCERT Physics source item IDs exist in the 106-row Physics manual CSV.
+- [x] Preserve candidate source matches, proposed assets/models and planned-not-run tests as non-verified states.
+- [ ] Complete item/task expert review, procurement-specification reconciliation, asset specifications, scientific rules and test vectors.
+- [ ] Continue with the next work unit: Class XI Physics activities A01–A07 and B01–B06.
+
+Evidence commits:
+- Traceability document: c7c45bb5994419ff937e18254e860d837383bdf2
+- Machine-readable CSV: 73136cff1e7553e2e2d1a125daba5e1bd9aab240
+- Work log: ba014fdf1adf47b5d23cc5dc0d6a17a651f3af35
+- Roadmap: 17f1b8fe56f9cc2742149ed9db51f55b03bc7d31
+
+Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. No application code, 3D asset, simulation runtime, model implementation or scientific test was created/run.
