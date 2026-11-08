@@ -14,6 +14,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - 3D workbench/assets: not implemented
 - Simulation/research engines: not implemented
 - Phase 1.1: IN PROGRESS — 2026-11-08 NCERT official index rechecked; four Grade XI–XII specification PDF targets identified, but all direct follow attempts returned HTTP 502; uploaded copies remain unauthenticated. A three-subject RBSE→NCERT item→proposed-asset traceability pilot is committed; full mapping remains open
+- Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
+- Current next work unit: extend the three-row cross-subject traceability pilot to the remaining tasks/activities/projects/spotting/OR branches in the six RBSE packs; keep source confidence and unknowns explicit
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -73,8 +75,14 @@ See docs/PHASE_1_SOURCE_AUDIT.md and docs/PHASE_1_INITIAL_CATALOGUE.md.
 ## Next action
 Continue Phase 1 by expanding the 2026-11-08 three-subject traceability pilot to all six RBSE packs (experiments, activities, projects, spotting groups and OR branches), while separately retrying official NCERT attachment retrieval only through verifiable routes. Complete detailed asset specifications, source-to-practical-to-model-to-test coverage, source terms sampling and subject-expert review. Do not start Phase 2 while the Phase 1 exit gate remains open.
 
+## Continuous update protocol — 2026-11-08
+
+The mandatory operating rules are in docs/PHASE_WORKFLOW.md and docs/ROADMAP.md. After each verified work unit, update the relevant source/code/catalogue/tests, docs/WORK_LOG.md, this file, the roadmap when status/dependencies change, README navigation when applicable, and the tracking issue. Refetch the commits and verify the content. Do not check off incomplete work.
+
+The project is intended to become a research-grade scientific platform, not only a school practical simulator. Preserve evidence provenance, immutable raw data and transformation lineage, uncertainty, reproducibility, conflicting evidence, safety/rights review, human sign-off and the distinction between simulation and real observation.
+
 ## Update protocol
-For each phase update, add date, status, exact commit SHA/PR/CI link, files changed, tests run with pass/fail counts, remaining blockers and next phase. Repository evidence wins over chat history. Do not infer completion from a conversation statement.
+For each phase update, add date, status, exact commit SHA/PR/CI link, files changed, tests run with pass/fail counts, remaining blockers and exact next task. Repository evidence wins over chat history. Do not infer completion from a conversation statement.
 
 
 ## Phase 1 update — 2026-10-31 (continued)
@@ -957,3 +965,20 @@ Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. No application c
 
 ### Remaining gate
 Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. Do not mark any uploaded specification copy as authenticated. Continue by expanding the pilot to all six RBSE packs and obtaining/validating missing primary procurement attachments.
+
+
+## Roadmap/process governance update — 2026-11-08
+
+- [x] Added the active Phase 1.1 scope, its exit criteria and explicit evidence-state vocabulary to docs/ROADMAP.md.
+- [x] Added the Research-grade product quality bar covering evidence integrity, provenance, reproducibility, data quality, model validity, research integrity, safety, AI boundaries and accessibility.
+- [x] Added the continuous roadmap/GitHub synchronisation contract and phase completion checklist.
+- [x] Added the Research MVP vertical-slice strategy: Physics, Chemistry and Biology end-to-end slices plus one Research Studio workflow.
+- [x] Rewrote docs/PHASE_WORKFLOW.md as the required procedure for session start, phase discipline, work-unit updates, verification, phase exit and hand-off.
+- [ ] Create and maintain the append-only docs/WORK_LOG.md execution history (this is being added in this update set).
+- [ ] Refetch and check all updated governance files and ensure README navigation is consistent.
+
+Evidence commits:
+- Phase workflow: 7da118e36ae0215b92fc2b2121beca755aa23f2d
+- Master roadmap: 172fd33d81b2f35e3bfdcb8f7a64989aa3c595ed
+
+Phase status is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
