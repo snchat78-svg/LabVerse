@@ -974,11 +974,12 @@ Phase 1.1: IN PROGRESS. Phase 1: IN PROGRESS. Phase 2: BLOCKED. Do not mark any 
 - [x] Added the continuous roadmap/GitHub synchronisation contract and phase completion checklist.
 - [x] Added the Research MVP vertical-slice strategy: Physics, Chemistry and Biology end-to-end slices plus one Research Studio workflow.
 - [x] Rewrote docs/PHASE_WORKFLOW.md as the required procedure for session start, phase discipline, work-unit updates, verification, phase exit and hand-off.
-- [ ] Create and maintain the append-only docs/WORK_LOG.md execution history (this is being added in this update set).
+- [x] Create the append-only docs/WORK_LOG.md execution history.
 - [ ] Refetch and check all updated governance files and ensure README navigation is consistent.
 
 Evidence commits:
 - Phase workflow: 7da118e36ae0215b92fc2b2121beca755aa23f2d
 - Master roadmap: 172fd33d81b2f35e3bfdcb8f7a64989aa3c595ed
+- Work log: 248ccdcb7456a2c0f2d4a534e319dcc705d635a6
 
 Phase status is unchanged: Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
