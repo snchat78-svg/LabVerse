@@ -21,7 +21,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Chemistry practical groups PRA-01–PRA-19 have a 19/19 candidate apparatus crosswalk with 8/8 documentary checks; MSCL source is OCR-derived and unauthenticated, and reagent identities are not established by the apparatus catalogue.
 - Latest bounded progress: Class XI Chemistry practicals 19/19 and projects 8/8 have separate candidate apparatus/model/test crosswalks; both use unauthenticated OCR source rows and preserve reagent/sample/data gaps.
-- Current next work unit: consolidate Class XI Chemistry into one 27-task register (19 practical groups + 8 projects), preserving mark-allocation conflict and source boundaries.
+- Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
+- Current next work unit: start Class XI Biology practical/spotting traceability against the Biology-with-microscope OCR catalogue; preserve index-only versus individually inspected source states.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1119,5 +1120,24 @@ Evidence:
 - Project CSV: 5e5cff3c5037fa6ec825f93716b3cce87b239162
 - Work log: 475341b6fb3197090f57c0bc18fa9b957d667cdc
 - Roadmap: 07a32ada064824cfb22713af466c3a2ef214d53b
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XI Chemistry pack reconciliation (2026-11-08)
+
+- [x] Consolidate 19 practical groups and 8 projects into a 27-row, 17-column CSV.
+- [x] Verify all 27 IDs against the RBSE master register and all candidate MSCL IDs against the OCR catalogue.
+- [x] Preserve the uploaded-copy / not-byte-authenticated status for every row.
+- [x] Preserve the overview-vs-detailed marks allocation conflict; no official rubric selected.
+- [x] Read back summary and CSV; 9/9 consistency checks passed.
+- [ ] Official MSCL authentication, reagent/source/method verification, safety, rights, scientific models, tests and expert review remain open.
+- [ ] Next: begin Class XI Biology practical and spotting mapping.
+
+Evidence:
+- Summary: 0eed1589993dfa05b45adef52e89589d7fa440d6
+- Consolidated CSV: 75d6fa269bb0919ded1af09ac0866e05dc562f62
+- Work log: b1eeb2a5891744ae9425a7b91bd188fc69ca1255
+- Roadmap: ba6c8f614303486ac0997f4eabe62e5937c94c57
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
