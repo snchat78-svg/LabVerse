@@ -22,7 +22,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry practical groups PRA-01–PRA-19 have a 19/19 candidate apparatus crosswalk with 8/8 documentary checks; MSCL source is OCR-derived and unauthenticated, and reagent identities are not established by the apparatus catalogue.
 - Latest bounded progress: Class XI Chemistry practicals 19/19 and projects 8/8 have separate candidate apparatus/model/test crosswalks; both use unauthenticated OCR source rows and preserve reagent/sample/data gaps.
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
-- Current next work unit: start Class XI Biology practical/spotting traceability against the Biology-with-microscope OCR catalogue; preserve index-only versus individually inspected source states.
+- Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
+- Current next work unit: begin Class XII Physics source-order traceability (18 experiments, 14 activities, 7 project choices) against candidate NCERT Physics manual item IDs; preserve all source gaps.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1139,5 +1140,25 @@ Evidence:
 - Consolidated CSV: 75d6fa269bb0919ded1af09ac0866e05dc562f62
 - Work log: b1eeb2a5891744ae9425a7b91bd188fc69ca1255
 - Roadmap: ba6c8f614303486ac0997f4eabe62e5937c94c57
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XI Biology pack reconciliation (2026-11-08)
+
+- [x] Map 22 RBSE Class XI Biology task groups (Botany major/minor, Zoology major/minor and spotting groups).
+- [x] Create evidence-tiered task-level Markdown and 22-row CSV.
+- [x] Verify every RBSE task ID against the master task register and every Biology item ID against the 177-row OCR catalogue.
+- [x] Preserve per-item evidence status: 57 of 96 referenced unique items are index-only; sample-inspected/visual/OCR statuses remain separate.
+- [x] Create consolidated 22-row traceability summary and CSV.
+- [x] Read back consolidated output and pass 10/10 repository consistency checks.
+- [ ] Official-byte authentication, Biology-without-microscope comparison, full page-level card/specimen/slide audit, taxonomy/content validation, safety/rights/expert review and scientific tests remain open.
+- [ ] Next: Class XII Physics task traceability (18 experiments, 14 activities, 7 projects/choices).
+
+Evidence commits:
+- XI Biology detail: 9e3d8dd80f010d3c360be809fb253a8b238e3aa3; CSV 08ff621c130c5ac98e15a598d63722bdca9ad226
+- XI Biology summary: 39da276f374ade474dabee95fc10dd99d2548180; consolidated CSV 8e7d3d577da046757a986e479d70061479dda463
+- Work log: ddf234b4178b38dcff5959e813ff5adce99e2b65
+- Roadmap: 33cdfe0919c643ce4ba380ead8f836a6308bc94c
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
