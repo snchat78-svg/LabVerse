@@ -241,3 +241,15 @@ Next source-order task: Class XI Biology task/spotting mapping.
 Commits: 39da276f374ade474dabee95fc10dd99d2548180; 8e7d3d577da046757a986e479d70061479dda463.
 
 Next task: Class XII Physics task mapping.
+
+
+## Class XII Physics experiment traceability update — 2026-11-08
+
+- 18/18 task rows crosswalked; 132 candidate source references / 42 distinct manual item IDs.
+- 92 proposed asset references / 51 distinct assets; 18 model/rule proposals; 72 planned test vectors.
+- Missing source instrument: travelling microscope (RBSE-XII-PHY-EXP-14) is not in the current Physics manual item schedule.
+- Candidate procurement equivalence and scientific review remain open; no software tests run.
+
+Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_EXPERIMENT_TRACEABILITY.md; data/catalogues/rbse_xii_physics_experiment_traceability.csv. Commits: 6169a2b3ef3f44e218eb94940945fc0180fdc6ee; ba27e6f24bfa982539998c2d5f50c667738951f7.
+
+Next: Class XII Physics activities A01–A06 and B01–B08.
