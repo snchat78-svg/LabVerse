@@ -278,3 +278,14 @@ Next: Class XII Physics projects PRJ-01–PRJ-07.
 Evidence: docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md; summary commit 3ebd05b79cec3b171c9fa8dec956d79c8bb6ba6f; CSV commit b4598033c75c65a832f95e53099eba57463451cf.
 
 Next source-order task: Class XII Chemistry practical groups and OR branches.
+
+
+## Class XII Chemistry traceability update — 2026-11-08
+
+- 14 traceability records covering 2 redox alternatives, 1 qualitative analysis group, 4 mutually exclusive four-mark OR branches and 7 content-based alternatives.
+- 167 candidate MSCL apparatus refs / 38 distinct OCR item IDs; 82 proposed asset refs; 14 model/rule proposals; 62 planned test vectors.
+- Uploaded MSCL specification remains unauthenticated and is not a reagent BOM. No reagent supply, analytical method or result is verified by the equipment list.
+- Summary: docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md; detail and CSV linked from README.
+- Documentary readback assertions recorded; no chemistry software/scientific tests run.
+
+Next source-order task: Class XII Biology task/spotting coverage.
