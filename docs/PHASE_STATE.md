@@ -19,7 +19,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
-- Current next work unit: start Class XI Chemistry practical traceability in source order (PRA-01 through PRA-19), then its eight project tasks. MSCL uploaded-copy rows are unauthenticated OCR-derived candidates only.
+- Latest bounded progress: Class XI Chemistry practical groups PRA-01–PRA-19 have a 19/19 candidate apparatus crosswalk with 8/8 documentary checks; MSCL source is OCR-derived and unauthenticated, and reagent identities are not established by the apparatus catalogue.
+- Current next work unit: Class XI Chemistry projects PRJ-01–PRJ-08. Preserve sample/data-source, reagent, rights, safety and expert-review gaps.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1079,5 +1080,24 @@ Evidence:
 - Consolidated CSV: 6e6ac0eee8a31c13c97fe25ef62b9353788fe149
 - Work log: 11f572898e7c7cd90d5a4a8ec682be09339eb7b2
 - Roadmap: ff6b165ac9031402beea3715ac475c10627cf3e0
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XI Chemistry practical traceability (2026-11-08)
+
+- [x] Map RBSE XI Chemistry practical task groups PRA-01–PRA-19 (19/19).
+- [x] Create a 17-column machine-readable CSV.
+- [x] Verify all task IDs against the RBSE master register and all candidate MSCL item IDs against the OCR catalogue.
+- [x] Preserve the uploaded MSCL source as NOT_BYTE_AUTHENTICATED; keep reagents separate from apparatus items.
+- [x] Read back files and pass 8/8 documentary consistency checks.
+- [ ] Official attachment authentication, reagent source verification, apparatus equivalence, scientific models, tests, rights/safety/expert sign-off remain open.
+- [ ] Next: Class XI Chemistry projects PRJ-01–PRJ-08.
+
+Evidence:
+- Practical register: ffe8ec9207b7bb6b9d6df2f95f0b627c2ab33325
+- Practical CSV: b88fc4abd1fcd0b3cbefca3511ce0039ba02d965
+- Work log: 781238eddc7e4020260640fb75db5ba4ea59bb05
+- Roadmap: d66aaceec6cec5c2287ead5466410db41faa46c3
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
