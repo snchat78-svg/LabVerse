@@ -406,3 +406,22 @@ Associated files:
 - data/catalogues/ncert_biology_with_microscope_spec_items.csv
 
 Both specifications explicitly contain asbestos-centred wire gauze. The uploaded MSCL specification also contains a mercury-filled thermometer. Flag these as source hazards; no asbestos or mercury real-world use is to be exposed to learners. The Biology row 176 index label/body mismatch is retained rather than silently corrected.
+
+
+## Official NCERT attachment retrieval re-check — 2026-11-08
+
+The official Grade XI–XII specification index was reopened and all four exact link targets were followed:
+- MSCL: https://ncert.nic.in/division/dek/pdf/MSCL.pdf
+- Biology with microscope: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf
+- Biology without microscope: https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf
+- Physics: https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf
+
+The four direct PDF follows returned HTTP 502 in this pass. A separate container download attempt for the Biology-without-microscope attachment failed. No new PDF bytes, SHA-256 hashes, metadata or page content were obtained.
+
+Registry status:
+- Official index listing: CONFIRMED.
+- Attachment byte retrieval: RETRIEVAL_BLOCKED (2026-11-08).
+- Existing uploaded MSCL and Biology-with-microscope copies: USER_UPLOADED_COPY / NOT_BYTE_AUTHENTICATED.
+- Biology-without-microscope and Physics procurement attachment bytes: NOT_RETRIEVED.
+
+Do not equate filename, listing, file size or third-party tender locator with proof of exact NCERT attachment identity. See docs/PHASE_1_1_OFFICIAL_RETRIEVAL_RECHECK_2026_11_08.md.
