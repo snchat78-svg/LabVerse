@@ -74,3 +74,20 @@ Continue in RBSE source order with Class XI Physics activities A01–A07 and B01
 - **Result:** 12/12 repository consistency checks passed after refetching the committed register, CSV, roadmap, phase state, work log and README.
 - **Verified:** 17 ordered rows; 17 CSV columns; all task IDs link to the RBSE master register; all candidate item IDs appear in the source-row catalogue/document; no duplicate proposed asset ID within a task; all evidence/status fields populated; roadmap/state/log/README links and next task consistent.
 - **Interpretation:** this validates documentary references and CSV shape only. It does not verify apparatus equivalence, formulas as implemented, scientific outcomes, procurement specifications or expert approval. No software/scientific tests were run.
+
+
+## 2026-11-08 — RBSE Class XI Physics activity traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Bounded work unit:** map all 13 RBSE XI Physics activities (A01–A07 and B01–B06) to candidate Physics manual items, proposed original assets, proposed model/rule IDs, planned test vectors, safety and unresolved source gaps.
+- **Files:** docs/PHASE_1_1_RBSE_XI_PHYSICS_ACTIVITY_TRACEABILITY.md; data/catalogues/rbse_xi_physics_activity_traceability.csv.
+- **Coverage:** 13/13 tasks; 71 source-item references across 32 distinct manual item IDs; 58 proposed asset references; 13 proposed model/rule IDs; 52 planned test-vector IDs.
+- **Checks:** 8/8 read-back consistency checks passed: exact row/schema count, A/B source order, master task IDs, source item references, per-row status fields and explicit limits.
+- **Important gaps preserved:** paper/wax/detergent consumables, water-jet nozzle/reservoir, pivot support, heat-loss insulation materials and beam-deflection gauge are not all confirmed in the Physics kit item schedule. Rolling friction must not be confused with sliding friction. No unsupported values were invented.
+- **Status boundary:** DESIGN_ONLY / CANDIDATE_MATCH; proposed assets not implemented; model IDs not coded; test vectors not run; expert, safety and rights review pending.
+- **Commit evidence:** doc https://github.com/snchat78-svg/LabVerse/commit/8033885b431b3c36a283a12d67df0011776bebd9; CSV https://github.com/snchat78-svg/LabVerse/commit/e78ad4f4810c2df611ed6ad3a9663ccd37d3d0a5.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Continue in source order with the 11 RBSE Class XI Physics project tasks. After the project crosswalk is read-back checked, close the Class XI Physics pack's task-level documentary mapping and proceed to Class XI Chemistry.
