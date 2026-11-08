@@ -146,3 +146,10 @@ Uploaded copies were inspected as scanned NCERT-branded specification documents.
 - [Biology-with-microscope machine-readable item catalogue (177 index rows)](data/catalogues/ncert_biology_with_microscope_spec_items.csv)
 
 The two uploaded PDFs are scanned NCERT-branded copies. Their hashes and OCR limits are recorded; exact-byte identity against NCERT-hosted originals remains unverified.
+
+
+## Phase 1.1 — latest verification and traceability work (2026-11-08)
+- [Official NCERT attachment retrieval re-check](docs/PHASE_1_1_OFFICIAL_RETRIEVAL_RECHECK_2026_11_08.md)
+- [Three-subject RBSE-to-NCERT-to-asset traceability pilot](docs/PHASE_1_1_RBSE_NCERT_ASSET_TRACEABILITY_PILOT.md)
+
+The NCERT index links were confirmed, but all four direct attachment downloads returned HTTP 502 in the 2026-11-08 re-check. Previously uploaded copies remain unauthenticated. The traceability pilot is DESIGN_ONLY and does not indicate that 3D assets or scientific models are implemented.
