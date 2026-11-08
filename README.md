@@ -233,3 +233,13 @@ The travelling microscope required for RBSE-XII-PHY-EXP-14 is not listed in the 
 - [Activity traceability CSV — 14 rows](data/catalogues/rbse_xii_physics_activity_traceability.csv)
 
 Activity mappings remain candidate-only; exact procurement specs, model implementation, scientific tests and expert review remain open. Household mains wiring and physical blade handling are not permitted app workflows. Next: Class XII Physics projects.
+
+
+## Phase 1.1 — RBSE Class XII Physics consolidated traceability (2026-11-08)
+- [XII Physics experiment register — 18 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_EXPERIMENT_TRACEABILITY.md)
+- [XII Physics activity register — 14 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_ACTIVITY_TRACEABILITY.md)
+- [XII Physics project register — 7 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_PROJECT_TRACEABILITY.md)
+- [XII Physics pack summary — 39 tasks](docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md)
+- [Consolidated XII Physics CSV — 39 rows](data/catalogues/rbse_xii_physics_traceability.csv)
+
+Two known missing-instrument flags remain: travelling microscope (EXP-14) and phototransistor/IR source (PRJ-04). All mapped models/assets/tests remain design-only or planned.
