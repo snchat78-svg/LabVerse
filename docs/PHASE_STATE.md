@@ -1014,3 +1014,10 @@ Evidence commits:
 - Roadmap: 17f1b8fe56f9cc2742149ed9db51f55b03bc7d31
 
 Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. No application code, 3D asset, simulation runtime, model implementation or scientific test was created/run.
+
+
+### XI Physics experiment read-back verification — 2026-11-08
+- [x] Read back the new traceability Markdown and CSV from GitHub.
+- [x] Run 12/12 repository consistency checks covering task order, source IDs, CSV structure, status fields, roadmap/state/log/README and tracking issue state.
+- [x] Preserve the test boundary: documentary checks only; no software/model/scientific test run.
+- Latest verification log commit: e55dcf10723e15caa81f0f4be751f123eaf9e9fd
