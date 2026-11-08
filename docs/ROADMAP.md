@@ -46,7 +46,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Latest bounded results (2026-11-08): Class XI Physics experiments 17/17 and activities 13/13 now have candidate source-item, proposed asset, model/rule and planned test crosswalks. See the XI Physics experiment and activity traceability documents/CSVs. Both remain DESIGN_ONLY and are not verified for learner use.
 - Latest bounded results (2026-11-08): Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have task-level candidate crosswalks. The project register explicitly records that Fortin barometer has no matching item in the current 106-row Physics manual catalogue.
 - Latest bounded result (2026-11-08): Class XI Physics task-level documentary coverage is reconciled at 41/41 (17 experiments, 13 activities, 11 projects) in one normalized CSV. 52 distinct candidate manual item IDs and one explicit no-source match (Fortin barometer) are recorded. This is DESIGN_ONLY, not a source-verified or implemented Physics product.
-- Next work unit: start Class XI Chemistry practical groups PRA-01 through PRA-19, then its eight project tasks; treat the OCR-derived MSCL specification copy as unauthenticated candidate evidence.
+- Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 have a candidate MSCL apparatus crosswalk (19/19). Evidence is OCR-derived from an unauthenticated uploaded MSCL copy; it does not include a reagent BOM. All mappings remain DESIGN_ONLY.
+- Next work unit: map the eight Class XI Chemistry project tasks PRJ-01–PRJ-08, preserving dataset/provenance/reagent gaps.
 - Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
 
 ## Phase 1 — current phase
@@ -183,3 +184,16 @@ Next: consolidate the Class XI Physics groups to 41/41 tasks.
 - Evidence: docs/PHASE_1_1_RBSE_XI_PHYSICS_TRACEABILITY_SUMMARY.md; commit 23fc70bc40ec7dad7a68beab34c3c025f470e468; CSV commit 6e6ac0eee8a31c13c97fe25ef62b9353788fe149.
 
 Next phase-1 work unit: Class XI Chemistry practical traceability, PRA-01 to PRA-19.
+
+
+## Class XI Chemistry practical traceability update — 2026-11-08
+
+- 19/19 task groups PRA-01 through PRA-19 crosswalked.
+- 131 candidate MSCL source-item references / 36 distinct item IDs; 92 proposed asset references; 19 proposed model/rule IDs; 76 planned test vectors.
+- 8/8 read-back checks passed.
+- Source caveat: uploaded MSCL specification is OCR-inspected but not byte-authenticated; apparatus catalogue does not establish supplied chemical reagents.
+- Hazardous chemistry procedures remain virtual-only and require expert/safety review.
+
+Evidence: docs/PHASE_1_1_RBSE_XI_CHEMISTRY_PRACTICAL_TRACEABILITY.md; data/catalogues/rbse_xi_chemistry_practical_traceability.csv. Commits: ffe8ec9207b7bb6b9d6df2f95f0b627c2ab33325; b88fc4abd1fcd0b3cbefca3511ce0039ba02d965.
+
+Next task: Class XI Chemistry projects PRJ-01–PRJ-08.
