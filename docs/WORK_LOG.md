@@ -49,3 +49,21 @@ Extend docs/PHASE_1_1_RBSE_NCERT_ASSET_TRACEABILITY_PILOT.md into a complete six
 - **Verified:** Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED; the first next work unit is the all-six-pack traceability expansion.
 - **Issue:** GitHub tracking Issue #1 remains OPEN.
 - **Test boundary:** these are documentation/repository consistency checks only. No application source code exists yet, so no application build, software test suite or scientific-engine validation was run.
+
+
+## 2026-11-08 — RBSE Class XI Physics experiment traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Bounded work unit:** map all 17 RBSE Class XI Physics experiment tasks to candidate NCERT Physics manual item IDs, proposed original LabVerse asset IDs, proposed model/rule IDs, planned test vectors and explicit gaps.
+- **Completed documents/data:** docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv.
+- **Coverage:** 17/17 task rows; 92 source-item references across 43 distinct source-item IDs; 78 proposed asset references across 57 distinct asset IDs; 20 proposed model/rule IDs; 68 planned test-vector IDs.
+- **Source integrity:** every referenced task ID was found in the RBSE master register; every NCERT-PHY-KIT source ID was found in the existing 106-row Physics manual CSV. The NCERT item schedule is not a procurement specification and task-to-kit equivalence remains CANDIDATE_MATCH.
+- **Gaps preserved:** Searle apparatus/comparator, Boyle pressure measurement, exact specimens and several technical ranges/quantities are not established by the current source register. No unknown values were fabricated.
+- **Safety/rights:** all experiment workflows are virtual-only pending review; create original geometry/text and complete rights review. Heater/hot-body operations are not real-world instructions.
+- **Checks performed:** 8 checks planned; final validation treats shared asset IDs across different practicals as intentional. CSV has 17 data rows and 17 columns; task order, task/source ID existence and no duplicate asset ID within a row are checked. No application, model or scientific tests were run.
+- **Commits:** document https://github.com/snchat78-svg/LabVerse/commit/c7c45bb5994419ff937e18254e860d837383bdf2; CSV https://github.com/snchat78-svg/LabVerse/commit/73136cff1e7553e2e2d1a125daba5e1bd9aab240.
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Continue in RBSE source order with Class XI Physics activities A01–A07 and B01–B06 (13 rows). Only after that bounded activity crosswalk is read back and checked, proceed to the 11 Class XI Physics project tasks.
