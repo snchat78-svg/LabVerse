@@ -190,7 +190,27 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 - **Severity:** BLOCKER_PHASE_1
 - **Required next action:** Create asset provenance/license manifest; use original geometry/illustration or licensed/public-domain data; document attribution and counsel review where required.
 
-## 4. Exact uploaded-copy manifests
+## 4. New procurement recovery lead discovered — 2026-11-09
+
+A current third-party tender index lists **GeM bid GEM/2026/B/8248336**, published 6 November 2026 by the Basic Education Department, Uttar Pradesh, for:
+- 364 Secondary Stage Physics Laboratory Kits;
+- 516 Micro Scale Chemistry Laboratory Kits;
+- 556 Secondary Stage Biology Laboratory Kits without microscope;
+- total 1,436 kits; listed bid closing 16 November 2026 at 18:00 IST.
+
+The third-party listing names these attachments:
+- `ss_phy_laboratory_kit_2025-08-05-14-27-28_7159927680c0a63ae4624c30ec52c8b8.pdf`
+- `mscl_2025-08-05-14-26-21_3a5a681bb380b96ec69bc9e461f50115.pdf`
+- `ssbk_without_microscope_2025-08-05-14-23-11_a136470235d8a05b047e905400caead5.pdf`
+- `1793944092.xlsx` plus bid/ATC documents.
+
+Discovery source: https://www.tenderdetail.com/Indian-Tenders/TenderNotice/58427290/5da42d2773dfee38b9a9444aa4b7809d (third-party tender index). A second third-party listing also reports bid ID and kit quantities. The official portal is GeM, https://bidplus.gem.gov.in/, where the bid ID should be checked.
+
+**Authentication state:** NOT RETRIEVED / NOT HASHED / NOT AUTHENTICATED. The filename suffixes, bid listing, quantities and dates are discovery metadata only. The 2025-08-05 filename date does not prove an NCERT revision or that the documents match NCERT's official specification PDFs. Do not promote these attachment names to official source status or merge their item rows until the official GeM attachment payloads or NCERT original bytes are retrieved and compared. Do not automate seller login or bypass access controls.
+
+This is a promising recovery route for three currently missing attachments (Physics, MSCL and Biology without microscope), but it does not close any source-authentication gate yet.
+
+## 5. Exact uploaded-copy manifests
 
 | Uploaded copy | Page count | Size | PDF metadata | SHA-256 | Authentication |
 |---|---:|---:|---|---|---|
@@ -231,6 +251,6 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 
 **Decision: Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.** The task index is complete; the evidence and implementation gates are not.
 
-## 7. Next work unit
+## 8. Next work unit
 
 Work on the highest-impact retrieval blocker first: official RBSE 2027 PDF recovery and byte comparison, followed by the four NCERT kit specification attachments. Once bytes are recovered, calculate SHA-256 locally, inspect metadata/revision and compare item-level BOMs before changing any candidate mapping. Do not reclassify uploaded copies as official or move to Phase 2 until the Phase 1 exit gates have evidence and approvals.
