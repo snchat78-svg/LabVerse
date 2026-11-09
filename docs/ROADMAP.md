@@ -289,3 +289,21 @@ Next source-order task: Class XII Chemistry practical groups and OR branches.
 - Documentary readback assertions recorded; no chemistry software/scientific tests run.
 
 Next source-order task: Class XII Biology task/spotting coverage.
+
+
+## Class XII Biology traceability update — 2026-11-09
+
+- 28/28 source task/choice records mapped: Botany major 6, Zoology major 6, Botany minor 5, Zoology minor 4, spotting 6 (3+3), required open-topic project 1.
+- 224 candidate references / 83 distinct Biology catalogue item IDs; 92 proposed asset refs / 80 distinct assets; 28 proposed model/rule IDs; 142 planned test vectors.
+- Evidence among 83 unique referenced items: 43 OCR_TEXT; 1 OCR_TEXT + VISUAL_CHECK; 1 VISUAL_CHECK; 2 INDEX_CONFIRMED samples; 36 INDEX_ONLY slide/card/specification rows and 1 additional index-only row.
+- 12/12 read-back checks passed for detail/summary/consolidated data. No scientific model or app tests were run.
+- Important gaps: soil texture/WHC instruments/methods, turbidity meter, air SPM sampler, safe water-microorganism reference data, pollen media, indexed histology pages, T.S. testis/ovary slide match and Trichophyton. The project topic remains teacher-assigned, not fixed by RBSE.
+- Uploaded Biology-with-microscope catalogue remains NOT_BYTE_AUTHENTICATED; index-only entries are not visually verified.
+
+Artifacts:
+- docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY.md
+- data/catalogues/rbse_xii_biology_traceability.csv
+- docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY_SUMMARY.md
+- data/catalogues/rbse_xii_biology_traceability_consolidated.csv
+
+Next bounded work unit: six-pack task-index reconciliation report across all RBSE packs. Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
