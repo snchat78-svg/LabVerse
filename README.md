@@ -290,3 +290,10 @@ A third-party tender index reports GeM bid GEM/2026/B/8248336 with Physics, MSCL
 - [Updated machine-readable source gap register](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
 
 The exact uploaded RBSE 2027 PDF hashes and metadata are now recorded. Ten third-party GeM listings repeat the NCERT kit attachment filenames, but no attachment/BOQ bytes were retrieved or authenticated. Filename recurrence is not proof of official content or revision. Phase 1 remains IN PROGRESS and Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 — Physics manual edition clarification (2026-11-09)
+- [NCERT Physics manual item register](docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md)
+- [XII Physics task traceability summary](docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md)
+
+The NCERT Physics manual preface says the travelling microscope and Searle's apparatus were still being developed for inclusion in that kit edition. The RBSE XII EXP-14 crosswalk retains a distinct travelling microscope asset requirement; the current separate procurement attachment remains unverified. This is source interpretation only, not a completed procurement or scientific validation gate.
