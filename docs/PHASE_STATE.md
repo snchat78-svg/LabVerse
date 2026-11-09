@@ -24,8 +24,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Recover the official Biology manual 13163 and both official Biology kit variants (with/without microscope) through verifiable public sources or verified uploads; inspect individual card/slide/specimen content. Resolve 50 task-level gaps, then complete source-to-apparatus/reagent/asset mapping. Keep Phase 1 gates open until official byte authentication, procurement, safety, rights, subject-expert and science-validation evidence is complete. Phase 2 remains BLOCKED.
-- Last phase-state review: 2026-11-08
+- Current next work unit: Recover and inspect the official NCERT Higher Secondary Biology kit manual (publication code 13163) and both separate current kit variants (with microscope / without microscope); retrieve exact bytes, metadata and hash, then verify individual slides/cards/specimens and reconcile against the 50-row Biology task-gap register. The 2026-11-09 official MSCL attachment retry is documented but remains BLOCKED (NCERT routes returned HTTP 502; no current reagent BOM obtained). Keep all Phase 1 gates open and Phase 2 BLOCKED.
+- Last phase-state review: 2026-11-09
 
 ## Phase 0 — completed log
 
@@ -1460,3 +1460,21 @@ No hazardous wet-lab method, concentration, preparation, mixing, handling or dis
 - [ ] Validate each task-specific method against authoritative RBSE/NCERT sources; obtain identity-specific SDS and Chemistry/Safety expert review.
 
 No app/solver implementation or hazardous wet-chemistry procedure was added. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 BLOCKED.
+
+## 2026-11-09 — Current NCERT MSCL attachment retrieval retry
+
+- [x] Reconfirmed from the official NCERT English specification index that the Grade XI–XII Micro Scale Chemistry Laboratory Kit attachment is listed separately.
+- [x] Retried the exact NCERT-published attachment URL; direct retrieval returned HTTP 502.
+- [x] Retried the alternate `www.ncert.nic.in` host; returned HTTP 502.
+- [x] Attempted an independent container download; failed without producing a local file.
+- [x] Inspected current tender-index discovery record `GEM/2026/B/8248336`: it names the MSCL candidate PDF and BOQ, but no payload bytes/download target were exposed in the inspected page.
+- [x] Added a retrieval-attempt CSV and detailed audit; updated the MSCL source-gap row.
+- [ ] Obtain current official attachment/BOQ bytes, inspect PDF/Excel metadata and hash, and reconcile the exact BOM against the 41-row Chemistry task matrix.
+- [ ] Complete exact-identity SDS, exposure, compatibility, waste, rights and Chemistry/Safety expert review.
+
+**Evidence boundary:** no current attachment bytes, SHA-256, PDF revision/page count, BOQ content or current reagent supply quantities were obtained. The 2018 manual and uploaded 2025 candidate remain separate from current official procurement content. The 126 historical reagent screen remains simulation-only / NOT_APPROVED. No app code, scientific solver, 3D asset or executable test was implemented/run.
+
+**Documentary retrieval validation:** 7/7 checks recorded in `docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md`. This is source-retrieval audit only.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 remains BLOCKED. The next bounded Phase 1.1 task is official Biology manual 13163 and separate with-/without-microscope source recovery; the MSCL procurement blocker remains open for retry when a legitimate official payload route works.
+
