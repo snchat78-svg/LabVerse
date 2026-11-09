@@ -390,3 +390,27 @@ Continue Phase 1 using already inspectable source material while seeking actual 
 ## Next bounded work unit
 
 Continue the Physics source-to-task reconciliation using the current kit specification as soon as its bytes can be obtained. Keep distinct classifications for manual-edition omission, procurement inclusion, school-managed equipment, optional alternatives and unresolved no-match; do not collapse these categories. In parallel, progress the Chemistry reagent BOM and Biology sample/measurement source requirements from primary, inspectable evidence.
+
+
+## 2026-11-09 — NCERT MSCL manual recovered, indexed and crosswalked
+
+- **Phase:** Phase 1 / subphase 1.1. The Chemistry manual-source discovery subtask is DONE; current procurement, reagent BOM, safety and science gates remain OPEN.
+- **New official-hosted source:** NCERT *Manual of Microscale Chemistry Laboratory Kit*, Classes XI–XII, first edition April 2018, ISBN 978-93-5007-861-7; NCERT catalogue identifies the Higher Secondary MSCL manual as code 13166. Source URL: https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf. The manual carries ALL RIGHTS RESERVED. Text extracted; page screenshot request returned HTTP 502; no visual-review or byte-hash claim.
+- **Source counts:** 34 experiment/topic entries, 51 apparatus entries and 124 numbered chemical/reagent/material labels. These are historical manual entries, not current procurement SKUs or delivered item quantities.
+- **New artifacts:**
+  - `docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md` — commit f2f910e183b5c1c40606f6a9c688c82ebd3a327a.
+  - `data/catalogues/ncert_mscl_manual_experiment_index.csv` — commit 9045109ef6226fa023c9b6955b802b9abebf0c2b.
+  - `data/catalogues/ncert_mscl_manual_apparatus_index.csv` — commit 232d6d61d50694e7086d82de3b3f6a07638cff3c.
+  - `data/catalogues/ncert_mscl_manual_reagent_index.csv` — commit e324f0c7b8094adeb6c4493c55f2f6e1dd2e17ce.
+  - `data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv` — commit 09866d4b4bca8189d8def8ac041ce89432cf2277.
+- **RBSE crosswalk:** All 41 existing RBSE XI/XII Chemistry task records are represented in a 32-row grouped crosswalk; direct topic, partial topic, apparatus-only, and no-match cases are kept distinct. It is not an expert-approved equivalence or methods validation.
+- **Reagent safety control:** All 124 manual reagent/material labels are marked `BLOCKED_NO_LIVE_USE; SIMULATION_REFERENCE_ONLY`, with SDS identity/concentration/exposure review pending and no approval. Original numbering and the duplicate Potassium iodate rows 80 and 87 are preserved. No protocols, preparation steps, concentrations or mixing instructions copied. The mercury thermometer apparatus item is explicitly excluded from physical learner use.
+- **Manual procurement separation:** Current NCERT MSCL specification attachment remains a separate source and its direct URL still returns HTTP 502. The 2018 manual does not prove current kit inventory or supplied reagents. Previously uploaded `MSCL_copy.pdf` remains a separate, unverified upload hash; its 55-row index (54 kit rows plus document team) is not merged with the manual's 51 apparatus rows.
+- **Updated existing files:** `docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md` commit f7c2c3ccf9b57edd7084698ad317085c47ce4396; `data/catalogues/phase1_source_authentication_procurement_gaps.csv` commit bec8d254b9686a0c2c3cd58041cc6ddf993072b0; `docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md` commit 83fe5e490c8b1cb4eb8b6f98c71ba2fdad924611.
+- **Read-back validation:** 12/12 checks passed: experiment, apparatus and reagent row/schema counts; continuous reagent numbers; source duplicate preserved; all 124 safety gates blocked; mercury apparatus restriction; 32 crosswalk rows; all 41 RBSE tasks represented; 13-row/12-field source-gap CSV; existing uploaded-spec CSV remains separately intact; and the review report explicitly states that current procurement equivalence is not established.
+- **No claims:** No scientific engine, live chemical procedure, 3D asset or app code built or tested; no chemistry experiment executed. This work is source research, data indexing, crosswalk and safety gating only.
+- **Decision:** Official MSCL manual text source/review subtask DONE. Current procurement attachment authentication, exact reagent BOM, SDS-based risk approval, chemistry expert review, and scientific model tests remain BLOCKERS. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+## Next bounded work unit
+
+Continue Chemistry source closure by item-comparing the 2025 uploaded MSCL specification against the 2018 NCERT manual index without conflating their item numbers; extract current task-to-reagent identities from the RBSE source and mark every supplied-vs-school-managed/optional/unknown distinction. In parallel, retrieve the official Biology manual (code 13163) and its with/without microscope kit sources. Keep the no-live-use block until identity-specific SDS, waste controls and expert approvals exist.
