@@ -399,3 +399,10 @@ The 124 numbered reagent labels in the 2018 MSCL manual were checked against the
 NCERT's official kit-manuals index lists the Biology Laboratory Kit manual for Grades XI/XII; the publication catalogue gives code 13163. The official specification index separately lists Biology with and without microscope. Actual official manual PDF bytes could not be obtained; the third-party mirror was not accepted. Source gap register now has 14 records / 12 columns, including `SRC-BIO-MANUAL-13163`.
 
 Next: obtain verifiable manual bytes; compare both Biology kit variants to the 28 XI/XII task crosswalk; do not treat the user-uploaded with-microscope specification as the manual. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## Biology task-gap consolidation — 2026-11-09
+
+The 22 Class XI and 28 Class XII Biology task records now have a 50-row unresolved-gap register. All candidate item references resolve to the 177-row user-uploaded with-microscope item catalogue (0 dangling IDs), but the source remains unauthenticated. Overlapping unresolved tags: sample/specimen 37/50; measurement/apparatus 11/50; item/content verification 29/50; reagent/media 10/50. Most card/slide content remains INDEX_ONLY. The separate no-microscope variant and official Biology manual 13163 are not retrieved. These are candidate mappings, not verified practicals. See `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and its CSV.
+
+Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
