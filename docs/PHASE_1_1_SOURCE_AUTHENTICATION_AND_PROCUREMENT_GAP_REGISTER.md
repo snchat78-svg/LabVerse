@@ -364,3 +364,11 @@ Existing 50-row Biology task-gap register remains a source/task ID integrity art
 
 New discovery report: `docs/PHASE_1_1_BIOLOGY_MANUAL_SOURCE_DISCOVERY_2026_11_09.md`. Machine-readable ledger: `data/catalogues/biology_manual_source_discovery_2026_11_09.csv`.
 
+## 2026-11-09 — Exact official PDF targets recovered for user-assisted intake
+
+The exact direct PDF URLs for the four Grade XI–XII procurement specifications were recovered by following links 20–23 from the official NCERT Specification Documents page. The exact English Biology Kit Manual PDF URL was recovered by following the English manual link from the official Revised Kit Manuals page. All five targets are now recorded in `docs/PHASE_1_1_OFFICIAL_PRIMARY_PDF_INTAKE_LINKS_2026_11_09.md` and the machine-readable manifest `data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv`.
+
+The web retrieval channel refused the large specification PDF responses and surfaced content-length hints: MSCL 19,808,858 bytes; Biology with microscope 59,585,913 bytes; Biology without microscope 63,918,957 bytes; Physics 42,539,010 bytes. The manual URL resolved, but the tool returned an unusable `400 OK` response and no size. Independent container downloads of all five URLs failed. These are tool/retrieval outcomes, not claims that the NCERT files are defective or inaccessible to a normal browser.
+
+Please download the original NCERT PDFs from the direct links in the intake report and upload them unchanged. Hash and metadata checks will be run before extraction. Existing uploads remain separate and unauthenticated until exact-byte comparison is made. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
