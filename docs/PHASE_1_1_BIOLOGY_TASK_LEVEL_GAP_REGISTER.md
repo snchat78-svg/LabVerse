@@ -71,3 +71,8 @@ The current source is the user-uploaded **with-microscope** candidate. The offic
 - No phase gate is closed by this crosswalk.
 
 **Decision:** Biology task-to-candidate-source integrity subtask DONE; task evidence, content verification, no-microscope comparison, manual and expert gates remain OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Read-back verification (2026-11-09)
+
+**12/12 checks PASS.** Checks: 50 data rows; 15-column schema; 22 XI and 28 XII records; unique task IDs; all 382 source references resolve to the source index (0 dangling); reference counts match the source crosswalks; all 50 source authenticity states remain open; all 50 require Biology expert review and method/result validation; source-gap catalogue remains 14 data rows / 12 columns; all three subject/source docs link to this consolidated register. This is record-integrity verification only—not content equivalence, safety approval or scientific validation.
