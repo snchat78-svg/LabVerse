@@ -21,7 +21,7 @@ Asset IDs are reused across task families; 99 is the combined distinct proposed 
 All 39 RBSE task IDs are present in the master source register. Every non-empty candidate NCERT Physics item ID exists in data/catalogues/ncert_physics_kit_manual_items.csv.
 
 Two important explicit source flags remain:
-- **RBSE-XII-PHY-EXP-14 — travelling microscope:** RBSE requires a travelling microscope, but no such item appears in the current 106-row Physics manual item catalogue. The available glass slab is only a partial apparatus match.
+- **RBSE-XII-PHY-EXP-14 — travelling microscope:** The official NCERT Physics manual preface says the travelling microscope was still under development for inclusion in the kit in that manual edition. This explains its absence from the 106-row item schedule; it does not establish whether a later separate procurement specification added it. Model it as a distinct school/external apparatus requirement unless the current specification proves otherwise. The glass slab remains only a partial apparatus match.
 - **RBSE-XII-PHY-PRJ-04 — phototransistor and IR sources:** the manual list has no phototransistor or IR source. LDR and LED rows are not equivalent substitutes.
 
 Other notable gaps include laser/diffraction source equipment, photometer/lux sensor for lamp comparison, AC signal source for LCR/inductor work, AC electromagnet for sonometer, calibrated polariser fixture, semiconductor part numbers/ratings, galvanometer shunt/multiplier values and optical calibration.
