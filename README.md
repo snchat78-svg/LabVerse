@@ -340,3 +340,8 @@ Current result: official NCERT attachment remains listed but retrieval-blocked; 
 - [Machine-readable Biology manual discovery attempts](data/catalogues/biology_manual_source_discovery_2026_11_09.csv)
 Current result: NCERT catalogue identifies Biology kit manual codes 13163 (English) and 13193 (Hindi title), and lists two separate kit variants; actual manual/specification bytes remain unretrieved. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
 
+### Phase 1.1 — official NCERT primary PDF intake (2026-11-09)
+- [Official direct PDF links and upload checklist](docs/PHASE_1_1_OFFICIAL_PRIMARY_PDF_INTAKE_LINKS_2026_11_09.md)
+- [Machine-readable five-document intake manifest](data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv)
+Exact official targets are available for Biology kit manual 13163, Biology with/without microscope, MSCL and Physics; original PDFs are requested for byte-level verification. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
