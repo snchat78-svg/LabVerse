@@ -338,3 +338,19 @@ Create a source-authentication and procurement-gap register by document family (
 ## Next bounded work unit
 
 Prioritise recovery of exact official RBSE 2027 PDF bytes and NCERT's four specification attachment bytes, then capture SHA-256/PDF metadata and compare each retrieved official file with the user-uploaded copies. Do not change task IDs/items or start Phase 2 until this source evidence is obtained and reconciled.
+
+
+## 2026-11-09 — GeM attachment recovery lead added to source register
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **New discovery:** current third-party tender listings identify GeM bid GEM/2026/B/8248336, published 2026-11-06 by Basic Education Department Uttar Pradesh. The listing reports 364 Physics kits, 516 MSCL kits and 556 Biology-without-microscope kits (1,436 total), with attachment filenames for Physics, MSCL, Biology-without-microscope and an Excel BOQ.
+- **Additional third-party summary claims:** 105 Physics items and 54 MSCL items in attached lists. These counts are discovery-only; no attachments/BOQ bytes were inspected or hashed. The 105 Physics figure does not resolve the 105-vs-106 discrepancy, and 54 MSCL is not assumed to mean 54 comparable reagent/equipment SKUs.
+- **Authentication rule:** official GeM bid/attachment payloads still must be retrieved through permitted portal access; third-party filenames/counts are not promoted to official NCERT content. No seller login automation or access-control bypass.
+- **Files updated:** docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md; data/catalogues/phase1_source_authentication_procurement_gaps.csv (13 rows, 12 columns).
+- **Read-back:** 8/8 register checks passed for 13 rows, schema, unique IDs, separate provenance/evidence fields, attachment names, non-authenticated state, no-bypass statement and Phase 2 gate.
+- **Evidence:** report blob SHA e67eb97ef6005d22e22fa19033169fdd7a729f5a; CSV blob SHA 756fdd3cc4c8d289bcf194240a337cd2daca5a9d.
+- **Gate:** task index sub-gate DONE (171/171); source authentication/procurement Phase 1 gate OPEN; Phase 2 BLOCKED.
+
+## Next work unit
+
+Retrieve bid GEM/2026/B/8248336 on the official GeM portal using a permitted route and obtain the tender-visible attachments/BOQ. Hash every file, inspect PDF/Excel metadata and revision, and compare rows with the NCERT official attachments and uploaded copies. Until bytes are retrieved, keep this as a discovery lead only.
