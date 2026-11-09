@@ -267,3 +267,10 @@ The register distinguishes OCR/visual/index evidence and keeps RBSE's investigat
 - [Normalized six-pack traceability CSV — 171 rows, 20 columns](data/catalogues/rbse_six_pack_task_index_traceability.csv)
 
 All six packs match the RBSE master task index with zero missing, extra or duplicate task IDs. This is documentary task coverage only; source authentication, procurement equivalence, assets, scientific models, tests and expert/safety approvals remain Phase 1 gates. Next: source-authentication and procurement-gap register.
+
+
+## Phase 1.1 — Source authentication and procurement gaps (2026-11-09)
+- [Source authentication and procurement-gap register](docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md)
+- [Machine-readable gap register — 12 rows](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
+
+Official RBSE 2027 and NCERT specification index listings are recorded separately from attachment retrieval. User-uploaded NCERT copies remain unauthenticated against the official bytes. The 171-task index is reconciled, but Phase 1 remains open and Phase 2 blocked.
