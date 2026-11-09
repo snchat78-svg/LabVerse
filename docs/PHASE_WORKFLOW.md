@@ -11,11 +11,13 @@ Before work:
 4. Select the first unchecked item in the current phase/subphase. Confirm dependencies and define a small acceptance checklist.
 5. If repository state conflicts with a tracker, repository evidence wins; reconcile all trackers before new feature work.
 
-Never ask the user to repeat a requirement already recorded in the repository.
+Never ask the user to repeat a requirement already recorded in the repository. Never request a previously supplied PDF again just because the current file index cannot surface its earlier attachment; recover the prior artifact or preserve the retrieval limitation.
 
 ## 2. Phase discipline
 
 - Work in roadmap order and within the active phase.
+- A user-authorized parallel track may proceed when its dependencies are genuinely separable (for example, dashboard navigation/read-only inventory display while source authentication continues). Record the exception, scope, status boundaries and acceptance checks in ROADMAP.md, PHASE_STATE.md and WORK_LOG.md. Do not mark the blocked parent phase complete or treat candidate records as verified.
+- Do not block presentation-only UI on source authentication when the user has explicitly authorized it; do block scientific result generation, safety-sensitive actions and publication claims that depend on missing evidence.
 - A subphase (for example Phase 1.1) is part of its parent phase; it does not permit advancing to the next main phase.
 - Do not mark work complete because it was discussed, drafted, attempted, uploaded or listed by a source.
 - Preserve separate evidence states: listed, retrieved, content-inspected, authenticated, reviewed and verified-for-use.
