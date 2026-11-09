@@ -351,3 +351,15 @@ Next: recover exact official RBSE 2027 and NCERT attachment bytes, hash them and
 Evidence: report blob e67eb97ef6005d22e22fa19033169fdd7a729f5a; CSV blob 756fdd3cc4c8d289bcf194240a337cd2daca5a9d.
 
 Next: retrieve permitted bidder-visible attachments from official GeM, hash and inspect the files, then compare against NCERT official bytes and uploaded copies. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Second retrieval and provenance audit — 2026-11-09
+
+- **Source provenance improvement:** Captured exact SHA-256 and PDF metadata for the two user-supplied RBSE 2027 PDFs; this identifies the uploaded bytes but does not authenticate them against current official RBSE endpoint responses.
+- **GeM attachment discovery:** The three NCERT kit attachment filenames recur across 10 public third-party tender-index records: Physics 9/10, MSCL 10/10, Biology without microscope 8/10. The current bid also lists Excel BOQ 1793944092.xlsx. No PDF/BOQ payload bytes were retrieved, hashed or inspected. Recurrence is discovery metadata only.
+- **Artifacts:** docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md; data/catalogues/gem_kit_specification_mirror_recurrence.csv; updated source-authentication report and CSV.
+- **Validation:** 12/12 documentary read-back checks passed; no scientific or app tests claimed.
+- **Access/security:** Official domestic GeM route could not be read through the present retrieval channel. No seller login, credential use or access-control bypass.
+- **Next:** keep developing source-to-item evidence and missing-equipment/BOM registers from inspectable primary material while seeking actual official RBSE/NCERT or permitted GeM attachment bytes. Keep listing-only mirrors separate from authenticated source documents.
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED. This unit did not implement application code, 3D assets or scientific engines.
