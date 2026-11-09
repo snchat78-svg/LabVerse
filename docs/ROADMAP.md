@@ -326,3 +326,16 @@ Evidence:
 Task-index coverage sub-gate is DONE; Phase 1 remains IN PROGRESS and Phase 2 remains BLOCKED.
 
 Next: create a source-authentication/procurement-gap register by source-document family before any Phase 2 work.
+
+
+## Source authentication and procurement blockers — 2026-11-09
+
+- Added a 12-row source-family gap register: docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md and data/catalogues/phase1_source_authentication_procurement_gaps.csv.
+- Current official indexes are visible, but RBSE 2027 PDFs timed out and the four NCERT kit specification PDF links returned HTTP 502; alternate ncert.gov.in direct routes were also inaccessible through the current retrieval path.
+- Uploaded MSCL and Biology-with-microscope PDFs have recorded hashes, but their byte identity against official NCERT attachments is NOT VERIFIED. Biology-without-microscope variant and Physics procurement specification remain unretrieved.
+- Physics manual item schedule (code 13164) has 106 rows; separate GeM bid says 105 items, but the tender attachment schedule is not inspected. Do not reconcile by guess.
+- Task-index sub-gate remains DONE (171/171); Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+Evidence: source-authentication register and 12-row CSV; report blob fc0103ce9902a0145dccf652b5bd115cac1b369b; CSV blob 199aa7bd4efb1db1d59d0093da6cde22394e9df4.
+
+Next: recover exact official RBSE 2027 and NCERT attachment bytes, hash them and compare to uploaded copies before altering any source mappings or opening Phase 2.
