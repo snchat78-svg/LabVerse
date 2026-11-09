@@ -1483,7 +1483,7 @@ Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 remains BLOCKED. The next bounde
 - [x] Reconfirmed NCERT's revised School Kits index lists the Higher Secondary Biology Kit Manual for Grades XI/XII with an English link.
 - [x] Confirmed official catalogue identifier 13163 for the English Biology Kit Manual and separately recorded Hindi catalogue title code 13193.
 - [x] Reconfirmed the official specification index lists the Biology with-microscope and without-microscope kit variants separately.
-- [x] Tried the official manual index and both direct Biology specification targets; live routes were inaccessible/HTTP 502 in the current retrieval channel.
+- [x] Tried the official manual index and both direct Biology specification targets; the manual-index page returned HTTP 502 and both variant PDF URLs were reported inaccessible by the retrieval tool.
 - [x] Explicitly distinguished the separate NCERT Class XI Biology Laboratory Manual (`kelm301.pdf`) from the Higher Secondary Biology Kit Manual code 13163.
 - [x] Updated the Biology source gap and added a 7-row machine-readable discovery ledger.
 - [ ] Obtain the actual official manual code 13163 PDF and both specification attachment payloads; hash and inspect bytes/metadata before item extraction.
