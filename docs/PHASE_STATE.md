@@ -13,7 +13,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Application code: not started
 - 3D workbench/assets: not implemented
 - Simulation/research engines: not implemented
-- Phase 1.1: IN PROGRESS — 2026-11-08 NCERT official index rechecked; four Grade XI–XII specification PDF targets identified, but all direct follow attempts returned HTTP 502; uploaded copies remain unauthenticated. A three-subject RBSE→NCERT item→proposed-asset traceability pilot is committed; full mapping remains open
+- Phase 1.1: IN PROGRESS — 2026-11-09 second retrieval pass: RBSE upload hashes/metadata captured, while official RBSE endpoints remain unverified; 10 third-party GeM listings show recurring NCERT kit attachment filenames but no attachment payloads were retrieved. See docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md.
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
 - Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: pursue official GeM bid GEM/2026/B/8248336 as a permitted recovery route for Physics, MSCL and Biology-without-microscope attachments/BOQ. Third-party listings report file names and 105 Physics / 54 MSCL items, but no attachment bytes were retrieved or authenticated. Also recover official RBSE 2027 PDFs and NCERT specification attachments, hash and compare with uploads. Do not start Phase 2 until all Phase 1 gates close.
+- Current next work unit: Continue Phase 1 source audit and task-to-apparatus gap resolution using inspectable material; pursue actual official RBSE/NCERT and permitted GeM attachment bytes for hash/metadata/item comparison. The 10-record GeM filename recurrence audit is listing-only, and the two RBSE uploaded PDFs are hashed but not authenticated against official server bytes. Keep Phase 2 BLOCKED until all remaining source, BOM, rights, safety, scientific tests and expert gates close.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1327,5 +1327,27 @@ Evidence:
 - CSV blob: 756fdd3cc4c8d289bcf194240a337cd2daca5a9d
 - Work log: 9146dd3502d562a733a371f13ec08cd4dcaef625
 - Roadmap: f9b1a6321fc39ff376f9ff69636f22b08d34d586
+
+Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — second retrieval and source provenance audit (2026-11-09)
+
+- [x] Recovered the two user-supplied RBSE 2027 PDFs from the conversation Library and captured SHA-256 plus PDF metadata.
+- [x] Recorded Class XI upload hash a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5 (23,343,499 bytes; 155 pages).
+- [x] Recorded Class XII upload hash 2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34 (18,279,805 bytes; 169 pages).
+- [x] Audited 10 third-party public GeM tender listings for recurrence of the NCERT kit attachment filenames: Physics 9/10; MSCL 10/10; Biology without microscope 8/10. Created a 10-row machine-readable recurrence ledger and report.
+- [x] Rechecked official domestic GeM public retrieval route; attachment payloads were not exposed through the present retrieval channel. No seller login or access-control bypass.
+- [x] Source-gap report/CSV now contain the RBSE user-copy hashes and GeM recurrence evidence with provenance limitations.
+- [x] Read-back validation: 12/12 documentary checks PASS.
+- [ ] Official RBSE files byte-authenticated against uploaded copies; current official revision/errata comparison.
+- [ ] GeM or NCERT primary attachment payloads retrieved, hashed and item-compared. Third-party filenames/sizes remain listing-only.
+- [ ] All remaining procurement/BOM, manual, rights, science/model/test, safety and subject-expert gates closed.
+
+**Artifacts / commits**
+- GeM recurrence report: docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md — commit 46a1736ae2255079857c4df86a2cbd4ca150455f.
+- GeM recurrence CSV: data/catalogues/gem_kit_specification_mirror_recurrence.csv — commit f811c041a93c5f1b01b8437122e85e8e6bcbf0f9.
+- Source-gap report: commit 644059f526b851b5fb0f0c00932149bac66c11a8.
+- Source-gap CSV: commit 2f550f24820bda5b26d5ac61bc2e9fda5e00210d.
 
 Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
