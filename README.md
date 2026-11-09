@@ -28,9 +28,19 @@ The long-term goal is to let learners and researchers explore scientific questio
 ## Project status
 
 - Phase 0: DONE — planning/documentation baseline only.
-- Current phase: Phase 1 — source, scope and initial catalogue audit (IN PROGRESS).
-- Application code, 3D assets and scientific simulation engines: NOT IMPLEMENTED.
-- Phase 2 remains blocked until Phase 1 exit criteria pass.
+- Main source-audit phase: Phase 1 — IN PROGRESS.
+- User-authorized dashboard track: starter dashboard and searchable three-subject source catalogue are now in the repository.
+- Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
+- Phase 1 authentication, safety and expert-review gates remain open; the dashboard shell is allowed to progress in parallel without promoting candidate records.
+
+## Dashboard preview
+
+- [Open the LabVerse dashboard source](dashboard/index.html)
+- [Dashboard build notes and limitations](dashboard/README.md)
+- [Three-subject inventory read model](dashboard/data/inventory.json)
+- [Parallel dashboard track and evidence boundaries](docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md)
+
+The dashboard currently has Physics, Chemistry and Biology directions, class filters, searchable equipment/reagent catalogues, a 2D placeholder workbench, source/evidence details and the 171-row RBSE task index. It is a starter prototype, not a finished 3D simulator.
 
 ## Main documentation
 
