@@ -341,3 +341,14 @@ The historical NCERT-hosted MSCL manual's 124 numbered labels and two internal r
 ### 4.7 RBSE Chemistry reagent evidence matrix (2026-11-09)
 
 All 41 RBSE XI/XII Chemistry task/choice IDs now have a one-row task-to-reagent evidence record at `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`. Seventeen tasks have candidate numbered/manual-body references from the historical 2018 MSCL manual; 24 have no exact label mapping assigned. These are not supply claims or validated methods. The matrix preserves topic-level match status, OR choices, ambiguity and formulation differences, current BOM status NOT_RETRIEVED_OR_AUTHENTICATED, and physical chemistry BLOCKED. See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`.
+
+## 2026-11-09 — MSCL current attachment retrieval retry
+
+The official NCERT English specification index continues to list the Grade XI–XII Micro Scale Chemistry Laboratory Kit as a distinct attachment. The exact published target `https://ncert.nic.in/division/dek/pdf/MSCL.pdf` returned HTTP 502 on direct open; the `www.ncert.nic.in` alternate host also returned HTTP 502, and an independent container download failed. No attachment bytes, page count, metadata, revision, SHA-256 or reagent BOM were obtained.
+
+The third-party TenderDetail index for `GEM/2026/B/8248336` (published 06-Nov-2026) lists the MSCL candidate filename `mscl_2025-08-05-14-26-21_3a5a681bb380b96ec69bc9e461f50115.pdf` and BOQ filename `1793944092.xlsx`; the inspected page exposes names but not payload URLs/bytes. The existing 10-row tender recurrence ledger shows filename metadata recurring, not PDF identity. Treat all tender copies as discovery-only until lawful public payload retrieval and byte-level identity review.
+
+The historical 2018 manual (code 13166) and user-uploaded 2025 MSCL candidate remain separate evidence classes; neither is promoted to current official procurement BOM. The 41-row RBSE Chemistry reagent evidence matrix and 126-row historical manual screening remain candidate/reference-only. All physical Chemistry use stays blocked pending exact current BOM, identity-specific SDS, exposure/compatibility/waste review and qualified Chemistry/Safety approval.
+
+Machine-readable attempt ledger: `data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv`. Full audit: `docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md`.
+
