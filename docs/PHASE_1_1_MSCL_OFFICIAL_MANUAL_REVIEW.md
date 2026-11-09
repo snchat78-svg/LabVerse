@@ -129,3 +129,8 @@ The 124 numbered reagent/material labels were checked against experiment-body an
 This means the numbered 124-row register is not an exhaustive reagent inventory relative to the manual's own text. These are recorded in `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`. No concentration, recipe, mixing instruction or handling procedure is copied. Both entries remain blocked from live use pending current procurement proof, identity-specific SDS and expert approval.
 
 The source text was extracted from an NCERT-hosted PDF. The screenshot/page-image retrieval failed HTTP 502; no visual verification or byte SHA-256 is claimed.
+
+
+## 8. Reagent screening addendum — 2026-11-09
+
+The separate preliminary screen is now recorded at `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv` and explained in `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`. It preserves 124 numbered labels and adds two internal manual references (potassium permanganate; potassium iodide/“Iodine solution” ambiguity) for 126 total records. Name-only triage counts: 21 high-concern flags, 23 corrosive/reactive-family flags, 7 organic/solvent-family flags, 74 general-review entries and 1 lower-concern reference. These are workflow flags, not GHS/SDS determinations. Every row remains blocked from live use and is not a current supply/BOM claim. Exact full-label text occurs in 18 register rows across 17 RBSE task IDs; these are candidate strings only, requiring expert validation. Current official MSCL specification payload, exact delivered reagent BOM, identity-specific SDS and expert approval remain open.
