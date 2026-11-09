@@ -307,3 +307,15 @@ New LabVerse artifacts:
 - `data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv`
 
 Read-back validation: 12/12 checks passed. These validate row counts/schema, preserved numbering/duplicate Potassium iodate entries, universal reagent blocks, mercury-asset restriction, full 41/41 RBSE Chemistry task crosswalk coverage and continued separation from the current procurement gap. They are documentary checks only.
+
+
+### 4.4 Historical MSCL manual vs 2025 uploaded candidate item comparison (2026-11-09)
+
+A line-by-line comparison was recorded in `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md` and `data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv`.
+
+- 51/51 apparatus records from the 2018 manual receive candidate mappings into the uploaded `MSCL_copy.pdf` item catalogue.
+- Manual 50 mL and 10 mL beaker rows are consolidated into uploaded row NCERT-MSCL-SPEC-003; the manual's 5 mL glass pipette is at uploaded row NCERT-MSCL-SPEC-054.
+- Four uploaded-candidate-only item rows: pocket balance (040), glazed tile (051), gas generator (052), tongs (053).
+- The comparison flags material, dimension, range, quantity and configuration differences, including wire-gauze asbestos content and several quantity differences.
+
+**Authentication boundary:** this comparison is between an NCERT-hosted 2018 teaching manual and an unauthenticated 2025 user upload. These are not official current-source amendments or delivered-kit deltas. Keep the current specification authentication gate open.
