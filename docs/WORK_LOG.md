@@ -465,3 +465,10 @@ Completed the next bounded Phase 1.1 documentary unit. Re-read the current GitHu
 Artifacts: `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv`; `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`. Updated MSCL manual review, specification register, source-authentication gap register, Phase State, Roadmap and this log. All records remain simulation-only, NOT_APPROVED and not a current BOM. No app code, scientific engine, 3D asset or tests were implemented/run. Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED.
 
 Next: recover/hash the official current MSCL attachment and reconcile its exact reagent supply specification with the 41 RBSE Chemistry task/choice records; obtain identity-specific SDS and expert sign-off. Continue Biology manual code 13163 recovery as a separate Phase 1.1 source task.
+
+
+## 2026-11-09 — RBSE Chemistry task-to-reagent traceability matrix
+
+Created `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` and `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`. The matrix joins all 41 unique XI/XII Chemistry task/choice IDs to the existing 2018 MSCL topic crosswalk, candidate apparatus catalogue refs and manual reagent-label register. Seventeen tasks have reviewed candidate manual reagent/body-reference IDs; 24 have no exact mapping assigned. The latter does not imply that no reagent is required. Ambiguous cases are explicit: KMnO4 body-only reference; KI vs numbered “Iodine solution”; HCl/NaOH strength variants; combined chloroform/carbon-tetrachloride row; duplicate potassium iodate; and the difference between electrolyte salts and metal electrode materials. All supply, official-BOM, safety, method and expert-review gates remain open.
+
+Validation design: exactly one row per unique task ID, no promotion from topic match to reagent/method equivalence, and all 41 rows remain physical-chemistry blocked. No software test or executable chemistry model was run. Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED.
