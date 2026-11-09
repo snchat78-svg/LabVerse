@@ -63,6 +63,11 @@ The 2018 manual is NCERT-hosted and copyright-protected; the 2025 candidate is a
 - Quantity/material/safety differences documented rather than overwritten: yes.
 - Current official equivalence asserted: no.
 
-**Read-back checks:** to be recorded after GitHub commit.
+**Read-back checks:** 10/10 PASS (see verification details below).
 
 **Decision:** comparison subtask DONE for the two available text/index records; official current-specification reconciliation remains OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Read-back verification (2026-11-09)
+
+**10/10 checks PASS:** 55-row/9-column comparison table; 51 unique manual item numbers mapped; every uploaded item reference exists; four upload-only item IDs exactly 040/051/052/053; no manual predecessor falsely assigned to upload-only rows; manual beaker 3/16 combined in uploaded row 003; every row retains upload-only/not-byte-authenticated provenance; asbestos wire-gauze difference explicitly flagged; mercury thermometer remains restricted. These checks validate record integrity, not source authenticity, procurement or scientific correctness.
