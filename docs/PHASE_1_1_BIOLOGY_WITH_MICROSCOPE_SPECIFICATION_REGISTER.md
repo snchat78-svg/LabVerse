@@ -39,3 +39,5 @@ The machine-readable table is data/catalogues/ncert_biology_with_microscope_spec
 The earlier third-party 141-page Biology kit manual transcript is a different source. Its reported 58 school-managed reagent entries do not appear in this uploaded specification's index. Do not merge them as though the specification says they are kit-supplied.
 
 Phase 1.1 remains IN PROGRESS. See docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md for cross-file counts, upload status and Phase 1 exit blockers.
+
+**Consolidated task-gap register:** `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. The consolidated register retains the original unresolved gap, evidence, safety, rights and review state for all 50 XI/XII task records; all candidate item IDs resolve to the 177-row uploaded-source index, but this does not authenticate or expert-verify the source.
