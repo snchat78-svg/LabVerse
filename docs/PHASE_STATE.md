@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: recover exact official RBSE 2027 Class XI/XII PDF bytes and the four NCERT kit specification attachments, capture hashes/PDF metadata and compare with uploaded copies. Do not start Phase 2 until Phase 1 evidence, procurement, rights, scientific models/tests, safety and expert gates close.
+- Current next work unit: pursue official GeM bid GEM/2026/B/8248336 as a permitted recovery route for Physics, MSCL and Biology-without-microscope attachments/BOQ. Third-party listings report file names and 105 Physics / 54 MSCL items, but no attachment bytes were retrieved or authenticated. Also recover official RBSE 2027 PDFs and NCERT specification attachments, hash and compare with uploads. Do not start Phase 2 until all Phase 1 gates close.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1308,3 +1308,24 @@ Evidence:
 - Roadmap: bebb869407529fb02d0ce8723cba1b0fe7e1e940
 
 Phase 1 task-index sub-gate remains DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — GeM procurement attachment recovery lead (2026-11-09)
+
+- [x] Discover third-party tender listings for GeM bid GEM/2026/B/8248336, published 2026-11-06, Basic Education Department Uttar Pradesh.
+- [x] Record reported kit categories/quantities: Physics 364; MSCL 516; Biology without microscope 556; total 1,436.
+- [x] Record attachment filenames and third-party claims of 105 Physics items / 54 MSCL items as DISCOVERY_ONLY.
+- [x] Update source-gap CSV to 13 rows / 12 columns; separate provenance from evidence status; read-back 8/8 PASS.
+- [x] Preserve NO_AUTHENTICATION status; no attachment bytes, hash, metadata or BOQ were inspected.
+- [ ] Retrieve the bid/attachments through permitted official GeM access, hash and inspect all files, then compare against NCERT original attachments and existing uploads.
+- [ ] Do not resolve Physics 105-vs-106 or MSCL count by guess; do not begin Phase 2.
+
+Evidence:
+- Report: docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md
+- CSV: data/catalogues/phase1_source_authentication_procurement_gaps.csv
+- Report blob: e67eb97ef6005d22e22fa19033169fdd7a729f5a
+- CSV blob: 756fdd3cc4c8d289bcf194240a337cd2daca5a9d
+- Work log: 9146dd3502d562a733a371f13ec08cd4dcaef625
+- Roadmap: f9b1a6321fc39ff376f9ff69636f22b08d34d586
+
+Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
