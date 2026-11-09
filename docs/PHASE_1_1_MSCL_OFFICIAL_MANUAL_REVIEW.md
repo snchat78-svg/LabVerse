@@ -89,3 +89,14 @@ Read-back checks performed separately after committing the CSVs. These check fil
 5. Have the Chemistry crosswalk reviewed by an independent subject expert before any model or learner-facing protocol is authored.
 
 **Decision:** MSCL manual source-discovery/review subtask is now DONE (text-extracted and indexed). MSCL current procurement/BOM, safety and expert-validation gates remain OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## 9. Comparison against the separately uploaded MSCL specification candidate
+
+The new comparison register is `data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv` and its interpretation report is `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md`.
+
+It pairs all 51 apparatus rows from the 2018 manual against the 54 numbered kit-item rows catalogued from the 2025 user-uploaded `MSCL_copy.pdf`. The manual's two graduated-beaker entries (50 mL and 10 mL) are combined in uploaded item row 003; manual glass pipette item 042 appears as uploaded row 054. Four uploaded-copy items have no direct predecessor in the 2018 manual: pocket balance, glazed tile, gas generator and tongs. The uploaded copy's row 055 is document-development credit, not a kit item.
+
+The comparison flags material differences (borosilicate vs soda glass boiling tube; polypropylene/LDPE vs LDPE pipette; PVC vs HDPE vial), dimension/range differences, quantity differences (including micro burettes 8 vs 1 and micro measuring cylinders 4 vs 2), and safety differences (asbestos centre only stated in the uploaded copy's wire-gauze entry). These are **differences between a historical manual and an unauthenticated user upload**, not proof of changes in NCERT's current official specification.
+
+Read-back checks: 10/10 PASS (55 comparison rows; 51/51 manual entries mapped once; 4 uploaded-only rows correctly identified; all references resolve to upload catalogue rows; provenance remains upload-only; mercury and asbestos restrictions preserved). No current procurement equivalence is claimed.
