@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Continue Phase 1 source-to-task reconciliation for Chemistry reagent BOM and Biology sample/measurement requirements, while pursuing actual primary Physics/NCERT kit specification bytes. Keep manual-edition omissions distinct from current procurement, school-managed and optional equipment. Phase 2 remains blocked.
+- Current next work unit: Continue Chemistry manual-to-upload item comparison and exact RBSE task-to-reagent identity closure; then retrieve NCERT Biology manual 13163 and both Biology kit variants. Keep all 124 manual reagent labels blocked from live use pending identity-specific SDS and expert approval. Phase 2 remains BLOCKED.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1365,5 +1365,25 @@ Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phas
 Manual evidence mode: text extracted from official NCERT-hosted PDF; page screenshot attempt returned HTTP 502, so no visual verification is claimed. Manual copyright states ALL RIGHTS RESERVED; no figures/artwork are reused.
 
 Commits: summary 61f4830f64ecb5fd6f0b648918e4df109ac3bce0; XII Physics CSV 50e869c14066a5016cba2a149adf7085abb71401; source-gap report 0263468d47de9a72ece5a780186059ec4ffa9756; source-gap CSV 6ef9041cce2eb398c6d6e226b48f6cd5530a3b29; Physics manual register f8436c8d42404967d9fbb0b2340ee73c4bac8219.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — MSCL manual evidence/index/crosswalk (2026-11-09)
+
+- [x] Retrieved and text-extracted NCERT-hosted MSCL manual (first ed. April 2018; ISBN 978-93-5007-861-7; catalogue code 13166; ALL RIGHTS RESERVED).
+- [x] Indexed 34 experiment topics, 51 apparatus entries and 124 reagent/material labels as separate LabVerse-authored CSV catalogues.
+- [x] Preserved manual-numbered duplicate Potassium iodate entries 80 and 87; did not collapse source numbering.
+- [x] Created grouped topic crosswalk for all 41 existing RBSE XI/XII Chemistry task records (32 crosswalk rows); direct/partial/apparatus-only/no-match statuses kept distinct.
+- [x] Blocked all 124 reagent/material rows from live use pending identity, SDS, exposure, waste and chemistry-expert review; excluded the mercury thermometer from physical learner use.
+- [x] Linked historical 2018 manual separately from the current NCERT MSCL procurement specification and the previously uploaded MSCL_copy.pdf. The latter remains non-byte-authenticated and not a reagent BOM.
+- [x] Read-back checks 12/12 PASS; current source gap CSV remains 13 records / 12 columns.
+- [ ] Retrieve current official NCERT MSCL spec attachment and item-compare with the 2025 uploaded copy and historic manual.
+- [ ] Close task-specific reagent identity/concentration/grade/SDS/disposal and school-managed boundaries; obtain independent subject/safety review.
+- [ ] Retrieve official NCERT Biology manual 13163 and both current Biology kit variants.
+
+Manual evidence mode: NCERT-hosted PDF text extraction only. Screenshot request HTTP 502; no visual verification; source bytes not SHA-256 hashed. No procedure text/concentrations copied. No model/code/experiment tests.
+
+New artifacts: report f2f910e183b5c1c40606f6a9c688c82ebd3a327a; experiment CSV 9045109ef6226fa023c9b6955b802b9abebf0c2b; apparatus CSV 232d6d61d50694e7086d82de3b3f6a07638cff3c; reagent CSV e324f0c7b8094adeb6c4493c55f2f6e1dd2e17ce; crosswalk CSV 09866d4b4bca8189d8def8ac041ce89432cf2277; source gap report f7c2c3ccf9b57edd7084698ad317085c47ce4396; source gap CSV bec8d254b9686a0c2c3cd58041cc6ddf993072b0; companion spec note 83fe5e490c8b1cb4eb8b6f98c71ba2fdad924611.
 
 Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
