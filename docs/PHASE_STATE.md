@@ -15,7 +15,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Simulation/research engines: not implemented
 - Phase 1.1: IN PROGRESS — 2026-11-09 second retrieval pass: RBSE upload hashes/metadata captured, while official RBSE endpoints remain unverified; 10 third-party GeM listings show recurring NCERT kit attachment filenames but no attachment payloads were retrieved. See docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md.
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
-- Latest bounded work unit: RBSE Class XI Physics experiments 17/17 mapped to candidate Physics-manual source rows, proposed original asset IDs, proposed model/rule IDs and planned test vectors; see docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. Documentary checks passed; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
+- Latest bounded work unit: NCERT Physics manual preface now explicitly explains that the travelling microscope and Searle's apparatus were still being developed for inclusion in that manual edition. RBSE XII Physics EXP-14 retains the microscope as a distinct proposed apparatus; current procurement-spec inclusion remains unverified. See updated XII Physics traceability and source-gap registers.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Continue Phase 1 source audit and task-to-apparatus gap resolution using inspectable material; pursue actual official RBSE/NCERT and permitted GeM attachment bytes for hash/metadata/item comparison. The 10-record GeM filename recurrence audit is listing-only, and the two RBSE uploaded PDFs are hashed but not authenticated against official server bytes. Keep Phase 2 BLOCKED until all remaining source, BOM, rights, safety, scientific tests and expert gates close.
+- Current next work unit: Continue Phase 1 source-to-task reconciliation for Chemistry reagent BOM and Biology sample/measurement requirements, while pursuing actual primary Physics/NCERT kit specification bytes. Keep manual-edition omissions distinct from current procurement, school-managed and optional equipment. Phase 2 remains blocked.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1351,3 +1351,19 @@ Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phas
 - Source-gap CSV: commit 2f550f24820bda5b26d5ac61bc2e9fda5e00210d.
 
 Task-index sub-gate DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Physics manual omission evidence (2026-11-09)
+
+- [x] Re-opened the official NCERT Physics kit manual text (code 13164; ISBN 978-93-5292-653-4).
+- [x] Recorded the preface's explanation that Searle's apparatus and travelling microscope were still being developed for inclusion in that manual edition and that prescribed options permit the required experiments without them.
+- [x] Updated XII Physics EXP-14 summary/crosswalk, source gap report/CSV, and the Physics manual item register. The travelling microscope remains a distinct proposed asset; the glass slab is not a substitute.
+- [x] Read-back: 5/5 crosswalk checks PASS; source gap CSV remains 13 records / 12 columns.
+- [ ] Retrieve and inspect the current separate Physics procurement specification to determine whether a later revision includes the travelling microscope or Searle's apparatus.
+- [ ] Complete independent subject review; manual text evidence is not validation of the RBSE task method or the planned model.
+
+Manual evidence mode: text extracted from official NCERT-hosted PDF; page screenshot attempt returned HTTP 502, so no visual verification is claimed. Manual copyright states ALL RIGHTS RESERVED; no figures/artwork are reused.
+
+Commits: summary 61f4830f64ecb5fd6f0b648918e4df109ac3bce0; XII Physics CSV 50e869c14066a5016cba2a149adf7085abb71401; source-gap report 0263468d47de9a72ece5a780186059ec4ffa9756; source-gap CSV 6ef9041cce2eb398c6d6e226b48f6cd5530a3b29; Physics manual register f8436c8d42404967d9fbb0b2340ee73c4bac8219.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
