@@ -1,0 +1,236 @@
+# Phase 1.1 — Source Authentication and Procurement Gap Register
+
+Audit date: 2026-11-09  
+Phase: Phase 1 / subphase 1.1  
+Status: **IN PROGRESS — source discovery and partial item transcription exist; critical primary bytes and procurement specifications remain unauthenticated.**
+
+## 1. Why this register exists
+
+The six RBSE pack CSVs now reconcile 171/171 task IDs, but task-index completeness is not the same as source authentication or apparatus verification. This register separates:
+1. official index/listing evidence;
+2. successful retrieval of exact primary document bytes;
+3. uploaded-copy provenance/hash;
+4. item/page inspection depth;
+5. procurement/BOM completeness;
+6. scientific method, safety and rights approval.
+
+Do not upgrade a source to PRIMARY_OFFICIAL_CONTENT merely because a user-uploaded filename/title matches a link displayed by an official index.
+
+## 2. Current official-source checks (2026-11-09)
+
+### RBSE 2027 syllabus
+
+The official RBSE syllabus index is currently accessible and displays a “पाठ्यक्रम 2027” section with separate Class XI and Class XII links. Direct retrieval of both PDFs timed out in the current pass. The 171-task master register is transcribed from user-supplied 11_2027_copy.pdf and 12_2027_copy.pdf; the master records visual inspection of the practical pages but does not record their SHA-256. Therefore, the six-pack reconciliation proves agreement with the repository's RBSE master index, not byte-authenticated equivalence to current official RBSE 2027 PDFs.
+
+Official index: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm  
+Class XI PDF: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/11_2027.pdf  
+Class XII PDF: https://rajeduboard.rajasthan.gov.in/anudeshika-etc/12_2027.pdf
+
+### NCERT Grade XI–XII specification index
+
+The official NCERT index is currently accessible and separately lists:
+- Micro Scale Chemistry Laboratory Kit;
+- Biology Kit with Microscope;
+- Biology Kit without Microscope;
+- Physics Laboratory Kit.
+
+All four official PDF link targets returned HTTP 502 in the 2026-11-09 retrieval pass. This means the files are listed but the current attachment bytes have not been authenticated or inspected.
+
+Official index: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
+
+### NCERT kit manuals and source rights
+
+The official NCERT manual index search listing includes revised Physics, Higher Secondary Biology and MSCL English manuals. NCERT's publication catalogue identifies code 13163 (Higher Secondary Biology Laboratory Kit manual), 13164 (Higher Secondary Physics Laboratory Kit manual) and 13166 (Micro Scale Chemistry Laboratory Kit manual). Catalogue/index metadata establishes that titles/codes are listed; it is not the same as full manual bytes, procurement specification attachments or a reagent BOM.
+
+Physics manual source identity is separately recorded as code 13164, ISBN 978-93-5292-653-4, first edition October 2018, reprints through August 2024, with an ALL RIGHTS RESERVED notice. Its 106-row item schedule was text-inspected and registered; it is not a complete procurement BOM. The current NCERT procurement specification attachment is still blocked.
+
+## 3. Source-family gap register
+
+### SRC-RBSE-2027-PDFS — RBSE Class XI/XII Examination 2027 syllabus PDFs
+
+- **Official index/listing:** 2027 Class 11 and Class 12 links visible on official RBSE syllabus index (checked 2026-11-09)
+- **URL(s):** https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm | https://rajeduboard.rajasthan.gov.in/anudeshika-etc/11_2027.pdf | https://rajeduboard.rajasthan.gov.in/anudeshika-etc/12_2027.pdf
+- **Retrieval/authentication:** Official index opened; both direct PDFs timed out in the 2026-11-09 retrieval pass. Previous repository audit reports ~23.3 MB / 17.6 MB payload errors.
+- **Uploaded-copy provenance:** User-supplied 11_2027_copy.pdf and 12_2027_copy.pdf; exact SHA-256 values not recorded in master RBSE task register.
+- **Evidence limit:** Practical pages read/visually checked in user copies; current official payload not inspected or byte-authenticated.
+- **Affected tasks/packs:** ALL_171_RBSE_XI_XII_TASK_RECORDS
+- **Unknown fields:** Exact-byte identity, revision/metadata, whether official 2027 PDFs match user copies; any later correction/errata.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Retrieve official PDFs through a working official route; capture SHA-256, PDF metadata/page count; compare pages 114–147 and all task IDs against user copies; resolve differences before declaring official curriculum coverage.
+
+### SRC-NCERT-SPEC-INDEX — NCERT Grade XI–XII kit specification index and four attachment targets
+
+- **Official index/listing:** Official index opened 2026-11-09; lists all four distinct XI–XII attachments, including Biology with and without microscope.
+- **URL(s):** https://ncert.nic.in/division/dek/specification_documents.php?ln=en | MSCL: https://ncert.nic.in/division/dek/pdf/MSCL.pdf | Biology with microscope: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf | Biology without microscope: https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf | Physics: https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf
+- **Retrieval/authentication:** Direct follow/click for all four PDFs returned HTTP 502 in the 2026-11-09 web pass; previous 2026-11-08 re-check also recorded 502.
+- **Uploaded-copy provenance:** Local uploaded copies exist only for MSCL and Biology-with-microscope; no Physics or Biology-without-microscope attachment bytes recorded.
+- **Evidence limit:** Official listing evidence only; no new official attachment bytes, SHA-256, PDF metadata or procurement revision verified.
+- **Affected tasks/packs:** XI/XII Physics, XI/XII Chemistry, XI/XII Biology; variant-specific microscope inventory
+- **Unknown fields:** Official attachment content/revision, procurement BOM, delivered quantities, makes, materials, ranges, tolerances, acceptance criteria, supplied-vs-school-managed items.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Recover official attachment payloads; hash and compare to local copies; inspect each page and reconcile exact BOM, variants and safety notes.
+
+### SRC-NCERT-PHY-MANUAL-13164 — Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII — code 13164
+
+- **Official index/listing:** Manual identity recorded as NCERT code 13164, ISBN 978-93-5292-653-4; first edition October 2018; reprints listed through August 2024. Official listing and manual text were previously inspected; official catalogue lists code 13164.
+- **URL(s):** https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+- **Retrieval/authentication:** Text layer/item register inspected previously; screenshot/page visual audit returned HTTP 502. Not re-downloaded/byte-hashed in the 2026-11-09 pass.
+- **Uploaded-copy provenance:** No uploaded local PDF hash is recorded in the current item-register header.
+- **Evidence limit:** 106-row item schedule transcribed to data/catalogues/ncert_physics_kit_manual_items.csv. Register says short labels/uses only; procurement fields remain unknown.
+- **Affected tasks/packs:** XI Physics EXP/ACT/PRJ, XII Physics EXP/ACT/PRJ; candidate no-match flags include Fortin barometer, travelling microscope, phototransistor/IR source and other devices.
+- **Unknown fields:** Full procurement specification, delivered quantities, material grades, tolerances, instrument ratings/calibration, exact assembly compatibility; GeM 105-item schedule reconciliation.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Preserve the manual as a supporting source, retrieve the separate NCERT specification attachment and authenticated GeM schedule; compare all 106 manual rows to the final BOM without treating row count as SKU count.
+
+### SRC-MSCL-UPLOAD — Micro Scale Chemistry Laboratory Kit specification — MSCL_copy.pdf
+
+- **Official index/listing:** Official NCERT specification index lists MSCL Grades XI–XII; direct PDF returned HTTP 502 on 2026-11-09.
+- **URL(s):** Official listing: https://ncert.nic.in/division/dek/pdf/MSCL.pdf | official index: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
+- **Retrieval/authentication:** User upload OCR-inspected; 65 pages; 19,798,501 bytes; PDF metadata 2025-03-21 09:10:15 UTC; SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. Hash identifies uploaded bytes only.
+- **Uploaded-copy provenance:** MSCL_copy.pdf; OCR register data/catalogues/ncert_mscl_spec_items.csv; hash db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
+- **Evidence limit:** Rows 1–54 catalogued; row 55 is document development team. Upload is NOT_BYTE_AUTHENTICATED against NCERT official bytes. Apparatus/consumable schedule is not a supplied reagent BOM.
+- **Affected tasks/packs:** RBSE-XI-CHEM-PRA-01..PRA-19; RBSE-XI-CHEM-PRJ-01..PRJ-08; RBSE-XII-CHEM REDOX/QUAL/OPT/KIN/THERMO/ELECTRO groups.
+- **Unknown fields:** Official source equivalence, reagent identities/concentrations/purity/hydration state, school-managed items, method validity, supplied-vs-optional boundaries, revision and procurement acceptances.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Authenticate uploaded bytes against official MSCL attachment; obtain/verify a separate full reagent inventory and experiment-method source; mark school-managed and hazardous entries separately.
+
+### SRC-BIO-WITH-MICROSCOPE-UPLOAD — Secondary Stage Biology Kit with Microscope — SSBK_with_Microscope_copy.pdf
+
+- **Official index/listing:** Official index separately lists Biology with microscope; direct PDF returned HTTP 502 on 2026-11-09.
+- **URL(s):** Official listing: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf | official index: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
+- **Retrieval/authentication:** User upload partially OCR/visually audited; 199 pages; 59,620,970 bytes; metadata 2025-03-21 09:08:43 / 09:39:13 UTC; SHA-256 c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2. Hash identifies uploaded bytes only.
+- **Uploaded-copy provenance:** SSBK_with_Microscope_copy.pdf; catalogue data/catalogues/ncert_biology_with_microscope_spec_items.csv; hash c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2.
+- **Evidence limit:** 177 index rows: 1–83 equipment/consumables, 84–133 visual cards, 134–140 embedded specimens, 141–175 permanent slides, 176 microscope, 177 documentation credit. Row 84, 134, 141, 176 have individual sample/visual checks; most remaining card/specimen/slide pages are index-only.
+- **Affected tasks/packs:** XI Biology 22 rows and XII Biology 28 rows.
+- **Unknown fields:** Exact-byte NCERT identity, detailed content of index-only cards/slides/specimens, full page-wise specifications, supplied reagents, microscopy/slide quality, variant-dependent items, licensing.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Authenticate copy; inspect each index-only page individually; preserve card/specimen/slide modality; validate image identity/taxonomy with Biology experts; capture variant requirements.
+
+### SRC-BIO-WITHOUT-MICROSCOPE — Secondary Stage Biology Kit without Microscope
+
+- **Official index/listing:** Official index lists this as a separate Grades XI–XII kit variant.
+- **URL(s):** https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf
+- **Retrieval/authentication:** No local copy; official direct link returned HTTP 502 on 2026-11-09; previous alternate download attempt failed/was over retrieval limit.
+- **Uploaded-copy provenance:** No upload bytes or local catalogue exist in current repository.
+- **Evidence limit:** NOT_RETRIEVED; no variant delta can be inferred.
+- **Affected tasks/packs:** All XI/XII Biology task rows and future hardware/profile configuration for microscope availability.
+- **Unknown fields:** What microscope, slides, cards, specimens and other items are omitted/modified; whether shared components/quantities differ.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Retrieve official without-microscope PDF; hash it; diff item-by-item against with-microscope variant; model variant-specific inventory and UI availability.
+
+### SRC-NCERT-MANUALS-13163-13166 — NCERT Higher Secondary Biology and Micro Scale Chemistry manuals (codes 13163, 13166)
+
+- **Official index/listing:** Search-indexed official NCERT manual index lists revised Physics, Biology and MSCL English manuals; catalogue identifies Biology code 13163 and MSCL code 13166. Public catalogue search result identifies code/title, not manual content.
+- **URL(s):** https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | publication catalogue: https://ncert.nic.in/uploads/publication/other_books_new.pdf
+- **Retrieval/authentication:** Direct NCERT manual-index page timed out in the 2026-11-09 web pass; no full official Biology or MSCL manual bytes obtained in this subtask.
+- **Uploaded-copy provenance:** No authenticated local official manual PDF hash for Higher Secondary Biology/MSCL is recorded in the source registers referenced here.
+- **Evidence limit:** Catalogue metadata only for Biology/MSCL manuals; do not confuse the Biology class XI lab manual or uploaded specification copy with the Higher Secondary Biology kit manual.
+- **Affected tasks/packs:** XI/XII Biology and XI/XII Chemistry task procedures, method validation, school-managed reagents/consumables.
+- **Unknown fields:** Official manual content, exercises, reagent inventories, school-managed items, exact procedures, copyright permissions for derived text/images.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Obtain official manuals, record codes/ISBN/edition/reprint/date/hash, inspect exercise-to-RBSE mapping; do not treat metadata as content evidence.
+
+### SRC-GEM-PHYSICS-105-106 — GeM Physics bid item count versus NCERT manual item count
+
+- **Official index/listing:** A public GeM bid dated 2026-03-15 for six Secondary Stage Physics Laboratory Kits states 105 items per kit in an attached list. This is a bid document, not the NCERT master specification.
+- **URL(s):** Discovery copy: https://docs.primetenders.com/documents/tender/2026/03/31/12491799102179779884/GeM-Bidding-9125140.pdf
+- **Retrieval/authentication:** Tender bid document discovery record inspected; actual attached 105-item schedule bytes were not inspected/authenticated.
+- **Uploaded-copy provenance:** No authenticated attachment list/hash in repository.
+- **Evidence limit:** Physics manual contains 106 numbered item rows (including Meter Bridge item 106). Difference 105 vs 106 is unresolved, not a proven contradiction.
+- **Affected tasks/packs:** All Physics task crosswalks; item additions/deletions, BOM and procurement mapping.
+- **Unknown fields:** Actual 105-item attachment, revision, grouping of composite rows, whether tender consolidates/removes manual line items.
+- **Severity:** HIGH_PHASE_1
+- **Required next action:** Retrieve GeM attachment list itself and compare each row to the 106-row manual; do not delete or renumber rows to force count equality.
+
+### SRC-MISSING-PHYSICS-INSTRUMENTS — Physics apparatus not found or only partially found in current manual crosswalk
+
+- **Official index/listing:** Candidate source item catalogue lists 106 rows; current RBSE mapping flags explicit missing/partial instruments.
+- **URL(s):** Physics manual register: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
+- **Retrieval/authentication:** Manual text item schedule inspected; procurement attachment not retrieved.
+- **Uploaded-copy provenance:** No separate procurement BOM.
+- **Evidence limit:** Explicit task-level gaps: Fortin barometer (RBSE-XI-PHY-PRJ-08) no manual item; travelling microscope (RBSE-XII-PHY-EXP-14) absent; phototransistor and IR source (RBSE-XII-PHY-PRJ-04) absent. Other AC source/lux sensor/photometer/electromagnet/specific ratings remain unverified.
+- **Affected tasks/packs:** RBSE-XI-PHY-PRJ-08; RBSE-XII-PHY-EXP-14; RBSE-XII-PHY-PRJ-04; relevant Class XII Physics activities/projects.
+- **Unknown fields:** Whether instruments are school-managed/optional or omitted from current manual; separate authoritative procurement items and technical specs.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Seek a primary spec/source for each missing instrument; distinguish no-match from school-managed/optional; no fictional catalogue IDs.
+
+### SRC-CHEM-REAGENT-BOM — Chemistry reagents, sample and method inventory
+
+- **Official index/listing:** Index lists MSCL kit and manual; official attachment/manual bytes not obtained in current pass.
+- **URL(s):** MSCL official specification: https://ncert.nic.in/division/dek/pdf/MSCL.pdf | MSCL manual index: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
+- **Retrieval/authentication:** Uploaded MSCL apparatus/consumables OCR catalogue available but not authenticated and not a reagent BOM.
+- **Uploaded-copy provenance:** MSCL_copy.pdf hash db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
+- **Evidence limit:** RBSE chemistry tasks name acids, bases, salts, indicators, solvents and organic compounds; their supply/strength/purity/identity and school-managed boundaries are not established by the MSCL apparatus list.
+- **Affected tasks/packs:** All 19 XI Chemistry practical groups, 8 XI Chemistry projects/options; all 14 XII Chemistry task/choice records.
+- **Unknown fields:** Full reagent BOM, concentrations, hydrate/purity, preparation/storage, school-managed/optional entries, analytical methods, colour/product outcomes, safety data and allowed waste management.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Retrieve official MSCL manual and reagent schedule; map each chemical to source ID, CAS/identity, grade/concentration, method, hazard and approval; no arbitrary reaction generation.
+
+### SRC-BIO-SAMPLE-AND-MEASUREMENT-BOM — Biology samples, environmental instruments and prepared specimen identity
+
+- **Official index/listing:** Two kit variants listed separately; neither attachment retrieved in this pass.
+- **URL(s):** Biology with microscope specification: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf | without microscope: https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf
+- **Retrieval/authentication:** Uploaded with-microscope OCR index available but partially page inspected and unauthenticated.
+- **Uploaded-copy provenance:** SSBK_with_Microscope_copy.pdf hash c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2.
+- **Evidence limit:** Task gaps include quadrat frame, soil texture/WHC measurement method, turbidimeter/nephelometer, SPM air sampler/flow meter, pollen medium/samples, named flower/onion/soil/water samples, permanent T.S. testis/ovary slide, Trichophyton visual/slide, and index-only slide/card/specimen contents.
+- **Affected tasks/packs:** RBSE-XI-BIO-BM/ZM/BN/ZN/SP; RBSE-XII-BIO-BM/ZM/BN/ZN/SP; RBSE-XII-BIO-PRJ-01.
+- **Unknown fields:** Supplied specimens/consumables, school-managed items, measuring instrument accuracy/calibration, safe water micrographs, slide/specimen identity, rights and collection ethics.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Retrieve both kit variants; inspect index-only pages; obtain authoritative specimen/instrument sources and validated datasets; obtain Biology/ecology/microbiology reviewer approval.
+
+### SRC-RIGHTS-AND-REUSE — NCERT manual, PDF, image and derived-content reuse
+
+- **Official index/listing:** Physics manual register records ALL RIGHTS RESERVED; source item labels are used briefly for traceability, but artwork/figures are not copied.
+- **URL(s):** https://ncert.nic.in/division/dek/kit-manuals.php?ln=en | official Physics manual URL above
+- **Retrieval/authentication:** Rights notice recorded in official Physics manual and source compliance audit; per-asset licensing has not been completed.
+- **Uploaded-copy provenance:** Uploaded PDF hashes identify bytes only and do not grant reuse permission.
+- **Evidence limit:** NCERT source manuals/diagrams/images cannot be copied into app as a default. Each external dataset/image must carry licence and attribution.
+- **Affected tasks/packs:** All packs and original 3D/2D/slide/card/diagram assets.
+- **Unknown fields:** Per-resource licence/permission, attribution format, derived-work boundaries, commercial redistribution terms.
+- **Severity:** BLOCKER_PHASE_1
+- **Required next action:** Create asset provenance/license manifest; use original geometry/illustration or licensed/public-domain data; document attribution and counsel review where required.
+
+## 4. Exact uploaded-copy manifests
+
+| Uploaded copy | Page count | Size | PDF metadata | SHA-256 | Authentication |
+|---|---:|---:|---|---|---|
+| MSCL_copy.pdf | 65 | 19,798,501 bytes | 2025-03-21 09:10:15 UTC | db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d | Uploaded bytes identified; official identity NOT VERIFIED |
+| SSBK_with_Microscope_copy.pdf | 199 | 59,620,970 bytes | 2025-03-21 09:08:43 / 09:39:13 UTC | c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2 | Uploaded bytes identified; official identity NOT VERIFIED |
+| SSBK_without_Microscope | — | — | — | — | NOT RETRIEVED |
+| RBSE 11_2027_copy.pdf | — | — | — | Not recorded in master | User-supplied; official-byte authentication pending |
+| RBSE 12_2027_copy.pdf | — | — | — | Not recorded in master | User-supplied; official-byte authentication pending |
+| NCERT Physics procurement specification | — | — | — | — | NOT RETRIEVED; do not substitute the separate Physics manual |
+| NCERT MSCL/SSBK official specification attachments | — | — | — | — | Officially listed; direct retrieval blocked |
+
+## 5. Procurement and task-level consequences
+
+- A candidate item ID in a manual/spec OCR catalogue establishes only that the source register names the item. It does not establish current purchase supply, quantity, dimensions, make/model, grade, tolerance, accuracy, calibration, acceptance method or school-managed/optional status.
+- Chemistry apparatus entries do not establish acids, bases, salts, indicators, solvents, concentrations, reagent purity or reaction methods. A separate reagent/material BOM is required.
+- Biology card/specimen/slide categories must stay distinct. OCR/index-only entries cannot be used to claim page-level visual identity. The with-microscope and without-microscope variants must remain separate inventory profiles.
+- The Physics manual lists 106 item rows. A separate 15 March 2026 GeM bid states 105 items, but its attached schedule was not inspected. Preserve this as unresolved discovery evidence, not a proven contradiction.
+- The explicit task-level no/partial-match flags remain: XI Physics Fortin barometer; XII Physics travelling microscope; XII Physics phototransistor/IR source; Biology task-specific instruments/specimens listed above.
+- No substitute asset should be represented as the original instrument. Candidate virtual models must be labelled as proposed/simulated until verified.
+
+## 6. Phase 1 exit gates
+
+| Gate | Status |
+|---|---|
+| Six-pack RBSE task-index reconciliation (171/171) | DONE — documentary only |
+| Official 2027 RBSE PDF byte authentication and comparison | OPEN |
+| Official NCERT procurement attachment retrieval/authentication | OPEN |
+| Full NCERT kit manual retrieval/edition/hash capture for Biology/MSCL | OPEN |
+| Biology-without-microscope variant comparison | OPEN |
+| Procurement BOM quantities/materials/ranges/tolerances/calibration | OPEN |
+| Chemistry reagent/material/school-managed inventory | OPEN |
+| Task-to-apparatus expert review and no-match resolution | OPEN |
+| Index-only Biology slide/card/specimen page inspection and taxonomy review | OPEN |
+| Original 3D/2D asset specifications and rights/license clearance | OPEN |
+| Deterministic model domains, equations, units and uncertainty | OPEN |
+| Independent test vectors and executed scientific regression tests | OPEN |
+| Safety/ethics review and subject-expert approvals | OPEN |
+
+**Decision: Phase 1 remains IN PROGRESS. Phase 2 remains BLOCKED.** The task index is complete; the evidence and implementation gates are not.
+
+## 7. Next work unit
+
+Work on the highest-impact retrieval blocker first: official RBSE 2027 PDF recovery and byte comparison, followed by the four NCERT kit specification attachments. Once bytes are recovered, calculate SHA-256 locally, inspect metadata/revision and compare item-level BOMs before changing any candidate mapping. Do not reclassify uploaded copies as official or move to Phase 2 until the Phase 1 exit gates have evidence and approvals.
