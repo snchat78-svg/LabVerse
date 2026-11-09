@@ -167,3 +167,10 @@ The CSV has 106 data rows and 11 columns:
 - source_text_status, procurement_spec_status, asset_status, scientific_model_status, test_vector_status.
 
 Status values intentionally distinguish manual-text inspection from procurement verification and implementation. The CSV is an inventory seed, not a final BoM or release-ready catalogue.
+
+
+## 4. Edition-specific omissions recorded from the official preface
+
+The NCERT-hosted manual preface (code 13164; ISBN 978-93-5292-653-4) explicitly notes that Searle's apparatus and the travelling microscope were still being developed for future inclusion in the kit. It also describes prescribed alternatives that let students complete the required number of experiments when those apparatus are absent. Therefore, absence of the travelling microscope from rows 1–106 is an explained omission in this manual edition, not a reason to invent a substitute item ID. The current separate procurement-specification attachment remains unverified and may not be inferred from this manual edition.
+
+Evidence mode: official-host PDF text extraction; page screenshot request failed with HTTP 502. No visual check is claimed. Source rights notice: ALL RIGHTS RESERVED; this catalogue uses short item labels only and must not reproduce manual figures/artwork.
