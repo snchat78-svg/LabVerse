@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Recover and inspect the official NCERT Higher Secondary Biology kit manual (publication code 13163) and both separate current kit variants (with microscope / without microscope); retrieve exact bytes, metadata and hash, then verify individual slides/cards/specimens and reconcile against the 50-row Biology task-gap register. The 2026-11-09 official MSCL attachment retry is documented but remains BLOCKED (NCERT routes returned HTTP 502; no current reagent BOM obtained). Keep all Phase 1 gates open and Phase 2 BLOCKED.
+- Current next work unit: User-assisted official primary PDF intake. Exact NCERT direct PDF URLs for Biology kit manual (code 13163), Biology kits with/without microscope, MSCL and Physics are listed in `docs/PHASE_1_1_OFFICIAL_PRIMARY_PDF_INTAKE_LINKS_2026_11_09.md`. The retrieval environment refused the large specification payloads and independent downloads failed; no new file bytes or hashes were obtained. Request the five original PDFs from the user, then hash/inspect and reconcile by subject. Phase 1.1 remains active; Phase 2 remains BLOCKED.
 - Last phase-state review: 2026-11-09
 
 ## Phase 0 — completed log
@@ -1492,3 +1492,13 @@ Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 remains BLOCKED. The next bounde
 
 **Evidence boundary:** current pass confirms listing/catalogue identities only. No official Biology kit manual PDF or variant attachment bytes/hash/content was obtained. No catalogue identifier was promoted to manual-content evidence. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 
+
+
+## 2026-11-09 — Official primary PDF intake package
+
+- [x] Recovered exact NCERT direct URLs for the Biology kit manual and all four Grade XI–XII kit specification PDFs by following links from the official NCERT indexes.
+- [x] Recorded tool-reported size hints for the four large specification PDFs and exact retrieval limitations.
+- [x] Created an upload manifest and user-assisted intake checklist.
+- [ ] Receive five original PDFs from the user; validate byte hashes/metadata/pages; inspect primary content before updating item-level registers.
+
+No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
