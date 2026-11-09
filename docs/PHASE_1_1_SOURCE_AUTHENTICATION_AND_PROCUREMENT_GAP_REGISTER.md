@@ -148,11 +148,11 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 - **URL(s):** Physics manual register: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf
 - **Retrieval/authentication:** Manual text item schedule inspected; procurement attachment not retrieved.
 - **Uploaded-copy provenance:** No separate procurement BOM.
-- **Evidence limit:** Explicit task-level gaps: Fortin barometer (RBSE-XI-PHY-PRJ-08) no manual item; travelling microscope (RBSE-XII-PHY-EXP-14) absent; phototransistor and IR source (RBSE-XII-PHY-PRJ-04) absent. Other AC source/lux sensor/photometer/electromagnet/specific ratings remain unverified.
+- **Evidence limit:** The official NCERT Physics manual preface (2018 first edition; reprints listed through August 2024) explicitly says the travelling microscope and Searle's apparatus were still being improvised for future inclusion in the kit; students can complete the required number of experiments using the prescribed alternatives when those items are absent. This confirms the travelling microscope is absent from that manual edition's 106-row kit schedule, but does not establish what a later separate procurement specification contains. Fortin barometer (RBSE-XI-PHY-PRJ-08) and phototransistor/IR source (RBSE-XII-PHY-PRJ-04) remain no-match/partial-match gaps. Other AC source/lux sensor/photometer/electromagnet/specific ratings remain unverified.
 - **Affected tasks/packs:** RBSE-XI-PHY-PRJ-08; RBSE-XII-PHY-EXP-14; RBSE-XII-PHY-PRJ-04; relevant Class XII Physics activities/projects.
-- **Unknown fields:** Whether instruments are school-managed/optional or omitted from current manual; separate authoritative procurement items and technical specs.
+- **Unknown fields:** Current separate NCERT procurement specification content, whether school-managed/optional items supplement the kit, current quantities/materials/ranges/tolerances/calibration and exact technical specifications for all remaining missing/partial devices.
 - **Severity:** BLOCKER_PHASE_1
-- **Required next action:** Seek a primary spec/source for each missing instrument; distinguish no-match from school-managed/optional; no fictional catalogue IDs.
+- **Required next action:** Preserve the manual-edition omission as an explicit source fact; retrieve the current separate procurement specification and any official supplementary instrument schedules; classify each task apparatus as kit-supplied, school-managed, optional, or external-required only when primary evidence supports it. Keep Fortin barometer and phototransistor/IR source distinct; no fictional catalogue IDs.
 
 ### SRC-CHEM-REAGENT-BOM — Chemistry reagents, sample and method inventory
 
@@ -275,3 +275,16 @@ The same second pass recovered the exact user-supplied RBSE 2027 PDF bytes from 
 ## 8. Next work unit
 
 Continue pursuing primary-source bytes for the official RBSE 2027 PDFs and all four NCERT kit specification attachments through openly accessible official routes. For the recurring GeM attachment filenames, obtain the actual files only from a permitted public source or user-provided copy, record provenance before inspection, hash every byte payload and compare with the NCERT-index targets and existing uploads. In parallel, continue Phase 1 source-to-item-to-asset/model/test gap resolution on already inspectable material. Do not promote third-party mirrors to official status or move to Phase 2 until all Phase 1 exit gates have evidence and approvals.
+
+
+### 4.2 Official Physics manual preface clarifies the travelling-microscope omission (2026-11-09)
+
+The NCERT-hosted Physics kit manual (publication code 13164; ISBN 978-93-5292-653-4) was re-opened as a PDF text extraction. Its preface explains that Searle's apparatus and the travelling microscope were still being improvised for future inclusion in the kit in that edition. It also states that learners can complete the required number of experiments using available prescribed options when those devices are absent.
+
+This is stronger evidence than simply failing to find the term in the 106-row catalogue: for that manual edition, the travelling microscope is an acknowledged omission from the kit design. It does **not** establish whether a later separate procurement specification or another school-managed instrument schedule includes it.
+
+The RBSE XII Physics crosswalk row `RBSE-XII-PHY-EXP-14` therefore retains the travelling microscope as a distinct apparatus for the named glass-slab method, but now records that it is **not included in the cited NCERT manual edition**, rather than presenting the absence as an unexplained catalogue miss. The glass slab is not a substitute for the microscope. Fortin barometer and phototransistor/IR source gaps are unchanged.
+
+The PDF text extraction was readable, but its page screenshot attempt returned HTTP 502. This evidence is recorded as text-extracted, not visually inspected. The manual carries an ALL RIGHTS RESERVED notice; LabVerse will use paraphrased source notes and original assets rather than reproducing NCERT artwork/text.
+
+Source: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf (Preface; PDF text lines 85–105 in the retrieval view).
