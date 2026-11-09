@@ -31,3 +31,8 @@ A separate NCERT-hosted 2018 *Manual of Microscale Chemistry Laboratory Kit* has
 - data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv (41/41 RBSE chemistry task records represented; topic evidence only)
 
 Do not merge the 2018 manual's reagent labels into this 2025 specification upload as if they were delivered consumables. All 124 reagent records are blocked from live use pending identity-specific SDS and written chemistry/safety review. The manual's mercury thermometer is excluded from physical learner use. Current official specification authentication and current reagent BOM remain open.
+
+
+## Manual-to-upload comparison register
+
+See `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md` and `data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv`. All 51 2018 manual apparatus rows have candidate mappings into the separate user-uploaded specification index; the 10 mL and 50 mL beaker records are combined in one uploaded row, and four additional uploaded-copy items (pocket balance, glazed tile, gas generator, tongs) have no direct predecessor in the 2018 manual. Several quantity/material/dimension differences are recorded. This is not an official NCERT amendment/equivalence claim because the upload's bytes are not authenticated against the official attachment.
