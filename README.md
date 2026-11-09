@@ -329,3 +329,9 @@ The 2018 MSCL manual's 124-row reagent label list is not exhaustive against its 
 - [50-task machine-readable gap register](data/catalogues/biology_task_level_gap_register.csv)
 
 All 22 Class XI and 28 Class XII Biology records are included. Their candidate source-item IDs resolve to the uploaded with-microscope catalogue (0 dangling references), but the source is not authenticated and many slide/card/specimen pages remain index-only. The Biology without-microscope specification and official manual 13163 are still unretrieved. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+### Phase 1.1 — MSCL official attachment retrieval re-check (2026-11-09)
+- [Official MSCL attachment retrieval audit](docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md)
+- [Machine-readable MSCL attachment retrieval attempts](data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv)
+Current result: official NCERT attachment remains listed but retrieval-blocked; no current MSCL reagent BOM is authenticated. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
