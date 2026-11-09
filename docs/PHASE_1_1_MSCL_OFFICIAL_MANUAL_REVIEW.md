@@ -1,0 +1,91 @@
+# Phase 1.1 — NCERT Micro Scale Chemistry Laboratory manual review
+
+**Audit date:** 2026-11-09  
+**Repository:** https://github.com/snchat78-svg/LabVerse  
+**Subphase:** Phase 1.1 — source evidence / apparatus / science and safety traceability  
+**State:** MANUAL_RETRIEVED_TEXT_EXTRACTED; NOT_CURRENT_PROCUREMENT_SPECIFICATION; NO_LIVE_CHEMISTRY
+
+## 1. Source identity and rights
+
+- NCERT-hosted manual URL: https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf
+- Title: *Manual of Microscale Chemistry Laboratory Kit*, for Classes XI and XII.
+- First edition: April 2018.
+- ISBN: 978-93-5007-861-7.
+- NCERT Publication Catalogue lists the Higher Secondary MSCL manual under publication code 13166.
+- Rights statement in the PDF: ALL RIGHTS RESERVED.
+- Evidence: NCERT-hosted PDF text was extracted; screenshot/page-image retrieval returned HTTP 502. This review does not claim visual verification. No byte-level SHA-256 was captured for the PDF in this work unit.
+- The official current NCERT kit-specification index separately lists MSCL, Biology with microscope, Biology without microscope and Physics specification attachments. The current MSCL specification attachment still returned HTTP 502 in the retrieval pass. This 2018 manual must not be substituted for the current procurement attachment.
+
+## 2. What the manual establishes
+
+The manual gives a useful pedagogical and design reference for microscale chemistry. Its preface describes reduced chemical quantities, reduced liquid volumes and reduced waste/pollution relative to conventional chemistry practicals. The document contents index **34 experiment entries across 11 chapters**. The apparatus section has **51 numbered apparatus entries**. The chemical/reagent section has **124 numbered labels**.
+
+These counts refer to the 2018 manual's table/list, not to a current vendor SKU list, bill of materials, kit delivery quantity or RBSE-complete reagent manifest.
+
+## 3. LabVerse catalogues created
+
+- `data/catalogues/ncert_mscl_manual_experiment_index.csv` — 34 paraphrased experiment/topic entries with printed page ranges; no procedures or concentrations.
+- `data/catalogues/ncert_mscl_manual_apparatus_index.csv` — 51 short apparatus records with the source specification summary and quantity text; manual-only provenance.
+- `data/catalogues/ncert_mscl_manual_reagent_index.csv` — 124 preserved numbered reagent/material labels; original sequence and duplicate entries preserved.
+- `data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv` — XI/XII task-to-manual topic crosswalk with explicit direct/partial/no-match distinctions.
+
+All catalogues are LabVerse-authored indexes/paraphrases. NCERT illustrations, layouts, figures and procedural text are not copied. Manual printed page numbers are retained; they are not PDF page numbers.
+
+## 4. Reagent safety gate — mandatory
+
+The 124 labels are **source reference labels only**. The manual list does not establish lot identity, purity, concentration, container quantity, SDS revision, supplier, compatibility, exposure limits, disposal route or permission for school/student handling.
+
+Therefore every entry is marked:
+- `BLOCKED_NO_LIVE_USE; SIMULATION_REFERENCE_ONLY`
+- `PENDING_SDS_IDENTITY_CONCENTRATION_AND_EXPOSURE_REVIEW`
+- `NOT_APPROVED`
+
+No concentration, preparation method, mixing steps, dose or handling procedure was added to the catalogue. The source includes substances requiring particularly stringent specialist review, including arsenic oxide, benzene, carbon disulphide, chloroform/carbon tetrachloride, bromine water, hydrogen sulphide, lead acetate, sodium metal, uranyl zinc acetate and concentrated mineral acids. These names are recorded to identify a safety gate, not to recommend procurement or use. The manual also lists a mercury thermometer; LabVerse will not create a live mercury-handling asset. All chemistry actions remain virtual/reference-only until each experiment has SDS-backed review, waste controls and written chemistry/safety expert approval.
+
+## 5. RBSE crosswalk — what is and is not matched
+
+The manual's experiment index gives useful topic-level matches:
+- XI: crystallisation; melting/boiling point topics; volumetric methods; standard acid/base solution topics; qualitative cation/anion analysis; extra-element screening; common-ion/equilibrium topics.
+- XII: permanganate redox; qualitative analysis; organic functional groups; selected inorganic/organic preparations; biomolecule tests; thiosulphate/acid and clock-reaction kinetics; thermochemistry; Zn/Cu electrochemistry.
+
+Partial/no-match distinctions are preserved. Examples:
+- Glassworking PRA-02: no direct indexed experiment.
+- Fruit-juice pH and projects on drinking-water/mineral content, evaporation, fibre tensile strength and tea acidity: no direct manual experiment established.
+- Soap foaming PRJ-04 is not equivalent to emulsion stabilisation EXP-8.3.
+- RBSE p-nitroacetanilide/aniline-yellow preparation set is not automatically equivalent to the full MSCL preparation chapter; the azo-dye product identity must be reviewed.
+- RBSE THERMO-01 copper-sulphate option is not the same as the manual's potassium-nitrate indexed experiment.
+- RBSE THERMO-03 chloroform-acetone interaction is not an indexed MSCL manual experiment; mere presence of chloroform in a reagent list is not method evidence.
+
+The crosswalk is **topic-level evidence only**. It does not validate concentrations, exact samples, methods, equilibrium constants, quantitative results, or current supplied kit completeness.
+
+## 6. Historical NCERT procurement-policy context (not current)
+
+A separate NCERT notification dated 11 February 2020 listed a Senior Secondary Chemistry Lab Kit under Annexure 7 and described technical specifications/quality checks as separate annexures. It also described a licence-fee mechanism for State procurement using NCERT technical specifications. Its contract extension ended 3 June 2020 (or earlier if a new tender was finalised). This is historical evidence only; it does not establish the current kit price, approved supplier, specification, or present procurement status. The current procurement attachment must still be retrieved and authenticated.
+
+## 7. Validation and limits
+
+- Experiment index rows: 34.
+- Apparatus index rows: 51.
+- Reagent index rows: 124.
+- Chemistry crosswalk rows: 32.
+- Unique source reagent numbers: 124.
+- Duplicate source label preserved: Potassium iodate (source numbers 80 and 87).
+- Reagent rows with live-use blocked: 124/124.
+- Reagent rows with SDS review pending: 124/124.
+- Current procurement spec authenticated: NO.
+- PDF page screenshot reviewed: NO (HTTP 502).
+- SHA-256 of source PDF captured: NO.
+- Scientific model or app code implemented: NO.
+- Experiments executed: NO.
+
+Read-back checks performed separately after committing the CSVs. These check file structure and counts, not scientific correctness or safety clearance.
+
+## 8. Next actions
+
+1. Obtain the actual NCERT current MSCL specification attachment through an openly accessible primary route, then hash it and compare item-by-item against this manual and the earlier uploaded `MSCL_copy.pdf`.
+2. Resolve 124 manual reagent labels into RBSE task reagent matrices; do not infer quantities or formulations from the label list.
+3. Obtain current SDS/source records for every proposed reagent and make a separate chemical-by-chemical restriction decision. Replace hazardous manual equipment (notably mercury thermometer) with verified safer alternatives or simulation-only representations.
+4. Retrieve the exact current Biology manual and specification sources; do not mark Biology manual complete yet.
+5. Have the Chemistry crosswalk reviewed by an independent subject expert before any model or learner-facing protocol is authored.
+
+**Decision:** MSCL manual source-discovery/review subtask is now DONE (text-extracted and indexed). MSCL current procurement/BOM, safety and expert-validation gates remain OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
