@@ -297,3 +297,13 @@ The exact uploaded RBSE 2027 PDF hashes and metadata are now recorded. Ten third
 - [XII Physics task traceability summary](docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md)
 
 The NCERT Physics manual preface says the travelling microscope and Searle's apparatus were still being developed for inclusion in that kit edition. The RBSE XII EXP-14 crosswalk retains a distinct travelling microscope asset requirement; the current separate procurement attachment remains unverified. This is source interpretation only, not a completed procurement or scientific validation gate.
+
+
+## Phase 1.1 — NCERT MSCL manual evidence (2026-11-09)
+- [MSCL manual review and safety gate](docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md)
+- [34 experiment/topic entries](data/catalogues/ncert_mscl_manual_experiment_index.csv)
+- [51 apparatus entries](data/catalogues/ncert_mscl_manual_apparatus_index.csv)
+- [124 reagent/material labels — live use blocked](data/catalogues/ncert_mscl_manual_reagent_index.csv)
+- [RBSE Chemistry topic crosswalk](data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv)
+
+This is the NCERT-hosted 2018 educational manual, not the current procurement specification or delivered BOM. All reagent labels remain blocked from live use until identity-specific SDS and expert safety review. The full Chemistry crosswalk is topic-level evidence, not experimental validation. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
