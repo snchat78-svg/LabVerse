@@ -274,3 +274,10 @@ All six packs match the RBSE master task index with zero missing, extra or dupli
 - [Machine-readable gap register — 12 rows](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
 
 Official RBSE 2027 and NCERT specification index listings are recorded separately from attachment retrieval. User-uploaded NCERT copies remain unauthenticated against the official bytes. The 171-task index is reconciled, but Phase 1 remains open and Phase 2 blocked.
+
+
+## Phase 1.1 — Source authentication and GeM recovery lead (2026-11-09)
+- [Source authentication/procurement gap register](docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md)
+- [Gap register CSV — 13 records](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
+
+A third-party tender index reports GeM bid GEM/2026/B/8248336 with Physics, MSCL and Biology-without-microscope attachments. Attachment bytes and BOQ are not retrieved or authenticated; reported 105/54 item counts remain discovery-only. Phase 1 stays open, Phase 2 blocked.
