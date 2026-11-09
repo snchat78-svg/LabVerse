@@ -6,13 +6,15 @@ This is the single source of truth for the current phase. Update it in the same 
 
 - Project: LabVerse — Scientific Discovery & Virtual Research Platform
 - Repository: https://github.com/snchat78-svg/LabVerse
-- Current phase: Phase 1 — Platform scope, source audit and first science catalogue
-- Phase 0: DONE — planning/documentation baseline only
-- Phase 1: IN PROGRESS — RBSE 2026–27 practical sections audited; NCERT source mapping expanded, but full kit specification audit, exhaustive traceability and independent expert review remain open
-- Phase 2: BLOCKED until Phase 1 exit criteria are met
-- Application code: not started
-- 3D workbench/assets: not implemented
-- Simulation/research engines: not implemented
+- Current main phase: Phase 1 — Platform scope, source audit and first science catalogue (IN PROGRESS); user-authorized dashboard preview workstream runs in parallel.
+- Phase 0: DONE — planning/documentation baseline only.
+- Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
+- Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
+- Phase 3: PARTIAL — dependency-free dashboard preview scaffold and catalogue CI workflow committed; production React/TypeScript/Vite foundation remains pending.
+- Phase 4: IN PROGRESS — three-subject dashboard navigation, inventory tray, class filter, 171-task index and placeholder workbench implemented.
+- Application code: dashboard prototype exists; this is not yet the production app foundation.
+- 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
+- Simulation/research engines: not implemented; no scientific outcomes are computed.
 - Phase 1.1: IN PROGRESS — 2026-11-09 second retrieval pass: RBSE upload hashes/metadata captured, while official RBSE endpoints remain unverified; 10 third-party GeM listings show recurring NCERT kit attachment filenames but no attachment payloads were retrieved. See docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md.
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
 - Latest bounded work unit: NCERT Physics manual preface now explicitly explains that the travelling microscope and Searle's apparatus were still being developed for inclusion in that manual edition. RBSE XII Physics EXP-14 retains the microscope as a distinct proposed apparatus; current procurement-spec inclusion remains unverified. See updated XII Physics traceability and source-gap registers.
@@ -25,8 +27,12 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
 - Latest bounded progress (2026-11-09): Biology kit manual code 13163 received from the user as two uploaded files; both copies are byte-identical (20,028,910 bytes; SHA-256 `c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086`), with 141 physical PDF pages and visible ISBN 978-93-5292-528-5 / 2018 first-edition and reprint data. Treat as one user-supplied candidate; official-byte equality remains unverified. Existing `MSCL_copy.pdf`, `11_2027_copy.pdf` and `12_2027_copy.pdf` were also confirmed still in the Library. See updated intake report and source-gap register.
+- Latest bounded dashboard progress (2026-11-09): inventory read model contains Physics 105 non-documentation item rows; Chemistry 53 candidate apparatus rows + 124 historical MSCL reagent labels; Biology 175 with-microscope kit records + 58 manual-listed chemical/reagent/stain labels. RBSE task index is 171 rows (Physics 80, Chemistry 41, Biology 50). These are source catalogue counts, not approved current stock or verified executable practicals.
+- User-authorized dashboard track: source authentication must not block subject navigation, searchable inventories or non-scientific placeholder workspace. Keep candidate status visible; no real 3D or scientific calculations are claimed.
+- Biology chemical-list check: the newly received kit manual's pp. xxvii-xxviii lists 58 chemicals/reagents/stains and explicitly says these are not supplied with the kit; institutions/schools/teachers manage them. Keep them as reference-only until identity-specific safety and expert review.
+- Biology variant tracking correction: both with-microscope and without-microscope kit PDFs were supplied previously according to the user. Do not request either again; with-microscope catalogue is available; recover the existing without-microscope attachment/derived record without repeating the upload request.
 - Record correction (2026-11-09): User confirms Biology kit PDFs WITH and WITHOUT microscope were submitted in earlier work. The with-microscope candidate has an existing GitHub item catalogue (177 rows) and prior upload hash; the without-microscope receipt was incorrectly left as NOT_RETRIEVED in the gap register. Do not ask for either upload again. Recover the prior without-microscope attachment/derived catalogue from existing records; meanwhile proceed with already available indexed data and other Phase 1 work.
-- Current next work unit: Full content/page audit of the received Biology kit manual (code 13163), then map its item/exercise schedules against all RBSE XI/XII Biology task records. Separately retain the with-microscope and without-microscope specification PDFs as distinct sources; current official specification bytes for Biology variants, MSCL and Physics remain to be recovered/authenticated. Phase 1.1 remains active; Phase 2 remains BLOCKED.
+- Current next work unit: validate the committed dashboard preview through GitHub Actions/browser render; then improve the inventory/task views and continue item-level Physics, Chemistry and Biology audit in parallel. Do not request previously supplied PDF files again. Continue Phase 1 source/safety/rights/expert work; Phase 2 scientific engines remain blocked while dashboard navigation can progress.
 - Last phase-state review: 2026-11-09
 
 ## Phase 0 — completed log
