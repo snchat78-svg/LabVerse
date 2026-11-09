@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://labverse.example/schemas/dashboard-inventory-0.1.0.json",
+  "title": "LabVerse Dashboard Inventory Read Model",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "project", "stats", "subjects", "sourceVariants"],
+  "properties": {
+    "schemaVersion": {"type": "string"},
+    "generatedAt": {"type": "string", "format": "date"},
+    "project": {"const": "LabVerse"},
+    "stats": {
+      "type": "object",
+      "required": ["rbseTaskIds", "physicsApparatusRows", "chemistryApparatusRows", "chemistryHistoricalReagentLabels", "biologyKitItemRows", "biologyManualReagentLabels"],
+      "properties": {
+        "rbseTaskIds": {"type": "integer", "minimum": 0},
+        "physicsApparatusRows": {"type": "integer", "minimum": 0},
+        "chemistryApparatusRows": {"type": "integer", "minimum": 0},
+        "chemistryHistoricalReagentLabels": {"type": "integer", "minimum": 0},
+        "biologyKitItemRows": {"type": "integer", "minimum": 0},
+        "biologyManualReagentLabels": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "subjects": {
+      "type": "object",
+      "required": ["physics", "chemistry", "biology"],
+      "properties": {
+        "physics": {"$ref": "#/$defs/subject"},
+        "chemistry": {"$ref": "#/$defs/subject"},
+        "biology": {"$ref": "#/$defs/subject"}
+      },
+      "additionalProperties": false
+    },
+    "sourceVariants": {"type": "object"}
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["id", "name", "source", "status", "type"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string", "minLength": 1},
+        "category": {"type": "string"},
+        "source": {"type": "string"},
+        "status": {"type": "string"},
+        "evidence": {"type": "string"},
+        "type": {"enum": ["apparatus", "reagent", "specimen", "slide", "visual_aid"]}
+      },
+      "additionalProperties": true
+    },
+    "task": {
+      "type": "object",
+      "required": ["id", "class", "subject", "title", "status"],
+      "properties": {
+        "id": {"type": "string"},
+        "class": {"enum": ["XI", "XII"]},
+        "subject": {"type": "string"},
+        "title": {"type": "string", "minLength": 1},
+        "status": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "subject": {
+      "type": "object",
+      "required": ["name", "inventory", "reagents", "tasks"],
+      "properties": {
+        "name": {"type": "string"},
+        "sourceNote": {"type": "string"},
+        "inventory": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+        "reagents": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+        "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
