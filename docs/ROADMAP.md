@@ -6,9 +6,9 @@ This roadmap controls phase order and is the master execution contract. Class 11
 |---|---|---|---|
 | 0 | Product definition and design baseline | Product vision, requirements, architecture, rules and phase process | DONE — docs only |
 | 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
-| 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | BLOCKED by Phase 1 |
-| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | NOT STARTED |
-| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | NOT STARTED |
+| 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | PARTIAL — dashboard read-model subset only; scientific models remain gated by Phase 1 |
+| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — static dashboard preview and catalogue CI added; final app stack scaffold pending |
+| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — three-subject dashboard starter committed |
 | 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
 | 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
 | 7 | Chemistry property and reaction engine | Trusted property lookup, curated reactions, stoichiometry, kinetics, equilibrium and visual states | NOT STARTED |
@@ -47,7 +47,10 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Latest Chemistry task coverage: all 41 RBSE XI/XII Chemistry task/choice IDs are represented in `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`; 17 have candidate manual-reference links and 24 remain without exact mapping. No candidate has been promoted to method or supply equivalence.
 - Biology remains open: 50/50 XI/XII Biology task/choice records are consolidated with 0 dangling source IDs, but source authenticity, individual cards/slides/specimens, equipment/sample gaps, Biology expert review and method/result validation remain unresolved. The official NCERT revised-manual index lists the Higher Secondary Biology Kit Manual; catalogue code 13163 is English and code 13193 is a separate Hindi kit-manual title. The live index and direct with-/without-microscope PDF routes were inaccessible in the 2026-11-09 pass. See `docs/PHASE_1_1_BIOLOGY_MANUAL_SOURCE_DISCOVERY_2026_11_09.md`.
 - Six-pack task index reconciliation: 171/171 unique task IDs across all six RBSE packs; this is index-level integrity, not completion of detailed item/asset/model/test traceability.
-- Phase 2 remains BLOCKED until all Phase 1 exit criteria are independently verified and committed. No software implementation is to start early.
+- Phase 1 source authentication and scientific validation remain IN PROGRESS. On 2026-11-09 the user explicitly authorized a parallel, UI-only dashboard track: implement subject navigation, catalogue browsing, source-status display and a non-scientific placeholder workbench without waiting for byte authentication. This does not waive or close any Phase 1 gate.
+- Phase 2 science-domain models, validated rules and result generation remain BLOCKED by Phase 1. The only Phase 2 work allowed in parallel is the dashboard-facing inventory/task read-model contract.
+- Phase 3 dashboard preview scaffold and catalogue CI are PARTIAL; the final React/TypeScript/Vite production foundation is still pending validation.
+- Phase 4 dashboard/navigation is IN PROGRESS. Do not claim real 3D objects, experimental actions, calculated outcomes, or research engine functionality from this preview.
 
 ## Phase 1 — current phase
 
@@ -420,3 +423,16 @@ Phase 1.1 now includes a 41-row RBSE Chemistry task-to-reagent evidence matrix c
 See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md` and `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`. Manual omissions/ambiguities, duplicate rows, concentration variants and possible compound aliases remain explicit; all rows are blocked from physical chemistry pending official source, current SDS and expert approval.
 
 Next: obtain and hash current official NCERT MSCL specification bytes; reconcile actual reagent BOM against all 41 tasks; validate method-specific reagents and safe virtual/reference data. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## User-authorized parallel dashboard track — 2026-11-09
+
+The user clarified that Physics, Chemistry and Biology PDFs/catalogues had already been supplied and instructed LabVerse to provide the three-direction dashboard even while source authentication is pending. This is an explicit, bounded dependency exception for presentation/navigation only.
+
+- Phase 1 continues without being marked DONE.
+- Phase 2's UI read model may proceed; scientific domain models, reaction/physics/biology rules and result contracts remain blocked until required evidence/review gates pass.
+- Phase 3/4 may build and validate the dashboard shell in parallel. The committed dependency-free HTML/CSS/JS implementation is a preview scaffold, not final React/TypeScript/Vite architecture approval.
+- The dashboard may expose candidate, OCR-derived, index-only and user-uploaded records with visible provenance. It must never promote them to verified stock, safe physical use or scientifically validated procedures.
+- The Biology without-microscope PDF was previously supplied according to the user. Never ask for it again; recover its earlier attachment/catalogue record. Until recovered, preserve an explicit prior-upload acknowledgement and avoid inferring variant deltas.
+- Dashboard preview: `dashboard/index.html`; inventory read model: `dashboard/data/inventory.json`; acceptance/test script: `dashboard/tests/validate-catalogue.mjs`; design note: `docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md`.
+
