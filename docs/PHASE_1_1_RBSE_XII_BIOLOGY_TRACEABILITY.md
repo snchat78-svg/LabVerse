@@ -427,3 +427,6 @@ All proposed asset/model IDs are design reservations only. No 3D model, image as
 ## 7. Next work unit
 
 After GitHub read-back verification, consolidate the 28 records into a single Class XII Biology pack summary and CSV. Quantify evidence tiers across distinct referenced catalogue rows, preserve every “any one” group and the teacher-assigned project boundary, then reconcile all six RBSE packs at task-index level. Phase 1.1 and Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+**Consolidated task-gap register:** `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. The consolidated register retains the original unresolved gap, evidence, safety, rights and review state for all 50 XI/XII task records; all candidate item IDs resolve to the 177-row uploaded-source index, but this does not authenticate or expert-verify the source.
