@@ -34,7 +34,7 @@ The official NCERT index is currently accessible and separately lists:
 - Biology Kit without Microscope;
 - Physics Laboratory Kit.
 
-All four official PDF link targets returned HTTP 502 in the 2026-11-09 retrieval pass. This means the files are listed but the current attachment bytes have not been authenticated or inspected.
+All four official ncert.nic.in PDF link targets returned HTTP 502 in the 2026-11-09 retrieval pass. A second direct check of the parallel ncert.gov.in host was also not accessible through the current retrieval route. These transport/tool failures do not prove file absence; the current attachment bytes remain unauthenticated and uninspected.
 
 Official index: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
 
