@@ -36,3 +36,8 @@ Do not merge the 2018 manual's reagent labels into this 2025 specification uploa
 ## Manual-to-upload comparison register
 
 See `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md` and `data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv`. All 51 2018 manual apparatus rows have candidate mappings into the separate user-uploaded specification index; the 10 mL and 50 mL beaker records are combined in one uploaded row, and four additional uploaded-copy items (pocket balance, glazed tile, gas generator, tongs) have no direct predecessor in the 2018 manual. Several quantity/material/dimension differences are recorded. This is not an official NCERT amendment/equivalence claim because the upload's bytes are not authenticated against the official attachment.
+
+
+## Companion reagent-screen register — 2026-11-09
+
+The 2018 NCERT manual's 124 numbered reagent/material labels plus two internal experiment/appendix references are represented in `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv` (126 records). This is a preliminary name-based triage and strict textual task-link audit, not a GHS classification, SDS substitute, supplied-reagent list or current procurement BOM. All records remain simulation-only and not approved for live use. See `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`. Current official attachment bytes and the exact supplied reagent BOM remain open.
