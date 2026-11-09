@@ -354,3 +354,23 @@ Prioritise recovery of exact official RBSE 2027 PDF bytes and NCERT's four speci
 ## Next work unit
 
 Retrieve bid GEM/2026/B/8248336 on the official GeM portal using a permitted route and obtain the tender-visible attachments/BOQ. Hash every file, inspect PDF/Excel metadata and revision, and compare rows with the NCERT official attachments and uploaded copies. Until bytes are retrieved, keep this as a discovery lead only.
+
+
+## 2026-11-09 — Second retrieval pass: GeM attachment recurrence and RBSE upload hash capture
+
+- **Phase:** Phase 1 / subphase 1.1. No implementation phase opened.
+- **GeM filename recurrence:** Audited 10 public third-party tender-index records for the three NCERT kit filenames. Physics filename listed in 9/10 records; MSCL in 10/10; Biology-without-microscope in 8/10. Current bid GEM/2026/B/8248336 also lists BOQ filename 1793944092.xlsx.
+- **Important evidence boundary:** All 10 entries are listing metadata only. No attachment or BOQ payload bytes were retrieved, hashed or inspected. Repeated filenames and displayed sizes do not establish identical content, NCERT authorship, edition, or procurement compliance. The official domestic GeM BidPlus route remained inaccessible through this retrieval channel. No login, credentials, session-cookie extraction, access-control bypass or paid API used.
+- **New artifacts:** docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md; data/catalogues/gem_kit_specification_mirror_recurrence.csv (10 rows, 9 columns).
+- **Source register refresh:** Updated docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md and data/catalogues/phase1_source_authentication_procurement_gaps.csv (13 records, 12 columns).
+- **RBSE upload provenance:** Recovered the exact two user-supplied PDFs from the conversation Library and calculated local SHA-256:
+  - 11_2027_copy.pdf — 23,343,499 bytes, 155 pages, SHA-256 a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5. Metadata: Author Deepak Mudgal, Creator Microsoft Word 2007, Producer 4-Heights PDF Library 3.4.0.6904, CreationDate 2026-05-19, ModDate 2026-05-22.
+  - 12_2027_copy.pdf — 18,279,805 bytes, 169 pages, SHA-256 2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34. Metadata: Producer 4-Heights PDF Library 3.4.0.6904, ModDate 2026-06-01, PDF 1.7.
+- **Authentication boundary:** The hashes identify exact uploaded bytes only; official RBSE endpoint downloads timed out, so current official-byte identity and errata comparison remain open.
+- **Read-back verification:** 12/12 checks passed: recurrence row/schema counts, unique bid IDs, 9/10–10/10–8/10 filename arithmetic, listing-only statuses, 13-row source-gap CSV/schema, both RBSE hashes recorded, and no official authentication overclaim. These are documentary checks, not PDF-content, scientific or software tests.
+- **Commits:** recurrence CSV f811c041a93c5f1b01b8437122e85e8e6bcbf0f9; recurrence report 46a1736ae2255079857c4df86a2cbd4ca150455f; source-gap report 644059f526b851b5fb0f0c00932149bac66c11a8; source-gap CSV 2f550f24820bda5b26d5ac61bc2e9fda5e00210d.
+- **Decision:** GeM recovery discovery improves, but no official tender attachment is authenticated. RBSE upload hashes are now recorded, but official equivalence is open. Phase 1 and Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED. No app code, 3D asset, model or scientific regression test was implemented/run.
+
+## Next bounded work unit
+
+Continue Phase 1 using already inspectable source material while seeking actual attachment bytes through an openly accessible primary route or user-provided documents. Prioritise exact RBSE official-byte comparison, NCERT kit variants and complete Biology/MSCL manuals; do not infer procurement data from repeated filenames. Next source-side design work should also resolve per-task apparatus/no-match records into a reviewer-ready BOM and rights/safety/validation checklist, without promoting candidate mappings to verified status.
