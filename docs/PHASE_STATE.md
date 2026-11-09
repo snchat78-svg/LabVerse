@@ -1478,3 +1478,17 @@ No app/solver implementation or hazardous wet-chemistry procedure was added. Pha
 
 Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 remains BLOCKED. The next bounded Phase 1.1 task is official Biology manual 13163 and separate with-/without-microscope source recovery; the MSCL procurement blocker remains open for retry when a legitimate official payload route works.
 
+## 2026-11-09 — Biology kit-manual official source discovery
+
+- [x] Reconfirmed NCERT's revised School Kits index lists the Higher Secondary Biology Kit Manual for Grades XI/XII with an English link.
+- [x] Confirmed official catalogue identifier 13163 for the English Biology Kit Manual and separately recorded Hindi catalogue title code 13193.
+- [x] Reconfirmed the official specification index lists the Biology with-microscope and without-microscope kit variants separately.
+- [x] Tried the official manual index and both direct Biology specification targets; live routes were inaccessible/HTTP 502 in the current retrieval channel.
+- [x] Explicitly distinguished the separate NCERT Class XI Biology Laboratory Manual (`kelm301.pdf`) from the Higher Secondary Biology Kit Manual code 13163.
+- [x] Updated the Biology source gap and added a 7-row machine-readable discovery ledger.
+- [ ] Obtain the actual official manual code 13163 PDF and both specification attachment payloads; hash and inspect bytes/metadata before item extraction.
+- [ ] Compare apparatus, stains/reagents, specimens, slides, visual cards, quantities and school-managed items against both kit variants and the 50-row Biology task-gap register.
+- [ ] Resolve the 50 task-level evidence gaps; all tasks still need Biology expert review, safety/ethics review and method/result validation.
+
+**Evidence boundary:** current pass confirms listing/catalogue identities only. No official Biology kit manual PDF or variant attachment bytes/hash/content was obtained. No catalogue identifier was promoted to manual-content evidence. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
