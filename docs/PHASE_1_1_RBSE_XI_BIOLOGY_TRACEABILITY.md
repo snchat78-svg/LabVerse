@@ -344,3 +344,6 @@ Important per-row status distinctions:
 ## 7. Next task
 
 After GitHub read-back verification, create a consolidated Class XI Biology summary and machine-readable CSV across 22 task groups. Include a per-row source evidence status and the absence of a separate XI Biology project component. Then proceed to Class XII Physics in the source-order workflow.
+
+
+**Consolidated task-gap register:** `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. The consolidated register retains the original unresolved gap, evidence, safety, rights and review state for all 50 XI/XII task records; all candidate item IDs resolve to the 177-row uploaded-source index, but this does not authenticate or expert-verify the source.
