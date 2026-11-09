@@ -307,3 +307,10 @@ The NCERT Physics manual preface says the travelling microscope and Searle's app
 - [RBSE Chemistry topic crosswalk](data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv)
 
 This is the NCERT-hosted 2018 educational manual, not the current procurement specification or delivered BOM. All reagent labels remain blocked from live use until identity-specific SDS and expert safety review. The full Chemistry crosswalk is topic-level evidence, not experimental validation. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 — MSCL manual and specification comparison
+- [MSCL manual-to-upload item reconciliation report](docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md)
+- [Machine-readable 51-item crosswalk](data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv)
+
+All 51 historical-manual apparatus entries have candidate mappings into the 54 numbered items from the uploaded MSCL specification index, with four upload-only rows identified. Differences are not promoted to official changes because the uploaded PDF is not authenticated against the current NCERT attachment. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
