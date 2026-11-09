@@ -322,3 +322,10 @@ All 51 historical-manual apparatus entries have candidate mappings into the 54 n
 - [Updated source authentication and procurement gaps](docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md)
 
 The 2018 MSCL manual's 124-row reagent label list is not exhaustive against its own experiment/appendix text. All reagent references remain blocked from live use pending identity-specific SDS and expert review. NCERT confirms a Biology kit manual (publication code 13163) and separate with-/without-microscope specifications, but the official manual PDF bytes remain unretrieved. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 — Biology task-gap audit
+- [Task-level gap register report](docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md)
+- [50-task machine-readable gap register](data/catalogues/biology_task_level_gap_register.csv)
+
+All 22 Class XI and 28 Class XII Biology records are included. Their candidate source-item IDs resolve to the uploaded with-microscope catalogue (0 dangling references), but the source is not authenticated and many slide/card/specimen pages remain index-only. The Biology without-microscope specification and official manual 13163 are still unretrieved. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
