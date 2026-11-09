@@ -522,3 +522,12 @@ Validation design: exactly one row per unique task ID, no promotion from topic m
 - **Prior file recovery:** Library list/read and raw-file inspection confirm `MSCL_copy.pdf` is retained (19,798,501 bytes, 65 pages, SHA-256 `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`); rendered cover says NCERT Specification Document of Items — Micro Scale Chemistry Laboratory Kit, Grades 11 & 12. `11_2027_copy.pdf` and `12_2027_copy.pdf` are also retained RBSE syllabus files for session 2026–2027 (155 and 169 pages respectively).
 - **Artifacts updated:** official PDF intake manifest; source-authentication/procurement gap CSV; intake links/receipt report; Phase State; this Work Log.
 - **Next bounded work:** full content/page audit of the Biology kit manual, with item and exercise mapping against the existing RBSE Biology task records. Keep the two kit specification variants separate. No Phase 1 exit gate is closed by receipt alone; Phase 2 remains BLOCKED.
+
+
+## 2026-11-09 — Correction to Biology variant upload tracking
+
+The user clarified that both the Biology kit specification PDFs (with microscope and without microscope) were supplied in earlier work. The previous Phase 1.1 intake instruction unnecessarily asked for both again. This was caused by an incomplete source-gap record: the with-microscope PDF already has a 177-row indexed catalogue and prior upload hash in the repository, while the without-microscope record had been left as NOT_RETRIEVED without reconciling the user's earlier submission.
+
+Correction: acknowledge prior receipt; do not request either PDF again. Recover the without-microscope original attachment or prior extracted catalogue from existing project records. If it is not exposed to the current file index, preserve that as an internal retrieval limitation and continue other Phase 1 work using already available evidence. This correction does not authenticate the bytes or approve variant deltas.
+
+Top-level Phase 2 is not starting because the Phase 1 exit gate remains open independently of this upload issue: exact current Physics/MSCL procurement evidence, full source-to-practical/apparatus/asset/model/test traceability, outstanding Biology item/specimen content validation, rights sampling, safety review and subject-expert review remain open. Continue bounded work within Phase 1; never re-ask for files already supplied.
