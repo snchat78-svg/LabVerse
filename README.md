@@ -335,3 +335,8 @@ All 22 Class XI and 28 Class XII Biology records are included. Their candidate s
 - [Machine-readable MSCL attachment retrieval attempts](data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv)
 Current result: official NCERT attachment remains listed but retrieval-blocked; no current MSCL reagent BOM is authenticated. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
 
+### Phase 1.1 — Biology kit-manual source discovery (2026-11-09)
+- [Official Biology kit-manual and variant source discovery](docs/PHASE_1_1_BIOLOGY_MANUAL_SOURCE_DISCOVERY_2026_11_09.md)
+- [Machine-readable Biology manual discovery attempts](data/catalogues/biology_manual_source_discovery_2026_11_09.csv)
+Current result: NCERT catalogue identifies Biology kit manual codes 13163 (English) and 13193 (Hindi title), and lists two separate kit variants; actual manual/specification bytes remain unretrieved. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
