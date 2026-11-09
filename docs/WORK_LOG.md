@@ -500,3 +500,13 @@ Validation design: exactly one row per unique task ID, no promotion from topic m
 
 - **Additional Library retrieval check:** exact Biology kit manual/filename searches and a broader PDF search were run against the Library. The exact queries returned no hits; the broader query surfaced the RBSE syllabus and unrelated PDFs but did not surface the kit manual or either kit variant. Logged in the 8-row source-discovery CSV. This is a search result, not proof of global absence.
 
+## 2026-11-09 — Exact NCERT direct PDF targets and user-assisted intake
+
+- **Phase:** Phase 1 / subphase 1.1; primary-source recovery. No phase transition.
+- **Links recovered:** followed NCERT official specification index links for MSCL, Biology with microscope, Biology without microscope and Physics. Followed the English Biology Kit Manual link from NCERT's Revised Kit Manuals index; exact manual target is now available.
+- **Size hints surfaced by web retrieval:** MSCL 19,808,858 bytes; Biology with microscope 59,585,913 bytes; Biology without microscope 63,918,957 bytes; Physics 42,539,010 bytes. These are tool-reported response lengths, not local files/hashes.
+- **Download attempts:** independent container download failed for all five official PDFs; web retrieval refused the large specification payloads; the manual link resolved but returned an unusable 400 OK response without bytes.
+- **Artifacts:** `docs/PHASE_1_1_OFFICIAL_PRIMARY_PDF_INTAKE_LINKS_2026_11_09.md`; `data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv`; source gap report/CSV and Phase State updated.
+- **Decision:** exact official URLs are now supplied for user-assisted upload; do not promote any current file contents without byte/hash verification.
+- **Next:** user downloads and uploads the original five PDFs unchanged; after receipt compute SHA-256, page count and metadata, inspect content, compare prior upload copies, then reconcile Physics, Chemistry and Biology registers. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
