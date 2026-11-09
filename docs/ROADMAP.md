@@ -339,3 +339,15 @@ Next: create a source-authentication/procurement-gap register by source-document
 Evidence: source-authentication register and 12-row CSV; report blob fc0103ce9902a0145dccf652b5bd115cac1b369b; CSV blob 199aa7bd4efb1db1d59d0093da6cde22394e9df4.
 
 Next: recover exact official RBSE 2027 and NCERT attachment bytes, hash them and compare to uploaded copies before altering any source mappings or opening Phase 2.
+
+
+## GeM attachment recovery lead — 2026-11-09
+
+- Third-party tender index reports current GeM bid GEM/2026/B/8248336 (published 6 Nov 2026), Basic Education Department Uttar Pradesh: Physics 364 sets, MSCL 516 sets and Biology-without-microscope 556 sets (1,436 total), with attachment filenames plus Excel BOQ.
+- Another third-party indexed summary reports 105 Physics items and 54 MSCL items in the attachments. These counts are discovery metadata only; attached files/BOQ not retrieved, hashed or authenticated. This does not resolve the manual/BOM discrepancy.
+- Gap register updated to 13 records: docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md and data/catalogues/phase1_source_authentication_procurement_gaps.csv.
+- No access-control bypass or automated seller login. Official GeM attachment retrieval remains open.
+
+Evidence: report blob e67eb97ef6005d22e22fa19033169fdd7a729f5a; CSV blob 756fdd3cc4c8d289bcf194240a337cd2daca5a9d.
+
+Next: retrieve permitted bidder-visible attachments from official GeM, hash and inspect the files, then compare against NCERT official bytes and uploaded copies. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
