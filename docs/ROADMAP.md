@@ -307,3 +307,22 @@ Artifacts:
 - data/catalogues/rbse_xii_biology_traceability_consolidated.csv
 
 Next bounded work unit: six-pack task-index reconciliation report across all RBSE packs. Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Six-pack RBSE task-index reconciliation — 2026-11-09
+
+- Six consolidated registers now cover **171/171 unique RBSE task/choice IDs**: XI Physics 41; XI Chemistry 27; XI Biology 22; XII Physics 39; XII Chemistry 14; XII Biology 28.
+- Reconciliation found 0 missing IDs, 0 extra IDs and 0 duplicates against the master task register.
+- A normalized 20-column six-pack register is committed at data/catalogues/rbse_six_pack_task_index_traceability.csv. It preserves each original CSV path. Original 17/18-column schema differences and absent section/choice fields are not silently filled.
+- Documentary checks: 10/10 master reconciliation and 10/10 normalized CSV read-back checks passed.
+- Source gaps remain: Fortin barometer, travelling microscope, phototransistor/IR source, open-topic XII Biology project, unauthenticated/partially inspected NCERT uploads and unresolved reagent/procurement data. These do not mean task-index IDs are missing.
+
+Evidence:
+- docs/PHASE_1_1_RBSE_SIX_PACK_TASK_INDEX_RECONCILIATION.md
+- data/catalogues/rbse_six_pack_task_index_traceability.csv
+- Report commit: 67dc918302325a8b2277d1a9e73dc007a4507e93
+- CSV commit: c8fe3ce3c557ac41dad9a9dd255383de018e4a74
+
+Task-index coverage sub-gate is DONE; Phase 1 remains IN PROGRESS and Phase 2 remains BLOCKED.
+
+Next: create a source-authentication/procurement-gap register by source-document family before any Phase 2 work.
