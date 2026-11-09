@@ -336,3 +336,8 @@ The register explicitly retains the unresolved task gaps: 37/50 rows have sample
 ## MSCL reagent screening update — 2026-11-09
 
 The historical NCERT-hosted MSCL manual's 124 numbered labels and two internal references now have a 126-record preliminary name-screen register (`data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv`). Eighteen exact-label text occurrences across 17 RBSE Chemistry task IDs are recorded as candidate links only. The register is not a GHS/SDS determination or supply BOM; all entries remain simulation-only and not approved. The current official MSCL procurement attachment and its exact reagent BOM remain unauthenticated/open. See `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`.
+
+
+### 4.7 RBSE Chemistry reagent evidence matrix (2026-11-09)
+
+All 41 RBSE XI/XII Chemistry task/choice IDs now have a one-row task-to-reagent evidence record at `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`. Seventeen tasks have candidate numbered/manual-body references from the historical 2018 MSCL manual; 24 have no exact label mapping assigned. These are not supply claims or validated methods. The matrix preserves topic-level match status, OR choices, ambiguity and formulation differences, current BOM status NOT_RETRIEVED_OR_AUTHENTICATED, and physical chemistry BLOCKED. See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`.
