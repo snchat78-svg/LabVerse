@@ -487,3 +487,14 @@ Validation design: exactly one row per unique task ID, no promotion from topic m
 - **Decision:** the retrieval retry is documented but the current MSCL attachment/BOM gate remains OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 - **Next bounded unit:** recover the official Higher Secondary Biology kit manual publication code 13163 and separately inspect the current with-microscope and without-microscope attachment variants. Keep the MSCL blocker for retry when an official byte-access route becomes available.
 
+## 2026-11-09 — NCERT Higher Secondary Biology Kit Manual source discovery
+
+- **Phase:** Phase 1 / subphase 1.1; documentary source discovery only.
+- **Official identities:** NCERT revised School Kits index lists the Higher Secondary Biology Kit Manual for Grades XI/XII with English link. Official other-books catalogue lists English manual code 13163 and a separate Hindi kit-manual title code 13193.
+- **Variant distinction:** Official specification index separately lists Biology kit with microscope and without microscope. Direct official targets for both variants were attempted and inaccessible in the current retrieval channel. The live kit-manual index also returned HTTP 502.
+- **Source distinction:** the NCERT Class XI Biology Laboratory Manual (`kelm301.pdf`, 2025–26) is a separate product, not the kit manual code 13163; it is expressly excluded as a substitute.
+- **Artifacts:** `docs/PHASE_1_1_BIOLOGY_MANUAL_SOURCE_DISCOVERY_2026_11_09.md`; `data/catalogues/biology_manual_source_discovery_2026_11_09.csv`; Biology source-gap report and CSV, Phase State and Work Log updated.
+- **Validation:** discovery ledger has 7 rows; 6/6 documentary identity/distinction checks recorded. No manual/variant bytes, hashes, PDF metadata or item contents obtained.
+- **Decision:** official listing and catalogue identifiers confirmed, but manual content and current variant specification gates remain NOT RETRIEVED / BLOCKED. Existing 50-task Biology gap register remains open.
+- **Next bounded unit:** continue locating an actual official download target/bytes for manual code 13163 and both kit variants; then hash and inspect before building the variant-specific apparatus/specimen/slide/stain BOM and detailed task crosswalk. Phase 2 remains BLOCKED.
+
