@@ -1261,3 +1261,26 @@ Evidence:
 - Roadmap: 9ffd04576aeff4995b34d545cc3f95fc89504d02
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 — Six-pack RBSE task-index reconciliation (2026-11-09)
+
+- [x] Read all six consolidated pack CSVs and the RBSE master task register.
+- [x] Reconcile pack task rows: XI Physics 41; XI Chemistry 27; XI Biology 22; XII Physics 39; XII Chemistry 14; XII Biology 28.
+- [x] Verify all 171 master IDs occur exactly once across the six packs.
+- [x] Confirm 0 missing, 0 extra and 0 duplicate task IDs.
+- [x] Create normalized 20-column six-pack CSV with source CSV lineage per row.
+- [x] Preserve absent original section/choice fields as blank instead of guessing.
+- [x] Run 10/10 master reconciliation checks and 10/10 normalized CSV read-back checks.
+- [ ] Source authentication, procurement BOM/tolerances, expert task-to-item checks, page-level visual inspection, reagent inventory, source-rights review, original asset acceptance, deterministic model validation, executable tests, safety and expert approvals remain open.
+- [ ] Next: source-authentication and procurement-gap register by source-document family.
+
+Evidence:
+- Six-pack report: docs/PHASE_1_1_RBSE_SIX_PACK_TASK_INDEX_RECONCILIATION.md
+- Six-pack normalized CSV: data/catalogues/rbse_six_pack_task_index_traceability.csv
+- Report commit: 67dc918302325a8b2277d1a9e73dc007a4507e93
+- CSV: c8fe3ce3c557ac41dad9a9dd255383de018e4a74
+- Work log: 031fe8b01f9e017a450b31049e531406fc88038c
+- Roadmap: 17c3b4bc149ff612d0f8b2bbdaf7e32d5f78a25d
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
