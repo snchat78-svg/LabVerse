@@ -319,3 +319,8 @@ A line-by-line comparison was recorded in `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITE
 - The comparison flags material, dimension, range, quantity and configuration differences, including wire-gauze asbestos content and several quantity differences.
 
 **Authentication boundary:** this comparison is between an NCERT-hosted 2018 teaching manual and an unauthenticated 2025 user upload. These are not official current-source amendments or delivered-kit deltas. Keep the current specification authentication gate open.
+
+
+### 4.5 MSCL reagent-list completeness cross-check (2026-11-09)
+
+Manual body and appendix text were checked against the numbered 124-label reagent register. Potassium permanganate is named in experiments 2.5/2.6 but has no exact standalone label in the numbered list; potassium iodide is named in experiment/appendix text but is represented ambiguously at best by the numbered label “Iodine solution” (no standalone Potassium iodide row). Potassium iodate is a different chemical and must not be used as a match for potassium permanganate. This demonstrates that the 124-item register is not an exhaustive list relative to the manual's experiment text. Two supplement records are in `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`; no recipe or concentration has been copied. Both remain blocked from live use pending current procurement documents, SDS and expert sign-off.
