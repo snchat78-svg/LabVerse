@@ -6,7 +6,7 @@ Scope: compare the six consolidated XI/XII Physics, Chemistry and Biology task r
 
 ## 1. Task-index reconciliation result
 
-<badge>Task-index coverage reconciled — documentary level only</badge>
+**Task-index coverage reconciled — documentary level only.**
 
 - RBSE master task-index IDs found: **171 unique IDs**.
 - IDs represented in the six consolidated pack CSVs: **171 unique IDs**.
