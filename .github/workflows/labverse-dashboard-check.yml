@@ -1,0 +1,37 @@
+name: LabVerse dashboard checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "dashboard/**"
+      - ".github/workflows/labverse-dashboard-check.yml"
+  pull_request:
+    paths:
+      - "dashboard/**"
+      - ".github/workflows/labverse-dashboard-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dashboard-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check dashboard JavaScript syntax
+        run: node --check dashboard/assets/dashboard.js
+
+      - name: Validate source catalogue read model
+        run: node dashboard/tests/validate-catalogue.mjs
+
+      - name: Validate JSON schema syntax
+        run: node -e "JSON.parse(require('fs').readFileSync('dashboard/data/schema.json','utf8')); console.log('Schema JSON parses successfully')"
