@@ -363,3 +363,12 @@ Next: retrieve permitted bidder-visible attachments from official GeM, hash and 
 - **Next:** keep developing source-to-item evidence and missing-equipment/BOM registers from inspectable primary material while seeking actual official RBSE/NCERT or permitted GeM attachment bytes. Keep listing-only mirrors separate from authenticated source documents.
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED. This unit did not implement application code, 3D assets or scientific engines.
+
+
+## Official Physics manual omission clarification — 2026-11-09
+
+NCERT manual 13164's preface text states that the travelling microscope and Searle's apparatus were still being developed for inclusion in that kit edition; prescribed options allow the required experiment count without them. The XII Physics EXP-14 traceability row now records the travelling microscope as a distinct external/school equipment requirement for that manual edition, not as supplied kit inventory. A later separate procurement specification could differ and remains unverified. The glass slab is not an equivalent substitute. Evidence was text-extracted from the NCERT-hosted PDF; screenshot returned HTTP 502. No visual check or scientific validation is claimed.
+
+See docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md, docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md and the updated XII Physics traceability CSV.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
