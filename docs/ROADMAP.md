@@ -37,21 +37,17 @@ Every phase must record: scope and files changed; evidence and sources used; tes
 
 Phase 0 is complete only as a planning/documentation baseline. It does not mean software, 3D assets, research connectors or scientific engines exist.
 
-## Current execution focus — 2026-11-08
+## Current execution focus — 2026-11-09
 
 - Main phase: Phase 1 — IN PROGRESS.
-- Active subphase: Phase 1.1 — NCERT kit specification recovery and source-to-asset traceability.
-- Phase 1.1 current evidence: the four official NCERT specification link targets are listed, but direct PDF retrieval attempts returned HTTP 502 on 2026-11-08; uploaded MSCL and Biology-with-microscope copies remain unauthenticated. A three-subject traceability pilot exists as DESIGN_ONLY.
-- Latest bounded result (2026-11-08): RBSE Class XI Physics experiments 17/17 now have candidate NCERT Physics manual row links, proposed original asset IDs, proposed model/rule IDs, planned test vectors and explicit source gaps. See docs/PHASE_1_1_RBSE_XI_PHYSICS_EXPERIMENT_TRACEABILITY.md and data/catalogues/rbse_xi_physics_experiment_traceability.csv. This is DESIGN_ONLY, not a verified kit equivalence or implementation.
-- Latest bounded results (2026-11-08): Class XI Physics experiments 17/17 and activities 13/13 now have candidate source-item, proposed asset, model/rule and planned test crosswalks. See the XI Physics experiment and activity traceability documents/CSVs. Both remain DESIGN_ONLY and are not verified for learner use.
-- Latest bounded results (2026-11-08): Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have task-level candidate crosswalks. The project register explicitly records that Fortin barometer has no matching item in the current 106-row Physics manual catalogue.
-- Latest bounded result (2026-11-08): Class XI Physics task-level documentary coverage is reconciled at 41/41 (17 experiments, 13 activities, 11 projects) in one normalized CSV. 52 distinct candidate manual item IDs and one explicit no-source match (Fortin barometer) are recorded. This is DESIGN_ONLY, not a source-verified or implemented Physics product.
-- Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 have a candidate MSCL apparatus crosswalk (19/19). Evidence is OCR-derived from an unauthenticated uploaded MSCL copy; it does not include a reagent BOM. All mappings remain DESIGN_ONLY.
-- Latest bounded progress (2026-11-08): Class XI Chemistry practical groups PRA-01–PRA-19 and projects PRJ-01–PRJ-08 now have candidate apparatus/model/test crosswalks. The OCR-derived MSCL catalogue is unauthenticated and does not establish chemical reagents, datasets or sample methods.
-- Latest bounded result (2026-11-08): Class XI Chemistry 19 practical groups + 8 projects = 27/27 tasks reconciled in one normalized CSV. The RBSE overview/detailed marks split is retained as unresolved; MSCL apparatus evidence remains OCR-derived and unauthenticated.
-- Latest bounded result (2026-11-08): Class XI Biology has 22/22 task groups mapped and consolidated. 96 distinct catalogue items are referenced; 57 remain index-only and must not be treated as individually verified. The uploaded Biology-with-microscope copy remains unauthenticated; no separate XI Biology project component is present in the RBSE register.
-- Next work unit: start Class XII Physics traceability from RBSE PDF pages 124–129 (18 experiments, 14 activities, 7 projects/choices), against candidate Physics manual item rows. Keep missing matches explicit.
-- Phase 2 remains BLOCKED until every Phase 1 exit criterion is satisfied and evidence is committed.
+- Active subphase: Phase 1.1 — NCERT kit-source authentication, procurement comparison and source-to-task traceability.
+- Latest Chemistry evidence: the 2018 NCERT MSCL manual is indexed separately (34 experiment topics, 51 apparatus rows and 124 numbered reagent/material labels plus two internal text references/ambiguities). A 126-row historical reagent screening register and a 41-row RBSE Chemistry task-to-reagent evidence matrix exist. These remain candidate/reference-only, not a current reagent BOM or approval for physical use.
+- Latest bounded retrieval retry (2026-11-09): the official NCERT specification index lists the current MSCL Grade XI–XII attachment, but direct NCERT and alternate www-host requests returned HTTP 502; independent download failed. A current GeM tender-index record lists the candidate MSCL filename and BOQ name, but the inspected third-party page exposes no attachment bytes. See `docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md` and `data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv`.
+- Current MSCL boundary: no current PDF/BOQ payload, SHA-256, revision, page count or reagent BOM is authenticated. Historical manual and uploaded specification bytes are not substituted for the current official attachment. All physical Chemistry use remains blocked pending current identity/formulation, SDS, exposure/waste and expert approvals.
+- Latest Chemistry task coverage: all 41 RBSE XI/XII Chemistry task/choice IDs are represented in `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`; 17 have candidate manual-reference links and 24 remain without exact mapping. No candidate has been promoted to method or supply equivalence.
+- Biology remains open: 50/50 XI/XII Biology task/choice records are consolidated with 0 dangling source IDs, but source authenticity, individual cards/slides/specimens, equipment/sample gaps, Biology expert review and method/result validation remain unresolved. Official Higher Secondary Biology kit manual code 13163 and the two kit variants remain unretrieved/authentication-open.
+- Six-pack task index reconciliation: 171/171 unique task IDs across all six RBSE packs; this is index-level integrity, not completion of detailed item/asset/model/test traceability.
+- Phase 2 remains BLOCKED until all Phase 1 exit criteria are independently verified and committed. No software implementation is to start early.
 
 ## Phase 1 — current phase
 
