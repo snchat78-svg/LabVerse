@@ -1431,3 +1431,18 @@ Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 - [ ] Verify all individual slides/cards/specimens, task samples and measurement gear; subject-expert and safety sign-off.
 
 Artifacts: `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## 2026-11-09 — MSCL reagent safety screen and explicit task-link audit
+
+- [x] Preserved all 124 numbered reagent/material labels from the NCERT-hosted 2018 MSCL manual, including duplicate source rows.
+- [x] Added two separately identified internal manual references: potassium permanganate in experiments 2.5/2.6, and potassium iodide referenced in experiment/appendix text while numbered row 56 says “Iodine solution”.
+- [x] Created a 126-record preliminary name-screen register at `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv`; linked report: `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`.
+- [x] Screening triage counts: 21 HIGH_CONCERN_NAME_FLAG; 23 CORROSIVE_OR_REACTIVE_FAMILY_FLAG; 7 VOLATILE_OR_FLAMMABLE_ORGANIC_FAMILY_FLAG; 74 GENERAL_REAGENT_REVIEW_REQUIRED; 1 LOWER_CONCERN_REFERENCE_ONLY.
+- [x] Exact whole-label text matching found 18 candidate reagent-record/task-register occurrences across 17 distinct RBSE task IDs. Matches are candidates only and require subject-expert confirmation; no match does not prove absence. Existing manual topic crosswalk is not promoted to reagent equivalence.
+- [x] All 126 rows remain BLOCKED_NO_LIVE_USE / SIMULATION_REFERENCE_ONLY, NOT_APPROVED and NOT_A_CURRENT_SUPPLY_OR_BOM_RECORD. Preliminary name tags are not GHS classification or SDS substitute.
+- [x] Updated the SRC-MSCL-UPLOAD evidence summary and this repository checkpoint.
+- [ ] Retrieve/hash the current official NCERT MSCL specification attachment; establish an exact current reagent BOM including identity, concentration/formulation, grade, quantity and school-managed status.
+- [ ] Complete identity-specific current SDS, exposure, compatibility, waste and Chemistry/Safety expert review; verify each RBSE task reagent requirement against authoritative method sources.
+
+No hazardous wet-lab method, concentration, preparation, mixing, handling or disposal instructions were added. No scientific engine, executable model, app code, 3D asset or tests were implemented/run in this work unit. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
