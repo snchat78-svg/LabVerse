@@ -222,7 +222,7 @@ This is a promising recovery route for three currently missing attachments (Phys
 | NCERT Physics procurement specification | — | — | — | — | NOT RETRIEVED; do not substitute the separate Physics manual |
 | NCERT MSCL/SSBK official specification attachments | — | — | — | — | Officially listed; direct retrieval blocked |
 
-## 5. Procurement and task-level consequences
+## 6. Procurement and task-level consequences
 
 - A candidate item ID in a manual/spec OCR catalogue establishes only that the source register names the item. It does not establish current purchase supply, quantity, dimensions, make/model, grade, tolerance, accuracy, calibration, acceptance method or school-managed/optional status.
 - Chemistry apparatus entries do not establish acids, bases, salts, indicators, solvents, concentrations, reagent purity or reaction methods. A separate reagent/material BOM is required.
@@ -231,7 +231,7 @@ This is a promising recovery route for three currently missing attachments (Phys
 - The explicit task-level no/partial-match flags remain: XI Physics Fortin barometer; XII Physics travelling microscope; XII Physics phototransistor/IR source; Biology task-specific instruments/specimens listed above.
 - No substitute asset should be represented as the original instrument. Candidate virtual models must be labelled as proposed/simulated until verified.
 
-## 6. Phase 1 exit gates
+## 7. Phase 1 exit gates
 
 | Gate | Status |
 |---|---|
