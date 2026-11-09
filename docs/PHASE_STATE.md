@@ -1446,3 +1446,17 @@ Artifacts: `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalog
 - [ ] Complete identity-specific current SDS, exposure, compatibility, waste and Chemistry/Safety expert review; verify each RBSE task reagent requirement against authoritative method sources.
 
 No hazardous wet-lab method, concentration, preparation, mixing, handling or disposal instructions were added. No scientific engine, executable model, app code, 3D asset or tests were implemented/run in this work unit. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## 2026-11-09 — RBSE Chemistry task-to-reagent evidence matrix
+
+- [x] Added a one-row-per-task register for all 41 unique RBSE XI/XII Chemistry task/choice IDs: `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`.
+- [x] Added explanation and method/supply evidence limits: `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`.
+- [x] 17/41 task rows have explicitly reviewed candidate label references from the 2018 NCERT-hosted MSCL manual; 24/41 have no exact label mapping assigned. An unmapped row is not evidence that no reagent is needed.
+- [x] Retained the existing manual topic match classes and task choice groups; no topic match was upgraded to same-method or reagent equivalence.
+- [x] Candidate references include 2018 numbered labels, or the two separately recorded body-only/ambiguous references for potassium permanganate and potassium iodide. Ambiguous combined labels and acid-strength variants are called out rather than resolved by assumption.
+- [x] All 41 rows remain NOT_ESTABLISHED_BY_MANUAL_OR_ITEM_INDEX for current supply, NOT_RETRIEVED_OR_AUTHENTICATED for current official BOM, and BLOCKED for physical chemistry.
+- [ ] Retrieve/hash official current NCERT MSCL specification and confirm exact reagent identities, forms, grades, concentrations, quantities and school-managed status.
+- [ ] Validate each task-specific method against authoritative RBSE/NCERT sources; obtain identity-specific SDS and Chemistry/Safety expert review.
+
+No app/solver implementation or hazardous wet-chemistry procedure was added. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 BLOCKED.
