@@ -67,11 +67,13 @@ A separate NCERT notification dated 11 February 2020 listed a Senior Secondary C
 - Experiment index rows: 34.
 - Apparatus index rows: 51.
 - Reagent index rows: 124.
+- Internal experiment-text/appendix references not represented unambiguously as standalone numbered labels: 2 flagged entries (potassium permanganate; potassium iodide / “Iodine solution”).
 - Reagent labels explicitly found in manual body/appendix but not represented as standalone rows in the numbered register: 2 (potassium permanganate; potassium iodide/ambiguous “Iodine solution” entry).
 - Chemistry crosswalk rows: 32.
 - Unique source reagent numbers: 124.
 - Duplicate source label preserved: Potassium iodate (source numbers 80 and 87).
 - Reagent rows with live-use blocked: 124/124.
+- Supplementary internal reagent list-completeness records: 2, both live-use blocked.
 - Supplementary internal reagent-list completeness flags: 2 entries, both blocked from live use.
 - Reagent rows with SDS review pending: 124/124.
 - Current procurement spec authenticated: NO.
@@ -115,3 +117,15 @@ It pairs all 51 apparatus rows from the 2018 manual against the 54 numbered kit-
 The comparison flags material differences (borosilicate vs soda glass boiling tube; polypropylene/LDPE vs LDPE pipette; PVC vs HDPE vial), dimension/range differences, quantity differences (including micro burettes 8 vs 1 and micro measuring cylinders 4 vs 2), and safety differences (asbestos centre only stated in the uploaded copy's wire-gauze entry). These are **differences between a historical manual and an unauthenticated user upload**, not proof of changes in NCERT's current official specification.
 
 Read-back checks: 10/10 PASS (55 comparison rows; 51/51 manual entries mapped once; 4 uploaded-only rows correctly identified; all references resolve to upload catalogue rows; provenance remains upload-only; mercury and asbestos restrictions preserved). No current procurement equivalence is claimed.
+
+
+## 10. Internal list-completeness cross-check
+
+The 124 numbered reagent/material labels were checked against experiment-body and appendix text. Two notable internal completeness gaps were identified:
+
+1. **Potassium permanganate** is named in manual experiments 2.5 and 2.6, but has no exact standalone entry in the numbered reagent list. Potassium iodate is a different substance and is not a match.
+2. **Potassium iodide (KI)** is separately named in experiment/appendix text, while the numbered list contains an ambiguous “Iodine solution” line rather than a standalone potassium iodide entry with identity/formulation/quantity.
+
+This means the numbered 124-row register is not an exhaustive reagent inventory relative to the manual's own text. These are recorded in `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`. No concentration, recipe, mixing instruction or handling procedure is copied. Both entries remain blocked from live use pending current procurement proof, identity-specific SDS and expert approval.
+
+The source text was extracted from an NCERT-hosted PDF. The screenshot/page-image retrieval failed HTTP 502; no visual verification or byte SHA-256 is claimed.
