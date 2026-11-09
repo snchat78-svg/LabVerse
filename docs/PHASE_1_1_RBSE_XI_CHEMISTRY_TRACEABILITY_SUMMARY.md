@@ -68,3 +68,8 @@ The consolidated CSV is data/catalogues/rbse_xi_chemistry_traceability.csv.
 Class XI Chemistry documentary task coverage: **27/27 task IDs reconciled**. This is not verification of reagent supply, method validity, scoring, safety or scientific results.
 
 Next source-order work unit: Class XI Biology practical/spotting task groups from the RBSE master register, followed by the Biology projects/remaining requirements recorded there. Phase 1.1 and Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Task-level reagent evidence matrix — 2026-11-09
+
+The new consolidated matrix `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` contains one row for each of the 27 Class XI Chemistry practical/project task IDs. It carries the existing topic match class while separately recording candidate 2018 manual reagent labels, source-body-only references, missing mappings and current-supply/method/safety blocks. See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`. Candidate overlap is not evidence that the current kit supplies the chemical or that an experiment is approved.
