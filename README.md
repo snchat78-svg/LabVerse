@@ -281,3 +281,12 @@ Official RBSE 2027 and NCERT specification index listings are recorded separatel
 - [Gap register CSV — 13 records](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
 
 A third-party tender index reports GeM bid GEM/2026/B/8248336 with Physics, MSCL and Biology-without-microscope attachments. Attachment bytes and BOQ are not retrieved or authenticated; reported 105/54 item counts remain discovery-only. Phase 1 stays open, Phase 2 blocked.
+
+
+## Phase 1.1 — Second source retrieval audit (2026-11-09)
+- [GeM repeated attachment filename audit](docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md)
+- [GeM attachment recurrence CSV](data/catalogues/gem_kit_specification_mirror_recurrence.csv)
+- [Updated source authentication and procurement gap register](docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md)
+- [Updated machine-readable source gap register](data/catalogues/phase1_source_authentication_procurement_gaps.csv)
+
+The exact uploaded RBSE 2027 PDF hashes and metadata are now recorded. Ten third-party GeM listings repeat the NCERT kit attachment filenames, but no attachment/BOQ bytes were retrieved or authenticated. Filename recurrence is not proof of official content or revision. Phase 1 remains IN PROGRESS and Phase 2 remains BLOCKED.
