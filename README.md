@@ -260,3 +260,10 @@ The register preserves redox alternatives, the four-mark OR choices and the cont
 - [Consolidated Biology CSV — 28 rows](data/catalogues/rbse_xii_biology_traceability_consolidated.csv)
 
 The register distinguishes OCR/visual/index evidence and keeps RBSE's investigatory-project topic teacher-assigned. Index-only cards/slides are not visually verified. Next: six-pack RBSE task-index reconciliation.
+
+
+## Phase 1.1 — Six-pack RBSE task-index reconciliation (2026-11-09)
+- [Six-pack reconciliation report — 171/171 task IDs](docs/PHASE_1_1_RBSE_SIX_PACK_TASK_INDEX_RECONCILIATION.md)
+- [Normalized six-pack traceability CSV — 171 rows, 20 columns](data/catalogues/rbse_six_pack_task_index_traceability.csv)
+
+All six packs match the RBSE master task index with zero missing, extra or duplicate task IDs. This is documentary task coverage only; source authentication, procurement equivalence, assets, scientific models, tests and expert/safety approvals remain Phase 1 gates. Next: source-authentication and procurement-gap register.
