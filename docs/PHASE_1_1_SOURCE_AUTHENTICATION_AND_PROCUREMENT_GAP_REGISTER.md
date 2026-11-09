@@ -50,13 +50,13 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 
 - **Official index/listing:** 2027 Class 11 and Class 12 links visible on official RBSE syllabus index (checked 2026-11-09)
 - **URL(s):** https://rajeduboard.rajasthan.gov.in/anudeshika-etc/anudeshika-syllabus.htm | https://rajeduboard.rajasthan.gov.in/anudeshika-etc/11_2027.pdf | https://rajeduboard.rajasthan.gov.in/anudeshika-etc/12_2027.pdf
-- **Retrieval/authentication:** Official index opened; both direct PDFs timed out in the 2026-11-09 retrieval pass. Previous repository audit reports ~23.3 MB / 17.6 MB payload errors.
-- **Uploaded-copy provenance:** User-supplied 11_2027_copy.pdf and 12_2027_copy.pdf; exact SHA-256 values not recorded in master RBSE task register.
-- **Evidence limit:** Practical pages read/visually checked in user copies; current official payload not inspected or byte-authenticated.
+- **Retrieval/authentication:** Official index opened; both direct PDF follows timed out in the 2026-11-09 retrieval pass. The exact user-supplied uploads were recovered from the current conversation Library and locally hashed/metadata-inspected on 2026-11-09. Official endpoint bytes were not obtained.
+- **Uploaded-copy provenance:** User-supplied `11_2027_copy.pdf` — 23,343,499 bytes, 155 pages, SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`; PDF Author `Deepak Mudgal`, Creator `Microsoft Word 2007`, Producer `4-Heights PDF Library 3.4.0.6904`, CreationDate 2026-05-19, ModDate 2026-05-22. User-supplied `12_2027_copy.pdf` — 18,279,805 bytes, 169 pages, SHA-256 `2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34`; Producer `4-Heights PDF Library 3.4.0.6904`, ModDate 2026-06-01, PDF 1.7.
+- **Evidence limit:** Hashes and PDF metadata now identify the exact uploaded bytes used for the task extraction. They do not prove that those bytes are identical to the current RBSE-hosted files. No official-byte hash or errata comparison has been obtained.
 - **Affected tasks/packs:** ALL_171_RBSE_XI_XII_TASK_RECORDS
-- **Unknown fields:** Exact-byte identity, revision/metadata, whether official 2027 PDFs match user copies; any later correction/errata.
+- **Unknown fields:** Exact-byte identity, revision/metadata of current official PDFs, and any later correction/errata.
 - **Severity:** BLOCKER_PHASE_1
-- **Required next action:** Retrieve official PDFs through a working official route; capture SHA-256, PDF metadata/page count; compare pages 114–147 and all task IDs against user copies; resolve differences before declaring official curriculum coverage.
+- **Required next action:** Obtain the official PDFs through a working official route; hash the official responses and compare against these recorded user-upload hashes, including pages 114–147 and all 171 task IDs.
 
 ### SRC-NCERT-SPEC-INDEX — NCERT Grade XI–XII kit specification index and four attachment targets
 
@@ -210,6 +210,27 @@ Discovery source: https://www.tenderdetail.com/Indian-Tenders/TenderNotice/58427
 
 This is a promising recovery route for three currently missing attachments (Physics, MSCL and Biology without microscope), but it does not close any source-authentication gate yet.
 
+### 4.1 Second retrieval pass: public GeM attachment recurrence and official-route limits (2026-11-09)
+
+A second retrieval attempt was made after the current-bid discovery:
+
+- The official GeM BidPlus domestic host and public document routes could not be read through the current retrieval channel. The official GeM global-bid listing page was reachable, but it is a Global Tender Enquiry interface and did not expose the domestic Basic Education Department bid.
+- The third-party indexes were cross-checked against several earlier public GeM tender records. The same three NCERT kit attachment filenames recur in multiple separate GeM bid listings. This improves confidence that the filenames are persistent shared attachment names, but it does **not** prove that the byte payloads are identical, official, current or unchanged.
+- No publicly readable attachment payload or BOQ bytes were obtained from the tender-index pages. The page listings expose document names (and, on one TenderKart record, displayed file sizes) but not a direct unauthenticated download URL in the current retrieval interface.
+- No GeM seller-login workflow, session-cookie extraction, credential use, anti-bot bypass or paid third-party API was used.
+
+The machine-readable recurrence ledger is `data/catalogues/gem_kit_specification_mirror_recurrence.csv` (10 unique tender references). Listed filename recurrence counts:
+- Physics specification filename: 9 of the 10 third-party tender records.
+- MSCL specification filename: 10 of the 10 records.
+- Biology-without-microscope filename: 8 of the 10 records.
+- Current bid `GEM/2026/B/8248336` also lists BOQ `1793944092.xlsx`; it remains listing metadata only.
+
+TenderKart displayed 11.63 MB for the Physics file, 18.89 MB for MSCL and 17.60 MB for Biology without microscope in one older tender record. These are third-party page metadata only; no downloaded bytes exist to compare or hash. All rows in the recurrence ledger remain `LISTING_ONLY_NOT_AUTHENTICATED`.
+
+The same second pass recovered the exact user-supplied RBSE 2027 PDF bytes from the conversation Library and recorded their SHA-256 and PDF metadata in the RBSE gap entry. This closes the missing-upload-hash documentation gap, not official RBSE byte authentication.
+
+**Result:** source discovery coverage improved; no NCERT/GeM attachment-content gate closed. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
 ## 5. Exact uploaded-copy manifests
 
 | Uploaded copy | Page count | Size | PDF metadata | SHA-256 | Authentication |
@@ -253,4 +274,4 @@ This is a promising recovery route for three currently missing attachments (Phys
 
 ## 8. Next work unit
 
-Work on the highest-impact retrieval blocker first: official RBSE 2027 PDF recovery and byte comparison, followed by the four NCERT kit specification attachments. Once bytes are recovered, calculate SHA-256 locally, inspect metadata/revision and compare item-level BOMs before changing any candidate mapping. Do not reclassify uploaded copies as official or move to Phase 2 until the Phase 1 exit gates have evidence and approvals.
+Continue pursuing primary-source bytes for the official RBSE 2027 PDFs and all four NCERT kit specification attachments through openly accessible official routes. For the recurring GeM attachment filenames, obtain the actual files only from a permitted public source or user-provided copy, record provenance before inspection, hash every byte payload and compare with the NCERT-index targets and existing uploads. In parallel, continue Phase 1 source-to-item-to-asset/model/test gap resolution on already inspectable material. Do not promote third-party mirrors to official status or move to Phase 2 until all Phase 1 exit gates have evidence and approvals.
