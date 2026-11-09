@@ -52,3 +52,31 @@ For each uploaded PDF, record byte length and SHA-256 first; inspect PDF metadat
 This intake is still Phase 1.1 of Phase 1. It does not close any Phase 1 gate and does not authorise Phase 2. Phase 2 remains BLOCKED until all Phase 1 exit criteria are verified. No app implementation, scientific solver or 3D asset is claimed by this work unit.
 
 Machine-readable manifest: `data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv`.
+
+
+## 7. Biology kit manual received — 2026-11-09
+
+Two files were uploaded in the current conversation:
+
+- `Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111.pdf`
+- `Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111 (1).pdf`
+
+**Duplicate check:** both files are 20,028,910 bytes and have identical SHA-256:
+`c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086`.
+They are one unique source candidate, not two different kit variants.
+
+**PDF inspection:** PDF metadata reports 141 physical pages. The visible title is *Manual of Secondary Stage Biology Laboratory Kit for Grades 11th & 12th*; ISBN 978-93-5292-528-5; First Edition March 2018; reprints listed October 2018, January 2019 and March 2020. The table of contents lists Exercises 1–60 for Grades 11 and 12, and the manual includes equipment, specimen, permanent-slide and chemical/reagent/stain indexes.
+
+**Evidence status:** user-supplied NCERT manual candidate received and hash-identified. The visible publication data is consistent with the NCERT manual listing, but the live NCERT PDF payload could not be retrieved for an independent byte-for-byte comparison. Therefore it is **not yet marked OFFICIAL_BYTE_AUTHENTICATED**. Keep it separate from the Biology-with-microscope and Biology-without-microscope specification PDFs.
+
+## 8. Previously uploaded PDF files retained in Library
+
+- `MSCL_copy.pdf`: retained; 19,798,501 bytes; 65 pages; SHA-256 `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`. Visual inspection of page 1 confirms the cover title *NCERT Specification Document of Items — Micro Scale Chemistry Laboratory Kit, Grades 11 & 12*. It remains a user-uploaded candidate, not independently authenticated against the current official NCERT attachment.
+- `11_2027_copy.pdf`: retained as RBSE Class 11 syllabus session 2026–2027; 155 pages.
+- `12_2027_copy.pdf`: retained as RBSE Class 12 syllabus session 2026–2027; 169 pages.
+
+The RBSE PDFs are curriculum sources, while MSCL is a Chemistry kit specification candidate; they are not duplicates of the Biology kit manual.
+
+## 9. Next bounded work
+
+Continue the Phase 1.1 content audit of the received Biology manual: extract the full apparatus/specimen/permanent-slide/chemical indexes and map Exercises 1–60 to the existing RBSE XI/XII Biology task records. Keep the two Biology specification variants separate and retain Phase 2 as BLOCKED until all Phase 1 exit criteria pass.
