@@ -301,3 +301,22 @@ Start RBSE Class XII Biology task/spotting coverage from the master register pag
 ## Next work unit
 
 Create a six-pack RBSE task-index reconciliation report. Read all six consolidated pack registers (XI Physics, XI Chemistry, XI Biology, XII Physics, XII Chemistry and XII Biology), compare each task/choice group with docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md, identify missing/duplicate/unmatched IDs and report evidence limitations. Then update the Phase 1 exit criteria without claiming Phase 1 is complete.
+
+
+## 2026-11-09 — Six-pack RBSE task-index reconciliation
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** compare six consolidated CSVs (XI Physics, XI Chemistry, XI Biology, XII Physics, XII Chemistry, XII Biology) against the all-six-pack RBSE master task register.
+- **Pack counts:** 41 + 27 + 22 + 39 + 14 + 28 = **171 task/choice records**.
+- **Exact ID result:** master contains 171 unique task IDs; six pack CSVs contain the same 171 unique IDs; missing = 0; extra = 0; duplicates = 0.
+- **Normalized data:** data/catalogues/rbse_six_pack_task_index_traceability.csv — 171 rows, 20 columns, original source CSV lineage recorded in each row.
+- **Schema issue:** original pack CSVs differ (17 or 18 columns); section/choice_group fields are blank where the source pack schema did not supply them. No selection or section values were inferred.
+- **Explicit source/match exceptions retained:** XI Physics Fortin barometer; XII Physics travelling microscope; XII Physics phototransistor/IR source; XII Biology teacher-assigned project has no fixed topic-specific item. These do not reduce task-index completeness; they remain evidence gaps.
+- **Checks:** initial master reconciliation 10/10 PASS; normalized CSV read-back 10/10 PASS. All are documentary checks, not scientific/app tests.
+- **Evidence:** docs/PHASE_1_1_RBSE_SIX_PACK_TASK_INDEX_RECONCILIATION.md; data/catalogues/rbse_six_pack_task_index_traceability.csv.
+- **Commits/blob SHAs:** report 792f16784a88b6c3c73bee059b0c269a4bfc88a6 (format correction 67dc918302325a8b2277d1a9e73dc007a4507e93); normalized CSV f9c408230ba70519b03591252054e7624acd64d6.
+- **Gate:** task-index coverage sub-gate DONE; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+## Next work unit
+
+Create a source-authentication and procurement-gap register by document family (Physics manual, MSCL specification, Biology-with-microscope specification and any missing no-match apparatus sources). Record official URL/revision, uploaded file hash/provenance, retrieval/authentication result, page-level inspection level, affected RBSE task IDs, unresolved BOM attributes and required next evidence. Do not begin Phase 2 until Phase 1 source/asset/model/test/safety/expert gates close.
