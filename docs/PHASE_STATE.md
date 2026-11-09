@@ -23,7 +23,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry practicals 19/19 and projects 8/8 have separate candidate apparatus/model/test crosswalks; both use unauthenticated OCR source rows and preserve reagent/sample/data gaps.
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
-- Current next work unit: begin Class XII Physics source-order traceability (18 experiments, 14 activities, 7 project choices) against candidate NCERT Physics manual item IDs; preserve all source gaps.
+- Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
+- Current next work unit: create a six-pack task-index reconciliation report from all six consolidated registers against the RBSE master task register, listing missing/duplicate IDs, choice-group discrepancies and unmatched evidence. Then refresh the explicit Phase 1 exit checklist.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1237,5 +1238,26 @@ Evidence:
 - Summary: docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md
 - Work log: a6f12051390b331eabbe44f5c57e3c82bddc2556
 - Roadmap: 64db0f56270f2db116fcd71c78f2ef1013dbdd26
+
+Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Class XII Biology traceability (2026-11-09)
+
+- [x] Map 6 Botany major, 6 Zoology major, 5 Botany minor, 4 Zoology minor, 6 spotting groups and 1 open-topic investigatory project (28/28).
+- [x] Create evidence-tiered task Markdown and 18-column CSV.
+- [x] Verify all 28 RBSE task IDs and all 83 distinct referenced catalogue rows against the repository master/catalogue.
+- [x] Preserve OCR, visual-check, index-confirmed and index-only evidence separately.
+- [x] Keep the project topic open and avoid fabricating project-specific apparatus IDs.
+- [x] Create summary and consolidated CSV; read-back checks 12/12 PASS.
+- [ ] Page-level inspection/authentication of card/slide/specimen source content, missing instruments/reagents, method validation, expert/safety/rights approvals, original asset acceptance and scientific tests remain open.
+- [ ] Next: six-pack task-index reconciliation across all consolidated pack registers.
+
+Evidence:
+- Detail: 2222c66c4166663a8db7e6190d7257edddb37d23
+- Task CSV / consolidated CSV: 5b5e5ff38cc9ce5377ac998162ffcbe38ac1b802
+- Summary: ffa986b82a7184a8886958f7f9f2ed39655bd624
+- Work log: 33ff7347435ecefacd17cfeb1fef536ab8973b78
+- Roadmap: 9ffd04576aeff4995b34d545cc3f95fc89504d02
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
