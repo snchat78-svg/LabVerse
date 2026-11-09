@@ -67,10 +67,12 @@ A separate NCERT notification dated 11 February 2020 listed a Senior Secondary C
 - Experiment index rows: 34.
 - Apparatus index rows: 51.
 - Reagent index rows: 124.
+- Reagent labels explicitly found in manual body/appendix but not represented as standalone rows in the numbered register: 2 (potassium permanganate; potassium iodide/ambiguous “Iodine solution” entry).
 - Chemistry crosswalk rows: 32.
 - Unique source reagent numbers: 124.
 - Duplicate source label preserved: Potassium iodate (source numbers 80 and 87).
 - Reagent rows with live-use blocked: 124/124.
+- Supplementary internal reagent-list completeness flags: 2 entries, both blocked from live use.
 - Reagent rows with SDS review pending: 124/124.
 - Current procurement spec authenticated: NO.
 - PDF page screenshot reviewed: NO (HTTP 502).
@@ -87,6 +89,19 @@ Read-back checks performed separately after committing the CSVs. These check fil
 3. Obtain current SDS/source records for every proposed reagent and make a separate chemical-by-chemical restriction decision. Replace hazardous manual equipment (notably mercury thermometer) with verified safer alternatives or simulation-only representations.
 4. Retrieve the exact current Biology manual and specification sources; do not mark Biology manual complete yet.
 5. Have the Chemistry crosswalk reviewed by an independent subject expert before any model or learner-facing protocol is authored.
+
+
+
+## 10. Internal list-completeness check: experiment-body/appendix reagent references
+
+A separate check compared the 124 numbered reagent/material labels with the experiment text and appendix. Two important completeness flags were found:
+
+1. **Potassium permanganate** is named in the manual's volumetric experiment descriptions (experiments 2.5 and 2.6), but there is no exact Potassium permanganate label in the 124-row numbered reagent index. The numbered index does contain Potassium iodate; it is not equivalent.
+2. **Potassium iodide (KI)** is named in experiment text and appendix. The 124-row numbered index has a label “Iodine solution” but no standalone “Potassium iodide” line; this is an ambiguous representation and does not define the reagent/solution formulation, quantity or concentration.
+
+These are not claims that the manual has no use/reference to those substances—the opposite is documented. The finding means the 124 numbered list cannot be treated as an exhaustive reagent inventory even for the manual's own experiment text. The supplementary gap ledger is `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`.
+
+The finding is still subject to line-by-line verification against the source PDF; the text extraction was readable but the screenshot call returned HTTP 502. No concentrations, preparation instructions or mixing steps were copied. Both entries remain blocked from real-world learner use pending the current specification, exact identity/formulation, SDS and expert review.
 
 **Decision:** MSCL manual source-discovery/review subtask is now DONE (text-extracted and indexed). MSCL current procurement/BOM, safety and expert-validation gates remain OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 
