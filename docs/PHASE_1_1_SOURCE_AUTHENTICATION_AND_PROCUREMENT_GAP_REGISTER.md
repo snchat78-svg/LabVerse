@@ -352,3 +352,15 @@ The historical 2018 manual (code 13166) and user-uploaded 2025 MSCL candidate re
 
 Machine-readable attempt ledger: `data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv`. Full audit: `docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md`.
 
+## 2026-11-09 — Higher Secondary Biology kit manual source discovery
+
+The official NCERT School Kits revised-manual index lists the *Manual of Secondary Stage Biology Laboratory Kit for Grades XI and XII* with an English link. NCERT's official other-books catalogue identifies the English catalogue entry as code **13163**, *Manual of Higher Secondary Biology Laboratory Kit*, and separately lists Hindi kit-manual title code **13193**. The code/title evidence does not establish manual bytes, edition, ISBN, reprint or content. The live kit-manual index returned HTTP 502; no direct Biology manual PDF target was resolved from the indexed result.
+
+The official specification index separately lists Biology kits **with microscope** and **without microscope**. Direct target URLs in the source register were tried in this pass but were inaccessible through the current retrieval channel. No variant bytes or hashes were obtained. The earlier user-uploaded with-microscope copy remains an upload-only hash, not an authenticated NCERT original; no without-microscope attachment bytes are in the repository.
+
+Do not substitute the separate NCERT Class XI Biology Laboratory Manual (e.g. 2025–26 file `kelm301.pdf`) for the Higher Secondary Biology kit manual code 13163. That manual has a different product purpose and cannot establish kit BOM/specimen/slide/card schedules.
+
+Existing 50-row Biology task-gap register remains a source/task ID integrity artifact only: 0 dangling IDs against the uploaded 177-row candidate index, but all task rows still require official source authentication, item-content verification, Biology expert review and method/result validation.
+
+New discovery report: `docs/PHASE_1_1_BIOLOGY_MANUAL_SOURCE_DISCOVERY_2026_11_09.md`. Machine-readable ledger: `data/catalogues/biology_manual_source_discovery_2026_11_09.csv`.
+
