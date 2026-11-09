@@ -472,3 +472,18 @@ Next: recover/hash the official current MSCL attachment and reconcile its exact 
 Created `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` and `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`. The matrix joins all 41 unique XI/XII Chemistry task/choice IDs to the existing 2018 MSCL topic crosswalk, candidate apparatus catalogue refs and manual reagent-label register. Seventeen tasks have reviewed candidate manual reagent/body-reference IDs; 24 have no exact mapping assigned. The latter does not imply that no reagent is required. Ambiguous cases are explicit: KMnO4 body-only reference; KI vs numbered “Iodine solution”; HCl/NaOH strength variants; combined chloroform/carbon-tetrachloride row; duplicate potassium iodate; and the difference between electrolyte salts and metal electrode materials. All supply, official-BOM, safety, method and expert-review gates remain open.
 
 Validation design: exactly one row per unique task ID, no promotion from topic match to reagent/method equivalence, and all 41 rows remain physical-chemistry blocked. No software test or executable chemistry model was run. Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED.
+
+## 2026-11-09 — Official NCERT MSCL attachment retrieval re-check
+
+- **Phase:** Phase 1 / subphase 1.1; no phase transition.
+- **Scope:** Re-attempt retrieval of the exact current MSCL attachment published by NCERT before claiming current reagent BOM equivalence.
+- **Official source:** NCERT's official Grades XI–XII specification index lists the Micro Scale Chemistry Laboratory Kit as a separate attachment. Exact listed target: `https://ncert.nic.in/division/dek/pdf/MSCL.pdf`.
+- **Attempts:** official index open returned HTTP 502; direct NCERT PDF route returned HTTP 502; alternate `www.ncert.nic.in` PDF route returned HTTP 502; independent container download failed. No file was produced.
+- **GeM discovery:** the third-party TenderDetail listing for `GEM/2026/B/8248336` (published 06-Nov-2026) lists `mscl_2025-08-05-14-26-21_3a5a681bb380b96ec69bc9e461f50115.pdf` and BOQ `1793944092.xlsx`. The inspected public page exposes filenames only, not payload URLs/bytes. Earlier 10-row tender-index recurrence remains third-party filename metadata only.
+- **Artifacts:** `docs/PHASE_1_1_MSCL_OFFICIAL_ATTACHMENT_RETRIEVAL_RECHECK_2026_11_09.md`; `data/catalogues/mscl_attachment_retrieval_attempts_2026_11_09.csv`; source-gap report and CSV updated; Phase State and Roadmap updated.
+- **Validation:** audit records 7/7 documentary retrieval-boundary checks. Source gap remains 14 records / 12 columns; MSCL record remains `BLOCKER_PHASE_1`. No attachment/BOQ bytes, hash, metadata, pages, revision, current reagent identity, formulation, quantity or supply status obtained.
+- **Evidence separation:** the 2018 NCERT-hosted manual (code 13166) and the user-uploaded 2025 candidate remain separate from the current official procurement attachment. The 126-row historical reagent screen and 41-row RBSE task matrix remain reference/candidate only; no live-use approval or GHS/SDS classification is inferred.
+- **No implementation claims:** no app code, 3D asset, scientific engine, live experiment or executable test was created/run in this work unit.
+- **Decision:** the retrieval retry is documented but the current MSCL attachment/BOM gate remains OPEN. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+- **Next bounded unit:** recover the official Higher Secondary Biology kit manual publication code 13163 and separately inspect the current with-microscope and without-microscope attachment variants. Keep the MSCL blocker for retry when an official byte-access route becomes available.
+
