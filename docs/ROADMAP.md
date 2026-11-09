@@ -372,3 +372,14 @@ NCERT manual 13164's preface text states that the travelling microscope and Sear
 See docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md, docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md and the updated XII Physics traceability CSV.
 
 Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## NCERT MSCL manual source review — 2026-11-09
+
+The NCERT-hosted *Manual of Microscale Chemistry Laboratory Kit* (Classes XI/XII, first ed. April 2018, ISBN 978-93-5007-861-7; catalogue code 13166) has been retrieved and text-indexed. LabVerse added 34 experiment/topic entries, 51 apparatus records and 124 numbered reagent/material labels, plus a grouped topic crosswalk covering all 41 RBSE XI/XII Chemistry task records. The current procurement attachment is still a separate, unverified source; neither manual entries nor the earlier upload are assumed to be the current delivered kit BOM.
+
+All 124 chemical/material labels are blocked from live use pending exact identity, SDS, exposure, waste and chemistry-expert approval. Mercury thermometer asset is excluded from physical learner use. No procedures or concentrations copied; NCERT manual is ALL RIGHTS RESERVED. PDF screenshot retrieval returned HTTP 502, so evidence is text-extracted only.
+
+Artifacts: `docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md` and four `data/catalogues/ncert_mscl_manual_*.csv` files. Read-back: 12/12 documentary checks PASS. No scientific model, app code or experiment test implemented.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
