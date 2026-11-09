@@ -76,3 +76,8 @@ Current NCERT specification attachment authentication, exact reagent BOM, reagen
 - [ ] RBSE task-by-task reagent completeness and method validation.
 
 **Decision:** this bounded MSCL reagent screening subtask is DONE as a documentary triage/register only. It does not close Phase 1.1. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## RBSE Chemistry task-level reagent matrix addendum — 2026-11-09
+
+The new 41-row task-level matrix (`data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`) links candidate labels from this manual register to RBSE task IDs without converting the manual's list into a supplied BOM. Seventeen task rows contain candidate label/body references; 24 have no exact match assigned. All remain blocked from live use. Details and ambiguity handling are in `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`.
