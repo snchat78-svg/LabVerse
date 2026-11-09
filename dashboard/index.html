@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2b">
+  <meta name="description" content="LabVerse - Physics, Chemistry and Biology learning, virtual experimentation and scientific analysis dashboard.">
+  <title>LabVerse | Scientific Workspace</title>
+  <link rel="stylesheet" href="./assets/dashboard.css">
+  <script defer src="./assets/dashboard.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="./" aria-label="LabVerse home">
+        <span class="brand-mark">L<span>V</span></span>
+        <span><strong>LabVerse</strong><small>SCIENCE WORKSPACE</small></span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <button class="side-link active" data-view="overview"><span class="nav-icon">⌂</span> Dashboard</button>
+      <button class="side-link" data-view="learning"><span class="nav-icon">▤</span> Learning Lab</button>
+      <button class="side-link" data-view="virtual"><span class="nav-icon">◇</span> Virtual Experiment Lab</button>
+      <button class="side-link" data-view="analysis"><span class="nav-icon">⌁</span> Scientific Analysis</button>
+      <button class="side-link" data-view="research"><span class="nav-icon">⌘</span> Research Studio</button>
+
+      <div class="nav-label subject-label">THREE SCIENCE DIRECTIONS</div>
+      <button class="subject-nav physics" data-subject="physics"><span class="subject-dot"></span> Physics</button>
+      <button class="subject-nav chemistry" data-subject="chemistry"><span class="subject-dot"></span> Chemistry</button>
+      <button class="subject-nav biology" data-subject="biology"><span class="subject-dot"></span> Biology</button>
+
+      <div class="sidebar-bottom">
+        <div class="local-card">
+          <span class="local-icon">◉</span>
+          <div><strong>Local-first workspace</strong><small>No account required for this prototype</small></div>
+        </div>
+        <div class="sidebar-foot">LABVERSE · BUILD 0.1<br>Evidence-aware science platform</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>LabVerse</span><b>/</b><strong id="crumb-current">Dashboard</strong></div>
+        <div class="top-actions">
+          <label class="class-control"><span>CLASS</span>
+            <select id="class-select" aria-label="Select class">
+              <option value="ALL">Class 11 + 12</option>
+              <option value="XI">Class 11</option>
+              <option value="XII">Class 12</option>
+            </select>
+          </label>
+          <span class="status-pill"><i></i> Prototype workspace</span>
+        </div>
+      </header>
+
+      <section id="overview-view" class="view">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow">SCIENTIFIC DISCOVERY PLATFORM</div>
+            <h1>Explore. Experiment. <span>Understand.</span></h1>
+            <p class="lead">One workspace for practical learning, virtual experiments and evidence-led scientific analysis.</p>
+          </div>
+          <div class="welcome-mark" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit-core">LV</div></div>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card"><div class="summary-icon indigo">▦</div><div><span>RBSE task index</span><strong id="stat-tasks">171</strong><small>XI + XII · 3 subjects</small></div></article>
+          <article class="summary-card"><div class="summary-icon teal">⚗</div><div><span>Subject directions</span><strong>03</strong><small>Physics · Chemistry · Biology</small></div></article>
+          <article class="summary-card"><div class="summary-icon amber">⌖</div><div><span>Analysis status</span><strong>Design stage</strong><small>Rule engines not connected yet</small></div></article>
+        </div>
+
+        <div class="section-heading">
+          <div><div class="eyebrow">CHOOSE A DIRECTION</div><h2>Three science workspaces</h2></div>
+          <span class="quiet-tag">Select a subject to open its inventory and workbench</span>
+        </div>
+        <div class="subject-grid">
+          <button class="subject-card physics-card" data-subject="physics">
+            <div class="subject-card-top"><span class="large-subject-icon">∿</span><span class="open-arrow">↗</span></div>
+            <div class="subject-kicker">01 / MEASUREMENT & MODELS</div>
+            <h3>Physics</h3>
+            <p>Instruments, mechanics, electricity, optics, waves and measurement analysis.</p>
+            <div class="subject-metrics"><span><strong id="physics-count">105</strong> item rows</span><span><strong id="physics-tasks">80</strong> RBSE tasks</span></div>
+            <div class="card-line"><span></span></div>
+            <div class="card-foot"><span>Open Physics Lab</span><b>→</b></div>
+          </button>
+
+          <button class="subject-card chemistry-card" data-subject="chemistry">
+            <div class="subject-card-top"><span class="large-subject-icon">⚗</span><span class="open-arrow">↗</span></div>
+            <div class="subject-kicker">02 / MATTER & REACTIONS</div>
+            <h3>Chemistry</h3>
+            <p>Micro-scale glassware, apparatus, reagent references, reactions and property analysis.</p>
+            <div class="subject-metrics"><span><strong id="chemistry-count">53</strong> apparatus rows</span><span><strong id="chemistry-reagents">124</strong> reagent labels</span></div>
+            <div class="card-line"><span></span></div>
+            <div class="card-foot"><span>Open Chemistry Lab</span><b>→</b></div>
+          </button>
+
+          <button class="subject-card biology-card" data-subject="biology">
+            <div class="subject-card-top"><span class="large-subject-icon">⌬</span><span class="open-arrow">↗</span></div>
+            <div class="subject-kicker">03 / LIFE & OBSERVATION</div>
+            <h3>Biology</h3>
+            <p>Microscopy, specimens, slides, visual aids, plant and animal systems, ecology and genetics.</p>
+            <div class="subject-metrics"><span><strong id="biology-count">175</strong> kit records</span><span><strong id="biology-reagents">58</strong> chemical labels</span></div>
+            <div class="card-line"><span></span></div>
+            <div class="card-foot"><span>Open Biology Lab</span><b>→</b></div>
+          </button>
+        </div>
+
+        <div class="overview-bottom">
+          <section class="panel recent-panel">
+            <div class="panel-heading"><div><div class="eyebrow">CURRICULUM INDEX</div><h3>Practical coverage</h3></div><span class="soft-status">171 task IDs mapped</span></div>
+            <div class="coverage-row"><span class="coverage-name"><i class="dot physics-dot"></i>Physics</span><div class="coverage-track"><span class="fill physics-fill" style="width:47%"></span></div><strong>80</strong></div>
+            <div class="coverage-row"><span class="coverage-name"><i class="dot chemistry-dot"></i>Chemistry</span><div class="coverage-track"><span class="fill chemistry-fill" style="width:24%"></span></div><strong>41</strong></div>
+            <div class="coverage-row"><span class="coverage-name"><i class="dot biology-dot"></i>Biology</span><div class="coverage-track"><span class="fill biology-fill" style="width:29%"></span></div><strong>50</strong></div>
+            <p class="panel-note">These are task-index records, not completed simulations or expert-verified lesson packs.</p>
+          </section>
+          <section class="panel roadmap-panel">
+            <div class="panel-heading"><div><div class="eyebrow">BUILD STATUS</div><h3>Dashboard track</h3></div><span class="soft-status">Starter build</span></div>
+            <div class="roadmap-item done"><span>✓</span><div><strong>Subject inventory connection</strong><small>Existing source catalogues loaded</small></div></div>
+            <div class="roadmap-item current"><span>2</span><div><strong>Dashboard and navigation</strong><small>Interactive starter workspace</small></div></div>
+            <div class="roadmap-item"><span>3</span><div><strong>3D objects and model engines</strong><small>Next implementation track</small></div></div>
+          </section>
+        </div>
+
+        <div class="evidence-banner"><span class="banner-icon">ⓘ</span><div><strong>Evidence status is visible throughout LabVerse.</strong><p>Candidate or extracted source records can power catalogue navigation. Authentication, scientific validation and safety review remain separate; no unverified record is silently promoted to approved use.</p></div></div>
+      </section>
+
+      <section id="subject-view" class="view" hidden>
+        <div class="workspace-heading">
+          <button class="back-link" id="back-home">← Dashboard</button>
+          <div class="workspace-title-row"><div><div class="eyebrow" id="subject-eyebrow">SUBJECT WORKSPACE</div><h1 id="subject-title">Physics Lab</h1><p id="subject-description" class="lead"></p></div><span class="subject-status" id="subject-status">Candidate source data</span></div>
+        </div>
+
+        <div class="mode-tabs" role="tablist" aria-label="Lab workspace modes">
+          <button class="mode-tab active" data-mode="learning">Learning Lab</button>
+          <button class="mode-tab" data-mode="virtual">Virtual Workbench</button>
+          <button class="mode-tab" data-mode="analysis">Scientific Analysis</button>
+          <button class="mode-tab" data-mode="research">Research Studio</button>
+        </div>
+        <div class="mode-description" id="mode-description">Browse mapped practicals, equipment and source evidence.</div>
+
+        <div class="lab-layout">
+          <section class="panel inventory-panel">
+            <div class="panel-heading inventory-header"><div><div class="eyebrow">SOURCE CATALOGUE</div><h3>Instrument & material tray</h3></div><span id="inventory-total" class="count-chip">0 items</span></div>
+            <div class="inventory-tools">
+              <input id="inventory-search" type="search" placeholder="Search instruments, chemicals..." aria-label="Search inventory">
+              <select id="inventory-type" aria-label="Filter inventory type"><option value="all">All types</option><option value="apparatus">Apparatus</option><option value="reagent">Chemicals / reagents</option><option value="specimen">Specimens</option><option value="slide">Permanent slides</option><option value="visual_aid">Visual aids</option></select>
+            </div>
+            <div id="category-filters" class="category-filters"></div>
+            <div id="inventory-list" class="inventory-list"></div>
+            <div class="tray-hint">Tap <b>+ Add</b> or drag an item into the workbench. Chemical references are virtual-only until approved.</div>
+          </section>
+
+          <section class="panel bench-panel">
+            <div class="panel-heading"><div><div class="eyebrow">INTERACTIVE SPACE</div><h3>Experiment workbench</h3></div><button class="text-button" id="reset-bench">Reset bench</button></div>
+            <div id="drop-zone" class="drop-zone">
+              <div id="empty-bench" class="empty-bench"><div class="empty-orbit">⌑</div><strong>Your workbench is empty</strong><p>Select or drag an instrument from the tray to begin arranging your setup.</p><span class="drop-caption">DROP AN ITEM HERE</span></div>
+              <div id="bench-items" class="bench-items"></div>
+            </div>
+            <div class="bench-footer"><span><i class="live-dot"></i> Workspace ready</span><span id="bench-count">0 objects placed</span></div>
+            <div class="honesty-note"><strong>Prototype boundary</strong><span>Objects are catalogue placeholders in this starter build. Real 3D models, scientific actions and calculated results are not implemented yet.</span></div>
+          </section>
+
+          <aside class="panel analysis-panel">
+            <div class="panel-heading"><div><div class="eyebrow">LIVE PANEL</div><h3>Analysis & evidence</h3></div><span class="pulse">●</span></div>
+            <div class="analysis-empty"><div class="analysis-symbol">⌁</div><strong id="analysis-title">No experiment running</strong><p id="analysis-copy">Place an item to inspect its source, attributes and readiness. No scientific result is generated until a validated model is connected.</p></div>
+            <div id="selected-details" class="selected-details"><span class="detail-label">SELECTED ITEM</span><strong>Nothing selected</strong><p>Choose an item from the tray or workbench.</p></div>
+            <div class="evidence-legend"><div><i class="legend-dot green"></i><span>Source text inspected</span></div><div><i class="legend-dot amber"></i><span>Candidate / needs review</span></div><div><i class="legend-dot red"></i><span>Safety approval pending</span></div></div>
+          </aside>
+        </div>
+
+        <section class="panel practical-panel">
+          <div class="panel-heading"><div><div class="eyebrow">RBSE CLASS 11–12</div><h3>Practical catalogue</h3></div><span id="task-count" class="count-chip">0 tasks</span></div>
+          <div class="practical-tools"><input id="task-search" type="search" placeholder="Search practicals..." aria-label="Search practicals"><span class="panel-note">Task index only · implementation not started</span></div>
+          <div id="task-list" class="task-list"></div>
+        </section>
+      </section>
+
+      <section id="module-view" class="view" hidden>
+        <div class="workspace-heading"><button class="back-link" id="module-back">← Dashboard</button><div class="eyebrow">LABVERSE WORKSPACE</div><h1 id="module-title">Learning Lab</h1><p id="module-lead" class="lead"></p></div>
+        <div class="module-grid" id="module-grid"></div>
+        <div class="evidence-banner"><span class="banner-icon">ⓘ</span><div><strong>This workspace is being built in roadmap order.</strong><p>The current build supplies navigation and source catalogue access. Experiment execution, validated analysis and research synthesis will be added only when their data contracts and tests exist.</p></div></div>
+      </section>
+
+      <footer class="footer"><span>LABVERSE · SCIENTIFIC DISCOVERY PLATFORM</span><span>Source-backed catalogue · Evidence-aware prototype · Build 0.1</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
