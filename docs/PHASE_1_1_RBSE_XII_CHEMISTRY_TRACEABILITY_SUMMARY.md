@@ -54,3 +54,8 @@ Detailed crosswalk: docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY.md.
 ## 6. Next work unit
 
 After read-back verification, inspect the task-family IDs and count against the master RBSE register, then continue to Class XII Biology. Keep reagent and analytical-source requirements explicit, especially where RBSE names chemicals but the available kit catalogue only lists apparatus. Phase 1.1 and Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Task-level reagent evidence matrix — 2026-11-09
+
+The new consolidated matrix `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` contains one row for each of the 14 Class XII Chemistry task/choice IDs. It preserves redox and other OR choice groups and separately records candidate 2018 manual reagent labels, manual-body-only references, ambiguous labels, formulation variants and current-supply/method/safety blocks. See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`. Candidate overlap is not evidence that the current kit supplies the chemical or that an experiment is approved.
