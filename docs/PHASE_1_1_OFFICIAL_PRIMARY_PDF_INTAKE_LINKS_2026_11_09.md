@@ -80,3 +80,13 @@ The RBSE PDFs are curriculum sources, while MSCL is a Chemistry kit specificatio
 ## 9. Next bounded work
 
 Continue the Phase 1.1 content audit of the received Biology manual: extract the full apparatus/specimen/permanent-slide/chemical indexes and map Exercises 1–60 to the existing RBSE XI/XII Biology task records. Keep the two Biology specification variants separate and retain Phase 2 as BLOCKED until all Phase 1 exit criteria pass.
+
+
+## 10. Correction — prior Biology kit variant uploads (2026-11-09)
+
+The user has clarified that both the **with-microscope** and **without-microscope** Biology kit specification PDFs were already supplied in earlier work. The previous intake checklist and source-gap register incorrectly treated the without-microscope file as not previously submitted, which caused an unnecessary repeat request.
+
+- With-microscope: the repository already contains `data/catalogues/ncert_biology_with_microscope_spec_items.csv` (177 indexed rows) and a prior uploaded-copy hash recorded in the source-gap register.
+- Without-microscope: acknowledge the user's prior submission. The raw attachment and its hash are not exposed by the current conversation file listing; this is a project record/archive-retrieval problem, not a request for the user to upload again.
+- **Instruction:** do not ask the user to resend either Biology kit variant. First recover the earlier attachment or existing extracted records. If the original without-microscope bytes remain inaccessible, record the exact evidence limitation and continue the other available Phase 1 tasks; never silently label the file as never received.
+- The two variants remain separate sources and must not be conflated. No variant-specific additions or omissions are inferred until the relevant evidence is inspected.
