@@ -390,3 +390,12 @@ Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 The 51 apparatus entries in the historical NCERT-hosted manual were mapped to candidate item rows in the 2025 user upload. The comparison captures one combined beaker row, the moved 5 mL glass pipette entry, four upload-only rows (pocket balance, glazed tile, gas generator, tongs), and quantity/material/dimension/safety differences. Particularly important discrepancies include micro burette count, micro-cylinder count, material differences, wire gauze with asbestos stated only in the upload and mercury thermometer restrictions. The upload is not byte-authenticated; treat all differences as comparison leads, not current official specification changes.
 
 See docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md and data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv. Read-back 10/10 PASS. Current procurement authentication, SDS and science-expert gates remain open. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## MSCL reagent-list completeness and Biology manual source gap — 2026-11-09
+
+The 124 numbered reagent labels in the 2018 MSCL manual were checked against the manual's own experiment/appendix text. Potassium permanganate is used in experiments 2.5/2.6 but has no exact numbered label; potassium iodide appears in experiment/appendix text while the numbered list says “Iodine solution” without a standalone identity/formulation record. This is recorded in `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`. The 124 numbered labels are therefore not exhaustive relative to the manual itself. No live chemistry use allowed; all labels remain blocked until SDS and expert approval.
+
+NCERT's official kit-manuals index lists the Biology Laboratory Kit manual for Grades XI/XII; the publication catalogue gives code 13163. The official specification index separately lists Biology with and without microscope. Actual official manual PDF bytes could not be obtained; the third-party mirror was not accepted. Source gap register now has 14 records / 12 columns, including `SRC-BIO-MANUAL-13163`.
+
+Next: obtain verifiable manual bytes; compare both Biology kit variants to the 28 XI/XII task crosswalk; do not treat the user-uploaded with-microscope specification as the manual. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
