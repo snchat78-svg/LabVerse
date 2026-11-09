@@ -37,6 +37,9 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - [Open the LabVerse dashboard source](dashboard/index.html)
 - [Dashboard build notes and limitations](dashboard/README.md)
+- [Dashboard inventory audit](docs/DASHBOARD_INVENTORY_AUDIT_2026_11_09.md)
+- [Biology manual 58-entry reagent list](data/catalogues/ncert_biology_manual_reagents_58.csv)
+- [Free GitHub Pages publishing steps](docs/DASHBOARD_PUBLISHING.md)
 - [Three-subject inventory read model](dashboard/data/inventory.json)
 - [Parallel dashboard track and evidence boundaries](docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md)
 
