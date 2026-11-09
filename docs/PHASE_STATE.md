@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Continue Chemistry manual-to-upload item comparison and exact RBSE task-to-reagent identity closure; then retrieve NCERT Biology manual 13163 and both Biology kit variants. Keep all 124 manual reagent labels blocked from live use pending identity-specific SDS and expert approval. Phase 2 remains BLOCKED.
+- Current next work unit: Retrieve official NCERT Biology manual 13163 bytes through the public kit-manuals page or a verifiable user copy; verify metadata/hash/pages and index its apparatus, reagent/stain, specimens, permanent slides and visual aids. Then compare separately against the current with/without microscope specifications and RBSE Biology task crosswalk. Keep Chemistry current procurement/reagent and Biology source gates open. Phase 2 remains BLOCKED.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1402,3 +1402,17 @@ Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
 Artifacts: docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md; data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv. Commits: report cd70e1d30fe849422cc7c8d77f2281e532960081; CSV ac6b13731ea66ba7d64c40d859297476e7f71e0f; manual review addendum a7bec5aff22827dbb6d0ade90aba2d46d93cddd3; source-gap report 7e1b86f5a40d6884125451d03dd357d3ecd4e419; source-gap CSV 487cc392f656f00c8437680bf192ae33d63def2b.
 
 No app implementation/science validation; phase status unchanged: Phase 1.1 IN PROGRESS, Phase 2 BLOCKED.
+
+
+## Phase 1.1 update — reagent completeness and Biology manual source status (2026-11-09)
+
+- [x] Compared the 124-row MSCL manual reagent/material list against experiment/appendix text; two internal gaps are recorded: potassium permanganate (not standalone numbered label) and potassium iodide (experiment/appendix reference with ambiguous “Iodine solution” numbered label). See `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`.
+- [x] All 124 reagent labels and both supplementary references remain blocked from live use; no procedure/concentration/handling content added.
+- [x] Official NCERT kit-manuals index and publication catalogue confirm a Grade XI/XII Biology kit manual and publication code 13163; official specification index lists with-microscope and without-microscope kits separately.
+- [x] Official Biology manual PDF bytes still not retrieved; third-party mirror is not accepted as primary evidence. Added source gap `SRC-BIO-MANUAL-13163`.
+- [x] Read-back: 5/5 corrected source-gap validation checks PASS; register is 14 data records / 12 fields.
+- [ ] Recover official manual 13163 bytes and verify exact edition/ISBN/reprint/hash/pages.
+- [ ] Index and compare Biology apparatus, chemicals/stains, specimens, slides and visual aids against both current kit variants and 28 XII Biology / 22 XI Biology task records.
+- [ ] Current NCERT MSCL procurement bytes/reagent BOM and all safety/expert gates remain OPEN.
+
+Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
