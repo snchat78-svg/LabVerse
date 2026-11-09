@@ -320,3 +320,21 @@ Create a six-pack RBSE task-index reconciliation report. Read all six consolidat
 ## Next work unit
 
 Create a source-authentication and procurement-gap register by document family (Physics manual, MSCL specification, Biology-with-microscope specification and any missing no-match apparatus sources). Record official URL/revision, uploaded file hash/provenance, retrieval/authentication result, page-level inspection level, affected RBSE task IDs, unresolved BOM attributes and required next evidence. Do not begin Phase 2 until Phase 1 source/asset/model/test/safety/expert gates close.
+
+
+## 2026-11-09 — Source authentication and procurement-gap register
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** record source-family authentication/retrieval state, uploaded-copy provenance/hash, inspection tier, impacted RBSE task packs, unresolved BOM/method fields and next evidence required.
+- **Files:** docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md; data/catalogues/phase1_source_authentication_procurement_gaps.csv.
+- **Gap families:** 12 entries across RBSE 2027 PDFs; NCERT official specification index/attachments; Physics manual; MSCL upload; Biology-with-microscope upload; missing Biology-without-microscope variant; Biology/MSCL official manuals; GeM 105-vs-106 item count; unmatched Physics instruments; Chemistry reagent BOM; Biology samples/measurement apparatus; rights/reuse.
+- **Current retrieval checks:** RBSE 2027 syllabus index opened; direct Class XI and XII 2027 PDF retrieval timed out. NCERT specification index opened; all four official PDF links returned HTTP 502. Parallel ncert.gov.in direct host routes were not accessible through the current retrieval path. These are retrieval/tool limits, not proof of file absence.
+- **Uploaded copies:** MSCL_copy.pdf 65 pages / SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d; SSBK_with_Microscope_copy.pdf 199 pages / SHA-256 c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2. Hashes identify uploaded bytes only, not official NCERT identity. RBSE user-copy hashes are not recorded in the RBSE master register.
+- **Physics:** NCERT manual code 13164/ISBN 978-93-5292-653-4 item schedule contains 106 rows and is text-inspected; it is not the procurement BOM. A separate GeM bid states 105 items, but its attachment list was not inspected, so 105-vs-106 remains unresolved.
+- **Checks:** 9/9 gap-register read-back/schema/content assertions passed. All 12 gap entries have unique IDs and explicit severity/next-action fields.
+- **Decision:** Phase 1 task-index sub-gate remains DONE (171/171); overall Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED. Source authentication, procurement BOM, item-equivalence review, rights, safety and expert gates are open.
+- **Commits/blob SHAs:** report update commit 7faef7bb2ac56f9efb1c7ac195c836aad87a120b (read-back blob fc0103ce9902a0145dccf652b5bd115cac1b369b); CSV update commit 226b10ac52bf3843a9114de8b692031e96dd070d (read-back blob 199aa7bd4efb1db1d59d0093da6cde22394e9df4).
+
+## Next bounded work unit
+
+Prioritise recovery of exact official RBSE 2027 PDF bytes and NCERT's four specification attachment bytes, then capture SHA-256/PDF metadata and compare each retrieved official file with the user-uploaded copies. Do not change task IDs/items or start Phase 2 until this source evidence is obtained and reconciled.
