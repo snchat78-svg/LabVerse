@@ -415,3 +415,12 @@ Phase 1.1 now has a 126-record preliminary screen for the 124 numbered reagent/m
 See `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md` and `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv`. Every listed reagent remains simulation/reference-only and not approved for physical learner use. The 51-row apparatus inventory remains separately indexed; mercury and asbestos-related physical use is blocked.
 
 Next bounded work: retrieve and authenticate the current NCERT MSCL attachment; reconcile the actual reagent BOM and item conditions against all 41 RBSE Chemistry task/choice records; source current SDS and expert approval. Also continue recovery of official Higher Secondary Biology manual code 13163. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## 2026-11-09 — RBSE Chemistry task-to-reagent traceability matrix
+
+Phase 1.1 now includes a 41-row RBSE Chemistry task-to-reagent evidence matrix covering XI and XII task/choice records. Seventeen task rows have explicitly reviewed candidate 2018 MSCL manual reagent-label or manual-body references; 24 rows retain no exact label mapping. This is deliberately not a supply list: the 2018 manual is not the current procurement BOM, and neither topic-level crosswalk nor apparatus references prove that a reagent is supplied or that a specific method is validated.
+
+See `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md` and `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`. Manual omissions/ambiguities, duplicate rows, concentration variants and possible compound aliases remain explicit; all rows are blocked from physical chemistry pending official source, current SDS and expert approval.
+
+Next: obtain and hash current official NCERT MSCL specification bytes; reconcile actual reagent BOM against all 41 tasks; validate method-specific reagents and safe virtual/reference data. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
