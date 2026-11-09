@@ -1387,3 +1387,18 @@ Manual evidence mode: NCERT-hosted PDF text extraction only. Screenshot request 
 New artifacts: report f2f910e183b5c1c40606f6a9c688c82ebd3a327a; experiment CSV 9045109ef6226fa023c9b6955b802b9abebf0c2b; apparatus CSV 232d6d61d50694e7086d82de3b3f6a07638cff3c; reagent CSV e324f0c7b8094adeb6c4493c55f2f6e1dd2e17ce; crosswalk CSV 09866d4b4bca8189d8def8ac041ce89432cf2277; source gap report f7c2c3ccf9b57edd7084698ad317085c47ce4396; source gap CSV bec8d254b9686a0c2c3cd58041cc6ddf993072b0; companion spec note 83fe5e490c8b1cb4eb8b6f98c71ba2fdad924611.
 
 Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — MSCL manual/upload candidate item comparison (2026-11-09)
+
+- [x] Compared 51 apparatus rows from the NCERT-hosted 2018 manual against the 54 numbered candidate rows catalogued from user-uploaded MSCL_copy.pdf.
+- [x] Created a 55-row reconciliation table: all 51 manual entries mapped; manual beaker rows 3 and 16 combine in uploaded row 003; manual pipette row 42 maps to uploaded row 054; four uploaded-only rows 040/051/052/053 are identified.
+- [x] Logged material, dimension, quantity, packaging and safety deltas; preserved ambiguous cases instead of forcing equivalence.
+- [x] Kept current NCERT authentication open. Uploaded bytes remain user-copy only; no official amendment/current-delivery claim.
+- [x] Reconciliation read-back: 10/10 checks PASS.
+- [ ] Retrieve official current NCERT MSCL spec attachment and compare disputed entries at byte/content level.
+- [ ] Resolve all reagent identities, supplied/optional/school-managed statuses and safety approvals.
+
+Artifacts: docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md; data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv. Commits: report cd70e1d30fe849422cc7c8d77f2281e532960081; CSV ac6b13731ea66ba7d64c40d859297476e7f71e0f; manual review addendum a7bec5aff22827dbb6d0ade90aba2d46d93cddd3; source-gap report 7e1b86f5a40d6884125451d03dd357d3ecd4e419; source-gap CSV 487cc392f656f00c8437680bf192ae33d63def2b.
+
+No app implementation/science validation; phase status unchanged: Phase 1.1 IN PROGRESS, Phase 2 BLOCKED.
