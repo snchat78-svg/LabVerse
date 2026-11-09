@@ -498,3 +498,5 @@ Validation design: exactly one row per unique task ID, no promotion from topic m
 - **Decision:** official listing and catalogue identifiers confirmed, but manual content and current variant specification gates remain NOT RETRIEVED / BLOCKED. Existing 50-task Biology gap register remains open.
 - **Next bounded unit:** continue locating an actual official download target/bytes for manual code 13163 and both kit variants; then hash and inspect before building the variant-specific apparatus/specimen/slide/stain BOM and detailed task crosswalk. Phase 2 remains BLOCKED.
 
+- **Additional Library retrieval check:** exact Biology kit manual/filename searches and a broader PDF search were run against the Library. The exact queries returned no hits; the broader query surfaced the RBSE syllabus and unrelated PDFs but did not surface the kit manual or either kit variant. Logged in the 8-row source-discovery CSV. This is a search result, not proof of global absence.
+
