@@ -86,9 +86,9 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 
 - **Official index/listing:** Official NCERT specification index lists MSCL Grades XI–XII; direct PDF returned HTTP 502 on 2026-11-09.
 - **URL(s):** Official listing: https://ncert.nic.in/division/dek/pdf/MSCL.pdf | official index: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
-- **Retrieval/authentication:** User upload OCR-inspected; 65 pages; 19,798,501 bytes; PDF metadata 2025-03-21 09:10:15 UTC; SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. Hash identifies uploaded bytes only.
-- **Uploaded-copy provenance:** MSCL_copy.pdf; OCR register data/catalogues/ncert_mscl_spec_items.csv; hash db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
-- **Evidence limit:** Rows 1–54 catalogued; row 55 is document development team. Upload is NOT_BYTE_AUTHENTICATED against NCERT official bytes. Apparatus/consumable schedule is not a supplied reagent BOM.
+- **Retrieval/authentication:** User upload OCR-inspected; 65 pages; 19,798,501 bytes; PDF metadata 2025-03-21 09:10:15 UTC; SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. Hash identifies uploaded bytes only. A separate NCERT-hosted 2018 MSCL manual has now been retrieved and text-extracted; it is not the current kit specification attachment.
+- **Uploaded-copy provenance:** MSCL_copy.pdf; OCR register data/catalogues/ncert_mscl_spec_items.csv; hash db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. Separate manual: https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf; ISBN 978-93-5007-861-7; first edition April 2018; catalogue code 13166; no source-byte hash in this work unit.
+- **Evidence limit:** Upload rows 1–54 catalogued; row 55 is document development team. Upload is NOT_BYTE_AUTHENTICATED against NCERT official specification bytes. Its apparatus/consumable schedule is not a supplied reagent BOM. The 2018 manual catalogue has 34 experiment topics, 51 apparatus entries and 124 numbered reagent labels, but does not establish current kit contents, supplied quantities or safe learner handling. PDF page screenshot retrieval failed; text extraction only.
 - **Affected tasks/packs:** RBSE-XI-CHEM-PRA-01..PRA-19; RBSE-XI-CHEM-PRJ-01..PRJ-08; RBSE-XII-CHEM REDOX/QUAL/OPT/KIN/THERMO/ELECTRO groups.
 - **Unknown fields:** Official source equivalence, reagent identities/concentrations/purity/hydration state, school-managed items, method validity, supplied-vs-optional boundaries, revision and procurement acceptances.
 - **Severity:** BLOCKER_PHASE_1
@@ -156,15 +156,14 @@ Physics manual source identity is separately recorded as code 13164, ISBN 978-93
 
 ### SRC-CHEM-REAGENT-BOM — Chemistry reagents, sample and method inventory
 
-- **Official index/listing:** Index lists MSCL kit and manual; official attachment/manual bytes not obtained in current pass.
-- **URL(s):** MSCL official specification: https://ncert.nic.in/division/dek/pdf/MSCL.pdf | MSCL manual index: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
-- **Retrieval/authentication:** Uploaded MSCL apparatus/consumables OCR catalogue available but not authenticated and not a reagent BOM.
-- **Uploaded-copy provenance:** MSCL_copy.pdf hash db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
-- **Evidence limit:** RBSE chemistry tasks name acids, bases, salts, indicators, solvents and organic compounds; their supply/strength/purity/identity and school-managed boundaries are not established by the MSCL apparatus list.
+- **Official index/listing:** NCERT's official kit-specification index lists the separate MSCL procurement attachment. The NCERT-hosted *Manual of Microscale Chemistry Laboratory Kit* has now also been retrieved as a distinct historical teaching/manual source: https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf. Publication catalogue identifies the Higher Secondary MSCL manual as code 13166.
+- **Retrieval/authentication:** Official-hosted manual text extracted; first edition April 2018, ISBN 978-93-5007-861-7, ALL RIGHTS RESERVED. Page screenshot attempt returned HTTP 502; no byte SHA-256 captured. Manual contents index gives 34 experiments and 51 apparatus entries; chemical/reagent list gives 124 numbered labels.
+- **Uploaded-copy provenance:** The previously supplied `MSCL_copy.pdf` remains separately recorded at 19,798,501 bytes, 65 pages, SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d. This hash identifies the upload only, not NCERT official bytes.
+- **Evidence limit:** The 2018 manual is not the current procurement specification or a verified supplier BOM. Its 124 labels do not establish actual supplied quantities, formulation, purity, concentration, batch identity, or permission for school/student handling. All 124 LabVerse reagent rows are blocked from live use pending SDS and expert review.
 - **Affected tasks/packs:** All 19 XI Chemistry practical groups, 8 XI Chemistry projects/options; all 14 XII Chemistry task/choice records.
-- **Unknown fields:** Full reagent BOM, concentrations, hydrate/purity, preparation/storage, school-managed/optional entries, analytical methods, colour/product outcomes, safety data and allowed waste management.
+- **Unknown fields:** Current full reagent BOM, CAS/identity where ambiguous, grade/concentration/purity/hydrate, supplied quantity/packaging, school-managed/optional entries, current revision, validated methods, disposal route and written safety approval.
 - **Severity:** BLOCKER_PHASE_1
-- **Required next action:** Retrieve official MSCL manual and reagent schedule; map each chemical to source ID, CAS/identity, grade/concentration, method, hazard and approval; no arbitrary reaction generation.
+- **Required next action:** Retrieve and hash the current official MSCL procurement attachment; compare it with the 2025 uploaded copy and historical manual. Resolve every RBSE task reagent against primary source and current SDS, with exact identity/formulation and safety sign-off; do not enable live handling or arbitrary reactions.
 
 ### SRC-BIO-SAMPLE-AND-MEASUREMENT-BOM — Biology samples, environmental instruments and prepared specimen identity
 
@@ -288,3 +287,23 @@ The RBSE XII Physics crosswalk row `RBSE-XII-PHY-EXP-14` therefore retains the t
 The PDF text extraction was readable, but its page screenshot attempt returned HTTP 502. This evidence is recorded as text-extracted, not visually inspected. The manual carries an ALL RIGHTS RESERVED notice; LabVerse will use paraphrased source notes and original assets rather than reproducing NCERT artwork/text.
 
 Source: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf (Preface; PDF text lines 85–105 in the retrieval view).
+
+
+### 4.3 NCERT-hosted MSCL teaching manual recovered and indexed (2026-11-09)
+
+The legacy NCERT-hosted *Manual of Microscale Chemistry Laboratory Kit* is now available at https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf. It identifies itself for Classes XI–XII, first edition April 2018, ISBN 978-93-5007-861-7, and carries an ALL RIGHTS RESERVED notice. The NCERT publication catalogue associates the Higher Secondary MSCL manual with publication code 13166.
+
+The manual's contents index exposes 34 experiments in 11 chapters; its kit-description section lists 51 apparatus entries; its reagent section lists 124 numbered chemical/material labels. LabVerse added separate paraphrased indices and a topic-level crosswalk to the 41 RBSE XI/XII Chemistry task records. The crosswalk explicitly preserves partial and no-match outcomes; it does not establish equivalent methods or validated results.
+
+**Critical separation:** this is a 2018 educational manual, not the current MSCL procurement specification attachment. The current NCERT specification index lists the latter separately, and its direct PDF retrieval remains HTTP 502. The older manual's 124 reagent labels are not a reagent BOM, delivery manifest or safety authorisation.
+
+All 124 reagent records are marked `BLOCKED_NO_LIVE_USE; SIMULATION_REFERENCE_ONLY`, with SDS/identity/concentration/exposure review pending and no approval. The manual names several materials requiring specialist risk review (including arsenic oxide, benzene, carbon disulphide, chloroform/carbon tetrachloride, bromine water, hydrogen sulphide, lead acetate, sodium metal, uranyl zinc acetate and concentrated mineral acids). The mercury thermometer item is explicitly excluded from physical learner use. No protocol, exact concentration, mixture ratio or handling instruction was copied into the catalogues.
+
+New LabVerse artifacts:
+- `docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md`
+- `data/catalogues/ncert_mscl_manual_experiment_index.csv`
+- `data/catalogues/ncert_mscl_manual_apparatus_index.csv`
+- `data/catalogues/ncert_mscl_manual_reagent_index.csv`
+- `data/catalogues/ncert_mscl_manual_to_rbse_chemistry_crosswalk.csv`
+
+Read-back validation: 12/12 checks passed. These validate row counts/schema, preserved numbering/duplicate Potassium iodate entries, universal reagent blocks, mercury-asset restriction, full 41/41 RBSE Chemistry task crosswalk coverage and continued separation from the current procurement gap. They are documentary checks only.
