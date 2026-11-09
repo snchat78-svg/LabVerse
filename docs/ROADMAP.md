@@ -406,3 +406,12 @@ Next: obtain verifiable manual bytes; compare both Biology kit variants to the 2
 The 22 Class XI and 28 Class XII Biology task records now have a 50-row unresolved-gap register. All candidate item references resolve to the 177-row user-uploaded with-microscope item catalogue (0 dangling IDs), but the source remains unauthenticated. Overlapping unresolved tags: sample/specimen 37/50; measurement/apparatus 11/50; item/content verification 29/50; reagent/media 10/50. Most card/slide content remains INDEX_ONLY. The separate no-microscope variant and official Biology manual 13163 are not retrieved. These are candidate mappings, not verified practicals. See `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and its CSV.
 
 Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## 2026-11-09 — MSCL reagent-to-task documentary screen
+
+Phase 1.1 now has a 126-record preliminary screen for the 124 numbered reagent/material labels in the NCERT-hosted 2018 MSCL manual plus two references found in its own experiment/appendix text. The register preserves source order and duplicates, applies conservative name-based workflow flags, and records exact whole-label text occurrences against the RBSE Chemistry task registers. Eighteen register rows have candidate explicit text occurrences across 17 task IDs. This does not establish reagent-to-task method equivalence, supply, or safety approval; the manual is historical and the current official specification attachment is still unauthenticated.
+
+See `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md` and `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv`. Every listed reagent remains simulation/reference-only and not approved for physical learner use. The 51-row apparatus inventory remains separately indexed; mercury and asbestos-related physical use is blocked.
+
+Next bounded work: retrieve and authenticate the current NCERT MSCL attachment; reconcile the actual reagent BOM and item conditions against all 41 RBSE Chemistry task/choice records; source current SDS and expert approval. Also continue recovery of official Higher Secondary Biology manual code 13163. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
