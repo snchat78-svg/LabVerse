@@ -383,3 +383,10 @@ All 124 chemical/material labels are blocked from live use pending exact identit
 Artifacts: `docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md` and four `data/catalogues/ncert_mscl_manual_*.csv` files. Read-back: 12/12 documentary checks PASS. No scientific model, app code or experiment test implemented.
 
 Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## MSCL 2018 manual vs 2025 uploaded candidate item comparison — 2026-11-09
+
+The 51 apparatus entries in the historical NCERT-hosted manual were mapped to candidate item rows in the 2025 user upload. The comparison captures one combined beaker row, the moved 5 mL glass pipette entry, four upload-only rows (pocket balance, glazed tile, gas generator, tongs), and quantity/material/dimension/safety differences. Particularly important discrepancies include micro burette count, micro-cylinder count, material differences, wire gauze with asbestos stated only in the upload and mercury thermometer restrictions. The upload is not byte-authenticated; treat all differences as comparison leads, not current official specification changes.
+
+See docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md and data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv. Read-back 10/10 PASS. Current procurement authentication, SDS and science-expert gates remain open. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
