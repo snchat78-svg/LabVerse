@@ -32,7 +32,7 @@ The exact indexed targets already carried in the source register are:
 - https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf
 - https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf
 
-Both direct PDF targets were attempted in this pass and were inaccessible through the retrieval channel. No bytes or hashes were produced. The previous user-uploaded with-microscope candidate remains a hash-identified upload only; it is not byte-authenticated against the official NCERT target. There is no authenticated without-microscope PDF in the repository.
+Both direct PDF targets were attempted in this pass and the retrieval tool reported them as inaccessible. No bytes or hashes were produced. The previous user-uploaded with-microscope candidate remains a hash-identified upload only; it is not byte-authenticated against the official NCERT target. There is no authenticated without-microscope PDF in the repository.
 
 ## 4. Important source distinction — do not merge manuals
 
@@ -51,7 +51,7 @@ NCERT's historical 2015–16 annual report describes the purpose of the Higher S
 | Biology without microscope specification | Official specification index lists separate variant and exact direct target | OFFICIAL_LINK_CONFIRMED; direct PDF not accessible in this pass |
 | Class XI Biology Laboratory Manual `kelm301.pdf` | NCERT hosts a separate 2025–26 class XI Biology practical manual | DIFFERENT_SOURCE_PRODUCT; explicitly excluded as kit-manual substitute |
 
-No official Biology kit-manual PDF bytes were obtained. No manual PDF hash, page count, metadata, edition/reprint or ISBN was verified. No current Biology kit variant bytes were obtained.
+No official Biology kit-manual PDF bytes were obtained. No manual PDF hash, page count, metadata, edition/reprint or ISBN was verified. No current Biology kit variant bytes were obtained. Exact title/file-name and broader Library PDF searches also did not surface the manual or either kit specification PDF.
 
 ## 6. Existing task gap implications
 
@@ -72,8 +72,9 @@ Zero dangling IDs is a record-integrity result only. It does not prove specimen 
 - Class XI Biology laboratory manual explicitly kept separate from the kit manual: PASS.
 - No manual/variant file bytes, hash, edition, ISBN or contents fabricated: PASS.
 - The 50-row task gap register and all expert/safety/source gates remain open: PASS.
+- Exact title/file-name and broader Library PDF searches did not surface the target manual or either variant; this is recorded as a search result, not proof of global absence: PASS.
 
-**Documentary source-discovery checks: 6/6 PASS.** These checks validate source identification and distinction only. They are not Biology content, scientific, procurement, safety or software tests.
+**Documentary source-discovery checks: 7/7 PASS.** These checks validate source identification and distinction only. They are not Biology content, scientific, procurement, safety or software tests.
 
 ## 8. Decision and next action
 
