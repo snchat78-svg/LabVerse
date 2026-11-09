@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: create a six-pack task-index reconciliation report from all six consolidated registers against the RBSE master task register, listing missing/duplicate IDs, choice-group discrepancies and unmatched evidence. Then refresh the explicit Phase 1 exit checklist.
+- Current next work unit: recover exact official RBSE 2027 Class XI/XII PDF bytes and the four NCERT kit specification attachments, capture hashes/PDF metadata and compare with uploaded copies. Do not start Phase 2 until Phase 1 evidence, procurement, rights, scientific models/tests, safety and expert gates close.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1284,3 +1284,27 @@ Evidence:
 - Roadmap: 17c3b4bc149ff612d0f8b2bbdaf7e32d5f78a25d
 
 Phase 1.1 / Phase 1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — source authentication and procurement-gap register (2026-11-09)
+
+- [x] Create a 12-row document-family gap register and 12-column CSV.
+- [x] Record official index links separately from successful attachment retrieval.
+- [x] Record uploaded MSCL and Biology-with-microscope page counts, sizes, metadata and SHA-256 values, while explicitly retaining NOT_BYTE_AUTHENTICATED.
+- [x] Record RBSE 2027 current PDF link state; direct retrieval timed out in the current pass, and user-copy hashes are not recorded in the RBSE master.
+- [x] Record missing Biology-without-microscope variant and missing Physics procurement attachment.
+- [x] Record Physics 105-vs-106 count discrepancy as unresolved until the tender attachment list is inspected.
+- [x] Read back gap register and CSV; 9/9 assertions passed.
+- [ ] Obtain exact official document bytes, SHA-256 and PDF metadata; compare item-by-item to uploaded copies.
+- [ ] Complete procurement BOM, variant, reagent/sample, task-to-item, rights, asset, model, test, safety and expert-review gates.
+- [ ] Phase 2 remains BLOCKED.
+
+Evidence:
+- Report: docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md
+- CSV: data/catalogues/phase1_source_authentication_procurement_gaps.csv
+- Report commit: 7faef7bb2ac56f9efb1c7ac195c836aad87a120b
+- CSV commit: 226b10ac52bf3843a9114de8b692031e96dd070d
+- Work log: c3121f45fb5d83dc7906534945707e23b8687e93
+- Roadmap: bebb869407529fb02d0ce8723cba1b0fe7e1e940
+
+Phase 1 task-index sub-gate remains DONE (171/171); Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
