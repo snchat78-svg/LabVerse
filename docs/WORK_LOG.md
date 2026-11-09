@@ -282,3 +282,22 @@ Start Class XII Chemistry practical task groups and OR branches from RBSE master
 ## Next work unit
 
 Start RBSE Class XII Biology task/spotting coverage from the master register pages 144–147. Distinguish the Biology-with-microscope OCR upload's page-level evidence states from index-only cards/slides/specimens; do not infer image content or reagent availability from index names.
+
+
+## 2026-11-09 — RBSE Class XII Biology task traceability
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Scope:** map all 28 RBSE XII Biology records (6 Botany major, 6 Zoology major, 5 Botany minor, 4 Zoology minor, 3 Botany spotting, 3 Zoology spotting and 1 required teacher-assigned project component).
+- **Files:** docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY.md; data/catalogues/rbse_xii_biology_traceability.csv; docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xii_biology_traceability_consolidated.csv.
+- **Coverage:** 28/28 tasks; 224 candidate item references / 83 distinct catalogue rows; 92 proposed asset references / 80 distinct asset IDs; 28 proposed model/rule IDs; 142 planned test vectors.
+- **Evidence tiers (83 unique referenced rows):** 43 OCR_TEXT; 1 OCR_TEXT+VISUAL_CHECK; 1 VISUAL_CHECK; 2 INDEX_CONFIRMED (items 134 and 141); 12 INDEX_ONLY slide pages; 23 INDEX_ONLY card/specification pages; 1 other INDEX_ONLY page.
+- **Source boundaries:** uploaded Biology-with-microscope file remains NOT_BYTE_AUTHENTICATED. Index-only slide/card/specimen content is not promoted to visually verified. Catalogue presence is not proof that a task-specific fresh specimen/reagent or measurement instrument is supplied.
+- **Explicit mismatches/gaps:** soil texture/WHC apparatus and methods; turbidimeter/nephelometer; city-air SPM sampler/flow meter; water microorganism dataset/safety; pollen media/specimens; slide 164 and meiosis slide pages; permanent T.S. testis/ovary slides; Trichophyton. RBSE project topic remains teacher-assigned with no fixed title, so no topic-specific item ID was fabricated.
+- **Safety/rights:** no pathogen culture, human clinical samples, animal capture/dissection, unapproved field collection or real staining/fixative procedures. Original LabVerse assets or licensed imagery required.
+- **Read-back:** first task crosswalk checks 11/11 PASS; consolidated summary/CSV and detail checks 12/12 PASS. Documentary checks only; no scientific/app tests run.
+- **Commits/files:** detail file blob SHA 2222c66c4166663a8db7e6190d7257edddb37d23; task CSV blob SHA 5b5e5ff38cc9ce5377ac998162ffcbe38ac1b802; summary blob SHA ffa986b82a7184a8886958f7f9f2ed39655bd624; consolidated CSV matches task CSV (blob SHA 5b5e5ff38cc9ce5377ac998162ffcbe38ac1b802).
+- **Gate unchanged:** Phase 1.1 IN PROGRESS; Phase 1 IN PROGRESS; Phase 2 BLOCKED.
+
+## Next work unit
+
+Create a six-pack RBSE task-index reconciliation report. Read all six consolidated pack registers (XI Physics, XI Chemistry, XI Biology, XII Physics, XII Chemistry and XII Biology), compare each task/choice group with docs/PHASE_1_RBSE_ALL_PRACTICAL_COVERAGE_REGISTER.md, identify missing/duplicate/unmatched IDs and report evidence limitations. Then update the Phase 1 exit criteria without claiming Phase 1 is complete.
