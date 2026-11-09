@@ -251,3 +251,12 @@ Two known missing-instrument flags remain: travelling microscope (EXP-14) and ph
 - [Class XII Chemistry option/choice summary](docs/PHASE_1_1_RBSE_XII_CHEMISTRY_TRACEABILITY_SUMMARY.md)
 
 The register preserves redox alternatives, the four-mark OR choices and the content-based alternatives. The uploaded MSCL apparatus list is not treated as a reagent BOM. Next: Class XII Biology task mapping.
+
+
+## Phase 1.1 — RBSE Class XII Biology traceability (2026-11-09)
+- [Task-level Biology traceability register — 28 records](docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY.md)
+- [Task-level Biology CSV — 28 rows](data/catalogues/rbse_xii_biology_traceability.csv)
+- [Consolidated Biology summary](docs/PHASE_1_1_RBSE_XII_BIOLOGY_TRACEABILITY_SUMMARY.md)
+- [Consolidated Biology CSV — 28 rows](data/catalogues/rbse_xii_biology_traceability_consolidated.csv)
+
+The register distinguishes OCR/visual/index evidence and keeps RBSE's investigatory-project topic teacher-assigned. Index-only cards/slides are not visually verified. Next: six-pack RBSE task-index reconciliation.
