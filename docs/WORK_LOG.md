@@ -374,3 +374,19 @@ Retrieve bid GEM/2026/B/8248336 on the official GeM portal using a permitted rou
 ## Next bounded work unit
 
 Continue Phase 1 using already inspectable source material while seeking actual attachment bytes through an openly accessible primary route or user-provided documents. Prioritise exact RBSE official-byte comparison, NCERT kit variants and complete Biology/MSCL manuals; do not infer procurement data from repeated filenames. Next source-side design work should also resolve per-task apparatus/no-match records into a reviewer-ready BOM and rights/safety/validation checklist, without promoting candidate mappings to verified status.
+
+
+## 2026-11-09 — Official Physics manual preface resolves one kit omission
+
+- **Phase:** Phase 1 / subphase 1.1.
+- **Official source evidence:** Re-opened NCERT-hosted Manual of Secondary Stage Physics Laboratory Kit, code 13164, ISBN 978-93-5292-653-4. The preface says that Searle's apparatus and the travelling microscope were still being developed for future inclusion in the kit in that manual edition; it also describes completing the required experiment count using prescribed alternatives when these items are absent. The manual has an ALL RIGHTS RESERVED notice.
+- **Task-level effect:** RBSE-XII-PHY-EXP-14 continues to require a travelling microscope for the named glass-slab method. The crosswalk now explicitly says this instrument was not included in the cited manual edition, retains a separate proposed travelling-microscope asset ID, and does not treat the glass slab as a substitute. The current separate NCERT procurement specification is still unverified. Fortin barometer and phototransistor/IR source gaps are unchanged.
+- **Evidence mode/limit:** PDF text extraction from the NCERT-hosted manual was readable; page screenshot request returned HTTP 502. Record this as text-extracted, not visually checked. The official manual evidence concerns its own edition, not a later specification or current delivered kit.
+- **Files updated:** docs/PHASE_1_1_RBSE_XII_PHYSICS_TRACEABILITY_SUMMARY.md; data/catalogues/rbse_xii_physics_traceability.csv; docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md; data/catalogues/phase1_source_authentication_procurement_gaps.csv; docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md.
+- **Read-back checks:** 5/5 task CSV checks passed (39 records, 18-column schema, distinct travelling-microscope proposed asset retained, no false substitution, explicit manual-edition note). Source gap register remains 13 records / 12 columns. These are documentary consistency checks, not model or app tests.
+- **Commits:** summary 61f4830f64ecb5fd6f0b648918e4df109ac3bce0; XII Physics CSV 50e869c14066a5016cba2a149adf7085abb71401; source-gap report 0263468d47de9a72ece5a780186059ec4ffa9756; source-gap CSV 6ef9041cce2eb398c6d6e226b48f6cd5530a3b29; Physics manual item register f8436c8d42404967d9fbb0b2340ee73c4bac8219.
+- **Decision:** One source interpretation is clarified; no procurement gate is closed because current attachment remains unavailable. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED. No code, 3D asset or scientific model/test was implemented.
+
+## Next bounded work unit
+
+Continue the Physics source-to-task reconciliation using the current kit specification as soon as its bytes can be obtained. Keep distinct classifications for manual-edition omission, procurement inclusion, school-managed equipment, optional alternatives and unresolved no-match; do not collapse these categories. In parallel, progress the Chemistry reagent BOM and Biology sample/measurement source requirements from primary, inspectable evidence.
