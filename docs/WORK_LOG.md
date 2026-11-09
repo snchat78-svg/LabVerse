@@ -443,3 +443,16 @@ Continue Chemistry source closure by item-comparing the 2025 uploaded MSCL speci
 ## Next bounded work unit
 
 Obtain the official NCERT Biology manual code 13163 through the public kit-manuals page or a verifiable user-supplied copy. Confirm edition/ISBN/reprints, exact bytes/hash/page count before extracting the apparatus, chemical/stain, preserved specimen, permanent-slide, acrylic specimen and visual-aid registers. Do not use a third-party mirror as authority. Then compare the manual separately against both current Biology-with-microscope and without-microscope specification attachments and the RBSE crosswalk.
+
+
+## 2026-11-09 — Biology task-gap register and source-ID integrity audit
+
+- **Phase:** Phase 1 / subphase 1.1; Biology source-to-task crosswalk integrity subtask.
+- **Scope:** Combined existing RBSE XI Biology traceability (22 records) and XII Biology traceability (28 records) against the user-uploaded with-microscope kit index (177 CSV rows; 176 kit content rows plus one document-development credit row).
+- **Reference integrity:** 50/50 task records included; all referenced candidate item IDs were found in the indexed source catalogue; 0 dangling references. This does not verify content equivalence, official-byte identity or expert correctness.
+- **Evidence limitation:** 80 OCR_TEXT item rows; 3 OCR_TEXT + VISUAL_CHECK; three index-confirmed visual samples (card 84, embedded specimen 134, permanent slide 141); most visual cards, embedded specimens and permanent-slide pages remain INDEX_ONLY. The user-uploaded copy remains not byte-authenticated.
+- **Gap counts (overlapping categories):** 37/50 tasks have sample/specimen gaps; 11/50 measurement/apparatus gaps; 29/50 item/content verification gaps; 10/50 reagent/media gaps; all 50 require source authentication, Biology expert review and method/result validation. Safety/ethics review is separately tagged; the teacher-assigned project remains open-topic and no topic-specific source item was invented.
+- **New artifacts:** `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` — commit 1e87a0cd6b0ab2e20d17785c0092f2e551e96212; `data/catalogues/biology_task_level_gap_register.csv` — commit a7a06fa5f596af8d7bf5ca219ae0aa232f3fb90c.
+- **Updated links/source gap:** Class XI/XII Biology traceability docs and with-microscope specification register link to consolidated task gap output; `SRC-BIO-SAMPLE-AND-MEASUREMENT-BOM` now records the 50-task reference audit and quantified open gaps.
+- **Read-back validation pending in this work unit.**
+- **Decision:** Task/source-ID integrity subtask DONE. Official Biology manual 13163, official with-/without-microscope attachment identity, individual slide/card/specimen content, safety, expert and scientific validation remain OPEN. No app code, original 3D asset or scientific engine was implemented or tested. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
