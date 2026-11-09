@@ -1,0 +1,54 @@
+# Phase 1.1 — Official NCERT primary PDF intake links and upload request
+
+**Date:** 2026-11-09  
+**Phase:** Phase 1 / subphase 1.1  
+**Purpose:** user-assisted retrieval of large official NCERT source PDFs that the current retrieval environment cannot download.
+
+## 1. Why these files are requested
+
+NCERT publishes the relevant Grade XI–XII kit manuals and four distinct kit specification PDFs from its own School Kits pages. The official specification index links directly to Micro Scale Chemistry, Biology with microscope, Biology without microscope and Physics. The revised kit-manuals page separately links the Higher Secondary Biology Kit Manual in English. The link targets below were followed from the official NCERT pages; they are not third-party mirrors.
+
+Current NCERT index pages:
+- Specification Documents: https://ncert.nic.in/division/dek/specification_documents.php?ln=en
+- Revised Kit Manuals: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
+
+## 2. Direct files to download and upload
+
+| Priority | Document | Official direct PDF URL | Tool-reported size hint |
+|---|---|---|---:|
+| P1 | Biology Kit Manual English, publication code 13163 | https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Biology_Laboratory_Kit-11%2612_EN.pdf | Not returned |
+| P1 | Biology kit WITH microscope | https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf | 59,585,913 bytes |
+| P1 | Biology kit WITHOUT microscope | https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf | 63,918,957 bytes |
+| P1 | Current MSCL kit specification | https://ncert.nic.in/division/dek/pdf/MSCL.pdf | 19,808,858 bytes |
+| P1 | Current Physics kit specification | https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf | 42,539,010 bytes |
+
+The size hints are content-length values surfaced by the web retrieval system when it refused to load the large PDF payloads. They are not locally downloaded file sizes or SHA-256 evidence. The Biology manual URL was resolved from the official manual page, but the retrieval tool returned an unusable `400 OK` response and no size.
+
+## 3. Retrieval attempts already made
+
+- Followed all four specification PDF links directly from the official NCERT specification page. The retrieval tool surfaced their content lengths but refused the large responses.
+- Followed the Biology kit manual English link from the official Revised Manuals page. The exact target URL resolved, but no manual bytes were made available.
+- Tried direct container downloads of all five official PDF URLs. All attempts failed; no files were created.
+- No login, credential use, session-cookie extraction, access-control bypass or third-party mirror substitution was used.
+
+## 4. Upload instructions
+
+Please download each file using the direct PDF links above and upload the original files here in this chat. Do not re-save, compress, OCR, rename/re-export or alter the PDFs before uploading. If a download fails, use the corresponding official NCERT index page and select the same listed document; do not use a third-party mirror unless its bytes can later be authenticated against NCERT.
+
+Priority order if uploading in batches:
+1. Biology Kit Manual English (13163).
+2. Biology with microscope and Biology without microscope.
+3. MSCL specification.
+4. Physics specification.
+
+The previous uploaded MSCL and Biology-with-microscope copies remain useful comparison candidates, but their hashes identify only the uploaded bytes. New official downloads must be compared, not silently substituted.
+
+## 5. What LabVerse will do after upload
+
+For each uploaded PDF, record byte length and SHA-256 first; inspect PDF metadata, page count, edition/revision, and extraction quality; visually inspect image-only/ambiguous pages where needed; preserve source page/item references; compare against existing source registers; and update the six-pack task-to-item-to-asset/model/test traceability. For Chemistry, do not infer reagent concentration, quantity or permission for physical use without exact source evidence, current SDS and qualified institutional approval. For Biology, retain the microscope/no-microscope variants separately and do not infer specimen equivalence from a shared label.
+
+## 6. Phase governance
+
+This intake is still Phase 1.1 of Phase 1. It does not close any Phase 1 gate and does not authorise Phase 2. Phase 2 remains BLOCKED until all Phase 1 exit criteria are verified. No app implementation, scientific solver or 3D asset is claimed by this work unit.
+
+Machine-readable manifest: `data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv`.
