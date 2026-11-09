@@ -9229,5 +9229,37 @@
         "exercises": 60
       }
     }
+  },
+  "sourceVariants": {
+    "physics": {
+      "source": "NCERT Secondary Stage Physics Laboratory Kit manual, code 13164",
+      "evidence": "Existing 106-row repository catalogue; 105 non-documentation item rows",
+      "status": "MANUAL_TEXT_INSPECTED / PROCUREMENT_SPEC_NOT_AUTHENTICATED",
+      "note": "Exact current procurement attachment and current supply status are separate evidence questions."
+    },
+    "chemistry": {
+      "source": "MSCL_copy.pdf and NCERT MSCL manual code 13166",
+      "evidence": "Current uploaded candidate: 65 pages / 19,798,501 bytes; 53 physical item rows after excluding documentation rows; separate historical manual has 124 reagent labels.",
+      "status": "USER_UPLOAD_CANDIDATE / NOT_BYTE_AUTHENTICATED",
+      "note": "The MSCL candidate list is not a verified current BOM. Manual reagent labels do not establish supplied reagents, formulation, concentration or quantity."
+    },
+    "biology": {
+      "manual": {
+        "source": "Manual of Secondary Stage Biology Laboratory Kit, code 13163",
+        "evidence": "User upload received 2026-11-09; 141 pages; ISBN 978-93-5292-528-5; 2018 first edition/reprints; 60 exercises; 58 chemical/reagent/stain labels",
+        "status": "USER_UPLOADED_MANUAL_CONTENT_INSPECTED / OFFICIAL_BYTE_EQUALITY_NOT_CHECKED"
+      },
+      "withMicroscope": {
+        "source": "Previously supplied Biology kit with-microscope specification",
+        "rows": 177,
+        "uploadSha256": "c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2",
+        "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED"
+      },
+      "withoutMicroscope": {
+        "source": "Previously supplied Biology kit without-microscope specification",
+        "status": "PRIOR_USER_UPLOAD_ACKNOWLEDGED / ORIGINAL_ATTACHMENT_OR_EXTRACTED_CATALOGUE_NOT_CURRENTLY_SURFACED",
+        "note": "Do not request re-upload. Recover and compare existing prior records. No item omissions/additions are inferred until those records are available."
+      }
+    }
   }
 }
