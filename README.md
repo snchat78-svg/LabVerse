@@ -314,3 +314,11 @@ This is the NCERT-hosted 2018 educational manual, not the current procurement sp
 - [Machine-readable 51-item crosswalk](data/catalogues/mscl_manual_to_2025_upload_item_reconciliation.csv)
 
 All 51 historical-manual apparatus entries have candidate mappings into the 54 numbered items from the uploaded MSCL specification index, with four upload-only rows identified. Differences are not promoted to official changes because the uploaded PDF is not authenticated against the current NCERT attachment. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 — MSCL reagent completeness and Biology manual source gate
+- [MSCL internal reagent-list omissions](data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv)
+- [Updated MSCL manual review](docs/PHASE_1_1_MSCL_OFFICIAL_MANUAL_REVIEW.md)
+- [Updated source authentication and procurement gaps](docs/PHASE_1_1_SOURCE_AUTHENTICATION_AND_PROCUREMENT_GAP_REGISTER.md)
+
+The 2018 MSCL manual's 124-row reagent label list is not exhaustive against its own experiment/appendix text. All reagent references remain blocked from live use pending identity-specific SDS and expert review. NCERT confirms a Biology kit manual (publication code 13163) and separate with-/without-microscope specifications, but the official manual PDF bytes remain unretrieved. Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
