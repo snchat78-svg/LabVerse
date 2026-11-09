@@ -24,7 +24,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest bounded progress: Class XI Chemistry 19 practicals + 8 projects = 27/27 tasks consolidated and checked; marks discrepancy retained, and MSCL source/reagent boundaries explicit. Mapping remains DESIGN_ONLY.
 - Latest bounded progress: Class XI Biology 22/22 task groups mapped and consolidated. 96 candidate source item IDs include 57 index-only rows. Uploaded source remains unauthenticated; no separate RBSE XI Biology project component is listed.
 - Most recent bounded work (2026-11-09): Class XII Biology 28/28 task/choice records mapped and consolidated. 83 unique Biology catalogue rows used; 36 are index-only, and the upload remains unauthenticated. Read-back validation passed 12/12; all outputs are DESIGN_ONLY.
-- Current next work unit: Retrieve official NCERT Biology manual 13163 bytes through the public kit-manuals page or a verifiable user copy; verify metadata/hash/pages and index its apparatus, reagent/stain, specimens, permanent slides and visual aids. Then compare separately against the current with/without microscope specifications and RBSE Biology task crosswalk. Keep Chemistry current procurement/reagent and Biology source gates open. Phase 2 remains BLOCKED.
+- Current next work unit: Recover the official Biology manual 13163 and both official Biology kit variants (with/without microscope) through verifiable public sources or verified uploads; inspect individual card/slide/specimen content. Resolve 50 task-level gaps, then complete source-to-apparatus/reagent/asset mapping. Keep Phase 1 gates open until official byte authentication, procurement, safety, rights, subject-expert and science-validation evidence is complete. Phase 2 remains BLOCKED.
 - Last phase-state review: 2026-11-08
 
 ## Phase 0 — completed log
@@ -1416,3 +1416,18 @@ No app implementation/science validation; phase status unchanged: Phase 1.1 IN P
 - [ ] Current NCERT MSCL procurement bytes/reagent BOM and all safety/expert gates remain OPEN.
 
 Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 1.1 update — Biology consolidated task gap register verified (2026-11-09)
+
+- [x] Consolidated 22 XI + 28 XII Biology task/choice records into 50 task-level rows.
+- [x] Compared all 382 candidate references to the 177-row Biology-with-microscope upload catalogue: 0 dangling item IDs.
+- [x] CSV validated: 50 records, 15 columns, unique task IDs, class counts 22/28 and underlying reference count exact.
+- [x] All 50 remain explicitly marked source unauthenticated, expert review required and method/result validation open.
+- [x] Overlapping gap tags quantified: item/content 29; sample/specimen 37; measurement/apparatus 11; reagent/media 10; biology safety/ethics 6; teacher-assigned project scope 1. Every row includes source/authenticity, subject-expert and method/result tags.
+- [x] Source-gap register 14 records / 12 columns; XI/XII traceability reports and with-microscope register linked to consolidated report.
+- [x] Read-back validation: 12/12 PASS.
+- [ ] Official Biology manual 13163, current with-microscope and without-microscope specification bytes authenticated and inspected.
+- [ ] Verify all individual slides/cards/specimens, task samples and measurement gear; subject-expert and safety sign-off.
+
+Artifacts: `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
