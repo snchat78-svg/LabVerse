@@ -35,13 +35,15 @@ The size hints are content-length values surfaced by the web retrieval system wh
 
 Please download each file using the direct PDF links above and upload the original files here in this chat. Do not re-save, compress, OCR, rename/re-export or alter the PDFs before uploading. If a download fails, use the corresponding official NCERT index page and select the same listed document; do not use a third-party mirror unless its bytes can later be authenticated against NCERT.
 
-Priority order if uploading in batches:
-1. Biology Kit Manual English (13163).
-2. Biology with microscope and Biology without microscope.
-3. MSCL specification.
-4. Physics specification.
+Current received/previously supplied source records:
+1. Biology kit manual 13163: received; two byte-identical copies deduplicated to one unique source.
+2. Biology with microscope: prior upload hash and 177-row catalogue already recorded.
+3. Biology without microscope: prior submission acknowledged; recover the original/derived catalogue internally; no repeat upload.
+4. MSCL: `MSCL_copy.pdf` is present in Library with SHA-256 and 55-row candidate index.
+5. Physics: user confirms prior PDFs; the 106-row Physics manual register and 80-task crosswalk already exist. Exact old procurement-spec filename/hash remains an internal retrieval issue, not a new upload request.
+6. RBSE XI and XII 2026–27 syllabus PDFs: present in Library, hashed and mapped to six subject task registers.
 
-The previous uploaded MSCL and Biology-with-microscope copies remain useful comparison candidates, but their hashes identify only the uploaded bytes. New official downloads must be compared, not silently substituted.
+Previously submitted MSCL and Biology-with-microscope candidates remain in the source registry with their hashes; do not request repeat uploads. Their hashes identify the uploaded bytes only and do not establish exact identity with the current official NCERT attachments.
 
 ## 5. What LabVerse will do after upload
 
@@ -90,3 +92,13 @@ The user has clarified that both the **with-microscope** and **without-microscop
 - Without-microscope: acknowledge the user's prior submission. The raw attachment and its hash are not exposed by the current conversation file listing; this is a project record/archive-retrieval problem, not a request for the user to upload again.
 - **Instruction:** do not ask the user to resend either Biology kit variant. First recover the earlier attachment or existing extracted records. If the original without-microscope bytes remain inaccessible, record the exact evidence limitation and continue the other available Phase 1 tasks; never silently label the file as never received.
 - The two variants remain separate sources and must not be conflated. No variant-specific additions or omissions are inferred until the relevant evidence is inspected.
+
+
+## 11. Persistent source register added — 2026-11-10
+
+- Machine-readable no-repeat source registry: `data/catalogues/source_pdf_registry_2026_11_10.csv`.
+- Human-readable archive and evidence register: `docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md`.
+- Existing accessible source hashes rechecked: Biology manual 13163 (2 duplicate uploads, one unique hash); MSCL_copy.pdf; RBSE XI syllabus; RBSE XII syllabus.
+- Prior Biology with-microscope upload hash and 177-row catalogue were recovered from the existing Phase 1.1 register.
+- Biology without-microscope and older Physics source submissions are acknowledged as prior submissions; exact previous raw filename/hash is not currently surfaced. These must not trigger repeat upload requests.
+- Original PDF binaries are not committed to the GitHub repository in this package. GitHub stores their source identifiers, hashes/metadata where available, extracted catalogues, page references and no-repeat status. Originals remain in ChatGPT upload/Library storage when accessible.
