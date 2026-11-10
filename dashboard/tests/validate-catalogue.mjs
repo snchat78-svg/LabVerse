@@ -125,7 +125,7 @@ const bioIndexLines = bioIndexAudit.trimEnd().split(/\r?\n/);
 assert.equal(bioIndexLines.length, 178, "Biology with-microscope visual index audit must contain 177 data rows");
 assert.match(bioIndexLines[0], /index_audit_source_sha256/);
 assert.equal((bioIndexAudit.match(/VISUALLY_CONFIRMED_IN_CURRENT_UPLOAD/g) || []).length, 177);
-assert.equal((bioIndexAudit.match(/VISUALLY_CHECKED_CURRENT_UPLOAD/g) || []).length, 6);
+assert.equal((bioIndexAudit.match(/VISUALLY_CHECKED_CURRENT_UPLOAD/g) || []).length, 14);
 assert.match(bioIndexAudit, /Wire Gauze[^\n]*Asbestos centre|Wire Gauze[^\n]*asbestos/i);
 assert.match(bioIndexAudit, /Permanent Slide: Student Laboratory Microscope|microscope, not a slide/i);
 const bioSource = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITH-MICROSCOPE");
@@ -135,6 +135,15 @@ assert.equal(bioSource.indexAudit.completeDetailPageAudit, false);
 const bioWireGauze = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-079");
 assert.match(bioWireGauze.safety, /ASBESTOS HAZARD/);
 assert.equal(bioWireGauze.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD");
+for (const [id, page] of [["NCERT-BIO-WM-SPEC-013",22],["NCERT-BIO-WM-SPEC-031",43],["NCERT-BIO-WM-SPEC-045",57],["NCERT-BIO-WM-SPEC-052",64],["NCERT-BIO-WM-SPEC-054",66],["NCERT-BIO-WM-SPEC-055",67],["NCERT-BIO-WM-SPEC-056",68],["NCERT-BIO-WM-SPEC-065",79]]) {
+  const auditedItem = data.subjects.biology.inventory.find(item => item.id === id);
+  assert.equal(auditedItem.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD", id + " visual audit");
+  assert.equal(auditedItem.visualAudit.sourcePdfPage, page, id + " source PDF page");
+}
+const thermometer = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-065");
+assert.match(thermometer.visualAudit.sourceDetail, /ALCOHOL.FILLED/);
+const bioHammer = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-056");
+assert.match(bioHammer.safety, /digital-only handling/);
 const bioMicroscope = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-176");
 assert.match(bioMicroscope.visualAudit.classificationFinding, /Microscope instrument, not a permanent slide/);
 console.log("Biology current-upload visual index/detail audit checks: 12 assertions passed.");
