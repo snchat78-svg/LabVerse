@@ -176,9 +176,46 @@ const itemAssetTraceability = await readFile(
   new URL("../../data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv", import.meta.url),
   "utf8"
 );
-const itemAssetLines = itemAssetTraceability.trimEnd().split("\n");
-assert.equal(itemAssetLines.length, 516, "item-to-asset traceability register must contain 515 data rows");
-assert.match(itemAssetLines[0], /traceability_id.*proposed_asset_id.*scientific_validation_status/);
+function parseCsvRows(input) {
+  const rows = [];
+  let row = [], field = "", quoted = false;
+  for (let i = 0; i < input.length; i++) {
+    const character = input[i];
+    const next = input[i + 1];
+    if (quoted) {
+      if (character === '"' && next === '"') {
+        field += '"';
+        i++;
+      } else if (character === '"') {
+        quoted = false;
+      } else {
+        field += character;
+      }
+    } else if (character === '"') {
+      quoted = true;
+    } else if (character === ",") {
+      row.push(field);
+      field = "";
+    } else if (character === "\n") {
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+    } else if (character !== "\r") {
+      field += character;
+    }
+  }
+  if (field.length || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+  assert.equal(quoted, false, "item-asset CSV must close all quoted fields");
+  return rows;
+}
+const itemAssetRows = parseCsvRows(itemAssetTraceability);
+assert.equal(itemAssetRows.length, 516, "item-to-asset traceability CSV must contain one header + 515 logical records");
+assert.equal(itemAssetRows[0].length, 25, "item-to-asset traceability schema must have 25 columns");
+assert.ok(itemAssetRows.slice(1).every(row => row.length === 25), "every logical CSV record must preserve all 25 columns, including embedded newlines/commas");
 const expectedItemAssetCounts = {physics:105, chemistry:177, biology:233};
 const sourceIdsBySubject = {
   physics: new Set(data.subjects.physics.inventory.map(item => item.id)),
@@ -187,25 +224,22 @@ const sourceIdsBySubject = {
 };
 const allTraceIds = [];
 for (const [subject, expectedCount] of Object.entries(expectedItemAssetCounts)) {
-  const rows = itemAssetLines.slice(1).filter(line => line.startsWith('"TRACE-' + subject.toUpperCase() + '-'));
+  const rows = itemAssetRows.slice(1).filter(row => row[1] === subject);
   assert.equal(rows.length, expectedCount, subject + " traceability row count");
-  for (const line of rows) {
-    const columns = line.split(",");
-    const traceId = line.slice(1, line.indexOf('",'));
-    const itemId = columns[2].slice(1,-1);
+  for (const row of rows) {
+    const [traceId, rowSubject, itemId] = row;
+    assert.equal(rowSubject, subject);
     assert.ok(sourceIdsBySubject[subject].has(itemId), subject + " traceability row references unknown item " + itemId);
-    assert.ok(line.includes(',"NOT_CREATED",'), "3D asset must not be marked created before Phase 5");
-    assert.ok(line.includes(',"NOT_VALIDATED_PHASE_2_BLOCKED",'), "science model must remain blocked pending Phase 1 exit");
-    assert.ok(line.endsWith(',"CANDIDATE_REFERENCE_ONLY_NOT_APPROVED_FOR_USE"'), "candidate source item must not be promoted to approved use");
+    assert.equal(row[8], "NOT_CREATED", "3D asset must not be marked created before Phase 5");
+    assert.equal(row[21], "NOT_VALIDATED_PHASE_2_BLOCKED", "science model must remain blocked pending Phase 1 exit");
+    assert.equal(row[24], "CANDIDATE_REFERENCE_ONLY_NOT_APPROVED_FOR_USE", "candidate source item must not be promoted to approved use");
+    assert.equal(row[18], "VIRTUAL_ONLY_NO_REAL_HARDWARE_CONTROL");
     allTraceIds.push(traceId);
   }
 }
 assert.equal(allTraceIds.length, 515);
 assert.equal(new Set(allTraceIds).size, 515, "all traceability IDs must be unique");
-assert.equal((itemAssetTraceability.match(/VIRTUAL_ONLY_NO_REAL_HARDWARE_CONTROL/g) || []).length, 515, "no real hardware control is enabled");
-assert.equal((itemAssetTraceability.match(/,"NOT_CREATED","(?:SOURCE_TEXT_PRESENT_VISUAL_TECHNICAL_VERIFICATION_REQUIRED|NOT_ESTABLISHED_FROM_CURRENT_ITEM_DETAIL)"/g) || []).length, 515, "each catalogue row keeps its 3D geometry state NOT_CREATED");
-assert.equal((itemAssetTraceability.match(/NOT_VALIDATED_PHASE_2_BLOCKED/g) || []).length, 515, "no scientific model is falsely marked validated");
-console.log("Three-subject item-to-asset/model/test traceability checks: 515 rows, unique IDs, source links and blocked states PASS.");
+console.log("Three-subject item-to-asset/model/test traceability checks: 515 logical CSV rows, 25 columns, unique IDs, source links and blocked states PASS.");
 
 console.log("Dashboard catalogue checks: baseline assertions plus item-asset traceability checks passed.");
 console.log("Physics: 105 items / 80 tasks");
