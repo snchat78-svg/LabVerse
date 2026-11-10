@@ -587,3 +587,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Limitations:** React app is a starter foundation, not a complete dashboard migration. Workspace tabs beyond current subject/catalogue flows are not fully functional; no production 3D assets, deterministic runtime, scientific solvers, Research Studio data pipeline, offline persistence or Android package is implemented.
 - **Phase status:** Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific model work remains BLOCKED; Phase 5+ not started.
 - **Next bounded action:** make the four workspace destinations functional in React and migrate remaining dashboard filters and unmatched-source details. Preserve static preview and permanent PDF source registry.
+
+
+## 2026-11-10 — Public-repository PDF binary boundary clarified
+
+- Reconfirmed the LabVerse GitHub repository is public. Several NCERT kit manuals/specifications carry all-rights-reserved notices.
+- The original PDF binaries are intentionally **not** committed to this public repo without redistribution permission. This is separate from source receipt: accessible uploaded originals remain in ChatGPT conversation/Library storage.
+- GitHub persists source IDs, original filenames where known, byte counts, pages, SHA-256 hashes, derived catalogues, item/task traceability, status and `no_repeat_upload=TRUE`.
+- For previously submitted Physics and Biology-without-microscope raw PDFs whose current bytes/hash are not surfaced, the prior upload is still acknowledged. No repeat upload request is allowed; never invent missing hash data.
