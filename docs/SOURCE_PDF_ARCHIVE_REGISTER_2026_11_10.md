@@ -95,3 +95,8 @@ Current-upload PDF pages 13, 14, 15, 55, 69, 72, 73, 74, 75, 83, 84 and 87 were 
 ## Internal recovery recheck — Biology with-microscope source (2026-11-10)
 
 The prior upload receipt and SHA-256 remain preserved; see `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. In this session the original binary did not surface in current conversation files or Library PDF listing/search. The direct NCERT PDF retrieval also failed (web retrieval internal error; container DNS resolution failed). This is an execution-session retrieval limitation, not evidence that the user did not upload the file. Do not request a repeat upload. Keep the 150-row pending queue unchanged until the existing source binary or an accessible official primary payload is available. GitHub stores derived catalogues, receipts, hashes and audit records—not the original copyrighted PDF binary.
+
+
+## MSCL detail-page audit update — 2026-11-10
+
+The registered earlier `MSCL_copy.pdf` byte variant (`db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`) now has eight item detail pages visually checked (5–10, 18, 26, 43; items 2–6, 14, 21, 34). The separate `b991bd...` later upload remains a different variant and is not covered by this visual audit. See `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md` and `data/catalogues/mscl_detail_audit_2026_11_10.csv`. All records remain user-uploaded/unathenticated; the source SHA does not prove identity with an official NCERT attachment.
