@@ -24,7 +24,19 @@ async function main() {
     await page.getByRole("heading", {name:"Physics Lab"}).waitFor();
     const inventorySearch = page.locator(".content-grid .search").first();
     await inventorySearch.fill("Vernier caliper");
+    const itemTypeSelect = page.locator(".inventory-filters select").nth(0);
+    const categorySelect = page.locator(".inventory-filters select").nth(1);
+    await itemTypeSelect.selectOption("apparatus");
+    await categorySelect.selectOption("MEASUREMENT");
+    assert.equal(await page.locator(".item").count(), 1);
+    await itemTypeSelect.selectOption("reagent");
+    assert.equal(await page.locator(".item").count(), 0);
+    await itemTypeSelect.selectOption("apparatus");
+    await categorySelect.selectOption("all");
     await page.getByRole("button", {name:/Vernier caliper/}).click();
+    assert.match(await page.locator(".practical-panel .coverage-note").innerText(), /79\/80 tasks linked/);
+    assert.match(await page.locator(".practical-panel .coverage-note").innerText(), /1 unmatched tasks/);
+    results.push("Inventory type/category filters and source coverage");
     assert.match(await page.locator(".detail-panel").innerText(), /NCERT-PHY-KIT-003|Vernier caliper/);
     results.push("Physics inventory search and source detail");
 
@@ -46,6 +58,14 @@ async function main() {
     assert.equal(await page.locator(".bench-item").count(), 2);
     assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
     results.push("Practical source links and candidate placeholder setup");
+
+    // An unmatched project stays visible with the reason; no false source match.
+    await page.locator('.workspace-tabs button', {hasText:"Learning Lab"}).click();
+    await page.locator(".practical-panel .search").fill("Fortin barometer");
+    const fortinTask = page.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-PRJ-08"});
+    await fortinTask.waitFor();
+    assert.match(await fortinTask.innerText(), /Fortin barometer.*not appear|not appear.*Fortin barometer/i);
+    results.push("Unmatched Physics source gap disclosed");
 
     // Chemistry catalogue opens from the three-direction overview
     await page.locator(".back-button").click();
