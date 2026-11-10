@@ -87,9 +87,11 @@ Every task remains `DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOUR
 
 No quantities, concentrations, preparation, mixing, handling, reaction or disposal instructions are supplied by this audit.
 
-## CI validation — pending
+## Final CI validation — 2026-11-10
 
-The new reconciliation integrity assertions must pass before this deliverable is treated as validated. Existing safety-screen and task-matrix status remains documentary only; this does not close Phase 1.1 or unblock Phase 2.
+- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206 (validator commit `e7ce64105ab0c0ae66137633abc811ac615236a9`). The run verifies 124 source-order labels, 2 separate omissions, 126 no-live-use/SDS-required/unapproved/no-BOM statuses, duplicate Potassium iodate preservation, KI vs Iodine solution distinction, 41 task IDs, 25 matrix candidate IDs and all per-task reconciliation lists/status counts.
+- Desktop/mobile Chromium smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- This validates only repository data integrity and browser smoke; every mapping remains a documentary candidate pending full-context, method, SDS, compatibility/waste and qualified Chemistry/Safety review. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
 
 ## Current phase and next work
 
