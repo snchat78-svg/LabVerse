@@ -1518,3 +1518,14 @@ Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 remains BLOCKED. The next bounde
 - [ ] Receive five original PDFs from the user; validate byte hashes/metadata/pages; inspect primary content before updating item-level registers.
 
 No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED.
+
+## 2026-11-10 — Current-session source receipt and React regression confirmation
+
+- Current-session PDF receipt committed at data/catalogues/source_pdf_upload_receipts_2026_11_10.csv; every receipt is marked no-repeat.
+- Biology manual 13163 current upload exactly matches the already registered canonical SHA-256 c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086.
+- Current MSCL (1).pdf: 19,808,858 bytes / 65 pages / SHA-256 b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e; cover and index visually inspected. This is a separate byte variant from prior MSCL_copy.pdf (19,798,501 bytes and a different hash). Preserve both; official NCERT byte equality is not verified.
+- Current SSBK_with_Microscope_222.pdf: 59,620,970 bytes / 199 pages / SHA-256 9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb; same size/page count as earlier variant but different hash. Preserve both fingerprints; do not infer byte identity.
+- Public GitHub stores upload receipts, hashes and derived catalogues only; original rights-notice PDFs remain in user-upload storage. No raw copyrighted PDF binaries were committed.
+- React app check on commit d02f02445bb587fd6a51927f25288e2cfb72a042: TypeScript typecheck PASS, production build PASS, Chromium 12/12 groups PASS including inventory type/category filters, source coverage and the Physics mapping gap. A follow-up test now adds Biology open-project gap coverage; verify its new CI run before counting that extension as passed.
+- Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No authentication dependency was introduced into the dashboard preview.
+- Next bounded source action: continue page-level audit and source-to-item reconciliation from the uploaded Biology kit specification variants and recover earlier Biology-without-microscope/Physics records internally; do not re-request prior PDFs.
