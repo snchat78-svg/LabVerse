@@ -246,3 +246,25 @@ console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");
 console.log("Biology: 175 kit records / 58 manual reagent labels / 50 tasks");
 console.log("Total RBSE task-index rows: 171");
+
+
+const researchCapabilityRegister = await readFile(
+  new URL("../../data/catalogues/research_discovery_capability_register_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const researchCapabilityRows = parseCsvRows(researchCapabilityRegister);
+assert.equal(researchCapabilityRows.length, 15, "research capability CSV must contain one header + 14 logical records");
+assert.equal(researchCapabilityRows[0].length, 11, "research capability register schema must have 11 columns");
+assert.ok(researchCapabilityRows.slice(1).every(row => row.length === 11), "every research capability record must preserve all 11 columns");
+const researchCapabilityIds = researchCapabilityRows.slice(1).map(row => row[0]);
+assert.equal(new Set(researchCapabilityIds).size, 14, "research capability IDs must be unique");
+assert.deepEqual(
+  researchCapabilityIds,
+  ["DISC-01","DISC-02","DISC-03","DISC-04","CHEM-01","CHEM-02","PHY-01","NUC-01","NUC-02","NUC-03","NUC-04","NUC-05","BIO-01","XDOM-01"],
+  "research capability rows must retain the reviewed source order"
+);
+assert.ok(researchCapabilityRows.slice(1).every(row => row[9] === "DESIGN_ONLY"), "future research capabilities must not be represented as implemented");
+assert.match(researchCapabilityRows.find(row => row[0] === "NUC-01")[4], /NNDC ENSDF public-beta/);
+assert.match(researchCapabilityRows.find(row => row[0] === "NUC-04")[4], /IAEA EXFOR/);
+assert.match(researchCapabilityRows.find(row => row[0] === "NUC-05")[7], /IUPAC\/IUPAP/);
+console.log("Research discovery capability register: 14 rows, 11 columns, unique ordered IDs and DESIGN_ONLY/source gates PASS.");
