@@ -224,3 +224,8 @@ Both PDF text layers were empty; OCR and selected page-image checks were used. T
 The MSCL index contains 54 kit/manual entries plus one document-credit row. The Biology index contains 83 first-section entries, 50 visual cards, 7 embedded specimens, 35 permanent slides, one student microscope and one document-credit row. The Biology row 176 heading/body mismatch and asbestos-centred wire gauze in both files are preserved as explicit review flags.
 
 Phase 1.1 remains IN PROGRESS; Phase 1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Official attachment response-size check — 2026-11-10
+
+The official NCERT index was re-opened and its four Grade XI–XII specification links were followed. The retrieval layer exposed the following response sizes but rejected the PDF payloads as too large: MSCL 19,808,858 bytes; Biology with microscope 59,585,913 bytes; Biology without microscope 63,918,957 bytes; Physics 42,539,010 bytes. No official PDF bytes or SHA-256 were retrieved. The later user-uploaded MSCL variant matches the official size only; the two Biology-with-microscope variants are each 35,057 bytes larger. Size is not byte authentication. Details: `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md`.
