@@ -100,3 +100,16 @@ The prior upload receipt and SHA-256 remain preserved; see `docs/PHASE_1_1_BIOLO
 ## MSCL detail-page audit update — 2026-11-10
 
 The registered earlier `MSCL_copy.pdf` byte variant (`db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`) now has eight item detail pages visually checked (5–10, 18, 26, 43; items 2–6, 14, 21, 34). The separate `b991bd...` later upload remains a different variant and is not covered by this visual audit. See `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md` and `data/catalogues/mscl_detail_audit_2026_11_10.csv`. All records remain user-uploaded/unathenticated; the source SHA does not prove identity with an official NCERT attachment.
+
+## Official NCERT response-size evidence — 2026-11-10
+
+A fresh read of the current official NCERT specification index exposed separate Grade XI–XII links for MSCL, Biology with microscope, Biology without microscope and Physics. Following the four official links exposed response content lengths but the web retrieval layer rejected each PDF as too large for download. The container direct HEAD/download retry failed DNS resolution. No official PDF bytes, SHA-256, ETag or revision metadata were obtained.
+
+| Official PDF | Response content length | Comparison |
+|---|---:|---|
+| MSCL.pdf | 19,808,858 | Matches exactly the *size* of the registered later `MSCL (1).pdf` upload variant (SHA-256 `b991bd...`); SIZE_MATCH_ONLY, not byte authentication. Earlier `MSCL_copy.pdf` is 19,798,501 bytes and has a separate full 53-item visual audit. |
+| SSBK_with_Microscope.pdf | 59,585,913 | Both registered user-upload variants are 59,620,970 bytes (35,057 bytes larger); no official-byte match. |
+| SSBK_without_Microscope.pdf | 63,918,957 | Prior user upload acknowledged; exact size/hash remain unknown in current Library index. |
+| SSPhyLaboratoryKit.pdf | 42,539,010 | Prior Physics source acknowledged; exact procurement attachment bytes/size/hash remain unknown. |
+
+Full evidence and exact URLs are in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md` and `data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv`. The 15-column CSV is covered by source-integrity CI. Never promote a user upload based on filename, page count or size alone; SHA-256 or trusted official metadata/byte comparison remains required. Keep no-repeat upload policy intact.
