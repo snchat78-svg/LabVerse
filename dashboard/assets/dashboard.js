@@ -146,7 +146,7 @@
       const linkText=count?count+" candidate source item link"+(count===1?"":"s"):"No source-item link recorded";
       return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div><button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button></article>';
     }).join("")||'<div class="panel-note">No tasks match this filter.</div>';
-    $("[data-task]").forEach(b=>b.addEventListener("click",()=>{
+    $$("[data-task]").forEach(b=>b.addEventListener("click",()=>{
       const t=d.tasks.find(x=>x.id===b.dataset.task);if(!t)return;
       const ids=t.sourceItemIds||[];
       const linked=ids.map(id=>{
@@ -156,7 +156,7 @@
       $("#analysis-title").textContent=t.title;
       $("#analysis-copy").textContent="Task-index record only. The links below open candidate source catalogue items; they do not establish verified procurement equivalence or an executable practical. Implementation status: "+t.status+".";
       $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div><div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>';
-      $("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
+      $$("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
       showToast(ids.length?"Practical mapping opened; choose a source item to browse":"Practical has no source-item link recorded yet");
     }));
   }
