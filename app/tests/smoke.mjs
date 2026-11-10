@@ -79,6 +79,12 @@ async function main() {
     await page.locator(".back-button").click();
     await page.locator(".subject-card.teal").click();
     await page.getByRole("heading", {name:"Biology Lab"}).waitFor();
+    const auditCoverage = page.locator(".visual-audit-coverage");
+    assert.match(await auditCoverage.innerText(), /25 \/ 175 visually checked/i);
+    assert.match(await auditCoverage.innerText(), /150 items remain OCR\/index-only/i);
+    await page.locator(".content-grid .search").first().fill("Kit Box");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Kit Box$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /NOT VISUALLY CHECKED.*OCR\/index catalogue evidence only/i);
     await page.locator(".content-grid .search").first().fill("Mercury");
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Mercury$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
@@ -86,7 +92,9 @@ async function main() {
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Wire Gauze$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /ASBESTOS HAZARD/i);
     assert.match(await page.locator(".detail-panel").innerText(), /asbestos centre/i);
+    assert.match(await page.locator(".detail-panel").innerText(), /VISUALLY CHECKED in user-uploaded candidate.*PDF page 93/i);
     results.push("Biology asbestos wire-gauze warning visible");
+    results.push("Biology with-microscope audit coverage and per-item visual status");
     await page.locator(".content-grid .search").first().fill("Spirit Lamp");
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Spirit Lamp$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /OPEN-FLAME HAZARD/i);

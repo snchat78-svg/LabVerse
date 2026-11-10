@@ -35,6 +35,12 @@ GitHub Actions runs install, typecheck and build. No local Python, Node or Andro
 - Visible Chemistry reference-only/no-live-use and Biology school-managed/not-supplied-with-kit labels.
 - Task catalogue and selected-item source/evidence/safety information.
 
-## Not yet implemented
+## Current implementation and remaining boundaries
 
-This is the app foundation, not the completed product. The four workspace destinations now have bounded functional screens. Inventory type/category filtering and source coverage summary remain to migrate from the static dashboard. Research drafts are session-local; no cloud saving or reproducible notebook is implemented. The existing static `dashboard/` remains the richer interaction preview until its task-to-source-item navigation, candidate placeholder setup, and browser checks have been migrated into React. Real 3D models, scientific runtime, deterministic Physics/Chemistry/Biology solvers, offline persistence, Research Studio data workflows and Android packaging remain future roadmap work.
+The React app now includes the four workspace destinations, class XI/XII filtering, inventory type/category filters, subject-specific source coverage, practical-to-candidate-item navigation, explicit unmatched-task explanations and a candidate-only workbench. The selected practical's mapped candidate items can be added together; duplicate item IDs are not added twice.
+
+The Biology with-microscope catalogue now shows its item-level visual audit state. The current GitHub evidence records 25 of 175 physical item detail pages as visually checked against a user-uploaded candidate PDF; the other 150 remain OCR/index-only. This is not official NCERT byte authentication, procurement confirmation or scientific approval.
+
+Research Studio drafts remain session-local and are not saved to cloud. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
+
+Still not implemented: original/licensed 3D assets and manipulation, deterministic experiment runtime, validated Chemistry/Physics/Biology solvers, reproducible notebook and data pipeline, offline content-pack persistence, full expert/safety/source-rights sign-off, and Android packaging.

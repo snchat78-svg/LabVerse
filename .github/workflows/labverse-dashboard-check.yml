@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "dashboard/**"
+      - "data/catalogues/**"
       - ".github/workflows/labverse-dashboard-check.yml"
   pull_request:
     paths:
       - "dashboard/**"
+      - "data/catalogues/**"
       - ".github/workflows/labverse-dashboard-check.yml"
   workflow_dispatch:
 

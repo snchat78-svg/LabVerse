@@ -55,6 +55,15 @@ type CatalogueItem = {
   quantity?: string;
   safety?: string;
   screening?: string;
+  visualAudit?: {
+    status: string;
+    page?: number;
+    sourcePdfPage?: number;
+    sourceSha?: string;
+    sourceDetail?: string;
+    safetyFinding?: string;
+    classificationFinding?: string;
+  };
 };
 
 function statusLabel(item: CatalogueItem): string {
@@ -145,6 +154,16 @@ export default function App() {
         .map((id) => subjectItems.find((item) => item.id === id))
         .filter((item): item is CatalogueItem => item !== undefined)
     : [];
+
+  const biologyAuditItems = activeSubject === "biology" && activeData
+    ? (activeData.inventory as unknown as CatalogueItem[]).filter((item) =>
+        item.id.startsWith("NCERT-BIO-WM-SPEC-")
+      )
+    : [];
+  const biologyAuditCheckedCount = biologyAuditItems.filter(
+    (item) => item.visualAudit?.status === "VISUALLY_CHECKED_CURRENT_UPLOAD"
+  ).length;
+  const biologyAuditPendingCount = biologyAuditItems.length - biologyAuditCheckedCount;
 
   const tasks = useMemo(() => {
     if (!activeData) return [];
@@ -348,6 +367,12 @@ export default function App() {
                   <div><div className="eyebrow">SOURCE CATALOGUE</div><h2>Instrument & material inventory</h2></div>
                   <strong>{items.length} / {activeData.inventory.length + activeData.reagents.length}</strong>
                 </div>
+                {activeSubject === "biology" && (
+                  <div className="visual-audit-coverage" role="note">
+                    <strong>With-microscope detail pages: {biologyAuditCheckedCount} / {biologyAuditItems.length} visually checked</strong>
+                    <span>{biologyAuditPendingCount} items remain OCR/index-only. Uploaded-byte identity to NCERT is not verified.</span>
+                  </div>
+                )}
                 <input
                   className="search"
                   type="search"
@@ -406,6 +431,16 @@ export default function App() {
                       <dt>Record ID</dt><dd>{selectedItem.id}</dd>
                       <dt>Source</dt><dd>{selectedItem.source}</dd>
                       <dt>Evidence</dt><dd>{selectedItem.evidence ?? "Not recorded"}</dd>
+                      {activeSubject === "biology" && selectedItem.id.startsWith("NCERT-BIO-WM-SPEC-") && (
+                        <>
+                          <dt>Detail-page visual audit</dt>
+                          <dd>
+                            {selectedItem.visualAudit?.status === "VISUALLY_CHECKED_CURRENT_UPLOAD"
+                              ? `VISUALLY CHECKED in user-uploaded candidate · PDF page ${selectedItem.visualAudit.page ?? selectedItem.visualAudit.sourcePdfPage ?? "not recorded"}`
+                              : "NOT VISUALLY CHECKED · OCR/index catalogue evidence only"}
+                          </dd>
+                        </>
+                      )}
                       <dt>Display status</dt><dd>{statusLabel(selectedItem)}</dd>
                       <dt>Source status</dt><dd>{selectedItem.status}</dd>
                       {selectedItem.quantity && <><dt>Source quantity</dt><dd>{selectedItem.quantity}</dd></>}

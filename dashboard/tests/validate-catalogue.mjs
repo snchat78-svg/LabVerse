@@ -158,6 +158,20 @@ const bioMicroscope = data.subjects.biology.inventory.find(item => item.id === "
 assert.match(bioMicroscope.visualAudit.classificationFinding, /Microscope instrument, not a permanent slide/);
 console.log("Biology current-upload visual index/detail audit passed: 177 index rows; 25 item detail pages plus 1 credits page visually checked.");
 
+const bioDetailQueue = await readFile(
+  new URL("../../data/catalogues/biology_with_microscope_detail_audit_queue_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const bioDetailQueueLines = bioDetailQueue.trimEnd().split(/\r?\n/);
+assert.equal(bioDetailQueueLines.length, 151, "Biology detail audit queue must contain 150 pending item rows");
+const queuedBioIds = [...bioDetailQueue.matchAll(/NCERT-BIO-WM-SPEC-\d{3}/g)].map(match => match[0]);
+assert.equal(queuedBioIds.length, 150, "queue must retain one source ID per pending item");
+assert.equal(new Set(queuedBioIds).size, 150, "queue source IDs must be unique");
+assert.match(bioDetailQueueLines[1], /NCERT-BIO-WM-SPEC-002/);
+assert.doesNotMatch(bioDetailQueue, /NCERT-BIO-WM-SPEC-079/, "visually audited Wire Gauze must not re-enter the pending queue");
+assert.equal((bioDetailQueue.match(/NOT_VISUALLY_CHECKED_THIS_PASS/g) || []).length, 150);
+console.log("Biology detail audit queue checks: 150 pending physical items; source order and IDs preserved.");
+
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");

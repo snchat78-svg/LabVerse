@@ -57,3 +57,5 @@
 .coverage-note strong{color:#187e6f;font-size:9px}
 .coverage-note span{color:#81958f;font-size:8px;text-align:right}
 @media(max-width:760px){.inventory-filters{grid-template-columns:1fr}.coverage-note{align-items:flex-start;flex-direction:column}.coverage-note span{text-align:left}}
+
+.visual-audit-coverage{display:grid;gap:4px;margin:12px 0 4px;padding:10px 12px;border:1px solid #e1e8ef;border-radius:9px;background:#f7f9fc}.visual-audit-coverage strong{font-size:9px;color:#40556f}.visual-audit-coverage span{font-size:8px;line-height:1.5;color:#79899d}
