@@ -137,7 +137,15 @@ No future nuclear/element module should supply real-world radioactive-material h
 - [ ] Validate dataset licences and choose specific evaluated nuclear-data sources before connector implementation.
 - [ ] Implement nothing in Phase 2 until Phase 1 master exit criteria are satisfied.
 
-## 9. References reviewed for this design map
+## 9. Nuclear data source candidates for later validation
+
+- **NNDC ENSDF API:** National Nuclear Data Center exposes evaluated nuclide levels, gamma transitions and decay records through JSON/NDJSON endpoints. The service is marked Available but Public Beta; its page reports data generated 2026-08-10. Treat endpoint schemas as provisional, pin release metadata, preserve evaluation references and test specific records. It is not yet connected to LabVerse. https://www.nndc.bnl.gov/ensdf-api/
+- **IAEA EXFOR:** experimental nuclear-reaction dataset with more than 20,700 experiments listed by the IAEA. The IAEA page notes that neutron reactions are collected systematically while charged-particle and photon coverage is less extensive. Coverage must be checked for each intended reaction; data quality, units, uncertainty, source paper and terms must be preserved. https://nucleus.iaea.org/Pages/experimental-nuclear-reaction-data.aspx
+- **IAEA Evaluated Nuclear Data File resource:** useful entry point to evaluated cross-section libraries and ENDF formats. The catalogue page itself displays an old last-resource-update metadata date (2015), so LabVerse must select and pin the exact underlying library release; the page must not be treated as proof of a current dataset. https://nucleus.iaea.org/Pages/evaluated-nuclear-data-file.aspx
+
+These are discovered source candidates only. No connector, API contract, licence review or independent data validation was performed.
+
+## 10. References reviewed for this design map
 
 1. US Department of Energy, **DOE Explains…Superheavy Elements** — ion-beam/target fusion, instability and decay signatures: https://www.energy.gov/science/doe-explainssuperheavy-elements
 2. GSI Helmholtzzentrum für Schwerionenforschung, **Production of new elements — the idea** — fusion, separation and decay-chain detection: https://www.gsi.de/en/researchaccelerators/research_an_overview/new_elements/production
