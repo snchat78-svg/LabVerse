@@ -1,4 +1,4 @@
-const { chromium } = require("playwright");
+import { chromium } from "playwright";
 const assert = require("node:assert/strict");
 
 async function main() {
