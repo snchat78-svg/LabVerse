@@ -82,6 +82,19 @@ async function main() {
     await page.locator(".content-grid .search").first().fill("Mercury");
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Mercury$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
+    await page.locator(".content-grid .search").first().fill("Wire Gauze");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Wire Gauze$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /ASBESTOS HAZARD/i);
+    assert.match(await page.locator(".detail-panel").innerText(), /asbestos centre/i);
+    results.push("Biology asbestos wire-gauze warning visible");
+    await page.locator(".content-grid .search").first().fill("Spirit Lamp");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Spirit Lamp$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /OPEN-FLAME HAZARD/i);
+    results.push("Biology open-flame spirit-lamp warning visible");
+    await page.locator(".content-grid .search").first().fill("Scalpel");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Scalpel$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /SHARP TOOL/i);
+    results.push("Biology sharp-tool scalpel warning visible");
     results.push("Chemistry and Biology source/safety details");
 
     // The open-ended Biology project must remain unmatched until a teacher approves a topic and method.
