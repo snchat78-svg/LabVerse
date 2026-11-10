@@ -37,9 +37,9 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - [React/TypeScript/Vite application](app/)
 - [React app architecture and current test boundary](app/README.md)
-- [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145)
+- [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972)
 
-The React app now passes strict typecheck, production build and 6/6 Chromium smoke groups. The static dashboard remains the richer preview until all four workspaces and remaining interactions are migrated.
+The React app now passes strict typecheck, production build and 10/10 Chromium smoke groups. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio each have functional bounded screens; the Research Studio draft is session-local and Analysis is explicitly NOT_MODELLED. The static dashboard remains richer for inventory filters/coverage summary pending migration.
 
 ## Dashboard preview
 
