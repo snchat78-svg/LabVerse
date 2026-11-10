@@ -245,7 +245,7 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 ## 2026-11-10 — Phase 1 research capability map and nuclear-source review
 
 ### Completed bounded work unit
-- Added `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md` and a 12-row machine-readable register at `data/catalogues/research_discovery_capability_register_2026_11_10.csv`.
+- Added `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md` and a 14-row machine-readable register at `data/catalogues/research_discovery_capability_register_2026_11_10.csv`.
 - Mapped research workflows across Chemistry, Physics, Biology and cross-domain science, with a future design-only Nuclear Matter Explorer.
 - Explicitly separated chemical compound/material formation from new-element nuclear synthesis; defined nuclide, nuclear-reaction, decay-event, detector-event and discovery-claim records; added candidate/observed/simulated/reproduced/independently-reviewed/formally-recognised evidence labels.
 - Added IUPAC/IUPAP discovery-governance, DOE/GSI process references and candidate data sources NNDC ENSDF (public beta) and IAEA EXFOR (coverage limits documented) to the scientific source registry.
