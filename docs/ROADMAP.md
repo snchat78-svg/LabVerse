@@ -616,3 +616,15 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - Biology-with-microscope prior upload was searched again in Library and Conversation surfaces and still did not surface. No repeat upload requested; first pending row remains Kit Box / index page 9.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D NOT STARTED; Phase 6 runtime NOT STARTED.
 - Next: prioritize assignment of qualified review owners and collection of primary evidence for the high-consequence MSCL rows; continue internal recovery of the already-submitted Biology source without repeating upload requests.
+
+## RBSE/MSCL reagent crosswalk reconciliation — 2026-11-10
+
+- Compared the 124 numbered MSCL manual reagent labels plus 2 supplemental manual-body references against all 41 RBSE Chemistry task/choice rows.
+- Added the 41-task / 20-column reconciliation: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`; report: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md`.
+- Found 18 exact-label text-occurrence candidate records spanning 17 task IDs in the safety screen; the task matrix also has 17 linked tasks but the task-ID sets are not identical. Reconciled 15 tasks with both track types, 2 screen-only, 2 matrix-contextual-only and 22 with no candidate link in either track. The latter is not proof that no reagent is needed.
+- Ten of the 15 shared tasks have differing record-ID sets. Examples and review notes are preserved in the CSV. No candidate was auto-added or removed because full text occurrence does not prove reagent role and context-based candidates are not exact-text matches.
+- Preserved duplicate Potassium iodate source records 080/087 and separate supplemental Potassium permanganate / Potassium iodide records. No formula, CAS, formulation, concentration or supplier data has been inferred.
+- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206 (validator commit `e7ce64105ab0c0ae66137633abc811ac615236a9`). Desktop/mobile browser smoke is running: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- All 126 screening records remain no-live-use, SDS-required, not approved and not current BOM; all 41 RBSE tasks remain documentary candidates requiring Chemistry/Safety and method review.
+- Phase 1 / 1.1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- Next: inspect full source context for OPT-01 / OPT-04 exact text occurrences and THERMO-02 / ELECTRO-01 contextual candidates, then resolve the ten candidate-ID differences under expert review.
