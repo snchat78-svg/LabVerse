@@ -290,8 +290,10 @@ assert.ok(msclDetailRows.slice(1).every(row => row[2] === "USER_UPLOADED_UNAUTHE
 assert.ok(msclDetailRows.slice(1).every(row => row[13].startsWith("VISUALLY_CHECKED_REGISTERED_USER_UPLOAD")), "all 53 audit statuses must name the inspected user-uploaded source boundary");
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-004")[11], /NEEDS_TECHNICAL_REVIEW/);
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-015")[11], /NEEDS_TECHNICAL_REVIEW/);
-assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-032")[11], /NEEDS_TECHNICAL_REVIEW/);
-assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-033")[11], /NEEDS_TECHNICAL_REVIEW/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-032")[11], /Major text\/drawing dimension discrepancy/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-032")[13], /NEEDS_DIMENSION_REVIEW/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-033")[11], /technical review required before fluid geometry/i);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-033")[13], /NEEDS_GEOMETRY_REVIEW/);
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-034")[12], /ASBESTOS HAZARD/);
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-022")[12], /OPEN-FLAME HAZARD/);
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-024")[12], /MERCURY.*TOXICITY HAZARD/);
