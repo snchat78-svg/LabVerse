@@ -186,3 +186,19 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 
 ### Next single action
 - Continue source-order page audit for the remaining Biology equipment detail pages, then proceed to indexed visual cards, specimens and permanent slides. Keep asset artwork original/licensed; do not extract NCERT card/slide artwork as app assets.
+
+## 2026-11-10 — Biology glassware page audit, batch 3
+
+### Completed
+- Visually checked 12 glassware pages: Capillary Tubes, Glass Pipette, Cavity Slide, Glass Dropper, Test Tube, Cover Slips, Glass Rod, Glass Tube, Watch Glass, Conical Flask, Boiling Tube and Glass Slide.
+- Confirmed the source lists 12 test tubes and 100 glass slides (two packs of 50); cover slips are two packs of 20.
+- Preserved the manual warning that Watch Glass should never be heated.
+- Appended page hashes, page numbers and source details to the master catalogue and audit CSV; added dashboard data provenance and React quantity assertions.
+
+### Current Biology-with-microscope visual coverage
+- 177 index entries reconciled.
+- 175 physical/catalogue item records after excluding the Kit Manual and Document Development Team entries.
+- 25/175 physical item detail pages visually checked, plus one credits page. 150 item detail pages remain unaudited.
+
+### Next single action
+- Continue page-level review of remaining equipment items and fragile/heat-related items in source order; after the equipment register, review the embedded specimens and permanent slides scientifically without copying protected NCERT artwork.
