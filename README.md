@@ -164,6 +164,8 @@ The register assigns LabVerse source-row IDs and provisional equipment families 
 - [Uploaded PDF analysis and source boundaries](docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md)
 - [Micro Scale Chemistry kit specification register](docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md)
 - [MSCL item catalogue CSV — 55 index rows](data/catalogues/ncert_mscl_spec_items.csv)
+- [MSCL detail-page audit report — 8/53 physical items checked](docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md)
+- [MSCL detail-page audit register (CSV)](data/catalogues/mscl_detail_audit_2026_11_10.csv)
 - [Biology with microscope specification register](docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md)
 - [Biology with microscope item catalogue CSV — 177 index rows](data/catalogues/ncert_biology_with_microscope_spec_items.csv)
 
