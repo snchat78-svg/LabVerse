@@ -153,3 +153,15 @@ These are discovered source candidates only. No connector, API contract, licence
 4. IUPAC/IUPAP Joint Working Party, **On the discovery of new elements**, final report, *Pure and Applied Chemistry* (2020), DOI: https://doi.org/10.1515/pac-2020-2926
 
 **Source boundary:** these references establish a high-level process and governance direction. They do not provide a complete nuclear-data library, reaction model, experimental protocol or permission to reuse protected imagery/data. Each future data item and model still needs individual provenance, licence and expert review.
+
+
+## 11. Capability-register validation — 2026-11-10
+
+The 14-row register is checked by `dashboard/tests/validate-catalogue.mjs` using the quoted-field-aware CSV parser already used for the 515-row inventory traceability register. Assertions cover 15 logical rows (header + 14), 11 columns per record, unique capability IDs in the agreed order, DESIGN_ONLY status for every future capability, NNDC ENSDF and IAEA EXFOR source references, and an explicit IUPAC/IUPAP review gate for new-element claims.
+
+- Final source/catalogue workflow: **PASS**, run https://github.com/snchat78-svg/LabVerse/actions/runs/42778819472 on commit `9f929ced9f45b0c8cb64a81fa34fcbf4a4e3ecb2`.
+- A first run exposed a test assertion aimed at the wrong semantic column (the validation-gate cell did not yet explicitly include IUPAC/IUPAP). The NUC-05 gate was made explicit and the final rerun passed. The failed first attempt is not counted.
+- Browser smoke: **PASS**, 9/9 groups, run https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556 on the immediately preceding validator commit. No app or UI code changed in the subsequent one-cell CSV correction.
+- Validation is structural/provenance-boundary checking only. No external nuclear API connector call, nuclear calculation, solver benchmark, model review, 3D scene, experiment runtime or discovery validation was performed.
+
+This completes the capability-map documentation and register-validation unit only. Phase 1/1.1 remains open; Phase 2 scientific models remain blocked.
