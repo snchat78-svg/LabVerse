@@ -110,6 +110,22 @@
     state.selected=id;renderBench();inspectItem(id);
     showToast(item.type==="reagent"?"Added as a virtual reference placeholder":"Added to the workbench");
   }
+  function addLinkedItemsToBench(ids){
+    const uniqueIds=[...new Set(ids||[])];
+    const items=uniqueIds
+      .map(id=>allItems(state.subject).find(item=>item.id===id))
+      .filter(Boolean);
+    const existing=new Set(state.bench.map(item=>item.id));
+    const additions=items.filter(item=>!existing.has(item.id));
+    additions.forEach(item=>state.bench.push({
+      ...item,
+      instanceId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7)
+    }));
+    renderBench();
+    showToast(additions.length
+      ? additions.length+" candidate placeholders added; no procedure or result is implied"
+      : "All mapped candidate items are already on the workbench");
+  }
   function renderBench(){
     const bench=$("#bench-items"),empty=$("#empty-bench");
     bench.innerHTML=state.bench.map((item,index)=>'<article class="bench-object"><button class="remove-object" type="button" data-remove="'+esc(item.instanceId)+'" aria-label="Remove item">×</button><span class="object-symbol">'+(item.type==="reagent"?"◌":item.type==="specimen"?"⌬":item.type==="slide"?"▤":"◇")+'</span><strong>'+esc(item.name)+'</strong><small>'+esc(pretty(item.category||item.type))+' · '+(item.type==="reagent"?"REFERENCE ONLY":"PLACEHOLDER")+'</small></article>').join("");
@@ -158,8 +174,9 @@
       }).join("");
       $("#analysis-title").textContent=t.title;
       $("#analysis-copy").textContent="Task-index record only. "+(ids.length?"The links below open candidate source catalogue items; they do not establish verified procurement equivalence.":(t.mappingGap||"No candidate source-item links are available."))+" Implementation status: "+t.status+". This is not a verified executable practical.";
-      $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div>'+(t.mappingGap?'<div class="task-mapping-gap">'+esc(t.mappingGap)+'</div>':'')+'<div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>';
-      $$("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
+      $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div>'+(t.mappingGap?'<div class="task-mapping-gap">'+esc(t.mappingGap)+'</div>':'')+'<div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>'+(ids.length?'<button type="button" class="setup-button" data-add-linked-setup>Add mapped candidates to workbench</button>':'');
+      $("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
+      $("[data-add-linked-setup]").forEach(button=>button.addEventListener("click",()=>addLinkedItemsToBench(ids)));
       showToast(ids.length?"Practical mapping opened; choose a source item to browse":"Practical has no source-item link recorded yet");
     }));
   }
