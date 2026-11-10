@@ -117,6 +117,23 @@
     $("#bench-count").textContent=state.bench.length+" objects placed";
     $$("[data-remove]").forEach(b=>b.addEventListener("click",()=>{state.bench=state.bench.filter(x=>x.instanceId!==b.dataset.remove);renderBench();}));
   }
+  function focusSourceItem(id){
+    const item=allItems(state.subject).find(x=>x.id===id);
+    if(!item){
+      showToast("This source item is not in the current subject catalogue");
+      return;
+    }
+    state.type="all";
+    state.category="all";
+    state.query=item.name;
+    $("#inventory-type").value="all";
+    $("#inventory-search").value=item.name;
+    renderInventory();
+    inspectItem(id);
+    const card=$('[data-item-id="'+CSS.escape(id)+'"]');
+    if(card)card.scrollIntoView({behavior:"smooth",block:"center"});
+    showToast("Opened mapped source item: "+item.name);
+  }
   function renderTasks(){
     const d=state.data.subjects[state.subject];
     const tasks=d.tasks.filter(t=>{
@@ -124,8 +141,24 @@
       return (state.classFilter==="ALL"||t.class===state.classFilter)&&(!q||[t.title,t.id,t.group].join(" ").toLowerCase().includes(q));
     });
     $("#task-count").textContent=tasks.length+" tasks";
-    $("#task-list").innerHTML=tasks.map(t=>'<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><br><button type="button" data-task="'+esc(t.id)+'">Inspect mapping →</button></article>').join("")||'<div class="panel-note">No tasks match this filter.</div>';
-    $$("[data-task]").forEach(b=>b.addEventListener("click",()=>{const t=d.tasks.find(x=>x.id===b.dataset.task);if(!t)return;$("#analysis-title").textContent=t.title;$("#analysis-copy").textContent="Task-index record only. Candidate source item IDs: "+(t.sourceItemIds.join(", ")||"none recorded")+". Implementation status: "+t.status+". This is not a verified executable practical.";$("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div>';showToast("Practical mapping opened in analysis panel");}));
+    $("#task-list").innerHTML=tasks.map(t=>{
+      const count=(t.sourceItemIds||[]).length;
+      const linkText=count?count+" candidate source item link"+(count===1?"":"s"):"No source-item link recorded";
+      return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div><button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button></article>';
+    }).join("")||'<div class="panel-note">No tasks match this filter.</div>';
+    $("[data-task]").forEach(b=>b.addEventListener("click",()=>{
+      const t=d.tasks.find(x=>x.id===b.dataset.task);if(!t)return;
+      const ids=t.sourceItemIds||[];
+      const linked=ids.map(id=>{
+        const item=allItems(state.subject).find(x=>x.id===id);
+        return item?'<button type="button" class="source-link-button" data-focus-source="'+esc(id)+'"><span>'+esc(item.name)+'</span><small>'+esc(id)+'</small></button>':'<span class="source-link-missing">'+esc(id)+' · not found in subject catalogue</span>';
+      }).join("");
+      $("#analysis-title").textContent=t.title;
+      $("#analysis-copy").textContent="Task-index record only. The links below open candidate source catalogue items; they do not establish verified procurement equivalence or an executable practical. Implementation status: "+t.status+".";
+      $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div><div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>';
+      $("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
+      showToast(ids.length?"Practical mapping opened; choose a source item to browse":"Practical has no source-item link recorded yet");
+    }));
   }
   function switchMode(mode){
     state.mode=mode;$$(".mode-tab").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));$("#mode-description").textContent=modeCopy[mode]||"";
