@@ -777,3 +777,14 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Desktop/mobile dashboard browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
 - No application source, scientific solver, external API connector, 3D object or experiment runtime was implemented in this work unit. Evidence is limited to source index metadata, uploaded-file receipts and repository integrity checks.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED. Next task: continue internal recovery of the previously submitted Biology-with-microscope source and begin queue order 1 (Kit Box, PDF page 9) only when readable; keep no-repeat upload policy.
+
+## 2026-11-10 — Physics measurement and metrology readiness register
+
+- **Phase:** Phase 1.1 — Physics source-to-measurement-evidence readiness.
+- **Source:** existing `data/catalogues/ncert_physics_kit_manual_items.csv` (106 item rows derived from previously inspected NCERT Physics kit manual 13164). It remains a manual source catalogue, not the current Physics procurement specification.
+- **Completed:** created an 18-record metrology readiness register covering the main measurement/reading-critical apparatus: Vernier caliper, screw gauge, spherometer, beam balance, measuring cylinder, stopwatch, spring balance, lab thermometer, spirit level, sonometer, folding meter scale, galvanometer, multimeter, potentiometer, protractor, resistance box, rheostat and meter bridge.
+- **Fields:** instrument role, verbatim/source-supported details, manual evidence, procurement-spec status, range, resolution/least count, calibration traceability, zero correction, uncertainty budget, setup dependencies, model/test status and result-release boundary.
+- **Scientific integrity:** no least count, range or accuracy was invented; the Vernier experiment example is not elevated to a universal procurement spec. A nominal `250g` spring-balance label is not converted into a calibrated force range. Potentiometer 500 cm wire and meter bridge 1 m scale are preserved as manual descriptions only. All 18 rows remain NOT_IMPLEMENTED / Phase 8 blocked.
+- **Files:** `data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv`; `docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md`; validator update in `dashboard/tests/validate-catalogue.mjs`.
+- **CI status:** new register validation and browser smoke are pending at log entry time; append final run results after workflow completion.
+- **Phase gate:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific measurement contracts BLOCKED; Phase 8 not started.
