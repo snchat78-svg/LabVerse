@@ -364,3 +364,35 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 5 real 3D: NOT STARTED.
 - Phase 6 experiment runtime: NOT STARTED.
 - Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
+
+## Latest resume point — task-scoped RBSE/MSCL reagent crosswalk — 2026-11-10
+
+### Completed and validated
+- Reconciled the full original RBSE XI/XII Chemistry practical pages against the preliminary MSCL text screen and task matrix.
+- Corrected six whole-document lexical/role false hits, including Alcohol/Phenol functional-group names, the Ammonium sulphate substring inside ferrous ammonium sulphate, Acetanilide and Aniline yellow product names, and Starch outside the relevant practical section.
+- Acetanilide in RBSE-XII-CHEM-OPT-03 is stored as a product/output reference and removed from input-reagent candidates.
+- Updated 126-row safety screen to 19 columns; RBSE task matrix to 23 columns; reconciliation file to 41 rows / 24 columns.
+- Final source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733. Desktop/mobile browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
+
+### Current corrected counts
+- 12 task IDs have task-section screen candidates and matrix candidates (5 candidate-ID aligned; 7 with extra contextual/formulation IDs).
+- 4 tasks have matrix-only contextual/species candidates.
+- 24 tasks have no assigned input-reagent candidate in either track (not proof that no reagent is needed).
+- 1 product/output-only task (Acetanilide in OPT-03); no screen-only candidates remain.
+- All 126 safety-screen records remain blocked, SDS-required, not approved, not current BOM. All 41 task records remain documentary-only.
+
+### Immediate next actions
+1. Continue task-by-task source-method review for the 12 shared and 4 contextual candidate tasks; retain task identity, sample/product/reagent role, alternatives and page evidence.
+2. For the 24 tasks without reagent candidate links, inspect appropriate NCERT/manual/authoritative practical method sources before marking them reagent-free or creating an experiment.
+3. Obtain current official MSCL BOM bytes and current identity-specific SDS/grade/formulation/concentration/compatibility/waste evidence; no name-only screen is sufficient.
+4. Keep all task methods, virtual reaction outcomes and physical-use features blocked until qualified Chemistry/Safety review and regression evidence pass.
+
+### Phase state
+- Phase 0: DONE.
+- Phase 1 / 1.1: IN PROGRESS.
+- Phase 2 scientific models/results: BLOCKED.
+- Phase 3 React foundation: PARTIAL.
+- Phase 4 Dashboard/workspaces: IN PROGRESS.
+- Phase 5 real 3D: NOT STARTED.
+- Phase 6 experiment runtime: NOT STARTED.
+- Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
