@@ -64,6 +64,31 @@ assert.equal(data.sourceArchivePolicy.repositoryContainsOriginalPdfBinaries, fal
 assert.match(data.sourceArchivePolicy.noRepeatUploadRule, /must not trigger a repeat upload request/);
 console.log("Persistent PDF source archive checks: 9 assertions passed.");
 
+const expectedCoverage = {
+  physics: {taskCount: 80, tasksWithSourceItemLinks: 79, tasksWithoutSourceItemLinks: 1, uniqueSourceItemIds: 95, unresolvedSourceItemIds: 0},
+  chemistry: {taskCount: 41, tasksWithSourceItemLinks: 41, tasksWithoutSourceItemLinks: 0, uniqueSourceItemIds: 45, unresolvedSourceItemIds: 0},
+  biology: {taskCount: 50, tasksWithSourceItemLinks: 49, tasksWithoutSourceItemLinks: 1, uniqueSourceItemIds: 147, unresolvedSourceItemIds: 0}
+};
+for (const [subject, coverage] of Object.entries(expectedCoverage)) {
+  assert.deepEqual(
+    Object.fromEntries(Object.keys(coverage).map(key => [key, data.traceabilityCoverage[subject][key]])),
+    coverage,
+    subject + " task-to-source-item coverage"
+  );
+  const sourceIds = new Set([
+    ...data.subjects[subject].inventory.map(item => item.id),
+    ...data.subjects[subject].reagents.map(item => item.id)
+  ]);
+  for (const task of data.subjects[subject].tasks) {
+    for (const sourceId of task.sourceItemIds || []) {
+      assert.ok(sourceIds.has(sourceId), subject + " unresolved source ID " + sourceId);
+    }
+  }
+}
+console.log("Practical-to-inventory mapping integrity checks passed.");
+
+
+
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");
