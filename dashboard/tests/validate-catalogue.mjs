@@ -86,6 +86,17 @@ for (const [subject, coverage] of Object.entries(expectedCoverage)) {
   }
 }
 console.log("Practical-to-inventory mapping integrity checks passed.");
+assert.match(
+  data.subjects.physics.tasks.find(task => task.id === "RBSE-XI-PHY-PRJ-08").mappingGap,
+  /No Fortin barometer|Fortin barometer/
+);
+assert.match(
+  data.subjects.biology.tasks.find(task => task.id === "RBSE-XII-BIO-PRJ-01").mappingGap,
+  /no fixed title|no fixed topic/i
+);
+assert.equal(data.traceabilityCoverage.physics.unlinkedTasks[0].id, "RBSE-XI-PHY-PRJ-08");
+assert.equal(data.traceabilityCoverage.biology.unlinkedTasks[0].id, "RBSE-XII-BIO-PRJ-01");
+
 
 
 
