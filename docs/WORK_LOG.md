@@ -800,9 +800,10 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 
 ## 2026-11-10 — MSCL evidence and safety review queue created
 
-- Re-read the full 53-row MSCL visual detail audit and created a 53-item, 16-column closure queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
+- Re-read the full 53-row MSCL visual detail audit and created a 53-item, 17-column closure queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
 - Added the evidence/safety review protocol and high-consequence boundary notes: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
-- Added validator assertions in `dashboard/tests/validate-catalogue.mjs` (commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`) for schema, exact row-to-source mapping, exact upload fingerprint, verbatim gaps/safety boundaries, controlled review domains, and non-approved states.
+- Initial validator attempts exposed two coverage issues: a test checked a technical flag in the safety column, then the queue lacked the source audit status field where the Micro Well Plate review flag lives. The queue was expanded to 17 columns and now preserves that original status.
+- Final validator commit: `8cf28ce97362b98b8aabcba738b2712fa09a6ff4`. Source/catalogue integrity CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753. Desktop/mobile browser smoke is still running at https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348; its conclusion must be recorded separately.
 - Queue domain counts are overlapping item assignments: geometry 24, metrology/model validation 20, material/compatibility 19, safety/use boundary 26, procurement/acceptance 25, source clarification 1.
 - **No gap is marked closed.** All 53 rows have owner NOT_ASSIGNED and status OPEN_NOT_REVIEWED_OR_APPROVED. No supplier, qualified reviewer, calibration, safety or expert approval has been presumed.
 - Rechecked internal Library/Conversation search for the previously submitted Biology-with-microscope PDF; no match surfaced. The registered file identity and no-repeat upload policy remain unchanged. Kit Box / page 9 remains the first Biology queue item.
