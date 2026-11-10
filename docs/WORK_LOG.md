@@ -573,3 +573,17 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **CI:** Playwright Chromium smoke passed 9/9 groups; URL https://github.com/snchat78-svg/LabVerse/actions/runs/42747870645. Inventory/schema/source registry checks passed on the same commit; URL https://github.com/snchat78-svg/LabVerse/actions/runs/42747870414. Verified commit `28f8452d1409b086e0a0c80244a7e4874aafaf`.
 - **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 dashboard read model PARTIAL and scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D assets NOT STARTED.
 - **Next bounded action:** begin Phase 3 production React/TypeScript/Vite foundation and migrate the tested subject dashboard while preserving the static dashboard, source registry and all no-repeat evidence boundaries.
+
+
+## 2026-11-10 — React/TypeScript/Vite app foundation and browser validation
+
+- **Scope:** begin Phase 3 production-oriented application scaffold without replacing the tested static Dashboard preview.
+- **Files:** `app/package.json`, `app/index.html`, `app/tsconfig.json`, `app/vite.config.ts`, `app/src/main.tsx`, `app/src/App.tsx`, `app/src/styles.css`, `app/src/vite-env.d.ts`, `app/tests/smoke.mjs`, `app/README.md`, `.github/workflows/labverse-app-check.yml`.
+- **Stack:** React 19.3.1, React DOM 19.3.1, TypeScript 7.0.2, Vite 8.3.7, `@vitejs/plugin-react` 6.3.0, Playwright 1.56.1. Node 24 CI; exact versions are pinned.
+- **Migrated React features:** Physics/Chemistry/Biology overview and subject pages; class XI/XII filter; searchable source inventories; item detail with source/evidence/safety labels; practical task list; candidate source-item navigation; mapped candidates can be added to a clearly non-executable placeholder workbench; Chemistry no-live-use and Biology not-supplied/school-managed status labels.
+- **Typecheck corrections:** normalised optional source-row fields across heterogeneous subject catalogues; added Vite client declaration for CSS import; narrowed optional task mapping-gap text to a string before rendering.
+- **Build/browser result:** strict TypeScript typecheck PASS; Vite production build PASS; Chromium smoke **6/6 groups PASS**. Coverage: React overview/subjects, Physics inventory search/detail, XI task filter, practical source links + candidate placeholders, Chemistry/Biology evidence/safety detail, mobile layout/no browser errors.
+- **GitHub Actions:** https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145 — completed SUCCESS. Verified commit `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
+- **Limitations:** React app is a starter foundation, not a complete dashboard migration. Workspace tabs beyond current subject/catalogue flows are not fully functional; no production 3D assets, deterministic runtime, scientific solvers, Research Studio data pipeline, offline persistence or Android package is implemented.
+- **Phase status:** Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific model work remains BLOCKED; Phase 5+ not started.
+- **Next bounded action:** make the four workspace destinations functional in React and migrate remaining dashboard filters and unmatched-source details. Preserve static preview and permanent PDF source registry.
