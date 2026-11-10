@@ -61,6 +61,23 @@ assert.match(bioWith.sha256, /^[a-f0-9]{64}$/);
 const bioWithout = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITHOUT-MICROSCOPE");
 assert.match(bioWithout.status, /PRIOR_USER_UPLOAD_ACKNOWLEDGED/);
 assert.equal(data.sourceArchivePolicy.repositoryContainsOriginalPdfBinaries, false, "archive must state binary storage boundary");
+assert.ok(manual13163.latestSessionUpload, "latest Biology manual upload must be recorded");
+assert.equal(manual13163.latestSessionUpload.sha256, manual13163.sha256, "Biology manual current upload must match registered bytes");
+assert.equal(manual13163.latestSessionUpload.noRepeatUpload, true);
+const msclSource = data.sourceDocuments.find(source => source.sourceId === "CHEM-MSCL-UPLOADED-SPEC");
+assert.equal(msclSource.uploadedVariants.length, 2, "both MSCL upload fingerprints must be preserved");
+assert.equal(msclSource.uploadedVariants[1].sha256, "b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e");
+assert.notEqual(msclSource.uploadedVariants[0].sha256, msclSource.uploadedVariants[1].sha256, "distinct MSCL byte variants must not be merged");
+const bioWithVariants = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITH-MICROSCOPE");
+assert.equal(bioWithVariants.uploadedVariants.length, 2, "both Biology-with-microscope upload fingerprints must be preserved");
+assert.equal(bioWithVariants.uploadedVariants[1].sha256, "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb");
+assert.notEqual(bioWithVariants.uploadedVariants[0].sha256, bioWithVariants.uploadedVariants[1].sha256, "equal size does not prove byte identity");
+for (const source of data.sourceDocuments) {
+  for (const variant of source.uploadedVariants ?? []) {
+    assert.equal(variant.noRepeatUpload, true, "all upload variants are no-repeat");
+    assert.match(variant.sha256, /^[a-f0-9]{64}$/);
+  }
+}
 assert.match(data.sourceArchivePolicy.noRepeatUploadRule, /must not trigger a repeat upload request/);
 console.log("Persistent PDF source archive checks: 9 assertions passed.");
 
