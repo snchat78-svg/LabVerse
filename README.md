@@ -375,3 +375,12 @@ Exact official targets are available for Biology kit manual 13163, Biology with/
 ### Phase boundaries after React app starter
 
 Phase 3 remains partial: the React/TypeScript/Vite foundation is validated, but workspace migration continues. Phase 4 Dashboard remains in progress. Real 3D workbench and scientific engines are not implemented. See [Phase State](docs/PHASE_STATE.md) and [Next Work Register](docs/NEXT_WORK_REGISTER_2026_11_10.md).
+
+## Persistent user-provided PDF source register
+
+Previously supplied Physics, Chemistry and Biology PDFs are tracked in:
+- data/catalogues/source_pdf_registry_2026_11_10.csv
+- data/catalogues/source_pdf_upload_receipts_2026_11_10.csv
+- docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md
+
+These records preserve file fingerprints, variants, page counts, derived catalogues and no-repeat instructions. The public repository does not contain the original NCERT PDF binaries; upload receipts and source-derived records are retained instead. Do not ask for already registered PDFs again.
