@@ -263,3 +263,11 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 - Final run PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42778819472 (commit `9f929ced9f45b0c8cb64a81fa34fcbf4a4e3ecb2`). Browser smoke remains 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556.
 - A first assertion failed because it checked the wrong semantic cell; the gate text was clarified and rerun passed. This correction and its failure trail are in WORK_LOG.
 - This does not close Phase 1.1 or unblock science engines. Resume first Biology page queue item Kit Box / page 9 if the already-submitted source bytes or official primary file can be accessed; otherwise continue the remaining source/procurement/rights/safety/expert tasks. No repeated PDF upload request.
+
+## MSCL source audit continuation — item 7 next (2026-11-10)
+
+- **Completed:** MSCL registered upload detail pages 5–10, 18, 26 and 43 were visually checked. Coverage is 8/53 physical item rows; 45 remain. See `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md` and `data/catalogues/mscl_detail_audit_2026_11_10.csv`.
+- **Integrity validation PASS:** https://github.com/snchat78-svg/LabVerse/actions/runs/42780001376. Browser smoke for this batch is separately tracked and must not be marked complete before its conclusion is available.
+- **Next unblocked source-order task:** MSCL index item 7 / Conical Flask / PDF page 11. Keep going in item/page order. Preserve the Boiling Tube dimensional annotation as a technical-review gap and the Wire Gauze asbestos warning.
+- **Still blocked first Biology queue item:** `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed page 9 until existing source bytes or an accessible official payload are recovered. Do not ask for repeat upload.
+- These are parallel source-audit tasks within Phase 1.1; Phase 2 science models, Phase 5 3D and Phase 6 runtime remain gated and unstarted.
