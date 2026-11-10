@@ -374,8 +374,8 @@ for (const row of physicsMetrologyRows.slice(1)) {
   assert.equal(row[15], "NOT_IMPLEMENTED_PHASE_8_BLOCKED", "Physics metrology engine must remain blocked for " + row[1]);
   assert.match(row[16], /No|Do not|Use only|until|must not/i, "result release boundary must be explicit for " + row[1]);
 }
-assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-080")[6], /COM, VΩmA and 10 A DC terminals/);
-assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-088")[6], /500 cm uniform wire/);
-assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-106")[6], /1 m scale/);
-assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-024")[6], /250g/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-080")[5], /COM, VΩmA and 10 A DC terminals/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-088")[5], /500 cm uniform wire/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-106")[5], /1 m scale/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-024")[5], /250g/);
 console.log("Physics measurement/metrology readiness: 18 source-linked instruments, 17-column schema, calibration/procurement gaps and Phase 8 result blocks PASS.");
