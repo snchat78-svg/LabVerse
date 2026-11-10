@@ -370,3 +370,8 @@ Current result: NCERT catalogue identifies Biology kit manual codes 13163 (Engli
 - [Machine-readable five-document intake manifest](data/catalogues/phase1_official_pdf_intake_manifest_2026_11_09.csv)
 Exact official targets are available for Biology kit manual 13163, Biology with/without microscope, MSCL and Physics; original PDFs are requested for byte-level verification. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
 
+
+
+### Phase boundaries after React app starter
+
+Phase 3 remains partial: the React/TypeScript/Vite foundation is validated, but workspace migration continues. Phase 4 Dashboard remains in progress. Real 3D workbench and scientific engines are not implemented. See [Phase State](docs/PHASE_STATE.md) and [Next Work Register](docs/NEXT_WORK_REGISTER_2026_11_10.md).
