@@ -311,3 +311,31 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 - Browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42784988030.
 - First assertion failure was a wrong-column check; it was corrected and the successful rerun is accepted. No scientific instrument measurement or solver validation is claimed.
 - The next unresolved source-ordered action remains internal recovery of the user's already submitted Biology-with-microscope original, starting Kit Box / indexed page 9; no repeat-upload request.
+
+## Latest resume point — MSCL evidence and safety review queue (2026-11-10)
+
+### Completed in the latest work unit
+- MSCL detail audit is **53/53 physical items visually checked** against the earlier upload SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`; the upload remains unauthenticated to official NCERT bytes.
+- Created a 53-row / 16-column per-item review queue at `data/catalogues/mscl_review_gap_queue_2026_11_10.csv` and its protocol at `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
+- Every queue row maps exactly to the visual audit and retains verbatim gap/safety text. All rows remain OPEN_NOT_REVIEWED_OR_APPROVED; reviewer ownership is NOT_ASSIGNED.
+- New catalogue validator assertions were committed in `dashboard/tests/validate-catalogue.mjs` (commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`). CI is pending; do not mark it PASS until the run is inspected.
+- A second internal semantic search for Biology-with-microscope returned no Library or Conversation matches. The old submission is acknowledged; do not request it again.
+
+### Immediate next actions — keep this order
+1. Verify the GitHub Actions dashboard-integrity run triggered by validator commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`. Fix only evidence-backed validator defects and rerun.
+2. Use the new MSCL queue to prioritize an actual qualified review/evidence owner for the high-consequence rows: Boiling Tube, Micro Scale Test Tube, Micro Test Tube Stand, Micro Well Plate, W Tube, Wire Gauze, Spirit Lamp, Mercury Thermometer, Multimeter and Gas Generator. Do not mark approvals without the relevant primary evidence and qualified sign-off.
+3. Continue internal recovery of the already-submitted Biology-with-microscope bytes. If readable, resume `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed PDF page 9 and update the catalogue, detail audit, queue and tests together. No repeat-upload request.
+4. Continue the remaining Physics/MSCL/Biology official procurement, rights, safety/SDS, calibration, compatibility/waste and subject-expert gates from accessible evidence.
+5. Keep Phase 2 scientific contracts/models, Phase 5 3D assets and Phase 6 experiment runtime blocked until their dependencies pass.
+
+### Current authoritative phase state
+- Phase 0: DONE (planning/documentation baseline).
+- Phase 1 / 1.1: IN PROGRESS.
+- Phase 2 scientific models/results: BLOCKED.
+- Phase 3 React foundation: PARTIAL.
+- Phase 4 dashboard/workspaces: IN PROGRESS.
+- Phase 5 real 3D: NOT STARTED.
+- Phase 6 deterministic experiment runtime: NOT STARTED.
+- Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
+
+The older "MSCL item 7 / Conical Flask next" note is historical; it is superseded by the accepted 53/53 visual audit and current 53-row review queue. Do not repeat old MSCL detail pages.
