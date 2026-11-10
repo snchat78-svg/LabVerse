@@ -444,6 +444,35 @@ for (const [id, pattern] of [
 console.log("MSCL evidence/safety review queue: 53 source-linked rows, 17 columns, source visual status and verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
 
 
+// Load the current task-level reagent matrix after product/reagent role separation.
+const rbseReagentMatrixRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(rbseReagentMatrixRows.length, 42, "RBSE reagent matrix must contain 41 task rows");
+assert.equal(rbseReagentMatrixRows[0].length, 23, "RBSE reagent matrix schema must contain 23 columns");
+assert.ok(rbseReagentMatrixRows.slice(1).every(row => row.length === 23));
+const matrixHeader = rbseReagentMatrixRows[0];
+const matrixIndex = Object.fromEntries(matrixHeader.map((name,index) => [name,index]));
+const matrixTasks = rbseReagentMatrixRows.slice(1);
+const matrixTaskIds = matrixTasks.map(row => row[matrixIndex.rbse_task_id]);
+assert.equal(new Set(matrixTaskIds).size, 41, "RBSE task IDs must be unique");
+assert.ok(matrixTasks.every(row => row[matrixIndex.validation_status] === "DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOURCE_REVIEW_REQUIRED"));
+assert.ok(matrixTasks.every(row => row[matrixIndex.current_official_bom_status] === "NOT_RETRIEVED_OR_AUTHENTICATED"));
+assert.ok(matrixTasks.every(row => row[matrixIndex.physical_lab_status] === "BLOCKED; SIMULATION_OR_PREPARED_REFERENCE_DATA_ONLY"));
+const matrixCandidateIdsByTask = new Map();
+for (const row of matrixTasks) {
+  matrixCandidateIdsByTask.set(
+    row[matrixIndex.rbse_task_id],
+    (row[matrixIndex.candidate_manual_reagent_record_ids] || "").split(";").filter(Boolean)
+  );
+}
+const allMatrixReagentCandidateIds = new Set([...matrixCandidateIdsByTask.values()].flat());
+assert.equal(allMatrixReagentCandidateIds.size, 24, "24 unique input-reagent candidate IDs must remain in matrix");
+assert.ok([...allMatrixReagentCandidateIds].every(id => safetyScreenById.has(id)));
+assert.equal(matrixTasks.find(row => row[matrixIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-03")[matrixIndex.candidate_manual_product_or_output_reference_ids], "MSCL-MAN-REAG-005=Acetanilide");
+assert.equal(matrixCandidateIdsByTask.get("RBSE-XII-CHEM-OPT-03").length, 0, "Acetanilide product must not be treated as an input reagent");
+
 // Task-scoped reconciliation of RBSE/MSCL reagent names and roles, using the original RBSE PDFs.
 const reagentReconciliationRows = parseCsvRows(await readFile(
   new URL("../../data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv", import.meta.url),
