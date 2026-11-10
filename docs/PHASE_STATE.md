@@ -1615,3 +1615,11 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 2. Continue official NCERT procurement attachment/BOM recovery for Physics, MSCL and both distinct Biology variants.
 3. Close source-rights, item-specific safety/SDS, instrument calibration, Biology taxonomy/specimen/slide and subject-expert reviews.
 4. Only after Phase 1 exit: Phase 2 science model/evidence contracts; Phase 5 original 3D assets; Phase 6 deterministic simulation runtime. No phase skipped.
+
+
+## Traceability-register CI result — 2026-11-10
+
+- Dashboard integrity CI PASS: the 515-row item-to-asset/model/test register validates all expected per-subject counts (Physics 105, Chemistry 177, Biology 233), unique traceability IDs, source IDs resolving to the subject's existing catalogue and candidate-only/NOT_CREATED/NOT_VALIDATED/virtual-only status boundaries. Existing PDF archive, source-task mapping, Biology 177-entry index audit, 150-item queue and schema checks also passed. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238775.
+- Static Dashboard browser smoke PASS: 9/9 desktop/mobile groups. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
+- Initial run exposed a test-counter defect only: the token `NOT_CREATED` occurs in both geometry and regression-test columns (two per row). Assertion was narrowed to the geometry field; corrected rerun passed. The first failed run is not counted as a pass.
+- Current phase remains Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No phase exit criteria waived.

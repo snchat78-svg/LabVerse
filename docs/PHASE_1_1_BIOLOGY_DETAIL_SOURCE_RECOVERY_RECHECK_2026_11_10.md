@@ -48,3 +48,11 @@ Continue only when the already-submitted source bytes can be recovered through a
 ## 5. Phase decision
 
 Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 scientific models/results remain BLOCKED by source authentication, provenance, rights, safety and subject-expert review gates. This recovery check closes no scientific or procurement gate.
+
+
+## Additional official-host retry — 2026-11-10
+
+- NCERT official specification index remains discoverable and lists separate Biology with-microscope and without-microscope Grade 11–12 specification families: https://ncert.nic.in/division/dek/specification_documents.php?ln=en.
+- Retried the corresponding direct PDF hostname on `ncert.gov.in` (as well as the already registered `ncert.nic.in` and `www.ncert.nic.in` routes). Web retrieval reported the PDF URL inaccessible; direct container DNS lookup for `ncert.gov.in` failed with `Could not resolve host`.
+- These retries do not authenticate or invalidate the retained user-upload fingerprint and do not establish that the earlier upload was absent.
+- Keep the queue order 1 / Kit Box / PDF page 9 pending; do not request a repeat upload and do not promote OCR/index-only values into visual confirmation.

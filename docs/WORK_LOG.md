@@ -699,3 +699,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - The first dashboard-integrity run on commit `fc308d4adb3c44b9c60b8d6d7d0aa381367e71bb` failed one newly added assertion because the generic `NOT_CREATED` token appears twice per row (asset geometry and regression-test state); the test expected one occurrence.
 - Existing archive, task mapping, Biology detail audit and 150-item queue checks passed before that assertion. This was a test-counter defect, not a catalogue-data or scientific-model error.
 - Corrected the assertion to count only the geometry field next to its dimension-status field. All per-row status/source-link checks remain. Rerun pending; do not count the first run as PASS.
+
+
+## 2026-11-10 — Traceability register validation completed
+
+- Corrected validator run on commit `ec03ff3eddbd6ed3d79b5ff5e5ac3c4c9579de85` passed the new three-subject register checks: 515 rows, expected subject counts, unique traceability IDs, source item IDs resolving to their correct inventory, and every geometry/model/approval state remaining unimplemented or blocked.
+- The same dashboard integrity run also passed: persistent PDF archive checks (9), practical-to-item mapping integrity, Biology 177-entry index audit / 25 detail pages, 150-row pending audit queue and JSON schema parse. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238775.
+- Static Dashboard browser smoke passed 9/9 desktop/mobile groups, including Physics bench/tap/drag, source navigation, task gap disclosure, Chemistry reagent boundary and Biology safety/project boundary. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
+- A prior test run failed because the generic `NOT_CREATED` token was counted twice per row; fixed to target the geometry status only. The corrected rerun is the accepted result.
+- No change in phase gates: Phase 1 / 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.

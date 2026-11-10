@@ -54,6 +54,8 @@ The React app now passes strict typecheck, production build and 22/22 Chromium s
 - [Completed and remaining work register](docs/NEXT_WORK_REGISTER_2026_11_10.md)
 - [Three-subject item-to-asset/model/test traceability audit](docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md)
 - [515-row item-to-asset/model/test traceability CSV](data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv)
+- [Traceability/source integrity CI](https://github.com/snchat78-svg/LabVerse/actions/runs/42765238775)
+- [Static dashboard browser smoke 9/9](https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757)
 - [PDF archive and no-repeat record](docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md)
 - [Parallel dashboard track and evidence boundaries](docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md)
 

@@ -541,3 +541,11 @@ The previously submitted Biology-with-microscope source remains fingerprinted an
 - Files: `data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv`, `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`, updated catalogue CI validator and README.
 - Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
 - Next: continue the first blocked Biology detail item (Kit Box, indexed page 9) when already-submitted PDF bytes or a legitimate official payload can be recovered; no repeat upload request. Continue remaining Phase 1.1 procurement, rights, safety and expert gates before Phase 2.
+
+
+## 2026-11-10 — CI verification of the 515-row traceability register
+
+- Dashboard catalogue/source integrity passed on validation-fix commit `ec03ff3eddbd6ed3d79b5ff5e5ac3c4c9579de85`: 515 traceability rows, unique IDs, subject row counts, source item resolution, geometry/model/approval blocked-state checks, existing source archive/mapping/Biology queue checks and schema parse all PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238775.
+- Static Dashboard desktop/mobile smoke: **9/9 groups PASS** on the same commit. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
+- First validation attempt had one over-count assertion because `NOT_CREATED` appears in two status columns per row; corrected the assertion to target only the geometry field and reran. Only the corrected successful run is accepted.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
