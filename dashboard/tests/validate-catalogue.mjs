@@ -117,6 +117,28 @@ assert.equal(data.traceabilityCoverage.biology.unlinkedTasks[0].id, "RBSE-XII-BI
 
 
 
+const bioIndexAudit = await readFile(
+  new URL("../../data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const bioIndexLines = bioIndexAudit.trimEnd().split(/\r?\n/);
+assert.equal(bioIndexLines.length, 178, "Biology with-microscope visual index audit must contain 177 data rows");
+assert.match(bioIndexLines[0], /index_audit_source_sha256/);
+assert.equal((bioIndexAudit.match(/VISUALLY_CONFIRMED_IN_CURRENT_UPLOAD/g) || []).length, 177);
+assert.equal((bioIndexAudit.match(/VISUALLY_CHECKED_CURRENT_UPLOAD/g) || []).length, 6);
+assert.match(bioIndexAudit, /Wire Gauze[^\n]*Asbestos centre|Wire Gauze[^\n]*asbestos/i);
+assert.match(bioIndexAudit, /Permanent Slide: Student Laboratory Microscope|microscope, not a slide/i);
+const bioSource = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITH-MICROSCOPE");
+assert.equal(bioSource.indexAudit.entries, 177);
+assert.equal(bioSource.indexAudit.itemRecordsExcludingDocumentation, 175);
+assert.equal(bioSource.indexAudit.completeDetailPageAudit, false);
+const bioWireGauze = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-079");
+assert.match(bioWireGauze.safety, /ASBESTOS HAZARD/);
+assert.equal(bioWireGauze.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD");
+const bioMicroscope = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-176");
+assert.match(bioMicroscope.visualAudit.classificationFinding, /Microscope instrument, not a permanent slide/);
+console.log("Biology current-upload visual index/detail audit checks: 12 assertions passed.");
+
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");
