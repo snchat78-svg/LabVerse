@@ -225,3 +225,17 @@ Start at queue order 1: `NCERT-BIO-WM-SPEC-002` (Kit Box; indexed PDF page 9), v
 
 ### Dashboard/architecture next
 The practical-to-inventory mapping and bulk-add workbench flow already exist. Do not recreate them. Continue only after the current source-audit batch, then focus on remaining static-preview parity and architecture hardening. Real 3D assets/scene, deterministic simulation, scientific solvers, offline storage and Android packaging are later roadmap phases, not completed.
+
+
+## 2026-11-10 — Three-subject asset/model/test traceability readiness
+
+### Completed
+- Added a 515-row register over all current catalogue items: Physics 105; Chemistry 177 including 124 separate historical reagent references; Biology 233 including 58 separate school-managed reagent references.
+- 287 item rows have existing task links from the RBSE task read model: Physics 95, Chemistry 45, Biology 147.
+- Added proposed asset IDs and explicitly unimplemented/unapproved status for geometry, original/licensed visual representation, experiment-specific interaction, scientific model, model validation and regression testing.
+- Added a CI validator and detailed report: `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`.
+
+### Remaining / immediate next
+- The Biology-with-microscope Kit Box page 9 audit remains blocked by internal binary retrieval. Resume queue order 1 when prior bytes or a legitimate official payload becomes accessible; do not ask for repeat upload.
+- Complete current Physics/MSCL/Biology kit procurement source recovery, 150 Biology page details, visual cards/specimens/slides, SDS and other safety, rights and expert approvals.
+- Phase 1/1.1 remains IN PROGRESS. Phase 2 scientific engines remain BLOCKED. Phase 3 PARTIAL and Phase 4 IN PROGRESS. Phase 5+ NOT STARTED.

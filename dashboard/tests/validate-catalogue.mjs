@@ -172,7 +172,42 @@ assert.doesNotMatch(bioDetailQueue, /NCERT-BIO-WM-SPEC-079/, "visually audited W
 assert.equal((bioDetailQueue.match(/NOT_VISUALLY_CHECKED_THIS_PASS/g) || []).length, 150);
 console.log("Biology detail audit queue checks: 150 pending physical items; source order and IDs preserved.");
 
-console.log("Dashboard catalogue checks: 18 assertions passed.");
+const itemAssetTraceability = await readFile(
+  new URL("../../data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const itemAssetLines = itemAssetTraceability.trimEnd().split("\n");
+assert.equal(itemAssetLines.length, 516, "item-to-asset traceability register must contain 515 data rows");
+assert.match(itemAssetLines[0], /traceability_id.*proposed_asset_id.*scientific_validation_status/);
+const expectedItemAssetCounts = {physics:105, chemistry:177, biology:233};
+const sourceIdsBySubject = {
+  physics: new Set(data.subjects.physics.inventory.map(item => item.id)),
+  chemistry: new Set([...data.subjects.chemistry.inventory, ...data.subjects.chemistry.reagents].map(item => item.id)),
+  biology: new Set([...data.subjects.biology.inventory, ...data.subjects.biology.reagents].map(item => item.id))
+};
+const allTraceIds = [];
+for (const [subject, expectedCount] of Object.entries(expectedItemAssetCounts)) {
+  const rows = itemAssetLines.slice(1).filter(line => line.startsWith('"TRACE-' + subject.toUpperCase() + '-'));
+  assert.equal(rows.length, expectedCount, subject + " traceability row count");
+  for (const line of rows) {
+    const columns = line.split(",");
+    const traceId = line.slice(1, line.indexOf('",'));
+    const itemId = columns[2].slice(1,-1);
+    assert.ok(sourceIdsBySubject[subject].has(itemId), subject + " traceability row references unknown item " + itemId);
+    assert.ok(line.includes(',"NOT_CREATED",'), "3D asset must not be marked created before Phase 5");
+    assert.ok(line.includes(',"NOT_VALIDATED_PHASE_2_BLOCKED",'), "science model must remain blocked pending Phase 1 exit");
+    assert.ok(line.endsWith(',"CANDIDATE_REFERENCE_ONLY_NOT_APPROVED_FOR_USE"'), "candidate source item must not be promoted to approved use");
+    allTraceIds.push(traceId);
+  }
+}
+assert.equal(allTraceIds.length, 515);
+assert.equal(new Set(allTraceIds).size, 515, "all traceability IDs must be unique");
+assert.equal((itemAssetTraceability.match(/VIRTUAL_ONLY_NO_REAL_HARDWARE_CONTROL/g) || []).length, 515, "no real hardware control is enabled");
+assert.equal((itemAssetTraceability.match(/NOT_CREATED/g) || []).length, 515, "no 3D asset is falsely marked created");
+assert.equal((itemAssetTraceability.match(/NOT_VALIDATED_PHASE_2_BLOCKED/g) || []).length, 515, "no scientific model is falsely marked validated");
+console.log("Three-subject item-to-asset/model/test traceability checks: 515 rows, unique IDs, source links and blocked states PASS.");
+
+console.log("Dashboard catalogue checks: baseline assertions plus item-asset traceability checks passed.");
 console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");
 console.log("Biology: 175 kit records / 58 manual reagent labels / 50 tasks");

@@ -29,8 +29,8 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - Phase 0: DONE — planning/documentation baseline only.
 - Main source-audit phase: Phase 1 — IN PROGRESS.
-- User-authorized dashboard track: three-subject inventory dashboard includes practical-to-source item navigation and candidate setup placeholders; desktop/mobile browser smoke passes 9/9 groups.
-- React/TypeScript/Vite app foundation: IMPLEMENTED and CI-validated as a starter. Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
+- User-authorized dashboard track: Physics, Chemistry and Biology inventory dashboard includes task-to-source item navigation, candidate setup placeholders and item-level Biology audit visibility; static desktop/mobile browser smoke passes 9/9 groups.
+- React/TypeScript/Vite app foundation: IMPLEMENTED and CI-validated (strict typecheck/build plus 22/22 browser groups). Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
 - Phase 1 authentication, safety and expert-review gates remain open; the dashboard shell is allowed to progress in parallel without promoting candidate records.
 
 ## React app foundation
@@ -39,7 +39,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [React app architecture and current test boundary](app/README.md)
 - [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972)
 
-The React app now passes strict typecheck, production build and 10/10 Chromium smoke groups. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio each have functional bounded screens; the Research Studio draft is session-local and Analysis is explicitly NOT_MODELLED. The static dashboard remains richer for inventory filters/coverage summary pending migration.
+The React app now passes strict typecheck, production build and 22/22 Chromium smoke groups. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio have functional bounded screens; Biology item-level visual-audit status (25/175) is visible. The mapped-candidate placeholder workbench is not real 3D; Research Studio drafts are session-local and Analysis is explicitly NOT_MODELLED.
 
 ## Dashboard preview
 
@@ -52,6 +52,8 @@ The React app now passes strict typecheck, production build and 10/10 Chromium s
 - [Three-subject inventory read model](dashboard/data/inventory.json)
 - [Persistent PDF source registry](data/catalogues/source_pdf_registry_2026_11_10.csv)
 - [Completed and remaining work register](docs/NEXT_WORK_REGISTER_2026_11_10.md)
+- [Three-subject item-to-asset/model/test traceability audit](docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md)
+- [515-row item-to-asset/model/test traceability CSV](data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv)
 - [PDF archive and no-repeat record](docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md)
 - [Parallel dashboard track and evidence boundaries](docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md)
 

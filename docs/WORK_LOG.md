@@ -680,3 +680,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Created `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md` and linked the limitation in the source archive register and phase docs.
 - Preserved prior receipt/hash/catalogue and the 150-row audit queue. This is an internal retrieval limitation, not a reason to ask for repeat upload; no pending row was promoted using OCR only.
 - Phase 1 / 1.1 remain IN PROGRESS; Phase 2 science engines remain BLOCKED.
+
+
+## 2026-11-10 — Phase 1.1 three-subject item-to-asset/model/test traceability register
+
+- **Scope:** Phase 1.1 / source-to-asset-to-model-to-test readiness. The first Biology detail queue item (Kit Box, page 9) remains blocked because the previously submitted PDF binary is not surfacing and official NCERT direct retrieval fails. No repeat upload requested.
+- **Workaround within same phase:** proceeded with another unblocked Phase 1.1 deliverable rather than skipping to Phase 2 or marking the Biology source audit complete.
+- **Source:** current `dashboard/data/inventory.json`, blob SHA `3c6c5c978f5fd7c40369376f029e6c51c2bc6568`. The register covers 515 rows: Physics 105 apparatus; Chemistry 53 apparatus + 124 historical reagent references; Biology 175 physical catalogue records + 58 school-managed reagent references.
+- **Traceability:** 287 item rows are referenced by existing task `sourceItemIds` (Physics 95, Chemistry 45, Biology 147). Each row records a proposed, not-created LabVerse asset ID; representation requirement; source evidence/authentication; task/page refs; safety; dimensions/quantity; rights; interaction; scientific model; validation and test state.
+- **Files:** `data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv`; `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`; `dashboard/tests/validate-catalogue.mjs`; README navigation; roadmap/phase state/next-work register.
+- **Tests:** dashboard workflow now validates all 515 trace rows, subject counts, unique trace IDs, source item IDs resolving to the correct subject catalogues and explicit NOT_CREATED / NOT_ASSIGNED / NOT_VALIDATED / virtual-only states. Await current GitHub Actions result before claiming the new assertions pass.
+- **Phase:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+- **Next:** retry recovery of queue order 1 (Biology Kit Box PDF page 9) through an already-submitted or official source route, while continuing the other Phase 1.1 source/procurement/rights/safety/expert closures. No repeat upload request.

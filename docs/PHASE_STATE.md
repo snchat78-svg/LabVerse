@@ -17,7 +17,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
 - Phase 1.1: IN PROGRESS — 2026-11-09 second retrieval pass: RBSE upload hashes/metadata captured, while official RBSE endpoints remain unverified; 10 third-party GeM listings show recurring NCERT kit attachment filenames but no attachment payloads were retrieved. See docs/PHASE_1_1_GEM_MIRROR_RECURRENCE_AUDIT_2026_11_09.md.
 - Progress maintenance: continuous — update roadmap, phase state, work log and linked issue after each verified work unit
-- Latest bounded work unit: NCERT Physics manual preface now explicitly explains that the travelling microscope and Searle's apparatus were still being developed for inclusion in that manual edition. RBSE XII Physics EXP-14 retains the microscope as a distinct proposed apparatus; current procurement-spec inclusion remains unverified. See updated XII Physics traceability and source-gap registers.
+- Latest bounded work unit (2026-11-10): item-to-asset/model/test traceability readiness register created for all 515 current catalogue rows across Physics (105), Chemistry (177 including 124 reagent references) and Biology (233 including 58 reagent references). Proposed asset keys and task links are recorded; all geometry/model/test states remain open. See `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17 and activities 13/13 crosswalked; both CSVs checked against the RBSE master task register and Physics manual source catalogue. Mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: RBSE Class XI Physics experiments 17/17, activities 13/13 and projects 11/11 have candidate or explicit unmatched-source records. All three groups have read-back consistency checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
 - Latest bounded progress: Class XI Physics is reconciled at 41/41 task IDs across experiments, activities and projects. Consolidated 18-column CSV and summary pass 9/9 documentary checks; mappings remain DESIGN_ONLY/CANDIDATE_MATCH.
@@ -1598,3 +1598,20 @@ Phase 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED. Passin
 ## Internal source retrieval boundary — 2026-11-10
 
 See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The registered Biology-with-microscope original binary did not surface in this session's conversation/Library files or semantic search; official NCERT direct PDF retrieval also failed (web internal error and container DNS resolution failure). Keep its prior hash, receipt and extracted catalogue; this does not mean the user never supplied it. No repeat upload request is permitted. The pending 150-item detail queue remains pending until existing bytes or an accessible official primary payload can be recovered. Phase 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED.
+
+
+## Latest Phase 1.1 unit — three-subject item-to-asset/model/test traceability (2026-11-10)
+
+- Created `data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv` with 515 records: Physics 105; Chemistry 177 (53 apparatus + 124 historical reagent references); Biology 233 (175 physical kit records + 58 school-managed reagent references).
+- 287 catalogue rows are linked to at least one RBSE task through existing read-model `sourceItemIds` (Physics 95, Chemistry 45, Biology 147). Existing mapping only; no item equivalence or scientific validation promoted.
+- Each row includes stable source ID/name, candidate source/evidence/authentication status, proposed asset ID, rendering requirement, existing task IDs/pages, safety review status, calibration/dimension review status, source/licensing state, interaction status, scientific model status and regression-test status.
+- All 515 remain `CANDIDATE_REFERENCE_ONLY_NOT_APPROVED_FOR_USE`; 3D geometry NOT_CREATED; model NOT_ASSIGNED; scientific validation NOT_VALIDATED / Phase 2 BLOCKED; hardware control VIRTUAL_ONLY.
+- Added CI validation for exact row counts, IDs resolving to the existing subject catalogues, unique traceability keys and explicit NOT_CREATED / NOT_VALIDATED / virtual-only states.
+- Added detailed audit report and README navigation.
+- This closes only a Phase 1.1 traceability-readiness unit, not the parent phase or any safety/procurement gates.
+
+### Next work / blockers
+1. Resume queue order 1, `NCERT-BIO-WM-SPEC-002` (Kit Box, indexed PDF page 9), when previously supplied Biology-with-microscope PDF bytes or an accessible official payload can be recovered. Keep queue pending meanwhile; do not request repeat upload.
+2. Continue official NCERT procurement attachment/BOM recovery for Physics, MSCL and both distinct Biology variants.
+3. Close source-rights, item-specific safety/SDS, instrument calibration, Biology taxonomy/specimen/slide and subject-expert reviews.
+4. Only after Phase 1 exit: Phase 2 science model/evidence contracts; Phase 5 original 3D assets; Phase 6 deterministic simulation runtime. No phase skipped.

@@ -529,3 +529,15 @@ Twelve further current-upload detail pages have been visually checked: capillary
 ## Biology source binary retrieval constraint — 2026-11-10
 
 The previously submitted Biology-with-microscope source remains fingerprinted and represented by an existing 177-row catalogue, index audit and 150-row pending-detail queue. A current-session Library search did not surface the old binary, and direct NCERT retrieval failed. The exact attempts and policy are recorded in `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. Do not request a repeat upload or claim the file was not previously submitted. Resume the queued detail audit only when the existing bytes or an accessible official primary payload can be recovered.
+
+
+## 2026-11-10 — Phase 1.1 three-subject asset/model/test traceability
+
+- Created a row-level traceability register for all 515 current catalogue entries: Physics 105; Chemistry 177; Biology 233. This includes 333 physical catalogue records and 182 separate reagent-reference records.
+- 287 catalogue rows already occur in one or more task `sourceItemIds`; task mappings were copied from the existing read model only. This does not assert method-equivalence or expert approval.
+- Every row has a proposed stable LabVerse asset ID, visual representation requirement, source/authentication status, existing task/page links, safety status, rights gate, geometry status, interaction status, model link, science validation and regression-test status.
+- All 515 rows remain candidate-only; 3D geometry is NOT_CREATED, scientific model links are NOT_ASSIGNED, scientific validation is NOT_VALIDATED / Phase 2 BLOCKED, and real physical hardware control is not supported.
+- Reagent identities/SDS/exposure/waste/expert reviews, instrument calibration/range/uncertainty, biological taxonomy/ethics, original/licensed artwork and source procurement equivalence are explicit future gates.
+- Files: `data/catalogues/phase1_item_to_3d_asset_model_test_traceability_2026_11_10.csv`, `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`, updated catalogue CI validator and README.
+- Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+- Next: continue the first blocked Biology detail item (Kit Box, indexed page 9) when already-submitted PDF bytes or a legitimate official payload can be recovered; no repeat upload request. Continue remaining Phase 1.1 procurement, rights, safety and expert gates before Phase 2.
