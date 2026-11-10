@@ -64,6 +64,15 @@ async function main() {
     await mappedVernier.click();
     assert.match(await page.locator("#selected-details").innerText(), /Vernier caliper/);
     assert.equal(await page.locator("#inventory-search").inputValue(), "Vernier caliper");
+    await page.locator("#task-search").fill("Vernier calipers");
+    await page.locator('[data-task="RBSE-XI-PHY-EXP-01"]').click();
+    await page.locator("[data-add-linked-setup]").click();
+    assert.equal(await page.locator("#bench-count").innerText(), "2 objects placed");
+    assert.match(await page.locator("#bench-items").innerText(), /Vernier caliper/);
+    assert.match(await page.locator("#bench-items").innerText(), /Beam balance/);
+    assert.match(await page.locator("#toast").innerText(), /candidate placeholders/);
+    await page.locator("#reset-bench").click();
+    results.push("Physics practical candidate setup to workbench");
     results.push("Physics practical-to-inventory source navigation");
 
     // Keep a real source gap explicit instead of inventing a kit match.
@@ -117,7 +126,7 @@ async function main() {
     results.push("Mobile viewport and subject navigation");
 
     assert.deepEqual(errors, [], "browser runtime must not log page or console errors");
-    console.log("LabVerse browser smoke tests: 8 groups passed.");
+    console.log("LabVerse browser smoke tests: 9 groups passed.");
     for (const result of results) console.log("PASS:", result);
   } finally {
     await browser.close();
