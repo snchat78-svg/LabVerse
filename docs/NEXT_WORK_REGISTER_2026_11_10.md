@@ -256,3 +256,10 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 - **Resume first:** queue order 1, NCERT-BIO-WM-SPEC-002 / Kit Box / indexed PDF page 9, only when the previously supplied bytes or an accessible official primary payload can be read.
 - **In parallel:** continue Phase 1.1 procurement/source closure for Physics and MSCL, internal recovery of previously supplied Biology-without-microscope/Physics files, remaining Biology pages/cards/specimens/slides, licensing, instrument calibration, reagent SDS/compatibility/waste and subject-expert review.
 - Do not begin Phase 2 scientific solvers, Phase 5 assets or Phase 6 runtime until their dependency gates are met.
+
+## Research capability register CI — verified (2026-11-10)
+
+- The new research capability CSV is structurally validated in dashboard-integrity CI: 14 ordered unique capability rows, 11 columns, all DESIGN_ONLY; new-element validation gate explicitly requires qualified nuclear-scientist review and IUPAC/IUPAP decision.
+- Final run PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42778819472 (commit `9f929ced9f45b0c8cb64a81fa34fcbf4a4e3ecb2`). Browser smoke remains 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556.
+- A first assertion failed because it checked the wrong semantic cell; the gate text was clarified and rerun passed. This correction and its failure trail are in WORK_LOG.
+- This does not close Phase 1.1 or unblock science engines. Resume first Biology page queue item Kit Box / page 9 if the already-submitted source bytes or official primary file can be accessed; otherwise continue the remaining source/procurement/rights/safety/expert tasks. No repeated PDF upload request.
