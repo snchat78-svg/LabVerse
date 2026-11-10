@@ -1593,3 +1593,8 @@ All three relevant workflow gates for the UI/data commit are now green:
 - Static Dashboard browser smoke: 9/9 groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331
 
 Phase 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED. Passing UI and catalogue tests do not authenticate user-uploaded bytes as official NCERT, prove procurement/supply equivalence, complete all Biology page reviews or constitute scientific/subject-expert approval.
+
+
+## Internal source retrieval boundary — 2026-11-10
+
+See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The registered Biology-with-microscope original binary did not surface in this session's conversation/Library files or semantic search; official NCERT direct PDF retrieval also failed (web internal error and container DNS resolution failure). Keep its prior hash, receipt and extracted catalogue; this does not mean the user never supplied it. No repeat upload request is permitted. The pending 150-item detail queue remains pending until existing bytes or an accessible official primary payload can be recovered. Phase 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED.

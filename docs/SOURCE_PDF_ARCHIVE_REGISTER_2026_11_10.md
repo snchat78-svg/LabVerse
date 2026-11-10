@@ -90,3 +90,8 @@ Additional current-upload pages visually checked: All-Pins p.22; Forceps p.43; M
 ### Biology glassware detail audit — batch 3 (2026-11-10)
 
 Current-upload PDF pages 13, 14, 15, 55, 69, 72, 73, 74, 75, 83, 84 and 87 were visually checked: Capillary Tubes, Glass Pipette, Cavity Slide, Glass Dropper, Test Tube, Cover Slips, Glass Rod, Glass Tube, Watch Glass, Conical Flask, Boiling Tube and Glass Slide. Key quantities confirmed include 12 test tubes, 100 glass slides (two packs of 50), two packs of 20 cover slips and one packet of six glass tubes. The Biology manual's warning that Watch Glass should never be heated remains applicable. Total current detail audit coverage is 25/175 physical item detail pages plus one credits page; no complete verification claim is made.
+
+
+## Internal recovery recheck — Biology with-microscope source (2026-11-10)
+
+The prior upload receipt and SHA-256 remain preserved; see `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. In this session the original binary did not surface in current conversation files or Library PDF listing/search. The direct NCERT PDF retrieval also failed (web retrieval internal error; container DNS resolution failed). This is an execution-session retrieval limitation, not evidence that the user did not upload the file. Do not request a repeat upload. Keep the 150-row pending queue unchanged until the existing source binary or an accessible official primary payload is available. GitHub stores derived catalogues, receipts, hashes and audit records—not the original copyrighted PDF binary.

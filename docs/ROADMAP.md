@@ -524,3 +524,8 @@ Twelve further current-upload detail pages have been visually checked: capillary
 - **Source integrity:** PDF archive/no-repeat, source-to-task mapping, visual index and the 150-row queue checks PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
 - **Static Dashboard browser smoke:** 9/9 desktop/mobile Chromium groups PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 - Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+
+
+## Biology source binary retrieval constraint — 2026-11-10
+
+The previously submitted Biology-with-microscope source remains fingerprinted and represented by an existing 177-row catalogue, index audit and 150-row pending-detail queue. A current-session Library search did not surface the old binary, and direct NCERT retrieval failed. The exact attempts and policy are recorded in `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. Do not request a repeat upload or claim the file was not previously submitted. Resume the queued detail audit only when the existing bytes or an accessible official primary payload can be recovered.

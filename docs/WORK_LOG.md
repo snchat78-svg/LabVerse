@@ -671,3 +671,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
   - Dashboard integrity: PDF archive, task mapping, 177-row Biology index audit, 150-row queue, 18 catalogue assertions and schema parse — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
   - Static Dashboard browser: 9/9 groups — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 - **Phase status unchanged:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+
+
+## 2026-11-10 — Internal recovery recheck for previously supplied Biology source
+
+- Rechecked current conversation files and the ChatGPT Library PDF listing/search for the registered Biology-with-microscope source. Current session did not surface the original binary; exact filename/subject searches returned no indexed result.
+- Retried official NCERT URL `https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf`: web retrieval returned an internal error; container curl failed DNS resolution for `ncert.nic.in`.
+- Created `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md` and linked the limitation in the source archive register and phase docs.
+- Preserved prior receipt/hash/catalogue and the 150-row audit queue. This is an internal retrieval limitation, not a reason to ask for repeat upload; no pending row was promoted using OCR only.
+- Phase 1 / 1.1 remain IN PROGRESS; Phase 2 science engines remain BLOCKED.

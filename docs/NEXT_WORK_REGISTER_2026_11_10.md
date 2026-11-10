@@ -221,7 +221,7 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific engines/results remain BLOCKED.
 
 ### Immediate next bounded action
-Start at queue order 1: `NCERT-BIO-WM-SPEC-002` (Kit Box; indexed PDF page 9), visually inspect the existing registered source if its uploaded bytes can be recovered internally, then update master catalogue, audit CSV/report, queue and smoke/data checks together. Current Library retrieval did not surface that original PDF in this session; this is an internal retrieval limitation, not a request for a repeat upload. Never promote OCR/index-only records to visually checked.
+Start at queue order 1: `NCERT-BIO-WM-SPEC-002` (Kit Box; indexed PDF page 9), visually inspect the existing registered source if its uploaded bytes can be recovered internally, then update master catalogue, audit CSV/report, queue and smoke/data checks together. Current Library listing/search did not surface that original PDF; a direct NCERT URL retry also failed (web internal error and DNS resolution failure). See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. This is an internal retrieval limitation, not a request for a repeat upload. Never promote OCR/index-only records to visually checked.
 
 ### Dashboard/architecture next
 The practical-to-inventory mapping and bulk-add workbench flow already exist. Do not recreate them. Continue only after the current source-audit batch, then focus on remaining static-preview parity and architecture hardening. Real 3D assets/scene, deterministic simulation, scientific solvers, offline storage and Android packaging are later roadmap phases, not completed.
