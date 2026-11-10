@@ -65,3 +65,17 @@ Continue Phase 1 with the source material already inspectable: expand the RBSE t
 - NCERT specification index: https://ncert.nic.in/division/dek/specification_documents.php
 - NCERT kit manuals index: https://ncert.nic.in/division/dek/kit-manuals.php?ln=en
 - NCERT other-books catalogue: https://ncert.nic.in/uploads/publication/other_books_new.pdf
+
+
+## Follow-up size metadata — 2026-11-10
+
+The current official specification index was reopened and its four Grade XI–XII kit attachment links were followed. The PDF delivery layer returned response content lengths while rejecting the payloads as too large:
+
+- MSCL.pdf: 19,808,858 bytes.
+- SSBK_with_Microscope.pdf: 59,585,913 bytes.
+- SSBK_without_Microscope.pdf: 63,918,957 bytes.
+- SSPhyLaboratoryKit.pdf: 42,539,010 bytes.
+
+No file bytes or official SHA-256 were retrieved. The later registered MSCL user-upload variant has the same byte count as the official response, but this is only a size match, not authentication. Both Biology-with-microscope uploaded variants are 35,057 bytes larger than the official response. Biology-without-microscope and Physics previous upload comparisons remain unknown. The full 2026-11-10 evidence is in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md` and its CSV.
+
+The official index itself remains authoritative for separate listing titles/URLs; attachment content remains RETRIEVAL_BLOCKED. Do not ask for repeat upload and do not promote a user copy to PRIMARY_OFFICIAL_CONTENT from file size alone.
