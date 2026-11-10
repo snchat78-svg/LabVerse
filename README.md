@@ -166,6 +166,8 @@ The register assigns LabVerse source-row IDs and provisional equipment families 
 - [MSCL detail-page audit — 53/53 items visually checked](docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md)
 - [NCERT official attachment-size recheck](docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md)
 - [NCERT official attachment-size recheck CSV](data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv)
+- [Physics measurement/metrology readiness audit (18 instruments)](docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md)
+- [Physics metrology readiness register (CSV)](data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv)
 - [MSCL item catalogue CSV — 55 index rows](data/catalogues/ncert_mscl_spec_items.csv)
 - [MSCL detail-page audit report — 8/53 physical items checked](docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md)
 - [MSCL detail-page audit register (CSV)](data/catalogues/mscl_detail_audit_2026_11_10.csv)
