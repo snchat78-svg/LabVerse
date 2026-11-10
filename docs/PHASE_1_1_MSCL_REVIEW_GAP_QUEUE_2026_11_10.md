@@ -27,6 +27,12 @@ The queue assigns overlapping review domains because one item can have multiple 
 
 Counts are item-to-domain assignments, not unique items and not approvals. The validator also checks every review row against all applicable source audit fields.
 
+## Final validation — 2026-11-10
+
+- Source/catalogue integrity: PASS, including 53 unique source IDs, 17-column schema, source order, source visual-audit status, exact upload fingerprint, verbatim gap/safety text, controlled domains and fail-closed review/phase state: https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753.
+- Desktop/mobile Chromium browser smoke: PASS, 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348.
+- The first validator attempts exposed a field-location mismatch and then a missing source-status carry-forward. The queue and assertions were corrected; only the final successful reruns above count as accepted validation.
+
 ## High-consequence source boundaries retained
 
 - Boiling Tube (index 4): text/drawing dimension ambiguity remains open; no OD/ID inference.
