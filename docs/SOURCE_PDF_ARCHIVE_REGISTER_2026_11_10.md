@@ -82,3 +82,7 @@ The public GitHub repository stores fingerprints, file/page metadata, the append
 - Wire Gauze detail expressly identifies asbestos at its centre; preserve the hazard prohibition. Row 176 is a microscope instrument notwithstanding the index's “Permanent Slide” prefix; row 177 is document credits, not an item.
 - This is a selective index/safety audit, not a complete 175-item detail-page verification or an official-byte authentication.
 - Audit outputs: `data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv`, updated `data/catalogues/ncert_biology_with_microscope_spec_items.csv`, and `docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_INDEX_AUDIT_2026_11_10.md`.
+
+### Biology with-microscope safety-item detail audit — batch 2 (2026-11-10)
+
+Additional current-upload pages visually checked: All-Pins p.22; Forceps p.43; Mortar and Pestle p.57; Nails p.64; Surgical Scissors p.66; Dissecting Needle p.67; Claw Hammer with Handle p.68; Laboratory Thermometer p.79. The thermometer is explicitly alcohol-filled in this source (-10 °C to 110 °C; 1 °C graduation; quantity 3), not mercury-filled. The item catalogue and visual audit CSV link each page to the current upload SHA-256. Current coverage: 13/175 physical item detail pages, plus the credits page. The rest remains unaudited.
