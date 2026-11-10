@@ -29,7 +29,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - Phase 0: DONE — planning/documentation baseline only.
 - Main source-audit phase: Phase 1 — IN PROGRESS.
-- User-authorized dashboard track: starter dashboard and searchable three-subject source catalogue are now in the repository.
+- User-authorized dashboard track: three-subject inventory dashboard includes practical-to-source item navigation and candidate setup placeholders; desktop/mobile browser smoke passes 9/9 groups.
 - Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
 - Phase 1 authentication, safety and expert-review gates remain open; the dashboard shell is allowed to progress in parallel without promoting candidate records.
 
@@ -37,6 +37,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - [Open the LabVerse dashboard source](dashboard/index.html)
 - [Dashboard build notes and limitations](dashboard/README.md)
+- [Next work and remaining items](docs/NEXT_WORK_REGISTER_2026_11_10.md)
 - [Dashboard inventory audit](docs/DASHBOARD_INVENTORY_AUDIT_2026_11_09.md)
 - [Biology manual 58-entry reagent list](data/catalogues/ncert_biology_manual_reagents_58.csv)
 - [Free GitHub Pages publishing steps](docs/DASHBOARD_PUBLISHING.md)
