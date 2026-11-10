@@ -66,3 +66,11 @@ Do not promote any user-uploaded file to `PRIMARY_OFFICIAL_CONTENT` solely becau
 4. Continue the existing Phase 1.1 source, rights, procurement, safety and subject-expert closure. Do not start Phase 2 scientific solvers until the master Phase 1 exit criteria pass.
 
 **Phase gate:** Phase 1 / Phase 1.1 IN PROGRESS; Phase 2 scientific models remain BLOCKED.
+
+
+## Integrity validation — 2026-11-10
+
+- Source/catalogue integrity CI **PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434 on validator commit `d03da5ce362b30b27bf101d8b859bff9c9c3dfe7`. Assertions cover 4 separate official Grade XI–XII source IDs/URLs, the 15-column evidence schema, exact observed response-size metadata, no downloaded payload/unknown official SHA, size-match-only MSCL boundary and 35,057-byte Biology-with-microscope mismatch.
+- Existing MSCL 53/53 visual-detail audit assertions also pass in the same run.
+- Desktop/mobile browser smoke **PASS 9/9**: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
+- CI checks evidence-register integrity only; it does not authenticate any uploaded PDF, download NCERT binaries or validate scientific models.
