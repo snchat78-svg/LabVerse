@@ -56,6 +56,16 @@ async function main() {
     await page.locator("#reset-bench").click();
     results.push("Physics drag-and-drop to workbench");
 
+    // Practical -> candidate source-item -> subject inventory navigation.
+    await page.locator("#task-search").fill("Vernier calipers");
+    await page.locator('[data-task="RBSE-XI-PHY-EXP-01"]').click();
+    const mappedVernier = page.locator('[data-focus-source="NCERT-PHY-KIT-003"]');
+    await mappedVernier.waitFor();
+    await mappedVernier.click();
+    assert.match(await page.locator("#selected-details").innerText(), /Vernier caliper/);
+    assert.equal(await page.locator("#inventory-search").inputValue(), "Vernier caliper");
+    results.push("Physics practical-to-inventory source navigation");
+
     // Chemistry: reagent search and virtual-only status must be visible.
     await page.locator("#back-home").click();
     await page.locator('.subject-card[data-subject="chemistry"]').click();
@@ -96,7 +106,7 @@ async function main() {
     results.push("Mobile viewport and subject navigation");
 
     assert.deepEqual(errors, [], "browser runtime must not log page or console errors");
-    console.log("LabVerse browser smoke tests: 6 groups passed.");
+    console.log("LabVerse browser smoke tests: 7 groups passed.");
     for (const result of results) console.log("PASS:", result);
   } finally {
     await browser.close();
