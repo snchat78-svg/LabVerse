@@ -1669,5 +1669,5 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Reconciliation: screen links 17 task IDs; matrix links 17; shared 15; two screen-only (OPT-01, OPT-04); two matrix-contextual-only (THERMO-02, ELECTRO-01); 22 with no candidate link in either track. Ten shared tasks have differing record-ID sets and require review.
 - All screening remains preliminary name-only triage, not GHS/SDS. No product formula/CAS/concentration/grade or supply state was inferred. All 126 reagent records remain blocked from live use; all 41 task rows remain documentary-only.
 - Full report and CSV: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md` and `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`.
-- Browser smoke run is pending at https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772; update after it finishes.
+- Desktop/mobile Chromium browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; no gates waived.
