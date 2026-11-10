@@ -322,7 +322,7 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 - A second internal semantic search for Biology-with-microscope returned no Library or Conversation matches. The old submission is acknowledged; do not request it again.
 
 ### Immediate next actions — keep this order
-1. Verify the GitHub Actions dashboard-integrity run triggered by validator commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`. Fix only evidence-backed validator defects and rerun.
+1. **DONE:** new 17-column queue integrity validator PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753. Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348. The validator checks all 53 source links, visual-status fields, verbatim technical/safety gaps and fail-closed approval states.
 2. Use the new MSCL queue to prioritize an actual qualified review/evidence owner for the high-consequence rows: Boiling Tube, Micro Scale Test Tube, Micro Test Tube Stand, Micro Well Plate, W Tube, Wire Gauze, Spirit Lamp, Mercury Thermometer, Multimeter and Gas Generator. Do not mark approvals without the relevant primary evidence and qualified sign-off.
 3. Continue internal recovery of the already-submitted Biology-with-microscope bytes. If readable, resume `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed PDF page 9 and update the catalogue, detail audit, queue and tests together. No repeat-upload request.
 4. Continue the remaining Physics/MSCL/Biology official procurement, rights, safety/SDS, calibration, compatibility/waste and subject-expert gates from accessible evidence.
