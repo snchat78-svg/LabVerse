@@ -559,3 +559,17 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Storage truth:** GitHub currently contains PDF source IDs, filenames, hashes/metadata and extracted catalogues, not the original PDF binaries. Accessible originals remain in ChatGPT Library/conversation. This is explicitly written into the source archive register; do not claim PDF binaries were committed.
 - **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 3 PARTIAL; Phase 4 Dashboard IN PROGRESS. Phase 5+ not started.
 - **Next bounded action:** inspect the Ubuntu 24.04 Chromium workflow run. If it passes, fix any remaining UI issue and continue source-to-task-to-asset/model/test traceability. If it fails, resolve the first actual browser failure and rerun.
+
+
+## 2026-11-10 — Practical-to-inventory links, unmatched-task explanations and candidate setup
+
+- **Scope:** connect the 171 RBSE task-index entries to the subject inventories, make source gaps visible and allow a practical's candidate items to be placed into the workbench.
+- **Mapping audit:** Physics 79/80 tasks link to 95 distinct subject item IDs; Chemistry 41/41 link to 45; Biology 49/50 link to 147. All **287** subject-distinct source-item references resolve against the corresponding inventory; there are **0 unresolved IDs**. Total 169/171 tasks have candidate source-item links.
+- **Unmatched task A:** `RBSE-XI-PHY-PRJ-08` — Fortin barometer does not appear in the available 106-item NCERT Physics kit-manual register. Kept with no source-item ID and an explicit mapping-gap note; do not claim it is supplied in the kit.
+- **Unmatched task B:** `RBSE-XII-BIO-PRJ-01` — teacher-assigned investigatory project; RBSE gives no fixed title or apparatus list. Kept with no source-item ID and an explicit mapping-gap note.
+- **Dashboard UI:** `dashboard/assets/dashboard.js` now displays per-subject task/source coverage, candidate source links in task detail, click-through inventory navigation, explicit unmatched reasons and an `Add mapped candidates to workbench` action. The latter adds catalogue placeholders only; no quantities, procurement equivalence, compatibility, live use or scientific result are implied.
+- **Data:** `dashboard/data/inventory.json` now stores the traceability-coverage summary and the two explicit `mappingGap` reasons.
+- **Tests:** browser smoke suite covers nine groups: dashboard overview/counts; Physics search/tap/reset; HTML5 drag/drop; practical-to-item inventory navigation; mapped candidate setup; Fortin barometer gap disclosure; Chemistry no-live-use boundary; Biology not-supplied boundary/class filter/open-project gap; mobile viewport/navigation.
+- **CI:** Playwright Chromium smoke passed 9/9 groups; URL https://github.com/snchat78-svg/LabVerse/actions/runs/42747870645. Inventory/schema/source registry checks passed on the same commit; URL https://github.com/snchat78-svg/LabVerse/actions/runs/42747870414. Verified commit `28f8452d1409b086e0a0c80244a7e4874aafaf`.
+- **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 dashboard read model PARTIAL and scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D assets NOT STARTED.
+- **Next bounded action:** begin Phase 3 production React/TypeScript/Vite foundation and migrate the tested subject dashboard while preserving the static dashboard, source registry and all no-repeat evidence boundaries.
