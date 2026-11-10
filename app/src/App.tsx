@@ -3,6 +3,14 @@ import inventoryData from "../../dashboard/data/inventory.json";
 
 type SubjectKey = "physics" | "chemistry" | "biology";
 type ClassFilter = "ALL" | "XI" | "XII";
+type WorkspaceKey = "learning" | "virtual" | "analysis" | "research";
+
+const workspaceNames: Record<WorkspaceKey, string> = {
+  learning: "Learning Lab",
+  virtual: "Virtual Experiment Lab",
+  analysis: "Scientific Analysis",
+  research: "Research Studio"
+};
 
 const subjectMeta: Record<
   SubjectKey,
@@ -71,6 +79,15 @@ function statusLabel(item: CatalogueItem): string {
 
 export default function App() {
   const [activeSubject, setActiveSubject] = useState<SubjectKey | null>(null);
+  const [activeWorkspace, setActiveWorkspace] = useState<WorkspaceKey>("learning");
+  const [requestedWorkspace, setRequestedWorkspace] = useState<WorkspaceKey | null>(null);
+  const [researchQuestion, setResearchQuestion] = useState("");
+  const [researchHypothesis, setResearchHypothesis] = useState("");
+  const [researchAlternative, setResearchAlternative] = useState("");
+  const [researchIndependent, setResearchIndependent] = useState("");
+  const [researchDependent, setResearchDependent] = useState("");
+  const [researchControls, setResearchControls] = useState("");
+  const [researchDraftReady, setResearchDraftReady] = useState(false);
   const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
   const [search, setSearch] = useState("");
   const [taskSearch, setTaskSearch] = useState("");
@@ -128,6 +145,8 @@ export default function App() {
 
   const goHome = () => {
     setActiveSubject(null);
+    setActiveWorkspace("learning");
+    setRequestedWorkspace(null);
     setSearch("");
     setTaskSearch("");
     setSelectedItem(null);
@@ -135,8 +154,15 @@ export default function App() {
     setBenchItems([]);
   };
 
+  const selectWorkspace = (workspace: WorkspaceKey) => {
+    setActiveWorkspace(workspace);
+    if (!activeSubject) setRequestedWorkspace(workspace);
+  };
+
   const openSubject = (subject: SubjectKey) => {
     setActiveSubject(subject);
+    setActiveWorkspace(requestedWorkspace ?? "learning");
+    setRequestedWorkspace(null);
     setSearch("");
     setTaskSearch("");
     setSelectedItem(null);
@@ -164,17 +190,20 @@ export default function App() {
         </button>
 
         <div className="nav-label">WORKSPACE</div>
-        <button className={!activeSubject ? "nav-link active" : "nav-link"} onClick={goHome}>
+        <button className={!activeSubject && !requestedWorkspace ? "nav-link active" : "nav-link"} onClick={goHome}>
           <span>⌂</span> Dashboard
         </button>
-        <button className="nav-link" onClick={() => openSubject("physics")}>
+        <button className={activeWorkspace === "learning" && (activeSubject || requestedWorkspace) ? "nav-link active" : "nav-link"} onClick={() => selectWorkspace("learning")}>
           <span>▤</span> Learning Lab
         </button>
-        <button className="nav-link" onClick={() => openSubject("chemistry")}>
+        <button className={activeWorkspace === "virtual" && (activeSubject || requestedWorkspace) ? "nav-link active" : "nav-link"} onClick={() => selectWorkspace("virtual")}>
           <span>◇</span> Virtual Experiment Lab
         </button>
-        <button className="nav-link" onClick={() => openSubject("biology")}>
+        <button className={activeWorkspace === "analysis" && (activeSubject || requestedWorkspace) ? "nav-link active" : "nav-link"} onClick={() => selectWorkspace("analysis")}>
           <span>⌁</span> Scientific Analysis
+        </button>
+        <button className={activeWorkspace === "research" && (activeSubject || requestedWorkspace) ? "nav-link active" : "nav-link"} onClick={() => selectWorkspace("research")}>
+          <span>⌘</span> Research Studio
         </button>
 
         <div className="nav-label subject-label">THREE SCIENCE DIRECTIONS</div>
@@ -243,7 +272,7 @@ export default function App() {
                 const subject = inventoryData.subjects[key];
                 const count = subject.inventory.length;
                 return (
-                  <button key={key} className={`subject-card ${meta.colour}`} onClick={() => setActiveSubject(key)}>
+                  <button key={key} className={`subject-card ${meta.colour}`} onClick={() => openSubject(key)}>
                     <div className="subject-icon">{meta.icon}</div>
                     <small>{meta.short}</small>
                     <h3>{meta.title}</h3>
@@ -257,6 +286,20 @@ export default function App() {
                 );
               })}
             </div>
+            {requestedWorkspace && (
+              <section className="workspace-launch">
+                <div className="eyebrow">{workspaceNames[requestedWorkspace].toUpperCase()}</div>
+                <h2>Choose a subject direction</h2>
+                <p>Open Physics, Chemistry or Biology inside {workspaceNames[requestedWorkspace]}.</p>
+                <div className="workspace-launch-actions">
+                  {(Object.keys(subjectMeta) as SubjectKey[]).map((key) => (
+                    <button type="button" key={key} onClick={() => openSubject(key)}>
+                      {subjectMeta[key].title} →
+                    </button>
+                  ))}
+                </div>
+              </section>
+            )}
           </section>
         ) : activeData ? (
           <section className="subject-view">
@@ -265,14 +308,22 @@ export default function App() {
             <h1>{activeData.name} Lab</h1>
             <p className="description">{activeData.sourceNote}</p>
 
-            <div className="workspace-tabs">
-              <span className="active">Learning Lab</span>
-              <span>Virtual Experiment Lab</span>
-              <span>Scientific Analysis</span>
-              <span>Research Studio</span>
+            <div className="workspace-tabs" role="tablist" aria-label="LabVerse workspaces">
+              {(Object.keys(workspaceNames) as WorkspaceKey[]).map((workspace) => (
+                <button
+                  type="button"
+                  key={workspace}
+                  role="tab"
+                  aria-selected={activeWorkspace === workspace}
+                  className={activeWorkspace === workspace ? "active" : ""}
+                  onClick={() => setActiveWorkspace(workspace)}
+                >
+                  {workspaceNames[workspace]}
+                </button>
+              ))}
             </div>
 
-            <div className="content-grid">
+            {activeWorkspace !== "research" && <div className="content-grid">
               <section className="panel">
                 <div className="panel-head">
                   <div><div className="eyebrow">SOURCE CATALOGUE</div><h2>Instrument & material inventory</h2></div>
@@ -319,6 +370,19 @@ export default function App() {
                       {selectedItem.quantity && <><dt>Source quantity</dt><dd>{selectedItem.quantity}</dd></>}
                     </dl>
                     <p className="warning">Catalogue information only. It does not establish current supplied stock, physical-use permission or scientific validation.</p>
+                    {activeWorkspace === "virtual" && (
+                      <button
+                        type="button"
+                        className="setup-button"
+                        onClick={() => setBenchItems((current) =>
+                          current.some((item) => item.id === selectedItem.id)
+                            ? current
+                            : [...current, selectedItem]
+                        )}
+                      >
+                        Add selected item as candidate placeholder
+                      </button>
+                    )}
                   </>
                 ) : (
                   <div className="empty">
@@ -327,9 +391,9 @@ export default function App() {
                   </div>
                 )}
               </section>
-            </div>
+            </div>}
 
-            <section className="panel practical-panel">
+            {activeWorkspace === "learning" && <section className="panel practical-panel">
               <div className="panel-head">
                 <div><div className="eyebrow">RBSE CLASS 11–12</div><h2>Practical catalogue</h2></div>
                 <strong>{tasks.length} tasks</strong>
@@ -387,9 +451,9 @@ export default function App() {
                   );
                 })}
               </div>
-            </section>
+            </section>}
 
-            <section className="panel bench-panel">
+            {activeWorkspace === "virtual" && <section className="panel bench-panel">
               <div className="panel-head">
                 <div><div className="eyebrow">PLACEHOLDER WORKSPACE</div><h2>Experiment workbench</h2></div>
                 <strong>{benchItems.length} objects</strong>
@@ -410,7 +474,69 @@ export default function App() {
                 </>
               )}
               <p className="bench-warning">These are catalogue placeholders only—not a verified kit setup, procedure or simulated result.</p>
-            </section>
+            </section>}
+
+            {activeWorkspace === "analysis" && (
+              <section className="panel analysis-workspace">
+                <div className="eyebrow">SCIENTIFIC ANALYSIS</div>
+                <h2>Evidence and model readiness</h2>
+                {selectedItem ? (
+                  <>
+                    <p><strong>{selectedItem.name}</strong> — {statusLabel(selectedItem)}.</p>
+                    <dl>
+                      <dt>Source</dt><dd>{selectedItem.source ?? "Source not recorded"}</dd>
+                      <dt>Evidence</dt><dd>{selectedItem.evidence ?? "Not recorded"}</dd>
+                      <dt>Source status</dt><dd>{selectedItem.status}</dd>
+                    </dl>
+                  </>
+                ) : (
+                  <p>Select an item from the inventory to inspect its evidence and review state.</p>
+                )}
+                <div className="analysis-state">
+                  <strong>No validated scientific model connected</strong>
+                  <p>No calculated or predicted result is generated in this workspace yet. Model scope, assumptions, units, uncertainty and domain review must be implemented before results are shown.</p>
+                </div>
+              </section>
+            )}
+
+            {activeWorkspace === "research" && (
+              <section className="panel research-workspace">
+                <div className="eyebrow">RESEARCH STUDIO</div>
+                <h2>Structure a research question</h2>
+                <p>Draft a question, hypothesis, alternative and variables before planning a validated investigation.</p>
+                <form onSubmit={(event) => { event.preventDefault(); setResearchDraftReady(true); }}>
+                  <label>Research question
+                    <textarea required value={researchQuestion} onChange={(event) => {setResearchQuestion(event.target.value);setResearchDraftReady(false);}} />
+                  </label>
+                  <label>Working hypothesis
+                    <textarea value={researchHypothesis} onChange={(event) => {setResearchHypothesis(event.target.value);setResearchDraftReady(false);}} />
+                  </label>
+                  <label>Alternative explanation
+                    <textarea value={researchAlternative} onChange={(event) => {setResearchAlternative(event.target.value);setResearchDraftReady(false);}} />
+                  </label>
+                  <div className="research-variable-grid">
+                    <label>Independent variable
+                      <input value={researchIndependent} onChange={(event) => {setResearchIndependent(event.target.value);setResearchDraftReady(false);}} />
+                    </label>
+                    <label>Dependent variable
+                      <input value={researchDependent} onChange={(event) => {setResearchDependent(event.target.value);setResearchDraftReady(false);}} />
+                    </label>
+                  </div>
+                  <label>Controls / conditions to hold constant
+                    <textarea value={researchControls} onChange={(event) => {setResearchControls(event.target.value);setResearchDraftReady(false);}} />
+                  </label>
+                  <button type="submit" className="setup-button">Preview research draft</button>
+                </form>
+                {researchDraftReady && (
+                  <div className="analysis-state">
+                    <strong>Local draft preview ready</strong>
+                    <p>{researchQuestion}</p>
+                    <small>This draft exists only in the current app session. It is not saved to cloud or a reproducible notebook yet.</small>
+                  </div>
+                )}
+                <p className="bench-warning">A draft is not an approved protocol or scientific conclusion. Safety and subject-expert review remain required.</p>
+              </section>
+            )}
 
             <div className="evidence-note">
               <strong>Prototype boundary</strong>
