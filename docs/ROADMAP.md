@@ -508,3 +508,7 @@ React detail panels now show per-item Safety / review notes; smoke tests exercis
 ## Biology specification detail audit — batch 2
 
 Eight more pages were visually checked in the current Biology-with-microscope upload: All-Pins, Forceps, Mortar and Pestle, Nails, Surgical Scissors, Dissecting Needle, Claw Hammer and Laboratory Thermometer. The source confirms the thermometer is alcohol-filled, not mercury-filled. Current page-audit coverage is 13/175 physical kit-item details plus the credits page; all other detail pages remain pending. Future app assets for visual cards and slides must be original or appropriately licensed, not copies of NCERT artwork.
+
+## Biology with-microscope glassware audit — batch 3
+
+Twelve further current-upload detail pages have been visually checked: capillary tubes, glass pipettes, cavity slides, dropper, test tubes, cover slips, glass rods, glass tubes, watch glass, conical flask, boiling tube and glass slide. Confirmed source quantities include 12 test tubes and 100 glass slides. The watch-glass no-heating warning from the manual is retained. Coverage is now 25/175 physical item detail pages; the remaining items and all biological identity/expert checks stay open.
