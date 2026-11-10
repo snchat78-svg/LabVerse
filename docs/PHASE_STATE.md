@@ -1540,3 +1540,11 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 - New audit CSV and report committed; detail-page completeness remains PARTIAL, not complete. Current official NCERT byte authentication, procurement equivalence and Biology expert review remain open.
 - React now exposes each catalogue item's Safety / review text. Fresh CI is required to validate asbestos, open-flame and sharp-tool warnings in the UI.
 - Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS.
+
+## 2026-11-10 — Biology with-microscope safety audit, batch 2
+
+- Added visual page checks for All-Pins (PDF p.22), Forceps (p.43), Mortar and Pestle (p.57), Nails (p.64), Surgical Scissors (p.66), Dissecting Needle (p.67), Claw Hammer (p.68) and Laboratory Thermometer (p.79).
+- Source confirms the Biology Laboratory Thermometer is alcohol-filled, -10 °C to 110 °C with 1 °C graduation and quantity 3; do not mislabel it as mercury-filled.
+- Current with-microscope audit coverage: 13/175 physical kit-item detail pages visually checked (14 pages including the document-credit page); the other 162 detail pages remain unverified in this work unit.
+- React smoke now also tests alcohol thermometer, impact-tool hammer and pointed-pin warnings. Fresh CI result should be checked before marking these UI tests passed.
+- Full source authenticity, live stock/procurement, and Biology scientific/expert review remain open; Phase 1.1 is not complete and Phase 2 remains blocked.
