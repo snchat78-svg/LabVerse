@@ -33,8 +33,8 @@
 - Phase 0: DONE (documentation baseline only).
 - Phase 1 / Phase 1.1: IN PROGRESS; source authentication, remaining no-microscope/Physics record recovery, item-level audit, rights, safety and expert review remain open.
 - Phase 2: PARTIAL only for the dashboard-facing read model; scientific domain contracts and result engines remain blocked.
-- Phase 3: PARTIAL; React/TypeScript/Vite starter is committed and passes strict typecheck, production build and 6/6 Chromium browser groups; full architecture/workspace migration remains.
-- Phase 4: IN PROGRESS; static three-subject dashboard is tested; React app now includes subject inventory, task mapping and candidate placeholder workbench, while the four workspaces and remaining interactions still need migration.
+- Phase 3: PARTIAL; React/TypeScript/Vite foundation passes strict typecheck, production build and latest 13/13 Chromium groups; full static-preview parity and architecture hardening remain.
+- Phase 4: IN PROGRESS; React has four workspace destinations, item-type/category filters, per-subject task/source coverage, both explicit unmatched-task reasons and a candidate placeholder workbench. Full static-preview parity and real 3D remain.
 - Phase 5 onward: NOT STARTED; no real 3D assets or scientific action/simulation engines.
 
 ## Remaining work register
@@ -49,7 +49,7 @@
 | UI-01 | Complete desktop/mobile Chromium smoke | 9/9 Playwright Chromium groups pass on commit `28f8452d1409b086e0a0c80244a7e4874aafaf` | DONE — maintain regression workflow on dashboard changes |
 | APP-01 | Functional React workspace destinations | Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio functional; 10/10 browser groups PASS | DONE for bounded workspace shell; maintain regression checks |
 | APP-02 | Maintain React app CI | Typecheck, Vite build and 10/10 React browser groups pass | DONE for current workspace shell; expand smoke tests as controls migrate |
-| APP-03 | React inventory filters and traceability summary | Searchable inventory and tasks; per-subject coverage is in source read model | Add type/category filters, coverage banner and unmatched-task reason cards |
+| APP-03 | React inventory filters and traceability summary | Type/category filters; per-subject coverage; Physics and Biology unmatched-task reason cards; React CI passed 13/13 | DONE for current scope; maintain regression tests |
 | UI-02 | Publish live free dashboard | GitHub Pages workflow and setup guide exist; Pages is not enabled yet | One-time repository Settings → Pages → Source GitHub Actions, then run deploy workflow |
 | UI-03 | Build real 3D workbench | Current bench uses 2D placeholders | Start real asset scene only after dashboard smoke and asset data contract are stable |
 | SCI-01 | Implement validated Physics/Chemistry/Biology scientific engines | Models/rules not implemented | Keep Phase 1 and scientific evidence gates; do not produce simulated results from unreviewed entries |
@@ -61,7 +61,7 @@ GitHub now contains the PDF source register, hashes, extracted catalogues and ev
 
 ## Next single action
 
-Continue Phase 3/4 React migration: make Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio destinations functional; migrate category/type filters, source coverage and unmatched-task disclosure; preserve the tested static preview, PDF source registry, no-repeat rules and CI tests.
+Continue Phase 1.1 page-level Biology kit source audit, then recover the previously supplied Biology-without-microscope and Physics attachments/catalogues internally. Keep all source variants separate and do not request repeat uploads.
 
 
 ## 2026-11-10 — Practical-to-inventory navigation and candidate setup delivered
