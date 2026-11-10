@@ -35,7 +35,7 @@ async function main() {
     await page.getByRole("heading", {name:"Chemistry Lab"}).waitFor();
     await page.locator(".content-grid .search").first().fill("Acetic acid");
     await page.getByRole("button", {name:/Acetic acid/}).click();
-    assert.match(await page.locator(".detail-panel").innerText(), /Reference only|safety review/i);
+    assert.match(await page.locator(".detail-panel").innerText(), /Reference only \/ no live use/i);
 
     // Biology school-managed reagent warning remains visible
     await page.locator(".back-button").click();
@@ -43,7 +43,7 @@ async function main() {
     await page.getByRole("heading", {name:"Biology Lab"}).waitFor();
     await page.locator(".content-grid .search").first().fill("Mercury");
     await page.getByRole("button", {name:/Mercury/}).click();
-    assert.match(await page.locator(".detail-panel").innerText(), /not supplied|school-managed|safety review/i);
+    assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
 
     // Mobile viewport
     await page.setViewportSize({width:390,height:844});
