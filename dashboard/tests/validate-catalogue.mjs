@@ -442,3 +442,153 @@ for (const [id, pattern] of [
   assert.notEqual(row[14], "APPROVED", "critical items cannot be auto-approved");
 }
 console.log("MSCL evidence/safety review queue: 53 source-linked rows, 17 columns, source visual status and verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
+
+
+// Reconcile all MSCL reagent safety-screen links against the RBSE task-level matrix.
+const msclReagentIndexRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_mscl_manual_reagent_index.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(msclReagentIndexRows.length, 125, "MSCL manual reagent index must retain 124 numbered labels");
+assert.equal(msclReagentIndexRows[0].length, 12, "MSCL manual reagent index schema must have 12 columns");
+assert.ok(msclReagentIndexRows.slice(1).every(row => row.length === 12), "MSCL manual reagent index records must preserve 12 columns");
+const expectedManualReagentIds = Array.from({length:124}, (_,i) => `MSCL-MAN-REAG-${String(i+1).padStart(3,"0")}`);
+assert.deepEqual(msclReagentIndexRows.slice(1).map(row => row[0]), expectedManualReagentIds, "all 124 numbered source IDs must remain in order");
+const manualReagentById = new Map(msclReagentIndexRows.slice(1).map(row => [row[0], row]));
+assert.equal(manualReagentById.get("MSCL-MAN-REAG-080")[2], "Potassium iodate");
+assert.equal(manualReagentById.get("MSCL-MAN-REAG-087")[2], "Potassium iodate");
+const duplicateSourceLabels = new Map();
+for (const row of msclReagentIndexRows.slice(1)) {
+  const label = row[2];
+  duplicateSourceLabels.set(label, [...(duplicateSourceLabels.get(label) || []), row[0]]);
+}
+const actualDuplicateLabels = [...duplicateSourceLabels.entries()].filter(([,ids]) => ids.length > 1);
+assert.deepEqual(actualDuplicateLabels, [["Potassium iodate", ["MSCL-MAN-REAG-080","MSCL-MAN-REAG-087"]]], "only the duplicate Potassium iodate source label should be preserved as two distinct rows");
+
+const msclSafetyScreenRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(msclSafetyScreenRows.length, 127, "MSCL reagent safety screen must contain 124 numbered + 2 supplemental records");
+assert.equal(msclSafetyScreenRows[0].length, 17, "MSCL reagent safety screen must retain 17 columns");
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row.length === 17), "all MSCL safety-screen rows must preserve 17 columns");
+const safetyScreenById = new Map(msclSafetyScreenRows.slice(1).map(row => [row[0], row]));
+assert.equal(safetyScreenById.size, 126, "MSCL safety-screen record IDs must be unique");
+assert.deepEqual(
+  msclSafetyScreenRows.slice(1).filter(row => row[1] === "NUMBERED_MANUAL_LABEL").map(row => row[0]),
+  expectedManualReagentIds,
+  "all 124 numbered manual labels must appear once and in original order in the safety screen"
+);
+const supplementalManualRefs = msclSafetyScreenRows.slice(1).filter(row => row[1] === "SUPPLEMENTAL_INTERNAL_MANUAL_REFERENCE");
+assert.deepEqual(supplementalManualRefs.map(row => row[0]), ["MSCL-MAN-OMIT-001","MSCL-MAN-OMIT-002"]);
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[12] === "BLOCKED_NO_LIVE_USE; SIMULATION_REFERENCE_ONLY"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[13] === "IDENTITY_SPECIFIC_CURRENT_SDS_AND_EXPOSURE_REVIEW_REQUIRED"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[14] === "NOT_APPROVED"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[15] === "NOT_A_CURRENT_SUPPLY_OR_BOM_RECORD"));
+const safetyClassCounts = msclSafetyScreenRows.slice(1).reduce((counts,row) => {
+  counts[row[8]] = (counts[row[8]] || 0) + 1;
+  return counts;
+}, {});
+assert.deepEqual(safetyClassCounts, {
+  "VOLATILE_OR_FLAMMABLE_ORGANIC_FAMILY_FLAG":7,
+  "CORROSIVE_OR_REACTIVE_FAMILY_FLAG":23,
+  "GENERAL_REAGENT_REVIEW_REQUIRED":74,
+  "HIGH_CONCERN_NAME_FLAG":21,
+  "LOWER_CONCERN_REFERENCE_ONLY":1
+}, "name-only screening triage counts must remain unchanged and non-GHS");
+assert.equal(msclSafetyScreenRows.slice(1).filter(row => row[11].startsWith("EXACT_LABEL_TEXT_OCCURRENCE_CANDIDATE")).length, 18);
+console.log("MSCL manual reagent index/safety screen: 124 numbered labels + 2 separate supplemental rows; 126 blocked from live use, SDS required, not approved and not current BOM.");
+
+const msclOmissionRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(msclOmissionRows.length, 3, "MSCL internal-reagent omissions register must contain two supplemental rows");
+assert.equal(msclOmissionRows[0].length, 9, "MSCL omissions register must retain 9 columns");
+assert.deepEqual(msclOmissionRows.slice(1).map(row => row[0]), ["MSCL-MAN-OMIT-001","MSCL-MAN-OMIT-002"]);
+assert.equal(safetyScreenById.get("MSCL-MAN-OMIT-001")[3], "Potassium permanganate");
+assert.equal(safetyScreenById.get("MSCL-MAN-OMIT-002")[3], "Potassium iodide (KI)");
+assert.equal(msclReagentIndexRows.slice(1).find(row => row[0] === "MSCL-MAN-REAG-056")[2], "Iodine solution");
+assert.notEqual("Potassium iodide (KI)", "Iodine solution", "do not collapse the KI body reference into the numbered iodine-solution label");
+
+const rbseReagentMatrixRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(rbseReagentMatrixRows.length, 42, "RBSE reagent matrix must contain 41 unique task rows");
+assert.equal(rbseReagentMatrixRows[0].length, 22, "RBSE reagent matrix schema must retain 22 columns");
+assert.ok(rbseReagentMatrixRows.slice(1).every(row => row.length === 22));
+const matrixHeader = rbseReagentMatrixRows[0];
+const matrixIndex = Object.fromEntries(matrixHeader.map((name,index) => [name,index]));
+const matrixTasks = rbseReagentMatrixRows.slice(1);
+const matrixTaskIds = matrixTasks.map(row => row[matrixIndex.rbse_task_id]);
+assert.equal(new Set(matrixTaskIds).size, 41, "RBSE matrix task IDs must be unique");
+assert.ok(matrixTasks.every(row => row[matrixIndex.validation_status] === "DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOURCE_REVIEW_REQUIRED"));
+assert.ok(matrixTasks.every(row => row[matrixIndex.current_official_bom_status] === "NOT_RETRIEVED_OR_AUTHENTICATED"));
+assert.ok(matrixTasks.every(row => row[matrixIndex.physical_lab_status] === "BLOCKED; SIMULATION_OR_PREPARED_REFERENCE_DATA_ONLY"));
+const matrixCandidateIdsByTask = new Map();
+for (const row of matrixTasks) {
+  matrixCandidateIdsByTask.set(
+    row[matrixIndex.rbse_task_id],
+    (row[matrixIndex.candidate_manual_reagent_record_ids] || "").split(";").filter(Boolean)
+  );
+}
+const allMatrixReagentCandidateIds = new Set([...matrixCandidateIdsByTask.values()].flat());
+assert.equal(allMatrixReagentCandidateIds.size, 25, "25 unique source candidate IDs must be preserved in the task matrix");
+assert.ok([...allMatrixReagentCandidateIds].every(id => safetyScreenById.has(id)), "all matrix candidate IDs must resolve to a numbered or supplemental safety-screen record");
+assert.ok(allMatrixReagentCandidateIds.has("MSCL-MAN-OMIT-001"));
+assert.ok(allMatrixReagentCandidateIds.has("MSCL-MAN-OMIT-002"));
+
+const reagentReconciliationRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(reagentReconciliationRows.length, 42, "reagent reconciliation must contain exactly one row per RBSE Chemistry task");
+assert.equal(reagentReconciliationRows[0].length, 20, "reagent reconciliation schema must retain 20 columns");
+assert.ok(reagentReconciliationRows.slice(1).every(row => row.length === 20));
+const reconciliationHeader = reagentReconciliationRows[0];
+const reconciliationIndex = Object.fromEntries(reconciliationHeader.map((name,index) => [name,index]));
+assert.deepEqual(
+  reagentReconciliationRows.slice(1).map(row => row[reconciliationIndex.rbse_task_id]),
+  matrixTaskIds,
+  "reconciliation must preserve every task ID and the source matrix order"
+);
+const screenTaskIdsById = new Map();
+for (const row of msclSafetyScreenRows.slice(1)) {
+  const id = row[0];
+  for (const taskId of (row[10] || "").split(";").filter(Boolean)) {
+    screenTaskIdsById.set(taskId, [...(screenTaskIdsById.get(taskId) || []), id]);
+  }
+}
+const reconciliationStatusCounts = {};
+for (const row of reagentReconciliationRows.slice(1)) {
+  const taskId = row[reconciliationIndex.rbse_task_id];
+  const screenIds = screenTaskIdsById.get(taskId) || [];
+  const matrixIds = matrixCandidateIdsByTask.get(taskId) || [];
+  const shared = screenIds.filter(id => matrixIds.includes(id));
+  const screenOnly = screenIds.filter(id => !matrixIds.includes(id));
+  const matrixOnly = matrixIds.filter(id => !screenIds.includes(id));
+  assert.deepEqual((row[reconciliationIndex.screen_exact_text_candidate_ids] || "").split(";").filter(Boolean), screenIds, taskId + " screen exact-text IDs must resolve");
+  assert.deepEqual((row[reconciliationIndex.matrix_candidate_reagent_ids] || "").split(";").filter(Boolean), matrixIds, taskId + " matrix candidate IDs must resolve");
+  assert.deepEqual((row[reconciliationIndex.shared_candidate_ids] || "").split(";").filter(Boolean), shared, taskId + " shared candidates must be correct");
+  assert.deepEqual((row[reconciliationIndex.screen_only_candidate_ids] || "").split(";").filter(Boolean), screenOnly, taskId + " screen-only candidates must be correct");
+  assert.deepEqual((row[reconciliationIndex.matrix_only_candidate_ids] || "").split(";").filter(Boolean), matrixOnly, taskId + " matrix-only candidates must be correct");
+  reconciliationStatusCounts[row[reconciliationIndex.reconciliation_status]] = (reconciliationStatusCounts[row[reconciliationIndex.reconciliation_status]] || 0) + 1;
+  assert.equal(row[reconciliationIndex.matrix_validation_status], "DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOURCE_REVIEW_REQUIRED");
+  assert.equal(row[reconciliationIndex.current_supply_status], "NOT_RETRIEVED_OR_AUTHENTICATED");
+  assert.equal(row[reconciliationIndex.physical_lab_status], "BLOCKED; SIMULATION_OR_PREPARED_REFERENCE_DATA_ONLY");
+  assert.ok(row[reconciliationIndex.review_note].length > 40, taskId + " must retain a review note");
+}
+assert.deepEqual(reconciliationStatusCounts, {
+  "NO_CANDIDATE_LINK_IN_EITHER_TRACK; NOT_PROOF_OF_NO_REAGENT":22,
+  "BOTH_TRACKS_PRESENT_RECORD_IDS_OVERLAP; EXPERT_REVIEW":5,
+  "BOTH_TRACKS_PRESENT_BUT_RECORD_ID_SETS_DIFFER; REVIEW":10,
+  "SCREEN_EXACT_TEXT_CANDIDATE_NOT_LINKED_IN_MATRIX; REVIEW":2,
+  "MATRIX_CONTEXTUAL_OR_SPECIES_CANDIDATES_WITHOUT_SCREEN_EXACT_TEXT_LINK; REVIEW":2
+});
+assert.ok(reagentReconciliationRows.slice(1).every(row => row[reconciliationIndex.reconciliation_status].length > 10));
+assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-01")[reconciliationIndex.reconciliation_status], "SCREEN_EXACT_TEXT_CANDIDATE_NOT_LINKED_IN_MATRIX; REVIEW");
+assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-04")[reconciliationIndex.reconciliation_status], "SCREEN_EXACT_TEXT_CANDIDATE_NOT_LINKED_IN_MATRIX; REVIEW");
+assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIndex.rbse_task_id] === "RBSE-XII-CHEM-THERMO-02")[reconciliationIndex.reconciliation_status], "MATRIX_CONTEXTUAL_OR_SPECIES_CANDIDATES_WITHOUT_SCREEN_EXACT_TEXT_LINK; REVIEW");
+assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIndex.rbse_task_id] === "RBSE-XII-CHEM-ELECTRO-01")[reconciliationIndex.reconciliation_status], "MATRIX_CONTEXTUAL_OR_SPECIES_CANDIDATES_WITHOUT_SCREEN_EXACT_TEXT_LINK; REVIEW");
+console.log("RBSE/MSCL reagent crosswalk reconciliation: 41 tasks, 20-column queue, 15 shared-task links, 2 screen-only, 2 contextual-only, 22 neither; all candidate/safety gates remain closed.");
