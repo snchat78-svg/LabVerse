@@ -309,3 +309,32 @@ assert.equal(msclCatalogueRows.length, 56, "MSCL source catalogue retains 55 row
 assert.ok(!/VISUAL_CHECK/.test(msclCatalogueById.get("NCERT-MSCL-SPEC-001")?.[9] || ""), "Kit Manual must not be counted as a physical item visual audit");
 assert.ok(!/VISUAL_CHECK/.test(msclCatalogueById.get("NCERT-MSCL-SPEC-055")?.[9] || ""), "Document Development Team credit must not be counted as a physical item visual audit");
 console.log("MSCL visual detail audit: 53/53 physical item records, 15-column schema, continuous source order, exact upload fingerprint, authentication, hazard, technical-review and measurement-calibration boundaries PASS.");
+
+const officialAttachmentSizeAudit = await readFile(
+  new URL("../../data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const officialAttachmentRows = parseCsvRows(officialAttachmentSizeAudit);
+assert.equal(officialAttachmentRows.length, 5, "official NCERT attachment size recheck must contain one header + four source rows");
+assert.equal(officialAttachmentRows[0].length, 15, "official attachment size recheck schema must have 15 columns");
+assert.ok(officialAttachmentRows.slice(1).every(row => row.length === 15), "all official attachment size records must preserve 15 columns");
+assert.deepEqual(
+  officialAttachmentRows.slice(1).map(row => row[0]),
+  ["MSCL_XI_XII","BIO_WITH_MICROSCOPE_XI_XII","BIO_WITHOUT_MICROSCOPE_XI_XII","PHYSICS_KIT_XI_XII"],
+  "four NCERT Grade XI-XII subject/variant URLs must stay separate and in source order"
+);
+const officialSizes = new Map(officialAttachmentRows.slice(1).map(row => [row[0], row]));
+assert.deepEqual(
+  ["19808858","59585913","63918957","42539010"],
+  officialAttachmentRows.slice(1).map(row => row[4]),
+  "official attachment response content lengths must remain recorded exactly"
+);
+assert.ok(officialAttachmentRows.slice(1).every(row => row[6] === "Not downloaded" && row[7] === "UNKNOWN"), "response sizes must not be misrepresented as downloaded official bytes or hashes");
+assert.equal(officialSizes.get("MSCL_XI_XII")[13], "b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e");
+assert.equal(officialSizes.get("MSCL_XI_XII")[12], "19808858");
+assert.equal(officialSizes.get("MSCL_XI_XII")[14], "SIZE_MATCH_ONLY_NOT_BYTE_AUTHENTICATED");
+assert.equal(officialSizes.get("BIO_WITH_MICROSCOPE_XI_XII")[4] - 59620970, -35057);
+assert.equal(officialSizes.get("BIO_WITH_MICROSCOPE_XI_XII")[14], "SIZE_MISMATCH_35057_BYTES_NOT_BYTE_AUTHENTICATED");
+assert.equal(officialSizes.get("BIO_WITHOUT_MICROSCOPE_XI_XII")[14], "PRIOR_UPLOAD_ACKNOWLEDGED_NO_SIZE_COMPARISON");
+assert.equal(officialSizes.get("PHYSICS_KIT_XI_XII")[14], "PRIOR_UPLOAD_ACKNOWLEDGED_NO_SIZE_COMPARISON");
+console.log("NCERT official attachment size recheck: four separate link targets, 15-column evidence register, response-only size metadata and non-authentication boundaries PASS.");
