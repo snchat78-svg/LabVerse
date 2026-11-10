@@ -339,3 +339,28 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 - Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
 
 The older "MSCL item 7 / Conical Flask next" note is historical; it is superseded by the accepted 53/53 visual audit and current 53-row review queue. Do not repeat old MSCL detail pages.
+
+## Latest resume point — RBSE/MSCL reagent crosswalk reconciliation (2026-11-10)
+
+### Completed
+- Cross-referenced all 124 numbered MSCL manual reagent labels, 2 supplemental manual-body records and the 41-row RBSE Chemistry task matrix.
+- Created 41-task / 20-column reconciliation CSV: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`, with a report that explains task-set and candidate-ID differences.
+- Source integrity validator PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. Browser smoke is pending: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- No candidate was silently added to the matrix. All names remain documentary references; no current SDS, formulations, supply or live-use approval is implied.
+
+### Immediate next actions
+1. Check desktop/mobile browser smoke run 42797724772 and update its result in the report and phase trackers.
+2. Review full-source context for screen-only tasks OPT-01 and OPT-04; establish whether Alcohol, Phenol and Starch are reagents, samples, products or incidental mentions before mapping.
+3. Review matrix-only contextual tasks THERMO-02 and ELECTRO-01; preserve the formulation/grade/concentration and electrolyte/material-candidate distinctions.
+4. Resolve the ten shared task rows with differing candidate ID sets under Chemistry/Safety expert review; do not infer that ammonium sulphate equals ferrous ammonium sulphate or potassium iodide equals iodine solution.
+5. Keep all 126 reagent records blocked from live use and all 41 task rows documentary-only until identity-specific current SDS, validated methods, compatibility/waste review and qualified approval are present.
+
+### Phase gates
+- Phase 0: DONE.
+- Phase 1 / 1.1: IN PROGRESS.
+- Phase 2 scientific contracts/models: BLOCKED.
+- Phase 3 React foundation: PARTIAL.
+- Phase 4 Dashboard/workspaces: IN PROGRESS.
+- Phase 5 real 3D: NOT STARTED.
+- Phase 6 experiment runtime: NOT STARTED.
+- Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
