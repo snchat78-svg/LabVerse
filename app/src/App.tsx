@@ -409,6 +409,9 @@ export default function App() {
                       <dt>Display status</dt><dd>{statusLabel(selectedItem)}</dd>
                       <dt>Source status</dt><dd>{selectedItem.status}</dd>
                       {selectedItem.quantity && <><dt>Source quantity</dt><dd>{selectedItem.quantity}</dd></>}
+                      {(selectedItem.safety || selectedItem.screening) && (
+                        <><dt>Safety / review</dt><dd>{[selectedItem.safety, selectedItem.screening].filter(Boolean).join(" · ")}</dd></>
+                      )}
                     </dl>
                     <p className="warning">Catalogue information only. It does not establish current supplied stock, physical-use permission or scientific validation.</p>
                     {activeWorkspace === "virtual" && (
