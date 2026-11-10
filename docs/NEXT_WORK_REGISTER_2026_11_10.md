@@ -304,3 +304,10 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 ### Next source-ordered task
 - Continue the previously supplied Biology-with-microscope source recovery internally and resume queue order 1 (`NCERT-BIO-WM-SPEC-002`, Kit Box, PDF page 9) only if its existing bytes/official payload become readable. No repeat-upload request.
 - In parallel, keep Physics procurement attachment identity separate from Physics manual 13164; official response-size metadata (42,539,010 bytes) is not attachment content authentication.
+
+
+### Physics metrology register CI PASS — 2026-11-10
+- Integrity test PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42784987543; 18 source-linked records / 17 columns; all rows resolve to the NCERT manual item schedule and preserve UNKNOWN calibration and Phase 8 blocked state.
+- Browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42784988030.
+- First assertion failure was a wrong-column check; it was corrected and the successful rerun is accepted. No scientific instrument measurement or solver validation is claimed.
+- The next unresolved source-ordered action remains internal recovery of the user's already submitted Biology-with-microscope original, starting Kit Box / indexed page 9; no repeat-upload request.
