@@ -1529,3 +1529,14 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 - React app check on commit d02f02445bb587fd6a51927f25288e2cfb72a042: TypeScript typecheck PASS, production build PASS, Chromium 12/12 groups PASS including inventory type/category filters, source coverage and the Physics mapping gap. A follow-up test now adds Biology open-project gap coverage; verify its new CI run before counting that extension as passed.
 - Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No authentication dependency was introduced into the dashboard preview.
 - Next bounded source action: continue page-level audit and source-to-item reconciliation from the uploaded Biology kit specification variants and recover earlier Biology-without-microscope/Physics records internally; do not re-request prior PDFs.
+
+## 2026-11-10 — Biology with-microscope PDF visual index/safety audit
+
+- Current uploaded `SSBK_with_Microscope_222.pdf` SHA-256 `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb` was reconciled against the existing 177-row with-microscope catalogue.
+- Index PDF pages 2–5 visually confirm all rows 1–177 in order. No missing or duplicate index numbers; two documentation entries (Kit Manual and Document Development Team) are excluded from the 175 item records.
+- Current upload detail pages visually checked: Spirit Lamp p.26; Scalpel p.53; Dissecting Scissors p.56; Wire Gauze p.93; Student Laboratory Microscope p.198; Document Development Team p.199.
+- Important safety confirmation: Wire Gauze p.93 explicitly identifies an asbestos centre (55 mm); keep it blocked as a usable physical asset. Open-flame Spirit Lamp and sharp scalpel/scissors warnings are visible in React inventory details.
+- Classification correction: index row 176 says “Permanent Slide: Student Laboratory Microscope” but page 198 specifications and photographs prove it is a microscope instrument, not a slide. Index row 177 is credits only.
+- New audit CSV and report committed; detail-page completeness remains PARTIAL, not complete. Current official NCERT byte authentication, procurement equivalence and Biology expert review remain open.
+- React now exposes each catalogue item's Safety / review text. Fresh CI is required to validate asbestos, open-flame and sharp-tool warnings in the UI.
+- Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS.
