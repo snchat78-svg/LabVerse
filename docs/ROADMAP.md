@@ -590,3 +590,11 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - Desktop/mobile browser smoke: 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
 - Register records only official NCERT link response sizes; actual attachments and official SHA-256 values remain unavailable. The MSCL equality is a size match only; no PDF copy was promoted to official authentication.
 - The current phase gate remains unchanged: Phase 1 / 1.1 in progress; Phase 2 scientific engines blocked.
+
+## Phase 1.1 Physics measurement and metrology readiness map — 2026-11-10
+
+- Added an 18-instrument, 17-column readiness register sourced from the existing NCERT Physics manual item catalogue: `data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv`.
+- Scope includes Vernier caliper, screw gauge, spherometer, balance, measuring cylinder, stopwatch, spring balance, thermometer, spirit level, sonometer, folding meter scale, galvanometer, multimeter, potentiometer, protractor, resistance box, rheostat and meter bridge.
+- The register separates source-supported role/details from missing procurement specification, range, least count/resolution, calibration traceability, zero correction, uncertainty budget, environmental dependencies and model/test status. All 18 are NOT_IMPLEMENTED / Phase 8 blocked; no numeric result is released as calibrated.
+- Detailed report: `docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md`.
+- CI validation is running for source ID/row/name traceability and explicit blocked measurement claims. Phase gates remain unchanged: Phase 1 / 1.1 IN PROGRESS, Phase 2 contracts BLOCKED, Phase 8 not started.
