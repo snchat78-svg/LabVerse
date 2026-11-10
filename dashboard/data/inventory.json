@@ -5746,7 +5746,12 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "OPEN-FLAME HAZARD; virtual only",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "page": 26,
+            "sourceSha": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD"
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-018",
@@ -6034,7 +6039,12 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "SHARP TOOL; simulation/prepared specimen only",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "page": 53,
+            "sourceSha": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD"
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-042",
@@ -6070,7 +6080,12 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "SHARP TOOL; simulation only",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "page": 56,
+            "sourceSha": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD"
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-045",
@@ -6490,7 +6505,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "ASBESTOS HAZARD; do not reproduce as usable real-world item",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "page": 93,
+            "sourceSha": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "safetyFinding": "Asbestos centre explicitly confirmed; unusable as a physical learner asset"
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-080",
@@ -7654,7 +7675,13 @@
           "evidence": "VISUAL_CHECK",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Distinct from item 83 Dissecting Microscope; source heading says 'Permanent Slide' but specification and image show a microscope.",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "page": 198,
+            "sourceSha": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "classificationFinding": "Microscope instrument, not a permanent slide"
+          }
         }
       ],
       "reagents": [
@@ -9355,7 +9382,9 @@
       "status": "PRIOR_USER_UPLOAD_RECORDED_IN_GITHUB; OCR_AND_PARTIAL_VISUAL_AUDIT; 177-ROW_CATALOGUE_PRESENT; OFFICIAL_BYTE_EQUALITY_NOT_VERIFIED",
       "derivedRecords": [
         "data/catalogues/ncert_biology_with_microscope_spec_items.csv",
-        "docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md"
+        "docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md",
+        "data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv",
+        "docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_INDEX_AUDIT_2026_11_10.md"
       ],
       "noRepeatUpload": true,
       "uploadedVariants": [
@@ -9375,7 +9404,32 @@
           "evidence": "Current-session upload; cover visually inspected; same byte count/page count as prior variant, but distinct SHA-256; official byte equality unverified",
           "noRepeatUpload": true
         }
-      ]
+      ],
+      "indexAudit": {
+        "status": "VISUALLY_CONFIRMED_IN_CURRENT_UPLOAD",
+        "indexPdfPages": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "entries": 177,
+        "itemRecordsExcludingDocumentation": 175,
+        "currentUploadSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+        "exceptions": [
+          "Index row 176 heading says Permanent Slide: Student Laboratory Microscope, but detail PDF page 198 confirms microscope instrument",
+          "Index row 177 Document Development Team is credits only, not a kit item"
+        ],
+        "detailPagesVisuallyChecked": [
+          26,
+          53,
+          56,
+          93,
+          198,
+          199
+        ],
+        "completeDetailPageAudit": false
+      }
     },
     {
       "sourceId": "BIO-KIT-WITHOUT-MICROSCOPE",
