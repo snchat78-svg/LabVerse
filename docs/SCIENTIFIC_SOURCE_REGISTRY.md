@@ -425,3 +425,18 @@ Registry status:
 - Biology-without-microscope and Physics procurement attachment bytes: NOT_RETRIEVED.
 
 Do not equate filename, listing, file size or third-party tender locator with proof of exact NCERT attachment identity. See docs/PHASE_1_1_OFFICIAL_RETRIEVAL_RECHECK_2026_11_08.md.
+
+
+## Nuclear science and element-discovery source candidates — 2026-11-10
+
+| Source | Domain / role | Evidence observed | Constraints and next review |
+|---|---|---|---|
+| IUPAC Periodic Table and element-discovery process — https://iupac.org/what-we-do/periodic-table-of-elements/ | Element identity, discovery criteria, priority assessment and formal naming responsibilities | IUPAC page identifies these responsibilities and lists a periodic-table release dated 4 May 2022 | Use for identity/governance; pin the actual release used. Do not assume a table page alone supplies evaluated nuclide masses or decay data |
+| IUPAC/IUPAP Joint Working Party final report — https://doi.org/10.1515/pac-2020-2926 | Criteria and guidelines for recognising claims and assigning discovery priority for new elements | IUPAC page links the final 2020 report | Human/authority review required; LabVerse must not make a discovery-priority decision |
+| NNDC ENSDF API — https://www.nndc.bnl.gov/ensdf-api/ | Evaluated nuclide levels and nuclear structure/decay records | API page reports Available, Public Beta, JSON/NDJSON and data generation timestamp 2026-08-10 | Public beta may change; inspect schema/release metadata and citation requirements; no connector or independent numerical validation yet |
+| IAEA EXFOR — https://nucleus.iaea.org/Pages/experimental-nuclear-reaction-data.aspx | Experimental nuclear-reaction data and experiment descriptions | IAEA describes a collection of more than 20,700 experiments and quality control via the Nuclear Reaction Data Centres network | IAEA page notes charged-particle and photon coverage is less extensive than neutron coverage; check individual entry provenance, completeness and reuse terms |
+| IAEA evaluated nuclear data resource — https://nucleus.iaea.org/Pages/evaluated-nuclear-data-file.aspx | Discovery of evaluated reaction-data libraries and formats such as ENDF | IAEA resource page describes evaluated cross sections and related data | Resource page's displayed last-resource-update metadata is 2015; it must not be treated as a current library release. Select and pin a current underlying library/version before any solver work |
+| US Department of Energy, Superheavy Elements — https://www.energy.gov/science/doe-explainssuperheavy-elements | High-level explanation of synthesis, instability and decay | DOE describes ion-beam/target production and decay signatures | Educational context, not primary reaction data or an operating protocol |
+| GSI, Production of new elements — https://www.gsi.de/en/researchaccelerators/research_an_overview/new_elements/production | High-level production, separator and detection workflow | GSI describes fusion, separation and decay-chain detection | Educational context; no operational accelerator/radioactive-material instructions in LabVerse |
+
+**Registry status:** all sources above are DISCOVERED / CONTENT_REVIEWED_FOR_SCOPE only. No API connector, dataset ingestion, licence/terms audit, nuclear model or scientific calculation has been validated. The ENSDF public-beta and EXFOR coverage boundaries must remain visible in any future source adapter.
