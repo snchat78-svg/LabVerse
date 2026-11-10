@@ -33,8 +33,8 @@
 - Phase 0: DONE (documentation baseline only).
 - Phase 1 / Phase 1.1: IN PROGRESS; source authentication, remaining no-microscope/Physics record recovery, item-level audit, rights, safety and expert review remain open.
 - Phase 2: PARTIAL only for the dashboard-facing read model; scientific domain contracts and result engines remain blocked.
-- Phase 3: PARTIAL; dashboard prototype and catalogue checks exist; production React/TypeScript/Vite foundation not complete.
-- Phase 4: IN PROGRESS; three-subject navigation and inventory dashboard prototype committed.
+- Phase 3: PARTIAL; React/TypeScript/Vite starter is committed and passes strict typecheck, production build and 6/6 Chromium browser groups; full architecture/workspace migration remains.
+- Phase 4: IN PROGRESS; static three-subject dashboard is tested; React app now includes subject inventory, task mapping and candidate placeholder workbench, while the four workspaces and remaining interactions still need migration.
 - Phase 5 onward: NOT STARTED; no real 3D assets or scientific action/simulation engines.
 
 ## Remaining work register
@@ -47,6 +47,8 @@
 | SRC-04 | Finish Biology 177-row page/visual audit and map the manual | 177-row catalogue, 50 task IDs, manual 60 exercises | Audit index-only visual cards/slides/specimens page by page; preserve provenance and taxonomy review |
 | SRC-05 | Finish source-to-asset/model/test traceability for all subjects | 171 task-index rows across six packs | Resolve every remaining apparatus, sample, reagent, measurement and evidence gap; keep design-only status |
 | UI-01 | Complete desktop/mobile Chromium smoke | 9/9 Playwright Chromium groups pass on commit `28f8452d1409b086e0a0c80244a7e4874aafaf` | DONE — maintain regression workflow on dashboard changes |
+| APP-01 | Complete React workspace navigation and migrate remaining dashboard interactions | React starter with inventory/task/source mapping and placeholder setup; 6/6 browser groups pass | Make all four workspaces functional; migrate filters, source coverage and unmatched task disclosures |
+| APP-02 | Maintain React app CI | Typecheck, Vite build and 6/6 React browser groups pass | DONE for starter; expand smoke tests as each workspace migrates |
 | UI-02 | Publish live free dashboard | GitHub Pages workflow and setup guide exist; Pages is not enabled yet | One-time repository Settings → Pages → Source GitHub Actions, then run deploy workflow |
 | UI-03 | Build real 3D workbench | Current bench uses 2D placeholders | Start real asset scene only after dashboard smoke and asset data contract are stable |
 | SCI-01 | Implement validated Physics/Chemistry/Biology scientific engines | Models/rules not implemented | Keep Phase 1 and scientific evidence gates; do not produce simulated results from unreviewed entries |
@@ -58,7 +60,7 @@ GitHub now contains the PDF source register, hashes, extracted catalogues and ev
 
 ## Next single action
 
-Start the production React/TypeScript/Vite codebase foundation (Phase 3) and migrate the tested three-subject Dashboard into it. Preserve the static preview, PDF source registry, no-repeat rules, candidate evidence labels and browser regression tests.
+Continue Phase 3/4 React migration: make Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio destinations functional; migrate category/type filters, source coverage and unmatched-task disclosure; preserve the tested static preview, PDF source registry, no-repeat rules and CI tests.
 
 
 ## 2026-11-10 — Practical-to-inventory navigation and candidate setup delivered
@@ -101,3 +103,15 @@ Start the production React/TypeScript/Vite codebase foundation (Phase 3) and mig
 - Phase 4: IN PROGRESS
 - Phase 5+: NOT STARTED
 - Previously supplied PDFs remain registered as no-repeat sources. No new PDF upload is requested.
+
+
+## 2026-11-10 — React app foundation validated; migration continues
+
+- Phase 3 React/TypeScript/Vite starter is committed and verified. Typecheck PASS; production build PASS; React Chromium smoke 6/6 PASS.
+- CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145
+- App milestone commit: `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
+- React migration includes subject overview, source inventory search, class filter, item/evidence/safety detail, practical catalogue, task-to-item links and candidate placeholder setup.
+- This is not a completed React migration: four workspace tabs are not yet separate functional workflows; remaining category/type filters, unmatched source disclosure and fuller responsive navigation must be ported from the static preview.
+- No real 3D assets, deterministic experiment runtime or scientific solvers are implemented.
+- **Next single action:** make the four workspace destinations functional in React, preserving source labels, no-repeat PDF registry, static preview and browser CI.
+
