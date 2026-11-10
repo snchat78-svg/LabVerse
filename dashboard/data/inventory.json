@@ -9293,7 +9293,15 @@
         "data/catalogues/ncert_biology_manual_reagents_58.csv",
         "dashboard/data/inventory.json"
       ],
-      "noRepeatUpload": true
+      "noRepeatUpload": true,
+      "latestSessionUpload": {
+        "filename": "Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111 (1).pdf",
+        "bytes": 20028910,
+        "pages": 141,
+        "sha256": "c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086",
+        "relationship": "EXACT_HASH_MATCH_TO_CANONICAL_REGISTERED_FILE",
+        "noRepeatUpload": true
+      }
     },
     {
       "sourceId": "CHEM-MSCL-UPLOADED-SPEC",
@@ -9301,7 +9309,8 @@
       "subject": "Chemistry",
       "documentType": "Kit specification candidate",
       "filenames": [
-        "MSCL_copy.pdf"
+        "MSCL_copy.pdf",
+        "MSCL (1).pdf"
       ],
       "bytes": 19798501,
       "pages": 65,
@@ -9311,7 +9320,25 @@
         "data/catalogues/ncert_mscl_spec_items.csv",
         "docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md"
       ],
-      "noRepeatUpload": true
+      "noRepeatUpload": true,
+      "uploadedVariants": [
+        {
+          "filename": "MSCL_copy.pdf",
+          "bytes": 19798501,
+          "pages": 65,
+          "sha256": "db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d",
+          "evidence": "Prior uploaded file fingerprint; official byte equality unverified",
+          "noRepeatUpload": true
+        },
+        {
+          "filename": "MSCL (1).pdf",
+          "bytes": 19808858,
+          "pages": 65,
+          "sha256": "b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e",
+          "evidence": "Current-session upload; cover and index visually inspected; same title/index structure; distinct binary fingerprint; official byte equality unverified",
+          "noRepeatUpload": true
+        }
+      ]
     },
     {
       "sourceId": "BIO-KIT-WITH-MICROSCOPE",
@@ -9319,7 +9346,8 @@
       "subject": "Biology",
       "documentType": "Kit specification candidate",
       "filenames": [
-        "SSBK_with_Microscope_copy.pdf"
+        "SSBK_with_Microscope_copy.pdf",
+        "SSBK_with_Microscope_222.pdf"
       ],
       "bytes": 59620970,
       "pages": 199,
@@ -9329,7 +9357,25 @@
         "data/catalogues/ncert_biology_with_microscope_spec_items.csv",
         "docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md"
       ],
-      "noRepeatUpload": true
+      "noRepeatUpload": true,
+      "uploadedVariants": [
+        {
+          "filename": "SSBK_with_Microscope_copy.pdf",
+          "bytes": 59620970,
+          "pages": 199,
+          "sha256": "c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2",
+          "evidence": "Prior user upload fingerprint; partial OCR/visual audit and 177-row catalogue retained",
+          "noRepeatUpload": true
+        },
+        {
+          "filename": "SSBK_with_Microscope_222.pdf",
+          "bytes": 59620970,
+          "pages": 199,
+          "sha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+          "evidence": "Current-session upload; cover visually inspected; same byte count/page count as prior variant, but distinct SHA-256; official byte equality unverified",
+          "noRepeatUpload": true
+        }
+      ]
     },
     {
       "sourceId": "BIO-KIT-WITHOUT-MICROSCOPE",
@@ -9425,7 +9471,9 @@
   "sourceArchivePolicy": {
     "repositoryContainsOriginalPdfBinaries": false,
     "description": "GitHub stores source IDs, original filenames where recovered, byte sizes, SHA-256 hashes, PDF metadata, derived catalogues, task crosswalks and explicit retrieval statuses. Original PDF binaries remain in the user-upload/Library sources where accessible. Do not tell the user to re-upload files already registered; recover old records from this register first.",
-    "noRepeatUploadRule": "All records marked noRepeatUpload=true must not trigger a repeat upload request. A missing current raw attachment is an internal retrieval gap, not user-side failure."
+    "noRepeatUploadRule": "All records marked noRepeatUpload=true must not trigger a repeat upload request. A missing current raw attachment is an internal retrieval gap, not user-side failure.",
+    "lastUploadReceipt": "data/catalogues/source_pdf_upload_receipts_2026_11_10.csv",
+    "originalPdfBinaryPolicy": "Original NCERT PDFs are not copied into this public repository absent redistribution permission; GitHub stores fingerprints, upload receipts, provenance and derived catalogues."
   },
   "traceabilityCoverage": {
     "physics": {
