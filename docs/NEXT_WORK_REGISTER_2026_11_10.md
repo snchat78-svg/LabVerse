@@ -137,3 +137,21 @@ Continue Phase 3/4 React migration: make Learning Lab, Virtual Experiment Lab, S
 4. Phase 5 real 3D models, Phase 6 runtime and Phase 7–9 scientific engines remain future work.
 5. Continue Phase 1 source/rights/safety/expert audit; never ask for previously supplied PDFs again.
 
+
+## 2026-11-10 — Current-session PDFs fingerprinted; Biology gap regression added
+
+### Completed
+- Recorded all three current-session PDFs in data/catalogues/source_pdf_upload_receipts_2026_11_10.csv.
+- Biology manual 13163 upload exactly matches its existing registered hash; no duplicate catalogue or copy was created.
+- Current MSCL upload is recorded as a distinct 65-page byte variant; cover and index visually inspected; existing 55-row specification register retained.
+- Current Biology-with-microscope upload is recorded as a distinct 199-page hash variant; previous fingerprint and 177-row catalogue retained.
+- Public-repository binary boundary remains explicit: hashes/receipts/catalogues are committed, raw PDFs are not redistributed without permission.
+- Latest prior React workflow result: https://github.com/snchat78-svg/LabVerse/actions/runs/42751276338 — typecheck PASS, production build PASS, 12/12 browser groups PASS.
+- Added a React smoke case for Biology open-ended task RBSE-XII-BIO-PRJ-01 so that its missing topic/apparatus match must remain explicit.
+
+### Phase state
+- Phase 1/1.1 IN PROGRESS; Phase 2 science solvers BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS.
+- Do not close any science phase from dashboard test evidence alone.
+
+### Next single action
+- Continue the page-level Biology kit specification audit: reconcile the with-microscope 177-row catalogue against source page evidence, then recover the previously supplied without-microscope record internally and compare variants only where source evidence supports the comparison. Do not request repeat uploads.
