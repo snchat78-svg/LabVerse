@@ -132,6 +132,8 @@ const bioSource = data.sourceDocuments.find(source => source.sourceId === "BIO-K
 assert.equal(bioSource.indexAudit.entries, 177);
 assert.equal(bioSource.indexAudit.itemRecordsExcludingDocumentation, 175);
 assert.equal(bioSource.indexAudit.completeDetailPageAudit, false);
+assert.equal(bioSource.indexAudit.detailPagesVisuallyCheckedPhysicalItems, 13);
+assert.deepEqual(bioSource.indexAudit.detailPagesVisuallyChecked, [22,26,43,53,56,57,64,66,67,68,79,93,198,199]);
 const bioWireGauze = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-079");
 assert.match(bioWireGauze.safety, /ASBESTOS HAZARD/);
 assert.equal(bioWireGauze.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD");
@@ -146,7 +148,7 @@ const bioHammer = data.subjects.biology.inventory.find(item => item.id === "NCER
 assert.match(bioHammer.safety, /digital-only handling/);
 const bioMicroscope = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-176");
 assert.match(bioMicroscope.visualAudit.classificationFinding, /Microscope instrument, not a permanent slide/);
-console.log("Biology current-upload visual index/detail audit checks: 12 assertions passed.");
+console.log("Biology current-upload visual index/detail audit passed: 177 index rows; 13 item detail pages plus 1 credits page visually checked.");
 
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
