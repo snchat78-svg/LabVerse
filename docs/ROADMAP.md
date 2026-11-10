@@ -504,3 +504,7 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 The new current-session Biology with-microscope upload has a distinct hash variant from the prior same-size upload. Its cover and all four index pages have been visually reconciled against the 177-row source catalogue. The index confirms 175 actual item records plus two documentation entries. Selected detail pages verify the Spirit Lamp, Scalpel, Dissecting Scissors, asbestos-centred Wire Gauze and Student Laboratory Microscope. Row 176 is a microscope despite the index prefix “Permanent Slide”; row 177 is credits only. The source audit remains partial: do not claim all item pages, variants, official byte identity or physical stock have been verified.
 
 React detail panels now show per-item Safety / review notes; smoke tests exercise asbestos, flame and sharp-tool restrictions.
+
+## Biology specification detail audit — batch 2
+
+Eight more pages were visually checked in the current Biology-with-microscope upload: All-Pins, Forceps, Mortar and Pestle, Nails, Surgical Scissors, Dissecting Needle, Claw Hammer and Laboratory Thermometer. The source confirms the thermometer is alcohol-filled, not mercury-filled. Current page-audit coverage is 13/175 physical kit-item details plus the credits page; all other detail pages remain pending. Future app assets for visual cards and slides must be original or appropriately licensed, not copies of NCERT artwork.
