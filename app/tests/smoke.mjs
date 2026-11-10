@@ -84,6 +84,16 @@ async function main() {
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
     results.push("Chemistry and Biology source/safety details");
 
+    // The open-ended Biology project must remain unmatched until a teacher approves a topic and method.
+    await page.locator('.workspace-tabs button', {hasText:"Learning Lab"}).click();
+    await page.locator(".class-select select").selectOption("XII");
+    await page.locator(".practical-panel .search").fill("Investigatory project");
+    const biologyProject = page.locator(".task-list .task").filter({hasText:"RBSE-XII-BIO-PRJ-01"});
+    await biologyProject.waitFor();
+    assert.match(await biologyProject.innerText(), /no fixed title or apparatus list/i);
+    assert.match(await biologyProject.innerText(), /0 candidate source item links/i);
+    results.push("Unmatched Biology investigatory-project gap disclosed");
+
     // Virtual Experiment Lab: bench is visible, practical catalogue is not.
     await page.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
     assert.equal(await page.locator(".bench-panel").count(), 1);
