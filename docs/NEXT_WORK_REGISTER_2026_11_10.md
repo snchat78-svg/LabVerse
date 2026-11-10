@@ -172,3 +172,17 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 
 ### Next single action
 - Extend visual detail audit in source order for Biology-with-microscope rows 2–83, starting with remaining heating, glassware, microscopy and field equipment; separately keep source-reported quantities distinct from current kit stock.
+
+## 2026-11-10 — Biology with-microscope detail audit, batch 2
+
+### Completed
+- Visually checked All-Pins, Forceps, Mortar and Pestle, Nails, Surgical Scissors, Dissecting Needle, Claw Hammer and Laboratory Thermometer from the current upload.
+- Confirmed the Laboratory Thermometer is alcohol-filled (not mercury-filled), -10 °C to 110 °C, 1 °C graduation, quantity 3.
+- Extended detail-audit page metadata in both Biology catalogue CSVs and the source archive/registry.
+
+### Current coverage
+- 177 index entries reconciled; 175 kit item records after excluding two documentation entries.
+- 13/175 kit-item detail pages visually checked (14 pages including credits); 162 item detail pages remain unaudited in this work unit.
+
+### Next single action
+- Continue source-order page audit for the remaining Biology equipment detail pages, then proceed to indexed visual cards, specimens and permanent slides. Keep asset artwork original/licensed; do not extract NCERT card/slide artwork as app assets.
