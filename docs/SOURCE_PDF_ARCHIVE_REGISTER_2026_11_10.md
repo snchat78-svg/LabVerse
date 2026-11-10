@@ -113,3 +113,7 @@ A fresh read of the current official NCERT specification index exposed separate 
 | SSPhyLaboratoryKit.pdf | 42,539,010 | Prior Physics source acknowledged; exact procurement attachment bytes/size/hash remain unknown. |
 
 Full evidence and exact URLs are in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md` and `data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv`. The 15-column CSV is covered by source-integrity CI. Never promote a user upload based on filename, page count or size alone; SHA-256 or trusted official metadata/byte comparison remains required. Keep no-repeat upload policy intact.
+
+## CI verification — official attachment size comparison register (2026-11-10)
+
+The official NCERT response-size comparison register passes source/catalogue validation at https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434 (commit `d03da5ce362b30b27bf101d8b859bff9c9c3dfe7`). The same run checks no-payload/no-official-SHA boundaries, size-match-only and size-mismatch states and revalidates the 53/53 MSCL visual audit. Desktop/mobile smoke 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615. These tests validate committed metadata and safeguards, not official binary authentication.
