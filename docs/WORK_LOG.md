@@ -630,3 +630,10 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Confirmed the Wire Gauze page explicitly names an asbestos centre; confirmed microscope row 176 is not a slide.
 - React inventory detail panels now surface Safety / review notes, with regression tests planned for asbestos, open-flame and sharp-tool warnings.
 - Audit remains partial; no claim of complete detail-page, official-byte, procurement or scientific validation.
+
+## 2026-11-10 — Biology high-risk detail audit batch 2
+
+- Current PDF visual verification expanded to All-Pins, Forceps, Mortar and Pestle, Nails, Surgical Scissors, Dissecting Needle, Claw Hammer and Laboratory Thermometer.
+- Confirmed source-specific material/dimension/quantity fields against the page images.
+- Clarified the lab thermometer is alcohol-filled (-10 °C to 110 °C; 1 °C graduation; quantity 3), not mercury-filled.
+- Current Biology-with-microscope detail page coverage: 13 of 175 physical kit items. Remaining 162 item detail pages and separate visual-card/specimen/slide scientific reviews remain open.
