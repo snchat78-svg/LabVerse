@@ -607,11 +607,12 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 
 ## MSCL item-level evidence and safety review queue — 2026-11-10
 
-- Converted the full 53/53 MSCL visual audit into a 53-row, 16-column, item-linked evidence/review queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`; report: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
+- Converted the full 53/53 MSCL visual audit into a 53-row, 17-column, item-linked evidence/review queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`; report: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
 - The queue preserves exact source item IDs/order, original uploaded-file SHA, authentication state, verbatim unresolved gaps and safety boundaries. Every row remains OPEN_NOT_REVIEWED_OR_APPROVED and NOT_ASSIGNED; no expert approval or supplier verification has been fabricated.
 - Review domains (overlap allowed): dimensions/geometry (24 item assignments), metrology/model validation (20), material identity/compatibility (19), safety/use boundary (26), procurement/acceptance (25), source clarification (1).
 - Critical boundaries retained: no geometry inference for conflicting Boiling Tube/Micro Scale Test Tube/Micro Well Plate/W Tube drawings; asbestos Wire Gauze is not a usable asset; mercury thermometer excluded from physical learner use; Spirit Lamp and Gas Generator remain bounded digital-only references; Multimeter is not certified for high-voltage use.
-- Added integrity assertions to `dashboard/tests/validate-catalogue.mjs` in commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`; CI must pass before this validation work unit is closed.
+- The 17th column preserves the source audit's own visual status (including `NEEDS_DIMENSION_REVIEW` and `NEEDS_GEOMETRY_REVIEW`) so technical flags cannot disappear during transfer.
+- Added integrity assertions to `dashboard/tests/validate-catalogue.mjs`; final validator commit `8cf28ce97362b98b8aabcba738b2712fa09a6ff4`; source/catalogue CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753. Desktop/mobile browser smoke run: https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348 (check conclusion before claiming PASS).
 - Biology-with-microscope prior upload was searched again in Library and Conversation surfaces and still did not surface. No repeat upload requested; first pending row remains Kit Box / index page 9.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D NOT STARTED; Phase 6 runtime NOT STARTED.
 - Next: verify the new queue integrity workflow, then prioritize reviewer/evidence assignment for the high-consequence rows. Continue internal recovery of the already-submitted Biology source without repeating upload requests.
