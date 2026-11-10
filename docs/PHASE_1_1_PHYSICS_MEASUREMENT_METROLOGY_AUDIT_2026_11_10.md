@@ -67,3 +67,12 @@ This is **readiness documentation only**. It does not create a calibration certi
 4. Do not start Phase 8 quantitative physics models until Phase 1 exit and Phase 2 measurement contracts have passed.
 
 **Phase gate:** Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific model contracts remain BLOCKED.
+
+
+## Register integrity and browser smoke validation — 2026-11-10
+
+- Physics measurement/metrology source-integrity CI **PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/42784987543 on validator commit `902c8a5f8192ca3d2f5be2bbcd351d98f220af49`.
+- The validator checked 19 logical CSV records (header + 18 devices), all 17 columns, unique ordered IDs, and each instrument ID/row number/label resolving to the existing 106-row Physics manual catalogue. It also enforces `MANUAL_TEXT_INSPECTED`, `NOT_ESTABLISHED_BY_ITEM_SCHEDULE`, UNKNOWN calibration, Phase 8 blocked state, and source-supported manual details.
+- Desktop/mobile dashboard browser smoke **PASS 9/9**: https://github.com/snchat78-svg/LabVerse/actions/runs/42784988030.
+- The first integrity run failed one assertion because it read the field containing the gap statement instead of the adjacent manual-supported-role field for Multimeter/Potentiometer/Meter Bridge/Spring Balance. The assertion was corrected to the correct field and the rerun above passed. The failed first run is not counted.
+- This verifies evidence-register structure and dashboard regression only. No calibration, instrument measurement, numerical Physics solver, 3D asset or experiment result has been implemented or scientifically validated.
