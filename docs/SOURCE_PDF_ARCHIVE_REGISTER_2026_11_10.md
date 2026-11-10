@@ -34,12 +34,16 @@ The exact printed source label at item 37 is `Petroleum Rther`; preserve the pri
 
 ## GitHub binary-storage boundary
 
-The repository currently stores:
+The repository is currently **public**. Several NCERT kit manuals/specifications carry all-rights-reserved notices. Without a clear redistribution licence or permission, the original copyrighted PDF binaries must not be copied into this public repository. This is separate from source receipt: it does **not** mean the user never supplied the PDFs.
+
+The repository stores:
 - source IDs, original filenames where recovered, file sizes, page counts and SHA-256 hashes;
 - derived CSV catalogues, source page references, task mappings and safety/evidence statuses;
-- no-repeat-upload instructions and official source URLs.
+- no-repeat-upload instructions, official source URLs and current/prior attachment status.
 
-The original PDF binaries themselves have **not** been committed to GitHub. The accessible originals remain in ChatGPT conversation/Library storage. This register ensures future work can resume from the repository's extracted data and hash records without repeatedly asking the user for the same PDFs. A missing old raw attachment is recorded honestly rather than invented as recovered.
+Accessible original PDFs remain in the user's ChatGPT conversation/Library files; derived catalogues and hash evidence are persisted in GitHub. A few prior attachments (notably the old Biology-without-microscope and Physics procurement PDFs) are acknowledged as previously supplied but their raw bytes are not surfaced in the current file index. **Do not ask for them again.** Resume from GitHub's stored registers and extracted catalogues, and recover old raw bytes internally only when available. A missing old hash is left UNKNOWN, never invented.
+
+Do not change the visibility of the existing public LabVerse repository just to store PDFs.
 
 ## Resume order
 
