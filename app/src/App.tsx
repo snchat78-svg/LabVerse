@@ -75,6 +75,8 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [taskSearch, setTaskSearch] = useState("");
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
+  const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
+  const [benchItems, setBenchItems] = useState<CatalogueItem[]>([]);
 
   const activeData: SubjectData | null = activeSubject
     ? inventoryData.subjects[activeSubject]
@@ -98,6 +100,20 @@ export default function App() {
     });
   }, [activeData, search]);
 
+  const subjectItems = activeData
+    ? [
+        ...(activeData.inventory as unknown as CatalogueItem[]),
+        ...(activeData.reagents as unknown as CatalogueItem[])
+      ]
+    : [];
+
+  const selectedTask = activeData?.tasks.find((task) => task.id === selectedTaskId) ?? null;
+  const selectedTaskItems = selectedTask
+    ? selectedTask.sourceItemIds
+        .map((id) => subjectItems.find((item) => item.id === id))
+        .filter((item): item is CatalogueItem => item !== undefined)
+    : [];
+
   const tasks = useMemo(() => {
     if (!activeData) return [];
     const query = taskSearch.trim().toLowerCase();
@@ -115,6 +131,25 @@ export default function App() {
     setSearch("");
     setTaskSearch("");
     setSelectedItem(null);
+    setSelectedTaskId(null);
+    setBenchItems([]);
+  };
+
+  const openSubject = (subject: SubjectKey) => {
+    setActiveSubject(subject);
+    setSearch("");
+    setTaskSearch("");
+    setSelectedItem(null);
+    setSelectedTaskId(null);
+    setBenchItems([]);
+  };
+
+  const addSelectedTaskItems = () => {
+    setBenchItems((current) => {
+      const existing = new Set(current.map((item) => item.id));
+      const additions = selectedTaskItems.filter((item) => !existing.has(item.id));
+      return [...current, ...additions];
+    });
   };
 
   return (
@@ -132,13 +167,13 @@ export default function App() {
         <button className={!activeSubject ? "nav-link active" : "nav-link"} onClick={goHome}>
           <span>⌂</span> Dashboard
         </button>
-        <button className="nav-link" onClick={() => setActiveSubject("physics")}>
+        <button className="nav-link" onClick={() => openSubject("physics")}>
           <span>▤</span> Learning Lab
         </button>
-        <button className="nav-link" onClick={() => setActiveSubject("chemistry")}>
+        <button className="nav-link" onClick={() => openSubject("chemistry")}>
           <span>◇</span> Virtual Experiment Lab
         </button>
-        <button className="nav-link" onClick={() => setActiveSubject("biology")}>
+        <button className="nav-link" onClick={() => openSubject("biology")}>
           <span>⌁</span> Scientific Analysis
         </button>
 
@@ -147,7 +182,7 @@ export default function App() {
           <button
             key={key}
             className={activeSubject === key ? `subject-nav ${key} selected` : `subject-nav ${key}`}
-            onClick={() => setActiveSubject(key)}
+            onClick={() => openSubject(key)}
           >
             <i /> {subjectMeta[key].title}
           </button>
@@ -307,14 +342,73 @@ export default function App() {
                 placeholder="Search practicals..."
               />
               <div className="task-list">
-                {tasks.map((task) => (
-                  <article key={task.id}>
-                    <small>CLASS {task.class} · {task.id} · {task.sourcePages}</small>
-                    <strong>{task.title}</strong>
-                    <span>{task.sourceItemIds.length} candidate source item links · {task.status}</span>
-                  </article>
-                ))}
+                {tasks.map((task) => {
+                  const mappedCount = task.sourceItemIds.length;
+                  const mappingGap = "mappingGap" in task ? task.mappingGap : undefined;
+                  const isSelected = selectedTaskId === task.id;
+                  return (
+                    <article key={task.id} className={isSelected ? "task selected" : "task"}>
+                      <small>CLASS {task.class} · {task.id} · {task.sourcePages}</small>
+                      <strong>{task.title}</strong>
+                      <span>{mappedCount} candidate source item links · {task.status}</span>
+                      {mappingGap && <p className="mapping-gap">{mappingGap}</p>}
+                      <button type="button" className="task-open" onClick={() => setSelectedTaskId(isSelected ? null : task.id)}>
+                        {isSelected ? "Close source mapping ↑" : "Inspect mapped items →"}
+                      </button>
+                      {isSelected && (
+                        <div className="mapped-items">
+                          {selectedTaskItems.length === 0 ? (
+                            <p>No candidate source-item links are recorded for this task.</p>
+                          ) : (
+                            <>
+                              {selectedTaskItems.map((item) => (
+                                <button
+                                  type="button"
+                                  key={item.id}
+                                  className="mapped-item"
+                                  onClick={() => {
+                                    setSearch(item.name);
+                                    setSelectedItem(item);
+                                  }}
+                                >
+                                  <strong>{item.name}</strong>
+                                  <small>{item.id} · {statusLabel(item)}</small>
+                                </button>
+                              ))}
+                              <button type="button" className="setup-button" onClick={addSelectedTaskItems}>
+                                Add mapped candidates to workbench
+                              </button>
+                            </>
+                          )}
+                        </div>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
+            </section>
+
+            <section className="panel bench-panel">
+              <div className="panel-head">
+                <div><div className="eyebrow">PLACEHOLDER WORKSPACE</div><h2>Experiment workbench</h2></div>
+                <strong>{benchItems.length} objects</strong>
+              </div>
+              {benchItems.length === 0 ? (
+                <p className="bench-empty">Your workbench is empty. Inspect a practical and add its mapped candidate items here.</p>
+              ) : (
+                <>
+                  <div className="bench-list">
+                    {benchItems.map((item) => (
+                      <div className="bench-item" key={item.id}>
+                        <strong>{item.name}</strong>
+                        <small>{item.id} · CANDIDATE PLACEHOLDER</small>
+                      </div>
+                    ))}
+                  </div>
+                  <button type="button" className="clear-bench" onClick={() => setBenchItems([])}>Clear workbench</button>
+                </>
+              )}
+              <p className="bench-warning">These are catalogue placeholders only—not a verified kit setup, procedure or simulated result.</p>
             </section>
 
             <div className="evidence-note">
