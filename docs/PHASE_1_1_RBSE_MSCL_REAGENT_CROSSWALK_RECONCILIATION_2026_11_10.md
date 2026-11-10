@@ -1,97 +1,112 @@
-# Phase 1.1 — RBSE / MSCL reagent crosswalk reconciliation — 2026-11-10
+# Phase 1.1 — RBSE / MSCL reagent crosswalk reconciliation — task-context review — 2026-11-10
 
 ## Purpose and decision
 
-Compared the existing 126-record MSCL reagent safety screen with the 41-row RBSE Chemistry task-to-reagent evidence matrix. This is a reconciliation audit, not a new chemical method, hazard classification, formulation decision or reagent approval.
+Reconcile the 2018 NCERT MSCL manual's reagent labels with the complete RBSE Class XI/XII Chemistry practical-task text, and keep input reagents separate from samples, functional-group names, products, material/electrode candidates and references outside the practical section.
 
-**Decision:** preserve both source tracks and record differences for expert review. Do not auto-add text mentions as reagents or delete contextual candidates. A text occurrence can refer to a sample, product, example or incidental mention rather than a reagent used by a procedure.
+**Decision:** do not treat full-document word hits as reagent evidence. The original whole-PDF lexical screen was retained, but each hit has now been checked against the relevant task section. Six false-scope/role hits were excluded from task-reagent mapping, and Acetanilide was moved out of the input-reagent list into a separate product/output-reference field. No task method, concentration, formulation, stock or physical-use permission is inferred.
 
-## Source files
+## Source files and evidence boundary
 
-- Numbered MSCL manual reagent index: `data/catalogues/ncert_mscl_manual_reagent_index.csv` — 124 numbered records.
-- Safety screen: `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv` — 126 records (124 numbered labels plus 2 supplemental manual-body references).
-- Supplemental omissions: `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv` — potassium permanganate and potassium iodide ambiguity.
-- RBSE task evidence matrix: `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` — 41 unique task/choice rows.
-- Reconciliation output: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv` — one row per all 41 task IDs, 20 columns.
+- Historical manual reagent index: `data/catalogues/ncert_mscl_manual_reagent_index.csv` — 124 numbered labels.
+- Preliminary MSCL safety screen: `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv` — 126 records (124 numbered + 2 separately indexed manual-body references); now 19 columns including task-scope review status/note.
+- Supplemental omissions: `data/catalogues/ncert_mscl_manual_internal_reagent_omissions.csv`:
+  - `MSCL-MAN-OMIT-001`: potassium permanganate in manual experiments 2.5/2.6, not as a numbered reagent label.
+  - `MSCL-MAN-OMIT-002`: potassium iodide (KI) in manual body/appendix text; do not collapse into numbered row 56 “Iodine solution”.
+- RBSE task matrix: `data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv` — 41 task/choice rows, 23 columns. Input reagent candidates and product/output references are separate.
+- Task-context reconciliation: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv` — 41 rows, 24 columns.
+- This review used the existing user Library uploads of the RBSE XI 2026–27 PDF (pages 123–126) and RBSE XII 2026–27 PDF (pages 137–140). No repeat upload was requested.
 
-The NCERT MSCL manual register is historical and text-extracted. It is not the current kit BOM. The user's uploaded MSCL specification copy is not exact-byte authenticated to the official NCERT attachment. No supplied quantity, grade, purity, formulation, concentration, supplier, stock, compatibility or live-use approval is inferred.
+The NCERT MSCL manual is a historical teaching reference and is not the current procurement BOM. The separate uploaded MSCL kit-specification PDF remains not byte-authenticated to the current official NCERT attachment. No formulation, purity/grade, concentration, quantity, supplier, stock, CAS/formula equivalence or compatibility is inferred from a manual label or task text.
 
-## Reconciled counts
+## Corrected counts
 
 | Measure | Count |
 |---|---:|
-| Numbered manual reagent/material labels | 124 |
+| Numbered historical manual labels | 124 |
 | Supplemental manual-body references | 2 |
 | Safety-screen records | 126 |
-| Name-only HIGH_CONCERN_NAME_FLAG rows | 21 |
-| Corrosive/reactive family flags | 23 |
-| Volatile/flammable organic family flags | 7 |
-| General review required | 74 |
-| Lower-concern reference-only | 1 |
-| Exact-label text-occurrence candidate records | 18 |
-| Unique task IDs with safety-screen text occurrences | 17 |
+| Name-only HIGH_CONCERN_NAME_FLAG | 21 |
+| Name-only CORROSIVE_OR_REACTIVE_FAMILY_FLAG | 23 |
+| Name-only VOLATILE_OR_FLAMMABLE_ORGANIC_FAMILY_FLAG | 7 |
+| Name-only GENERAL_REAGENT_REVIEW_REQUIRED | 74 |
+| LOWER_CONCERN_REFERENCE_ONLY | 1 |
+| Preliminary full-document exact-label text hits | 18 records |
+| Hits excluded from task-reagent mapping after context/role review | 6 records |
+| Task-section text candidates retained | 12 records across 12 tasks |
 | RBSE Chemistry task/choice rows | 41 |
-| Matrix rows with one or more candidate record IDs | 17 |
-| Unique candidate IDs used in the task matrix | 25 |
+| Matrix rows with one or more input-reagent candidate IDs | 16 |
+| Unique matrix input-reagent candidate IDs | 24 |
+| Separate product/output-reference rows | 1 |
+| Tasks with no candidate link in either input-reagent track | 24 |
 
-Name-only triage labels are workflow flags, not GHS classifications, hazard statements or SDS replacements. All 126 screening records remain blocked from live use, require current identity-specific SDS/exposure review, are NOT_APPROVED and are NOT_CURRENT_BOM records.
+The safety-screen classes remain **conservative name-only triage**. They are not GHS classifications, hazard statements, SDS replacements or safety approvals. Every one of the 126 screen rows still says NO_LIVE_USE, requires current identity-specific SDS/exposure review, is NOT_APPROVED and is NOT_A_CURRENT_SUPPLY_OR_BOM_RECORD.
 
-## Task-set reconciliation
+## Full-context corrections from the RBSE PDFs
 
-The two sets each contain 17 task IDs, but they are not identical:
+### Six whole-document lexical hits excluded from task-reagent mapping
+
+1. **Alcohol (MSCL-MAN-REAG-001)** — RBSE XII practical page 138 says “Alcoholic” as a functional-group class. The task does not name the manual-listed Alcohol as a required test reagent.
+2. **Phenol (MSCL-MAN-REAG-086)** — page 138 says “Phenolic” as a functional-group class. It is not a task instruction to use the standalone manual-listed Phenol.
+3. **Ammonium sulphate (MSCL-MAN-REAG-014)** — page 138 names *ferrous ammonium sulphate*. The full phrase refers to Mohr's salt; it is not proof that standalone Ammonium sulphate is the same input. The record was marked a distinct-identity substring occurrence.
+4. **Acetanilide (MSCL-MAN-REAG-005)** — RBSE XII practical page 139 lists Acetanilide under “Preparation of Organic Compounds”. It is a target product, not evidence that it is an input reagent. The task matrix now stores it only in `candidate_manual_product_or_output_reference_ids`.
+5. **Aniline (MSCL-MAN-REAG-019)** — page 139 lists “Aniline yellow (p-Aminoazobenzene)” as a target product. The substring “Aniline” in the product name does not prove standalone manual-listed Aniline is an input reagent.
+6. **Starch (MSCL-MAN-REAG-117)** — whole-PDF matches occur in other RBSE XII content (page 110 manure/milk tests and page 136 theory), not in the practical page 139 line “Tests for Carbohydrates, Fats and Proteins”. Do not map it to the Class XII practical task solely from an out-of-section lexical hit.
+
+The screen retains all original raw full-document hits and separately records these exclusions; nothing was silently deleted.
+
+### Candidate links supported by the practical task sections (still not approved methods)
+
+- **RBSE XI page 125:** Sodium chloride, ferric chloride and sodium carbonate are explicitly named in the pH study; sodium hydroxide, oxalic acid and dilute hydrochloric acid appear in the titrimetric-analysis text. Page 126 names sodium carbonate in a soap-foaming project. These are task-section mentions, but their exact method role/formulation/concentration and supply remain unverified.
+- **RBSE XII page 138:** Oxalic acid and ferrous ammonium sulphate are named in KMnO4 titrimetric tasks; functional-group words remain non-reagent group names. Mohr's salt remains a candidate alias needing explicit identity/formulation confirmation.
+- **RBSE XII page 139:** Hydrogen peroxide, potassium iodate, sodium sulphite and sodium thiosulphate are explicitly named in kinetics tasks. KI remains a separate supplemental manual-body reference, not equated with numbered “Iodine solution”.
+- **RBSE XII page 140:** Copper sulphate / potassium nitrate, HCl / NaOH, chloroform / acetone, and CuSO4/ZnSO4 electrolytes are named in thermochemical/electrochemical tasks. These matrix links are species/formulation/context candidates; the text does not establish product grade, concentration, supplier, calibrated electrode form or approved procedure.
+
+### Task-set relationship after source-page review
 
 | Relationship | Tasks |
 |---|---:|
-| Both tracks have at least one candidate link | 15 |
-| Safety-screen exact-text task link only | 2 |
-| Task-matrix contextual/species candidate only | 2 |
-| Neither track currently has a candidate link | 22 |
-| Total RBSE tasks | 41 |
+| Both task-section screen and matrix have input-reagent candidates | 12 |
+| Of those 12, candidate record-ID sets align | 5 |
+| Of those 12, matrix has additional contextual/formulation IDs | 7 |
+| Matrix-only contextual/species/body-reference candidates | 4 |
+| No task-scoped candidate link in either input-reagent track | 24 |
+| Product/output reference only (Acetanilide) | 1 |
+| Total | 41 |
 
-### Exact-text task occurrences not linked in the matrix
+The four matrix-only candidate tasks are:
+- `RBSE-XII-CHEM-OPT-02`: partial/alias candidates (e.g. Mohr's salt) not equivalent to every product named in the task.
+- `RBSE-XII-CHEM-REDOX-02`: Mohr's salt plus separate potassium permanganate manual-body reference.
+- `RBSE-XII-CHEM-THERMO-02`: HCl / NaOH species and formulation variants explicitly present in the task text; candidate identity and concentrations still unverified.
+- `RBSE-XII-CHEM-ELECTRO-01`: CuSO4/ZnSO4 electrolyte labels and copper/zinc material candidates; material candidates are not proof of specified electrodes.
 
-- `RBSE-XII-CHEM-OPT-01` — the safety screen flags source-label text occurrences for Alcohol and Phenol; the matrix leaves its candidate reagent fields empty. The task is a functional-group test task. Determine whether either label is a specific test reagent, sample or merely textual context before adding a candidate link.
-- `RBSE-XII-CHEM-OPT-04` — the screen flags Starch; the matrix leaves candidate fields empty. Determine whether the occurrence is a sample/material or a reagent reference in the underlying RBSE source before mapping.
-
-### Matrix candidates without an exact-text task link in the screen
-
-- `RBSE-XII-CHEM-THERMO-02` — matrix candidates are dilute/concentrated HCl and sodium hydroxide / pellets, linked by task species and formulation variants. These remain candidate-only; concentration, grade, method and product identity are unknown.
-- `RBSE-XII-CHEM-ELECTRO-01` — matrix candidates include copper/zinc sulphate electrolytes and copper/zinc material candidates. The matrix correctly distinguishes electrolyte labels from material candidates; it does not prove electrode form or kit supply.
-
-### Record-ID differences inside tasks linked by both tracks
-
-Ten task rows have both track types but differing candidate ID sets. These differences must be resolved from full task context and approved methods, not by string equality alone. Examples:
-
-- Class XI `PRA-15` and `PRA-17`: matrix uses sodium-hydroxide or hydrochloric-acid formulation variants not tagged as exact task-text matches in the safety screen.
-- Class XII `REDOX-02` and `OPT-02`: the screen's Ammonium sulphate label text and the matrix's Mohr's salt / potassium-permanganate references require salt identity and method-role review; ammonium sulphate must not be silently equated with ferrous ammonium sulphate.
-- Class XII `KIN-02`: potassium iodide is a separate supplemental manual-body reference. Do not equate it automatically with numbered “Iodine solution”.
-- Class XII `KIN-01` / `THERMO-03` and Class XI `PRJ-04`: matrix includes acid, combined solvent or soap/detergent candidates whose exact task relevance requires source-context review.
-
-The reconciliation CSV records each task's screen IDs, matrix IDs, shared IDs and screen-only / matrix-only IDs. It preserves the existing mapping basis and validation status.
+The 24 tasks without candidate links are **not** declared reagent-free. They remain unresolved until task-specific method sources are reviewed. The separate product-only OPT-03 row is not counted as an input-reagent mapping.
 
 ## Duplicate and omission handling
 
-- `MSCL-MAN-REAG-080` and `MSCL-MAN-REAG-087` are both source rows labelled “Potassium iodate”. Both are retained. Do not merge records or imply two separate formulations without source evidence.
-- `MSCL-MAN-OMIT-001` is Potassium permanganate referenced in manual experiment text but absent as a numbered label; it is separately retained in the matrix where applicable.
-- `MSCL-MAN-OMIT-002` is Potassium iodide (KI) referenced in manual text, while numbered row 56 is “Iodine solution”. Identity/formulation equivalence is unresolved; keep the separate records.
+- `MSCL-MAN-REAG-080` and `MSCL-MAN-REAG-087` both preserve the source label “Potassium iodate”. The source duplicate is retained; do not infer distinct formulations or quantities.
+- `MSCL-MAN-OMIT-001` keeps potassium permanganate as a manual-body reference separate from the 124 numbered labels.
+- `MSCL-MAN-OMIT-002` keeps potassium iodide (KI) separate from numbered “Iodine solution”; no identity or formulation equivalence is assumed.
+- Acetanilide remains a separate product/output reference for OPT-03, not an input-reagent ID.
 
-## Mandatory gate for all 41 task rows
+## Mandatory gates before a scientific practical can run
 
-Every task remains `DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOURCE_REVIEW_REQUIRED`. Current BOM authentication and physical use remain blocked. Before any virtual reaction/result is authored, the following must be independently evidenced for that exact task:
+Every one of the 41 RBSE task rows remains `DOCUMENTARY_CANDIDATE_ONLY; CHEMISTRY_EXPERT_AND_METHOD_SOURCE_REVIEW_REQUIRED`, and current BOM/physical use remain blocked. For each exact task, LabVerse still needs:
 
-1. Source task text and full context, including samples versus reagents, alternatives and choice groups.
-2. Exact chemical identity, CAS/structure where unambiguous, grade/purity and formulation/concentration from an authoritative source.
-3. Current product-specific SDS and exposure / incompatibility / storage / waste review.
-4. Validated method, reaction/model assumptions, observables, expected range and independent Chemistry/Safety expert approval.
-5. Versioned provenance and regression cases; unknown or conflicting cases must return NOT_MODELLED / REVIEW_REQUIRED, not invented products or readings.
+1. Source-backed distinction between input reagent, sample, product/output, material/electrode, alternative OR choice and incidental text.
+2. Exact identity and formulation from an authoritative source; CAS/structure only where unambiguous; grade/purity/concentration and task-specific quantities.
+3. Current product-specific SDS plus qualified exposure, incompatibility, storage and waste review.
+4. A validated method and model with conditions, assumptions, expected observations/ranges, test cases and independent Chemistry/Safety approval.
+5. Versioned provenance and regression coverage; unknown/conflicting cases must return NOT_MODELLED / REVIEW_REQUIRED rather than inventing reactions or readings.
 
-No quantities, concentrations, preparation, mixing, handling, reaction or disposal instructions are supplied by this audit.
+No preparation, concentrations, mixing, handling, reaction or disposal instructions are authorised by this reconciliation.
 
-## Final CI validation — 2026-11-10
+## Final validation — 2026-11-10
 
-- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206 (validator commit `e7ce64105ab0c0ae66137633abc811ac615236a9`). The run verifies 124 source-order labels, 2 separate omissions, 126 no-live-use/SDS-required/unapproved/no-BOM statuses, duplicate Potassium iodate preservation, KI vs Iodine solution distinction, 41 task IDs, 25 matrix candidate IDs and all per-task reconciliation lists/status counts.
-- Desktop/mobile Chromium smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
-- This validates only repository data integrity and browser smoke; every mapping remains a documentary candidate pending full-context, method, SDS, compatibility/waste and qualified Chemistry/Safety review. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733 (validator commit `43b880a32635110df8821ed3dbc9c5871adb85bf`).
+- Desktop/mobile Chromium browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
+- Validator covers source order/IDs, 126 fail-closed SDS/supply states, 19-column task-scope screen, 23-column task matrix, 24 unique input candidate IDs, the separate Acetanilide output reference, six excluded lexical/role false hits and all 41 reconciliation rows/statuses.
+- These checks validate repository evidence integrity and browser smoke only. They do not approve physical chemistry, authenticate the current official reagent BOM, validate SDS or establish a scientific solver.
 
 ## Current phase and next work
 
@@ -101,4 +116,4 @@ No quantities, concentrations, preparation, mixing, handling, reaction or dispos
 - Phase 5 real 3D assets: NOT STARTED.
 - Phase 6 deterministic experiment runtime: NOT STARTED.
 
-**Next:** obtain full-source contextual confirmation for the two screen-only and two matrix-only task IDs, then reconcile the ten differing item-ID sets under qualified Chemistry/Safety review. Keep all 41 tasks blocked until evidence and sign-off exist.
+**Next:** close the remaining candidate/method source gaps task by task with qualified Chemistry/Safety review and authoritative current SDS/BOM/method sources. Keep all 41 task records documentary-only until their evidence and approval gates pass.
