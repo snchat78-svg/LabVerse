@@ -708,3 +708,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Static Dashboard browser smoke passed 9/9 desktop/mobile groups, including Physics bench/tap/drag, source navigation, task gap disclosure, Chemistry reagent boundary and Biology safety/project boundary. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
 - A prior test run failed because the generic `NOT_CREATED` token was counted twice per row; fixed to target the geometry status only. The corrected rerun is the accepted result.
 - No change in phase gates: Phase 1 / 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+
+
+## 2026-11-10 — RFC-style CSV parser hardening for traceability checks
+
+- The committed traceability CSV contains a quoted field with an embedded newline; the file is a valid 25-column CSV with 515 logical data records, but a line-split test is not robust for this format.
+- Replaced line-splitting and positional comma splitting with a quoted-field-aware CSV parser in `dashboard/tests/validate-catalogue.mjs`.
+- The new check asserts 516 logical records including the header, 25 columns for every row, correct subject counts, item IDs resolving to the matching subject inventory, unique traceability keys and candidate-only / NOT_CREATED / NOT_VALIDATED / virtual-only state boundaries.
+- Previous catalogue/source-integrity run and static Dashboard browser run already passed; the strengthened logical-record parser is now awaiting its own CI rerun.
