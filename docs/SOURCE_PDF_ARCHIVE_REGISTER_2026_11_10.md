@@ -86,3 +86,7 @@ The public GitHub repository stores fingerprints, file/page metadata, the append
 ### Biology with-microscope safety-item detail audit — batch 2 (2026-11-10)
 
 Additional current-upload pages visually checked: All-Pins p.22; Forceps p.43; Mortar and Pestle p.57; Nails p.64; Surgical Scissors p.66; Dissecting Needle p.67; Claw Hammer with Handle p.68; Laboratory Thermometer p.79. The thermometer is explicitly alcohol-filled in this source (-10 °C to 110 °C; 1 °C graduation; quantity 3), not mercury-filled. The item catalogue and visual audit CSV link each page to the current upload SHA-256. Current coverage: 13/175 physical item detail pages, plus the credits page. The rest remains unaudited.
+
+### Biology glassware detail audit — batch 3 (2026-11-10)
+
+Current-upload PDF pages 13, 14, 15, 55, 69, 72, 73, 74, 75, 83, 84 and 87 were visually checked: Capillary Tubes, Glass Pipette, Cavity Slide, Glass Dropper, Test Tube, Cover Slips, Glass Rod, Glass Tube, Watch Glass, Conical Flask, Boiling Tube and Glass Slide. Key quantities confirmed include 12 test tubes, 100 glass slides (two packs of 50), two packs of 20 cover slips and one packet of six glass tubes. The Biology manual's warning that Watch Glass should never be heated remains applicable. Total current detail audit coverage is 25/175 physical item detail pages plus one credits page; no complete verification claim is made.
