@@ -1830,7 +1830,8 @@
           "sourcePages": "114-119",
           "sourceItemIds": [],
           "evidence": "NO_MATCH_IN_CURRENT_PHYSICS_MANUAL_REGISTER",
-          "status": "DESIGN_ONLY; MODEL_NOT_IMPLEMENTED; TESTS_NOT_RUN"
+          "status": "DESIGN_ONLY; MODEL_NOT_IMPLEMENTED; TESTS_NOT_RUN",
+          "mappingGap": "No Fortin barometer or mercury barometer row appears in the available 106-item NCERT Physics manual catalogue. Keep this task in the index; do not invent an equipment match. Future asset must be a safe virtual instrument model; mercury is not a learner-handled material."
         },
         {
           "id": "RBSE-XI-PHY-PRJ-09",
@@ -9218,7 +9219,8 @@
           "sourcePages": "144-147",
           "sourceItemIds": [],
           "evidence": "NO_TOPIC_SPECIFIC_ITEM_MATCH; RBSE_PROJECT_TOPIC_OPEN",
-          "status": "DESIGN_ONLY; MODEL_NOT_IMPLEMENTED; TESTS_NOT_RUN"
+          "status": "DESIGN_ONLY; MODEL_NOT_IMPLEMENTED; TESTS_NOT_RUN",
+          "mappingGap": "RBSE requires a teacher-assigned investigatory project but specifies no fixed title or apparatus list. No topic-specific item IDs can be assigned until the teacher-approved topic and method are known."
         }
       ],
       "manualMetadata": {
@@ -9432,7 +9434,14 @@
       "tasksWithoutSourceItemLinks": 1,
       "uniqueSourceItemIds": 95,
       "unresolvedSourceItemIds": 0,
-      "unresolvedIds": []
+      "unresolvedIds": [],
+      "unlinkedTasks": [
+        {
+          "id": "RBSE-XI-PHY-PRJ-08",
+          "title": "Study a Fortin barometer and measure atmospheric pressure",
+          "reason": "No Fortin barometer or mercury barometer row appears in the available 106-item NCERT Physics manual catalogue. Keep this task in the index; do not invent an equipment match. Future asset must be a safe virtual instrument model; mercury is not a learner-handled material."
+        }
+      ]
     },
     "chemistry": {
       "taskCount": 41,
@@ -9448,7 +9457,14 @@
       "tasksWithoutSourceItemLinks": 1,
       "uniqueSourceItemIds": 147,
       "unresolvedSourceItemIds": 0,
-      "unresolvedIds": []
+      "unresolvedIds": [],
+      "unlinkedTasks": [
+        {
+          "id": "RBSE-XII-BIO-PRJ-01",
+          "title": "Investigatory project (teacher-assigned/reviewed topic; RBSE specifies no fixed title)",
+          "reason": "RBSE requires a teacher-assigned investigatory project but specifies no fixed title or apparatus list. No topic-specific item IDs can be assigned until the teacher-approved topic and method are known."
+        }
+      ]
     }
   }
 }
