@@ -57,17 +57,60 @@ async function main() {
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Mercury$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
 
+    // Virtual Experiment Lab: bench is visible, practical catalogue is not.
+    await page.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
+    assert.equal(await page.locator(".bench-panel").count(), 1);
+    assert.equal(await page.locator(".practical-panel").count(), 0);
+    assert.match(await page.locator(".bench-panel").innerText(), /Experiment workbench/);
+    await page.locator(".detail-panel").getByRole("button", {name:/Add selected item as candidate placeholder/}).click();
+    assert.equal(await page.locator(".bench-item").count(), 1);
+    assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
+    results.push("Virtual Experiment Lab candidate workbench");
+
+    // Scientific Analysis must show readiness status, never fabricate results.
+    await page.locator('.workspace-tabs button', {hasText:"Scientific Analysis"}).click();
+    assert.match(await page.locator(".analysis-workspace").innerText(), /No validated scientific model connected/);
+    assert.match(await page.locator(".analysis-workspace").innerText(), /No calculated or predicted result/);
+    assert.equal(await page.locator(".bench-panel").count(), 0);
+    results.push("Scientific Analysis NOT_MODELLED boundary");
+
+    // Research Studio makes a structured, session-local draft only.
+    await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
+    await page.locator('textarea').nth(0).fill("Does light intensity change the rate of photosynthesis?");
+    await page.locator('textarea').nth(1).fill("Increasing light intensity may increase the rate until another factor becomes limiting.");
+    await page.locator('textarea').nth(2).fill("CO2 concentration or temperature may be the limiting factor.");
+    await page.locator(".research-variable-grid input").nth(0).fill("Light intensity");
+    await page.locator(".research-variable-grid input").nth(1).fill("Oxygen production rate");
+    await page.locator('textarea').nth(3).fill("Plant species, temperature, CO2 availability and measurement duration.");
+    await page.getByRole("button", {name:"Preview research draft"}).click();
+    assert.match(await page.locator(".research-workspace").innerText(), /Local draft preview ready/);
+    assert.match(await page.locator(".research-workspace").innerText(), /not saved to cloud/i);
+    results.push("Research Studio structured session-local draft");
+
+    // Sidebar selection from home requires the user to choose a subject explicitly.
+    await page.locator(".back-button").click();
+    await page.locator(".sidebar .nav-link").filter({hasText:"Research Studio"}).click();
+    assert.match(await page.locator(".workspace-launch").innerText(), /Choose a subject direction/);
+    await page.locator(".workspace-launch-actions button").filter({hasText:"Biology"}).click();
+    assert.equal(await page.locator(".workspace-tabs button.active").innerText(), "Research Studio");
+    await page.getByRole("heading", {name:"Biology Lab"}).waitFor();
+    results.push("Sidebar workspace selection and explicit subject choice");
+
     // Mobile viewport
     await page.setViewportSize({width:390,height:844});
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     assert.equal(overflow,false,"React app must not overflow horizontally on a 390px viewport");
     assert.deepEqual(errors,[],"React app must not emit browser errors");
-    console.log("LabVerse React app browser smoke: 6 groups passed.");
+    console.log("LabVerse React app browser smoke: 10 groups passed.");
     console.log("PASS: React overview and three subjects");
     console.log("PASS: Physics inventory search and source detail");
     console.log("PASS: XI task filter");
     console.log("PASS: Practical source links and candidate placeholder bench");
     console.log("PASS: Chemistry and Biology source/safety details");
+    console.log("PASS: Virtual Experiment Lab candidate workbench");
+    console.log("PASS: Scientific Analysis NOT_MODELLED boundary");
+    console.log("PASS: Research Studio structured local draft");
+    console.log("PASS: Sidebar workspace selection");
     console.log("PASS: Mobile layout and no browser errors");
   } finally {
     await browser.close();
