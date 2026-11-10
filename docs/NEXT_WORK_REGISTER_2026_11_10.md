@@ -271,3 +271,19 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 - **Next unblocked source-order task:** MSCL index item 7 / Conical Flask / PDF page 11. Keep going in item/page order. Preserve the Boiling Tube dimensional annotation as a technical-review gap and the Wire Gauze asbestos warning.
 - **Still blocked first Biology queue item:** `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed page 9 until existing source bytes or an accessible official payload are recovered. Do not ask for repeat upload.
 - These are parallel source-audit tasks within Phase 1.1; Phase 2 science models, Phase 5 3D and Phase 6 runtime remain gated and unstarted.
+
+## Official NCERT attachment-size evidence — 2026-11-10
+
+### Completed
+- Captured official NCERT Grade XI–XII specification-index attachment response sizes for four distinct kit URLs in `data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv` and analysed the comparison in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md`.
+- MSCL official response size equals the later registered user-upload size, but this is only SIZE_MATCH_ONLY (no official hash/bytes); earlier audited MSCL copy remains 53/53 detail pages checked and is tied to its own earlier SHA.
+- Biology-with-microscope official response size is 35,057 bytes smaller than both registered user uploads; without-microscope and Physics upload comparisons remain UNKNOWN.
+- Full MSCL page audit integrity CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783080330; desktop/mobile smoke 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783079985.
+
+### Next ordered Phase 1.1 work
+1. Internal retrieval of the previously supplied Biology-with-microscope original to continue its 150-row page-detail queue, starting `NCERT-BIO-WM-SPEC-002` (Kit Box / indexed page 9). Current Library listing and search do not surface it; do not request re-upload.
+2. Keep Biology-without-microscope and Physics prior upload records no-repeat; exact old hashes/sizes are UNKNOWN until existing source bytes are recovered.
+3. Continue official procurement attachment authentication where the bytes become retrievable; do not equate title, size or page count with exact-byte identity.
+4. Continue record-level rights, SDS/compatibility/waste, instrument calibration/uncertainty and subject-expert gates.
+
+Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no phase gate was skipped.
