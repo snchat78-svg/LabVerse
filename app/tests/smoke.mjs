@@ -95,6 +95,18 @@ async function main() {
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Scalpel$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /SHARP TOOL/i);
     results.push("Biology sharp-tool scalpel warning visible");
+    await page.locator(".content-grid .search").first().fill("Laboratory Thermometer");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Laboratory Thermometer$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /ALCOHOL-FILLED/i);
+    results.push("Biology alcohol thermometer is distinguished from mercury");
+    await page.locator(".content-grid .search").first().fill("Claw Hammer");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Claw Hammer with Handle$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /digital-only handling/i);
+    results.push("Biology impact-tool hammer handling warning visible");
+    await page.locator(".content-grid .search").first().fill("All-Pins");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^All-Pins$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /Sharp points/i);
+    results.push("Biology pointed pin hazard visible");
     results.push("Chemistry and Biology source/safety details");
 
     // The open-ended Biology project must remain unmatched until a teacher approves a topic and method.
