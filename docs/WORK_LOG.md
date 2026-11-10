@@ -657,7 +657,17 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Files:** `app/src/App.tsx`, `app/src/styles.css`, `app/tests/smoke.mjs`, `app/README.md`, `dashboard/tests/validate-catalogue.mjs`, `.github/workflows/labverse-dashboard-check.yml`, and the new queue CSV.
 - **React CI:** typecheck PASS, production build PASS, 22/22 Chromium groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
 - **Dashboard integrity CI:** 9 PDF archive checks PASS; practical mapping integrity PASS; 177-row index audit/25 item detail pages PASS; 150 pending-row queue assertions PASS; 18 catalogue assertions PASS; schema parse PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
-- **Static Dashboard browser smoke:** still in progress at the time of this entry; record its final result separately after checking the workflow.
+- **Static Dashboard browser smoke:** final result PASS, 9/9 Chromium groups — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 - **Evidence boundary:** this queue is a to-do list, not an audit completion. OCR/index fields are not visual verification. Uploaded source remains a candidate; official NCERT byte equality, current procurement and science/expert approvals are not established. No copyrighted PDF binary was committed.
 - **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
 - **Next bounded action:** recover the already submitted Biology-with-microscope source internally and visually review queue order 1 onward (first item Kit Box, index 2, PDF page 9). Do not ask the user to repeat-upload. If bytes remain unavailable, leave queue rows pending and record the internal retrieval limitation.
+
+
+## 2026-11-10 — Final CI confirmation for Biology audit visibility commit
+
+- Static Dashboard browser smoke completed successfully: **9/9 groups PASS**, including overview/source counts, Physics tap and HTML5 drag/drop, candidate practical setup, source navigation, unmatched Fortin disclosure, Chemistry no-live-use label, Biology school-managed/project boundary and mobile layout.
+- All validation workflows for code commit `111cf04c087000f43983ef6058e0d7ff31d8aef3` are green:
+  - React app: 22/22 groups — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
+  - Dashboard integrity: PDF archive, task mapping, 177-row Biology index audit, 150-row queue, 18 catalogue assertions and schema parse — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+  - Static Dashboard browser: 9/9 groups — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
+- **Phase status unchanged:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.

@@ -522,5 +522,5 @@ Twelve further current-upload detail pages have been visually checked: capillary
 - React inventory now displays 25/175 visual detail-page audit coverage and item-level status: visually checked against the user-uploaded candidate vs OCR/index-only. No official NCERT byte authentication is inferred.
 - **React verification:** strict TypeScript typecheck PASS; Vite production build PASS; Chromium smoke 22/22 groups PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
 - **Source integrity:** PDF archive/no-repeat, source-to-task mapping, visual index and the 150-row queue checks PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
-- Static Dashboard browser smoke was still running at this documentation checkpoint; its result must be verified before claiming success.
+- **Static Dashboard browser smoke:** 9/9 desktop/mobile Chromium groups PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 - Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.

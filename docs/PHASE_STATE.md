@@ -1570,7 +1570,7 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 ### Verification
 - React app: strict TypeScript typecheck PASS; Vite production build PASS; 22/22 browser smoke groups PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
 - Dashboard integrity: PDF archive 9 assertions PASS; practical-to-inventory mapping integrity PASS; Biology index/detail audit PASS (177 index rows; 25 item pages plus credits); queue checks PASS (150 pending physical records, source order and unique IDs); 18 catalogue assertions PASS; schema JSON PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
-- Static Dashboard desktop/mobile browser smoke: running at checkpoint; do not mark PASS until its final result is recorded.
+- Static Dashboard desktop/mobile browser smoke: **9/9 Chromium groups PASS**. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 
 ### Gate status — unchanged
 - Phase 1 / Phase 1.1: IN PROGRESS. Official-byte authentication, procurement/BOM equivalence, internal recovery of earlier without-microscope and Physics upload records, the remaining 150 detail-page reviews, all 50 visual cards, 7 embedded specimens, 35 permanent slides, rights, safety and subject-expert approvals remain open.
@@ -1581,3 +1581,15 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 
 ### Next precise action
 Resume queue order 1 (`NCERT-BIO-WM-SPEC-002`, Kit Box, indexed detail PDF page 9) and continue through the existing registered user-uploaded source if its original bytes can be recovered internally. If the binary remains inaccessible, retain this internal retrieval blocker and do not request a repeat upload; do not fill audit fields from OCR alone. Update the catalogue, audit CSV, report, queue and tests together after each visually checked batch.
+
+
+## CI closure update — 2026-11-10
+
+The static Dashboard browser workflow from commit `111cf04c087000f43983ef6058e0d7ff31d8aef3` completed successfully after the previous phase-state checkpoint: **9/9 Chromium groups PASS**, including overview/source counts, Physics tap/drag workbench, candidate task setup, Physics mapping-gap disclosure, Chemistry no-live-use boundary, Biology school-managed reagent/project boundary, and mobile viewport/navigation. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
+
+All three relevant workflow gates for the UI/data commit are now green:
+- React app: 22/22 groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194
+- Dashboard source/catalogue integrity: 18 catalogue assertions plus PDF archive/index/queue/schema checks PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344
+- Static Dashboard browser smoke: 9/9 groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331
+
+Phase 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED. Passing UI and catalogue tests do not authenticate user-uploaded bytes as official NCERT, prove procurement/supply equivalence, complete all Biology page reviews or constitute scientific/subject-expert approval.

@@ -211,6 +211,7 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 - Created `data/catalogues/biology_with_microscope_detail_audit_queue_2026_11_10.csv`: exactly 150 unique pending rows in index/source order, including equipment, visual cards, embedded specimens, permanent slides and microscope record. Does not count documentation/credits or repeat already audited rows.
 - React browser suite: **22/22 groups PASS**, with strict typecheck and production build PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
 - Dashboard integrity suite: archive 9 assertions, index/detail audit, queue integrity, 18 catalogue assertions and schema parse PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+- Static Dashboard desktop/mobile browser smoke: **9/9 groups PASS**. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967331.
 
 ### Remaining source gates
 - Visually verify the other 150 indexed Biology detail pages; all 50 visual cards, 7 embedded specimens and 35 permanent slides need content/identity review in their own right where applicable.
