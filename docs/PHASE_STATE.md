@@ -10,8 +10,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 0: DONE — planning/documentation baseline only.
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
-- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation with functional workspace destinations; strict typecheck, production build and 10-group Chromium smoke passed. Remaining app-wide controls and architecture hardening remain.
-- Phase 4: IN PROGRESS — React workspaces now implement Learning Lab task catalogue, Virtual Experiment Lab candidate placeholder bench, Scientific Analysis evidence/model-readiness panel and Research Studio session-local hypothesis draft. Remaining inventory filters/coverage display and full static-preview parity remain.
+- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation with four functional workspace destinations; strict typecheck, production build and 13-group Chromium smoke passed on commit 5a0e733bb7bb77752aa1c93f4fc5a0a159672a8b. Remaining full static-preview parity and architecture hardening remain.
+- Phase 4: IN PROGRESS — React workspaces implement Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and session-local Research Studio draft. Inventory item-type/category filters, task/source coverage and both unmatched-task reasons are now migrated and browser-tested; full static-preview parity and real 3D assets remain.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
@@ -40,7 +40,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Latest practical mapping work (2026-11-10): 169/171 task rows have candidate source-item links across Physics 79/80, Chemistry 41/41 and Biology 49/50. All 287 subject-unique source-item IDs resolve to the corresponding inventory; there are 0 unresolved IDs. Two intentionally unmatched tasks are Physics `RBSE-XI-PHY-PRJ-08` (Fortin barometer absent from available 106-item manual register) and Biology `RBSE-XII-BIO-PRJ-01` (teacher-assigned project has no fixed title/apparatus list). Both reasons are now shown in Dashboard instead of inventing a match.
 - Practical cards now open linked source items in the instrument tray; the selected task can also add its mapped candidate items to the placeholder bench. Bench additions are non-executable 2D placeholders; they do not verify quantity, compatibility, procurement equivalence or a scientific method.
 - See `docs/NEXT_WORK_REGISTER_2026_11_10.md` for the completed/remaining register and `docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md` for the parallel-track boundary.
-- Current next work unit: migrate the remaining inventory category/type filters and per-subject task/source coverage summary into React, then add unmatched-task reason details to the React practical cards. Keep static preview and PDF no-repeat register; Phase 1 source/safety/rights/expert work remains active and Phase 2 scientific engines remain blocked.
+- Current next work unit: continue Phase 1.1 page-level source audit for the Biology kit specification variants and recover prior Biology-without-microscope/Physics source records internally. Never request repeat uploads; Phase 1 source/safety/rights/expert work remains active and Phase 2 scientific engines remain blocked.
 - Last phase-state review: 2026-11-09
 
 ## Phase 0 — completed log
