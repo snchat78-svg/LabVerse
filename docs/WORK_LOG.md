@@ -747,3 +747,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Browser smoke on preceding validator commit passed 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556. No app/UI source changed after that run; the subsequent change was one CSV validation text cell.
 - **Boundary:** these checks validate register structure and governance labels only. No nuclear source API was called, no data was imported, no scientific/nuclear calculation or solver was run, no 3D assets/runtime were created, and no scientific/independent review was completed.
 - **Phase state:** Phase 1 / 1.1 IN PROGRESS; Phase 2 remains BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+
+## 2026-11-10 — MSCL specification visual detail audit, batch 1
+
+- **Phase:** Phase 1.1 — Chemistry kit source/specification detail audit, within the active Phase 1 gate.
+- **Source:** registered earlier `MSCL_copy.pdf`, 65 pages, SHA-256 `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`, USER_UPLOADED_UNAUTHENTICATED. Visual findings are scoped to these exact bytes; the distinct later upload variant remains separate.
+- **Pages inspected:** PDF pages 5–10, 18, 26 and 43: Kit Box, Beaker, Boiling Tube, Capillary Tube, Porcelain Dish, Micro Filtration Unit, Micro Spatula and Wire Gauze.
+- **Coverage:** eight of 53 physical catalogue items now have a visual detail-page audit. Five new rows (items 2–6) were added to the catalogue as OCR_TEXT + VISUAL_CHECK; three existing visual checks were retained.
+- **Important review findings:** Boiling Tube specification says diameter 20 mm but the drawing contains 20/21 and R5/R6 callouts that are not safely reconcilable from the scan; marked NEEDS_TECHNICAL_REVIEW. Porcelain Dish photograph appears to show a lip not specified in text; no new dimension was inferred. The source wire gauze explicitly has an asbestos centre; it remains hazardous and cannot be a usable real-world asset.
+- **Files:** `data/catalogues/mscl_detail_audit_2026_11_10.csv`; `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md`; updated `data/catalogues/ncert_mscl_spec_items.csv`; linked MSCL specification register and source archive.
+- **Tests:** dashboard-integrity run PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42780001376. It includes 8-record/15-column audit CSV checks, source fingerprint and upload-authentication boundary, all IDs/visual statuses, Boiling Tube review flag, asbestos hazard flag and the existing catalogue/archive/biology queue checks. Browser smoke tracked separately.
+- **Next in this unblocked source track:** MSCL item 7, Conical Flask, PDF page 11; then continue sequentially. Biology-with-microscope queue order 1 (Kit Box, page 9) remains blocked by internal retrieval of its previously submitted binary. Do not request repeat upload.
+- **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED. No solver, 3D asset or scientific result engine was implemented.
