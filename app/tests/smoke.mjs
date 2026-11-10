@@ -64,7 +64,7 @@ async function main() {
     await page.locator(".practical-panel .search").fill("Fortin barometer");
     const fortinTask = page.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-PRJ-08"});
     await fortinTask.waitFor();
-    assert.match(await fortinTask.innerText(), /Fortin barometer.*not appear|not appear.*Fortin barometer/i);
+    assert.match(await fortinTask.innerText(), /No Fortin barometer or mercury barometer row appears/i);
     results.push("Unmatched Physics source gap disclosed");
 
     // Chemistry catalogue opens from the three-direction overview
