@@ -692,3 +692,10 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Tests:** dashboard workflow now validates all 515 trace rows, subject counts, unique trace IDs, source item IDs resolving to the correct subject catalogues and explicit NOT_CREATED / NOT_ASSIGNED / NOT_VALIDATED / virtual-only states. Await current GitHub Actions result before claiming the new assertions pass.
 - **Phase:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
 - **Next:** retry recovery of queue order 1 (Biology Kit Box PDF page 9) through an already-submitted or official source route, while continuing the other Phase 1.1 source/procurement/rights/safety/expert closures. No repeat upload request.
+
+
+## 2026-11-10 — Traceability validator counter correction
+
+- The first dashboard-integrity run on commit `fc308d4adb3c44b9c60b8d6d7d0aa381367e71bb` failed one newly added assertion because the generic `NOT_CREATED` token appears twice per row (asset geometry and regression-test state); the test expected one occurrence.
+- Existing archive, task mapping, Biology detail audit and 150-item queue checks passed before that assertion. This was a test-counter defect, not a catalogue-data or scientific-model error.
+- Corrected the assertion to count only the geometry field next to its dimension-status field. All per-row status/source-link checks remain. Rerun pending; do not count the first run as PASS.
