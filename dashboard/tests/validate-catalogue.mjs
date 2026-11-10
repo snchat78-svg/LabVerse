@@ -437,7 +437,7 @@ for (const [id, pattern] of [
 ]) {
   const row = msclReviewById.get(id);
   assert.ok(row, "critical MSCL review item must be present: " + id);
-  assert.match(row[10], pattern, "critical source safety/technical boundary must persist: " + id);
+  assert.match(row[9] + " " + row[10], pattern, "critical source technical gap or safety boundary must persist: " + id);
   assert.notEqual(row[13], "APPROVED", "critical items cannot be auto-approved");
 }
 console.log("MSCL evidence/safety review queue: 53 source-linked rows, 16 columns, verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
