@@ -78,6 +78,8 @@ The dashboard currently has Physics, Chemistry and Biology directions, class fil
 - [Research data pipeline](docs/RESEARCH_DATA_PIPELINE.md)
 - [Scientific method and discovery integrity](docs/SCIENTIFIC_METHOD_AND_DISCOVERY.md)
 - [Expandable domain model](docs/DOMAIN_EXPANSION_MODEL.md)
+- [Phase 1 research discovery and nuclear-element capability map](docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md)
+- [Research discovery capability register (CSV)](data/catalogues/research_discovery_capability_register_2026_11_10.csv)
 - [Phase 1 source audit](docs/PHASE_1_SOURCE_AUDIT.md)
 - [Phase 1 initial catalogue](docs/PHASE_1_INITIAL_CATALOGUE.md)
 
