@@ -287,3 +287,9 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 4. Continue record-level rights, SDS/compatibility/waste, instrument calibration/uncertainty and subject-expert gates.
 
 Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no phase gate was skipped.
+
+### Final validation for official NCERT size comparison register
+- Source integrity CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434.
+- Browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
+- Validator assertions now lock the official response-size observations, the 19,808,858-byte MSCL later-upload size match as non-authenticated, and the 35,057-byte Biology-with-microscope mismatch. This does not provide actual official PDF bytes or SHA.
+- Next single action remains: internally recover the previously supplied Biology-with-microscope original and resume queue order 1, Kit Box / indexed PDF page 9. Do not ask for re-upload. Until then, continue other Phase 1.1 source closure from already accessible catalogues and preserve the Phase 2 block.
