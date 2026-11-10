@@ -240,3 +240,19 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 - The Biology-with-microscope Kit Box page 9 audit remains blocked by internal binary retrieval. Resume queue order 1 when prior bytes or a legitimate official payload becomes accessible; do not ask for repeat upload.
 - Complete current Physics/MSCL/Biology kit procurement source recovery, 150 Biology page details, visual cards/specimens/slides, SDS and other safety, rights and expert approvals.
 - Phase 1/1.1 remains IN PROGRESS. Phase 2 scientific engines remain BLOCKED. Phase 3 PARTIAL and Phase 4 IN PROGRESS. Phase 5+ NOT STARTED.
+
+
+## 2026-11-10 — Phase 1 research capability map and nuclear-source review
+
+### Completed bounded work unit
+- Added `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md` and a 12-row machine-readable register at `data/catalogues/research_discovery_capability_register_2026_11_10.csv`.
+- Mapped research workflows across Chemistry, Physics, Biology and cross-domain science, with a future design-only Nuclear Matter Explorer.
+- Explicitly separated chemical compound/material formation from new-element nuclear synthesis; defined nuclide, nuclear-reaction, decay-event, detector-event and discovery-claim records; added candidate/observed/simulated/reproduced/independently-reviewed/formally-recognised evidence labels.
+- Added IUPAC/IUPAP discovery-governance, DOE/GSI process references and candidate data sources NNDC ENSDF (public beta) and IAEA EXFOR (coverage limits documented) to the scientific source registry.
+- All capabilities remain DESIGN_ONLY; no solver, connector, app feature or 3D asset was implemented. Phase order and Phase 1 exit gate are unchanged.
+
+### Retrieval and next safe action
+- Rechecked the current Library PDF listing and semantic search; the registered Biology-with-microscope source binary (59,620,970 bytes, known SHA retained in the archive register) did not surface. This does not invalidate the old upload receipt and is not a request to upload again.
+- **Resume first:** queue order 1, NCERT-BIO-WM-SPEC-002 / Kit Box / indexed PDF page 9, only when the previously supplied bytes or an accessible official primary payload can be read.
+- **In parallel:** continue Phase 1.1 procurement/source closure for Physics and MSCL, internal recovery of previously supplied Biology-without-microscope/Physics files, remaining Biology pages/cards/specimens/slides, licensing, instrument calibration, reagent SDS/compatibility/waste and subject-expert review.
+- Do not begin Phase 2 scientific solvers, Phase 5 assets or Phase 6 runtime until their dependency gates are met.
