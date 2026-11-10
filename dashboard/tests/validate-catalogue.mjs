@@ -275,25 +275,35 @@ const msclDetailAudit = await readFile(
   "utf8"
 );
 const msclDetailRows = parseCsvRows(msclDetailAudit);
-assert.equal(msclDetailRows.length, 9, "MSCL visual detail audit must contain one header + eight item records");
+assert.equal(msclDetailRows.length, 54, "MSCL visual detail audit must contain one header + 53 physical item records");
 assert.equal(msclDetailRows[0].length, 15, "MSCL detail audit schema must have 15 columns");
 assert.ok(msclDetailRows.slice(1).every(row => row.length === 15), "all MSCL detail audit rows must preserve 15 columns");
-const expectedMsclAuditIds = [
-  "NCERT-MSCL-SPEC-002","NCERT-MSCL-SPEC-003","NCERT-MSCL-SPEC-004",
-  "NCERT-MSCL-SPEC-005","NCERT-MSCL-SPEC-006","NCERT-MSCL-SPEC-014",
-  "NCERT-MSCL-SPEC-021","NCERT-MSCL-SPEC-034"
-];
-assert.deepEqual(msclDetailRows.slice(1).map(row => row[4]), expectedMsclAuditIds, "MSCL visual audit IDs must preserve the inspected source order");
+const expectedMsclAuditIds = Array.from(
+  { length: 53 },
+  (_, index) => `NCERT-MSCL-SPEC-${String(index + 2).padStart(3, "0")}`
+);
+assert.deepEqual(msclDetailRows.slice(1).map(row => row[4]), expectedMsclAuditIds, "all 53 physical MSCL item IDs must be present in source order 2–54");
+assert.deepEqual(msclDetailRows.slice(1).map(row => Number(row[3])), Array.from({ length: 53 }, (_, index) => index + 2), "MSCL audit index numbers must be continuous from item 2 through 54");
+assert.ok(msclDetailRows.slice(1).every(row => row[0] === "MSCL_copy.pdf"), "MSCL audit must retain the reviewed source filename");
 assert.ok(msclDetailRows.slice(1).every(row => row[1] === "db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d"), "MSCL visual audit must remain linked to the exact registered upload fingerprint");
 assert.ok(msclDetailRows.slice(1).every(row => row[2] === "USER_UPLOADED_UNAUTHENTICATED"), "visual inspection must not imply official NCERT byte authentication");
+assert.ok(msclDetailRows.slice(1).every(row => row[13].startsWith("VISUALLY_CHECKED_REGISTERED_USER_UPLOAD")), "all 53 audit statuses must name the inspected user-uploaded source boundary");
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-004")[11], /NEEDS_TECHNICAL_REVIEW/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-015")[11], /NEEDS_TECHNICAL_REVIEW/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-032")[11], /NEEDS_TECHNICAL_REVIEW/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-033")[11], /NEEDS_TECHNICAL_REVIEW/);
 assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-034")[12], /ASBESTOS HAZARD/);
-assert.ok(msclDetailRows.slice(1).every(row => row[13].startsWith("VISUALLY_CHECKED_REGISTERED_USER_UPLOAD")), "all audit statuses must name the inspected user-uploaded source boundary");
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-022")[12], /OPEN-FLAME HAZARD/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-024")[12], /MERCURY.*TOXICITY HAZARD/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-052")[12], /GAS-GENERATION ASSEMBLY/);
+assert.match(msclDetailRows.find(row => row[4] === "NCERT-MSCL-SPEC-046")[11], /PACKAGE_COUNT_REVIEW/);
 const msclCatalogueRows = parseCsvRows(await readFile(
   new URL("../../data/catalogues/ncert_mscl_spec_items.csv", import.meta.url),
   "utf8"
 ));
 const msclCatalogueById = new Map(msclCatalogueRows.slice(1).map(row => [row[0], row]));
-assert.ok(expectedMsclAuditIds.every(id => (msclCatalogueById.get(id)?.[9] || "").includes("VISUAL_CHECK")), "all eight visually inspected MSCL items must be marked in the catalogue");
-assert.equal(msclCatalogueRows.length, 56, "MSCL source catalogue retains 55 rows plus header");
-console.log("MSCL visual detail audit: 8 source-linked pages/items, 15 columns, upload fingerprint, hazard and technical-review boundaries PASS.");
+assert.ok(expectedMsclAuditIds.every(id => (msclCatalogueById.get(id)?.[9] || "").includes("VISUAL_CHECK")), "all 53 physical MSCL items must be visually flagged in the source catalogue");
+assert.equal(msclCatalogueRows.length, 56, "MSCL source catalogue retains 55 rows plus header (manual and credit are non-physical)");
+assert.ok(!/VISUAL_CHECK/.test(msclCatalogueById.get("NCERT-MSCL-SPEC-001")?.[9] || ""), "Kit Manual must not be counted as a physical item visual audit");
+assert.ok(!/VISUAL_CHECK/.test(msclCatalogueById.get("NCERT-MSCL-SPEC-055")?.[9] || ""), "Document Development Team credit must not be counted as a physical item visual audit");
+console.log("MSCL visual detail audit: 53/53 physical item records, 15-column schema, continuous source order, exact upload fingerprint, authentication, hazard, technical-review and measurement-calibration boundaries PASS.");
