@@ -569,3 +569,9 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - NNDC ENSDF API (public beta) and IAEA EXFOR were added as candidate source families; neither connector nor nuclear solver is implemented or validated.
 - Phase mapping is unchanged: Phase 1 source/capability audit now; Phase 2 domain contracts only after Phase 1 gate; Phase 8 bounded physics/nuclear models later; Phases 11–16 research/discovery/data; Phases 19 and 21 safety and independent validation.
 - This documentation deliverable does not close Phase 1.1 or unblock Phase 2. The first pending Biology detail queue record remains Kit Box / page 9.
+
+## Research capability register validation — 2026-11-10
+
+- The 14-row research capability register is covered by a source/catalogue CI validator (15 logical CSV records including header; 11 columns; unique ordered IDs; all DESIGN_ONLY; source and discovery-review gates). Final run PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42778819472.
+- Existing desktop/mobile browser smoke passed 9/9 on the immediately preceding validator commit: https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556. The follow-up change was confined to a CSV validation-gate text cell; no UI code changed.
+- Test result does not mean scientific models, data connectors, 3D assets or experimental outcomes exist. Phase 1 / 1.1 remains IN PROGRESS; Phase 2 stays BLOCKED.
