@@ -28,8 +28,10 @@ GitHub Actions runs install, typecheck and build. No local Python, Node or Andro
 - Subject selection for Physics, Chemistry and Biology.
 - Class XI/XII filter.
 - Searchable apparatus/material inventory sourced from the existing single dashboard inventory JSON.
+- Practical-to-candidate-source-item navigation and candidate placeholder workbench setup.
+- Visible Chemistry reference-only/no-live-use and Biology school-managed/not-supplied-with-kit labels.
 - Task catalogue and selected-item source/evidence/safety information.
 
 ## Not yet implemented
 
-This is the app foundation, not the completed product. The existing static `dashboard/` remains the richer interaction preview until its task-to-source-item navigation, candidate placeholder setup, and browser checks have been migrated into React. Real 3D models, scientific runtime, deterministic Physics/Chemistry/Biology solvers, offline persistence, Research Studio data workflows and Android packaging remain future roadmap work.
+This is the app foundation, not the completed product. The four workspace destinations are not fully functional yet; the separate static dashboard remains the richer preview. The existing static `dashboard/` remains the richer interaction preview until its task-to-source-item navigation, candidate placeholder setup, and browser checks have been migrated into React. Real 3D models, scientific runtime, deterministic Physics/Chemistry/Biology solvers, offline persistence, Research Studio data workflows and Android packaging remain future roadmap work.
