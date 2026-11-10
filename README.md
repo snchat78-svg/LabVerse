@@ -41,6 +41,8 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [Biology manual 58-entry reagent list](data/catalogues/ncert_biology_manual_reagents_58.csv)
 - [Free GitHub Pages publishing steps](docs/DASHBOARD_PUBLISHING.md)
 - [Three-subject inventory read model](dashboard/data/inventory.json)
+- [Persistent PDF source registry](data/catalogues/source_pdf_registry_2026_11_10.csv)
+- [PDF archive and no-repeat record](docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md)
 - [Parallel dashboard track and evidence boundaries](docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md)
 
 The dashboard currently has Physics, Chemistry and Biology directions, class filters, searchable equipment/reagent catalogues, a 2D placeholder workbench, source/evidence details and the 171-row RBSE task index. It is a starter prototype, not a finished 3D simulator.
