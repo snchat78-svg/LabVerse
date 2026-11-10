@@ -36,7 +36,22 @@ async function main() {
 
     // Drag/drop uses the same 3D-workbench interaction contract placeholder.
     await page.locator("#inventory-search").fill("Screw gauge");
-    await page.locator('[data-item-id="NCERT-PHY-KIT-004"]').dragTo(page.locator("#drop-zone"));
+    // Exercise the HTML5 dragstart -> dragover -> drop handlers with one shared DataTransfer.
+    // Tap-to-add is tested separately above.
+    await page.locator('[data-item-id="NCERT-PHY-KIT-004"]').evaluate(source => {
+      const transfer = new DataTransfer();
+      source.dispatchEvent(new DragEvent("dragstart", {
+        bubbles: true, cancelable: true, dataTransfer: transfer
+      }));
+      const target = document.querySelector("#drop-zone");
+      target.dispatchEvent(new DragEvent("dragover", {
+        bubbles: true, cancelable: true, dataTransfer: transfer
+      }));
+      target.dispatchEvent(new DragEvent("drop", {
+        bubbles: true, cancelable: true, dataTransfer: transfer
+      }));
+    });
+    await page.locator("#bench-items").waitFor({ state: "visible" });
     assert.match(await page.locator("#bench-items").innerText(), /Screw gauge/);
     await page.locator("#reset-bench").click();
     results.push("Physics drag-and-drop to workbench");
