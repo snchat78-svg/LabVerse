@@ -90,6 +90,8 @@ export default function App() {
   const [researchDraftReady, setResearchDraftReady] = useState(false);
   const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
   const [search, setSearch] = useState("");
+  const [itemTypeFilter, setItemTypeFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
   const [taskSearch, setTaskSearch] = useState("");
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
@@ -107,15 +109,28 @@ export default function App() {
       ...(activeData.reagents as unknown as CatalogueItem[])
     ];
     return catalogueRows.filter((item) => {
-      if (!query) return true;
-      return [
-        item.name,
-        item.category ?? "",
-        item.detail ?? "",
-        item.source ?? ""
-      ].join(" ").toLowerCase().includes(query);
+      const matchesType = itemTypeFilter === "all" || item.type === itemTypeFilter;
+      const matchesCategory = categoryFilter === "all" || item.category === categoryFilter;
+      const matchesQuery =
+        !query ||
+        [
+          item.name,
+          item.category ?? "",
+          item.detail ?? "",
+          item.source ?? ""
+        ].join(" ").toLowerCase().includes(query);
+      return matchesType && matchesCategory && matchesQuery;
     });
-  }, [activeData, search]);
+  }, [activeData, search, itemTypeFilter, categoryFilter]);
+
+  const availableCategories = useMemo(() => {
+    if (!activeData) return [];
+    return [...new Set(
+      [...activeData.inventory, ...activeData.reagents]
+        .map(item => item.category)
+        .filter((category): category is string => Boolean(category))
+    )].sort();
+  }, [activeData]);
 
   const subjectItems = activeData
     ? [
@@ -148,6 +163,8 @@ export default function App() {
     setActiveWorkspace("learning");
     setRequestedWorkspace(null);
     setSearch("");
+    setItemTypeFilter("all");
+    setCategoryFilter("all");
     setTaskSearch("");
     setSelectedItem(null);
     setSelectedTaskId(null);
@@ -164,6 +181,8 @@ export default function App() {
     setActiveWorkspace(requestedWorkspace ?? "learning");
     setRequestedWorkspace(null);
     setSearch("");
+    setItemTypeFilter("all");
+    setCategoryFilter("all");
     setTaskSearch("");
     setSelectedItem(null);
     setSelectedTaskId(null);
@@ -336,6 +355,28 @@ export default function App() {
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder="Search instrument, apparatus, chemical..."
                 />
+                <div className="inventory-filters">
+                  <label>
+                    <span>ITEM TYPE</span>
+                    <select value={itemTypeFilter} onChange={(event) => setItemTypeFilter(event.target.value)}>
+                      <option value="all">All types</option>
+                      <option value="apparatus">Apparatus</option>
+                      <option value="reagent">Chemicals / reagents</option>
+                      <option value="specimen">Specimens</option>
+                      <option value="slide">Permanent slides</option>
+                      <option value="visual_aid">Visual aids</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>CATEGORY</span>
+                    <select value={categoryFilter} onChange={(event) => setCategoryFilter(event.target.value)}>
+                      <option value="all">All categories</option>
+                      {availableCategories.map(category => (
+                        <option key={category} value={category}>{category.replaceAll("_", " ")}</option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
                 <div className="item-list">
                   {items.map((item) => (
                     <button
@@ -394,6 +435,11 @@ export default function App() {
             </div>}
 
             {activeWorkspace === "learning" && <section className="panel practical-panel">
+              <div className="eyebrow">TASK / SOURCE COVERAGE</div>
+              <div className="coverage-note">
+                <strong>{inventoryData.traceabilityCoverage[activeSubject].tasksWithSourceItemLinks}/{inventoryData.traceabilityCoverage[activeSubject].taskCount} tasks linked</strong>
+                <span>{inventoryData.traceabilityCoverage[activeSubject].tasksWithoutSourceItemLinks} unmatched tasks · {inventoryData.traceabilityCoverage[activeSubject].unresolvedSourceItemIds} unresolved item IDs</span>
+              </div>
               <div className="panel-head">
                 <div><div className="eyebrow">RBSE CLASS 11–12</div><h2>Practical catalogue</h2></div>
                 <strong>{tasks.length} tasks</strong>
