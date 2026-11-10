@@ -79,13 +79,34 @@ The following eight current-upload detail pages were also rendered and visually 
 | 56 | Claw Hammer with Handle | 68 / 63 | Forged steel-iron head; wooden handle; 270 mm; 250 g; quantity 1 | Impact tool; digital-only |
 | 65 | Laboratory Thermometer | 79 / 74 | Glass; alcohol-filled; -10 °C to 110 °C; 1 °C graduations; plastic cover and sponge ends; quantity 3 | Fragile; explicitly alcohol-filled, not mercury-filled |
 
-The current upload now has **13/175 physical kit-item detail pages** visually checked (14 pages including the Document Development Team credits page). The item-level audit remains partial; the remaining 162 item detail pages are not visually verified by this work unit.
+The current upload now has **25/175 physical kit-item detail pages** visually checked (26 pages including the Document Development Team credits page). The item-level audit remains partial; the remaining 162 item detail pages are not visually verified by this work unit.
+
+### Additional glassware detail-page checks — batch 3
+
+The following twelve current-upload detail pages were rendered and visually compared against the existing catalogue:
+
+| Index row | Item | PDF page / printed page | Visually confirmed source detail |
+|---:|---|---:|---|
+| 4 | Capillary Tubes | 13 / 8 | Soda glass; 1.5 mm diameter; 100 mm length; one packet |
+| 5 | Glass Pipette | 14 / 9 | Transparent graduated borosilicate; capacities 1 mL and 10 mL; 2 each |
+| 6 | Cavity Slide | 15 / 10 | Clear high-transmissive borosilicate; 75 × 25 × 1 mm; 12 pieces |
+| 43 | Glass Dropper with Rubber Bulb | 55 / 50 | Borosilicate glass and natural-rubber bulb; 100 mm overall; 20 mm capillary; 6 mm diameter; quantity 10 |
+| 57 | Test Tube | 69 / 64 | Graduated transparent borosilicate; 15 mm diameter; 125 mm including rim; 15 mL volume; quantity 12 |
+| 60 | Cover Slips | 72 / 67 | Clear high-transmissive borosilicate; 18 × 18 mm; 0.3 mm thick; 2 packets of 20 |
+| 61 | Glass Rod | 73 / 68 | Clear high-transmissive borosilicate; 150 mm length; 7 mm diameter; quantity 2 |
+| 62 | Glass Tube | 74 / 69 | Soda glass; 150 mm length; 6 mm outer / 4 mm inner diameter; one packet of 6 |
+| 63 | Watch Glass | 75 / 70 | Soda glass; 50 mm diameter; 1.7 mm thick; quantity 2 |
+| 69 | Conical Flask | 83 / 78 | Graduated borosilicate; 100 mL capacity; 105 mm height; quantity 2 |
+| 70 | Boiling Tube | 84 / 79 | Graduated borosilicate; 150 mm including rim; 25 mm inner diameter; 60 mL volume; quantity 2 |
+| 73 | Glass Slide | 87 / 82 | Clear high-transmissive borosilicate; 75 × 25 × 1 mm; 2 packs of 50 (100 slides total) |
+
+The watch glass remains fragile and must not be heated; the NCERT Biology manual separately states that a watch glass should never be heated. Test-tube and glass-slide source quantities are preserved exactly in React inventory details. This current upload now has **25/175 physical item detail pages** visually checked, plus one non-item credits page (26 checked pages total); the other 150 physical item detail pages remain unaudited.
 
 ## 4. What is and is not verified
 
-**Visually confirmed in this current upload:** cover identity, complete index row names/printed page references across PDF pages 2–5, fourteen listed detail/credits pages, and the source-specific asbestos statement.
+**Visually confirmed in this current upload:** cover identity, complete index row names/printed page references across PDF pages 2–5, twenty-six listed detail/credits pages, and the source-specific asbestos statement.
 
-**Not completed by this bounded audit:** visual re-inspection of the remaining 162 of 175 item detail pages, full OCR comparison of every dimension/material/quantity, independent NCERT official-byte authentication, procurement/current-stock status, copyright permission, Biology subject-expert approval, and validation of biological specimen/slide labels.
+**Not completed by this bounded audit:** visual re-inspection of the remaining 150 of 175 item detail pages, full OCR comparison of every dimension/material/quantity, independent NCERT official-byte authentication, procurement/current-stock status, copyright permission, Biology subject-expert approval, and validation of biological specimen/slide labels.
 
 The pre-existing 177-row catalogue has not been silently promoted to full page verification. For every row, the new `detail_visual_audit_status` says either that it was checked in this upload or that its detail page was not visually checked in this pass. Index confirmation is separate from detail specification confirmation.
 
