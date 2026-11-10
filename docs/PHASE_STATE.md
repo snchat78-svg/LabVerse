@@ -1623,3 +1623,11 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Static Dashboard browser smoke PASS: 9/9 desktop/mobile groups. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
 - Initial run exposed a test-counter defect only: the token `NOT_CREATED` occurs in both geometry and regression-test columns (two per row). Assertion was narrowed to the geometry field; corrected rerun passed. The first failed run is not counted as a pass.
 - Current phase remains Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No phase exit criteria waived.
+
+
+## Final validation — multiline-safe item traceability CSV (2026-11-10)
+
+- Replaced the traceability CSV line-split test with a quoted-field-aware parser after detecting a valid embedded newline in one item-source detail. It now validates logical CSV records and all 25 columns without corrupting multiline source text.
+- Latest source/catalogue CI PASS: 516 logical CSV records (1 header + 515 item rows), 25 columns, Physics 105 / Chemistry 177 / Biology 233, all item IDs resolve to the correct catalogue, unique trace IDs, asset geometry NOT_CREATED, model NOT_VALIDATED and no hardware control. Existing archive/mapping/Biology queue/schema checks also PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487693.
+- Latest static Dashboard browser smoke PASS: 9/9 desktop/mobile groups. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537.
+- Phase gate unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.

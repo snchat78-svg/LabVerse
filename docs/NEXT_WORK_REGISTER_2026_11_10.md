@@ -234,7 +234,7 @@ The practical-to-inventory mapping and bulk-add workbench flow already exist. Do
 - 287 item rows have existing task links from the RBSE task read model: Physics 95, Chemistry 45, Biology 147.
 - Added proposed asset IDs and explicitly unimplemented/unapproved status for geometry, original/licensed visual representation, experiment-specific interaction, scientific model, model validation and regression testing.
 - Added a CI validator and detailed report: `docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md`.
-- Verification: 515-row traceability validation, source archive/mapping/Biology detail queue and schema checks PASS; static Dashboard desktop/mobile smoke 9/9 PASS. Runs: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238775 and https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
+- Verification: multiline-safe traceability CSV validation (516 logical records / 25 columns / 515 data rows), source archive/mapping/Biology detail queue and schema checks PASS; static Dashboard desktop/mobile smoke 9/9 PASS. Latest runs: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487693 and https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537.
 
 ### Remaining / immediate next
 - The Biology-with-microscope Kit Box page 9 audit remains blocked by internal binary retrieval. Resume queue order 1 when prior bytes or a legitimate official payload becomes accessible; do not ask for repeat upload.

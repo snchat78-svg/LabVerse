@@ -549,3 +549,10 @@ The previously submitted Biology-with-microscope source remains fingerprinted an
 - Static Dashboard desktop/mobile smoke: **9/9 groups PASS** on the same commit. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765238757.
 - First validation attempt had one over-count assertion because `NOT_CREATED` appears in two status columns per row; corrected the assertion to target only the geometry field and reran. Only the corrected successful run is accepted.
 - Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+
+
+## Final CI rerun — multiline-safe traceability CSV parser (2026-11-10)
+
+- The item-to-asset/model/test register validator now parses quoted CSV fields correctly, including embedded commas and newlines, and asserts 516 logical records (header + 515 item rows) and 25 columns per record.
+- Corrected dashboard integrity run on commit `3b1486270a69fddd59024bc65e466de291986e23`: **PASS**. It validated all 515 item rows, source IDs, subject counts, blocked/virtual-only state fields and existing archive/queue/schema checks. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487693.
+- Static Dashboard desktop/mobile browser smoke on the same commit: **9/9 PASS**. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537.

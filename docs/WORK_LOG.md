@@ -716,3 +716,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Replaced line-splitting and positional comma splitting with a quoted-field-aware CSV parser in `dashboard/tests/validate-catalogue.mjs`.
 - The new check asserts 516 logical records including the header, 25 columns for every row, correct subject counts, item IDs resolving to the matching subject inventory, unique traceability keys and candidate-only / NOT_CREATED / NOT_VALIDATED / virtual-only state boundaries.
 - Previous catalogue/source-integrity run and static Dashboard browser run already passed; the strengthened logical-record parser is now awaiting its own CI rerun.
+
+
+## 2026-11-10 — Final multiline-safe traceability CI PASS
+
+- Latest integrity run after parser hardening: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487693 — **success**.
+- The validator parses CSV quoting correctly, including embedded newlines and commas. It confirms 516 logical records (header + 515 items), all rows with 25 columns, expected subject counts, unique traceability IDs, valid source item references, candidate-only state and no 3D asset/model/live-hardware approval.
+- The same run revalidated the existing PDF registry, 171-task mapping, Biology 177-row index + 25 page-detail audit, 150-item remaining queue and JSON schema.
+- Static Dashboard browser smoke: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537 — **9/9 groups pass** across desktop/mobile.
+- **Current main phase remains:** Phase 1 / Phase 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No phase skipped.
