@@ -583,3 +583,10 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - The audit remains scoped to uploaded SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`; it does not authenticate the copy to NCERT or verify kit stock/calibration/safety for real use.
 - Rechecked NCERT's official specification index and four attachment links. Response sizes: MSCL 19,808,858; Biology with microscope 59,585,913; Biology without microscope 63,918,957; Physics 42,539,010 bytes. Actual official PDFs did not download and no official hashes were obtained. The later MSCL user-upload variant has only a size match; the Biology-with-microscope variants differ by 35,057 bytes. Details are in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md`.
 - Phase gate unchanged: Phase 1 / Phase 1.1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED. Next source closure remains Biology-with-microscope internal recovery/queue and official procurement-byte authentication; do not request repeat uploads.
+
+## Final NCERT attachment metadata CI — 2026-11-10
+
+- Official-size evidence register and full 53/53 MSCL audit both pass source/catalogue validation: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434.
+- Desktop/mobile browser smoke: 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
+- Register records only official NCERT link response sizes; actual attachments and official SHA-256 values remain unavailable. The MSCL equality is a size match only; no PDF copy was promoted to official authentication.
+- The current phase gate remains unchanged: Phase 1 / 1.1 in progress; Phase 2 scientific engines blocked.
