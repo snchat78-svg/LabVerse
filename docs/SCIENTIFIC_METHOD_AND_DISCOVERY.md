@@ -51,3 +51,12 @@ A researcher/teacher must review protocol safety and scientific claims. Hazardou
 ## Public claims
 
 Reports should distinguish “simulated in LabVerse”, “observed in a dataset”, “reported by a source”, “replicated in a real experiment” and “independently reviewed”. Never present a model output as a laboratory result that did not occur.
+
+
+## Element and discovery-specific integrity rules
+
+A chemical element is identified by proton number (atomic number Z). Ordinary chemical reactions can create compounds/materials but do not change the proton count of nuclei. A new-element claim belongs to nuclear science and requires experimental evidence and formal external evaluation, not an in-app mixing action or a visual animation.
+
+For new-element work, LabVerse may teach nuclear identity, check sourced conservation balances, inspect permitted datasets, compare decay-event candidates and prepare an evidence dossier. It must keep model predictions, simulated events, imported detector data, reproduced evidence, independent review and formal IUPAC/IUPAP recognition distinct. A virtual event is never a measured detector event. A limited literature search cannot establish global novelty. The app must not mark any candidate as a formally recognised element.
+
+The detailed proposed boundaries, records, source candidates and phase mapping are in `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md`.
