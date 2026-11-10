@@ -41,3 +41,14 @@ The earlier third-party 141-page Biology kit manual transcript is a different so
 Phase 1.1 remains IN PROGRESS. See docs/PHASE_1_1_UPLOADED_PDF_ANALYSIS.md for cross-file counts, upload status and Phase 1 exit blockers.
 
 **Consolidated task-gap register:** `docs/PHASE_1_1_BIOLOGY_TASK_LEVEL_GAP_REGISTER.md` and `data/catalogues/biology_task_level_gap_register.csv`. The consolidated register retains the original unresolved gap, evidence, safety, rights and review state for all 50 XI/XII task records; all candidate item IDs resolve to the 177-row uploaded-source index, but this does not authenticate or expert-verify the source.
+## Current upload index and safety-page audit — 2026-11-10
+
+See `docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_INDEX_AUDIT_2026_11_10.md` and `data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv`.
+
+- Current upload `SSBK_with_Microscope_222.pdf`: SHA-256 `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`; 59,620,970 bytes; 199 pages.
+- PDF index pages 2–5 visually reconciled with the 177-row catalogue: 1–66, 67–111, 112–155, 156–177. Indices are contiguous/unique; no missing required label or page field.
+- Five kit item detail pages plus the non-kit credits page were visually inspected: Spirit Lamp (PDF p.26), Scalpel (p.53), Dissecting Scissors (p.56), Wire Gauze (p.93), Student Laboratory Microscope (p.198), Document Development Team (p.199).
+- PDF p.93 explicitly says the 55 mm centre of the Wire Gauze is asbestos. Treat this as visually verified; do not implement a usable physical wire gauze asset.
+- PDF p.198 confirms row 176 is a student microscope despite the index heading beginning “Permanent Slide”; classify as MICROSCOPE, not slide. Separate from row 83 Dissecting Microscope.
+- Rows 1 (Kit Manual) and 177 (Document Development Team) are not physical kit assets. The 177 index entries therefore represent 175 kit item records.
+- This does not mean all 175 item detail pages were verified. Index confirmation and item-detail page evidence remain separate. The current audit has only selectively verified item detail pages; current official NCERT byte equality and expert/procurement status remain open.
