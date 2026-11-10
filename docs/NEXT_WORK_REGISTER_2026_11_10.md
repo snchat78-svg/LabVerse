@@ -24,9 +24,9 @@
 
 ### Dashboard validation track
 
-- Added a Playwright Chromium smoke suite for desktop and mobile subject navigation, search, tap/drag bench interaction, Chemistry and Biology reagent-status boundaries and the Biology Class XI filter.
-- First browser attempt stopped before tests: Playwright 1.56.1 did not support the GitHub runner's new Ubuntu 26.04 image. CI was pinned to Ubuntu 24.04; the rerun is pending.
-- Dashboard source/catalogue/schema workflow passed on commit `c0b928431621a7b6c9c7b7f7dc25ee87c3accd04`. Browser smoke must not be called PASS until its own run completes successfully.
+- Playwright Chromium desktop/mobile smoke suite passed **9/9 groups** on commit `28f8452d1409b086e0a0c80244a7e4874aafaf`: dashboard overview/counts; Physics search/tap/reset; HTML5 drag/drop; practical-to-inventory navigation; candidate setup placeholder; Fortin barometer gap; Chemistry reagent boundary; Biology chemical/class/open-project boundary; mobile navigation.
+- Inventory/source-registry/schema integrity workflow also passed on the same commit. Browser run: https://github.com/snchat78-svg/LabVerse/actions/runs/42747870645. Data checks: https://github.com/snchat78-svg/LabVerse/actions/runs/42747870414.
+- Practical-source coverage: 169/171 task records have candidate item links. Physics 79/80; Chemistry 41/41; Biology 49/50. All 287 subject-distinct mapped source-item IDs resolve; 0 unresolved IDs. Explicit unmatched tasks are Fortin barometer (not in current 106-row Physics manual register) and the open-ended Biology teacher-assigned investigatory project (no fixed apparatus list).
 
 ## Repository phase status
 
@@ -46,7 +46,7 @@
 | SRC-03 | Reconcile current MSCL procurement PDF/BOQ and reagent supply status | MSCL_copy candidate hash + 55-row index; historical 124 reagent labels | Continue from current candidate and old registers; exact official revision/BOQ and supply/formulation details remain a source gap |
 | SRC-04 | Finish Biology 177-row page/visual audit and map the manual | 177-row catalogue, 50 task IDs, manual 60 exercises | Audit index-only visual cards/slides/specimens page by page; preserve provenance and taxonomy review |
 | SRC-05 | Finish source-to-asset/model/test traceability for all subjects | 171 task-index rows across six packs | Resolve every remaining apparatus, sample, reagent, measurement and evidence gap; keep design-only status |
-| UI-01 | Complete desktop/mobile Chromium smoke | Playwright test and Ubuntu 24.04 workflow created; rerun pending | Inspect workflow result and fix any real UI failure |
+| UI-01 | Complete desktop/mobile Chromium smoke | 9/9 Playwright Chromium groups pass on commit `28f8452d1409b086e0a0c80244a7e4874aafaf` | DONE — maintain regression workflow on dashboard changes |
 | UI-02 | Publish live free dashboard | GitHub Pages workflow and setup guide exist; Pages is not enabled yet | One-time repository Settings → Pages → Source GitHub Actions, then run deploy workflow |
 | UI-03 | Build real 3D workbench | Current bench uses 2D placeholders | Start real asset scene only after dashboard smoke and asset data contract are stable |
 | SCI-01 | Implement validated Physics/Chemistry/Biology scientific engines | Models/rules not implemented | Keep Phase 1 and scientific evidence gates; do not produce simulated results from unreviewed entries |
@@ -58,4 +58,20 @@ GitHub now contains the PDF source register, hashes, extracted catalogues and ev
 
 ## Next single action
 
-Complete the Ubuntu 24.04 Chromium smoke workflow. Only after its result is inspected should the next Dashboard implementation task be selected.
+Start the production React/TypeScript/Vite codebase foundation (Phase 3) and migrate the tested three-subject Dashboard into it. Preserve the static preview, PDF source registry, no-repeat rules, candidate evidence labels and browser regression tests.
+
+
+## 2026-11-10 — Practical-to-inventory navigation and candidate setup delivered
+
+### Completed
+- 169/171 subject task rows now have candidate source-item links; all 287 subject-distinct linked item IDs resolve with no broken source IDs.
+- Dashboard task details show candidate links, open them in the inventory tray, disclose the two unmatched task reasons, and offer mapped candidate setup as placeholders.
+- Playwright Chromium smoke: 9/9 groups PASS. Source/inventory/schema checks: PASS.
+- Verified commit: `28f8452d1409b086e0a0c80244a7e4874aafaf` (repository run refs above).
+
+### Remaining / next
+1. **Phase 3:** create production React/TypeScript/Vite app foundation and migrate Dashboard components into it.
+2. **Phase 4:** finish polished Dashboard navigation and responsive subject workspaces after migration.
+3. **Phase 5:** implement real 3D object scene, with original asset manifests/low-poly apparatus instead of placeholder cards.
+4. **Phase 6+:** deterministic action runtime, then separate Chemistry/Physics/Biology validated models.
+5. Continue Phase 1 in parallel: recover prior no-microscope/Physics attachment records internally (never re-upload request), finish Biology visual/manual audit, MSCL current procurement/BOM, rights/safety/expert reviews.
