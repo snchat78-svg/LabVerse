@@ -51,8 +51,11 @@ type CatalogueItem = {
 
 function statusLabel(item: CatalogueItem): string {
   const combined = `${item.status} ${item.evidence ?? ""}`.toLowerCase();
-  if (item.type === "reagent" || combined.includes("no_live_use") || combined.includes("not_supplied_with_kit")) {
-    return "Reference only / safety review";
+  if (combined.includes("not_supplied_with_kit")) {
+    return "School-managed reference / not supplied with kit";
+  }
+  if (item.type === "reagent" || combined.includes("no_live_use")) {
+    return "Reference only / no live use";
   }
   if (
     combined.includes("candidate") ||
@@ -276,7 +279,8 @@ export default function App() {
                       <dt>Record ID</dt><dd>{selectedItem.id}</dd>
                       <dt>Source</dt><dd>{selectedItem.source}</dd>
                       <dt>Evidence</dt><dd>{selectedItem.evidence ?? "Not recorded"}</dd>
-                      <dt>Status</dt><dd>{selectedItem.status}</dd>
+                      <dt>Display status</dt><dd>{statusLabel(selectedItem)}</dd>
+                      <dt>Source status</dt><dd>{selectedItem.status}</dd>
                       {selectedItem.quantity && <><dt>Source quantity</dt><dd>{selectedItem.quantity}</dd></>}
                     </dl>
                     <p className="warning">Catalogue information only. It does not establish current supplied stock, physical-use permission or scientific validation.</p>
