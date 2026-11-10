@@ -15,8 +15,9 @@ Machine-readable file: `data/catalogues/rbse_chemistry_task_reagent_evidence_mat
 - RBSE XI Chemistry records: 27.
 - RBSE XII Chemistry task/choice records: 14.
 - Total unique task IDs: 41.
-- Task rows with at least one explicitly reviewed candidate manual reagent/body reference: 17.
-- Task rows without an exact reagent-label mapping assigned: 24.
+- Task rows with one or more input-reagent candidate IDs: 16 (24 unique candidate IDs).
+- One additional task has a separate product/output reference only (Acetanilide in OPT-03); it is not an input-reagent link.
+- Task rows with no input-reagent candidate ID: 24.
 - Every task remains marked `NOT_ESTABLISHED_BY_MANUAL_OR_ITEM_INDEX` for current supply and `NOT_RETRIEVED_OR_AUTHENTICATED` for current official BOM.
 
 | Mapping basis | Task rows |
@@ -25,7 +26,8 @@ Machine-readable file: `data/catalogues/rbse_chemistry_task_reagent_evidence_mat
 | EXACT_LABEL_IN_TASK_TITLE | 5 |
 | EXACT_OR_FORMULATION_VARIANT | 2 |
 | NUMBERED_LABEL_PLUS_MANUAL_BODY_REFERENCE | 2 |
-| PARTIAL_EXACT_LABEL_COVERAGE | 2 |
+| PARTIAL_EXACT_LABEL_COVERAGE | 1 |
+| PRODUCT_OUTPUT_REFERENCE_ONLY; INPUT_REAGENTS_NOT_ESTABLISHED | 1 |
 | EXACT_LABEL_WITH_ACID_VARIANTS | 1 |
 | NUMBERED_LABEL_PLUS_AMBIGUOUS_MANUAL_REFERENCE | 1 |
 | EXACT_LABEL_DUPLICATE_PRESERVED | 1 |
@@ -33,12 +35,12 @@ Machine-readable file: `data/catalogues/rbse_chemistry_task_reagent_evidence_mat
 | PARTIAL_COMBINED_LABEL | 1 |
 | ELECTROLYTE_LABELS_PLUS_MATERIAL_CANDIDATES | 1 |
 
-The candidate map intentionally leaves some compounds unmatched. Examples:
+The candidate map intentionally leaves some compounds unmatched. The original whole-document lexical screen also produced false role/scope hits; these are preserved but not used as task input-reagent links. Examples:
 - RBSE potassium permanganate is separately referenced in the 2018 manual's experiment text but is not a numbered reagent label.
 - Potassium iodide appears in experiment/appendix text while numbered row 56 is “Iodine solution”; equivalence/formulation is not assumed.
 - The manual has a combined “Chloroform/Carbon tetrachloride” row; the RBSE Chloroform + acetone task does not permit silently choosing a formulation.
 - Mohr's salt is kept as a candidate alias for ferrous ammonium sulphate, but potash alum and potassium trioxalatoferrate are not inferred from other aluminium/iron entries.
-- Acetanilide is mapped by exact name; dibenzalacetone, p-nitroacetanilide and aniline yellow are not assigned an equivalent numbered row.
+- Acetanilide is a named target product in RBSE XII practical p.139, not an input reagent; it is held in the separate `candidate_manual_product_or_output_reference_ids` field. Dibenzalacetone, p-nitroacetanilide and aniline yellow remain distinct target products, not inferred input materials.
 - In the electrochemistry task, copper sulphate and zinc sulphate are candidate electrolyte labels; zinc granules and copper turnings are only material candidates, not specified electrodes.
 
 ## 3. Topic links are not reagent equivalence
@@ -67,5 +69,21 @@ The 2018 manual is not the current procurement attachment. The user's uploaded M
 - [ ] Obtain official current MSCL specification bytes and exact supplied reagent BOM.
 - [ ] Verify each task's reagents/method against authoritative RBSE/NCERT method sources and qualified Chemistry/Safety review.
 - [ ] Obtain identity-specific current SDS and calibration / waste / exposure validation.
+
+## Task-scope and product/output correction — 2026-11-10
+
+The full RBSE PDFs already supplied by the user were recovered from the Library and pages were inspected directly: Class XI practical pages 123–126 and Class XII practical pages 137–140. Based on that source context:
+
+- The safety screen's 18 preliminary whole-document exact-label hits are not 18 input reagents. Six were excluded from task-reagent mapping: Alcohol and Phenol are group names in “Alcoholic/Phenolic”; Ammonium sulphate is a substring inside “ferrous ammonium sulphate” and a separate identity; Acetanilide is a named product; Aniline is part of the product name Aniline yellow; Starch occurs in other syllabus sections, not the Class XII practical task page.
+- The safety screen now retains a 19-column task-scope disposition and note on every one of the 126 records. The preliminary raw lexical match and ID were not deleted.
+- The matrix now has 23 columns and a separate `candidate_manual_product_or_output_reference_ids` field. For `RBSE-XII-CHEM-OPT-03`, `MSCL-MAN-REAG-005=Acetanilide` is an output/product reference; it is removed from the input-reagent candidate field. Input starting materials for the organic preparation remain not established.
+- Current task-scoped reconciliation: 41 tasks / 24 columns; 12 tasks have task-section text candidates plus matrix candidates; 4 have matrix-only contextual/species candidates; 24 have no candidate link in either input-reagent track (not proof of reagent-free); 1 has product/output reference only. In the 12 dual-track tasks, five have aligned record IDs and seven have extra contextual/formulation IDs in the matrix.
+- Corrected report and machine-readable file: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md` and `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`.
+
+## Final task-scoped CI — 2026-11-10
+
+- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733.
+- Desktop/mobile Chromium browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
+- This validates source-to-matrix links, role separation and fail-closed status integrity only. It does not authenticate the current reagent BOM, provide SDS approval, validate methods or implement a Chemistry solver.
 
 **Decision:** this task-level documentary matrix is DONE as an evidence-gap register only. Phase 1 / Phase 1.1 remain IN PROGRESS; Phase 2 remains BLOCKED. No scientific solver, executable Chemistry model, 3D asset, app code or software test was implemented/run in this work unit.
