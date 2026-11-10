@@ -56,3 +56,10 @@ Phase 1 / Phase 1.1 remain IN PROGRESS. Phase 2 scientific models/results remain
 - Retried the corresponding direct PDF hostname on `ncert.gov.in` (as well as the already registered `ncert.nic.in` and `www.ncert.nic.in` routes). Web retrieval reported the PDF URL inaccessible; direct container DNS lookup for `ncert.gov.in` failed with `Could not resolve host`.
 - These retries do not authenticate or invalidate the retained user-upload fingerprint and do not establish that the earlier upload was absent.
 - Keep the queue order 1 / Kit Box / PDF page 9 pending; do not request a repeat upload and do not promote OCR/index-only values into visual confirmation.
+
+
+## Additional Library recheck — 2026-11-10
+
+- A fresh recursive Library PDF listing surfaced eight PDFs. None matched the registered 59,620,970-byte Biology-with-microscope original; the registered filename and subject/kit terms also returned no semantic-search result.
+- Preserve the known source receipt, SHA-256, 177-row catalogue and 150-row detail queue. The current Library index may be incomplete or omit the object; this observation is not evidence the user never submitted it.
+- No pending detail page is visually verified from index/OCR alone. Keep queue order 1 / Kit Box / page 9 pending and do not request a repeat upload.
