@@ -136,6 +136,8 @@
   }
   function renderTasks(){
     const d=state.data.subjects[state.subject];
+    const coverage=state.data.traceabilityCoverage?.[state.subject];
+    if(coverage)$("#traceability-note").textContent=coverage.tasksWithSourceItemLinks+"/"+coverage.taskCount+" tasks have candidate source-item links; "+coverage.tasksWithoutSourceItemLinks+" remain without a source-item match.";
     const tasks=d.tasks.filter(t=>{
       const q=state.taskQuery.toLowerCase();
       return (state.classFilter==="ALL"||t.class===state.classFilter)&&(!q||[t.title,t.id,t.group].join(" ").toLowerCase().includes(q));
@@ -144,7 +146,8 @@
     $("#task-list").innerHTML=tasks.map(t=>{
       const count=(t.sourceItemIds||[]).length;
       const linkText=count?count+" candidate source item link"+(count===1?"":"s"):"No source-item link recorded";
-      return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div><button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button></article>';
+      const gap=t.mappingGap?'<div class="task-mapping-gap">'+esc(t.mappingGap)+'</div>':"";
+      return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div>'+gap+'<button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button></article>';
     }).join("")||'<div class="panel-note">No tasks match this filter.</div>';
     $$("[data-task]").forEach(b=>b.addEventListener("click",()=>{
       const t=d.tasks.find(x=>x.id===b.dataset.task);if(!t)return;
@@ -154,8 +157,8 @@
         return item?'<button type="button" class="source-link-button" data-focus-source="'+esc(id)+'"><span>'+esc(item.name)+'</span><small>'+esc(id)+'</small></button>':'<span class="source-link-missing">'+esc(id)+' · not found in subject catalogue</span>';
       }).join("");
       $("#analysis-title").textContent=t.title;
-      $("#analysis-copy").textContent="Task-index record only. The links below open candidate source catalogue items; they do not establish verified procurement equivalence or an executable practical. Implementation status: "+t.status+".";
-      $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div><div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>';
+      $("#analysis-copy").textContent="Task-index record only. "+(ids.length?"The links below open candidate source catalogue items; they do not establish verified procurement equivalence.":(t.mappingGap||"No candidate source-item links are available."))+" Implementation status: "+t.status+". This is not a verified executable practical.";
+      $("#selected-details").innerHTML='<span class="detail-label">PRACTICAL RECORD</span><strong>'+esc(t.id)+'</strong><div class="detail-row"><span>Class</span><span>'+esc(t.class)+'</span></div><div class="detail-row"><span>Subject</span><span>'+esc(t.subject)+'</span></div><div class="detail-row"><span>Source pages</span><span>'+esc(t.sourcePages)+'</span></div><div class="detail-row"><span>Implementation</span><span>'+esc(t.status)+'</span></div><div class="detail-row"><span>Candidate source links</span><span>'+ids.length+'</span></div>'+(t.mappingGap?'<div class="task-mapping-gap">'+esc(t.mappingGap)+'</div>':'')+'<div class="source-link-list">'+(linked||'<span class="source-link-missing">No candidate source-item links recorded for this task.</span>')+'</div>';
       $$("[data-focus-source]").forEach(link=>link.addEventListener("click",()=>focusSourceItem(link.dataset.focusSource)));
       showToast(ids.length?"Practical mapping opened; choose a source item to browse":"Practical has no source-item link recorded yet");
     }));
