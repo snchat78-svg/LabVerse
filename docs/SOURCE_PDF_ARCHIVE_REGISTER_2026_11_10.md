@@ -73,3 +73,12 @@ The user supplied three files in the current session. Their bytes were fingerpri
 ### Repository storage boundary
 
 The public GitHub repository stores fingerprints, file/page metadata, the append-only receipt, existing extracted catalogues and source/evidence states. It does not contain the original PDF binaries. This is deliberate: the uploaded NCERT documents contain rights notices, and no redistribution permission has been established. Do not commit these raw PDF bytes into the public repository or change repository visibility as a workaround.
+
+## Biology with-microscope current-upload index audit — 2026-11-10
+
+- Current variant `SSBK_with_Microscope_222.pdf` SHA-256: `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`; prior `SSBK_with_Microscope_copy.pdf` SHA-256 remains `c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2`. Both variants are retained; byte count and page count match but hash does not.
+- Current variant cover and index pages 2–5 were visually inspected. All 177 catalogue index numbers are present in sequence and the visual audit CSV records each index page.
+- Selective detail-page review confirms Spirit Lamp (PDF p.26), Scalpel (p.53), Dissecting Scissors (p.56), Wire Gauze (p.93), Student Laboratory Microscope (p.198) and credits page (p.199).
+- Wire Gauze detail expressly identifies asbestos at its centre; preserve the hazard prohibition. Row 176 is a microscope instrument notwithstanding the index's “Permanent Slide” prefix; row 177 is document credits, not an item.
+- This is a selective index/safety audit, not a complete 175-item detail-page verification or an official-byte authentication.
+- Audit outputs: `data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv`, updated `data/catalogues/ncert_biology_with_microscope_spec_items.csv`, and `docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_INDEX_AUDIT_2026_11_10.md`.
