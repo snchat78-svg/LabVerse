@@ -338,3 +338,44 @@ assert.equal(officialSizes.get("BIO_WITH_MICROSCOPE_XI_XII")[14], "SIZE_MISMATCH
 assert.equal(officialSizes.get("BIO_WITHOUT_MICROSCOPE_XI_XII")[14], "PRIOR_UPLOAD_ACKNOWLEDGED_NO_SIZE_COMPARISON");
 assert.equal(officialSizes.get("PHYSICS_KIT_XI_XII")[14], "PRIOR_UPLOAD_ACKNOWLEDGED_NO_SIZE_COMPARISON");
 console.log("NCERT official attachment size recheck: four separate link targets, 15-column evidence register, response-only size metadata and non-authentication boundaries PASS.");
+
+
+const physicsMetrologyAudit = await readFile(
+  new URL("../../data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const physicsMetrologyRows = parseCsvRows(physicsMetrologyAudit);
+assert.equal(physicsMetrologyRows.length, 19, "Physics metrology register must contain one header + 18 instrument records");
+assert.equal(physicsMetrologyRows[0].length, 17, "Physics metrology schema must have 17 columns");
+assert.ok(physicsMetrologyRows.slice(1).every(row => row.length === 17), "all Physics metrology records must preserve 17 columns");
+const expectedPhysicsMetrologyIds = [
+  "NCERT-PHY-KIT-003","NCERT-PHY-KIT-004","NCERT-PHY-KIT-005","NCERT-PHY-KIT-006",
+  "NCERT-PHY-KIT-008","NCERT-PHY-KIT-009","NCERT-PHY-KIT-024","NCERT-PHY-KIT-031",
+  "NCERT-PHY-KIT-038","NCERT-PHY-KIT-053","NCERT-PHY-KIT-071","NCERT-PHY-KIT-072",
+  "NCERT-PHY-KIT-080","NCERT-PHY-KIT-088","NCERT-PHY-KIT-090","NCERT-PHY-KIT-092",
+  "NCERT-PHY-KIT-093","NCERT-PHY-KIT-106"
+];
+assert.deepEqual(physicsMetrologyRows.slice(1).map(row => row[1]), expectedPhysicsMetrologyIds, "Physics metrology records must preserve the selected source order");
+const physicsManualRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_physics_kit_manual_items.csv", import.meta.url),
+  "utf8"
+));
+const physicsManualById = new Map(physicsManualRows.slice(1).map(row => [row[0], row]));
+const physicsMetrologyRecordIds = physicsMetrologyRows.slice(1).map(row => row[0]);
+assert.equal(new Set(physicsMetrologyRecordIds).size, 18, "Physics metrology register IDs must be unique");
+for (const row of physicsMetrologyRows.slice(1)) {
+  const manualRow = physicsManualById.get(row[1]);
+  assert.ok(manualRow, "Physics metrology source item must resolve: " + row[1]);
+  assert.equal(row[2], manualRow[1], "manual row number must match the source catalogue for " + row[1]);
+  assert.equal(row[3], manualRow[2], "instrument name must match the source item label for " + row[1]);
+  assert.equal(row[7], "MANUAL_TEXT_INSPECTED", "manual evidence label must be explicit for " + row[1]);
+  assert.equal(row[8], "NOT_ESTABLISHED_BY_ITEM_SCHEDULE", "procurement spec must not be inferred from manual row for " + row[1]);
+  assert.equal(row[11], "UNKNOWN", "calibration traceability must remain unknown for " + row[1]);
+  assert.equal(row[15], "NOT_IMPLEMENTED_PHASE_8_BLOCKED", "Physics metrology engine must remain blocked for " + row[1]);
+  assert.match(row[16], /No|Do not|Use only|until|must not/i, "result release boundary must be explicit for " + row[1]);
+}
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-080")[6], /COM, VΩmA and 10 A DC terminals/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-088")[6], /500 cm uniform wire/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-106")[6], /1 m scale/);
+assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-024")[6], /250g/);
+console.log("Physics measurement/metrology readiness: 18 source-linked instruments, 17-column schema, calibration/procurement gaps and Phase 8 result blocks PASS.");
