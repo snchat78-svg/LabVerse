@@ -37,7 +37,7 @@ Every phase must record: scope and files changed; evidence and sources used; tes
 
 Phase 0 is complete only as a planning/documentation baseline. It does not mean software, 3D assets, research connectors or scientific engines exist.
 
-## Current execution focus — 2026-11-09
+## Current execution focus — 2026-11-10
 
 - Main phase: Phase 1 — IN PROGRESS.
 - Active subphase: Phase 1.1 — NCERT kit-source authentication, procurement comparison and source-to-task traceability.
@@ -49,8 +49,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Six-pack task index reconciliation: 171/171 unique task IDs across all six RBSE packs; this is index-level integrity, not completion of detailed item/asset/model/test traceability.
 - Phase 1 source authentication and scientific validation remain IN PROGRESS. On 2026-11-09 the user explicitly authorized a parallel, UI-only dashboard track: implement subject navigation, catalogue browsing, source-status display and a non-scientific placeholder workbench without waiting for byte authentication. This does not waive or close any Phase 1 gate.
 - Phase 2 science-domain models, validated rules and result generation remain BLOCKED by Phase 1. The only Phase 2 work allowed in parallel is the dashboard-facing inventory/task read-model contract.
-- Phase 3 dashboard preview scaffold and catalogue CI are PARTIAL; the final React/TypeScript/Vite production foundation is still pending validation.
-- Phase 4 dashboard/navigation is IN PROGRESS. Do not claim real 3D objects, experimental actions, calculated outcomes, or research engine functionality from this preview.
+- Phase 3 React/TypeScript/Vite app foundation is PARTIAL but validated: strict typecheck, production build and 6/6 Chromium browser groups pass. Remaining work is broader codebase and workspace migration.
+- Phase 4 dashboard/navigation is IN PROGRESS. Static dashboard remains the richer preview; React has subject/catalogue/task mapping and candidate-placeholder setup but the four workspace destinations are not yet full workflows. Do not claim real 3D objects, experimental actions, calculated outcomes, or research engine functionality.
 
 ## Phase 1 — current phase
 
@@ -458,7 +458,7 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
   - Biology `RBSE-XII-BIO-PRJ-01`: RBSE makes the investigatory project teacher-assigned and gives no fixed title/apparatus; no topic-specific source-item mapping is claimed until a topic/method is approved.
 - Browser smoke suite passed **9/9 groups** and inventory/schema validation passed on commit `28f8452d1409b086e0a0c80244a7e4874aafaf`.
 - Phase status unchanged: Phase 1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D not yet started.
-- Next production milestone: Phase 3 React/TypeScript/Vite foundation and dashboard migration, retaining the source archive register and existing static preview.
+- Next production milestone: finish React workspace navigation (Learning Lab, Virtual Experiment Lab, Scientific Analysis, Research Studio) and migrate the remaining static dashboard interactions, while retaining the source archive register and tested static preview.
 
 
 ## 2026-11-10 — Phase 3 React application foundation
@@ -470,3 +470,12 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 - Added CI for strict TypeScript typecheck, Vite production build and Chromium browser smoke. Final result: **typecheck PASS, production build PASS, 6/6 browser groups PASS**. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145. Verified app milestone commit: `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
 - Phase status: Phase 3 PARTIAL (app foundation and test gate pass; remaining codebase/workspace migration remains); Phase 4 Dashboard IN PROGRESS; Phase 1 evidence gates remain open; Phase 2 scientific models/results remain BLOCKED; real 3D Phase 5 not started.
 - Next: make Learning Lab / Virtual Experiment Lab / Scientific Analysis / Research Studio navigation functional in React; migrate the remaining static dashboard interactions. Do not start scientific engines from unreviewed candidate data.
+
+
+## React app starter verification — 2026-11-10
+
+- `app/` React/TypeScript/Vite starter passes strict TypeScript typecheck, Vite production build and six Chromium browser smoke groups.
+- Verified CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145; commit `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
+- The app currently has a three-subject overview, XI/XII selector, searchable source inventory, source/evidence/safety details, RBSE practical records, candidate source-item navigation and non-executable placeholder bench setup.
+- Remaining Phase 3/4 work: fully functional four workspace destinations, remaining source filters/unmatched-task explanations and complete migration parity with static dashboard.
+- Real Three.js scene, 3D assets, deterministic experiment runtime and science solvers remain future phases and are not claimed by the React starter.
