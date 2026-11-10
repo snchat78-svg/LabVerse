@@ -48,6 +48,22 @@ assert.match(
   "Do not ask for the without-microscope file again"
 );
 
+
+// Persistent PDF archive and no-repeat policy assertions.
+assert.equal(data.sourceDocuments.length, 9, "nine known source-document records");
+assert.equal(data.sourceDocuments.every(source => source.noRepeatUpload === true), true, "all registered PDFs must be no-repeat");
+const manual13163 = data.sourceDocuments.find(source => source.sourceId === "BIO-MANUAL-13163");
+assert.equal(manual13163.duplicateCopies, 2, "two user manual uploads are tracked");
+assert.equal(manual13163.uniqueByteCopies, 1, "identical copies count as one PDF");
+assert.match(manual13163.sha256, /^[a-f0-9]{64}$/);
+const bioWith = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITH-MICROSCOPE");
+assert.match(bioWith.sha256, /^[a-f0-9]{64}$/);
+const bioWithout = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITHOUT-MICROSCOPE");
+assert.match(bioWithout.status, /PRIOR_USER_UPLOAD_ACKNOWLEDGED/);
+assert.equal(data.sourceArchivePolicy.repositoryContainsOriginalPdfBinaries, false, "archive must state binary storage boundary");
+assert.match(data.sourceArchivePolicy.noRepeatUploadRule, /must not trigger a repeat upload request/);
+console.log("Persistent PDF source archive checks: 9 assertions passed.");
+
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
 console.log("Chemistry: 53 apparatus / 124 historical reagent labels / 41 tasks");
