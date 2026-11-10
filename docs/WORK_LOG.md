@@ -797,3 +797,14 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - The first assertion run failed because four manual-supported detail assertions targeted the source-gap field rather than the manual-supported-role field. The validator was corrected and the second run passed; only the corrected rerun is counted.
 - No calibration certificate, actual measurement, physical device test, quantitative physics solver, 3D asset or experimental result was created or validated.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 measurement contracts BLOCKED; Phase 8 not started. Next: continue internal retrieval of the already supplied Biology-with-microscope source and maintain official procurement/source/safety/expert closure tasks.
+
+## 2026-11-10 — MSCL evidence and safety review queue created
+
+- Re-read the full 53-row MSCL visual detail audit and created a 53-item, 16-column closure queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
+- Added the evidence/safety review protocol and high-consequence boundary notes: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
+- Added validator assertions in `dashboard/tests/validate-catalogue.mjs` (commit `e0553e2e2059fe568aa562cc5631c5df44506cc1`) for schema, exact row-to-source mapping, exact upload fingerprint, verbatim gaps/safety boundaries, controlled review domains, and non-approved states.
+- Queue domain counts are overlapping item assignments: geometry 24, metrology/model validation 20, material/compatibility 19, safety/use boundary 26, procurement/acceptance 25, source clarification 1.
+- **No gap is marked closed.** All 53 rows have owner NOT_ASSIGNED and status OPEN_NOT_REVIEWED_OR_APPROVED. No supplier, qualified reviewer, calibration, safety or expert approval has been presumed.
+- Rechecked internal Library/Conversation search for the previously submitted Biology-with-microscope PDF; no match surfaced. The registered file identity and no-repeat upload policy remain unchanged. Kit Box / page 9 remains the first Biology queue item.
+- Phase gate unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
+- CI validation for the new queue is pending at this log entry; append the final result after GitHub Actions completes.
