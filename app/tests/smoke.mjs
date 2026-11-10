@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 async function main() {
   const browser = await chromium.launch({headless:true});
   const errors = [];
+  const results = [];
   try {
     const page = await browser.newPage({viewport:{width:1440,height:1000}});
     page.on("pageerror", error => errors.push(error.message));
@@ -16,6 +17,7 @@ async function main() {
     assert.match(await page.locator(".hero-row h1").innerText(), /Explore\. Experiment\.[\s\S]*Understand\./);
     assert.match(await page.locator(".stats").innerText(), /171/);
     assert.equal(await page.locator(".subject-card").count(), 3);
+    results.push("React overview and three subjects");
 
     // Physics catalogue search and source detail
     await page.locator(".subject-card.violet").click();
@@ -24,11 +26,13 @@ async function main() {
     await inventorySearch.fill("Vernier caliper");
     await page.getByRole("button", {name:/Vernier caliper/}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /NCERT-PHY-KIT-003|Vernier caliper/);
+    results.push("Physics inventory search and source detail");
 
     // Class filter affects practical count
     await page.locator(".class-select select").selectOption("XI");
     assert.match(await page.locator(".practical-panel .panel-head").innerText(), /41 tasks/);
     assert.equal(await page.locator(".task-list article").count(), 41);
+    results.push("Class XI task filter");
 
     // Practical -> candidate source item -> placeholder bench.
     const vernierTask = page.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-EXP-01"});
@@ -41,6 +45,7 @@ async function main() {
     await page.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
     assert.equal(await page.locator(".bench-item").count(), 2);
     assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
+    results.push("Practical source links and candidate placeholder setup");
 
     // Chemistry catalogue opens from the three-direction overview
     await page.locator(".back-button").click();
@@ -57,6 +62,7 @@ async function main() {
     await page.locator(".content-grid .search").first().fill("Mercury");
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Mercury$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
+    results.push("Chemistry and Biology source/safety details");
 
     // Virtual Experiment Lab: bench is visible, practical catalogue is not.
     await page.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
@@ -101,18 +107,10 @@ async function main() {
     await page.setViewportSize({width:390,height:844});
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     assert.equal(overflow,false,"React app must not overflow horizontally on a 390px viewport");
+    results.push("Mobile layout and no browser errors");
     assert.deepEqual(errors,[],"React app must not emit browser errors");
-    console.log("LabVerse React app browser smoke: 10 groups passed.");
-    console.log("PASS: React overview and three subjects");
-    console.log("PASS: Physics inventory search and source detail");
-    console.log("PASS: XI task filter");
-    console.log("PASS: Practical source links and candidate placeholder bench");
-    console.log("PASS: Chemistry and Biology source/safety details");
-    console.log("PASS: Virtual Experiment Lab candidate workbench");
-    console.log("PASS: Scientific Analysis NOT_MODELLED boundary");
-    console.log("PASS: Research Studio structured local draft");
-    console.log("PASS: Sidebar workspace selection");
-    console.log("PASS: Mobile layout and no browser errors");
+    console.log("LabVerse React app browser smoke: " + results.length + " groups passed.");
+    for (const result of results) console.log("PASS:", result);
   } finally {
     await browser.close();
   }
