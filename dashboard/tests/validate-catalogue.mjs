@@ -379,3 +379,65 @@ assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-088")[5]
 assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-106")[5], /1 m scale/);
 assert.match(physicsMetrologyRows.find(row => row[1] === "NCERT-PHY-KIT-024")[5], /250g/);
 console.log("Physics measurement/metrology readiness: 18 source-linked instruments, 17-column schema, calibration/procurement gaps and Phase 8 result blocks PASS.");
+
+
+// MSCL item-level evidence/safety review queue: exact source traceability and fail-closed states.
+const msclReviewQueueText = await readFile(
+  new URL("../../data/catalogues/mscl_review_gap_queue_2026_11_10.csv", import.meta.url),
+  "utf8"
+);
+const msclReviewRows = parseCsvRows(msclReviewQueueText);
+assert.equal(msclReviewRows.length, 54, "MSCL review queue must contain one header + all 53 physical items");
+assert.equal(msclReviewRows[0].length, 16, "MSCL review queue schema must have 16 columns");
+assert.ok(msclReviewRows.slice(1).every(row => row.length === 16), "all MSCL review queue records must preserve 16 columns");
+assert.deepEqual(
+  msclReviewRows[0],
+  ["source_document","source_sha256","source_authentication_state","source_index_no","source_item_id","item_name","source_pdf_page_range","review_domains","priority","source_evidence_gap","safety_boundary","required_closure_evidence","review_owner","review_status","allowed_current_representation","phase_gate"],
+  "MSCL review queue columns must retain their documented order"
+);
+const msclReviewById = new Map(msclReviewRows.slice(1).map(row => [row[4], row]));
+assert.equal(msclReviewById.size, 53, "MSCL review queue must contain 53 unique source item IDs");
+const allowedReviewDomains = new Set([
+  "DIMENSION_OR_GEOMETRY",
+  "METROLOGY_OR_MODEL_VALIDATION",
+  "MATERIAL_IDENTITY_OR_COMPATIBILITY",
+  "SAFETY_AND_USE_BOUNDARY",
+  "PROCUREMENT_AND_ACCEPTANCE",
+  "SOURCE_SPECIFICATION_CLARIFICATION"
+]);
+for (let index = 0; index < 53; index++) {
+  const source = msclDetailRows[index + 1];
+  const review = msclReviewRows[index + 1];
+  assert.equal(review[4], source[4], "MSCL review queue must preserve source order and ID");
+  assert.equal(review[3], source[3], "MSCL review index must match source audit");
+  assert.equal(review[5], source[5], "MSCL item label must match source audit");
+  assert.equal(review[6], source[6], "MSCL page reference must match source audit");
+  assert.equal(review[0], source[0]);
+  assert.equal(review[1], source[1], "MSCL review row must keep exact source fingerprint");
+  assert.equal(review[2], "USER_UPLOADED_UNAUTHENTICATED", "review queue must not imply official source authentication");
+  assert.equal(review[9], source[11], "source evidence gap must remain verbatim");
+  assert.equal(review[10], source[12], "safety boundary must remain verbatim");
+  assert.equal(review[12], "NOT_ASSIGNED", "no reviewer/owner may be invented");
+  assert.equal(review[13], "OPEN_NOT_REVIEWED_OR_APPROVED", "queue must remain fail-closed until independent review");
+  assert.match(review[14], /NOT_APPROVED_FOR_PHYSICAL_USE_OR_AUTHENTIC_MODEL/);
+  assert.match(review[15], /PHASE_1_1_OPEN.*PHASE_2_AND_PHASE_5_REMAIN_BLOCKED/);
+  const domains = review[7].split(";");
+  assert.ok(domains.length > 0 && domains.every(domain => allowedReviewDomains.has(domain)), "review domains must use the controlled vocabulary");
+  assert.ok(review[11].length > 30, "each queue row must define closure evidence");
+}
+for (const [id, pattern] of [
+  ["NCERT-MSCL-SPEC-004", /NEEDS_TECHNICAL_REVIEW/],
+  ["NCERT-MSCL-SPEC-015", /NEEDS_TECHNICAL_REVIEW/],
+  ["NCERT-MSCL-SPEC-032", /NEEDS_DIMENSION_REVIEW/],
+  ["NCERT-MSCL-SPEC-033", /NEEDS_GEOMETRY_REVIEW/],
+  ["NCERT-MSCL-SPEC-034", /ASBESTOS HAZARD/],
+  ["NCERT-MSCL-SPEC-022", /OPEN-FLAME HAZARD/],
+  ["NCERT-MSCL-SPEC-024", /MERCURY.*TOXICITY HAZARD/],
+  ["NCERT-MSCL-SPEC-052", /GAS-GENERATION ASSEMBLY/]
+]) {
+  const row = msclReviewById.get(id);
+  assert.ok(row, "critical MSCL review item must be present: " + id);
+  assert.match(row[10], pattern, "critical source safety/technical boundary must persist: " + id);
+  assert.notEqual(row[13], "APPROVED", "critical items cannot be auto-approved");
+}
+console.log("MSCL evidence/safety review queue: 53 source-linked rows, 16 columns, verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
