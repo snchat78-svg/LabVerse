@@ -1,5 +1,5 @@
 import { chromium } from "playwright";
-const assert = require("node:assert/strict");
+import assert from "node:assert/strict";
 
 async function main() {
   const browser = await chromium.launch({ headless: true });
