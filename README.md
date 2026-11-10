@@ -30,8 +30,16 @@ The long-term goal is to let learners and researchers explore scientific questio
 - Phase 0: DONE — planning/documentation baseline only.
 - Main source-audit phase: Phase 1 — IN PROGRESS.
 - User-authorized dashboard track: three-subject inventory dashboard includes practical-to-source item navigation and candidate setup placeholders; desktop/mobile browser smoke passes 9/9 groups.
-- Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
+- React/TypeScript/Vite app foundation: IMPLEMENTED and CI-validated as a starter. Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
 - Phase 1 authentication, safety and expert-review gates remain open; the dashboard shell is allowed to progress in parallel without promoting candidate records.
+
+## React app foundation
+
+- [React/TypeScript/Vite application](app/)
+- [React app architecture and current test boundary](app/README.md)
+- [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145)
+
+The React app now passes strict typecheck, production build and 6/6 Chromium smoke groups. The static dashboard remains the richer preview until all four workspaces and remaining interactions are migrated.
 
 ## Dashboard preview
 
