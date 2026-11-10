@@ -738,3 +738,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Validation boundary:** GitHub file writes/read-back are the verification performed for this documentation unit. No code changes, app build, API call against ENSDF, dataset ingestion, nuclear calculation or scientific model test was run.
 - **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science models remain BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
 - **Next:** resume the first Biology detail audit queue item when the already-submitted binary or a legitimate official primary payload is accessible; otherwise continue remaining Phase 1.1 Physics/MSCL/Biology source, rights, safety and subject-expert closure work.
+
+## 2026-11-10 — Research discovery capability register CI verified
+
+- **Final validation:** dashboard-integrity workflow PASS on commit `9f929ced9f45b0c8cb64a81fa34fcbf4a4e3ecb2`: https://github.com/snchat78-svg/LabVerse/actions/runs/42778819472.
+- New assertions parsed 15 logical CSV records including header, checked 11 columns, 14 unique ordered IDs, DESIGN_ONLY status, NNDC ENSDF and IAEA EXFOR source strings, and explicit IUPAC/IUPAP new-element review gate. Existing PDF archive, task mapping, Biology index/detail queue, 515-row traceability checks and schema parse also passed in this run.
+- The first run on the preceding commit failed one new assertion because the test expected IUPAC/IUPAP in the wrong semantic column. The NUC-05 validation-gate cell was corrected to state qualified nuclear-scientist review and formal IUPAC/IUPAP decision. The corrected run is the accepted PASS; first failed attempt is not counted.
+- Browser smoke on preceding validator commit passed 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42778597556. No app/UI source changed after that run; the subsequent change was one CSV validation text cell.
+- **Boundary:** these checks validate register structure and governance labels only. No nuclear source API was called, no data was imported, no scientific/nuclear calculation or solver was run, no 3D assets/runtime were created, and no scientific/independent review was completed.
+- **Phase state:** Phase 1 / 1.1 IN PROGRESS; Phase 2 remains BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
