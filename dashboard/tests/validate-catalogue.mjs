@@ -444,6 +444,21 @@ for (const [id, pattern] of [
 console.log("MSCL evidence/safety review queue: 53 source-linked rows, 17 columns, source visual status and verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
 
 
+// Load the current MSCL safety-screen data, including task-scope review columns.
+const msclSafetyScreenRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(msclSafetyScreenRows.length, 127, "MSCL safety screen must contain 126 records");
+assert.equal(msclSafetyScreenRows[0].length, 19, "MSCL safety screen must contain 19 columns");
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row.length === 19));
+const safetyScreenById = new Map(msclSafetyScreenRows.slice(1).map(row => [row[0], row]));
+assert.equal(safetyScreenById.size, 126);
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[12] === "BLOCKED_NO_LIVE_USE; SIMULATION_REFERENCE_ONLY"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[13] === "IDENTITY_SPECIFIC_CURRENT_SDS_AND_EXPOSURE_REVIEW_REQUIRED"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[14] === "NOT_APPROVED"));
+assert.ok(msclSafetyScreenRows.slice(1).every(row => row[15] === "NOT_A_CURRENT_SUPPLY_OR_BOM_RECORD"));
+
 // Load the current task-level reagent matrix after product/reagent role separation.
 const rbseReagentMatrixRows = parseCsvRows(await readFile(
   new URL("../../data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv", import.meta.url),
