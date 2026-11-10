@@ -75,3 +75,29 @@ Start the production React/TypeScript/Vite codebase foundation (Phase 3) and mig
 3. **Phase 5:** implement real 3D object scene, with original asset manifests/low-poly apparatus instead of placeholder cards.
 4. **Phase 6+:** deterministic action runtime, then separate Chemistry/Physics/Biology validated models.
 5. Continue Phase 1 in parallel: recover prior no-microscope/Physics attachment records internally (never re-upload request), finish Biology visual/manual audit, MSCL current procurement/BOM, rights/safety/expert reviews.
+
+
+## 2026-11-10 — Phase 3 React app foundation verified
+
+### Completed
+- Added a pinned React 19 / TypeScript 7 / Vite 8 application in `app/`, preserving the static `dashboard/` preview.
+- React now displays all three science directions, XI/XII selector, searchable instrument/material/reagent inventory, source/evidence/safety detail, task list, practical-to-source item navigation and candidate placeholder workbench.
+- Strict TypeScript check passed.
+- Vite production build passed.
+- React Chromium browser smoke passed **6/6 groups** (overview/subjects; Physics search/detail; XI filter; practical mapping/candidate setup; Chemistry/Biology safety details; mobile/no console errors).
+- CI result: https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145
+- Verified commit: `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
+
+### Remaining after this bounded unit
+1. Make all four workspaces (Learning Lab, Virtual Experiment Lab, Scientific Analysis, Research Studio) functional in React, not static tabs.
+2. Migrate remaining static Dashboard controls (item type/category filtering, exact source coverage, unmatched-task gap disclosure).
+3. Continue Phase 1 item/page audit, no-microscope/Physics prior-record recovery, MSCL BOM and safety/rights/expert reviews in parallel.
+4. Implement original real 3D assets only in Phase 5 after asset contracts and scope; scientific engines remain separately gated.
+
+### Current phase position
+- Phase 1 / 1.1: IN PROGRESS
+- Phase 2: PARTIAL dashboard read model only; science models/results remain BLOCKED
+- Phase 3: PARTIAL; app foundation and validation passed, broader codebase migration remains
+- Phase 4: IN PROGRESS
+- Phase 5+: NOT STARTED
+- Previously supplied PDFs remain registered as no-repeat sources. No new PDF upload is requested.
