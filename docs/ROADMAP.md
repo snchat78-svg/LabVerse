@@ -442,6 +442,20 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 
 - **No-repeat source registry:** Nine Physics/Chemistry/Biology/RBSE source identities are recorded in `data/catalogues/source_pdf_registry_2026_11_10.csv`; human-readable hash/metadata and provenance are in `docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md`. All records carry `no_repeat_upload=TRUE`. Accessible original hashes are recorded; old Biology-without-microscope and Physics raw identities are marked as prior user submissions without inventing a hash.
 - **Manual page audit:** Biology manual code 13163 PDF pages 28–29 (printed xxvii–xxviii) visually confirmed 58 chemical/reagent/stain labels and the statement that they are not supplied with the kit. The exact print spelling `Petroleum Rther` is retained.
-- **Dashboard smoke validation:** Playwright Chromium desktop/mobile smoke tests and a dedicated GitHub Actions workflow are committed. The initial attempt was blocked before browser tests by Playwright's lack of Ubuntu 26.04 support; runner pinned to Ubuntu 24.04 and retry is pending. The catalogue/schema/source-registry integrity workflow passed on commit `c0b928431621a7b6c9c7b7f7dc25ee87c3accd04`.
+- **Dashboard smoke validation (2026-11-10):** Playwright Chromium desktop/mobile smoke tests passed 9/9 groups on commit `28f8452d1409b086e0a0c80244a7e4874aafaf`; catalogue/source-registry/schema checks also passed on the same commit. The suite covers overview counts, Physics search/tap/drag/drop, practical-to-inventory navigation, candidate placeholder setup, unmatched Fortin barometer disclosure, Chemistry no-live-use label, Biology not-supplied-with-kit label/open project gap, and mobile navigation.
 - **Phase boundaries:** Phase 1 remains IN PROGRESS; Phase 2 scientific models/results remain BLOCKED; Phase 3 partial; Phase 4 dashboard IN PROGRESS. No real 3D assets or scientific engines exist yet.
 - **Next:** complete the Ubuntu 24.04 Chromium smoke run, fix any verified UI defects, then continue remaining subject inventory/asset traceability. The full remaining-work table is in `docs/NEXT_WORK_REGISTER_2026_11_10.md`.
+
+
+## 2026-11-10 — Practical-to-inventory navigation and candidate setup
+
+- Dashboard practical cards now display candidate source-item link counts, show explicit reason text for unmatched tasks, and provide clickable source-item navigation into the subject's inventory tray.
+- Selecting a linked item searches and opens the exact catalogue record with source/evidence/safety detail.
+- A practical detail can add all mapped source items to the bench as **candidate placeholders**. This is not a verified stock list, not a physical setup instruction and not an executable simulation.
+- Task-to-item coverage: Physics 79/80; Chemistry 41/41; Biology 49/50 = **169/171 tasks linked**. Subject-distinct source item IDs: 95 + 45 + 147 = 287; unresolved source IDs: 0.
+- Two unmatched tasks remain explicit:
+  - Physics `RBSE-XI-PHY-PRJ-08`: Fortin barometer does not appear in the available 106-item NCERT Physics manual catalogue; any future instrument representation must remain a safe virtual model and is not a verified kit item.
+  - Biology `RBSE-XII-BIO-PRJ-01`: RBSE makes the investigatory project teacher-assigned and gives no fixed title/apparatus; no topic-specific source-item mapping is claimed until a topic/method is approved.
+- Browser smoke suite passed **9/9 groups** and inventory/schema validation passed on commit `28f8452d1409b086e0a0c80244a7e4874aafaf`.
+- Phase status unchanged: Phase 1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D not yet started.
+- Next production milestone: Phase 3 React/TypeScript/Vite foundation and dashboard migration, retaining the source archive register and existing static preview.
