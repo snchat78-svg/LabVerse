@@ -81,3 +81,15 @@ Current NCERT specification attachment authentication, exact reagent BOM, reagen
 ## RBSE Chemistry task-level reagent matrix addendum — 2026-11-09
 
 The new 41-row task-level matrix (`data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv`) links candidate labels from this manual register to RBSE task IDs without converting the manual's list into a supplied BOM. Seventeen task rows contain candidate label/body references; 24 have no exact match assigned. All remain blocked from live use. Details and ambiguity handling are in `docs/PHASE_1_1_RBSE_CHEMISTRY_TASK_REAGENT_EVIDENCE_MATRIX.md`.
+
+## RBSE task-level crosswalk reconciliation addendum — 2026-11-10
+
+A second pass compared the 126-row reagent screen to the complete 41-task matrix:
+
+- Reconciliation artifact: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`; detailed report: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md`.
+- The screen's 18 exact-label text-occurrence candidate records span 17 task IDs. The matrix also has candidate links on 17 task rows, but task ID sets differ: 15 are shared, 2 are screen-only (OPT-01 / OPT-04), and 2 are matrix-contextual-only (THERMO-02 / ELECTRO-01). Twenty-two task rows have no candidate link in either track; this is not proof that no reagent is needed.
+- Ten shared tasks have different reagent-record-ID sets and are flagged for source-context/expert reconciliation. This is expected to include contextual/formulation and body-reference candidates; no automatic mapping changes were made.
+- The repeated Potassium iodate labels retain their separate numbered IDs 080 and 087. Potassium permanganate and Potassium iodide remain supplemental manual-body references. KI is not collapsed into numbered “Iodine solution”.
+- Validator/source integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. Browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- Every one of the 126 rows remains BLOCKED_NO_LIVE_USE, SDS-required, NOT_APPROVED and NOT_A_CURRENT_SUPPLY_OR_BOM_RECORD. Every RBSE task remains documentary-only. No concentration, purity, formula/CAS, supplier, method or disposal instructions are approved.
+
