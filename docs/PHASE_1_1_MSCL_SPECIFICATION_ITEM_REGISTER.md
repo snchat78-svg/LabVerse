@@ -41,3 +41,11 @@ See `docs/PHASE_1_1_MSCL_MANUAL_UPLOAD_ITEM_RECONCILIATION.md` and `data/catalog
 ## Companion reagent-screen register — 2026-11-09
 
 The 2018 NCERT manual's 124 numbered reagent/material labels plus two internal experiment/appendix references are represented in `data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv` (126 records). This is a preliminary name-based triage and strict textual task-link audit, not a GHS classification, SDS substitute, supplied-reagent list or current procurement BOM. All records remain simulation-only and not approved for live use. See `docs/PHASE_1_1_MSCL_REAGENT_SAFETY_SCREEN.md`. Current official attachment bytes and the exact supplied reagent BOM remain open.
+
+## Uploaded file fingerprints — 2026-11-10
+
+- Earlier registered upload MSCL_copy.pdf: 19,798,501 bytes; 65 pages; SHA-256 db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d.
+- Current session upload MSCL (1).pdf: 19,808,858 bytes; 65 pages; SHA-256 b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e.
+- Both covers identify the same NCERT MSCL specification title; the current scan's index was visually inspected. The byte count and hash differ, so these are retained as separate uploaded variants. Neither upload hash proves official NCERT byte identity.
+- The current file's index displays 55 entries; entries 1–54 are kit/manual rows and entry 55 is Document Development Team. The existing 55-row item register remains in place, with the documentation row explicitly excluded from apparatus.
+- Append-only upload receipt: data/catalogues/source_pdf_upload_receipts_2026_11_10.csv.
