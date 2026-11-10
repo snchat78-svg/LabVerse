@@ -125,15 +125,15 @@ const bioIndexLines = bioIndexAudit.trimEnd().split(/\r?\n/);
 assert.equal(bioIndexLines.length, 178, "Biology with-microscope visual index audit must contain 177 data rows");
 assert.match(bioIndexLines[0], /index_audit_source_sha256/);
 assert.equal((bioIndexAudit.match(/VISUALLY_CONFIRMED_IN_CURRENT_UPLOAD/g) || []).length, 177);
-assert.equal((bioIndexAudit.match(/VISUALLY_CHECKED_CURRENT_UPLOAD/g) || []).length, 14);
+assert.equal((bioIndexAudit.match(/VISUALLY_CHECKED_CURRENT_UPLOAD/g) || []).length, 26);
 assert.match(bioIndexAudit, /Wire Gauze[^\n]*Asbestos centre|Wire Gauze[^\n]*asbestos/i);
 assert.match(bioIndexAudit, /Permanent Slide: Student Laboratory Microscope|microscope, not a slide/i);
 const bioSource = data.sourceDocuments.find(source => source.sourceId === "BIO-KIT-WITH-MICROSCOPE");
 assert.equal(bioSource.indexAudit.entries, 177);
 assert.equal(bioSource.indexAudit.itemRecordsExcludingDocumentation, 175);
 assert.equal(bioSource.indexAudit.completeDetailPageAudit, false);
-assert.equal(bioSource.indexAudit.detailPagesVisuallyCheckedPhysicalItems, 13);
-assert.deepEqual(bioSource.indexAudit.detailPagesVisuallyChecked, [22,26,43,53,56,57,64,66,67,68,79,93,198,199]);
+assert.equal(bioSource.indexAudit.detailPagesVisuallyCheckedPhysicalItems, 25);
+assert.deepEqual(bioSource.indexAudit.detailPagesVisuallyChecked, [13,14,15,22,26,43,53,55,56,57,64,66,67,68,69,72,73,74,75,79,83,84,87,93,198,199]);
 const bioWireGauze = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-079");
 assert.match(bioWireGauze.safety, /ASBESTOS HAZARD/);
 assert.equal(bioWireGauze.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD");
@@ -144,11 +144,19 @@ for (const [id, page] of [["NCERT-BIO-WM-SPEC-013",22],["NCERT-BIO-WM-SPEC-031",
 }
 const thermometer = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-065");
 assert.match(thermometer.visualAudit.sourceDetail, /ALCOHOL.FILLED/);
+for (const [id, page] of [["NCERT-BIO-WM-SPEC-004",13],["NCERT-BIO-WM-SPEC-005",14],["NCERT-BIO-WM-SPEC-006",15],["NCERT-BIO-WM-SPEC-043",55],["NCERT-BIO-WM-SPEC-057",69],["NCERT-BIO-WM-SPEC-060",72],["NCERT-BIO-WM-SPEC-061",73],["NCERT-BIO-WM-SPEC-062",74],["NCERT-BIO-WM-SPEC-063",75],["NCERT-BIO-WM-SPEC-069",83],["NCERT-BIO-WM-SPEC-070",84],["NCERT-BIO-WM-SPEC-073",87]]) {
+  const glassItem = data.subjects.biology.inventory.find(item => item.id === id);
+  assert.equal(glassItem.visualAudit.status, "VISUALLY_CHECKED_CURRENT_UPLOAD", id + " glassware visual audit");
+  assert.equal(glassItem.visualAudit.sourcePdfPage, page, id + " glassware source PDF page");
+}
+assert.equal(data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-057").quantity, "12");
+assert.equal(data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-073").quantity, "2 packs of 50 slides (100 total)");
+
 const bioHammer = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-056");
 assert.match(bioHammer.safety, /digital-only handling/);
 const bioMicroscope = data.subjects.biology.inventory.find(item => item.id === "NCERT-BIO-WM-SPEC-176");
 assert.match(bioMicroscope.visualAudit.classificationFinding, /Microscope instrument, not a permanent slide/);
-console.log("Biology current-upload visual index/detail audit passed: 177 index rows; 13 item detail pages plus 1 credits page visually checked.");
+console.log("Biology current-upload visual index/detail audit passed: 177 index rows; 25 item detail pages plus 1 credits page visually checked.");
 
 console.log("Dashboard catalogue checks: 18 assertions passed.");
 console.log("Physics: 105 items / 80 tasks");
