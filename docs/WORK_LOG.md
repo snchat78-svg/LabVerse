@@ -612,3 +612,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Limitations:** workspace shell is functional but React still lacks category/type filters and a source coverage banner. Research draft is volatile session state; analysis engine, cloud persistence, 3D assets, scientific runtime, notebook/data workflows and Android packaging remain future work.
 - **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
 - **Next bounded action:** migrate inventory category/type filters and task/source coverage summary into React, then show unmatched task reasons in the React catalogue.
+
+## 2026-11-10 — PDF upload receipt refresh and Biology gap regression
+
+- Directly fingerprinted the three current uploads and committed an append-only receipt.
+- Biology manual 13163: exact SHA-256 match to canonical prior record.
+- MSCL: current 65-page scan, new fingerprint and visually reviewed cover/index; prior variant preserved.
+- Biology with microscope: current 199-page scan, same byte/page count as prior record but distinct fingerprint; both variants preserved.
+- Strengthened React browser smoke to disclose Biology RBSE-XII-BIO-PRJ-01 as unmatched until a teacher-approved topic/method exists.
+- Public repo retains source evidence, hashes and derived data; raw rights-notice PDFs are not committed.
