@@ -9424,5 +9424,31 @@
     "repositoryContainsOriginalPdfBinaries": false,
     "description": "GitHub stores source IDs, original filenames where recovered, byte sizes, SHA-256 hashes, PDF metadata, derived catalogues, task crosswalks and explicit retrieval statuses. Original PDF binaries remain in the user-upload/Library sources where accessible. Do not tell the user to re-upload files already registered; recover old records from this register first.",
     "noRepeatUploadRule": "All records marked noRepeatUpload=true must not trigger a repeat upload request. A missing current raw attachment is an internal retrieval gap, not user-side failure."
+  },
+  "traceabilityCoverage": {
+    "physics": {
+      "taskCount": 80,
+      "tasksWithSourceItemLinks": 79,
+      "tasksWithoutSourceItemLinks": 1,
+      "uniqueSourceItemIds": 95,
+      "unresolvedSourceItemIds": 0,
+      "unresolvedIds": []
+    },
+    "chemistry": {
+      "taskCount": 41,
+      "tasksWithSourceItemLinks": 41,
+      "tasksWithoutSourceItemLinks": 0,
+      "uniqueSourceItemIds": 45,
+      "unresolvedSourceItemIds": 0,
+      "unresolvedIds": []
+    },
+    "biology": {
+      "taskCount": 50,
+      "tasksWithSourceItemLinks": 49,
+      "tasksWithoutSourceItemLinks": 1,
+      "uniqueSourceItemIds": 147,
+      "unresolvedSourceItemIds": 0,
+      "unresolvedIds": []
+    }
   }
 }
