@@ -12,7 +12,8 @@ async function main() {
     });
 
     await page.goto("http://127.0.0.1:4174/", {waitUntil:"networkidle"});
-    await page.getByRole("heading", {name:"Explore. Experiment. Understand."}).waitFor();
+    await page.locator(".hero-row h1").waitFor();
+    assert.match(await page.locator(".hero-row h1").innerText(), /Explore\. Experiment\.[\s\S]*Understand\./);
     assert.match(await page.locator(".stats").innerText(), /171/);
     assert.equal(await page.locator(".subject-card").count(), 3);
 
@@ -34,7 +35,7 @@ async function main() {
     await page.locator(".subject-card.amber").click();
     await page.getByRole("heading", {name:"Chemistry Lab"}).waitFor();
     await page.locator(".content-grid .search").first().fill("Acetic acid");
-    await page.getByRole("button", {name:/Acetic acid/}).click();
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Acetic acid$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /Reference only \/ no live use/i);
 
     // Biology school-managed reagent warning remains visible
@@ -42,7 +43,7 @@ async function main() {
     await page.locator(".subject-card.teal").click();
     await page.getByRole("heading", {name:"Biology Lab"}).waitFor();
     await page.locator(".content-grid .search").first().fill("Mercury");
-    await page.getByRole("button", {name:/Mercury/}).click();
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Mercury$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /school-managed reference \/ not supplied with kit/i);
 
     // Mobile viewport
