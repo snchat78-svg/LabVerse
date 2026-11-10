@@ -725,3 +725,16 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - The same run revalidated the existing PDF registry, 171-task mapping, Biology 177-row index + 25 page-detail audit, 150-item remaining queue and JSON schema.
 - Static Dashboard browser smoke: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537 — **9/9 groups pass** across desktop/mobile.
 - **Current main phase remains:** Phase 1 / Phase 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS. No phase skipped.
+
+
+## 2026-11-10 — Phase 1 research and nuclear element discovery capability map
+
+- **Phase:** Phase 1 / Phase 1.1; source and research-capability audit remains IN PROGRESS.
+- **Reason for bounded parallel work:** the first Biology-with-microscope detail audit row (Kit Box, page 9) remains blocked because the previously registered source binary is not surfaced by the current conversation/Library retrieval route and the direct NCERT route was inaccessible. The repeat Library listing/search in this session did not find the registered source. No re-upload was requested and no pending page was marked visually inspected.
+- **Completed:** authored a research-domain scope for Chemistry, Physics, Biology and cross-domain investigation; distinguished chemical compounds/materials from nuclear element synthesis; specified a design-only Nuclear Matter Explorer with nuclide identity, conservation/Q-value bookkeeping, imported detector-data analysis, decay-chain candidate review and formal discovery-claim governance.
+- **Machine-readable output:** `data/catalogues/research_discovery_capability_register_2026_11_10.csv` — 12 capability rows across research, Chemistry, Physics, nuclear physics and Biology. Every row is DESIGN_ONLY; no model/API is claimed implemented.
+- **Source review:** IUPAC element discovery/naming responsibilities and IUPAC/IUPAP 2020 report; DOE and GSI descriptions of ion-beam/target production, separation and decay evidence; NNDC ENSDF API public-beta scope; IAEA EXFOR experimental reaction-data scope and coverage limits. Source links and status boundaries recorded in `docs/SCIENTIFIC_SOURCE_REGISTRY.md`.
+- **Files:** `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md`; `data/catalogues/research_discovery_capability_register_2026_11_10.csv`; `docs/DOMAIN_EXPANSION_MODEL.md`; `docs/SCIENTIFIC_METHOD_AND_DISCOVERY.md`; `docs/SCIENTIFIC_SOURCE_REGISTRY.md`; master roadmap, phase state, next-work register and README.
+- **Validation boundary:** GitHub file writes/read-back are the verification performed for this documentation unit. No code changes, app build, API call against ENSDF, dataset ingestion, nuclear calculation or scientific model test was run.
+- **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science models remain BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+- **Next:** resume the first Biology detail audit queue item when the already-submitted binary or a legitimate official primary payload is accessible; otherwise continue remaining Phase 1.1 Physics/MSCL/Biology source, rights, safety and subject-expert closure work.
