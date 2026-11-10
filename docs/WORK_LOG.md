@@ -595,3 +595,20 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - The original PDF binaries are intentionally **not** committed to this public repo without redistribution permission. This is separate from source receipt: accessible uploaded originals remain in ChatGPT conversation/Library storage.
 - GitHub persists source IDs, original filenames where known, byte counts, pages, SHA-256 hashes, derived catalogues, item/task traceability, status and `no_repeat_upload=TRUE`.
 - For previously submitted Physics and Biology-without-microscope raw PDFs whose current bytes/hash are not surfaced, the prior upload is still acknowledged. No repeat upload request is allowed; never invent missing hash data.
+
+
+## 2026-11-10 — Functional React Learning, Virtual, Analysis and Research workspaces
+
+- **Scope:** replace static tab labels with working workspace destinations in the React app.
+- **Learning Lab:** practical/task catalogue, task selection, source-item links, item inspection and candidate source mapping remain visible.
+- **Virtual Experiment Lab:** separate workbench screen; add selected item or a practical's mapped candidates to the placeholder bench; clear workbench. Objects are non-executable catalogue placeholders.
+- **Scientific Analysis:** displays selected item's source/evidence/status and explicit NOT_MODELLED readiness state. It does not generate physics/chemistry/biology results.
+- **Research Studio:** structured form for question, hypothesis, alternative explanation, independent/dependent variables and controls; local session draft preview. No cloud save/reproducible notebook or approved protocol is claimed.
+- **Sidebar behavior:** selecting a workspace from Dashboard first prompts the learner to choose Physics, Chemistry or Biology; it does not silently choose a subject.
+- **Styling:** workspace buttons, responsive research form, readiness state and subject selector panels.
+- **Test correction:** first browser run exposed a test assertion checking bench state while Learning Lab was active; corrected test now inspects the bench in Virtual Experiment Lab. A second harness error from missing test result array was fixed before rerun.
+- **CI result:** https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972 — strict TypeScript PASS, Vite production build PASS, Chromium smoke **10/10 groups PASS**. Groups: overview/subjects; Physics inventory; XI filter; Learning task mapping; Chemistry/Biology safety; Virtual Experiment Lab; Scientific Analysis NOT_MODELLED; Research Studio local draft; sidebar workspace-to-subject chooser; mobile/no browser errors.
+- **Verified commit:** `689af07c086005b79fa6444aff600c620eb789f6`.
+- **Limitations:** workspace shell is functional but React still lacks category/type filters and a source coverage banner. Research draft is volatile session state; analysis engine, cloud persistence, 3D assets, scientific runtime, notebook/data workflows and Android packaging remain future work.
+- **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+- **Next bounded action:** migrate inventory category/type filters and task/source coverage summary into React, then show unmatched task reasons in the React catalogue.
