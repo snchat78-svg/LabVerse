@@ -52,3 +52,24 @@ Do not change the visibility of the existing public LabVerse repository just to 
 3. Keep Physics manual and Physics current procurement specification as separate documents.
 4. Continue item-level source → practical → dashboard inventory → asset/model/test mapping.
 5. Keep authentication, safety, rights and expert review statuses explicit. Candidate data may appear in the dashboard, but must never be promoted to verified stock or executable scientific procedures without review.
+
+## Current-session upload receipt — 2026-11-10 (append-only)
+
+The user supplied three files in the current session. Their bytes were fingerprinted directly and are retained in the machine-readable receipt at data/catalogues/source_pdf_upload_receipts_2026_11_10.csv.
+
+| Source | Current filename | Bytes | Pages | SHA-256 | Relationship / inspection |
+|---|---|---:|---:|---|---|
+| Biology kit manual 13163 | Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111 (1).pdf | 20,028,910 | 141 | c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086 | Exact SHA-256 match to existing canonical Biology manual record; no new source variant |
+| NCERT MSCL specification candidate | MSCL (1).pdf | 19,808,858 | 65 | b991bd409074478c6ff0557a481b251de4a65727f50872e0c47e14d2df472b2e | Cover and index visually inspected. Same title and 65-page structure as earlier MSCL upload, but file size/hash differ; preserve as a separate byte variant |
+| Biology kit specification (with microscope) | SSBK_with_Microscope_222.pdf | 59,620,970 | 199 | 9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb | Cover visually inspected. Same size/page count as prior record but hash differs; preserve both fingerprints and do not assume byte identity |
+
+### Current upload content boundary
+
+- The current MSCL scan cover identifies the NCERT Specification Document of Items — Micro Scale Chemistry Laboratory Kit, Grades 11 & 12. Its visually inspected index contains 55 numbered entries; the final entry is Document Development Team, not kit apparatus. Existing 55-row catalogue is retained; item-specific technical dimensions have not been re-audited from all 65 pages in this pass.
+- The current Biology-with-microscope scan cover identifies the NCERT Specification Document of Items — Secondary Stage Biology Laboratory Kit (with microscope), Grades 11 & 12. It remains linked to the existing 177-row item catalogue; this upload's distinct hash does not authenticate it against an official NCERT copy.
+- The Biology manual upload is an exact fingerprint match to the already registered manual 13163 copy. Its existing 58-chemical manual catalogue and not-supplied-with-kit note remain in force.
+- All three upload records remain no-repeat. Do not ask the user to resend any of these files.
+
+### Repository storage boundary
+
+The public GitHub repository stores fingerprints, file/page metadata, the append-only receipt, existing extracted catalogues and source/evidence states. It does not contain the original PDF binaries. This is deliberate: the uploaded NCERT documents contain rights notices, and no redistribution permission has been established. Do not commit these raw PDF bytes into the public repository or change repository visibility as a workaround.
