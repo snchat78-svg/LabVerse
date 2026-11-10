@@ -345,7 +345,7 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 ### Completed
 - Cross-referenced all 124 numbered MSCL manual reagent labels, 2 supplemental manual-body records and the 41-row RBSE Chemistry task matrix.
 - Created 41-task / 20-column reconciliation CSV: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`, with a report that explains task-set and candidate-ID differences.
-- Source integrity validator PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. Browser smoke is pending: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- Source integrity validator PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
 - No candidate was silently added to the matrix. All names remain documentary references; no current SDS, formulations, supply or live-use approval is implied.
 
 ### Immediate next actions
