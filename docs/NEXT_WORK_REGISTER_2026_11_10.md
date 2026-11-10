@@ -47,8 +47,9 @@
 | SRC-04 | Finish Biology 177-row page/visual audit and map the manual | 177-row catalogue, 50 task IDs, manual 60 exercises | Audit index-only visual cards/slides/specimens page by page; preserve provenance and taxonomy review |
 | SRC-05 | Finish source-to-asset/model/test traceability for all subjects | 171 task-index rows across six packs | Resolve every remaining apparatus, sample, reagent, measurement and evidence gap; keep design-only status |
 | UI-01 | Complete desktop/mobile Chromium smoke | 9/9 Playwright Chromium groups pass on commit `28f8452d1409b086e0a0c80244a7e4874aafaf` | DONE — maintain regression workflow on dashboard changes |
-| APP-01 | Complete React workspace navigation and migrate remaining dashboard interactions | React starter with inventory/task/source mapping and placeholder setup; 6/6 browser groups pass | Make all four workspaces functional; migrate filters, source coverage and unmatched task disclosures |
-| APP-02 | Maintain React app CI | Typecheck, Vite build and 6/6 React browser groups pass | DONE for starter; expand smoke tests as each workspace migrates |
+| APP-01 | Functional React workspace destinations | Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio functional; 10/10 browser groups PASS | DONE for bounded workspace shell; maintain regression checks |
+| APP-02 | Maintain React app CI | Typecheck, Vite build and 10/10 React browser groups pass | DONE for current workspace shell; expand smoke tests as controls migrate |
+| APP-03 | React inventory filters and traceability summary | Searchable inventory and tasks; per-subject coverage is in source read model | Add type/category filters, coverage banner and unmatched-task reason cards |
 | UI-02 | Publish live free dashboard | GitHub Pages workflow and setup guide exist; Pages is not enabled yet | One-time repository Settings → Pages → Source GitHub Actions, then run deploy workflow |
 | UI-03 | Build real 3D workbench | Current bench uses 2D placeholders | Start real asset scene only after dashboard smoke and asset data contract are stable |
 | SCI-01 | Implement validated Physics/Chemistry/Biology scientific engines | Models/rules not implemented | Keep Phase 1 and scientific evidence gates; do not produce simulated results from unreviewed entries |
@@ -114,4 +115,25 @@ Continue Phase 3/4 React migration: make Learning Lab, Virtual Experiment Lab, S
 - This is not a completed React migration: four workspace tabs are not yet separate functional workflows; remaining category/type filters, unmatched source disclosure and fuller responsive navigation must be ported from the static preview.
 - No real 3D assets, deterministic experiment runtime or scientific solvers are implemented.
 - **Next single action:** make the four workspace destinations functional in React, preserving source labels, no-repeat PDF registry, static preview and browser CI.
+
+
+
+## 2026-11-10 — React workspace destinations verified
+
+### Completed
+- Learning Lab practical catalogue and source mapping.
+- Virtual Experiment Lab candidate placeholder workbench.
+- Scientific Analysis evidence/model-readiness panel with explicit NOT_MODELLED state.
+- Research Studio question/hypothesis/alternative/variables/controls draft preview, session-local only.
+- Sidebar workspace selection asks for a subject when no subject is active.
+- Strict TypeScript check PASS, Vite production build PASS, Chromium smoke **10/10 groups PASS**.
+- CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972
+- Verified commit: `689af07c086005b79fa6444aff600c620eb789f6`.
+
+### Remaining after this unit
+1. Port inventory item-type/category filters and source coverage summary to React.
+2. Surface unmatched Physics Fortin barometer and Biology open project reasons in React task cards.
+3. Add persistent notebook/research draft storage only after data provenance/version contract; current draft is session-only.
+4. Phase 5 real 3D models, Phase 6 runtime and Phase 7–9 scientific engines remain future work.
+5. Continue Phase 1 source/rights/safety/expert audit; never ask for previously supplied PDFs again.
 
