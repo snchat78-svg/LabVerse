@@ -769,3 +769,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Files:** `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md`; `data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv`; updated archive, retrieval-recheck, specification audit, master roadmap and Phase State.
 - **No repeat upload requested.** Original PDF binaries remain outside public GitHub.
 - **Phase:** Phase 1 / 1.1 remains IN PROGRESS; Phase 2 science solvers remain BLOCKED. This source-audit progress does not create a working 3D app or scientific simulator.
+
+## 2026-11-10 — Official NCERT attachment-size evidence CI passed
+
+- Source/catalogue CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434 on `d03da5ce362b30b27bf101d8b859bff9c9c3dfe7`.
+- The run validates the four official NCERT Grade XI–XII specification source rows, exact response-size values, 15-column schema, no downloaded official payload/unknown SHA, MSCL size-match-only (not byte-authenticated) and 35,057-byte Biology-with-microscope size mismatch. It also revalidated the 53/53 physical MSCL visual audit, all 515 inventory trace rows, 14 research capability rows, PDF archive, task mapping, Biology pending detail queue and JSON schema.
+- Desktop/mobile dashboard browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
+- No application source, scientific solver, external API connector, 3D object or experiment runtime was implemented in this work unit. Evidence is limited to source index metadata, uploaded-file receipts and repository integrity checks.
+- Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific engines BLOCKED. Next task: continue internal recovery of the previously submitted Biology-with-microscope source and begin queue order 1 (Kit Box, PDF page 9) only when readable; keep no-repeat upload policy.
