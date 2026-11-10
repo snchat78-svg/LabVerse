@@ -166,6 +166,8 @@ The register assigns LabVerse source-row IDs and provisional equipment families 
 - [MSCL detail-page audit — 53/53 physical items visually checked](docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md)
 - [MSCL item-level evidence and safety review queue — 53 records](docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md)
 - [MSCL item-level review queue CSV — 53 records](data/catalogues/mscl_review_gap_queue_2026_11_10.csv)
+- [MSCL review-queue integrity CI — PASS](https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753)
+- [Dashboard desktop/mobile smoke — 9/9 PASS](https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348)
 - [NCERT official attachment-size recheck](docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_RECHECK_2026_11_10.md)
 - [NCERT official attachment-size recheck CSV](data/catalogues/ncert_official_spec_attachment_size_recheck_2026_11_10.csv)
 - [Physics measurement/metrology readiness audit (18 instruments)](docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md)
