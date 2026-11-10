@@ -621,3 +621,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Biology with microscope: current 199-page scan, same byte/page count as prior record but distinct fingerprint; both variants preserved.
 - Strengthened React browser smoke to disclose Biology RBSE-XII-BIO-PRJ-01 as unmatched until a teacher-approved topic/method exists.
 - Public repo retains source evidence, hashes and derived data; raw rights-notice PDFs are not committed.
+
+## 2026-11-10 — Biology with-microscope index/safety audit and React safety visibility
+
+- Reconciled current 199-page Biology with-microscope upload's visually checked index pages 2–5 with all 177 rows in the existing catalogue; indices 1–177 are contiguous/unique, with 175 kit item records after excluding two documentation entries.
+- Added index audit CSV and report; master item catalogue now records index source page and current upload hash.
+- Visually checked detail pages for Spirit Lamp (26), Scalpel (53), Dissecting Scissors (56), Wire Gauze (93), Student Laboratory Microscope (198), and credits (199).
+- Confirmed the Wire Gauze page explicitly names an asbestos centre; confirmed microscope row 176 is not a slide.
+- React inventory detail panels now surface Safety / review notes, with regression tests planned for asbestos, open-flame and sharp-tool warnings.
+- Audit remains partial; no claim of complete detail-page, official-byte, procurement or scientific validation.
