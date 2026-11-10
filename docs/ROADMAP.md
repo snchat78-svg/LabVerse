@@ -436,3 +436,12 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 - The Biology without-microscope PDF was previously supplied according to the user. Never ask for it again; recover its earlier attachment/catalogue record. Until recovered, preserve an explicit prior-upload acknowledgement and avoid inferring variant deltas.
 - Dashboard preview: `dashboard/index.html`; inventory read model: `dashboard/data/inventory.json`; acceptance/test script: `dashboard/tests/validate-catalogue.mjs`; design note: `docs/PHASE_2_DASHBOARD_PARALLEL_TRACK.md`.
 
+
+
+## 2026-11-10 — Persistent PDF source register and next dashboard validation
+
+- **No-repeat source registry:** Nine Physics/Chemistry/Biology/RBSE source identities are recorded in `data/catalogues/source_pdf_registry_2026_11_10.csv`; human-readable hash/metadata and provenance are in `docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md`. All records carry `no_repeat_upload=TRUE`. Accessible original hashes are recorded; old Biology-without-microscope and Physics raw identities are marked as prior user submissions without inventing a hash.
+- **Manual page audit:** Biology manual code 13163 PDF pages 28–29 (printed xxvii–xxviii) visually confirmed 58 chemical/reagent/stain labels and the statement that they are not supplied with the kit. The exact print spelling `Petroleum Rther` is retained.
+- **Dashboard smoke validation:** Playwright Chromium desktop/mobile smoke tests and a dedicated GitHub Actions workflow are committed. The initial attempt was blocked before browser tests by Playwright's lack of Ubuntu 26.04 support; runner pinned to Ubuntu 24.04 and retry is pending. The catalogue/schema/source-registry integrity workflow passed on commit `c0b928431621a7b6c9c7b7f7dc25ee87c3accd04`.
+- **Phase boundaries:** Phase 1 remains IN PROGRESS; Phase 2 scientific models/results remain BLOCKED; Phase 3 partial; Phase 4 dashboard IN PROGRESS. No real 3D assets or scientific engines exist yet.
+- **Next:** complete the Ubuntu 24.04 Chromium smoke run, fix any verified UI defects, then continue remaining subject inventory/asset traceability. The full remaining-work table is in `docs/NEXT_WORK_REGISTER_2026_11_10.md`.
