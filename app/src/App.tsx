@@ -32,7 +32,22 @@ const subjectMeta: Record<
 };
 
 type SubjectData = (typeof inventoryData.subjects)[SubjectKey];
-type CatalogueItem = SubjectData["inventory"][number] | SubjectData["reagents"][number];
+
+// Normalised read contract: different source catalogues legitimately omit
+// optional fields such as detail or quantity. No field is inferred when absent.
+type CatalogueItem = {
+  id: string;
+  name: string;
+  category?: string;
+  type: string;
+  detail?: string;
+  source?: string;
+  evidence?: string;
+  status: string;
+  quantity?: string;
+  safety?: string;
+  screening?: string;
+};
 
 function statusLabel(item: CatalogueItem): string {
   const combined = `${item.status} ${item.evidence ?? ""}`.toLowerCase();
@@ -65,7 +80,11 @@ export default function App() {
   const items = useMemo(() => {
     if (!activeData) return [];
     const query = search.trim().toLowerCase();
-    return [...activeData.inventory, ...activeData.reagents].filter((item) => {
+    const catalogueRows = [
+      ...(activeData.inventory as unknown as CatalogueItem[]),
+      ...(activeData.reagents as unknown as CatalogueItem[])
+    ];
+    return catalogueRows.filter((item) => {
       if (!query) return true;
       return [
         item.name,
