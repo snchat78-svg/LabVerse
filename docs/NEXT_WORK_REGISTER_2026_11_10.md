@@ -293,3 +293,14 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 - Browser smoke PASS 9/9: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615.
 - Validator assertions now lock the official response-size observations, the 19,808,858-byte MSCL later-upload size match as non-authenticated, and the 35,057-byte Biology-with-microscope mismatch. This does not provide actual official PDF bytes or SHA.
 - Next single action remains: internally recover the previously supplied Biology-with-microscope original and resume queue order 1, Kit Box / indexed PDF page 9. Do not ask for re-upload. Until then, continue other Phase 1.1 source closure from already accessible catalogues and preserve the Phase 2 block.
+
+## Physics measurement/metrology readiness — 2026-11-10
+
+### Completed bounded work unit
+- Added 18 measurement instrument readiness records in `data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv` and report `docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md`.
+- Explicitly separated manual item identity/role from current procurement specification, measurement range, resolution, calibration/traceability, zero offset and uncertainty. No unknown value was inferred from a familiar school instrument.
+- All records remain NOT_IMPLEMENTED / Phase 8 blocked. Validator/browser CI is pending in this initial record; final status must be appended after the run completes.
+
+### Next source-ordered task
+- Continue the previously supplied Biology-with-microscope source recovery internally and resume queue order 1 (`NCERT-BIO-WM-SPEC-002`, Kit Box, PDF page 9) only if its existing bytes/official payload become readable. No repeat-upload request.
+- In parallel, keep Physics procurement attachment identity separate from Physics manual 13164; official response-size metadata (42,539,010 bytes) is not attachment content authentication.
