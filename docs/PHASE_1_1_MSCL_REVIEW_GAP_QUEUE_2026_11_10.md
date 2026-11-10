@@ -6,10 +6,11 @@ Convert the completed 53/53 visual detail-page audit into an explicit closure qu
 
 ## Traceability and limits
 
-- Machine-readable queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
+- Machine-readable queue: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv` (53 data rows; 17 columns).
 - Upstream source: `data/catalogues/mscl_detail_audit_2026_11_10.csv` (53 physical item rows, 15 columns).
 - Source file fingerprint: `MSCL_copy.pdf`, SHA-256 `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`.
 - Authentication state remains `USER_UPLOADED_UNAUTHENTICATED`. The 53/53 claim means the item detail pages were visually checked against this registered uploaded copy only.
+- The 17-column queue preserves the source visual-audit status verbatim in addition to item ID, source page, evidence gap and safety boundary. This preserves explicit states such as `NEEDS_DIMENSION_REVIEW` / `NEEDS_GEOMETRY_REVIEW` rather than losing them during queue creation.
 - Every row remains `OPEN_NOT_REVIEWED_OR_APPROVED`; owner is `NOT_ASSIGNED`. The queue deliberately preserves source gaps and safety boundaries verbatim.
 - A queue row never authorises a real-world practical, chemical use, CAD dimension, calibrated reading or scientific result.
 
@@ -24,7 +25,7 @@ The queue assigns overlapping review domains because one item can have multiple 
 - `DIMENSION_OR_GEOMETRY`: 24 item records
 - `SOURCE_SPECIFICATION_CLARIFICATION`: 1 item records
 
-Counts are item-to-domain assignments, not unique items and not approvals.
+Counts are item-to-domain assignments, not unique items and not approvals. The validator also checks every review row against all applicable source audit fields.
 
 ## High-consequence source boundaries retained
 
@@ -56,4 +57,4 @@ Counts are item-to-domain assignments, not unique items and not approvals.
 - Phase 5 real 3D assets: NOT STARTED.
 - Phase 6 experiment runtime: NOT STARTED.
 
-**Next:** internally recover the already-submitted Biology-with-microscope PDF, then resume queue order 1 `NCERT-BIO-WM-SPEC-002` (Kit Box, indexed page 9). No repeat-upload request. If still unavailable, continue owner assignment and evidence closure from already accessible Phase 1.1 catalogues.
+**Next:** use the open queue to assign qualified owners and collect authoritative evidence for high-consequence rows; continue internal recovery of the already-submitted Biology-with-microscope PDF and resume queue order 1 `NCERT-BIO-WM-SPEC-002` (Kit Box, indexed page 9) only when readable. No repeat-upload request.
