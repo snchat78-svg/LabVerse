@@ -49,3 +49,10 @@ The 2018 NCERT manual's 124 numbered reagent/material labels plus two internal e
 - Both covers identify the same NCERT MSCL specification title; the current scan's index was visually inspected. The byte count and hash differ, so these are retained as separate uploaded variants. Neither upload hash proves official NCERT byte identity.
 - The current file's index displays 55 entries; entries 1–54 are kit/manual rows and entry 55 is Document Development Team. The existing 55-row item register remains in place, with the documentation row explicitly excluded from apparatus.
 - Append-only upload receipt: data/catalogues/source_pdf_upload_receipts_2026_11_10.csv.
+
+
+## Detail-page visual audit — 2026-11-10
+
+The registered `MSCL_copy.pdf` upload (SHA-256 `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`) has now had eight item-detail pages visually inspected: index items 2, 3, 4, 5, 6, 14, 21 and 34 (PDF pages 5–10, 18, 26 and 43). Five newly inspected rows (items 2–6) are now marked `OCR_TEXT + VISUAL_CHECK` in the catalogue; the three earlier visual statuses remain intact.
+
+See `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md` and `data/catalogues/mscl_detail_audit_2026_11_10.csv`. Coverage is 8/53 physical index items; 45 physical item details remain. Boiling Tube drawing annotations remain NEEDS_TECHNICAL_REVIEW. The upload remains USER_UPLOADED_UNAUTHENTICATED; visual review does not establish byte identity with NCERT official original, procurement acceptance, supply or permission for physical use.
