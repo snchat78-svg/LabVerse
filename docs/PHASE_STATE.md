@@ -1650,3 +1650,13 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Physics metrology Phase 1.1 subtask (2026-11-10): created `data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv` (18 source-linked instrument rows, 17 columns) plus `docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md`. Range, least count, calibration, zero offset and uncertainty are explicitly UNKNOWN where the existing manual item schedule does not establish them; all models/results remain NOT_IMPLEMENTED_PHASE_8_BLOCKED. CI run is pending at this point; update with its final result before treating the subtask as validated.
 
 - Physics metrology register final validation PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42784987543 on commit `902c8a5f8192ca3d2f5be2bbcd351d98f220af49`. It validates 18 source-linked Physics instruments, 17 columns per row, link/name/row integrity against the existing manual catalogue and explicit unverified procurement/calibration/uncertainty/Phase 8 blocks. Static browser smoke 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42784988030. First run exposed a wrong-field assertion for source-supported manual details; corrected to the actual manual-supported-role column and rerun passed. No scientific solver or instrument calibration was validated.
+
+## 2026-11-10 — MSCL item-level evidence and safety review queue
+
+- Created a 53-record / 16-column review queue, one row for each visually checked physical MSCL catalogue item: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
+- Report: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
+- New validator assertions map every queue row back to the exact source audit item ID, order, page, filename, SHA, verbatim technical gap and verbatim safety boundary. They enforce controlled review domains, unassigned reviewer state and OPEN_NOT_REVIEWED_OR_APPROVED status.
+- Queue categories overlap; counts are review-domain assignments, not unique items or approval counts: dimension/geometry 24; metrology/model validation 20; material/compatibility 19; safety/use boundary 26; procurement/acceptance 25; source clarification 1.
+- Every row is tied to `MSCL_copy.pdf` SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`, source state USER_UPLOADED_UNAUTHENTICATED. The later equal-size MSCL variant is not promoted.
+- Biology-with-microscope source recovery was retried across Library and Conversation semantic search; zero results. Existing upload receipt and no-repeat policy remain intact.
+- Phase 1 / 1.1 IN PROGRESS; Phase 2 science contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED. CI for the new assertions must pass before this work unit is marked validated.
