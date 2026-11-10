@@ -203,7 +203,7 @@ for (const [subject, expectedCount] of Object.entries(expectedItemAssetCounts)) 
 assert.equal(allTraceIds.length, 515);
 assert.equal(new Set(allTraceIds).size, 515, "all traceability IDs must be unique");
 assert.equal((itemAssetTraceability.match(/VIRTUAL_ONLY_NO_REAL_HARDWARE_CONTROL/g) || []).length, 515, "no real hardware control is enabled");
-assert.equal((itemAssetTraceability.match(/NOT_CREATED/g) || []).length, 515, "no 3D asset is falsely marked created");
+assert.equal((itemAssetTraceability.match(/,"NOT_CREATED","(?:SOURCE_TEXT_PRESENT_VISUAL_TECHNICAL_VERIFICATION_REQUIRED|NOT_ESTABLISHED_FROM_CURRENT_ITEM_DETAIL)"/g) || []).length, 515, "each catalogue row keeps its 3D geometry state NOT_CREATED");
 assert.equal((itemAssetTraceability.match(/NOT_VALIDATED_PHASE_2_BLOCKED/g) || []).length, 515, "no scientific model is falsely marked validated");
 console.log("Three-subject item-to-asset/model/test traceability checks: 515 rows, unique IDs, source links and blocked states PASS.");
 
