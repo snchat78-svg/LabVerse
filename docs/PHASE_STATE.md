@@ -1653,9 +1653,10 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 
 ## 2026-11-10 — MSCL item-level evidence and safety review queue
 
-- Created a 53-record / 16-column review queue, one row for each visually checked physical MSCL catalogue item: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
+- Created a 53-record / 17-column review queue, one row for each visually checked physical MSCL catalogue item: `data/catalogues/mscl_review_gap_queue_2026_11_10.csv`.
 - Report: `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
-- New validator assertions map every queue row back to the exact source audit item ID, order, page, filename, SHA, verbatim technical gap and verbatim safety boundary. They enforce controlled review domains, unassigned reviewer state and OPEN_NOT_REVIEWED_OR_APPROVED status.
+- The 17th field copies the source visual-audit status verbatim, retaining dimension/geometry review flags from the original audit.
+- New validator assertions map every queue row back to the exact source audit item ID, order, page, visual status, filename, SHA, verbatim technical gap and verbatim safety boundary. Source/catalogue CI PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753 (validator commit `8cf28ce97362b98b8aabcba738b2712fa09a6ff4`).
 - Queue categories overlap; counts are review-domain assignments, not unique items or approval counts: dimension/geometry 24; metrology/model validation 20; material/compatibility 19; safety/use boundary 26; procurement/acceptance 25; source clarification 1.
 - Every row is tied to `MSCL_copy.pdf` SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`, source state USER_UPLOADED_UNAUTHENTICATED. The later equal-size MSCL variant is not promoted.
 - Biology-with-microscope source recovery was retried across Library and Conversation semantic search; zero results. Existing upload receipt and no-repeat policy remain intact.
