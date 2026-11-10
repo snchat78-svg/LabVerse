@@ -10,8 +10,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 0: DONE — planning/documentation baseline only.
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
-- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation with four functional workspace destinations; strict typecheck, production build and 13-group Chromium smoke passed on commit 5a0e733bb7bb77752aa1c93f4fc5a0a159672a8b. Remaining full static-preview parity and architecture hardening remain.
-- Phase 4: IN PROGRESS — React workspaces implement Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and session-local Research Studio draft. Inventory item-type/category filters, task/source coverage and both unmatched-task reasons are now migrated and browser-tested; full static-preview parity and real 3D assets remain.
+- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and 22/22 Chromium smoke groups PASS on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Broader architecture hardening remains.
+- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and session-local Research Studio draft; inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
@@ -1556,3 +1556,28 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 - Watch glass remains fragile; the Biology manual says it should never be heated. Do not infer safe heating from other glassware use.
 - Current Biology-with-microscope detail audit: 25/175 physical item records visually checked (26 detail/credits pages); 150 item detail pages remain unaudited.
 - React tests now assert the Test Tube quantity/dimensions and Glass Slide total pack quantity; latest workflow should verify these regression additions.
+
+
+## Latest verified checkpoint — 2026-11-10 (commit 111cf04c087000f43983ef6058e0d7ff31d8aef3)
+
+### Completed in this work unit
+- Added ordered Biology-with-microscope detail-audit queue: 150 pending physical catalogue rows; excludes the 25 item detail pages already visually checked and two documentation rows. Includes all physical catalogue classes: equipment/items, visual cards, embedded specimens, permanent slides and the microscope record.
+- React inventory surfaces dynamic 25/175 detail-page visual-audit coverage. Each Biology with-microscope item shows either visually checked in the user-uploaded candidate with PDF page reference or NOT VISUALLY CHECKED / OCR-index evidence only.
+- Added regression tests for checked and unchecked item status, overall coverage and Wire Gauze page 93 hazard evidence.
+- Dashboard catalogue CI now triggers on `data/catalogues/**` changes and verifies queue completeness/order/unique IDs.
+- Corrected `app/README.md` so it reflects implemented filters, workspace navigation, mapped candidate bulk add and remaining limitations.
+
+### Verification
+- React app: strict TypeScript typecheck PASS; Vite production build PASS; 22/22 browser smoke groups PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
+- Dashboard integrity: PDF archive 9 assertions PASS; practical-to-inventory mapping integrity PASS; Biology index/detail audit PASS (177 index rows; 25 item pages plus credits); queue checks PASS (150 pending physical records, source order and unique IDs); 18 catalogue assertions PASS; schema JSON PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+- Static Dashboard desktop/mobile browser smoke: running at checkpoint; do not mark PASS until its final result is recorded.
+
+### Gate status — unchanged
+- Phase 1 / Phase 1.1: IN PROGRESS. Official-byte authentication, procurement/BOM equivalence, internal recovery of earlier without-microscope and Physics upload records, the remaining 150 detail-page reviews, all 50 visual cards, 7 embedded specimens, 35 permanent slides, rights, safety and subject-expert approvals remain open.
+- Phase 2 scientific models/results: BLOCKED by Phase 1 evidence/safety/review exit gates. Only the source-backed dashboard read-model subset is allowed in parallel.
+- Phase 3: PARTIAL; React foundation and current tested scope work, broader hardening remains.
+- Phase 4: IN PROGRESS; full parity and real 3D are not delivered.
+- Phase 5–23: NOT STARTED.
+
+### Next precise action
+Resume queue order 1 (`NCERT-BIO-WM-SPEC-002`, Kit Box, indexed detail PDF page 9) and continue through the existing registered user-uploaded source if its original bytes can be recovered internally. If the binary remains inaccessible, retain this internal retrieval blocker and do not request a repeat upload; do not fill audit fields from OCR alone. Update the catalogue, audit CSV, report, queue and tests together after each visually checked batch.

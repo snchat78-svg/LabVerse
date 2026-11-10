@@ -33,8 +33,8 @@
 - Phase 0: DONE (documentation baseline only).
 - Phase 1 / Phase 1.1: IN PROGRESS; source authentication, remaining no-microscope/Physics record recovery, item-level audit, rights, safety and expert review remain open.
 - Phase 2: PARTIAL only for the dashboard-facing read model; scientific domain contracts and result engines remain blocked.
-- Phase 3: PARTIAL; React/TypeScript/Vite foundation passes strict typecheck, production build and latest 13/13 Chromium groups; full static-preview parity and architecture hardening remain.
-- Phase 4: IN PROGRESS; React has four workspace destinations, item-type/category filters, per-subject task/source coverage, both explicit unmatched-task reasons and a candidate placeholder workbench. Full static-preview parity and real 3D remain.
+- Phase 3: PARTIAL; React/TypeScript/Vite foundation passes strict typecheck, production build and latest 22/22 Chromium groups (commit 111cf04); broader architecture hardening remains.
+- Phase 4: IN PROGRESS; React has four workspace destinations, item-type/category filters, per-subject task/source coverage, explicit unmatched-task reasons, practical-to-item navigation, bulk mapped-candidate add and Biology visual-audit visibility. Full static-preview parity and real 3D remain.
 - Phase 5 onward: NOT STARTED; no real 3D assets or scientific action/simulation engines.
 
 ## Remaining work register
@@ -202,3 +202,25 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 
 ### Next single action
 - Continue page-level review of remaining equipment items and fragile/heat-related items in source order; after the equipment register, review the embedded specimens and permanent slides scientifically without copying protected NCERT artwork.
+
+
+## 2026-11-10 — Latest verified continuation (commit 111cf04c087000f43983ef6058e0d7ff31d8aef3)
+
+### Completed
+- React Biology inventory displays current with-microscope detail audit coverage: **25/175 visually checked; 150 pending**. Individual records state whether detail-page visual verification exists.
+- Created `data/catalogues/biology_with_microscope_detail_audit_queue_2026_11_10.csv`: exactly 150 unique pending rows in index/source order, including equipment, visual cards, embedded specimens, permanent slides and microscope record. Does not count documentation/credits or repeat already audited rows.
+- React browser suite: **22/22 groups PASS**, with strict typecheck and production build PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
+- Dashboard integrity suite: archive 9 assertions, index/detail audit, queue integrity, 18 catalogue assertions and schema parse PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+
+### Remaining source gates
+- Visually verify the other 150 indexed Biology detail pages; all 50 visual cards, 7 embedded specimens and 35 permanent slides need content/identity review in their own right where applicable.
+- Internally recover previous Biology-without-microscope and Physics PDF source records; user has already supplied these and MUST NOT be asked to upload again.
+- Authenticate current Physics and MSCL procurement attachments/BOM; preserve user-copy vs official-source distinction.
+- Close source-rights, Chemistry SDS/safety/waste, Biology sample/specimen ethics, and Physics/Biology/Chemistry expert review.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific engines/results remain BLOCKED.
+
+### Immediate next bounded action
+Start at queue order 1: `NCERT-BIO-WM-SPEC-002` (Kit Box; indexed PDF page 9), visually inspect the existing registered source if its uploaded bytes can be recovered internally, then update master catalogue, audit CSV/report, queue and smoke/data checks together. Current Library retrieval did not surface that original PDF in this session; this is an internal retrieval limitation, not a request for a repeat upload. Never promote OCR/index-only records to visually checked.
+
+### Dashboard/architecture next
+The practical-to-inventory mapping and bulk-add workbench flow already exist. Do not recreate them. Continue only after the current source-audit batch, then focus on remaining static-preview parity and architecture hardening. Real 3D assets/scene, deterministic simulation, scientific solvers, offline storage and Android packaging are later roadmap phases, not completed.

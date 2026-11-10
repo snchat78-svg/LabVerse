@@ -644,3 +644,20 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Verified exact source dimensions/materials and quantities; preserved 12 test tubes and two packs of 50 glass slides.
 - Retained the NCERT manual prohibition on heating a watch glass.
 - Biology-with-microscope visual detail coverage now 25/175 physical items, plus one credits page.
+
+
+## 2026-11-10 — Biology detail-page audit visibility and pending queue (commit 111cf04c087000f43983ef6058e0d7ff31d8aef3)
+
+- **Phase:** Phase 1 / 1.1 source audit plus authorized parallel Phase 3/4 UI/read-model track. No phase transition.
+- **Pre-work roadmap check:** inspected current ROADMAP, PHASE_STATE, WORK_LOG, NEXT_WORK_REGISTER, source PDF registry, Biology catalogue/index audit, React application and actual recent CI. Found React bulk-add of mapped practical candidates already implemented and tested; did not duplicate it.
+- **Source reconciliation:** all 177 current Biology-with-microscope index records are reconciled; 175 physical/catalogue rows remain after excluding two documentation entries. 25 physical detail pages are visually checked against the user-uploaded candidate; 150 remain OCR/index-only.
+- **New data artifact:** generated `data/catalogues/biology_with_microscope_detail_audit_queue_2026_11_10.csv` with 150 unique pending rows in source order. It includes all physical record classes—equipment, visual cards, embedded specimens, permanent slides and the microscope item—and excludes documentation rows and previously checked pages.
+- **React changes:** extended item read type to accept visual-audit metadata; added live checked/remaining summary and per-item checked vs OCR/index-only detail label; added regression coverage for Kit Box (not checked) and Wire Gauze (checked, PDF page 93). Updated app README for current feature status.
+- **CI robustness:** source-catalogue changes now trigger the dashboard integrity workflow. Added 150-row count, uniqueness, source-order and already-audited-exclusion assertions.
+- **Files:** `app/src/App.tsx`, `app/src/styles.css`, `app/tests/smoke.mjs`, `app/README.md`, `dashboard/tests/validate-catalogue.mjs`, `.github/workflows/labverse-dashboard-check.yml`, and the new queue CSV.
+- **React CI:** typecheck PASS, production build PASS, 22/22 Chromium groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
+- **Dashboard integrity CI:** 9 PDF archive checks PASS; practical mapping integrity PASS; 177-row index audit/25 item detail pages PASS; 150 pending-row queue assertions PASS; 18 catalogue assertions PASS; schema parse PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+- **Static Dashboard browser smoke:** still in progress at the time of this entry; record its final result separately after checking the workflow.
+- **Evidence boundary:** this queue is a to-do list, not an audit completion. OCR/index fields are not visual verification. Uploaded source remains a candidate; official NCERT byte equality, current procurement and science/expert approvals are not established. No copyrighted PDF binary was committed.
+- **Phase status:** Phase 1 / 1.1 IN PROGRESS; Phase 2 science engines BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
+- **Next bounded action:** recover the already submitted Biology-with-microscope source internally and visually review queue order 1 onward (first item Kit Box, index 2, PDF page 9). Do not ask the user to repeat-upload. If bytes remain unavailable, leave queue rows pending and record the internal retrieval limitation.

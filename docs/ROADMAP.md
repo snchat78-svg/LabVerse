@@ -7,8 +7,8 @@ This roadmap controls phase order and is the master execution contract. Class 11
 | 0 | Product definition and design baseline | Product vision, requirements, architecture, rules and phase process | DONE — docs only |
 | 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
 | 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | PARTIAL — dashboard read-model subset only; scientific models remain gated by Phase 1 |
-| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — React/TS/Vite app foundation passes typecheck/build/6 browser groups; complete app structure and workspace migration remain |
-| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — three-subject dashboard starter committed |
+| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — React/TS/Vite app passes strict typecheck, production build and 22/22 Chromium groups; broader architecture hardening remains |
+| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — four React workspaces, filters, source coverage/gap disclosure, candidate bulk-add and Biology detail-audit visibility; static-preview parity remains |
 | 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
 | 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
 | 7 | Chemistry property and reaction engine | Trusted property lookup, curated reactions, stoichiometry, kinetics, equilibrium and visual states | NOT STARTED |
@@ -49,8 +49,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Six-pack task index reconciliation: 171/171 unique task IDs across all six RBSE packs; this is index-level integrity, not completion of detailed item/asset/model/test traceability.
 - Phase 1 source authentication and scientific validation remain IN PROGRESS. On 2026-11-09 the user explicitly authorized a parallel, UI-only dashboard track: implement subject navigation, catalogue browsing, source-status display and a non-scientific placeholder workbench without waiting for byte authentication. This does not waive or close any Phase 1 gate.
 - Phase 2 science-domain models, validated rules and result generation remain BLOCKED by Phase 1. The only Phase 2 work allowed in parallel is the dashboard-facing inventory/task read-model contract.
-- Phase 3 React/TypeScript/Vite app foundation is PARTIAL but validated: strict typecheck, production build and 10/10 Chromium browser groups pass, including functional workspace switching. Remaining work is broader codebase hardening and static-preview parity.
-- Phase 4 dashboard/navigation is IN PROGRESS. React now has four functional workspace destinations: Learning Lab practical catalogue; Virtual Experiment Lab candidate placeholder bench; Scientific Analysis source/evidence and NOT_MODELLED state; Research Studio session-local question/hypothesis/variables draft. React also includes item-type/category filters, per-subject task/source coverage and explicit unmatched Physics and Biology task reasons. Full static-preview parity remains. Do not claim real 3D objects, experimental actions, calculated outcomes or saved research notebooks.
+- Phase 3 React/TypeScript/Vite app foundation is PARTIAL but validated: strict typecheck, production build and 22/22 Chromium browser groups pass on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Remaining work is broader codebase hardening, accessibility/performance review and static-preview parity.
+- Phase 4 dashboard/navigation is IN PROGRESS. React includes four workspace destinations, inventory type/category filters, class filter, per-subject task/source coverage, both unmatched-task explanations, source-to-item candidate navigation and a bulk-add candidate placeholder workbench. Biology with-microscope detail pages now show visual-audit status and 25/175 coverage; 150 pending physical catalogue records have an ordered queue. Full static-preview parity remains. Do not claim real 3D objects, experimental actions, calculated outcomes or saved research notebooks.
 
 ## Phase 1 — current phase
 
@@ -512,3 +512,15 @@ Eight more pages were visually checked in the current Biology-with-microscope up
 ## Biology with-microscope glassware audit — batch 3
 
 Twelve further current-upload detail pages have been visually checked: capillary tubes, glass pipettes, cavity slides, dropper, test tubes, cover slips, glass rods, glass tubes, watch glass, conical flask, boiling tube and glass slide. Confirmed source quantities include 12 test tubes and 100 glass slides. The watch-glass no-heating warning from the manual is retained. Coverage is now 25/175 physical item detail pages; the remaining items and all biological identity/expert checks stay open.
+
+
+## 2026-11-10 — Biology detail-audit transparency and ordered queue
+
+- **Commit:** `111cf04c087000f43983ef6058e0d7ff31d8aef3`.
+- **Phase 1.1:** remains IN PROGRESS. The existing Biology-with-microscope candidate has 177 index entries (all four index pages visually reconciled); 175 physical catalogue records after excluding two documentation entries. Detail-page visual verification remains 25/175; 150 physical records are pending.
+- Added `data/catalogues/biology_with_microscope_detail_audit_queue_2026_11_10.csv`: 150 pending rows in source-index order, covering equipment, visual cards, embedded specimens, permanent slides and microscope record. Already audited rows and documentation entries are excluded. This is a queue, not a claim that pending pages were reviewed.
+- React inventory now displays 25/175 visual detail-page audit coverage and item-level status: visually checked against the user-uploaded candidate vs OCR/index-only. No official NCERT byte authentication is inferred.
+- **React verification:** strict TypeScript typecheck PASS; Vite production build PASS; Chromium smoke 22/22 groups PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967194.
+- **Source integrity:** PDF archive/no-repeat, source-to-task mapping, visual index and the 150-row queue checks PASS. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/42760967344.
+- Static Dashboard browser smoke was still running at this documentation checkpoint; its result must be verified before claiming success.
+- Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5+ NOT STARTED.
