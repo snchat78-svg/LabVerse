@@ -1548,3 +1548,11 @@ No official PDF bytes were obtained in this pass. Phase 1 / Phase 1.1 remain IN 
 - Current with-microscope audit coverage: 13/175 physical kit-item detail pages visually checked (14 pages including the document-credit page); the other 162 detail pages remain unverified in this work unit.
 - React smoke now also tests alcohol thermometer, impact-tool hammer and pointed-pin warnings. Fresh CI result should be checked before marking these UI tests passed.
 - Full source authenticity, live stock/procurement, and Biology scientific/expert review remain open; Phase 1.1 is not complete and Phase 2 remains blocked.
+
+## 2026-11-10 — Biology glassware detail audit, batch 3
+
+- Visually checked current-upload detail pages for Capillary Tubes p.13, Glass Pipette p.14, Cavity Slide p.15, Glass Dropper p.55, Test Tube p.69, Cover Slips p.72, Glass Rod p.73, Glass Tube p.74, Watch Glass p.75, Conical Flask p.83, Boiling Tube p.84 and Glass Slide p.87.
+- Exact source quantities retained: test tubes 12; glass slides 2 packs of 50 (100 total); cover slips 2 packs of 20; glass tubes one packet of 6.
+- Watch glass remains fragile; the Biology manual says it should never be heated. Do not infer safe heating from other glassware use.
+- Current Biology-with-microscope detail audit: 25/175 physical item records visually checked (26 detail/credits pages); 150 item detail pages remain unaudited.
+- React tests now assert the Test Tube quantity/dimensions and Glass Slide total pack quantity; latest workflow should verify these regression additions.
