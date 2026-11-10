@@ -788,3 +788,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Files:** `data/catalogues/physics_measurement_metrology_readiness_2026_11_10.csv`; `docs/PHASE_1_1_PHYSICS_MEASUREMENT_METROLOGY_AUDIT_2026_11_10.md`; validator update in `dashboard/tests/validate-catalogue.mjs`.
 - **CI status:** new register validation and browser smoke are pending at log entry time; append final run results after workflow completion.
 - **Phase gate:** Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific measurement contracts BLOCKED; Phase 8 not started.
+
+## 2026-11-10 — Physics metrology register CI and browser smoke passed
+
+- Source/catalogue validation **PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/42784987543 on validator commit `902c8a5f8192ca3d2f5be2bbcd351d98f220af49`.
+- All 18 selected Physics measurement/reading-critical instrument rows resolve to the 106-row source manual catalogue by source ID, manual row and exact item label. Schema: 19 logical CSV records including header, 17 columns. Manual status remains MANUAL_TEXT_INSPECTED; procurement status remains NOT_ESTABLISHED_BY_ITEM_SCHEDULE; calibration UNKNOWN; Phase 8 model/test remains NOT_IMPLEMENTED_PHASE_8_BLOCKED.
+- Browser smoke **PASS 9/9 groups**: https://github.com/snchat78-svg/LabVerse/actions/runs/42784988030.
+- The first assertion run failed because four manual-supported detail assertions targeted the source-gap field rather than the manual-supported-role field. The validator was corrected and the second run passed; only the corrected rerun is counted.
+- No calibration certificate, actual measurement, physical device test, quantitative physics solver, 3D asset or experimental result was created or validated.
+- Phase 1 / 1.1 IN PROGRESS; Phase 2 measurement contracts BLOCKED; Phase 8 not started. Next: continue internal retrieval of the already supplied Biology-with-microscope source and maintain official procurement/source/safety/expert closure tasks.
