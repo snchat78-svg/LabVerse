@@ -491,3 +491,10 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 - Verification: GitHub Actions run https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972 completed SUCCESS: strict TypeScript PASS, Vite build PASS, Chromium browser smoke **10/10 groups PASS**. Commit `689af07c086005b79fa6444aff600c620eb789f6`.
 - Phase status unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D assets NOT STARTED.
 - Next: migrate inventory category/type filters, task/source coverage summary and unmatched-task explanation into React; preserve static dashboard as reference until parity passes.
+
+## Execution update — 2026-11-10
+
+- Current-session source uploads are fingerprinted and registered in the append-only receipt. Reuse the receipt and GitHub catalogues; no repeat upload is required.
+- The current React app includes item type/category filters, task/source coverage, explicit Physics and Biology gap reasons, a candidate placeholder workbench and four workspace destinations.
+- Latest verified React CI on commit d02f02445bb587fd6a51927f25288e2cfb72a042: TypeScript typecheck, Vite production build and 12/12 Chromium groups passed. A new test for the Biology open-project gap has since been committed; await its fresh CI result before marking that test extension verified.
+- Phase gates do not change: Phase 1/1.1 remain open for source/procurement/rights/safety/expert gaps; Phase 2 scientific engines remain blocked; Phase 3 remains partial and Phase 4 remains in progress.
