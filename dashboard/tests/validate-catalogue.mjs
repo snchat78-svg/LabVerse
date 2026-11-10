@@ -388,11 +388,11 @@ const msclReviewQueueText = await readFile(
 );
 const msclReviewRows = parseCsvRows(msclReviewQueueText);
 assert.equal(msclReviewRows.length, 54, "MSCL review queue must contain one header + all 53 physical items");
-assert.equal(msclReviewRows[0].length, 16, "MSCL review queue schema must have 16 columns");
-assert.ok(msclReviewRows.slice(1).every(row => row.length === 16), "all MSCL review queue records must preserve 16 columns");
+assert.equal(msclReviewRows[0].length, 17, "MSCL review queue schema must have 17 columns");
+assert.ok(msclReviewRows.slice(1).every(row => row.length === 17), "all MSCL review queue records must preserve 17 columns");
 assert.deepEqual(
   msclReviewRows[0],
-  ["source_document","source_sha256","source_authentication_state","source_index_no","source_item_id","item_name","source_pdf_page_range","review_domains","priority","source_evidence_gap","safety_boundary","required_closure_evidence","review_owner","review_status","allowed_current_representation","phase_gate"],
+  ["source_document","source_sha256","source_authentication_state","source_index_no","source_item_id","item_name","source_pdf_page_range","source_visual_audit_status","review_domains","priority","source_evidence_gap","safety_boundary","required_closure_evidence","review_owner","review_status","allowed_current_representation","phase_gate"],
   "MSCL review queue columns must retain their documented order"
 );
 const msclReviewById = new Map(msclReviewRows.slice(1).map(row => [row[4], row]));
@@ -412,18 +412,19 @@ for (let index = 0; index < 53; index++) {
   assert.equal(review[3], source[3], "MSCL review index must match source audit");
   assert.equal(review[5], source[5], "MSCL item label must match source audit");
   assert.equal(review[6], source[6], "MSCL page reference must match source audit");
+  assert.equal(review[7], source[13], "source visual-audit status must be preserved verbatim");
   assert.equal(review[0], source[0]);
   assert.equal(review[1], source[1], "MSCL review row must keep exact source fingerprint");
   assert.equal(review[2], "USER_UPLOADED_UNAUTHENTICATED", "review queue must not imply official source authentication");
-  assert.equal(review[9], source[11], "source evidence gap must remain verbatim");
-  assert.equal(review[10], source[12], "safety boundary must remain verbatim");
-  assert.equal(review[12], "NOT_ASSIGNED", "no reviewer/owner may be invented");
-  assert.equal(review[13], "OPEN_NOT_REVIEWED_OR_APPROVED", "queue must remain fail-closed until independent review");
-  assert.match(review[14], /NOT_APPROVED_FOR_PHYSICAL_USE_OR_AUTHENTIC_MODEL/);
-  assert.match(review[15], /PHASE_1_1_OPEN.*PHASE_2_AND_PHASE_5_REMAIN_BLOCKED/);
-  const domains = review[7].split(";");
+  assert.equal(review[10], source[11], "source evidence gap must remain verbatim");
+  assert.equal(review[11], source[12], "safety boundary must remain verbatim");
+  assert.equal(review[13], "NOT_ASSIGNED", "no reviewer/owner may be invented");
+  assert.equal(review[14], "OPEN_NOT_REVIEWED_OR_APPROVED", "queue must remain fail-closed until independent review");
+  assert.match(review[15], /NOT_APPROVED_FOR_PHYSICAL_USE_OR_AUTHENTIC_MODEL/);
+  assert.match(review[16], /PHASE_1_1_OPEN.*PHASE_2_AND_PHASE_5_REMAIN_BLOCKED/);
+  const domains = review[8].split(";");
   assert.ok(domains.length > 0 && domains.every(domain => allowedReviewDomains.has(domain)), "review domains must use the controlled vocabulary");
-  assert.ok(review[11].length > 30, "each queue row must define closure evidence");
+  assert.ok(review[12].length > 30, "each queue row must define closure evidence");
 }
 for (const [id, pattern] of [
   ["NCERT-MSCL-SPEC-004", /NEEDS_TECHNICAL_REVIEW/],
@@ -437,7 +438,7 @@ for (const [id, pattern] of [
 ]) {
   const row = msclReviewById.get(id);
   assert.ok(row, "critical MSCL review item must be present: " + id);
-  assert.match(row[9] + " " + row[10], pattern, "critical source technical gap or safety boundary must persist: " + id);
-  assert.notEqual(row[13], "APPROVED", "critical items cannot be auto-approved");
+  assert.match(row[10] + " " + row[11] + " " + row[7], pattern, "critical source technical gap, audit status or safety boundary must persist: " + id);
+  assert.notEqual(row[14], "APPROVED", "critical items cannot be auto-approved");
 }
-console.log("MSCL evidence/safety review queue: 53 source-linked rows, 16 columns, verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
+console.log("MSCL evidence/safety review queue: 53 source-linked rows, 17 columns, source visual status and verbatim gaps, controlled review domains and fail-closed approval/phase boundaries PASS.");
