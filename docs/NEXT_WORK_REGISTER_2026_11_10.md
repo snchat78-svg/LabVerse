@@ -155,3 +155,20 @@ Continue Phase 1.1 page-level Biology kit source audit, then recover the previou
 
 ### Next single action
 - Continue the page-level Biology kit specification audit: reconcile the with-microscope 177-row catalogue against source page evidence, then recover the previously supplied without-microscope record internally and compare variants only where source evidence supports the comparison. Do not request repeat uploads.
+
+## 2026-11-10 — Biology with-microscope index and safety-page audit
+
+### Completed
+- Visually inspected current PDF cover and index pages 2–5; confirmed the 177-row catalogue index is contiguous and complete, with 175 kit item records plus two documentation records.
+- Added `data/catalogues/ncert_biology_with_microscope_index_audit_2026_11_10.csv` and `docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_INDEX_AUDIT_2026_11_10.md`.
+- Visually checked six detail/credits pages: Spirit Lamp (26), Scalpel (53), Dissecting Scissors (56), Wire Gauze (93), Student Laboratory Microscope (198), Document Development Team (199).
+- Confirmed source p.93 identifies an asbestos centre in Wire Gauze; row 176 is a microscope, not a slide; row 177 is credits only.
+- React detail panel now displays item-specific Safety / review notes; added browser checks for asbestos, open flame and sharp tools.
+
+### Remaining
+- Full page-by-page technical verification of the remaining Biology kit item pages.
+- Internal retrieval of previously supplied Biology-without-microscope and Physics source records; Library search did not surface the old raw files in this pass. Do not request re-upload or invent fingerprints.
+- Continue chemistry current specification/BOM audit and Rights / safety / subject expert reviews.
+
+### Next single action
+- Extend visual detail audit in source order for Biology-with-microscope rows 2–83, starting with remaining heating, glassware, microscopy and field equipment; separately keep source-reported quantities distinct from current kit stock.
