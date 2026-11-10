@@ -637,3 +637,10 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Confirmed source-specific material/dimension/quantity fields against the page images.
 - Clarified the lab thermometer is alcohol-filled (-10 °C to 110 °C; 1 °C graduation; quantity 3), not mercury-filled.
 - Current Biology-with-microscope detail page coverage: 13 of 175 physical kit items. Remaining 162 item detail pages and separate visual-card/specimen/slide scientific reviews remain open.
+
+## 2026-11-10 — Biology glassware audit batch 3
+
+- Visual page review expanded to 12 glassware records from the current PDF.
+- Verified exact source dimensions/materials and quantities; preserved 12 test tubes and two packs of 50 glass slides.
+- Retained the NCERT manual prohibition on heating a watch glass.
+- Biology-with-microscope visual detail coverage now 25/175 physical items, plus one credits page.
