@@ -809,3 +809,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Rechecked internal Library/Conversation search for the previously submitted Biology-with-microscope PDF; no match surfaced. The registered file identity and no-repeat upload policy remain unchanged. Kit Box / page 9 remains the first Biology queue item.
 - Phase gate unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
 - CI validation for the new queue is pending at this log entry; append the final result after GitHub Actions completes.
+
+## 2026-11-10 — RBSE/MSCL reagent crosswalk reconciliation
+
+- Re-read the existing NCERT MSCL manual reagent index (124 labels), 126-row preliminary name-only safety screen (124 numbered + 2 supplemental), 2-row omissions register and 41-row RBSE Chemistry reagent matrix. No previous source rows were regenerated or deduplicated.
+- Created `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv` (41 data rows, 20 columns) and detailed report `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md`.
+- Reconciliation counts: safety screen exact text candidates 18 records / 17 task IDs; task matrix 17 candidate-linked task IDs; 15 shared tasks; 2 screen-only; 2 matrix-contextual-only; 22 neither. Ten shared tasks have differing candidate record-ID sets. These differences are review flags, not permission to rewrite reagent use.
+- Preserved two Potassium iodate source rows; kept Potassium permanganate and Potassium iodide supplemental references separate; retained explicit warning that KI is not automatically equivalent to the numbered “Iodine solution” row.
+- Added assertions to `dashboard/tests/validate-catalogue.mjs` (commit `e7ce64105ab0c0ae66137633abc811ac615236a9`). Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. Desktop/mobile browser smoke pending: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
+- No current SDS, supplier BOM, CAS/formulation, reaction procedure, physical-use permission or expert approval was produced. All reagent rows remain NO_LIVE_USE and all RBSE task rows DOCUMENTARY_CANDIDATE_ONLY.
