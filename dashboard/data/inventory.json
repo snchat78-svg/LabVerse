@@ -9261,5 +9261,168 @@
         "note": "Do not request re-upload. Recover and compare existing prior records. No item omissions/additions are inferred until those records are available."
       }
     }
+  },
+  "sourceDocuments": [
+    {
+      "sourceId": "BIO-MANUAL-13163",
+      "title": "Manual of Secondary Stage Biology Laboratory Kit for Grades 11th & 12th",
+      "subject": "Biology",
+      "documentType": "Kit manual",
+      "filenames": [
+        "Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111.pdf",
+        "Manual_Secondary_Stage_Biology_Laboratory_Kit-11&12_EN_111 (1).pdf"
+      ],
+      "duplicateCopies": 2,
+      "uniqueByteCopies": 1,
+      "bytes": 20028910,
+      "pages": 141,
+      "sha256": "c6303b94bcb9a94d08a54aabf56f22d94aaf87f296d083917ab8b6fb6a6bc086",
+      "publication": {
+        "isbn": "978-93-5292-528-5",
+        "firstEdition": "March 2018",
+        "reprints": [
+          "October 2018",
+          "January 2019",
+          "March 2020"
+        ]
+      },
+      "status": "USER_UPLOAD_PRESENT_IN_CURRENT_CONVERSATION; CONTENT_INSPECTED; OFFICIAL_BYTE_EQUALITY_NOT_VERIFIED",
+      "derivedRecords": [
+        "data/catalogues/ncert_biology_manual_reagents_58.csv",
+        "dashboard/data/inventory.json"
+      ],
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "CHEM-MSCL-UPLOADED-SPEC",
+      "title": "NCERT Specification Document of Items — Micro Scale Chemistry Laboratory Kit, Grades 11 & 12",
+      "subject": "Chemistry",
+      "documentType": "Kit specification candidate",
+      "filenames": [
+        "MSCL_copy.pdf"
+      ],
+      "bytes": 19798501,
+      "pages": 65,
+      "sha256": "db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d",
+      "status": "USER_UPLOAD_PRESENT_IN_CHATGPT_LIBRARY; COVER_VISUALLY_CHECKED; OCR_CATALOGUE_PRESENT; OFFICIAL_BYTE_EQUALITY_NOT_VERIFIED",
+      "derivedRecords": [
+        "data/catalogues/ncert_mscl_spec_items.csv",
+        "docs/PHASE_1_1_MSCL_SPECIFICATION_ITEM_REGISTER.md"
+      ],
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "BIO-KIT-WITH-MICROSCOPE",
+      "title": "Secondary Stage Biology Laboratory Kit (with microscope), Grades XI & XII",
+      "subject": "Biology",
+      "documentType": "Kit specification candidate",
+      "filenames": [
+        "SSBK_with_Microscope_copy.pdf"
+      ],
+      "bytes": 59620970,
+      "pages": 199,
+      "sha256": "c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2",
+      "status": "PRIOR_USER_UPLOAD_RECORDED_IN_GITHUB; OCR_AND_PARTIAL_VISUAL_AUDIT; 177-ROW_CATALOGUE_PRESENT; OFFICIAL_BYTE_EQUALITY_NOT_VERIFIED",
+      "derivedRecords": [
+        "data/catalogues/ncert_biology_with_microscope_spec_items.csv",
+        "docs/PHASE_1_1_BIOLOGY_WITH_MICROSCOPE_SPECIFICATION_REGISTER.md"
+      ],
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "BIO-KIT-WITHOUT-MICROSCOPE",
+      "title": "Secondary Stage Biology Laboratory Kit (without microscope), Grades XI & XII",
+      "subject": "Biology",
+      "documentType": "Kit specification candidate",
+      "filenames": [
+        "Prior user-upload filename not surfaced in current index"
+      ],
+      "status": "PRIOR_USER_UPLOAD_ACKNOWLEDGED_BY_USER; RAW_ATTACHMENT_HASH_AND_DERIVED_ITEM_TABLE_NOT_RECOVERED_IN_CURRENT_INDEX",
+      "officialUrl": "https://ncert.nic.in/division/dek/pdf/SSBK_without_Microscope.pdf",
+      "derivedRecords": [
+        "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
+      ],
+      "noRepeatUpload": true,
+      "note": "Do not request a repeat upload. Recover previously submitted attachment/records internally. Do not infer variant differences."
+    },
+    {
+      "sourceId": "RBSE-XI-SYLLABUS-2026-27",
+      "title": "RBSE Class XI Syllabus Session 2026–2027",
+      "subject": "Physics/Chemistry/Biology and other subjects",
+      "documentType": "Board syllabus",
+      "filenames": [
+        "11_2027_copy.pdf"
+      ],
+      "bytes": 23343499,
+      "pages": 155,
+      "sha256": "a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5",
+      "pdfMetadata": {
+        "author": "Deepak Mudgal",
+        "creator": "Microsoft Office Word 2007",
+        "createdUtc": "2026-05-19T02:34:44Z",
+        "modifiedUtc": "2026-05-22T04:02:50Z"
+      },
+      "status": "USER_UPLOAD_PRESENT_IN_CHATGPT_LIBRARY; PRACTICAL_SCOPE_EXTRACTED; OFFICIAL_ENDPOINT_BYTE_IDENTITY_NOT_VERIFIED",
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "RBSE-XII-SYLLABUS-2026-27",
+      "title": "RBSE Class XII Syllabus Session 2026–2027",
+      "subject": "Physics/Chemistry/Biology and other subjects",
+      "documentType": "Board syllabus",
+      "filenames": [
+        "12_2027_copy.pdf"
+      ],
+      "bytes": 18279805,
+      "pages": 169,
+      "sha256": "2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34",
+      "pdfMetadata": {
+        "producer": "4-Heights PDF Library 3.4.0.6904",
+        "modifiedUtc": "2026-06-01T09:15:47Z"
+      },
+      "status": "USER_UPLOAD_PRESENT_IN_CHATGPT_LIBRARY; PRACTICAL_SCOPE_EXTRACTED; OFFICIAL_ENDPOINT_BYTE_IDENTITY_NOT_VERIFIED",
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "PHYSICS-KIT-MANUAL-13164",
+      "title": "Manual of Secondary Stage Physics Laboratory Kit, Grades XI & XII",
+      "subject": "Physics",
+      "documentType": "Kit manual",
+      "officialUrl": "https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf",
+      "status": "106-ROW_EXTRACTED_ITEM_REGISTER_PRESENT; USER_CONFIRMS_PHYSICS_PDFS_PREVIOUSLY_SHARED; EXACT_OLD_RAW_FILENAME_HASH_NOT_SURFACED",
+      "derivedRecords": [
+        "data/catalogues/ncert_physics_kit_manual_items.csv",
+        "docs/PHASE_1_1_PHYSICS_MANUAL_ITEM_REGISTER.md"
+      ],
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "PHYSICS-KIT-CURRENT-SPEC",
+      "title": "Secondary Stage Physics Laboratory Kit specification, Grades XI & XII",
+      "subject": "Physics",
+      "documentType": "Procurement specification",
+      "officialUrl": "https://ncert.nic.in/division/dek/pdf/SSPhyLaboratoryKit.pdf",
+      "status": "USER_REPORTS_PRIOR_PHYSICS_PDF_SUBMISSION; CURRENT_SPECIFIC_ATTACHMENT_HASH_AND_ITEM_CATALOGUE_NOT_SURFACED; PROCUREMENT_GAP_OPEN",
+      "noRepeatUpload": true
+    },
+    {
+      "sourceId": "CHEM-MSCL-MANUAL-13166",
+      "title": "Manual of Microscale Chemistry Laboratory Kit, Grades XI & XII",
+      "subject": "Chemistry",
+      "documentType": "Teaching manual",
+      "officialUrl": "https://n20.ncert.org.in/pdf/school-kit/Manual_01.pdf",
+      "status": "EXTRACTED_MANUAL_REGISTERS_PRESENT; 51 APPARATUS_ROWS; 124 REAGENT_LABELS; NO_CURRENT_PROCUREMENT_BOM",
+      "derivedRecords": [
+        "data/catalogues/ncert_mscl_manual_apparatus_index.csv",
+        "data/catalogues/ncert_mscl_manual_reagent_index.csv",
+        "data/catalogues/ncert_mscl_manual_reagent_safety_screen.csv"
+      ],
+      "noRepeatUpload": true
+    }
+  ],
+  "sourceArchivePolicy": {
+    "repositoryContainsOriginalPdfBinaries": false,
+    "description": "GitHub stores source IDs, original filenames where recovered, byte sizes, SHA-256 hashes, PDF metadata, derived catalogues, task crosswalks and explicit retrieval statuses. Original PDF binaries remain in the user-upload/Library sources where accessible. Do not tell the user to re-upload files already registered; recover old records from this register first.",
+    "noRepeatUploadRule": "All records marked noRepeatUpload=true must not trigger a repeat upload request. A missing current raw attachment is an internal retrieval gap, not user-side failure."
   }
 }
