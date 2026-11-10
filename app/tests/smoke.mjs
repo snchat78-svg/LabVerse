@@ -30,6 +30,17 @@ async function main() {
     assert.match(await page.locator(".practical-panel .panel-head").innerText(), /41 tasks/);
     assert.equal(await page.locator(".task-list article").count(), 41);
 
+    // Practical -> candidate source item -> placeholder bench.
+    const vernierTask = page.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-EXP-01"});
+    await vernierTask.getByRole("button", {name:/Inspect mapped items/}).click();
+    await vernierTask.locator(".mapped-item").filter({
+      has:page.locator("strong", {hasText:/^Vernier caliper$/})
+    }).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /NCERT-PHY-KIT-003/);
+    await vernierTask.getByRole("button", {name:/Add mapped candidates to workbench/}).click();
+    assert.equal(await page.locator(".bench-item").count(), 2);
+    assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
+
     // Chemistry catalogue opens from the three-direction overview
     await page.locator(".back-button").click();
     await page.locator(".subject-card.amber").click();
@@ -51,10 +62,11 @@ async function main() {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     assert.equal(overflow,false,"React app must not overflow horizontally on a 390px viewport");
     assert.deepEqual(errors,[],"React app must not emit browser errors");
-    console.log("LabVerse React app browser smoke: 5 groups passed.");
+    console.log("LabVerse React app browser smoke: 6 groups passed.");
     console.log("PASS: React overview and three subjects");
     console.log("PASS: Physics inventory search and source detail");
     console.log("PASS: XI task filter");
+    console.log("PASS: Practical source links and candidate placeholder bench");
     console.log("PASS: Chemistry and Biology source/safety details");
     console.log("PASS: Mobile layout and no browser errors");
   } finally {
