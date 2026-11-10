@@ -66,6 +66,13 @@ async function main() {
     assert.equal(await page.locator("#inventory-search").inputValue(), "Vernier caliper");
     results.push("Physics practical-to-inventory source navigation");
 
+    // Keep a real source gap explicit instead of inventing a kit match.
+    await page.locator("#task-search").fill("Fortin barometer");
+    await page.locator('[data-task="RBSE-XI-PHY-PRJ-08"]').click();
+    assert.match(await page.locator("#analysis-copy").innerText(), /Fortin barometer/);
+    assert.match(await page.locator("#selected-details").innerText(), /No candidate source links|0/);
+    results.push("Physics unmatched Fortin barometer gap is disclosed");
+
     // Chemistry: reagent search and virtual-only status must be visible.
     await page.locator("#back-home").click();
     await page.locator('.subject-card[data-subject="chemistry"]').click();
@@ -91,7 +98,11 @@ async function main() {
     assert.match(await page.locator("#analysis-copy").innerText(), /not supplied|reference only/i);
     await page.locator("#class-select").selectOption("XI");
     assert.equal(await page.locator("#task-count").innerText(), "22 tasks");
-    results.push("Biology school-managed reagent boundary and Class XI filter");
+    await page.locator("#class-select").selectOption("ALL");
+    await page.locator("#task-search").fill("Investigatory project");
+    await page.locator('[data-task="RBSE-XII-BIO-PRJ-01"]').click();
+    assert.match(await page.locator("#analysis-copy").innerText(), /no fixed title|teacher-assigned/i);
+    results.push("Biology school-managed reagent boundary, class filter and open project gap");
 
     // Mobile viewport: no horizontal overflow and subject controls remain usable.
     await page.setViewportSize({ width: 390, height: 844 });
@@ -106,7 +117,7 @@ async function main() {
     results.push("Mobile viewport and subject navigation");
 
     assert.deepEqual(errors, [], "browser runtime must not log page or console errors");
-    console.log("LabVerse browser smoke tests: 7 groups passed.");
+    console.log("LabVerse browser smoke tests: 8 groups passed.");
     for (const result of results) console.log("PASS:", result);
   } finally {
     await browser.close();
