@@ -1661,3 +1661,13 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Every row is tied to `MSCL_copy.pdf` SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`, source state USER_UPLOADED_UNAUTHENTICATED. The later equal-size MSCL variant is not promoted.
 - Biology-with-microscope source recovery was retried across Library and Conversation semantic search; zero results. Existing upload receipt and no-repeat policy remain intact.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 science contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED. CI for the new assertions must pass before this work unit is marked validated.
+
+## 2026-11-10 — RBSE/MSCL reagent crosswalk reconciliation
+
+- Added a task-by-task 41-row, 20-column comparison between MSCL reagent safety-screen text matches and the RBSE task-to-reagent matrix.
+- Source/catalogue validator PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206. It locks 124 numbered reagent labels, 2 supplemental refs, 126 no-live-use/unapproved/no-BOM screen records, duplicate Potassium iodate row preservation, KI vs Iodine solution separation, 41 unique task IDs and exact reconciliation of candidate-ID sets.
+- Reconciliation: screen links 17 task IDs; matrix links 17; shared 15; two screen-only (OPT-01, OPT-04); two matrix-contextual-only (THERMO-02, ELECTRO-01); 22 with no candidate link in either track. Ten shared tasks have differing record-ID sets and require review.
+- All screening remains preliminary name-only triage, not GHS/SDS. No product formula/CAS/concentration/grade or supply state was inferred. All 126 reagent records remain blocked from live use; all 41 task rows remain documentary-only.
+- Full report and CSV: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md` and `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`.
+- Browser smoke run is pending at https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772; update after it finishes.
+- Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; no gates waived.
