@@ -5698,7 +5698,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Sharp points",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 22,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Steel; 26 mm; packet of 50; sharp points."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-014",
@@ -5919,7 +5925,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Sharp point",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 43,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Stainless steel; 100 mm; pointed tips; quantity 2."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-032",
@@ -6097,7 +6109,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Glass breakage risk",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 57,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Glass mortar and pestle; rough-textured inside; source dimensions and quantity visually confirmed; glass breakage risk."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-046",
@@ -6181,7 +6199,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Sharp points",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 64,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "SWG 15; 38 mm; quantity 5; pointed nail."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-053",
@@ -6205,7 +6229,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "SHARP TOOL; simulation only",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 66,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Stainless steel; 130 mm; one prong blunt, one pointed; quantity 1."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-055",
@@ -6217,7 +6247,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "SHARP TOOL; simulation only",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 67,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Sharp-pointed stainless-steel needle with plastic holder; 120 mm; quantity 4."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-056",
@@ -6229,7 +6265,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "Impact tool; digital-only handling",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 68,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Forged steel-iron head with wooden handle; 270 mm; 250 g; quantity 1; impact tool."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-057",
@@ -6337,7 +6379,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE / ALCOHOL-FILLED",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 79,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Glass ALCOHOL-FILLED thermometer; -10 °C to 110 °C; 1 °C graduation; plastic cover and sponge ends; quantity 3. Source says alcohol, not mercury."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-066",
@@ -9421,14 +9469,23 @@
           "Index row 177 Document Development Team is credits only, not a kit item"
         ],
         "detailPagesVisuallyChecked": [
+          22,
           26,
+          43,
           53,
           56,
+          57,
+          64,
+          66,
+          67,
+          68,
+          79,
           93,
           198,
           199
         ],
-        "completeDetailPageAudit": false
+        "completeDetailPageAudit": false,
+        "detailPagesVisuallyCheckedPhysicalItems": 13
       }
     },
     {
