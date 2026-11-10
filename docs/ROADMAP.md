@@ -556,3 +556,16 @@ The previously submitted Biology-with-microscope source remains fingerprinted an
 - The item-to-asset/model/test register validator now parses quoted CSV fields correctly, including embedded commas and newlines, and asserts 516 logical records (header + 515 item rows) and 25 columns per record.
 - Corrected dashboard integrity run on commit `3b1486270a69fddd59024bc65e466de291986e23`: **PASS**. It validated all 515 item rows, source IDs, subject counts, blocked/virtual-only state fields and existing archive/queue/schema checks. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487693.
 - Static Dashboard desktop/mobile browser smoke on the same commit: **9/9 PASS**. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42765487537.
+
+
+## Research capability map extension — 2026-11-10
+
+A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RESEARCH_DISCOVERY_DOMAIN_SCOPE_2026_11_10.md`, with machine-readable register `data/catalogues/research_discovery_capability_register_2026_11_10.csv`.
+
+- The platform target explicitly includes reproducible inquiry across Chemistry, Physics and Biology, alongside the initial RBSE/NCERT learning pack.
+- An advanced Nuclear Matter Explorer is a future, design-only domain extension: element/nuclide identity, sourced nuclear data, conservation/Q-value bookkeeping, permitted dataset analysis, decay-chain candidate review and a formal discovery-evidence dossier.
+- New-element synthesis is a nuclear transformation, not ordinary chemical mixing. LabVerse is a virtual learning/analysis tool; it cannot create a real element, operate accelerator facilities or independently validate a discovery.
+- IUPAC/IUPAP governance, independent expert review, source versions, dataset licences, detector provenance, uncertainty and contradictory evidence are required before any claim is promoted.
+- NNDC ENSDF API (public beta) and IAEA EXFOR were added as candidate source families; neither connector nor nuclear solver is implemented or validated.
+- Phase mapping is unchanged: Phase 1 source/capability audit now; Phase 2 domain contracts only after Phase 1 gate; Phase 8 bounded physics/nuclear models later; Phases 11–16 research/discovery/data; Phases 19 and 21 safety and independent validation.
+- This documentation deliverable does not close Phase 1.1 or unblock Phase 2. The first pending Biology detail queue record remains Kit Box / page 9.
