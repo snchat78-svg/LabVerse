@@ -64,11 +64,28 @@ The following source detail pages were rendered and visually inspected against t
 
 The Wire Gauze page explicitly names an **Asbestos Centre**. This is now visually confirmed in the current upload, not merely copied from the earlier OCR-derived row. Keep the hazard block in inventory and any future model/asset contracts.
 
+### Additional visual detail-page checks — batch 2
+
+The following eight current-upload detail pages were also rendered and visually checked. Their source values match the existing catalogue; the new audit columns link each row to the current upload fingerprint.
+
+| Index row | Item | PDF page / printed page | Visually confirmed source detail | Safety |
+|---:|---|---:|---|---|
+| 13 | All-Pins | 22 / 17 | Steel; 26 mm; one packet of 50 | Sharp points |
+| 31 | Forceps | 43 / 38 | Stainless steel; 100 mm; pointed tips; quantity 2 | Point hazard |
+| 45 | Mortar and Pestle | 57 / 52 | Glass; rough inner surface; source dimensions for mortar and pestle; quantity 1 set | Glass breakage |
+| 52 | Nails | 64 / 59 | SWG 15; 38 mm; quantity 5 | Sharp points |
+| 54 | Surgical Scissors | 66 / 61 | Stainless steel; 130 mm; one prong blunt and one pointed; quantity 1 | Sharp tool |
+| 55 | Dissecting Needle | 67 / 62 | Sharp-pointed stainless-steel needle with plastic holder; 120 mm; quantity 4 | Sharp tool |
+| 56 | Claw Hammer with Handle | 68 / 63 | Forged steel-iron head; wooden handle; 270 mm; 250 g; quantity 1 | Impact tool; digital-only |
+| 65 | Laboratory Thermometer | 79 / 74 | Glass; alcohol-filled; -10 °C to 110 °C; 1 °C graduations; plastic cover and sponge ends; quantity 3 | Fragile; explicitly alcohol-filled, not mercury-filled |
+
+The current upload now has **13/175 physical kit-item detail pages** visually checked (14 pages including the Document Development Team credits page). The item-level audit remains partial; the remaining 162 item detail pages are not visually verified by this work unit.
+
 ## 4. What is and is not verified
 
-**Visually confirmed in this current upload:** cover identity, complete index row names/printed page references across PDF pages 2–5, the six listed detail/credits pages, and the source-specific asbestos statement.
+**Visually confirmed in this current upload:** cover identity, complete index row names/printed page references across PDF pages 2–5, fourteen listed detail/credits pages, and the source-specific asbestos statement.
 
-**Not completed by this bounded audit:** visual re-inspection of all 175 item detail pages, full OCR comparison of every dimension/material/quantity, independent NCERT official-byte authentication, procurement/current-stock status, copyright permission, Biology subject-expert approval, and validation of biological specimen/slide labels.
+**Not completed by this bounded audit:** visual re-inspection of the remaining 162 of 175 item detail pages, full OCR comparison of every dimension/material/quantity, independent NCERT official-byte authentication, procurement/current-stock status, copyright permission, Biology subject-expert approval, and validation of biological specimen/slide labels.
 
 The pre-existing 177-row catalogue has not been silently promoted to full page verification. For every row, the new `detail_visual_audit_status` says either that it was checked in this upload or that its detail page was not visually checked in this pass. Index confirmation is separate from detail specification confirmation.
 
