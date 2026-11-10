@@ -49,8 +49,8 @@ Phase 0 is complete only as a planning/documentation baseline. It does not mean 
 - Six-pack task index reconciliation: 171/171 unique task IDs across all six RBSE packs; this is index-level integrity, not completion of detailed item/asset/model/test traceability.
 - Phase 1 source authentication and scientific validation remain IN PROGRESS. On 2026-11-09 the user explicitly authorized a parallel, UI-only dashboard track: implement subject navigation, catalogue browsing, source-status display and a non-scientific placeholder workbench without waiting for byte authentication. This does not waive or close any Phase 1 gate.
 - Phase 2 science-domain models, validated rules and result generation remain BLOCKED by Phase 1. The only Phase 2 work allowed in parallel is the dashboard-facing inventory/task read-model contract.
-- Phase 3 React/TypeScript/Vite app foundation is PARTIAL but validated: strict typecheck, production build and 6/6 Chromium browser groups pass. Remaining work is broader codebase and workspace migration.
-- Phase 4 dashboard/navigation is IN PROGRESS. Static dashboard remains the richer preview; React has subject/catalogue/task mapping and candidate-placeholder setup but the four workspace destinations are not yet full workflows. Do not claim real 3D objects, experimental actions, calculated outcomes, or research engine functionality.
+- Phase 3 React/TypeScript/Vite app foundation is PARTIAL but validated: strict typecheck, production build and 10/10 Chromium browser groups pass, including functional workspace switching. Remaining work is broader codebase hardening and static-preview parity.
+- Phase 4 dashboard/navigation is IN PROGRESS. React now has four functional workspace destinations: Learning Lab practical catalogue; Virtual Experiment Lab candidate placeholder bench; Scientific Analysis source/evidence and NOT_MODELLED state; Research Studio session-local question/hypothesis/variables draft. Static Dashboard remains the richer preview for category/type filters and coverage details. Do not claim real 3D objects, experimental actions, calculated outcomes or saved research notebooks.
 
 ## Phase 1 — current phase
 
@@ -479,3 +479,15 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 - The app currently has a three-subject overview, XI/XII selector, searchable source inventory, source/evidence/safety details, RBSE practical records, candidate source-item navigation and non-executable placeholder bench setup.
 - Remaining Phase 3/4 work: fully functional four workspace destinations, remaining source filters/unmatched-task explanations and complete migration parity with static dashboard.
 - Real Three.js scene, 3D assets, deterministic experiment runtime and science solvers remain future phases and are not claimed by the React starter.
+
+
+## 2026-11-10 — Four React workspace destinations verified
+
+- **Learning Lab:** class XI/XII practical list, task/source-item mapping, candidate item links and unmatched task notes.
+- **Virtual Experiment Lab:** candidate inventory objects may be added to a placeholder bench; no real 3D model, physical setup or simulation is claimed.
+- **Scientific Analysis:** selected source/evidence review with explicit `No validated scientific model connected` / no calculated or predicted result state.
+- **Research Studio:** question, hypothesis, alternative explanation, independent/dependent variables and controls can be drafted and previewed locally in the current session. No cloud persistence, reproducible notebook or approved protocol is claimed.
+- Sidebar workspace selection from Dashboard first asks the user to select Physics/Chemistry/Biology instead of silently choosing one.
+- Verification: GitHub Actions run https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972 completed SUCCESS: strict TypeScript PASS, Vite build PASS, Chromium browser smoke **10/10 groups PASS**. Commit `689af07c086005b79fa6444aff600c620eb789f6`.
+- Phase status unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D assets NOT STARTED.
+- Next: migrate inventory category/type filters, task/source coverage summary and unmatched-task explanation into React; preserve static dashboard as reference until parity passes.
