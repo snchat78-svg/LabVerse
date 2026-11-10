@@ -107,6 +107,16 @@ async function main() {
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^All-Pins$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /Sharp points/i);
     results.push("Biology pointed pin hazard visible");
+    await page.locator(".content-grid .search").first().fill("Test Tube");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Test Tube$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /Source quantity\s+12/);
+    assert.match(await page.locator(".detail-panel").innerText(), /125 mm/);
+    results.push("Biology test-tube dimensions and source quantity visible");
+    await page.locator(".content-grid .search").first().fill("Glass Slide");
+    await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Glass Slide$/})}).click();
+    assert.match(await page.locator(".detail-panel").innerText(), /2 packs of 50 slides \(100 total\)/);
+    assert.match(await page.locator(".detail-panel").innerText(), /75 x 25 x 1 mm/);
+    results.push("Biology glass-slide pack quantity and dimensions visible");
     results.push("Chemistry and Biology source/safety details");
 
     // The open-ended Biology project must remain unmatched until a teacher approves a topic and method.
