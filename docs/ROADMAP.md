@@ -7,7 +7,7 @@ This roadmap controls phase order and is the master execution contract. Class 11
 | 0 | Product definition and design baseline | Product vision, requirements, architecture, rules and phase process | DONE — docs only |
 | 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
 | 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | PARTIAL — dashboard read-model subset only; scientific models remain gated by Phase 1 |
-| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — static dashboard preview and catalogue CI added; final app stack scaffold pending |
+| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — React/TS/Vite app foundation passes typecheck/build/6 browser groups; complete app structure and workspace migration remain |
 | 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — three-subject dashboard starter committed |
 | 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
 | 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
@@ -459,3 +459,14 @@ The user clarified that Physics, Chemistry and Biology PDFs/catalogues had alrea
 - Browser smoke suite passed **9/9 groups** and inventory/schema validation passed on commit `28f8452d1409b086e0a0c80244a7e4874aafaf`.
 - Phase status unchanged: Phase 1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 real 3D not yet started.
 - Next production milestone: Phase 3 React/TypeScript/Vite foundation and dashboard migration, retaining the source archive register and existing static preview.
+
+
+## 2026-11-10 — Phase 3 React application foundation
+
+- Created a separate production-oriented React/TypeScript/Vite application under `app/`; the tested static `dashboard/` preview remains preserved.
+- Pinned stack: React 19.3.1, React DOM 19.3.1, Vite 8.3.7, `@vitejs/plugin-react` 6.3.0 and TypeScript 7.0.2; Node 24 CI.
+- React scaffold reads the existing single inventory read-model JSON; exposes Physics, Chemistry and Biology directions; class XI/XII filter; searchable inventories; selected source/evidence/safety details; practical catalogue; task-to-source-item navigation; and an explicit candidate-placeholder workbench setup flow.
+- Reagents are displayed using human-readable boundaries: Chemistry reference-only/no-live-use; Biology school-managed/not-supplied-with-kit.
+- Added CI for strict TypeScript typecheck, Vite production build and Chromium browser smoke. Final result: **typecheck PASS, production build PASS, 6/6 browser groups PASS**. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/42749292145. Verified app milestone commit: `4b435bb7fdd9ef1190b99dcdab818807e61d9320`.
+- Phase status: Phase 3 PARTIAL (app foundation and test gate pass; remaining codebase/workspace migration remains); Phase 4 Dashboard IN PROGRESS; Phase 1 evidence gates remain open; Phase 2 scientific models/results remain BLOCKED; real 3D Phase 5 not started.
+- Next: make Learning Lab / Virtual Experiment Lab / Scientific Analysis / Research Studio navigation functional in React; migrate the remaining static dashboard interactions. Do not start scientific engines from unreviewed candidate data.
