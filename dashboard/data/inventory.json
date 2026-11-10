@@ -5590,7 +5590,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 13,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Soda-glass capillary tubes; 1.5 mm diameter; 100 mm length; one packet."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-005",
@@ -5602,7 +5608,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 14,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Transparent graduated borosilicate pipettes; 1 mL and 10 mL; quantity 2 each."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-006",
@@ -5614,7 +5626,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 15,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Clear high-transmissive borosilicate cavity slides; 75 x 25 x 1 mm; quantity 12."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-007",
@@ -6080,7 +6098,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 55,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Borosilicate glass dropper with natural-rubber bulb; 100 mm length, 20 mm capillary, 6 mm diameter; quantity 10."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-044",
@@ -6283,7 +6307,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 69,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Graduated transparent borosilicate test tube; 15 mm diameter, 125 mm including rim, 15 mL capacity; quantity 12."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-058",
@@ -6319,7 +6349,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 72,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Clear high-transmissive borosilicate cover slips; 18 x 18 mm, 0.3 mm thick; 2 packets of 20."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-061",
@@ -6331,7 +6367,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 73,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Clear high-transmissive borosilicate glass rods; 150 mm x 7 mm; quantity 2."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-062",
@@ -6343,7 +6385,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 74,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Soda-glass tubes; 150 mm length, 6 mm outer and 4 mm inner diameter, finished ends; one packet of 6."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-063",
@@ -6355,7 +6403,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 75,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Soda-glass watch glass; 50 mm diameter, 1.7 mm thick; quantity 2. Source manual warns never to heat watch glass."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-064",
@@ -6433,7 +6487,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 83,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Graduated borosilicate conical flask; 100 mL, 105 mm height; quantity 2."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-070",
@@ -6445,7 +6505,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE / HEATING",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 84,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Graduated borosilicate boiling tube; 150 mm length including rim, 25 mm inner diameter, 60 mL capacity; quantity 2."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-071",
@@ -6481,7 +6547,13 @@
           "evidence": "OCR_TEXT",
           "status": "USER_UPLOADED_CANDIDATE / NOT_BYTE_AUTHENTICATED",
           "safety": "FRAGILE",
-          "type": "apparatus"
+          "type": "apparatus",
+          "visualAudit": {
+            "status": "VISUALLY_CHECKED_CURRENT_UPLOAD",
+            "sourcePdfPage": 87,
+            "sourceSha256": "9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb",
+            "sourceDetail": "Clear high-transmissive borosilicate glass slides; 75 x 25 x 1 mm; cardboard box; 2 packs of 50 (100 slides total)."
+          }
         },
         {
           "id": "NCERT-BIO-WM-SPEC-074",
@@ -9469,23 +9541,35 @@
           "Index row 177 Document Development Team is credits only, not a kit item"
         ],
         "detailPagesVisuallyChecked": [
+          13,
+          14,
+          15,
           22,
           26,
           43,
           53,
+          55,
           56,
           57,
           64,
           66,
           67,
           68,
+          69,
+          72,
+          73,
+          74,
+          75,
           79,
+          83,
+          84,
+          87,
           93,
           198,
           199
         ],
         "completeDetailPageAudit": false,
-        "detailPagesVisuallyCheckedPhysicalItems": 13
+        "detailPagesVisuallyCheckedPhysicalItems": 25
       }
     },
     {
