@@ -318,7 +318,7 @@ Phase 1 / 1.1 remains IN PROGRESS. Phase 2 scientific engines remain blocked; no
 - MSCL detail audit is **53/53 physical items visually checked** against the earlier upload SHA `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`; the upload remains unauthenticated to official NCERT bytes.
 - Created a 53-row / 17-column per-item review queue at `data/catalogues/mscl_review_gap_queue_2026_11_10.csv` and its protocol at `docs/PHASE_1_1_MSCL_REVIEW_GAP_QUEUE_2026_11_10.md`.
 - Every queue row maps exactly to the visual audit and retains source visual-audit status, technical gap and safety text verbatim. All rows remain OPEN_NOT_REVIEWED_OR_APPROVED; reviewer ownership is NOT_ASSIGNED.
-- New catalogue validator assertions were committed in `dashboard/tests/validate-catalogue.mjs`; final validator commit `8cf28ce97362b98b8aabcba738b2712fa09a6ff4`; source/catalogue CI PASS https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753. Desktop/mobile browser smoke run: https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348 (check conclusion before claiming PASS).
+- New catalogue validator assertions were committed in `dashboard/tests/validate-catalogue.mjs`; final validator commit `8cf28ce97362b98b8aabcba738b2712fa09a6ff4`; source/catalogue CI PASS https://github.com/snchat78-svg/LabVerse/actions/runs/42792680753. Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42792681348 (chromium-smoke job success).
 - A second internal semantic search for Biology-with-microscope returned no Library or Conversation matches. The old submission is acknowledged; do not request it again.
 
 ### Immediate next actions — keep this order
