@@ -122,3 +122,7 @@ Remaining:
 6. Only when Phase 1 exit criteria pass, unblock Phase 2 scientific domain contracts.
 
 No application code, 3D assets, scientific simulation engine or application test suite was created in this upload-analysis pass.
+
+## MSCL visual detail audit — 2026-11-10
+
+Eight physical item detail pages were visually inspected against the registered earlier upload fingerprint `db08a381ed1d349dc6ee292c05610d74683cd65b1308223e8472cb4ca2fe5b9d`: items 2–6, 14, 21 and 34. This produces 8/53 physical MSCL item-detail pages checked, with 45 pending. The separate later byte variant remains distinct and was not reviewed by this pass. The item-level record and technical gaps are in `docs/PHASE_1_1_MSCL_DETAIL_PAGE_AUDIT_2026_11_10.md` and its CSV. The Boiling Tube diagram remains unresolved; Wire Gauze retains the source asbestos hazard. This is not source authentication, kit-stock verification or scientific method approval.
