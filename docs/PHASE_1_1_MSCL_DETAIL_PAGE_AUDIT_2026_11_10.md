@@ -77,3 +77,10 @@ The current validation run for the 53-row register must be read before claiming 
 - Physics attachment/specification closure and Biology kit-source page audit remain open.
 - The first Biology-with-microscope queue item remains `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed page 9 when the previously submitted binary or a legitimate official primary payload is accessible. No repeat upload request.
 - Phase 1 / 1.1 remains **IN PROGRESS**; Phase 2 scientific models remain **BLOCKED**. No solver, 3D asset or deterministic experiment runtime was implemented by this audit.
+
+
+## Final validation — full 53-item register
+
+The complete 53-item detail audit now has a successful source/catalogue integrity run: https://github.com/snchat78-svg/LabVerse/actions/runs/42783080330 (validator commit `8f88713ca86a339d971eafce0c33032475374f6c`). The run checks 54 logical CSV rows including header, 15 columns per record, continuous physical item IDs 2–54, exact source upload fingerprint, unauthenticated-source boundary, every catalogue item marked visually checked, and the technical discrepancy, asbestos, mercury, open-flame, gas-generator, package-count and measurement/calibration flags.
+
+The desktop/mobile browser smoke also passed **9/9 groups**: https://github.com/snchat78-svg/LabVerse/actions/runs/42783079985. The validator had one initial wrong-column assertion for the Micro Well Plate discrepancy; it was corrected to assert the actual gap-description and separate status columns. The corrected CI run above is the accepted pass. This confirms catalogue/test integrity, not official NCERT byte identity, item procurement, calibration, safe live chemistry or scientific model validity.
