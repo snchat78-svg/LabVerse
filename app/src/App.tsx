@@ -344,7 +344,8 @@ export default function App() {
               <div className="task-list">
                 {tasks.map((task) => {
                   const mappedCount = task.sourceItemIds.length;
-                  const mappingGap = "mappingGap" in task ? task.mappingGap : undefined;
+                  const gapValue = "mappingGap" in task ? task.mappingGap : undefined;
+                  const mappingGap = typeof gapValue === "string" ? gapValue : undefined;
                   const isSelected = selectedTaskId === task.id;
                   return (
                     <article key={task.id} className={isSelected ? "task selected" : "task"}>
