@@ -628,3 +628,15 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - All 126 screening records remain no-live-use, SDS-required, not approved and not current BOM; all 41 RBSE tasks remain documentary candidates requiring Chemistry/Safety and method review.
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - Next: inspect full source context for OPT-01 / OPT-04 exact text occurrences and THERMO-02 / ELECTRO-01 contextual candidates, then resolve the ten candidate-ID differences under expert review.
+
+## 2026-11-10 — RBSE/MSCL task-scoped reagent crosswalk (supersedes the preliminary whole-document counts)
+
+- Recovered the already-uploaded RBSE XI and XII PDFs internally and inspected practical sections: XI pages 123–126; XII pages 137–140. No repeat upload was requested.
+- The prior 18 exact-label hits / 17 task IDs were whole-document lexical occurrences, not confirmed practical-reagent links. Six hits were excluded from task reagent mapping after context review: Alcohol, Phenol, Ammonium sulphate substring, Acetanilide product, Aniline yellow product-name component, and Starch occurring outside the XII practical task section.
+- Updated `ncert_mscl_manual_reagent_safety_screen.csv` to 19 columns with task-scope state/notes. Retained raw hits; no source record was silently deleted.
+- Updated the RBSE matrix to 23 columns and separated Acetanilide (OPT-03) as a product/output reference, not an input reagent. Matrix now has 16 input-reagent-linked tasks, 24 unique candidate reagent IDs, and 1 separate product/output-reference task.
+- Task-scoped reconciliation: 41 tasks / 24 columns; 12 tasks have candidates in both tracks (5 record-ID aligned; 7 with additional contextual/formulation IDs), 4 matrix-only contextual/species tasks, 24 with no assigned candidate in either input-reagent track (not proof of reagent-free), and 1 product/output-only row. No screen-only task candidates remain.
+- Detailed report: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md`; task reconciliation CSV at `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`.
+- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733 (validator commit `43b880a32635110df8821ed3dbc9c5871adb85bf`). Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
+- All 126 safety-screen rows remain blocked from live use, require current SDS/exposure review, are NOT_APPROVED and are NOT_CURRENT_SUPPLY_OR_BOM_RECORD. All 41 task rows remain documentary-only. No concentration, method, supply status, safe procedure or scientific reaction output has been approved.
+- Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
