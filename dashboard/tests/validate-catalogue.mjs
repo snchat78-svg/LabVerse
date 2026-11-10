@@ -453,6 +453,7 @@ assert.equal(rbseReagentMatrixRows.length, 42, "RBSE reagent matrix must contain
 assert.equal(rbseReagentMatrixRows[0].length, 23, "RBSE reagent matrix schema must contain 23 columns");
 assert.ok(rbseReagentMatrixRows.slice(1).every(row => row.length === 23));
 const matrixHeader = rbseReagentMatrixRows[0];
+const safetyScreenById = new Map(msclSafetyScreenRows.slice(1).map(row => [row[0], row]));
 const matrixIndex = Object.fromEntries(matrixHeader.map((name,index) => [name,index]));
 const matrixTasks = rbseReagentMatrixRows.slice(1);
 const matrixTaskIds = matrixTasks.map(row => row[matrixIndex.rbse_task_id]);
