@@ -405,3 +405,12 @@ Previously supplied Physics, Chemistry and Biology PDFs are tracked in:
 - docs/SOURCE_PDF_ARCHIVE_REGISTER_2026_11_10.md
 
 These records preserve file fingerprints, variants, page counts, derived catalogues and no-repeat instructions. The public repository does not contain the original NCERT PDF binaries; upload receipts and source-derived records are retained instead. Do not ask for already registered PDFs again.
+
+
+## Phase 1.1 — RBSE Class XII Chemistry method-source review (2026-11-11)
+
+- [Task-to-method evidence register — 7 Chemistry tasks](data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv)
+- [Method-source review report and unresolved technical/safety gaps](docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_METHOD_SOURCE_REVIEW_2026_11_11.md)
+- [Scientific source registry](docs/SCIENTIFIC_SOURCE_REGISTRY.md)
+
+Seven RBSE Class XII 2026 Chemistry task options have matching NCERT manual method references across Units 2–4. The current RBSE 2027 Class XII PDF link was identified but its content could not be retrieved; 2026 evidence remains historical/reference-only. Method references are not reagent supply evidence, approved procedures, or validated scientific models. Phase 1.1 remains IN PROGRESS; Phase 2 science models, 3D assets and experiment runtime remain gated/unimplemented.
