@@ -1683,3 +1683,15 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733 (validator commit `43b880a32635110df8821ed3dbc9c5871adb85bf`). Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
 - All 126 safety-screen rows remain blocked from live use, require current SDS/exposure review, are NOT_APPROVED and are NOT_CURRENT_SUPPLY_OR_BOM_RECORD. All 41 task rows remain documentary-only. No concentration, method, supply status, safe procedure or scientific reaction output has been approved.
 - Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
+
+
+## Latest resume point — 2026-11-11 — RBSE Chemistry method-source review
+
+- Added `data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv`: 7 task rows / 20 columns, for KIN-01/02/03, THERMO-01/02/03 and ELECTRO-01. Detailed report: `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_METHOD_SOURCE_REVIEW_2026_11_11.md`.
+- Evidence source chain: RBSE official 2026 practical-exam instructions plus NCERT Class XII Chemistry Units 2, 3 and 4. The RBSE 2027 Class XII PDF link is known but content retrieval was blocked due oversized response; 2026 results are not asserted as current 2027 coverage.
+- Identified method/identity gaps: KIN-02 endpoint system includes KI, acid, sodium thiosulphate and starch; THERMO-01 copper-sulphate hydrate unresolved; THERMO-03 NCERT material-list and method volumes conflict; ELECTRO-01 NCERT CuSO4 concentration entries conflict. All retained as review flags.
+- All 7 rows remain documentary only; no current BOM/SDS/supply, approved safety procedure, calibrated data, scientific model or physical lab use.
+- Crosswalk state remains 41 Chemistry task rows; 126 MSCL screening rows blocked/unapproved; 24 tasks without assigned input-reagent candidate are not declared reagent-free.
+- New validator assertions added for row count/schema/task IDs, primary NCERT URLs, historical exam-session label, source conflicts and blocked model/procurement status. CI result pending.
+- Phase 0 DONE; Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED; Phases 7–9 engines NOT STARTED.
+- **Next exact task:** retrieve/read RBSE's official 2027 Chemistry practical PDF through a legitimate route; until then 2026 is reference-only. Then inspect authoritative source methods for the 24 task rows with no assigned candidate. Keep Biology source page 9 recovery and the 53-row MSCL technical/safety queue open; do not repeat completed MSCL visual audit pages.
