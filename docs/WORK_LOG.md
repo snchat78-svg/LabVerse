@@ -844,3 +844,29 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Scientific integrity boundary: method-source content does not authenticate the user-uploaded MSCL copy or establish current BOM, SDS, grades, concentrations, stock, safety approval, rights to reproduce protected NCERT content, calibrated instrument profiles or reaction-result models. All 7 records remain DOCUMENTARY_ONLY. No live-use procedure, physical task or new solver is enabled.
 - Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
 - Next bounded action: retrieve/read the official RBSE 2027 Chemistry practical PDF by a legitimate route; then investigate the 24 Chemistry task rows with no assigned input-reagent candidate using authoritative task/method evidence. Never infer reagent-free status from an empty candidate field.
+
+
+## 2026-11-11 — Index-only review of the 24 Chemistry tasks without candidate links
+
+- Parsed the full 41-row Chemistry task matrix and enumerated exactly 24 task rows with neither input-reagent nor product/output candidate identifiers.
+- Inspected the official NCERT Class XI Chemistry Lab Manual online cover/rights metadata and contents index, plus the NCERT-CIET Grade XI activity index. The manual is labelled 2025–26, ALL RIGHTS RESERVED and its contents identify Units 1–7, detailed practical titles and projects through printed page 135.
+- Added `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv` (24 rows / 18 columns) and `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- Index outcome: 22 topic/project locators; OPT-01 has no direct functional-group method title in the inspected NCERT index (do not substitute Lassaigne's test); OPT-04 has a cross-disciplinary Biology Exercise 20 activity-index locator only.
+- The accessible PDF payload exposes 27 pages while its contents points to later printed pages through p.135. Screenshot attempts at later pages returned cache misses; body pages for the task-specific experiments were not reviewed. All mappings are INDEX_ONLY.
+- No candidate reagent, concentration, supply/BOM, safe procedure, method or scientific result was added. All 24 task IDs remain unlinked/unresolved and not proven reagent-free.
+- Added validator assertions for row count/schema, exact task IDs/order, unresolved curriculum flags and index-only body limits. CI result pending.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next exact action: recover complete NCERT manual body pages and official RBSE 2027 Chemistry practical syllabus through a legitimate official route; proceed with method-level review only once primary content is accessible.
+
+
+## 2026-11-11 — Index-only review of the 24 Chemistry tasks without candidate links
+
+- Parsed the full 41-row Chemistry task matrix and enumerated exactly 24 task rows with neither input-reagent nor product/output candidate identifiers.
+- Inspected the official NCERT Class XI Chemistry Lab Manual online cover/rights metadata and contents index, plus the NCERT-CIET Grade XI activity index. The manual is labelled 2025–26, ALL RIGHTS RESERVED and its contents identify Units 1–7, detailed practical titles and projects through printed page 135.
+- Added `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv` (24 rows / 18 columns) and `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- Index outcome: 22 topic/project locators; OPT-01 has no direct functional-group method title in the inspected NCERT index (do not substitute Lassaigne's test); OPT-04 has a cross-disciplinary Biology Exercise 20 activity-index locator only.
+- The accessible PDF payload exposes 27 pages while its contents points to later printed pages through p.135. Screenshot attempts at later pages returned cache misses; body pages for the task-specific experiments were not reviewed. All mappings are INDEX_ONLY.
+- No candidate reagent, concentration, supply/BOM, safe procedure, method or scientific result was added. All 24 task IDs remain unlinked/unresolved and not proven reagent-free.
+- Added validator assertions for row count/schema, exact task IDs/order, unresolved curriculum flags and index-only body limits. CI result pending.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next exact action: recover complete NCERT manual body pages and official RBSE 2027 Chemistry practical syllabus through a legitimate official route; proceed with method-level review only once primary content is accessible.
