@@ -645,3 +645,27 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - Validation is added to `dashboard/tests/validate-catalogue.mjs`; await the new source/catalogue CI and browser smoke before marking this bounded work unit validated.
 - Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - **Next:** read the official RBSE 2027 Chemistry practical source when a legitimate payload is accessible, then map the 24 tasks with no assigned reagent candidates against authoritative methods. Do not call them reagent-free or build procedures from a name-only match.
+
+
+## Phase 1.1 — Class XI Chemistry index cross-check for unlinked tasks — 2026-11-11
+
+- Cross-checked every one of the 24 Chemistry task rows that had no input-reagent or product/output candidate against the official NCERT Class XI Chemistry manual contents index and the NCERT-CIET Grade XI activity index.
+- Added `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv` (24 task rows / 18 columns) and `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- Documentary index outcome: 22 topic/project index matches; OPT-01 has no direct functional-group method title in the inspected index (Lassaigne is not substituted for functional-group testing); OPT-04 has a cross-disciplinary Biology Exercise 20 index reference only.
+- The 2025–26 NCERT manual PDF payload exposes 27 pages and a contents index pointing to later printed pages through p.135. Later experiment-body pages could not be retrieved/rendered in this pass (cache miss). Thus all links are INDEX_ONLY, not method-body-reviewed.
+- Zero reagent IDs, concentrations, sample identities, physical supply lines, safety approvals or experiment procedures were added. All 24 task rows remain unlinked and unresolved; an empty candidate field is not proof that a task is reagent-free.
+- New 24-row/order regression assertions were added to `dashboard/tests/validate-catalogue.mjs`; check CI before marking the unit validated.
+- Phase 1 / 1.1 remains IN PROGRESS. Phase 2 models/results remain BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- Next: retrieve the full NCERT Class XI experiment-body pages via a legitimate official route and read RBSE 2027 Chemistry practical source; then do content/method and expert safety review. Keep OPT-01/OPT-04's source gaps and all 24 task rows open until resolved.
+
+
+## Phase 1.1 — Class XI Chemistry index cross-check for unlinked tasks — 2026-11-11
+
+- Cross-checked every one of the 24 Chemistry task rows that had no input-reagent or product/output candidate against the official NCERT Class XI Chemistry manual contents index and the NCERT-CIET Grade XI activity index.
+- Added `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv` (24 task rows / 18 columns) and `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- Documentary index outcome: 22 topic/project index matches; OPT-01 has no direct functional-group method title in the inspected index (Lassaigne is not substituted for functional-group testing); OPT-04 has a cross-disciplinary Biology Exercise 20 index reference only.
+- The 2025–26 NCERT manual PDF payload exposes 27 pages and a contents index pointing to later printed pages through p.135. Later experiment-body pages could not be retrieved/rendered in this pass (cache miss). Thus all links are INDEX_ONLY, not method-body-reviewed.
+- Zero reagent IDs, concentrations, sample identities, physical supply lines, safety approvals or experiment procedures were added. All 24 task rows remain unlinked and unresolved; an empty candidate field is not proof that a task is reagent-free.
+- New 24-row/order regression assertions were added to `dashboard/tests/validate-catalogue.mjs`; check CI before marking the unit validated.
+- Phase 1 / 1.1 remains IN PROGRESS. Phase 2 models/results remain BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- Next: retrieve the full NCERT Class XI experiment-body pages via a legitimate official route and read RBSE 2027 Chemistry practical source; then do content/method and expert safety review. Keep OPT-01/OPT-04's source gaps and all 24 task rows open until resolved.
