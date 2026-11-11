@@ -1695,3 +1695,25 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - New validator assertions added for row count/schema/task IDs, primary NCERT URLs, historical exam-session label, source conflicts and blocked model/procurement status. CI result pending.
 - Phase 0 DONE; Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 3 PARTIAL; Phase 4 IN PROGRESS; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED; Phases 7–9 engines NOT STARTED.
 - **Next exact task:** retrieve/read RBSE's official 2027 Chemistry practical PDF through a legitimate route; until then 2026 is reference-only. Then inspect authoritative source methods for the 24 task rows with no assigned candidate. Keep Biology source page 9 recovery and the 53-row MSCL technical/safety queue open; do not repeat completed MSCL visual audit pages.
+
+
+## Latest resume point — 2026-11-11 — 24 unlinked Chemistry task index check
+
+- Created a 24-row / 18-column index-only cross-check: `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv`; report: `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- All 24 task IDs exactly follow the matrix order. 22 have a relevant NCERT manual contents/project locator or CIET activity index; OPT-01 has no direct functional-group title in the inspected index; OPT-04 has only a cross-disciplinary Biology Exercise 20 index entry.
+- The accessible official NCERT Class XI Chemistry manual PDF is labelled 2025–26 but only exposes a 27-page payload in this retrieval pass. The contents locator references manual pages to p.135; actual body pages beyond the accessible prefix could not be retrieved/rendered. These are index-only links, not reviewed procedures.
+- No reagent candidate IDs, method concentrations, quantities, product assignments, supply/BOM, safe procedures or model outcomes were added. All 24 remain unresolved; empty mapping does not mean reagent-free.
+- Validator now checks exact 24 task IDs/order, index-only boundaries, method-body-not-reviewed status and 2027 currency flags. CI pending.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 science models/results BLOCKED; Phases 5 and 6 NOT STARTED; engines 7–9 NOT STARTED.
+- **Next exact action:** retrieve the complete NCERT Class XI Chemistry manual body and official RBSE 2027 Chemistry practical PDF through legitimate official routes; then method-review the index matches and source gaps (OPT-01/OPT-04) before any reagent or model promotion.
+
+
+## Latest resume point — 2026-11-11 — 24 unlinked Chemistry task index check
+
+- Created a 24-row / 18-column index-only cross-check: `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv`; report: `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md`.
+- All 24 task IDs exactly follow the matrix order. 22 have a relevant NCERT manual contents/project locator or CIET activity index; OPT-01 has no direct functional-group title in the inspected index; OPT-04 has only a cross-disciplinary Biology Exercise 20 index entry.
+- The accessible official NCERT Class XI Chemistry manual PDF is labelled 2025–26 but only exposes a 27-page payload in this retrieval pass. The contents locator references manual pages to p.135; actual body pages beyond the accessible prefix could not be retrieved/rendered. These are index-only links, not reviewed procedures.
+- No reagent candidate IDs, method concentrations, quantities, product assignments, supply/BOM, safe procedures or model outcomes were added. All 24 remain unresolved; empty mapping does not mean reagent-free.
+- Validator now checks exact 24 task IDs/order, index-only boundaries, method-body-not-reviewed status and 2027 currency flags. CI pending.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 science models/results BLOCKED; Phases 5 and 6 NOT STARTED; engines 7–9 NOT STARTED.
+- **Next exact action:** retrieve the complete NCERT Class XI Chemistry manual body and official RBSE 2027 Chemistry practical PDF through legitimate official routes; then method-review the index matches and source gaps (OPT-01/OPT-04) before any reagent or model promotion.
