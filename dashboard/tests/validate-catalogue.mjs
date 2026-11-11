@@ -590,3 +590,41 @@ assert.match(methodRowByTask.get("RBSE-XII-CHEM-THERMO-03")[chemistryMethodIndex
 assert.match(methodRowByTask.get("RBSE-XII-CHEM-ELECTRO-01")[chemistryMethodIndex.exact_identity_or_variant_gap], /0.2 M|0.25 M/i);
 assert.match(methodRowByTask.get("RBSE-XII-CHEM-KIN-02")[chemistryMethodIndex.additional_required_species_or_roles], /potassium iodide|starch|sodium thiosulphate/i);
 console.log("RBSE Chemistry method-source review: 7 tasks, 20 columns, NCERT Unit 2/3/4 references, source conflicts and documentary-only/safety/procurement/model blocks PASS.");
+
+
+// Index-only cross-check for all 24 Chemistry tasks without reagent/output links.
+const unlinkedChemistryIndexRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(unlinkedChemistryIndexRows.length, 25, "unlinked Chemistry index map must contain one header + 24 task rows");
+assert.equal(unlinkedChemistryIndexRows[0].length, 18, "unlinked Chemistry index map schema must contain 18 columns");
+assert.ok(unlinkedChemistryIndexRows.slice(1).every(row => row.length === 18));
+const unlinkedMapHeader = unlinkedChemistryIndexRows[0];
+const unlinkedMapIndex = Object.fromEntries(unlinkedMapHeader.map((name,index)=>[name,index]));
+const currentUnlinkedChemistryTasks = matrixTasks
+  .filter(row =>
+    !(row[matrixIndex.candidate_manual_reagent_record_ids] || "").trim() &&
+    !(row[matrixIndex.candidate_manual_product_or_output_reference_ids] || "").trim()
+  )
+  .map(row => row[matrixIndex.rbse_task_id]);
+const unlinkedMapTasks = unlinkedChemistryIndexRows.slice(1);
+assert.equal(currentUnlinkedChemistryTasks.length, 24, "24 Chemistry tasks must remain without assigned reagent/output candidates");
+assert.deepEqual(
+  unlinkedMapTasks.map(row => row[unlinkedMapIndex.rbse_task_id]),
+  currentUnlinkedChemistryTasks,
+  "index-only review must preserve all 24 unresolved task IDs in the source matrix order"
+);
+assert.ok(unlinkedMapTasks.every(row => /NO_.*METHOD_BODY_REVIEWED/.test(row[unlinkedMapIndex.method_body_inspected])));
+assert.ok(unlinkedMapTasks.every(row => /2027_TASK_SCOPE_NOT_CONFIRMED/.test(row[unlinkedMapIndex.current_curriculum_state])));
+assert.ok(unlinkedMapTasks.every(row => row[unlinkedMapIndex.next_evidence_action].length > 20));
+assert.equal(
+  unlinkedMapTasks.filter(row => row[unlinkedMapIndex.index_match_state] === "NO_DIRECT_INDEX_MATCH; DO_NOT_SUBSTITUTE LASSAIGNE FOR FUNCTIONAL-GROUP TESTS").length,
+  1,
+  "only OPT-01 remains without a direct method index match in this pass"
+);
+assert.ok(
+  unlinkedMapTasks.find(row => row[unlinkedMapIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-04")[unlinkedMapIndex.index_match_state].includes("CROSS_DISCIPLINARY_INDEX_MATCH_ONLY"),
+  "OPT-04 must remain a Biology-index-only cross-disciplinary match"
+);
+console.log("Chemistry unlinked-task NCERT index review: 24/24 exact RBSE IDs, index-only/method-body-not-reviewed boundaries, 2027 currency block and no reagent promotion PASS.");
