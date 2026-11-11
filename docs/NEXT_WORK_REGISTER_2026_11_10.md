@@ -422,3 +422,49 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 5 real 3D: NOT STARTED.
 - Phase 6 deterministic runtime: NOT STARTED.
 - Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
+
+
+## Latest resume point — 2026-11-11 — Chemistry source retrieval and method-body gate
+
+### Newly completed
+- Mapped 7 RBSE XII Chemistry tasks to method references in NCERT manual Units 2–4 (separate report/CSV above).
+- Cross-checked all 24 currently unlinked Chemistry task rows against the NCERT Class XI Chemistry contents index and CIET activity index.
+- 22 rows now have index locators; OPT-01 has no direct functional-group index match; OPT-04 has a Biology Exercise 20 cross-disciplinary locator.
+- The Class XI manual's accessible response gives a 27-page PDF prefix and a contents index; later procedure pages could not be retrieved/rendered. All 24 mappings remain INDEX_ONLY. No reagent link is inferred.
+
+### Next actions — ordered
+1. Retrieve the complete official NCERT Class XI Chemistry manual through a legitimate official route, with the experiment-body pages matching Units 2–7 and project pages. Then review exact method, sample, reagent roles, apparatus and safety rather than using TOC titles as procedure evidence.
+2. Retrieve/read the official RBSE Class XII 2027 Chemistry practical section; the official link is known but 17,565,238-byte content retrieval is blocked. Do not replace it with third-party summaries.
+3. Keep all 24 tasks unlinked until each source body and reagent identity is verified. OPT-01 functional-group test and OPT-04 food-test cross-disciplinary path stay separately open.
+4. For 7 earlier mapped XII tasks, preserve hydrate, concentration and method-volume conflicts; no BOM, safety or scientific models are promoted.
+5. Continue current official MSCL BOM/SDS/grade/concentration/compatibility/waste evidence closure and qualified expert review. All 126 safety-screen rows remain blocked/unapproved.
+
+### Current phase gates
+- Phase 1 / 1.1 IN PROGRESS.
+- Phase 2 scientific contracts/results BLOCKED.
+- Phase 5 real 3D NOT STARTED.
+- Phase 6 runtime NOT STARTED.
+- Phase 7–9 subject engines NOT STARTED.
+
+
+## Latest resume point — 2026-11-11 — Chemistry source retrieval and method-body gate
+
+### Newly completed
+- Mapped 7 RBSE XII Chemistry tasks to method references in NCERT manual Units 2–4 (separate report/CSV above).
+- Cross-checked all 24 currently unlinked Chemistry task rows against the NCERT Class XI Chemistry contents index and CIET activity index.
+- 22 rows now have index locators; OPT-01 has no direct functional-group index match; OPT-04 has a Biology Exercise 20 cross-disciplinary locator.
+- The Class XI manual's accessible response gives a 27-page PDF prefix and a contents index; later procedure pages could not be retrieved/rendered. All 24 mappings remain INDEX_ONLY. No reagent link is inferred.
+
+### Next actions — ordered
+1. Retrieve the complete official NCERT Class XI Chemistry manual through a legitimate official route, with the experiment-body pages matching Units 2–7 and project pages. Then review exact method, sample, reagent roles, apparatus and safety rather than using TOC titles as procedure evidence.
+2. Retrieve/read the official RBSE Class XII 2027 Chemistry practical section; the official link is known but 17,565,238-byte content retrieval is blocked. Do not replace it with third-party summaries.
+3. Keep all 24 tasks unlinked until each source body and reagent identity is verified. OPT-01 functional-group test and OPT-04 food-test cross-disciplinary path stay separately open.
+4. For 7 earlier mapped XII tasks, preserve hydrate, concentration and method-volume conflicts; no BOM, safety or scientific models are promoted.
+5. Continue current official MSCL BOM/SDS/grade/concentration/compatibility/waste evidence closure and qualified expert review. All 126 safety-screen rows remain blocked/unapproved.
+
+### Current phase gates
+- Phase 1 / 1.1 IN PROGRESS.
+- Phase 2 scientific contracts/results BLOCKED.
+- Phase 5 real 3D NOT STARTED.
+- Phase 6 runtime NOT STARTED.
+- Phase 7–9 subject engines NOT STARTED.
