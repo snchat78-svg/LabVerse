@@ -830,3 +830,17 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733 (validator commit `43b880a32635110df8821ed3dbc9c5871adb85bf`). Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
 - All 126 safety-screen rows remain blocked from live use, require current SDS/exposure review, are NOT_APPROVED and are NOT_CURRENT_SUPPLY_OR_BOM_RECORD. All 41 task rows remain documentary-only. No concentration, method, supply status, safe procedure or scientific reaction output has been approved.
 - Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
+
+
+## 2026-11-11 — RBSE Class XII Chemistry task-to-method source review
+
+- Continued directly from the accepted task-scoped RBSE/MSCL reagent reconciliation; did not repeat the completed 53/53 MSCL visual page audit or re-open previous Chemistry name-only screens.
+- Reviewed RBSE's official Higher Secondary Practical Examination 2026 Chemistry section and the official NCERT Class XII Chemistry Laboratory Manual Units 2, 3 and 4.
+- Added `data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv` (7 data rows, 20 columns) and `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_METHOD_SOURCE_REVIEW_2026_11_11.md`.
+- Method references: KIN-01 -> NCERT Unit 2 Exp 2.1; KIN-02 -> Exp 2.2; KIN-03 -> Exp 2.3; THERMO-01 -> Unit 3 Exp 3.1; THERMO-02 -> Exp 3.2; THERMO-03 -> Exp 3.3; ELECTRO-01 -> Unit 4 Exp 4.1.
+- Recorded task-role and safety context including the KIN-02 iodine/starch endpoint system; KIN-03 acid/starch clock system; THERMO-01 CuSO4 hydrate state; THERMO-03 internal source mismatch (listed 20 mL/10 mL versus method-derived ~8.14 mL/~7.34 mL); ELECTRO-01 0.2 M versus 0.25 M CuSO4 inconsistency and plate electrode gap.
+- Checked official RBSE syllabus listing: the 2027 Class XII link is visible, but the linked PDF response was rejected as oversized (17,565,238 bytes). The 2026 practical PDF is therefore recorded as historical reference only; current 2027 Chemistry coverage remains unverified.
+- Source registry, roadmap, phase-state, next-work register and README are updated/read back in this work unit; the validator has 7-task/20-column assertions added. GitHub CI status must be checked before this work unit is reported as validated.
+- Scientific integrity boundary: method-source content does not authenticate the user-uploaded MSCL copy or establish current BOM, SDS, grades, concentrations, stock, safety approval, rights to reproduce protected NCERT content, calibrated instrument profiles or reaction-result models. All 7 records remain DOCUMENTARY_ONLY. No live-use procedure, physical task or new solver is enabled.
+- Phase status unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
+- Next bounded action: retrieve/read the official RBSE 2027 Chemistry practical PDF by a legitimate route; then investigate the 24 Chemistry task rows with no assigned input-reagent candidate using authoritative task/method evidence. Never infer reagent-free status from an empty candidate field.
