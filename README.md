@@ -414,3 +414,19 @@ These records preserve file fingerprints, variants, page counts, derived catalog
 - [Scientific source registry](docs/SCIENTIFIC_SOURCE_REGISTRY.md)
 
 Seven RBSE Class XII 2026 Chemistry task options have matching NCERT manual method references across Units 2–4. The current RBSE 2027 Class XII PDF link was identified but its content could not be retrieved; 2026 evidence remains historical/reference-only. Method references are not reagent supply evidence, approved procedures, or validated scientific models. Phase 1.1 remains IN PROGRESS; Phase 2 science models, 3D assets and experiment runtime remain gated/unimplemented.
+
+
+## Phase 1.1 — Chemistry source-index gap review (2026-11-11)
+
+- [24-task unlinked Chemistry NCERT index cross-check](data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv)
+- [Index review report and retrieval limitations](docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md)
+
+This is an index-only traceability pass, not a procedure review. The NCERT Class XI manual's task-body pages could not be retrieved in the current pass; 24 tasks remain without reagent mappings. One task has no direct functional-group index match and one uses a cross-disciplinary Biology index reference. No reagents or live methods were approved.
+
+
+## Phase 1.1 — Chemistry source-index gap review (2026-11-11)
+
+- [24-task unlinked Chemistry NCERT index cross-check](data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv)
+- [Index review report and retrieval limitations](docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md)
+
+This is an index-only traceability pass, not a procedure review. The NCERT Class XI manual's task-body pages could not be retrieved in the current pass; 24 tasks remain without reagent mappings. One task has no direct functional-group index match and one uses a cross-disciplinary Biology index reference. No reagents or live methods were approved.
