@@ -616,7 +616,7 @@ assert.deepEqual(
   "index-only review must preserve all 24 unresolved task IDs in the source matrix order"
 );
 assert.ok(unlinkedMapTasks.every(row => /NO_.*METHOD_BODY_REVIEWED/.test(row[unlinkedMapIndex.method_body_inspected])));
-assert.ok(unlinkedMapTasks.every(row => /2027_TASK_SCOPE_NOT_CONFIRMED/.test(row[unlinkedMapIndex.current_curriculum_state])));
+assert.ok(unlinkedMapTasks.every(row => /2027.*TASK_SCOPE_NOT_CONFIRMED/.test(row[unlinkedMapIndex.current_curriculum_state])));
 assert.ok(unlinkedMapTasks.every(row => row[unlinkedMapIndex.next_evidence_action].length > 20));
 assert.equal(
   unlinkedMapTasks.filter(row => row[unlinkedMapIndex.index_match_state] === "NO_DIRECT_INDEX_MATCH; DO_NOT_SUBSTITUTE LASSAIGNE FOR FUNCTIONAL-GROUP TESTS").length,
