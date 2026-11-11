@@ -396,3 +396,29 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 5 real 3D: NOT STARTED.
 - Phase 6 experiment runtime: NOT STARTED.
 - Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
+
+
+## Latest resume point — 2026-11-11 — Chemistry task-to-method evidence
+
+### Completed bounded work
+- Added 7 task-to-method evidence rows (20 columns) for RBSE-XII-CHEM-KIN-01/02/03, THERMO-01/02/03 and ELECTRO-01.
+- Sources: RBSE 2026 official Chemistry practical instructions; NCERT Class XII Chemistry Unit 2 Experiments 2.1–2.3, Unit 3 Experiments 3.1–3.3 and Unit 4 Experiment 4.1.
+- Report and CSV: `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_METHOD_SOURCE_REVIEW_2026_11_11.md`; `data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv`.
+- Critical method source gaps preserved: THERMO-01 hydrate state; THERMO-03 incompatible NCERT quantity descriptions; ELECTRO-01 conflicting CuSO4 concentration entries. KIN-02 method has multiple endpoint-system inputs beyond the task title. Nothing is promoted to current BOM or approved procedure.
+- RBSE 2027 Class XII syllabus PDF URL is known but the 17,565,238-byte response was rejected. Until its content can be read, RBSE 2026 practical content is reference-only.
+- New source/candidate regression assertions are added to `dashboard/tests/validate-catalogue.mjs`; run the Actions workflows and record conclusions before declaring this unit validated.
+
+### Immediate next actions — exact order
+1. Retry retrieval of the official RBSE 2027 Class XII Chemistry syllabus/practical PDF through a legitimate official retrieval path; do not substitute a third-party mirror or infer content from a filename.
+2. Once 2027 source text is accessible, reconcile KIN/THERMO/ELECTRO task coverage with 2027 changes and update source-session scope.
+3. Review authoritative methods for the 24 RBSE Chemistry task rows with no assigned input-reagent candidate. Empty fields are unresolved, not proof of reagent-free tasks.
+4. Continue method-level review of the 12 shared and 4 contextual candidate tasks, retaining task/choice identity, sample/product/reagent roles and alternative choices.
+5. Obtain current official MSCL BOM bytes and identity-specific SDS/grade/formulation/concentration/compatibility/waste evidence; all 126 safety-screen rows remain blocked and unapproved.
+6. Preserve Biology-with-microscope first unreviewed item `NCERT-BIO-WM-SPEC-002` / Kit Box / indexed PDF page 9 for internal binary recovery only; do not ask for repeat upload. Maintain the 53-row MSCL technical/safety review queue without repeating the finished 53/53 visual audit.
+
+### Phase gates
+- Phase 1 / 1.1: IN PROGRESS.
+- Phase 2 scientific contracts/results: BLOCKED.
+- Phase 5 real 3D: NOT STARTED.
+- Phase 6 deterministic runtime: NOT STARTED.
+- Phase 7–9 Chemistry/Physics/Biology engines: NOT STARTED.
