@@ -553,3 +553,40 @@ assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIn
 assert.equal(reagentReconciliationRows.slice(1).find(row => row[reconciliationIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-02")[reconciliationIndex.excluded_nonreagent_or_outofscope_screen_ids], "MSCL-MAN-REAG-014");
 assert.ok(reagentReconciliationRows.slice(1).every(row => row[reconciliationIndex.scope_reconciliation_status].length > 10));
 console.log("RBSE/MSCL task-scoped crosswalk: 41 tasks, 24 columns; 12 task-section candidates, 4 contextual-only matrix tasks, 1 separate product-output ref, 24 without assigned candidates; false lexical/role matches excluded; all safety and method gates remain closed.");
+
+
+// RBSE Class XII Chemistry task-to-method source review (Phase 1.1).
+const chemistryMethodRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(chemistryMethodRows.length, 8, "Chemistry method review must contain one header + seven task rows");
+assert.equal(chemistryMethodRows[0].length, 20, "Chemistry method review schema must contain 20 columns");
+assert.ok(chemistryMethodRows.slice(1).every(row => row.length === 20));
+const chemistryMethodHeader = chemistryMethodRows[0];
+const chemistryMethodIndex = Object.fromEntries(chemistryMethodHeader.map((name,index) => [name,index]));
+const chemistryMethodTasks = chemistryMethodRows.slice(1);
+assert.deepEqual(
+  chemistryMethodTasks.map(row => row[chemistryMethodIndex.rbse_task_id]),
+  [
+    "RBSE-XII-CHEM-KIN-01",
+    "RBSE-XII-CHEM-KIN-02",
+    "RBSE-XII-CHEM-KIN-03",
+    "RBSE-XII-CHEM-THERMO-01",
+    "RBSE-XII-CHEM-THERMO-02",
+    "RBSE-XII-CHEM-THERMO-03",
+    "RBSE-XII-CHEM-ELECTRO-01"
+  ],
+  "Chemistry method review must preserve the agreed task order and exact task IDs"
+);
+assert.ok(chemistryMethodTasks.every(row => row[chemistryMethodIndex.rbse_exam_session] === "EXAM_2026_REFERENCE_ONLY"));
+assert.ok(chemistryMethodTasks.every(row => row[chemistryMethodIndex.ncert_manual_url].startsWith("https://ncert.nic.in/")));
+assert.ok(chemistryMethodTasks.every(row => row[chemistryMethodIndex.procurement_supply_and_sds_status].startsWith("NOT_RETRIEVED_OR_AUTHENTICATED")));
+assert.ok(chemistryMethodTasks.every(row => row[chemistryMethodIndex.overall_review_state].includes("DOCUMENTARY_ONLY")));
+assert.ok(chemistryMethodTasks.every(row => row[chemistryMethodIndex.scientific_model_validation_status].startsWith("NO_MODEL")));
+const methodRowByTask = new Map(chemistryMethodTasks.map(row => [row[chemistryMethodIndex.rbse_task_id], row]));
+assert.match(methodRowByTask.get("RBSE-XII-CHEM-THERMO-01")[chemistryMethodIndex.exact_identity_or_variant_gap], /CuSO4.*hydrate|hydrate state/i);
+assert.match(methodRowByTask.get("RBSE-XII-CHEM-THERMO-03")[chemistryMethodIndex.exact_identity_or_variant_gap], /20 mL|internal source inconsistency/i);
+assert.match(methodRowByTask.get("RBSE-XII-CHEM-ELECTRO-01")[chemistryMethodIndex.exact_identity_or_variant_gap], /0.2 M|0.25 M/i);
+assert.match(methodRowByTask.get("RBSE-XII-CHEM-KIN-02")[chemistryMethodIndex.additional_required_species_or_roles], /potassium iodide|starch|sodium thiosulphate/i);
+console.log("RBSE Chemistry method-source review: 7 tasks, 20 columns, NCERT Unit 2/3/4 references, source conflicts and documentary-only/safety/procurement/model blocks PASS.");
