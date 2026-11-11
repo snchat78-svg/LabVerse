@@ -617,17 +617,10 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D NOT STARTED; Phase 6 runtime NOT STARTED.
 - Next: prioritize assignment of qualified review owners and collection of primary evidence for the high-consequence MSCL rows; continue internal recovery of the already-submitted Biology source without repeating upload requests.
 
-## RBSE/MSCL reagent crosswalk reconciliation — 2026-11-10
+## RBSE/MSCL reagent crosswalk reconciliation — 2026-11-10 (HISTORICAL; SUPERSEDED)
 
-- Compared the 124 numbered MSCL manual reagent labels plus 2 supplemental manual-body references against all 41 RBSE Chemistry task/choice rows.
-- Added the 41-task / 20-column reconciliation: `data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv`; report: `docs/PHASE_1_1_RBSE_MSCL_REAGENT_CROSSWALK_RECONCILIATION_2026_11_10.md`.
-- Found 18 exact-label text-occurrence candidate records spanning 17 task IDs in the safety screen; the task matrix also has 17 linked tasks but the task-ID sets are not identical. Reconciled 15 tasks with both track types, 2 screen-only, 2 matrix-contextual-only and 22 with no candidate link in either track. The latter is not proof that no reagent is needed.
-- Ten of the 15 shared tasks have differing record-ID sets. Examples and review notes are preserved in the CSV. No candidate was auto-added or removed because full text occurrence does not prove reagent role and context-based candidates are not exact-text matches.
-- Preserved duplicate Potassium iodate source records 080/087 and separate supplemental Potassium permanganate / Potassium iodide records. No formula, CAS, formulation, concentration or supplier data has been inferred.
-- Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42797725206 (validator commit `e7ce64105ab0c0ae66137633abc811ac615236a9`). Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42797724772.
-- All 126 screening records remain no-live-use, SDS-required, not approved and not current BOM; all 41 RBSE tasks remain documentary candidates requiring Chemistry/Safety and method review.
-- Phase 1 / 1.1 IN PROGRESS; Phase 2 science models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
-- Next: inspect full source context for OPT-01 / OPT-04 exact text occurrences and THERMO-02 / ELECTRO-01 contextual candidates, then resolve the ten candidate-ID differences under expert review.
+- The first 18 exact-label / 17-task whole-document comparison was preliminary lexical screening only. It is not the current task-scoped state and must not be used for product or reagent role assignment.
+- The later task-scoped correction below supersedes those preliminary counts: 12 task-section candidates in both tracks, 4 matrix-only contextual/species tasks, 24 tasks with no assigned input-reagent candidate (not proof of reagent-free), and 1 product/output-only task. Six raw lexical/role false hits remain preserved but excluded from input-reagent mapping.
 
 ## 2026-11-10 — RBSE/MSCL task-scoped reagent crosswalk (supersedes the preliminary whole-document counts)
 
@@ -640,3 +633,15 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - Source/catalogue integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42800381733 (validator commit `43b880a32635110df8821ed3dbc9c5871adb85bf`). Desktop/mobile browser smoke PASS 9/9 groups: https://github.com/snchat78-svg/LabVerse/actions/runs/42800382248.
 - All 126 safety-screen rows remain blocked from live use, require current SDS/exposure review, are NOT_APPROVED and are NOT_CURRENT_SUPPLY_OR_BOM_RECORD. All 41 task rows remain documentary-only. No concentration, method, supply status, safe procedure or scientific reaction output has been approved.
 - Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
+
+
+## Phase 1.1 — RBSE Class XII Chemistry method-source review — 2026-11-11
+
+- Added a 7-task / 20-column method evidence register: `data/catalogues/rbse_mscl_chemistry_method_source_review_2026_11_11.csv`; detailed report: `docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_METHOD_SOURCE_REVIEW_2026_11_11.md`.
+- Matched RBSE Class XII 2026 Chemistry options to NCERT Chemistry Laboratory Manual Unit 2 Experiments 2.1–2.3 (KIN-01/02/03), Unit 3 Experiments 3.1–3.3 (THERMO-01/02/03) and Unit 4 Experiment 4.1 (ELECTRO-01).
+- Recorded additional reaction/endpoint roles in KIN-02; hydrate identity gap for THERMO-01; internal source volume mismatch for THERMO-03; and concentration mismatch in ELECTRO-01. Method concentrations and equipment are not accepted as current MSCL supply evidence.
+- RBSE 2027 Class XII syllabus link was identified but its 17,565,238-byte PDF response could not be retrieved by the source interface. Therefore 2026 practical content remains reference-only; 2027 content coverage is NOT_VERIFIED.
+- All seven rows remain DOCUMENTARY_ONLY. No reagent BOM, current SDS, formulation, supply, safe learner procedure, calibrated instrument or scientific model was approved. NCERT manual reuse rights remain restricted.
+- Validation is added to `dashboard/tests/validate-catalogue.mjs`; await the new source/catalogue CI and browser smoke before marking this bounded work unit validated.
+- Phase gates unchanged: Phase 1 / 1.1 IN PROGRESS; Phase 2 scientific contracts/results BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- **Next:** read the official RBSE 2027 Chemistry practical source when a legitimate payload is accessible, then map the 24 tasks with no assigned reagent candidates against authoritative methods. Do not call them reagent-free or build procedures from a name-only match.
