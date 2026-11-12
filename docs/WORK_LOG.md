@@ -993,3 +993,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - This is emulated touch-browser coverage, not testing on a physical Android handset. The desktop drag/drop tests remain active.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - Next: implement keyboard focus/order and keyboard-accessible add/remove controls, then add keyboard-only browser acceptance.
+
+
+## 2026-11-12 — Phase 4 keyboard accessibility for candidate workbench — verified
+
+- Commit: 02afde9294266008a1e0a809bf8f4979ea43bd37; changed `app/src/styles.css` and `app/tests/smoke.mjs`.
+- Added visible focus outlines for keyboard-focused controls.
+- Browser acceptance uses only Tab and Enter after initial page navigation: search → type filter → category filter → Vernier caliper item; Enter select; Tab to Add; Enter add; Tab to Remove; Enter remove.
+- Focus outline checked for focused inventory item and Add button.
+- React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; production build PASS; browser smoke **26/26 groups PASS**.
+- Targeted interaction check only; not full WCAG/AT conformance.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+- Next: versioned local-only Research Studio draft persistence, with reload restore, schema validation and explicit clear.
