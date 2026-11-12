@@ -1,3 +1,11 @@
+## NCERT chemistry endpoint and CIET crosswalk — 2026-11-12
+
+- Corrected all 24 Chemistry tasks to official unit-specific NCERT endpoints: XI kelm201–kelm208; XII lelm107/108/111.
+- Combined XI manual body in this retrieval reached only printed p.15; individual Unit2–5/Projects links are official-index-listed but direct fetches returned HTTP 502. Do not mark their methods body-inspected.
+- Added 13 CIET-NCERT supplementary learning pointers (9 XI, 4 XII). DIKSHA body content was not authenticated from its app-shell page.
+- Registers/report: `data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv`, `data/catalogues/ciet_ncert_chemistry_supplementary_resource_crosswalk_2026_11_12.csv`, `docs/PHASE_1_1_CHEMISTRY_OFFICIAL_ENDPOINT_CIET_CROSSWALK_2026_11_12.md`.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 models remain BLOCKED.
+
 ## Chemistry method-body continuation — 2026-11-12
 
 - 19 tasks classified: 1 official-host body (XI Unit 1 pp.1–15), 11 secondary/alternate bodies (XI Units 2–5 and archived XII Unit 7), 7 index-only projects.
