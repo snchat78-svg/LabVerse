@@ -2,6 +2,15 @@
 
 This is the single source of truth for the current phase. Update it in the same commit that completes a phase or changes the next phase.
 
+## Latest execution update — 2026-11-12
+
+- Exact resume point: the 24 RBSE Chemistry task IDs with no reagent/product candidates; earlier source/index audits were not repeated.
+- Recovered the existing 2026–27 RBSE Class XI/XII PDFs from Library. SHA-256 digests match the prior archive register; fresh RBSE server byte equality remains unverified.
+- Corrected OPT-01 and OPT-04 to the Class XII Chemistry Unit 8 and Unit 11 NCERT body sources. Corrected QUAL-01 to the Class XII Unit 7 NCERT index; its body is still pending.
+- Relevant NCERT body sources inspected for five tasks: XI PRA-14, PRA-18, PRA-19; XII OPT-01, OPT-04. No method was approved for live use; zero reagent/product candidates were promoted.
+- 24/24 task IDs/order preserved. Phase 1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D workbench NOT STARTED.
+- Detailed record: `docs/PHASE_1_1_RBSE_2027_CHEMISTRY_CURRICULUM_RECHECK_2026_11_12.md`.
+
 ## Current state
 
 - Project: LabVerse — Scientific Discovery & Virtual Research Platform

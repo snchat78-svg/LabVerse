@@ -870,3 +870,16 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Added validator assertions for row count/schema, exact task IDs/order, unresolved curriculum flags and index-only body limits. CI result pending.
 - Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - Next exact action: recover complete NCERT manual body pages and official RBSE 2027 Chemistry practical syllabus through a legitimate official route; proceed with method-level review only once primary content is accessible.
+
+
+## 2026-11-12 — RBSE current-session Chemistry source recovery and crosswalk correction
+
+- Resumed from the exact 24-task unlinked Chemistry source/index register, without repeating the 41-task matrix extraction or the 53/53 MSCL visual audit.
+- Recovered existing Library files `11_2027_copy.pdf` and `12_2027_copy.pdf`; rendered XI Chemistry pp.123–126 and XII Chemistry pp.137–140. SHA-256 and byte lengths match the prior archive records: XI `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5` / 23,343,499 bytes; XII `2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34` / 18,279,805 bytes. This confirms the prior stored copies, not fresh Board-server byte identity.
+- Corrected class-scope errors in the earlier index-only register: RBSE XII OPT-01 maps to NCERT Class XII Chemistry Unit 8 (functional groups; official body text inspected, manual pp.87–98); RBSE XII OPT-04 maps to NCERT Class XII Chemistry Unit 11 (carbohydrates/fats/proteins; body text inspected, pp.115–124); RBSE XII QUAL-01 is mapped to the official Class XII Unit 7 manual index only (body retrieval pending).
+- Inspected NCERT Class XI Unit 6 body (PRA-14), Unit 7 Experiment 7.1 (PRA-18) and Experiment 7.2 (PRA-19). Unit 7 Lassaigne/sodium-fusion content is high-consequence and remains non-executable; the source itself warns of violent explosion risks when halogenated solvents are subjected to that test.
+- Created `data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv` (24 tasks / 17 columns) and `docs/PHASE_1_1_RBSE_2027_CHEMISTRY_CURRICULUM_RECHECK_2026_11_12.md`. Corrected `data/catalogues/rbse_mscl_chemistry_unlinked_task_ncert_index_map_2026_11_11.csv` and extended validator assertions.
+- Counts: 24/24 task IDs preserved; 5/24 relevant NCERT body texts inspected; 19/24 still at index/source locator level or awaiting XII Unit 7 body; zero reagent/product candidates, zero current BOM/stock approvals, zero physical-use approvals, zero validated scientific outputs.
+- Source boundaries: NCERT body text is source evidence, not current kit supply evidence; the manual revision year for XII Unit 8/11 was not independently established in this pass. No protected NCERT text or figures were copied into the product.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
+- Next: retrieve official Class XII Unit 7 and NCERT Class XI Units 1–5 body sources; finish all 24 task method/asset/rule/test gates before Phase 1 exit.

@@ -669,3 +669,18 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 - New 24-row/order regression assertions were added to `dashboard/tests/validate-catalogue.mjs`; check CI before marking the unit validated.
 - Phase 1 / 1.1 remains IN PROGRESS. Phase 2 models/results remain BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - Next: retrieve the full NCERT Class XI experiment-body pages via a legitimate official route and read RBSE 2027 Chemistry practical source; then do content/method and expert safety review. Keep OPT-01/OPT-04's source gaps and all 24 task rows open until resolved.
+
+
+## Current execution focus — 2026-11-12
+
+- Resume point recovered exactly from the 2026-11-11 next-work register: 24 Chemistry task IDs without reagent/output candidate links.
+- Recovered existing user-supplied RBSE 2026–27 XI/XII PDFs from Library; both SHA-256 values match the prior archive register. Server-byte identity is still not independently tested.
+- Corrected Class XII Chemistry source mapping: OPT-01 → NCERT Unit 8 body; OPT-04 → NCERT Unit 11 body; QUAL-01 → NCERT Unit 7 official index (body retrieval pending).
+- Inspected Class XI NCERT Unit 6/7 body sources for PRA-14, PRA-18 and PRA-19. Five of 24 tasks now have relevant method-body source text inspected; none is yet an expert-approved method.
+- All 24 task IDs remain without reagent/product candidates. No current kit BOM, stock, SDS, physical-use permission or validated chemical outcome was created.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific engines remain BLOCKED; Phase 5 real 3D workbench remains NOT STARTED.
+- Next: recover Class XII Unit 7 and NCERT Class XI Units 1–5 full body sources, then finish method, apparatus, safety and rights reconciliation before Phase 1 exit.
+
+## Research bench and discovery acceptance contract
+
+The final platform must not be reduced to a school-only practical simulator. The Research Studio and 3D Research Bench are core outcomes. Before a research model is released, the system must connect: (1) provenance/licensed source data, (2) domain-specific model and assumptions, (3) calibrated units and instrument profile, (4) event-driven experiment state, (5) measured/imported/simulated/calculated result type, (6) uncertainty and controls, (7) reproducible analysis/plots, (8) competing hypotheses and discriminating tests, and (9) independent expert validation. UI animation must never substitute for a physics, chemistry or biology solver. The app may help formulate a candidate discovery; it must not declare a discovery without independent evidence and reproducibility.

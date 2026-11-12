@@ -46,6 +46,8 @@ The React app now passes strict typecheck, production build and 22/22 Chromium s
 - [Open the LabVerse dashboard source](dashboard/index.html)
 - [Dashboard build notes and limitations](dashboard/README.md)
 - [Next work and remaining items](docs/NEXT_WORK_REGISTER_2026_11_10.md)
+- [RBSE 2026–27 Chemistry source recheck](docs/PHASE_1_1_RBSE_2027_CHEMISTRY_CURRICULUM_RECHECK_2026_11_12.md)
+- [24-task Chemistry source register](data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv)
 - [Dashboard inventory audit](docs/DASHBOARD_INVENTORY_AUDIT_2026_11_09.md)
 - [Biology manual 58-entry reagent list](data/catalogues/ncert_biology_manual_reagents_58.csv)
 - [Free GitHub Pages publishing steps](docs/DASHBOARD_PUBLISHING.md)

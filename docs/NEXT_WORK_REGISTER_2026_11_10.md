@@ -468,3 +468,15 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 5 real 3D NOT STARTED.
 - Phase 6 runtime NOT STARTED.
 - Phase 7–9 subject engines NOT STARTED.
+
+
+## Latest resume point — 2026-11-12 — RBSE 2026–27 Chemistry source recovery and Class XII crosswalk correction
+
+- Resumed the exact 24-task Chemistry set from the 2026-11-11 index-only register. Existing uploads were recovered internally; no re-upload requested.
+- Recovered `11_2027_copy.pdf` (155 pages; 23,343,499 bytes; SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`) and `12_2027_copy.pdf` (169 pages; 18,279,805 bytes; SHA-256 `2249c6233817ba625460a97b1fab829d57d5ce6842a19bb12be80794c40e7e34`). Both hashes match the prior archive register. This does not prove a new download equals the Board server copy.
+- Visually checked RBSE Chemistry pages XI 123–126 and XII 137–140. Corrected the earlier class-scope error: XII OPT-01 directly maps to NCERT XII Unit 8; XII OPT-04 directly maps to NCERT XII Unit 11. XII QUAL-01 maps to the official NCERT XII Unit 7 index, while the full Unit 7 body remains to be retrieved.
+- Inspected official NCERT body text for XI Unit 6 (PRA-14), XI Unit 7 experiments 7.1/7.2 (PRA-18/PRA-19), XII Unit 8 (OPT-01), XII Unit 11 (OPT-04). Five tasks now have body-source text; method, safety, rights and expert review are not approved.
+- Added `data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv` and `docs/PHASE_1_1_RBSE_2027_CHEMISTRY_CURRICULUM_RECHECK_2026_11_12.md`; corrected the 2026-11-11 map and validator.
+- All 24 task IDs remain without reagent/product candidate IDs. No BOM, procurement, SDS, concentration, safe physical procedure, simulation result or discovery claim was promoted.
+- CI acceptance: dashboard catalogue validator must pass the new 24-row source recheck; browser smoke must pass because the validator under `dashboard/**` changed.
+- Next exact action: retrieve Class XII Unit 7 and Class XI Units 1–5 method body sources, then method-by-method reconciliation for the 19 remaining rows. Do not repeat completed audits or request existing PDFs again. Keep Phase 2 blocked until Phase 1 exit criteria pass.

@@ -615,16 +615,50 @@ assert.deepEqual(
   currentUnlinkedChemistryTasks,
   "index-only review must preserve all 24 unresolved task IDs in the source matrix order"
 );
-assert.ok(unlinkedMapTasks.every(row => /NO_.*METHOD_BODY_REVIEWED/.test(row[unlinkedMapIndex.method_body_inspected])));
-assert.ok(unlinkedMapTasks.every(row => /2027.*TASK_SCOPE_NOT_CONFIRMED/.test(row[unlinkedMapIndex.current_curriculum_state])));
+assert.ok(unlinkedMapTasks.every(row => /RBSE_2026_27_USER_COPY_CONTENT_VISUALLY_VERIFIED/.test(row[unlinkedMapIndex.current_curriculum_state])));
+assert.ok(unlinkedMapTasks.every(row => /SHA256_MATCHES_PRIOR_ARCHIVE_REGISTER/.test(row[unlinkedMapIndex.rbse_task_source_state])));
 assert.ok(unlinkedMapTasks.every(row => row[unlinkedMapIndex.next_evidence_action].length > 20));
 assert.equal(
+  unlinkedMapTasks.filter(row => /NCERT_OFFICIAL_UNIT_BODY_TEXT_INSPECTED/.test(row[unlinkedMapIndex.method_body_inspected])).length,
+  5,
+  "exactly five of the 24 task rows must have a relevant NCERT method-body source inspected"
+);
+assert.equal(
   unlinkedMapTasks.filter(row => row[unlinkedMapIndex.index_match_state] === "NO_DIRECT_INDEX_MATCH; DO_NOT_SUBSTITUTE LASSAIGNE FOR FUNCTIONAL-GROUP TESTS").length,
-  1,
-  "only OPT-01 remains without a direct method index match in this pass"
+  0,
+  "Class XII functional-group tests must resolve against the Class XII Unit 8 source, not the Class XI index"
 );
-assert.ok(
-  unlinkedMapTasks.find(row => row[unlinkedMapIndex.rbse_task_id] === "RBSE-XII-CHEM-OPT-04")[unlinkedMapIndex.index_match_state].includes("CROSS_DISCIPLINARY_INDEX_MATCH_ONLY"),
-  "OPT-04 must remain a Biology-index-only cross-disciplinary match"
+const unlinkedTaskById = new Map(unlinkedMapTasks.map(row => [row[unlinkedMapIndex.rbse_task_id], row]));
+assert.match(unlinkedTaskById.get("RBSE-XII-CHEM-QUAL-01")[unlinkedMapIndex.index_match_state], /NCERT_XII_UNIT7_INDEX_MATCH/);
+assert.match(unlinkedTaskById.get("RBSE-XII-CHEM-OPT-01")[unlinkedMapIndex.index_match_state], /NCERT_XII_UNIT8_BODY_TEXT_MATCH/);
+assert.match(unlinkedTaskById.get("RBSE-XII-CHEM-OPT-04")[unlinkedMapIndex.index_match_state], /NCERT_XII_UNIT11_BODY_TEXT_MATCH/);
+assert.match(unlinkedTaskById.get("RBSE-XI-CHEM-PRA-19")[unlinkedMapIndex.safety_review_state], /SODIUM_FUSION_HIGH_CONSEQUENCE/);
+console.log("Chemistry source recheck: 24/24 preserved task IDs, 5 method-body references, 2026-27 RBSE copy hashes and class-specific NCERT corrections PASS.");
+
+
+// RBSE 2026-27 Chemistry recovered-source register: current-session copy hashes and method-source boundaries.
+const chemistrySourceRecheckRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(chemistrySourceRecheckRows.length, 25, "Chemistry source recheck must contain one header + 24 task rows");
+assert.equal(chemistrySourceRecheckRows[0].length, 17, "Chemistry source recheck schema must contain 17 columns");
+assert.ok(chemistrySourceRecheckRows.slice(1).every(row => row.length === 17));
+const chemSourceHeader = chemistrySourceRecheckRows[0];
+const chemSourceIndex = Object.fromEntries(chemSourceHeader.map((name,index)=>[name,index]));
+const chemSourceTasks = chemistrySourceRecheckRows.slice(1);
+assert.deepEqual(
+  chemSourceTasks.map(row => row[chemSourceIndex.rbse_task_id]),
+  currentUnlinkedChemistryTasks,
+  "source recheck must preserve the exact 24 unresolved Chemistry task IDs and order"
 );
-console.log("Chemistry unlinked-task NCERT index review: 24/24 exact RBSE IDs, index-only/method-body-not-reviewed boundaries, 2027 currency block and no reagent promotion PASS.");
+assert.ok(chemSourceTasks.every(row => /SHA256_MATCHES_PRIOR_ARCHIVE_REGISTER/.test(row[chemSourceIndex.rbse_copy_recovery_state])));
+assert.equal(chemSourceTasks.filter(row => /NCERT_OFFICIAL_UNIT_BODY_TEXT_INSPECTED/.test(row[chemSourceIndex.method_body_review_state])).length, 5);
+const chemSourceByTask = new Map(chemSourceTasks.map(row => [row[chemSourceIndex.rbse_task_id], row]));
+assert.match(chemSourceByTask.get("RBSE-XI-CHEM-PRA-14")[chemSourceIndex.ncert_method_source_url], /kelm206.pdf/);
+assert.match(chemSourceByTask.get("RBSE-XI-CHEM-PRA-18")[chemSourceIndex.ncert_method_source_url], /kelm207.pdf/);
+assert.match(chemSourceByTask.get("RBSE-XI-CHEM-PRA-19")[chemSourceIndex.safety_and_simulation_boundary], /SODIUM_FUSION_HIGH_CONSEQUENCE/);
+assert.match(chemSourceByTask.get("RBSE-XII-CHEM-OPT-01")[chemSourceIndex.ncert_method_source_url], /lelm108.pdf/);
+assert.match(chemSourceByTask.get("RBSE-XII-CHEM-OPT-04")[chemSourceIndex.ncert_method_source_url], /lelm111.pdf/);
+assert.ok(chemSourceTasks.every(row => /NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED/.test(row[chemSourceIndex.reagent_mapping_state])));
+console.log("RBSE Chemistry source recheck register: 24/24 rows, archive SHA evidence, NCERT source links and no reagent promotion PASS.");
