@@ -981,3 +981,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Browser coverage remains UI validation only. No 3D object, scientific simulation, experiment state engine or physical-use procedure is claimed.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 NOT STARTED.
 - Next: add a touch-enabled 390px Android-sized acceptance test for the tap/select + Add fallback.
+
+
+## 2026-11-12 — Phase 4 touch-capable mobile workbench test — verified
+
+- Commit: 6dfd55e9b6677c6fd8d8acb4283438eada815445; changed `app/tests/smoke.mjs`.
+- Added a separate Playwright Chromium context at 390×844 CSS px with `isMobile=true` and `hasTouch=true`.
+- Acceptance: `navigator.maxTouchPoints > 0`; select Physics; open Virtual Experiment Lab; tap Vernier caliper; tap Add selected item; assert one candidate workbench item; tap Add again; assert still one item; verify no horizontal overflow.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684.
+- Dependency install PASS; TypeScript typecheck PASS; Chromium install PASS; production build PASS; preview startup PASS; browser smoke **25/25 groups PASS**.
+- This is emulated touch-browser coverage, not testing on a physical Android handset. The desktop drag/drop tests remain active.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- Next: implement keyboard focus/order and keyboard-accessible add/remove controls, then add keyboard-only browser acceptance.
