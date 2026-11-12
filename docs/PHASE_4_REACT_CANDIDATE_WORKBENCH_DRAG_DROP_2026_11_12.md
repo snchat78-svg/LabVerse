@@ -20,3 +20,17 @@ The React app GitHub Actions workflow runs TypeScript typecheck, Playwright brow
 ## Boundaries
 
 This is Phase 4 presentation/workbench parity only. It does not close Phase 1, unblock Phase 2, create 3D geometry, implement experiment runtime, or release scientific solvers. Catalogue items remain candidate placeholders, not verified kit assemblies or physical-use instructions.
+
+
+## Final acceptance — PASS
+
+- GitHub Actions React app check: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684.
+- Dependency installation: PASS.
+- TypeScript typecheck: PASS.
+- Chromium installation: PASS.
+- Vite production build: PASS.
+- Production preview startup: PASS.
+- Playwright browser smoke: **25/25 groups PASS**.
+- Dedicated touch context: 390×844 CSS px, `isMobile=true`, `hasTouch=true`, `navigator.maxTouchPoints > 0`; user selected a Physics Vernier caliper and added it without a drag event. Repeated tap/Add did not duplicate the source ID; mobile horizontal overflow check passed.
+- Test commit: 6dfd55e9b6677c6fd8d8acb4283438eada815445.
+- This closes the drag/drop plus touch fallback work-unit, not Phase 4 itself. The workbench remains a 2D candidate placeholder, not real 3D or an executable science engine.
