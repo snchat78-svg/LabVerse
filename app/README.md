@@ -44,3 +44,11 @@ The Biology with-microscope catalogue now shows its item-level visual audit stat
 Research Studio drafts remain session-local and are not saved to cloud. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
 
 Still not implemented: original/licensed 3D assets and manipulation, deterministic experiment runtime, validated Chemistry/Physics/Biology solvers, reproducible notebook and data pipeline, offline content-pack persistence, full expert/safety/source-rights sign-off, and Android packaging.
+
+
+## Phase 4 work-unit — candidate workbench drag/drop (2026-11-12)
+
+- Desktop inventory items can be dragged into the candidate workbench.
+- Duplicate source IDs are ignored; individual placeholders can be removed or the whole workbench cleared.
+- Touch/mobile fallback remains the select-item plus “Add selected item” action.
+- This is a 2D catalogue-placeholder interaction only, not 3D, apparatus connectivity, an executable procedure or a scientific result.

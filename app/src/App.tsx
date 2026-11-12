@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type DragEvent as ReactDragEvent } from "react";
 import inventoryData from "../../dashboard/data/inventory.json";
 
 type SubjectKey = "physics" | "chemistry" | "biology";
@@ -105,6 +105,7 @@ export default function App() {
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
   const [benchItems, setBenchItems] = useState<CatalogueItem[]>([]);
+  const [benchDropActive, setBenchDropActive] = useState(false);
 
   const activeData: SubjectData | null = activeSubject
     ? inventoryData.subjects[activeSubject]
@@ -208,12 +209,35 @@ export default function App() {
     setBenchItems([]);
   };
 
+  const addBenchItem = (item: CatalogueItem) => {
+    setBenchItems((current) => current.some((existing) => existing.id === item.id) ? current : [...current, item]);
+  };
   const addSelectedTaskItems = () => {
     setBenchItems((current) => {
       const existing = new Set(current.map((item) => item.id));
       const additions = selectedTaskItems.filter((item) => !existing.has(item.id));
       return [...current, ...additions];
     });
+  };
+  const handleInventoryDragStart = (event: ReactDragEvent<HTMLButtonElement>, itemId: string) => {
+    event.dataTransfer.setData("text/plain", itemId);
+    event.dataTransfer.effectAllowed = "copy";
+  };
+  const handleBenchDragOver = (event: ReactDragEvent<HTMLElement>) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "copy";
+    setBenchDropActive(true);
+  };
+  const handleBenchDragLeave = (event: ReactDragEvent<HTMLElement>) => {
+    const nextTarget = event.relatedTarget;
+    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) setBenchDropActive(false);
+  };
+  const handleBenchDrop = (event: ReactDragEvent<HTMLElement>) => {
+    event.preventDefault();
+    setBenchDropActive(false);
+    const itemId = event.dataTransfer.getData("text/plain");
+    const item = subjectItems.find((candidate) => candidate.id === itemId);
+    if (item) addBenchItem(item);
   };
 
   return (
@@ -408,6 +432,9 @@ export default function App() {
                       key={item.id}
                       className={selectedItem?.id === item.id ? "item selected" : "item"}
                       onClick={() => setSelectedItem(item)}
+                      draggable={activeWorkspace === "virtual"}
+                      onDragStart={(event) => handleInventoryDragStart(event, item.id)}
+                      aria-label={activeWorkspace === "virtual" ? `Select or drag ${item.name} to the candidate workbench` : undefined}
                     >
                       <span>
                         <strong>{item.name}</strong>
@@ -453,11 +480,7 @@ export default function App() {
                       <button
                         type="button"
                         className="setup-button"
-                        onClick={() => setBenchItems((current) =>
-                          current.some((item) => item.id === selectedItem.id)
-                            ? current
-                            : [...current, selectedItem]
-                        )}
+                        onClick={() => addBenchItem(selectedItem)}
                       >
                         Add selected item as candidate placeholder
                       </button>
@@ -537,28 +560,37 @@ export default function App() {
               </div>
             </section>}
 
-            {activeWorkspace === "virtual" && <section className="panel bench-panel">
-              <div className="panel-head">
-                <div><div className="eyebrow">PLACEHOLDER WORKSPACE</div><h2>Experiment workbench</h2></div>
-                <strong>{benchItems.length} objects</strong>
-              </div>
-              {benchItems.length === 0 ? (
-                <p className="bench-empty">Your workbench is empty. Inspect a practical and add its mapped candidate items here.</p>
-              ) : (
-                <>
-                  <div className="bench-list">
-                    {benchItems.map((item) => (
-                      <div className="bench-item" key={item.id}>
-                        <strong>{item.name}</strong>
-                        <small>{item.id} · CANDIDATE PLACEHOLDER</small>
-                      </div>
-                    ))}
-                  </div>
-                  <button type="button" className="clear-bench" onClick={() => setBenchItems([])}>Clear workbench</button>
-                </>
-              )}
-              <p className="bench-warning">These are catalogue placeholders only—not a verified kit setup, procedure or simulated result.</p>
-            </section>}
+            {activeWorkspace === "virtual" && (
+              <section
+                className={benchDropActive ? "panel bench-panel drag-over" : "panel bench-panel"}
+                onDragOver={handleBenchDragOver}
+                onDragLeave={handleBenchDragLeave}
+                onDrop={handleBenchDrop}
+                aria-label="Candidate workbench drop area"
+              >
+                <div className="panel-head">
+                  <div><div className="eyebrow">PLACEHOLDER WORKSPACE</div><h2>Experiment workbench</h2></div>
+                  <strong>{benchItems.length} objects</strong>
+                </div>
+                {benchItems.length === 0 ? (
+                  <p className="bench-empty">Drag a catalogue item here, or select an item and use “Add selected item”. Touch screens can use the selection button.</p>
+                ) : (
+                  <>
+                    <div className="bench-list">
+                      {benchItems.map((item) => (
+                        <div className="bench-item" key={item.id}>
+                          <div className="bench-item-copy"><strong>{item.name}</strong><small>{item.id} · CANDIDATE PLACEHOLDER</small></div>
+                          <button type="button" className="remove-bench-item" aria-label={`Remove ${item.name} from workbench`} onClick={() => setBenchItems((current) => current.filter((entry) => entry.id !== item.id))}>Remove</button>
+                        </div>
+                      ))}
+                    </div>
+                    <button type="button" className="clear-bench" onClick={() => setBenchItems([])}>Clear workbench</button>
+                  </>
+                )}
+                <p className="bench-drop-hint">Drop target: catalogue candidate items only.</p>
+                <p className="bench-warning">These are catalogue placeholders only—not a verified kit setup, procedure or simulated result.</p>
+              </section>
+            )}
 
             {activeWorkspace === "analysis" && (
               <section className="panel analysis-workspace">

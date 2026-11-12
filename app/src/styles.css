@@ -59,3 +59,15 @@
 @media(max-width:760px){.inventory-filters{grid-template-columns:1fr}.coverage-note{align-items:flex-start;flex-direction:column}.coverage-note span{text-align:left}}
 
 .visual-audit-coverage{display:grid;gap:4px;margin:12px 0 4px;padding:10px 12px;border:1px solid #e1e8ef;border-radius:9px;background:#f7f9fc}.visual-audit-coverage strong{font-size:9px;color:#40556f}.visual-audit-coverage span{font-size:8px;line-height:1.5;color:#79899d}
+
+
+/* Phase 4 candidate workbench drag/drop affordance; not a 3D scene. */
+.item[draggable="true"]{cursor:grab}
+.item[draggable="true"]:active{cursor:grabbing}
+.bench-panel{transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}
+.bench-panel.drag-over{border-color:#58ad9b;background:#f6fbf9;box-shadow:0 0 0 3px #159b8815}
+.bench-item{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.bench-item-copy{min-width:0;overflow-wrap:anywhere}
+.remove-bench-item{flex:0 0 auto;border:1px solid #e7dfe0;border-radius:7px;background:#fff;color:#95636a;padding:6px 9px;font-size:8px;font-weight:800;cursor:pointer}
+.remove-bench-item:hover{background:#fff7f7;border-color:#dcb9bd}
+.bench-drop-hint{margin:8px 0 0;color:#8a98a9;font-size:8px;line-height:1.5}

@@ -58,6 +58,22 @@ async function main() {
     assert.equal(await page.locator(".bench-item").count(), 2);
     assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
     results.push("Practical source links and candidate placeholder setup");
+    // Desktop drag/drop adds source-catalogue candidates; repeated IDs stay unique.
+    await page.locator(".content-grid .search").first().fill("Stopwatch with split timeout");
+    const stopwatchItem = page.locator(".item").filter({has:page.locator("strong", {hasText:/^Stopwatch with split timeout$/})});
+    await stopwatchItem.waitFor();
+    assert.equal(await stopwatchItem.getAttribute("draggable"), "true");
+    await stopwatchItem.dragTo(page.locator(".bench-panel"));
+    assert.equal(await page.locator(".bench-item").count(), 3);
+    assert.match(await page.locator(".bench-panel").innerText(), /Stopwatch with split timeout/);
+    await stopwatchItem.dragTo(page.locator(".bench-panel"));
+    assert.equal(await page.locator(".bench-item").count(), 3, "the same catalogue ID must not be duplicated");
+    results.push("Virtual workbench desktop drag-and-drop and duplicate prevention");
+    await page.locator(".bench-item").filter({hasText:"Stopwatch with split timeout"})
+      .getByRole("button", {name:"Remove Stopwatch with split timeout from workbench"}).click();
+    assert.equal(await page.locator(".bench-item").count(), 2);
+    assert.doesNotMatch(await page.locator(".bench-panel").innerText(), /Stopwatch with split timeout/);
+    results.push("Virtual workbench individual item removal");
 
     // An unmatched project stays visible with the reason; no false source match.
     await page.locator('.workspace-tabs button', {hasText:"Learning Lab"}).click();
