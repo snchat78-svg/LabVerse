@@ -1739,3 +1739,16 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Validator now checks exact 24 task IDs/order, index-only boundaries, method-body-not-reviewed status and 2027 currency flags. CI pending.
 - Phase 1 / 1.1 remains IN PROGRESS; Phase 2 science models/results BLOCKED; Phases 5 and 6 NOT STARTED; engines 7–9 NOT STARTED.
 - **Next exact action:** retrieve the complete NCERT Class XI Chemistry manual body and official RBSE 2027 Chemistry practical PDF through legitimate official routes; then method-review the index matches and source gaps (OPT-01/OPT-04) before any reagent or model promotion.
+
+
+## CI verification — Chemistry method-body work unit (2026-11-12)
+
+- Final dashboard-integrity run **SUCCESS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162565
+  - All existing source/archive/catalogue checks passed.
+  - New 19-task evidence CSV passed: 1 official-host body, 11 secondary/alternate bodies, 7 index-only projects.
+  - 24/24 task IDs retained; no reagent/product IDs promoted.
+  - JSON schema parse PASS.
+- Final Chromium desktop/mobile browser smoke **9/9 groups PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699
+- Intermediate CI attempts exposed a status-token mismatch, a missing CSV cell, and a regex-escape assertion; each was corrected before the final successful runs.
+- Verification scope is catalogue integrity and existing dashboard UI/browser regression. It does not validate a scientific solver, current procurement BOM, safe live laboratory method or real 3D simulation.
+

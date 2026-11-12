@@ -698,3 +698,16 @@ The final platform must not be reduced to a school-only practical simulator. The
 
 Original/licensed 3D apparatus, calibrated instruments, event-driven state, deterministic domain solvers, experiment-synchronous visuals, sourced datasets, units/uncertainty, graphs, competing hypotheses and reproducible notebooks remain required. Candidate patterns are not confirmed discoveries without independent validation.
 
+
+
+## CI verification — Chemistry method-body work unit (2026-11-12)
+
+- Final dashboard-integrity run **SUCCESS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162565
+  - All existing source/archive/catalogue checks passed.
+  - New 19-task evidence CSV passed: 1 official-host body, 11 secondary/alternate bodies, 7 index-only projects.
+  - 24/24 task IDs retained; no reagent/product IDs promoted.
+  - JSON schema parse PASS.
+- Final Chromium desktop/mobile browser smoke **9/9 groups PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699
+- Intermediate CI attempts exposed a status-token mismatch, a missing CSV cell, and a regex-escape assertion; each was corrected before the final successful runs.
+- Verification scope is catalogue integrity and existing dashboard UI/browser regression. It does not validate a scientific solver, current procurement BOM, safe live laboratory method or real 3D simulation.
+

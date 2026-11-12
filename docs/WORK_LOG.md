@@ -902,3 +902,23 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - The archived XII cation list includes As3+; RBSE 2026–27 omits it.
 - Added the 19-row evidence CSV/report; updated source/map registers and validator. No reagent, BOM, SDS, physical-use permission or solver result approved.
 
+
+
+## CI verification — Chemistry method-body work unit (2026-11-12)
+
+- Final dashboard-integrity run **SUCCESS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162565
+  - All existing source/archive/catalogue checks passed.
+  - New 19-task evidence CSV passed: 1 official-host body, 11 secondary/alternate bodies, 7 index-only projects.
+  - 24/24 task IDs retained; no reagent/product IDs promoted.
+  - JSON schema parse PASS.
+- Final Chromium desktop/mobile browser smoke **9/9 groups PASS**: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699
+- Intermediate CI attempts exposed a status-token mismatch, a missing CSV cell, and a regex-escape assertion; each was corrected before the final successful runs.
+- Verification scope is catalogue integrity and existing dashboard UI/browser regression. It does not validate a scientific solver, current procurement BOM, safe live laboratory method or real 3D simulation.
+
+
+## 2026-11-12 — Final accepted state for Chemistry method-body audit
+
+- Main HEAD at final verification: `562e98508eb13f8f42b09198cd54c93ec3cc4b35`.
+- Report/data files read back from GitHub after correction; 19 data rows, 19 columns, safety/rights/next-action fields present.
+- Final CI state: integrity PASS and Chromium browser smoke 9/9 PASS. Previous failed checks were not counted as passing; the corrected commit completed both required checks.
+- Current phase: Phase 1 / 1.1 IN PROGRESS. Phase 2 science engines BLOCKED. Phase 5 real 3D bench NOT STARTED.

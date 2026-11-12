@@ -489,3 +489,11 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - No reagent/BOM/SDS/live-use approval promoted.
 - Next: authenticate official XI Units 2–5 and XII Unit 7 bodies, compare copies, then retrieve seven project methods.
 
+
+
+## Final verification — 2026-11-12
+
+- Chemistry method-body evidence unit verified on `562e98508eb13f8f42b09198cd54c93ec3cc4b35`.
+- Dashboard integrity SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162565.
+- Desktop/mobile Chromium smoke: 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699.
+- Next action unchanged: retrieve authenticated official XI Units 2–5 and XII Unit 7 body bytes; compare alternates and then retrieve project methods.
