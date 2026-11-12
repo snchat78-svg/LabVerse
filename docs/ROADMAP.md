@@ -711,3 +711,12 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Intermediate CI attempts exposed a status-token mismatch, a missing CSV cell, and a regex-escape assertion; each was corrected before the final successful runs.
 - Verification scope is catalogue integrity and existing dashboard UI/browser regression. It does not validate a scientific solver, current procurement BOM, safe live laboratory method or real 3D simulation.
 
+
+
+## Phase 1.1 — Official NCERT Chemistry endpoints and CIET pointers (2026-11-12)
+
+- Exact unit-level NCERT endpoints mapped for all 24 RBSE Chemistry tasks (XI kelm201–kelm208; XII lelm107/108/111).
+- Combined XI PDF body response reached only printed p.15; official individual Unit2–5/Projects links returned HTTP 502 when fetched. Do not infer the method body from link/title.
+- Thirteen CIET supplementary links mapped; DIKSHA body not verified and no method/safety approval implied.
+- Phase 1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED.
+
