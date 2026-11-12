@@ -1796,3 +1796,14 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Search surfaced ncert.ncert.org.in as a possible alias. Its index page and all six corresponding PDF candidates returned 502/internal errors; the alias was not accepted as an authenticated primary host.
 - Updated the seven-target retry CSV and report with these attempts. Do not retry the same host/path set unless NCERT changes availability or a new official reference is supplied.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 4 verification — React candidate workbench drag/drop — 2026-11-12
+
+- Commit: 57c72d49c4fa79c51a0ddd243a0534f42a8c462b; implementation/report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- Desktop drag/drop from inventory to the Virtual Experiment Lab candidate workbench is implemented. Inventory items are draggable only in that workspace.
+- Duplicate IDs are ignored; individual candidate placeholders can be removed; whole bench clear remains available; select/Add control remains the touch/mobile fallback.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685. TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke **24/24 groups PASS**. Added tests explicitly cover desktop drag/drop, duplicate prevention and individual removal.
+- This completes one Phase 4 work-unit only. Phase 4 remains IN PROGRESS; static-preview parity and actual product capability remain incomplete.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime NOT STARTED.
+- **Next exact action:** test the select-and-add touch fallback in a dedicated Android-sized 390px / touch-enabled browser context; do not require drag gestures on touch.
