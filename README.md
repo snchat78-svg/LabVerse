@@ -444,3 +444,8 @@ This is an index-only traceability pass, not a procedure review. The NCERT Class
 - [Work-unit report](docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md)
 - Desktop inventory drag/drop, unique candidate placeholder tracking, per-item removal and the touch fallback are implemented. React CI and 24/24 browser groups passed: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685.
 - This is a 2D placeholder interaction only; real 3D and experiment runtime remain future gated phases.
+
+
+## Phase 4 — Touch-accessible candidate workbench
+
+The React app now has an automated touch-enabled 390×844 browser check for selecting and adding an inventory item without drag gestures. Duplicate prevention and mobile overflow are verified. React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684 (25/25 browser groups PASS). This uses browser device emulation; physical Android-device testing remains outstanding.
