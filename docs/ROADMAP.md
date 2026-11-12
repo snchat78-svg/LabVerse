@@ -758,3 +758,13 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - This is a bounded 2D candidate-workbench interaction, not real 3D or a domain solver. Phase 4 remains IN PROGRESS.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models stay BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - Next bounded parity work: dedicated 390px Android/touch-enabled test for select-and-add to the bench.
+
+
+## Phase 4 — Android-sized touch fallback — verified 2026-11-12
+
+- Added an independent Playwright touch-enabled browser context (390×844 CSS px, `isMobile=true`, `hasTouch=true`).
+- Verified a catalogue item can be selected and added to the candidate workbench by tap alone; repeat Add does not duplicate the source ID; mobile viewport has no horizontal overflow.
+- Complete React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684; TypeScript typecheck PASS; Vite production build PASS; browser smoke **25/25 groups PASS**.
+- This is emulated touch-browser verification, not a physical Android-device certification.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
+- Next Phase 4 unit: keyboard accessibility and focus order for workbench inventory/add/remove controls, with keyboard-only tests.
