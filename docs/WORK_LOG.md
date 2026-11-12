@@ -922,3 +922,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Report/data files read back from GitHub after correction; 19 data rows, 19 columns, safety/rights/next-action fields present.
 - Final CI state: integrity PASS and Chromium browser smoke 9/9 PASS. Previous failed checks were not counted as passing; the corrected commit completed both required checks.
 - Current phase: Phase 1 / 1.1 IN PROGRESS. Phase 2 science engines BLOCKED. Phase 5 real 3D bench NOT STARTED.
+
+
+## 2026-11-12 — Official NCERT endpoint and CIET resource crosswalk
+
+- All 24 RBSE Chemistry tasks now point to unit-specific NCERT files (XI kelm201–kelm208; XII lelm107/108/111).
+- Combined XI manual response exposed only printed pp.1–15 in this pass. Individual official Unit2–5 and Projects links were confirmed, but direct PDF fetches returned HTTP 502.
+- Thirteen CIET/DIKSHA supplementary pointers mapped (9 XI, 4 XII); DIKSHA page returned app shell only, so these are not method-body or safety approvals.
+- Added endpoint and CIET CSV registers; updated 19-row evidence, 24-row source register/map and validator.
+- No reagent candidates, BOM/stock/SDS, physical-use method or scientific result approvals promoted. CI pending.
