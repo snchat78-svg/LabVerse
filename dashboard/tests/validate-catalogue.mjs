@@ -678,3 +678,32 @@ assert.match(qEvidence[mbeIndex.source_conflict_or_quality_note],/As3[+].*RBSE 2
 const projectEvidence=mbeRows.filter(row=>row[mbeIndex.rbse_task_id].includes("-PRJ-"));assert.equal(projectEvidence.length,7);
 for(const row of mbeRows){const src=chemSourceTasks.find(item=>item[chemSourceIndex.rbse_task_id]===row[mbeIndex.rbse_task_id]);assert.ok(src&&/NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED/.test(src[chemSourceIndex.reagent_mapping_state]));}
 console.log("Chemistry method-body evidence: 19 tasks; 1 official-host, 11 secondary/alternate, 7 index-only. PASS.");
+
+
+const chemistryOfficialEndpointRows=parseCsvRows(await readFile(new URL("../../data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv",import.meta.url),"utf8"));
+assert.equal(chemistryOfficialEndpointRows.length,25); assert.equal(chemistryOfficialEndpointRows[0].length,14);
+assert.ok(chemistryOfficialEndpointRows.slice(1).every(row=>row.length===14));
+const endpointH=chemistryOfficialEndpointRows[0],endpointI=Object.fromEntries(endpointH.map((n,i)=>[n,i])),endpointTasks=chemistryOfficialEndpointRows.slice(1);
+assert.deepEqual(endpointTasks.map(row=>row[endpointI.rbse_task_id]),chemSourceTasks.map(row=>row[chemSourceIndex.rbse_task_id]));
+const endpointMap=new Map(endpointTasks.map(row=>[row[endpointI.rbse_task_id],row]));
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-02")[endpointI.official_manual_url],/kelm202[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-05")[endpointI.official_manual_url],/kelm203[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-08")[endpointI.official_manual_url],/kelm204[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-10")[endpointI.official_manual_url],/kelm205[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRJ-01")[endpointI.official_manual_url],/kelm208[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XII-CHEM-QUAL-01")[endpointI.official_manual_url],/lelm107[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-02")[endpointI.official_pdf_retrieval_state],/HTTP_502/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-01")[endpointI.official_pdf_retrieval_state],/PRINTED_P15/);
+assert.equal(endpointTasks.filter(row=>Number(row[endpointI.ciet_supplementary_resource_count])>0).length,11);
+const cietChemistryRows=parseCsvRows(await readFile(new URL("../../data/catalogues/ciet_ncert_chemistry_supplementary_resource_crosswalk_2026_11_12.csv",import.meta.url),"utf8"));
+assert.equal(cietChemistryRows.length,14); assert.equal(cietChemistryRows[0].length,11);
+assert.ok(cietChemistryRows.slice(1).every(row=>row.length===11));
+const cietH=cietChemistryRows[0],cietI=Object.fromEntries(cietH.map((n,i)=>[n,i])),cietTasks=cietChemistryRows.slice(1);
+assert.equal(cietTasks.filter(row=>row[cietI.class_pack]==="XI").length,9);
+assert.equal(cietTasks.filter(row=>row[cietI.class_pack]==="XII").length,4);
+assert.equal(cietTasks.filter(row=>row[cietI.rbse_task_id]==="RBSE-XII-CHEM-OPT-04").length,3);
+assert.ok(cietTasks.every(row=>row[cietI.ciet_content_url].startsWith("https://diksha.gov.in/")));
+assert.ok(cietTasks.every(row=>row[cietI.labverse_use_boundary].includes("NOT_PRIMARY_METHOD_BODY")));
+assert.equal(new Set(cietTasks.map(row=>row[cietI.ciet_content_url])).size,13);
+console.log("Official NCERT chemistry unit endpoint register 24/24 PASS.");
+console.log("CIET supplementary crosswalk 13 links (9 XI, 4 XII), resource-only boundaries PASS.");
