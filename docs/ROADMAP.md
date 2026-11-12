@@ -768,3 +768,13 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - This is emulated touch-browser verification, not a physical Android-device certification.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
 - Next Phase 4 unit: keyboard accessibility and focus order for workbench inventory/add/remove controls, with keyboard-only tests.
+
+
+## Phase 4 — Keyboard accessibility for candidate workbench — verified 2026-11-12
+
+- Added visible `:focus-visible` indicators to interactive controls.
+- Keyboard-only test verifies Tab/Enter selection, Add and Remove flow plus visible focus on the inventory item and Add control.
+- Latest React CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke **26/26 groups PASS**.
+- This is targeted keyboard validation, not full WCAG conformance. Phase 4 remains IN PROGRESS.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next: versioned local-only Research Studio draft persistence with reload restore and schema validation; never imply cloud sync.
