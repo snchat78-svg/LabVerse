@@ -1819,3 +1819,14 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
 - This verifies touch fallback, not physical-device certification and not a 3D scene. Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
 - **Next exact action:** keyboard-accessibility audit and implementation for focus order plus accessible workbench add/remove controls, with keyboard-only browser tests.
+
+
+## Phase 4 verification — keyboard accessibility — 2026-11-12
+
+- Code/test commit: 02afde9294266008a1e0a809bf8f4979ea43bd37; report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- Added keyboard-visible focus outlines for interactive controls.
+- Keyboard-only browser acceptance: Tab navigates to inventory item and Add; Enter selects/adds; Tab reaches individual Remove; Enter removes. Focus outline was asserted on the item and Add control.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke **26/26 groups PASS**.
+- This is targeted keyboard interaction verification, not a complete WCAG audit or assistive-technology certification.
+- Phase 4 remains IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
+- **Next exact action:** versioned local-only Research Studio draft persistence with reload restore, schema validation and explicit clear; no cloud-sync claim.
