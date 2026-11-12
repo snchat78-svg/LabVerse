@@ -720,3 +720,13 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Thirteen CIET supplementary links mapped; DIKSHA body not verified and no method/safety approval implied.
 - Phase 1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED.
 
+
+
+## Phase 1.1 — NCERT Chemistry primary-PDF retrieval retry (2026-11-12)
+
+- Added a bounded seven-target retry register: one XI Unit 1 partial-body control, XI Units 2–5 and Projects, and XII Unit 7.
+- Official Unit 1 combined PDF confirms the current cover label and historic first-edition metadata, but body extraction only reaches printed page 15. Its contents list does not verify subsequent methods.
+- NCERT XI Unit 7 was re-opened and visually checked; this cannot substitute for the Class XII Unit 7 required for RBSE XII qualitative analysis.
+- XI Units 2–5, Projects and XII Unit 7 remain blocked on official-byte retrieval; secondary/archived copies remain explicitly non-primary.
+- Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
+- Next: retrieve/authenticate six blocked official documents, then conduct complete method/project review. Do not promote reagents, models or live-use procedures from contents titles or alternate-host copies.

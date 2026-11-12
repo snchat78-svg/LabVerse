@@ -707,3 +707,36 @@ assert.ok(cietTasks.every(row=>row[cietI.labverse_use_boundary].includes("NOT_PR
 assert.equal(new Set(cietTasks.map(row=>row[cietI.ciet_content_url])).size,13);
 console.log("Official NCERT chemistry unit endpoint register 24/24 PASS.");
 console.log("CIET supplementary crosswalk 13 links (9 XI, 4 XII), resource-only boundaries PASS.");
+
+
+// Official NCERT Chemistry source-retrieval retry audit (2026-11-12).
+const ncertChemRetryRows = parseCsvRows(await readFile(
+  new URL("../../data/catalogues/ncert_chemistry_official_pdf_retry_2026_11_12.csv", import.meta.url),
+  "utf8"
+));
+assert.equal(ncertChemRetryRows.length, 8, "NCERT Chemistry retry audit must contain one header + seven bounded source targets");
+assert.equal(ncertChemRetryRows[0].length, 11, "NCERT Chemistry retry audit schema must contain 11 columns");
+assert.ok(ncertChemRetryRows.slice(1).every(row => row.length === 11));
+const ncertRetryHeader = ncertChemRetryRows[0];
+const ncertRetryIndex = Object.fromEntries(ncertRetryHeader.map((name,index)=>[name,index]));
+const ncertRetryTargets = ncertChemRetryRows.slice(1);
+assert.deepEqual(
+  ncertRetryTargets.map(row => row[ncertRetryIndex.audit_id]),
+  ["XI_UNIT1_CONTROL","XI_UNIT2","XI_UNIT3","XI_UNIT4","XI_UNIT5","XI_PROJECTS","XII_UNIT7"],
+  "NCERT retry audit must preserve the exact seven-target scope and order"
+);
+const ncertRetryById = new Map(ncertRetryTargets.map(row => [row[ncertRetryIndex.audit_id],row]));
+assert.match(ncertRetryById.get("XI_UNIT1_CONTROL")[ncertRetryIndex.body_evidence_state], /BODY_VISIBLE_THROUGH_PRINTED_P15/);
+assert.match(ncertRetryById.get("XI_UNIT1_CONTROL")[ncertRetryIndex.official_document_url], /^https:\/\/ncert\.gov\.in\//);
+for (const id of ["XI_UNIT2","XI_UNIT3","XI_UNIT4","XI_UNIT5","XI_PROJECTS"]) {
+  const row = ncertRetryById.get(id);
+  assert.match(row[ncertRetryIndex.official_fetch_attempt_2026_11_12], /HTTP_502/);
+  assert.equal(row[ncertRetryIndex.body_evidence_state], "INDEX_LOCATOR_ONLY; OFFICIAL_METHOD_BODY_NOT_RETRIEVED");
+  assert.match(row[ncertRetryIndex.official_document_url], /^https:\/\/ncert\.nic\.in\//);
+}
+assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.official_fetch_attempt_2026_11_12], /HTTP_502/);
+assert.equal(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.body_evidence_state], "INDEX_TITLE_ONLY; OFFICIAL_METHOD_BODY_NOT_RETRIEVED");
+assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.alternate_source_state], /2018.*BYTE_IDENTITY_UNVERIFIED/);
+assert.ok(ncertRetryTargets.every(row => row[ncertRetryIndex.provenance_boundary].includes("NOT_METHOD_APPROVAL")));
+assert.ok(ncertRetryTargets.every(row => row[ncertRetryIndex.next_action].length > 25));
+console.log("NCERT official Chemistry retrieval retry audit: 7 targets, one Unit 1 partial-body control, five XI unit/project 502 blockers, XII Unit 7 502 blocker, secondary copies kept non-primary. PASS.");

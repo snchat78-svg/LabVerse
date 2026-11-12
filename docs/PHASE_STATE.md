@@ -1768,3 +1768,13 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Intermediate CI attempts exposed a status-token mismatch, a missing CSV cell, and a regex-escape assertion; each was corrected before the final successful runs.
 - Verification scope is catalogue integrity and existing dashboard UI/browser regression. It does not validate a scientific solver, current procurement BOM, safe live laboratory method or real 3D simulation.
 
+
+
+## NCERT Chemistry official PDF retry — 2026-11-12
+
+- Resumed the precise previous blocker; created the seven-target audit register and report.
+- Confirmed the NCERT XI combined PDF kelm201.pdf cover (2025–26; first edition August 2008), but searchable body content only reaches printed page 15. Contents for Units 2–7 and Projects are location hints, not inspected methods.
+- Independently reopened official NCERT XI Unit 7 kelm207.pdf and visually checked the first page. This is not Class XII Unit 7 and does not close RBSE XII QUAL-01.
+- Direct official retrieval remained blocked for XI Units 2–5, XI Projects and XII Unit 7 (502/runtime DNS failure). Archived/secondary copies remain non-primary.
+- No reagents, BOM, SDS, physical use, scientific models or discovery claims promoted. Phase 1/1.1 stays IN PROGRESS; Phase 2 stays BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Report: docs/PHASE_1_1_NCERT_CHEMISTRY_OFFICIAL_PDF_RETRY_2026_11_12.md; register: data/catalogues/ncert_chemistry_official_pdf_retry_2026_11_12.csv.

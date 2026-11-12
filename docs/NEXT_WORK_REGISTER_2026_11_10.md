@@ -503,3 +503,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 
 - Endpoint register 24/24 PASS and CIET crosswalk 13/13 PASS in dashboard-integrity workflow: https://github.com/snchat78-svg/LabVerse/actions/runs/43214251322.
 - Next exact task remains retrieval of official XI Unit 2–5 and Projects PDFs plus XII Unit 7, with byte/hash/edition evidence; direct 502 responses remain blockers, not evidence of missing content.
+
+
+## Latest resume point — 2026-11-12 — NCERT Chemistry official PDF retry
+
+- Rechecked the exact interrupted targets: NCERT XI Units 2–5, XI Projects and XII Unit 7; added one Unit 1 partial-body control.
+- New report: docs/PHASE_1_1_NCERT_CHEMISTRY_OFFICIAL_PDF_RETRY_2026_11_12.md; seven-row machine-readable retry register: data/catalogues/ncert_chemistry_official_pdf_retry_2026_11_12.csv.
+- The NCERT XI combined manual at ncert.gov.in kelm201.pdf confirms the 2025–26 cover and August 2008 first-edition metadata, but body retrieval still only exposes printed pages 1–15. Later contents entries are locators only.
+- NCERT XI Unit 7 kelm207.pdf is independently available from the official host and screenshot-checked at page 1; this is XI evidence and does not close XII QUAL-01.
+- Official fetch remains blocked for XI Units 2–5 / Projects and XII Unit 7 (HTTP 502 from the web retrieval path; container DNS cannot resolve the two NCERT hosts). Secondary/2018 copies remain non-primary.
+- No source-body count, reagent/product mapping, BOM/SDS, live-use permission or scientific result was promoted. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+- Next exact action: retrieve the six blocked official documents through an NCERT-approved route; authenticate bytes/edition/pages; then compare the complete methods and project bodies. Keep the issue open and do not progress from contents titles or secondary copies.

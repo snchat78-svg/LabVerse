@@ -939,3 +939,14 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Existing catalogue regressions also passed: 515-row three-subject traceability, 53/53 MSCL visual detail audit, 18 Physics metrology records, 24/24 Chemistry source register, 19-task method-body evidence, JSON schema parse.
 - Browser smoke was not triggered by these catalogue-only final writes; prior dashboard Chromium smoke 9/9 at https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699 remains the separate UI check.
 - This validates source-register integrity only. It does not validate unavailable NCERT PDF bodies, scientific solvers, lab safety, procurement or a real 3D research bench.
+
+
+## 2026-11-12 — NCERT Chemistry official PDF retry and retrieval-boundary audit
+
+- Rechecked the open primary-source blockers for XI Chemistry Units 2–5 and Projects, plus XII Unit 7, without repeating completed source mapping or secondary-body reviews.
+- New 7-target audit: data/catalogues/ncert_chemistry_official_pdf_retry_2026_11_12.csv and docs/PHASE_1_1_NCERT_CHEMISTRY_OFFICIAL_PDF_RETRY_2026_11_12.md.
+- The NCERT-hosted XI combined manual kelm201.pdf has 2025–26 cover / August 2008 first-edition metadata; text extraction still only exposes body pages through printed page 15. Later contents entries remain locators, not procedure evidence.
+- Official XI Unit 7 kelm207.pdf body and first-page screenshot were independently checked; this is separate from Class XII Unit 7.
+- Direct retrieval of XI Units 2–5/Projects and XII Unit 7 still returns HTTP 502 via the retrieval layer; container DNS cannot resolve the NCERT domains. No alternate copy was promoted. XII 2018 archived As3+ discrepancy remains excluded from RBSE 2026–27.
+- Validator now enforces seven source targets, exact URL/status states, explicit non-primary boundaries and no method approval implication.
+- All 24 task IDs and existing evidence counts remain unchanged. No reagents, BOM/SDS, live-use approval or scientific outputs promoted. Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
