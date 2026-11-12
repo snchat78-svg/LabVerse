@@ -893,3 +893,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
   - JSON schema parse PASS.
 - Dashboard Chromium browser smoke: **9/9 groups PASS** — https://github.com/snchat78-svg/LabVerse/actions/runs/43151233087 (desktop/mobile, including 2D candidate workbench and safety boundary disclosure).
 - These checks validate repository consistency and existing dashboard navigation. They do **not** validate scientific solvers, chemistry reactions, real 3D assets, expert sign-off, or live laboratory procedures.
+
+
+## 2026-11-12 — Chemistry method-body continuation
+
+- Resumed 19 remaining task IDs. Official-host XI Unit 1 body pp.1–15 inspected; cover 2025–26 vs first edition August 2008 recorded separately.
+- XI Units 2–5 have 10 secondary/alternate body rows; archived XII Unit 7 is one 2018 alternate body row; seven XI project rows remain index-only.
+- The archived XII cation list includes As3+; RBSE 2026–27 omits it.
+- Added the 19-row evidence CSV/report; updated source/map registers and validator. No reagent, BOM, SDS, physical-use permission or solver result approved.
+

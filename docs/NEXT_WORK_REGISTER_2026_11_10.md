@@ -480,3 +480,12 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - All 24 task IDs remain without reagent/product candidate IDs. No BOM, procurement, SDS, concentration, safe physical procedure, simulation result or discovery claim was promoted.
 - CI acceptance: dashboard catalogue validator must pass the new 24-row source recheck; browser smoke must pass because the validator under `dashboard/**` changed.
 - Next exact action: retrieve Class XII Unit 7 and Class XI Units 1–5 method body sources, then method-by-method reconciliation for the 19 remaining rows. Do not repeat completed audits or request existing PDFs again. Keep Phase 2 blocked until Phase 1 exit criteria pass.
+
+
+## 2026-11-12 — Chemistry method-body continuation
+
+- 19 remaining tasks classified: 1 official-host body, 11 secondary/alternate bodies, 7 index-only projects.
+- Cover 2025–26 vs August 2008 first-edition metadata retained; 2018 archived XII Unit 7 As3+ mismatch recorded.
+- No reagent/BOM/SDS/live-use approval promoted.
+- Next: authenticate official XI Units 2–5 and XII Unit 7 bodies, compare copies, then retrieve seven project methods.
+

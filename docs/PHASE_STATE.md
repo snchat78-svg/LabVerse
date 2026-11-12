@@ -1,3 +1,11 @@
+## Chemistry method-body continuation — 2026-11-12
+
+- 19 tasks classified: 1 official-host body (XI Unit 1 pp.1–15), 11 secondary/alternate bodies (XI Units 2–5 and archived XII Unit 7), 7 index-only projects.
+- Class XI manual cover label 2025–26 coexists with first edition August 2008 metadata; no new revision claim.
+- Archived XII Unit 7 lists As3+; RBSE 2026–27 omits it. Preserve mismatch.
+- No reagent IDs, current BOM/SDS, physical-use methods or scientific results approved. Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED.
+- Report: `docs/PHASE_1_1_CHEMISTRY_METHOD_BODY_RECHECK_2026_11_12.md`; evidence CSV: `data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv`.
+
 # Phase State — LabVerse
 
 This is the single source of truth for the current phase. Update it in the same commit that completes a phase or changes the next phase.

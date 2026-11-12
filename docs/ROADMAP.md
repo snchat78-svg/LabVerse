@@ -684,3 +684,17 @@ A Phase 1 research-capability mapping work unit is recorded at `docs/PHASE_1_RES
 ## Research bench and discovery acceptance contract
 
 The final platform must not be reduced to a school-only practical simulator. The Research Studio and 3D Research Bench are core outcomes. Before a research model is released, the system must connect: (1) provenance/licensed source data, (2) domain-specific model and assumptions, (3) calibrated units and instrument profile, (4) event-driven experiment state, (5) measured/imported/simulated/calculated result type, (6) uncertainty and controls, (7) reproducible analysis/plots, (8) competing hypotheses and discriminating tests, and (9) independent expert validation. UI animation must never substitute for a physics, chemistry or biology solver. The app may help formulate a candidate discovery; it must not declare a discovery without independent evidence and reproducibility.
+
+
+## Phase 1.1 — Chemistry method-body continuation (2026-11-12)
+
+- 19 tasks classified: 1 official-host Unit 1 body, 11 secondary/alternate bodies, 7 index-only project records.
+- Cover 2025–26 label vs August 2008 first edition is preserved separately.
+- Archived XII Unit 7 includes As3+; RBSE 2026–27 omits it. Do not merge lists.
+- Phase 1 remains IN PROGRESS; Phase 2 scientific engines BLOCKED. No reagents/BOM/SDS/live methods approved.
+- Next: retrieve authenticated Unit 2–5 and XII Unit 7 bodies; compare alternate copies, then inspect project methods.
+
+## Research Bench acceptance remains core
+
+Original/licensed 3D apparatus, calibrated instruments, event-driven state, deterministic domain solvers, experiment-synchronous visuals, sourced datasets, units/uncertainty, graphs, competing hypotheses and reproducible notebooks remain required. Candidate patterns are not confirmed discoveries without independent validation.
+
