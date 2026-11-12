@@ -883,3 +883,13 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Source boundaries: NCERT body text is source evidence, not current kit supply evidence; the manual revision year for XII Unit 8/11 was not independently established in this pass. No protected NCERT text or figures were copied into the product.
 - Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 5 3D NOT STARTED; Phase 6 runtime NOT STARTED.
 - Next: retrieve official Class XII Unit 7 and NCERT Class XI Units 1–5 body sources; finish all 24 task method/asset/rule/test gates before Phase 1 exit.
+
+
+## 2026-11-12 — CI verification for Chemistry source recheck (commit 5af5be0934a11f482764315c5c6301c5196a42e3)
+
+- Dashboard integrity workflow: **SUCCESS** — https://github.com/snchat78-svg/LabVerse/actions/runs/43151232999
+  - JavaScript syntax check PASS.
+  - Catalogue/source validator PASS, including source archive (9 assertions), 515-row three-subject traceability, 53/53 MSCL visual records, 18 Physics metrology rows, 41-task Chemistry reagent crosswalk, previous 7-task method review, and new 24-task RBSE Chemistry source recheck.
+  - JSON schema parse PASS.
+- Dashboard Chromium browser smoke: **9/9 groups PASS** — https://github.com/snchat78-svg/LabVerse/actions/runs/43151233087 (desktop/mobile, including 2D candidate workbench and safety boundary disclosure).
+- These checks validate repository consistency and existing dashboard navigation. They do **not** validate scientific solvers, chemistry reactions, real 3D assets, expert sign-off, or live laboratory procedures.

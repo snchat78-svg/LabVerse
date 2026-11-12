@@ -2,6 +2,11 @@
 
 This is the single source of truth for the current phase. Update it in the same commit that completes a phase or changes the next phase.
 
+## CI verification — 2026-11-12
+
+- Commit `5af5be0934a11f482764315c5c6301c5196a42e3`: dashboard-integrity SUCCESS; Chromium smoke 9/9 PASS. Evidence: https://github.com/snchat78-svg/LabVerse/actions/runs/43151232999 and https://github.com/snchat78-svg/LabVerse/actions/runs/43151233087.
+- Scope is catalogue/source integrity and the existing static dashboard browser smoke only; no scientific model or 3D claim is made.
+
 ## Latest execution update — 2026-11-12
 
 - Exact resume point: the 24 RBSE Chemistry task IDs with no reagent/product candidates; earlier source/index audits were not repeated.
