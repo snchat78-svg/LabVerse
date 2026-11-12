@@ -1830,3 +1830,15 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - This is targeted keyboard interaction verification, not a complete WCAG audit or assistive-technology certification.
 - Phase 4 remains IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
 - **Next exact action:** versioned local-only Research Studio draft persistence with reload restore, schema validation and explicit clear; no cloud-sync claim.
+
+
+## Phase 4 verification — Research Studio local draft persistence — 2026-11-12
+
+- Code commit: 8ea6c8d9bd4caad5e10cef85ee8c141eb8b8ce82; test fix: 0544ac13dddd6ad3a8c635f286ec4dec6ad47610; report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
+- Added schema version 1 local autosave for six research fields, ISO save timestamp, 5,000-character field limits, reload restore and explicit Clear local draft.
+- Malformed or unsupported schema versions are not loaded as current data. Storage exceptions are handled and labelled.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757; dependency install, TypeScript typecheck, Chromium install, production build and preview PASS; Playwright browser smoke **28/28 groups PASS**.
+- Acceptance covers schema-1 save, reload restore, clear removes key and clears form, and schema-99 rejection/clear.
+- Storage is local to the current browser profile only; no server/cloud sync, cross-device backup or collaborative notebook.
+- Phase 4 remains IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- **Next exact action:** user-controlled versioned JSON export/import of Research Studio drafts with strict schema and length validation, valid round-trip and malformed/unsupported file rejection.
