@@ -497,3 +497,9 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Dashboard integrity SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162565.
 - Desktop/mobile Chromium smoke: 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699.
 - Next action unchanged: retrieve authenticated official XI Units 2–5 and XII Unit 7 body bytes; compare alternates and then retrieve project methods.
+
+
+## CI accepted — Chemistry NCERT endpoint / CIET crosswalk (2026-11-12)
+
+- Endpoint register 24/24 PASS and CIET crosswalk 13/13 PASS in dashboard-integrity workflow: https://github.com/snchat78-svg/LabVerse/actions/runs/43214251322.
+- Next exact task remains retrieval of official XI Unit 2–5 and Projects PDFs plus XII Unit 7, with byte/hash/edition evidence; direct 502 responses remain blockers, not evidence of missing content.
