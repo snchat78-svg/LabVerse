@@ -449,3 +449,8 @@ This is an index-only traceability pass, not a procedure review. The NCERT Class
 ## Phase 4 — Touch-accessible candidate workbench
 
 The React app now has an automated touch-enabled 390×844 browser check for selecting and adding an inventory item without drag gestures. Duplicate prevention and mobile overflow are verified. React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684 (25/25 browser groups PASS). This uses browser device emulation; physical Android-device testing remains outstanding.
+
+
+## Phase 4 — Keyboard-accessible workbench controls
+
+Keyboard focus indicators and a Tab/Enter-only inventory-to-workbench add/remove path are implemented and tested. Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927 (26/26 browser groups PASS). This is targeted keyboard coverage, not WCAG certification.
