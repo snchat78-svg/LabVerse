@@ -740,3 +740,11 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Desktop/mobile Chromium browser smoke: 9/9 groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/43218797779.
 - Browser smoke covers the existing dashboard and navigation only; it does not validate a scientific solver, physical lab safety, procurement, or real 3D rendering.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+
+
+## Additional NCERT domain-alias retry — 2026-11-12
+
+- Repeated direct PDF checks for XI Units 2–5, XI Projects and XII Unit 7 on the ncert.gov.in hostname; all were inaccessible through the retrieval tool.
+- Search surfaced ncert.ncert.org.in as a possible alias. Its index page and all six corresponding PDF candidates returned 502/internal errors; the alias was not accepted as an authenticated primary host.
+- Updated the seven-target retry CSV and report with these attempts. Do not retry the same host/path set unless NCERT changes availability or a new official reference is supplied.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
