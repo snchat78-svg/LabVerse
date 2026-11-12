@@ -730,11 +730,11 @@ assert.match(ncertRetryById.get("XI_UNIT1_CONTROL")[ncertRetryIndex.body_evidenc
 assert.match(ncertRetryById.get("XI_UNIT1_CONTROL")[ncertRetryIndex.official_document_url], /^https:\/\/ncert\.gov\.in\//);
 for (const id of ["XI_UNIT2","XI_UNIT3","XI_UNIT4","XI_UNIT5","XI_PROJECTS"]) {
   const row = ncertRetryById.get(id);
-  assert.match(row[ncertRetryIndex.official_fetch_attempt_2026_11_12], /HTTP_502/);
+  assert.match(row[ncertRetryIndex.official_fetch_attempt_2026_11_12], /502/);
   assert.equal(row[ncertRetryIndex.body_evidence_state], "INDEX_LOCATOR_ONLY; OFFICIAL_METHOD_BODY_NOT_RETRIEVED");
   assert.match(row[ncertRetryIndex.official_document_url], /^https:\/\/ncert\.nic\.in\//);
 }
-assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.official_fetch_attempt_2026_11_12], /HTTP_502/);
+assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.official_fetch_attempt_2026_11_12], /502/);
 assert.equal(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.body_evidence_state], "INDEX_TITLE_ONLY; OFFICIAL_METHOD_BODY_NOT_RETRIEVED");
 assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.alternate_source_state], /2018.*BYTE_IDENTITY_UNVERIFIED/);
 assert.ok(ncertRetryTargets.every(row => row[ncertRetryIndex.provenance_boundary].includes("NOT_METHOD_APPROVAL")));
