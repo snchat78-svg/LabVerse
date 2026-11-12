@@ -1005,3 +1005,17 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Targeted interaction check only; not full WCAG/AT conformance.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
 - Next: versioned local-only Research Studio draft persistence, with reload restore, schema validation and explicit clear.
+
+
+## 2026-11-12 — Phase 4 Research Studio local draft persistence — verified
+
+- Code commit: 8ea6c8d9bd4caad5e10cef85ee8c141eb8b8ce82; test assertion correction: 0544ac13dddd6ad3a8c635f286ec4dec6ad47610.
+- Added `labverse.research-studio.draft.v1`, schema version 1 envelope with savedAt ISO timestamp and six named research fields.
+- Added safe load validation, 5,000-character limit, autosave on edit, restore after reload, explicit clear, invalid-schema warning and storage-unavailable handling.
+- Added Playwright acceptance for schema-1 save, reload restore, explicit storage removal/field clear and rejection of future schema version 99.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757; dependency install PASS; TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; browser smoke **28/28 groups PASS**.
+- Intermediate CI issues were corrected before the accepted run: initial typecheck exposed schema narrowing and hook placement; first smoke run exposed an over-escaped timestamp assertion. Final run passed all checks.
+- Data remains in the user's browser local storage only. No cloud upload, server storage, cross-device sync or collaborative notebook.
+- Report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+- Next: versioned JSON export/import for user-controlled backup and transfer, with strict schema/length validation and invalid-file rejection.
