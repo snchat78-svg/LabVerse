@@ -183,7 +183,7 @@ async function main() {
     await page.getByText(/Draft saved locally on this device/i).waitFor();
     const storedDraft = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
     assert.equal(storedDraft.schemaVersion, 1);
-    assert.match(storedDraft.savedAt, /^20\\d\\d-/);
+    assert.equal(Number.isFinite(Date.parse(storedDraft.savedAt)), true);
     assert.equal(storedDraft.draft.question, "Does light intensity change the rate of photosynthesis?");
     results.push("Research Studio versioned local autosave and draft preview");
 
