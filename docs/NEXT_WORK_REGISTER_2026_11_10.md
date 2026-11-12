@@ -542,3 +542,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 4 remains IN PROGRESS; this is 2D placeholder workbench interaction, not a 3D scene or experiment runtime.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - **Next exact task:** add a dedicated 390px Android/touch-flow browser acceptance test for selecting a catalogue item and adding it to the candidate bench without drag gestures; preserve the desktop drag/drop test.
+
+
+## Latest verified Phase 4 work-unit — Android-sized touch fallback — 2026-11-12
+
+- Test commit: 6dfd55e9b6677c6fd8d8acb4283438eada815445; React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684.
+- Dedicated Playwright context uses 390×844 viewport, `isMobile=true`, `hasTouch=true`; verified a touch-capable browser with `navigator.maxTouchPoints`.
+- The test selected a Physics Vernier caliper and tapped “Add selected item” without drag gestures; it confirmed one candidate placeholder, prevented duplicate insertion, and checked no horizontal overflow.
+- Complete app CI: dependency install PASS; TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; Playwright browser smoke **25/25 groups PASS**.
+- Phase 4 remains IN PROGRESS; the drag/drop + touch fallback work-unit is verified. Workbench is still 2D candidate UI only.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- **Next exact task:** audit and implement keyboard-accessible focus/order and accessible add/remove controls for the candidate workbench; add keyboard-only Playwright coverage while preserving desktop/touch tests.
