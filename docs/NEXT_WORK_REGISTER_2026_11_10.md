@@ -563,3 +563,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; Vite production build PASS; browser smoke **26/26 groups PASS**. Desktop drag/drop, touch Add, keyboard Add/Remove all remain in the same regression suite.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
 - **Next exact task:** implement versioned local-only persistence for Research Studio drafts (restore after reload, explicit clear, and schema validation); keep drafts on the device and do not imply cloud sync.
+
+
+## Latest verified Phase 4 work-unit — Research Studio local draft persistence — 2026-11-12
+
+- Code commit: 8ea6c8d9bd4caad5e10cef85ee8c141eb8b8ce82; test assertion follow-up: 0544ac13dddd6ad3a8c635f286ec4dec6ad47610; report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
+- Research drafts now autosave in browser local storage under a versioned schema (version 1), restore on reload, support explicit clear, and validate six text fields with a 5,000-character limit.
+- Unsupported/malformed schema is not loaded; the UI reports it and allows clear/replace. Storage exceptions are caught and disclosed.
+- React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757; dependency install, TypeScript typecheck, Chromium setup, Vite production build and preview all PASS; Playwright smoke **28/28 groups PASS**.
+- This is local browser storage only: no cloud sync, server backup, cross-device persistence or collaborative notebook is claimed.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- **Next exact task:** add a versioned JSON export/import for the Research Studio draft, validate the imported schema and field limits before accepting it, and test round-trip + invalid-file rejection. Keep files user-controlled and local; do not add cloud dependencies.
