@@ -553,3 +553,13 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Phase 4 remains IN PROGRESS; the drag/drop + touch fallback work-unit is verified. Workbench is still 2D candidate UI only.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - **Next exact task:** audit and implement keyboard-accessible focus/order and accessible add/remove controls for the candidate workbench; add keyboard-only Playwright coverage while preserving desktop/touch tests.
+
+
+## Latest verified Phase 4 work-unit — keyboard-accessible candidate workbench — 2026-11-12
+
+- Code/test commit: 02afde9294266008a1e0a809bf8f4979ea43bd37; report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- Added visible `:focus-visible` styling to interactive controls and a dedicated keyboard-only Playwright path.
+- Test verified Tab navigation from search → item-type filter → category filter → Vernier caliper item; Enter selected; Tab + Enter added candidate; Tab + Enter removed it. Focus outline was checked on item and Add button.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; Vite production build PASS; browser smoke **26/26 groups PASS**. Desktop drag/drop, touch Add, keyboard Add/Remove all remain in the same regression suite.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
+- **Next exact task:** implement versioned local-only persistence for Research Studio drafts (restore after reload, explicit clear, and schema validation); keep drafts on the device and do not imply cloud sync.
