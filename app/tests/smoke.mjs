@@ -197,6 +197,43 @@ async function main() {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
     assert.equal(overflow,false,"React app must not overflow horizontally on a 390px viewport");
     results.push("Mobile layout and no browser errors");
+    // Dedicated Android-sized touch context: select and Add without drag gestures.
+    const touchContext = await browser.newContext({
+      viewport:{width:390,height:844},
+      screen:{width:390,height:844},
+      isMobile:true,
+      hasTouch:true
+    });
+    try {
+      const touchPage = await touchContext.newPage();
+      touchPage.on("pageerror", error => errors.push(error.message));
+      touchPage.on("console", message => {
+        if (message.type() === "error") errors.push(message.text());
+      });
+      await touchPage.goto("http://127.0.0.1:4174/", {waitUntil:"networkidle"});
+      assert.equal(await touchPage.evaluate(() => navigator.maxTouchPoints > 0), true);
+      await touchPage.locator(".subject-card.violet").click();
+      await touchPage.getByRole("heading", {name:"Physics Lab"}).waitFor();
+      await touchPage.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
+      await touchPage.locator(".content-grid .search").first().fill("Vernier caliper");
+      const touchItem = touchPage.locator(".item").filter({
+        has:touchPage.locator("strong", {hasText:/^Vernier caliper$/})
+      });
+      await touchItem.click();
+      const addButton = touchPage.locator(".detail-panel").getByRole("button", {
+        name:"Add selected item as candidate placeholder"
+      });
+      await addButton.click();
+      assert.equal(await touchPage.locator(".bench-item").count(), 1);
+      assert.match(await touchPage.locator(".bench-panel").innerText(), /Vernier caliper/);
+      await addButton.click();
+      assert.equal(await touchPage.locator(".bench-item").count(), 1, "touch Add action must not duplicate the selected catalogue ID");
+      assert.equal(await touchPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1), false);
+      results.push("Android-sized touch select-and-add fallback without drag gestures");
+    } finally {
+      await touchContext.close();
+    }
+
     assert.deepEqual(errors,[],"React app must not emit browser errors");
     console.log("LabVerse React app browser smoke: " + results.length + " groups passed.");
     for (const result of results) console.log("PASS:", result);
