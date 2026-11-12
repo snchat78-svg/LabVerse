@@ -62,3 +62,8 @@ The React app Playwright suite now opens a separate 390×844 CSS-pixel Chromium 
 ## Keyboard accessibility
 
 Interactive controls include visible `:focus-visible` outlines. Playwright covers a keyboard-only inventory-to-workbench flow using Tab and Enter to select, add and remove a candidate item. Latest CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927 (26/26 browser groups PASS). This is targeted keyboard-flow coverage, not a complete WCAG audit.
+
+
+## Research Studio draft persistence
+
+Research Studio drafts autosave in browser local storage using schema version 1, restore after reload, and can be cleared explicitly. The six text fields are capped at 5,000 characters and validated on read. Unsupported/malformed schema is not loaded as a current draft. Storage is local to the current browser profile only; there is no cloud sync or server backup. Playwright checks save, reload restore, clear and schema rejection. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757 (28/28 browser groups PASS).
