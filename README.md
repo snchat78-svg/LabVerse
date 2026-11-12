@@ -437,3 +437,10 @@ This is an index-only traceability pass, not a procedure review. The NCERT Class
 - [Index review report and retrieval limitations](docs/PHASE_1_1_RBSE_MSCL_CHEMISTRY_UNLINKED_TASK_INDEX_REVIEW_2026_11_11.md)
 
 This is an index-only traceability pass, not a procedure review. The NCERT Class XI manual's task-body pages could not be retrieved in the current pass; 24 tasks remain without reagent mappings. One task has no direct functional-group index match and one uses a cross-disciplinary Biology index reference. No reagents or live methods were approved.
+
+
+## Phase 4 — React candidate workbench interaction
+
+- [Work-unit report]( docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md )
+- Desktop inventory drag/drop, unique candidate placeholder tracking, per-item removal and the touch fallback are implemented. React CI and 24/24 browser groups passed: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685.
+- This is a 2D placeholder interaction only; real 3D and experiment runtime remain future gated phases.
