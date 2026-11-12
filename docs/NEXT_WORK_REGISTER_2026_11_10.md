@@ -532,3 +532,13 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Search surfaced ncert.ncert.org.in as a possible alias. Its index page and all six corresponding PDF candidates returned 502/internal errors; the alias was not accepted as an authenticated primary host.
 - Updated the seven-target retry CSV and report with these attempts. Do not retry the same host/path set unless NCERT changes availability or a new official reference is supplied.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Latest verified Phase 4 work-unit — 2026-11-12 — React candidate workbench drag/drop
+
+- Commit: 57c72d49c4fa79c51a0ddd243a0534f42a8c462b; report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- Desktop inventory drag/drop, source-ID duplicate prevention, individual placeholder removal and touch select/add fallback implemented.
+- React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685. TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke 24/24 groups PASS, including desktop drag/drop, repeated-drop de-duplication and item removal.
+- Phase 4 remains IN PROGRESS; this is 2D placeholder workbench interaction, not a 3D scene or experiment runtime.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+- **Next exact task:** add a dedicated 390px Android/touch-flow browser acceptance test for selecting a catalogue item and adding it to the candidate bench without drag gestures; preserve the desktop drag/drop test.
