@@ -748,3 +748,13 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Search surfaced ncert.ncert.org.in as a possible alias. Its index page and all six corresponding PDF candidates returned 502/internal errors; the alias was not accepted as an authenticated primary host.
 - Updated the seven-target retry CSV and report with these attempts. Do not retry the same host/path set unless NCERT changes availability or a new official reference is supplied.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## Phase 4 — React candidate workbench drag/drop — verified 2026-11-12
+
+- Desktop catalogue-to-workbench drag/drop, unique source-ID handling, individual removal and touch fallback implemented.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685; TypeScript typecheck PASS; Vite production build PASS; React Playwright smoke 24/24 groups PASS.
+- Commit: 57c72d49c4fa79c51a0ddd243a0534f42a8c462b; report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- This is a bounded 2D candidate-workbench interaction, not real 3D or a domain solver. Phase 4 remains IN PROGRESS.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models stay BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next bounded parity work: dedicated 390px Android/touch-enabled test for select-and-add to the bench.
