@@ -71,3 +71,8 @@
 .remove-bench-item{flex:0 0 auto;border:1px solid #e7dfe0;border-radius:7px;background:#fff;color:#95636a;padding:6px 9px;font-size:8px;font-weight:800;cursor:pointer}
 .remove-bench-item:hover{background:#fff7f7;border-color:#dcb9bd}
 .bench-drop-hint{margin:8px 0 0;color:#8a98a9;font-size:8px;line-height:1.5}
+
+
+/* Phase 4 keyboard-accessible focus indicators for interactive lab controls. */
+:where(button,a,input,select,textarea):focus-visible{outline:3px solid #2878c7;outline-offset:3px}
+.search:focus-visible{outline:3px solid #2878c7;outline-offset:2px;border-color:#2878c7}

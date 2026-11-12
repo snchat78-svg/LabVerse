@@ -234,6 +234,41 @@ async function main() {
       await touchContext.close();
     }
 
+    // Keyboard-only flow: tab through inventory controls, Enter to add/remove.
+    const keyboardPage = await browser.newPage({viewport:{width:1280,height:900}});
+    keyboardPage.on("pageerror", error => errors.push(error.message));
+    keyboardPage.on("console", message => {
+      if (message.type() === "error") errors.push(message.text());
+    });
+    await keyboardPage.goto("http://127.0.0.1:4174/", {waitUntil:"networkidle"});
+    await keyboardPage.locator(".subject-card.violet").click();
+    await keyboardPage.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
+    const keyboardSearch = keyboardPage.locator(".content-grid .search").first();
+    await keyboardSearch.fill("Vernier caliper");
+    await keyboardSearch.focus();
+
+    await keyboardPage.keyboard.press("Tab");
+    assert.equal(await keyboardPage.evaluate(() => document.activeElement?.tagName), "SELECT");
+    await keyboardPage.keyboard.press("Tab");
+    assert.equal(await keyboardPage.evaluate(() => document.activeElement?.tagName), "SELECT");
+    await keyboardPage.keyboard.press("Tab");
+    assert.match(await keyboardPage.evaluate(() => document.activeElement?.textContent ?? ""), /Vernier caliper/);
+    assert.equal(await keyboardPage.evaluate(() => getComputedStyle(document.activeElement).outlineStyle !== "none"), true);
+    await keyboardPage.keyboard.press("Enter");
+    assert.match(await keyboardPage.locator(".detail-panel").innerText(), /Vernier caliper/);
+
+    await keyboardPage.keyboard.press("Tab");
+    assert.match(await keyboardPage.evaluate(() => document.activeElement?.textContent ?? ""), /Add selected item as candidate placeholder/);
+    assert.equal(await keyboardPage.evaluate(() => getComputedStyle(document.activeElement).outlineStyle !== "none"), true);
+    await keyboardPage.keyboard.press("Enter");
+    assert.equal(await keyboardPage.locator(".bench-item").count(), 1);
+
+    await keyboardPage.keyboard.press("Tab");
+    assert.match(await keyboardPage.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""), /Remove Vernier caliper from workbench/);
+    await keyboardPage.keyboard.press("Enter");
+    assert.equal(await keyboardPage.locator(".bench-item").count(), 0);
+    results.push("Keyboard-only inventory focus, Enter add/remove and visible focus indicators");
+
     assert.deepEqual(errors,[],"React app must not emit browser errors");
     console.log("LabVerse React app browser smoke: " + results.length + " groups passed.");
     for (const result of results) console.log("PASS:", result);
