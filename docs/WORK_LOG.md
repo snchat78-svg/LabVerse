@@ -931,3 +931,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Thirteen CIET/DIKSHA supplementary pointers mapped (9 XI, 4 XII); DIKSHA page returned app shell only, so these are not method-body or safety approvals.
 - Added endpoint and CIET CSV registers; updated 19-row evidence, 24-row source register/map and validator.
 - No reagent candidates, BOM/stock/SDS, physical-use method or scientific result approvals promoted. CI pending.
+
+## CI verification — NCERT endpoint and CIET crosswalk (2026-11-12)
+
+- Successful dashboard-integrity run: **SUCCESS** — https://github.com/snchat78-svg/LabVerse/actions/runs/43214251322 (job 131169326696; checked the 24-task endpoint register and 13-resource CIET crosswalk after both data files were present).
+- Explicit log confirmations: `Official NCERT chemistry unit endpoint register 24/24 PASS`; `CIET supplementary crosswalk 13 links (9 XI, 4 XII), resource-only boundaries PASS`.
+- Existing catalogue regressions also passed: 515-row three-subject traceability, 53/53 MSCL visual detail audit, 18 Physics metrology records, 24/24 Chemistry source register, 19-task method-body evidence, JSON schema parse.
+- Browser smoke was not triggered by these catalogue-only final writes; prior dashboard Chromium smoke 9/9 at https://github.com/snchat78-svg/LabVerse/actions/runs/43157162699 remains the separate UI check.
+- This validates source-register integrity only. It does not validate unavailable NCERT PDF bodies, scientific solvers, lab safety, procurement or a real 3D research bench.
