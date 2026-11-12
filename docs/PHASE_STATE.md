@@ -1807,3 +1807,15 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - This completes one Phase 4 work-unit only. Phase 4 remains IN PROGRESS; static-preview parity and actual product capability remain incomplete.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models/results BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime NOT STARTED.
 - **Next exact action:** test the select-and-add touch fallback in a dedicated Android-sized 390px / touch-enabled browser context; do not require drag gestures on touch.
+
+
+## Phase 4 verification — Android-sized touch fallback — 2026-11-12
+
+- Test commit: 6dfd55e9b6677c6fd8d8acb4283438eada815445.
+- React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684; dependency installation, TypeScript typecheck, Chromium setup, Vite production build and preview startup all PASS.
+- Playwright browser smoke: **25/25 groups PASS**.
+- Added a separate 390×844 mobile emulation context with touch enabled. Verified `navigator.maxTouchPoints > 0`, then selected Physics Vernier caliper and added it by tap without a drag gesture.
+- Repeated touch Add does not duplicate the catalogue ID; 390px layout has no horizontal overflow.
+- Report: docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- This verifies touch fallback, not physical-device certification and not a 3D scene. Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
+- **Next exact action:** keyboard-accessibility audit and implementation for focus order plus accessible workbench add/remove controls, with keyboard-only browser tests.
