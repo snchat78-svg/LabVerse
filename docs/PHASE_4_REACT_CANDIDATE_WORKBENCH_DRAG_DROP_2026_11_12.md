@@ -34,3 +34,13 @@ This is Phase 4 presentation/workbench parity only. It does not close Phase 1, u
 - Dedicated touch context: 390×844 CSS px, `isMobile=true`, `hasTouch=true`, `navigator.maxTouchPoints > 0`; user selected a Physics Vernier caliper and added it without a drag event. Repeated tap/Add did not duplicate the source ID; mobile horizontal overflow check passed.
 - Test commit: 6dfd55e9b6677c6fd8d8acb4283438eada815445.
 - This closes the drag/drop plus touch fallback work-unit, not Phase 4 itself. The workbench remains a 2D candidate placeholder, not real 3D or an executable science engine.
+
+
+## Keyboard accessibility acceptance — PASS
+
+- Code/test commit: 02afde9294266008a1e0a809bf8f4979ea43bd37.
+- Added clear `:focus-visible` outlines to interactive controls, with a dedicated search-field focus rule.
+- Keyboard-only Playwright flow tabs from the inventory search through item-type and category filters to the Vernier caliper item; Enter selects it; Tab reaches “Add selected item”; Enter adds it; Tab reaches its Remove control; Enter removes it.
+- The test checks that the focused inventory item and Add button expose a visible outline.
+- Latest React app CI: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927; TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke **26/26 groups PASS**.
+- This validates the browser interaction and does not certify formal WCAG conformance.
