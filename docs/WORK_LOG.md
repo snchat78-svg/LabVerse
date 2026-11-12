@@ -968,3 +968,16 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Search surfaced ncert.ncert.org.in as a possible alias. Its index page and all six corresponding PDF candidates returned 502/internal errors; the alias was not accepted as an authenticated primary host.
 - Updated the seven-target retry CSV and report with these attempts. Do not retry the same host/path set unless NCERT changes availability or a new official reference is supplied.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
+
+## 2026-11-12 — Phase 4 React workbench drag/drop — verified
+
+- Commit: 57c72d49c4fa79c51a0ddd243a0534f42a8c462b.
+- Changed: app/src/App.tsx, app/src/styles.css, app/tests/smoke.mjs, app/README.md; added docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md.
+- Implemented native desktop drag/drop from the inventory tray to the candidate workbench, duplicate source-ID prevention, per-item Remove and retained Clear.
+- Touch fallback remains select an item then click Add selected item.
+- GitHub Actions React app check: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685.
+- TypeScript typecheck PASS; Vite production build PASS; Playwright browser smoke **24/24 groups PASS**. The two new acceptance groups cover drag/drop with duplicate suppression and individual item removal.
+- Browser coverage remains UI validation only. No 3D object, scientific simulation, experiment state engine or physical-use procedure is claimed.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 NOT STARTED.
+- Next: add a touch-enabled 390px Android-sized acceptance test for the tap/select + Add fallback.
