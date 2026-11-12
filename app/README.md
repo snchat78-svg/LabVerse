@@ -52,3 +52,8 @@ Still not implemented: original/licensed 3D assets and manipulation, determinist
 - Duplicate source IDs are ignored; individual placeholders can be removed or the whole workbench cleared.
 - Touch/mobile fallback remains the select-item plus “Add selected item” action.
 - This is a 2D catalogue-placeholder interaction only, not 3D, apparatus connectivity, an executable procedure or a scientific result.
+
+
+## Touch fallback acceptance
+
+The React app Playwright suite now opens a separate 390×844 CSS-pixel Chromium context with mobile emulation and touch enabled. It confirms a user can select a Physics inventory item and add it to the Virtual Experiment Lab by tapping, without drag gestures; duplicate insertion and mobile horizontal overflow are checked. This is emulated browser coverage, not certification on a physical Android device. Latest CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684 (25/25 browser groups PASS).
