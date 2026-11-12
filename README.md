@@ -441,6 +441,6 @@ This is an index-only traceability pass, not a procedure review. The NCERT Class
 
 ## Phase 4 — React candidate workbench interaction
 
-- [Work-unit report]( docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md )
+- [Work-unit report](docs/PHASE_4_REACT_CANDIDATE_WORKBENCH_DRAG_DROP_2026_11_12.md)
 - Desktop inventory drag/drop, unique candidate placeholder tracking, per-item removal and the touch fallback are implemented. React CI and 24/24 browser groups passed: https://github.com/snchat78-svg/LabVerse/actions/runs/43224557685.
 - This is a 2D placeholder interaction only; real 3D and experiment runtime remain future gated phases.
