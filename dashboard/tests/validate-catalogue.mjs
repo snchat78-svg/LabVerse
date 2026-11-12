@@ -736,7 +736,7 @@ for (const id of ["XI_UNIT2","XI_UNIT3","XI_UNIT4","XI_UNIT5","XI_PROJECTS"]) {
 }
 assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.official_fetch_attempt_2026_11_12], /502/);
 assert.equal(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.body_evidence_state], "INDEX_TITLE_ONLY; OFFICIAL_METHOD_BODY_NOT_RETRIEVED");
-assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.alternate_source_state], /2018.*BYTE_IDENTITY_UNVERIFIED/);
+assert.match(ncertRetryById.get("XII_UNIT7")[ncertRetryIndex.alternate_source_state], /2018.*byte identity unverified/i);
 assert.ok(ncertRetryTargets.every(row => row[ncertRetryIndex.provenance_boundary].includes("NOT_METHOD_APPROVAL")));
 assert.ok(ncertRetryTargets.every(row => row[ncertRetryIndex.next_action].length > 25));
 console.log("NCERT official Chemistry retrieval retry audit: 7 targets, one Unit 1 partial-body control, five XI unit/project 502 blockers, XII Unit 7 502 blocker, secondary copies kept non-primary. PASS.");
