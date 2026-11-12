@@ -674,7 +674,7 @@ assert.equal(mbeRows.filter(row=>row[mbeIndex.body_review_state]==="INDEX_ONLY_B
 assert.ok(mbeRows.every(row=>row[mbeIndex.rbse_pdf_sha256].length===64));
 assert.ok(mbeRows.every(row=>row[mbeIndex.rights_boundary].includes("DO_NOT_COPY_PROTECTED")));
 const qEvidence=mbeRows.find(row=>row[mbeIndex.rbse_task_id]==="RBSE-XII-CHEM-QUAL-01");
-assert.match(qEvidence[mbeIndex.source_conflict_or_quality_note],/As3\\+.*RBSE 2026–27/);
+assert.match(qEvidence[mbeIndex.source_conflict_or_quality_note],/As3[+].*RBSE 2026–27/);
 const projectEvidence=mbeRows.filter(row=>row[mbeIndex.rbse_task_id].includes("-PRJ-"));assert.equal(projectEvidence.length,7);
 for(const row of mbeRows){const src=chemSourceTasks.find(item=>item[chemSourceIndex.rbse_task_id]===row[mbeIndex.rbse_task_id]);assert.ok(src&&/NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED/.test(src[chemSourceIndex.reagent_mapping_state]));}
 console.log("Chemistry method-body evidence: 19 tasks; 1 official-host, 11 secondary/alternate, 7 index-only. PASS.");
