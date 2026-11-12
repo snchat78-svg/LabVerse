@@ -68,21 +68,23 @@ function loadResearchDraft(): ResearchDraftLoad {
     const raw = window.localStorage.getItem(RESEARCH_DRAFT_STORAGE_KEY);
     if (!raw) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "empty"};
     const parsed: unknown = JSON.parse(raw);
-    if (!isRecord(parsed) || parsed.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
-        typeof parsed.savedAt !== "string" || !Number.isFinite(Date.parse(parsed.savedAt)) ||
-        !isRecord(parsed.draft)) {
+    if (!isRecord(parsed)) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
+    if (parsed.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
+        typeof parsed.savedAt !== "string" || !Number.isFinite(Date.parse(parsed.savedAt))) {
       return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
     }
+    const draftRecord = parsed.draft;
+    if (!isRecord(draftRecord)) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
     const fields: (keyof ResearchDraft)[] = [
       "question","hypothesis","alternative","independentVariable","dependentVariable","controls"
     ];
     const valid = fields.every((field) =>
-      typeof parsed.draft[field] === "string" &&
-      (parsed.draft[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
+      typeof draftRecord[field] === "string" &&
+      (draftRecord[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
     );
     if (!valid) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
     return {
-      draft: Object.fromEntries(fields.map((field) => [field, parsed.draft[field]])) as ResearchDraft,
+      draft: Object.fromEntries(fields.map((field) => [field, draftRecord[field]])) as ResearchDraft,
       status: "saved"
     };
   } catch {
@@ -136,6 +138,24 @@ function statusLabel(item: CatalogueItem): string {
 }
 
 export default function App() {
+  const [activeSubject, setActiveSubject] = useState<SubjectKey | null>(null);
+  const [activeWorkspace, setActiveWorkspace] = useState<WorkspaceKey>("learning");
+  const [requestedWorkspace, setRequestedWorkspace] = useState<WorkspaceKey | null>(null);
+  const [initialResearchDraft] = useState<ResearchDraftLoad>(loadResearchDraft);
+  const [researchDraft, setResearchDraft] = useState<ResearchDraft>(initialResearchDraft.draft);
+  const [researchDraftStatus, setResearchDraftStatus] = useState<ResearchDraftLoad["status"]>(initialResearchDraft.status);
+  const [researchDraftDirty, setResearchDraftDirty] = useState(false);
+  const [researchDraftReady, setResearchDraftReady] = useState(false);
+  const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
+  const [search, setSearch] = useState("");
+  const [itemTypeFilter, setItemTypeFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [taskSearch, setTaskSearch] = useState("");
+  const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
+  const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
+  const [benchItems, setBenchItems] = useState<CatalogueItem[]>([]);
+  const [benchDropActive, setBenchDropActive] = useState(false);
+
   useEffect(() => {
     if (!researchDraftDirty) return;
     const hasContent = Object.values(researchDraft).some((value) => value.trim().length > 0);
@@ -156,23 +176,6 @@ export default function App() {
     }
   }, [researchDraft, researchDraftDirty]);
 
-  const [activeSubject, setActiveSubject] = useState<SubjectKey | null>(null);
-  const [activeWorkspace, setActiveWorkspace] = useState<WorkspaceKey>("learning");
-  const [requestedWorkspace, setRequestedWorkspace] = useState<WorkspaceKey | null>(null);
-  const [initialResearchDraft] = useState<ResearchDraftLoad>(loadResearchDraft);
-  const [researchDraft, setResearchDraft] = useState<ResearchDraft>(initialResearchDraft.draft);
-  const [researchDraftStatus, setResearchDraftStatus] = useState<ResearchDraftLoad["status"]>(initialResearchDraft.status);
-  const [researchDraftDirty, setResearchDraftDirty] = useState(false);
-  const [researchDraftReady, setResearchDraftReady] = useState(false);
-  const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
-  const [search, setSearch] = useState("");
-  const [itemTypeFilter, setItemTypeFilter] = useState("all");
-  const [categoryFilter, setCategoryFilter] = useState("all");
-  const [taskSearch, setTaskSearch] = useState("");
-  const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
-  const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const [benchItems, setBenchItems] = useState<CatalogueItem[]>([]);
-  const [benchDropActive, setBenchDropActive] = useState(false);
 
   const activeData: SubjectData | null = activeSubject
     ? inventoryData.subjects[activeSubject]
