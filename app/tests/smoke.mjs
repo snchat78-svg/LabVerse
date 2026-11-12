@@ -179,9 +179,36 @@ async function main() {
     await page.locator(".research-variable-grid input").nth(1).fill("Oxygen production rate");
     await page.locator('textarea').nth(3).fill("Plant species, temperature, CO2 availability and measurement duration.");
     await page.getByRole("button", {name:"Preview research draft"}).click();
-    assert.match(await page.locator(".research-workspace").innerText(), /Local draft preview ready/);
-    assert.match(await page.locator(".research-workspace").innerText(), /not saved to cloud/i);
-    results.push("Research Studio structured session-local draft");
+    assert.match(await page.locator(".research-workspace").innerText(), /Research draft preview ready/);
+    await page.getByText(/Draft saved locally on this device/i).waitFor();
+    const storedDraft = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
+    assert.equal(storedDraft.schemaVersion, 1);
+    assert.match(storedDraft.savedAt, /^20\\d\\d-/);
+    assert.equal(storedDraft.draft.question, "Does light intensity change the rate of photosynthesis?");
+    results.push("Research Studio versioned local autosave and draft preview");
+
+    await page.reload({waitUntil:"networkidle"});
+    await page.locator(".subject-card.teal").click();
+    await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "Does light intensity change the rate of photosynthesis?");
+    assert.equal(await page.locator(".research-workspace textarea").nth(1).inputValue(), "Increasing light intensity may increase the rate until another factor becomes limiting.");
+    await page.getByRole("button", {name:"Clear local draft"}).click();
+    await page.getByText("No local draft saved yet.").waitFor();
+    assert.equal(await page.evaluate(() => localStorage.getItem("labverse.research-studio.draft.v1")), null);
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "");
+    results.push("Research Studio reload restore and explicit local clear");
+
+    await page.evaluate(() => localStorage.setItem("labverse.research-studio.draft.v1", JSON.stringify({
+      schemaVersion: 99, savedAt: new Date().toISOString(), draft: {question:"Future schema data"}
+    })));
+    await page.reload({waitUntil:"networkidle"});
+    await page.locator(".subject-card.teal").click();
+    await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "");
+    assert.match(await page.locator(".research-storage-status").innerText(), /unsupported or invalid local draft/i);
+    await page.getByRole("button", {name:"Clear local draft"}).click();
+    assert.equal(await page.evaluate(() => localStorage.getItem("labverse.research-studio.draft.v1")), null);
+    results.push("Research Studio rejects unsupported local draft schema");
 
     // Sidebar selection from home requires the user to choose a subject explicitly.
     await page.locator(".back-button").click();

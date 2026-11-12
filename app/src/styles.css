@@ -76,3 +76,10 @@
 /* Phase 4 keyboard-accessible focus indicators for interactive lab controls. */
 :where(button,a,input,select,textarea):focus-visible{outline:3px solid #2878c7;outline-offset:3px}
 .search:focus-visible{outline:3px solid #2878c7;outline-offset:2px;border-color:#2878c7}
+
+
+/* Versioned Research Studio local draft controls and storage status. */
+.research-draft-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.clear-draft-button{border:1px solid #e2e7ed;border-radius:8px;background:#fff;color:#66788d;padding:9px 11px;font-size:8px;font-weight:800;cursor:pointer}
+.clear-draft-button:hover{border-color:#d1aeb2;background:#fff8f8;color:#8a4f58}
+.research-storage-status{margin:9px 0;padding:9px 11px;border:1px solid #e0e9ee;border-radius:8px;background:#f7fafc;color:#607489;font-size:8px;line-height:1.6}

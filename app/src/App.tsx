@@ -1,4 +1,4 @@
-import { useMemo, useState, type DragEvent as ReactDragEvent } from "react";
+import { useEffect, useMemo, useState, type DragEvent as ReactDragEvent } from "react";
 import inventoryData from "../../dashboard/data/inventory.json";
 
 type SubjectKey = "physics" | "chemistry" | "biology";
@@ -40,6 +40,55 @@ const subjectMeta: Record<
 };
 
 type SubjectData = (typeof inventoryData.subjects)[SubjectKey];
+
+type ResearchDraft = {
+  question: string;
+  hypothesis: string;
+  alternative: string;
+  independentVariable: string;
+  dependentVariable: string;
+  controls: string;
+};
+type ResearchDraftLoad = {
+  draft: ResearchDraft;
+  status: "empty" | "saved" | "invalid" | "unavailable";
+};
+const RESEARCH_DRAFT_STORAGE_KEY = "labverse.research-studio.draft.v1";
+const RESEARCH_DRAFT_SCHEMA_VERSION = 1;
+const RESEARCH_DRAFT_MAX_FIELD_LENGTH = 5000;
+const EMPTY_RESEARCH_DRAFT: ResearchDraft = {
+  question: "", hypothesis: "", alternative: "",
+  independentVariable: "", dependentVariable: "", controls: ""
+};
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+function loadResearchDraft(): ResearchDraftLoad {
+  try {
+    const raw = window.localStorage.getItem(RESEARCH_DRAFT_STORAGE_KEY);
+    if (!raw) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "empty"};
+    const parsed: unknown = JSON.parse(raw);
+    if (!isRecord(parsed) || parsed.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
+        typeof parsed.savedAt !== "string" || !Number.isFinite(Date.parse(parsed.savedAt)) ||
+        !isRecord(parsed.draft)) {
+      return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
+    }
+    const fields: (keyof ResearchDraft)[] = [
+      "question","hypothesis","alternative","independentVariable","dependentVariable","controls"
+    ];
+    const valid = fields.every((field) =>
+      typeof parsed.draft[field] === "string" &&
+      (parsed.draft[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
+    );
+    if (!valid) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
+    return {
+      draft: Object.fromEntries(fields.map((field) => [field, parsed.draft[field]])) as ResearchDraft,
+      status: "saved"
+    };
+  } catch {
+    return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "unavailable"};
+  }
+}
 
 // Normalised read contract: different source catalogues legitimately omit
 // optional fields such as detail or quantity. No field is inferred when absent.
@@ -87,15 +136,33 @@ function statusLabel(item: CatalogueItem): string {
 }
 
 export default function App() {
+  useEffect(() => {
+    if (!researchDraftDirty) return;
+    const hasContent = Object.values(researchDraft).some((value) => value.trim().length > 0);
+    try {
+      if (!hasContent) {
+        window.localStorage.removeItem(RESEARCH_DRAFT_STORAGE_KEY);
+        setResearchDraftStatus("empty");
+        return;
+      }
+      window.localStorage.setItem(RESEARCH_DRAFT_STORAGE_KEY, JSON.stringify({
+        schemaVersion: RESEARCH_DRAFT_SCHEMA_VERSION,
+        savedAt: new Date().toISOString(),
+        draft: researchDraft
+      }));
+      setResearchDraftStatus("saved");
+    } catch {
+      setResearchDraftStatus("unavailable");
+    }
+  }, [researchDraft, researchDraftDirty]);
+
   const [activeSubject, setActiveSubject] = useState<SubjectKey | null>(null);
   const [activeWorkspace, setActiveWorkspace] = useState<WorkspaceKey>("learning");
   const [requestedWorkspace, setRequestedWorkspace] = useState<WorkspaceKey | null>(null);
-  const [researchQuestion, setResearchQuestion] = useState("");
-  const [researchHypothesis, setResearchHypothesis] = useState("");
-  const [researchAlternative, setResearchAlternative] = useState("");
-  const [researchIndependent, setResearchIndependent] = useState("");
-  const [researchDependent, setResearchDependent] = useState("");
-  const [researchControls, setResearchControls] = useState("");
+  const [initialResearchDraft] = useState<ResearchDraftLoad>(loadResearchDraft);
+  const [researchDraft, setResearchDraft] = useState<ResearchDraft>(initialResearchDraft.draft);
+  const [researchDraftStatus, setResearchDraftStatus] = useState<ResearchDraftLoad["status"]>(initialResearchDraft.status);
+  const [researchDraftDirty, setResearchDraftDirty] = useState(false);
   const [researchDraftReady, setResearchDraftReady] = useState(false);
   const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
   const [search, setSearch] = useState("");
@@ -207,6 +274,17 @@ export default function App() {
     setSelectedItem(null);
     setSelectedTaskId(null);
     setBenchItems([]);
+  };
+
+  const updateResearchDraft = (field: keyof ResearchDraft, value: string) => {
+    setResearchDraft((current) => ({...current, [field]: value}));
+    setResearchDraftDirty(true);
+    setResearchDraftReady(false);
+  };
+  const clearResearchDraft = () => {
+    setResearchDraft({...EMPTY_RESEARCH_DRAFT});
+    setResearchDraftDirty(true);
+    setResearchDraftReady(false);
   };
 
   const addBenchItem = (item: CatalogueItem) => {
@@ -622,32 +700,41 @@ export default function App() {
                 <p>Draft a question, hypothesis, alternative and variables before planning a validated investigation.</p>
                 <form onSubmit={(event) => { event.preventDefault(); setResearchDraftReady(true); }}>
                   <label>Research question
-                    <textarea required value={researchQuestion} onChange={(event) => {setResearchQuestion(event.target.value);setResearchDraftReady(false);}} />
+                    <textarea required maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.question} onChange={(event) => updateResearchDraft("question", event.target.value)} />
                   </label>
                   <label>Working hypothesis
-                    <textarea value={researchHypothesis} onChange={(event) => {setResearchHypothesis(event.target.value);setResearchDraftReady(false);}} />
+                    <textarea maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.hypothesis} onChange={(event) => updateResearchDraft("hypothesis", event.target.value)} />
                   </label>
                   <label>Alternative explanation
-                    <textarea value={researchAlternative} onChange={(event) => {setResearchAlternative(event.target.value);setResearchDraftReady(false);}} />
+                    <textarea maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.alternative} onChange={(event) => updateResearchDraft("alternative", event.target.value)} />
                   </label>
                   <div className="research-variable-grid">
                     <label>Independent variable
-                      <input value={researchIndependent} onChange={(event) => {setResearchIndependent(event.target.value);setResearchDraftReady(false);}} />
+                      <input maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.independentVariable} onChange={(event) => updateResearchDraft("independentVariable", event.target.value)} />
                     </label>
                     <label>Dependent variable
-                      <input value={researchDependent} onChange={(event) => {setResearchDependent(event.target.value);setResearchDraftReady(false);}} />
+                      <input maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.dependentVariable} onChange={(event) => updateResearchDraft("dependentVariable", event.target.value)} />
                     </label>
                   </div>
                   <label>Controls / conditions to hold constant
-                    <textarea value={researchControls} onChange={(event) => {setResearchControls(event.target.value);setResearchDraftReady(false);}} />
+                    <textarea maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.controls} onChange={(event) => updateResearchDraft("controls", event.target.value)} />
                   </label>
-                  <button type="submit" className="setup-button">Preview research draft</button>
+                  <div className="research-draft-actions">
+                    <button type="submit" className="setup-button">Preview research draft</button>
+                    <button type="button" className="clear-draft-button" onClick={clearResearchDraft}>Clear local draft</button>
+                  </div>
                 </form>
+                <p className="research-storage-status" role="status" aria-live="polite">
+                  {researchDraftStatus === "saved" && "Draft saved locally on this device. It is not uploaded or synced."}
+                  {researchDraftStatus === "empty" && "No local draft saved yet."}
+                  {researchDraftStatus === "invalid" && "An unsupported or invalid local draft was found. It was not loaded; clear it or enter a new draft to replace it."}
+                  {researchDraftStatus === "unavailable" && "Browser storage is unavailable. This draft may be lost when the page closes."}
+                </p>
                 {researchDraftReady && (
                   <div className="analysis-state">
-                    <strong>Local draft preview ready</strong>
-                    <p>{researchQuestion}</p>
-                    <small>This draft exists only in the current app session. It is not saved to cloud or a reproducible notebook yet.</small>
+                    <strong>Research draft preview ready</strong>
+                    <p>{researchDraft.question}</p>
+                    <small>Preview only. The versioned draft is saved on this device; it is not uploaded or cloud-synced.</small>
                   </div>
                 )}
                 <p className="bench-warning">A draft is not an approved protocol or scientific conclusion. Safety and subject-expert review remain required.</p>
