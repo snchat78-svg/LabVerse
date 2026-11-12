@@ -454,3 +454,8 @@ The React app now has an automated touch-enabled 390×844 browser check for sele
 ## Phase 4 — Keyboard-accessible workbench controls
 
 Keyboard focus indicators and a Tab/Enter-only inventory-to-workbench add/remove path are implemented and tested. Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927 (26/26 browser groups PASS). This is targeted keyboard coverage, not WCAG certification.
+
+
+## Phase 4 — Research Studio local drafts
+
+Research Studio drafts now autosave to versioned browser local storage, restore after reload and can be explicitly cleared. Schema validation rejects unsupported draft versions. This is local device/browser storage only—not cloud sync. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757 (28/28 browser groups PASS). Report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
