@@ -778,3 +778,15 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - This is targeted keyboard validation, not full WCAG conformance. Phase 4 remains IN PROGRESS.
 - Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - Next: versioned local-only Research Studio draft persistence with reload restore and schema validation; never imply cloud sync.
+
+
+## Phase 4 — Research Studio local draft persistence — verified 2026-11-12
+
+- Implemented local browser autosave for the Research Studio draft with schema version 1, saved timestamp, six explicitly named fields and a 5,000-character per-field limit.
+- Valid drafts restore after reload; explicit Clear removes the local storage record and clears fields.
+- Malformed or unsupported versions are not loaded as current data; storage exceptions are reported.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757; TypeScript typecheck PASS; production build PASS; React browser smoke **28/28 groups PASS**.
+- Report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md; implementation commit 8ea6c8d9bd4caad5e10cef85ee8c141eb8b8ce82; final test fix 0544ac13dddd6ad3a8c635f286ec4dec6ad47610.
+- This is device/browser-profile-local persistence only. No cloud sync, server backup, cross-device persistence or collaborative notebook is claimed.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next Phase 4 task: versioned user-controlled JSON export/import, strict schema/field-size validation, successful round-trip and invalid/unsupported file rejection.
