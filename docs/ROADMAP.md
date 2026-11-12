@@ -730,3 +730,13 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - XI Units 2–5, Projects and XII Unit 7 remain blocked on official-byte retrieval; secondary/archived copies remain explicitly non-primary.
 - Phase 1 / 1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 3D and Phase 6 runtime NOT STARTED.
 - Next: retrieve/authenticate six blocked official documents, then conduct complete method/project review. Do not promote reagents, models or live-use procedures from contents titles or alternate-host copies.
+
+
+## CI acceptance — NCERT Chemistry retry audit (2026-11-12)
+
+- Dashboard integrity: SUCCESS on main commit d8b65b8d78819d47fbc8fa44523ce70561674df4 — https://github.com/snchat78-svg/LabVerse/actions/runs/43218797696.
+- New retry audit validator: 7 source targets, partial Unit 1 control, five XI index-only/502 targets, one XII Unit 7 index-only/502 target; secondary and archived sources remain non-primary. PASS.
+- Existing repository regressions also passed: 515-row three-subject asset traceability; 53/53 MSCL visual records; 18 Physics metrology records; 41-task Chemistry reagent crosswalk; 24-task Chemistry source map; 19-task method-body evidence; 24/24 endpoint register; 13-resource CIET crosswalk; JSON schema parse.
+- Desktop/mobile Chromium browser smoke: 9/9 groups PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/43218797779.
+- Browser smoke covers the existing dashboard and navigation only; it does not validate a scientific solver, physical lab safety, procurement, or real 3D rendering.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
