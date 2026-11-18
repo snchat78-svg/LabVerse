@@ -574,3 +574,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - This is local browser storage only: no cloud sync, server backup, cross-device persistence or collaborative notebook is claimed.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
 - **Next exact task:** add a versioned JSON export/import for the Research Studio draft, validate the imported schema and field limits before accepting it, and test round-trip + invalid-file rejection. Keep files user-controlled and local; do not add cloud dependencies.
+
+
+## Latest Phase 4 work-unit — Research Studio JSON export/import — 2026-11-18
+
+- Commit: `0901566387b546086050226f38b5a382ef121b24`; report: `docs/PHASE_4_RESEARCH_STUDIO_JSON_IMPORT_EXPORT_2026_11_18.md`.
+- Added local JSON download and validated file restore for the six-field Research Studio draft.
+- Automated browser acceptance inspects the exported envelope, restores all six fields after clear, and rejects future schema, malformed JSON and 5,001-character field values without overwriting the current valid draft.
+- Import accepts schema version 1 only, validates a timestamp and all six text fields, and caps file size at 32 KiB. Files remain user-controlled; no cloud dependency was added.
+- CI status: pending this commit; do not count as verified until typecheck, production build and browser smoke results are read from GitHub Actions.
+- Phase 4 remains IN PROGRESS; Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+- **Next after CI acceptance:** review Research Studio protocol-design completeness against the research-method governance. Add only non-executable planning metadata (materials/equipment references, procedure provenance, repeats, measurement units and risk-review status) with the same local versioned portability. Do not generate or approve real Chemistry/Biology methods while Phase 1 source/safety gates remain open.
