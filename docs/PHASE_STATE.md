@@ -1,3 +1,14 @@
+## Latest bounded work-unit — Phase 4 Research Studio JSON portability — 2026-11-18
+
+- Commit: `0901566387b546086050226f38b5a382ef121b24`.
+- Implemented user-controlled JSON export/import for the six-field Research Studio draft.
+- Export writes a version-1 JSON envelope and ISO timestamp. Import validates schema version, timestamp, all six required string fields, the 5,000-character per-field limit and a 32 KiB file-size limit.
+- Automated browser checks now inspect the downloaded file, clear and restore all six fields, and reject future-schema, malformed and over-limit imports without overwriting the existing valid draft.
+- GitHub Actions validation is pending; do not count this work-unit verified until typecheck, production build and browser smoke are observed.
+- This is file-based local portability only; no cloud sync or server backup is claimed.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Report: `docs/PHASE_4_RESEARCH_STUDIO_JSON_IMPORT_EXPORT_2026_11_18.md`.
+
 
 ## CI verification — NCERT endpoint and CIET crosswalk (2026-11-12)
 
@@ -49,7 +60,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
 - Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and 22/22 Chromium smoke groups PASS on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Broader architecture hardening remains.
-- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and session-local Research Studio draft; inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
+- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and Research Studio local draft save plus versioned JSON portability (new work-unit CI pending); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
