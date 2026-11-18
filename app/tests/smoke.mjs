@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 
 async function main() {
   const browser = await chromium.launch({headless:true});
@@ -192,10 +193,66 @@ async function main() {
     await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "Does light intensity change the rate of photosynthesis?");
     assert.equal(await page.locator(".research-workspace textarea").nth(1).inputValue(), "Increasing light intensity may increase the rate until another factor becomes limiting.");
+    const downloadPromise = page.waitForEvent("download");
+    await page.getByRole("button", {name:"Export JSON"}).click();
+    const exportedFile = await downloadPromise;
+    assert.match(exportedFile.suggestedFilename(), /^labverse-research-draft-\\d{4}-\\d{2}-\\d{2}\\.json$/);
+    const exportedPath = await exportedFile.path();
+    assert.ok(exportedPath, "JSON export must produce a downloadable file");
+    const exportedEnvelope = JSON.parse(await readFile(exportedPath, "utf8"));
+    assert.equal(exportedEnvelope.schemaVersion, 1);
+    assert.equal(Number.isFinite(Date.parse(exportedEnvelope.savedAt)), true);
+    assert.deepEqual(exportedEnvelope.draft, storedDraft.draft);
+    results.push("Research Studio JSON export contains versioned complete draft");
+
     await page.getByRole("button", {name:"Clear local draft"}).click();
     await page.getByText("No local draft saved yet.").waitFor();
     assert.equal(await page.evaluate(() => localStorage.getItem("labverse.research-studio.draft.v1")), null);
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "");
+
+    const importInput = page.locator(".research-import-input");
+    await importInput.setInputFiles(exportedPath);
+    await page.getByText(/Draft saved locally on this device/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
+    assert.equal(await page.locator(".research-workspace textarea").nth(1).inputValue(), exportedEnvelope.draft.hypothesis);
+    assert.equal(await page.locator(".research-workspace textarea").nth(2).inputValue(), exportedEnvelope.draft.alternative);
+    assert.equal(await page.locator(".research-variable-grid input").nth(0).inputValue(), exportedEnvelope.draft.independentVariable);
+    assert.equal(await page.locator(".research-variable-grid input").nth(1).inputValue(), exportedEnvelope.draft.dependentVariable);
+    assert.equal(await page.locator(".research-workspace textarea").nth(3).inputValue(), exportedEnvelope.draft.controls);
+    results.push("Research Studio JSON import/export round-trip restores all six fields");
+
+    await importInput.setInputFiles({
+      name:"unsupported-schema.json", mimeType:"application/json",
+      buffer:Buffer.from(JSON.stringify({
+        schemaVersion:99, savedAt:new Date().toISOString(),
+        draft:{question:"Must not replace current data"}
+      }))
+    });
+    await page.getByText(/Import rejected/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
+    const retainedAfterInvalid = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
+    assert.equal(retainedAfterInvalid.draft.question, exportedEnvelope.draft.question);
+
+    await importInput.setInputFiles({
+      name:"over-limit.json", mimeType:"application/json",
+      buffer:Buffer.from(JSON.stringify({
+        schemaVersion:1, savedAt:new Date().toISOString(),
+        draft:{question:"x".repeat(5001),hypothesis:"",alternative:"",independentVariable:"",dependentVariable:"",controls:""}
+      }))
+    });
+    await page.getByText(/Import rejected/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
+
+    await importInput.setInputFiles({
+      name:"malformed.json", mimeType:"application/json", buffer:Buffer.from("{not-json")
+    });
+    await page.getByText(/Import rejected/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
+    results.push("Research Studio rejects future schema, oversized fields and malformed JSON without overwriting draft");
+
+    await page.getByRole("button", {name:"Clear local draft"}).click();
+    await page.getByText("No local draft saved yet.").waitFor();
+    assert.equal(await page.evaluate(() => localStorage.getItem("labverse.research-studio.draft.v1")), null);
     results.push("Research Studio reload restore and explicit local clear");
 
     await page.evaluate(() => localStorage.setItem("labverse.research-studio.draft.v1", JSON.stringify({

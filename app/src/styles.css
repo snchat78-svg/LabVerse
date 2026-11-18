@@ -83,3 +83,12 @@
 .clear-draft-button{border:1px solid #e2e7ed;border-radius:8px;background:#fff;color:#66788d;padding:9px 11px;font-size:8px;font-weight:800;cursor:pointer}
 .clear-draft-button:hover{border-color:#d1aeb2;background:#fff8f8;color:#8a4f58}
 .research-storage-status{margin:9px 0;padding:9px 11px;border:1px solid #e0e9ee;border-radius:8px;background:#f7fafc;color:#607489;font-size:8px;line-height:1.6}
+
+
+/* User-controlled Research Studio JSON backup and restore controls. */
+.export-draft-button,.import-draft-button{border:1px solid #dce4ec;border-radius:8px;background:#fff;color:#3c5875;padding:9px 11px;font-size:8px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:32px}
+.export-draft-button:hover,.import-draft-button:hover{border-color:#aebfd0;background:#f6f9fc}
+.export-draft-button:disabled{opacity:.45;cursor:not-allowed}
+.import-draft-button{position:relative;overflow:hidden}
+.research-import-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.import-draft-button:focus-within{outline:2px solid #245ea8;outline-offset:3px}

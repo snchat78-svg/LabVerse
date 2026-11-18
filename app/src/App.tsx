@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type DragEvent as ReactDragEvent } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent as ReactChangeEvent, type DragEvent as ReactDragEvent } from "react";
 import inventoryData from "../../dashboard/data/inventory.json";
 
 type SubjectKey = "physics" | "chemistry" | "biology";
@@ -53,9 +53,19 @@ type ResearchDraftLoad = {
   draft: ResearchDraft;
   status: "empty" | "saved" | "invalid" | "unavailable";
 };
+type ResearchDraftStatus = ResearchDraftLoad["status"] | "exported" | "import-error";
+type ResearchDraftEnvelope = {
+  schemaVersion: 1;
+  savedAt: string;
+  draft: ResearchDraft;
+};
 const RESEARCH_DRAFT_STORAGE_KEY = "labverse.research-studio.draft.v1";
 const RESEARCH_DRAFT_SCHEMA_VERSION = 1;
 const RESEARCH_DRAFT_MAX_FIELD_LENGTH = 5000;
+const RESEARCH_DRAFT_MAX_IMPORT_BYTES = 32 * 1024;
+const RESEARCH_DRAFT_FIELDS: (keyof ResearchDraft)[] = [
+  "question", "hypothesis", "alternative", "independentVariable", "dependentVariable", "controls"
+];
 const EMPTY_RESEARCH_DRAFT: ResearchDraft = {
   question: "", hypothesis: "", alternative: "",
   independentVariable: "", dependentVariable: "", controls: ""
@@ -63,30 +73,33 @@ const EMPTY_RESEARCH_DRAFT: ResearchDraft = {
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
+function parseResearchDraftEnvelope(value: unknown): ResearchDraft | null {
+  if (!isRecord(value) ||
+      value.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
+      typeof value.savedAt !== "string" ||
+      !Number.isFinite(Date.parse(value.savedAt)) ||
+      !isRecord(value.draft)) return null;
+
+  const draftRecord = value.draft;
+  const valid = RESEARCH_DRAFT_FIELDS.every((field) =>
+    typeof draftRecord[field] === "string" &&
+    (draftRecord[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
+  );
+  if (!valid) return null;
+  return Object.fromEntries(
+    RESEARCH_DRAFT_FIELDS.map((field) => [field, draftRecord[field]])
+  ) as ResearchDraft;
+}
+
 function loadResearchDraft(): ResearchDraftLoad {
   try {
     const raw = window.localStorage.getItem(RESEARCH_DRAFT_STORAGE_KEY);
     if (!raw) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "empty"};
     const parsed: unknown = JSON.parse(raw);
-    if (!isRecord(parsed)) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
-    if (parsed.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
-        typeof parsed.savedAt !== "string" || !Number.isFinite(Date.parse(parsed.savedAt))) {
-      return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
-    }
-    const draftRecord = parsed.draft;
-    if (!isRecord(draftRecord)) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
-    const fields: (keyof ResearchDraft)[] = [
-      "question","hypothesis","alternative","independentVariable","dependentVariable","controls"
-    ];
-    const valid = fields.every((field) =>
-      typeof draftRecord[field] === "string" &&
-      (draftRecord[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
-    );
-    if (!valid) return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
-    return {
-      draft: Object.fromEntries(fields.map((field) => [field, draftRecord[field]])) as ResearchDraft,
-      status: "saved"
-    };
+    const draft = parseResearchDraftEnvelope(parsed);
+    return draft
+      ? {draft, status: "saved"}
+      : {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
   } catch {
     return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "unavailable"};
   }
@@ -143,7 +156,7 @@ export default function App() {
   const [requestedWorkspace, setRequestedWorkspace] = useState<WorkspaceKey | null>(null);
   const [initialResearchDraft] = useState<ResearchDraftLoad>(loadResearchDraft);
   const [researchDraft, setResearchDraft] = useState<ResearchDraft>(initialResearchDraft.draft);
-  const [researchDraftStatus, setResearchDraftStatus] = useState<ResearchDraftLoad["status"]>(initialResearchDraft.status);
+  const [researchDraftStatus, setResearchDraftStatus] = useState<ResearchDraftStatus>(initialResearchDraft.status);
   const [researchDraftDirty, setResearchDraftDirty] = useState(false);
   const [researchDraftReady, setResearchDraftReady] = useState(false);
   const [classFilter, setClassFilter] = useState<ClassFilter>("ALL");
@@ -288,6 +301,51 @@ export default function App() {
     setResearchDraft({...EMPTY_RESEARCH_DRAFT});
     setResearchDraftDirty(true);
     setResearchDraftReady(false);
+  };
+
+  const exportResearchDraft = () => {
+    if (!Object.values(researchDraft).some((value) => value.trim().length > 0)) return;
+    const envelope: ResearchDraftEnvelope = {
+      schemaVersion: RESEARCH_DRAFT_SCHEMA_VERSION,
+      savedAt: new Date().toISOString(),
+      draft: researchDraft
+    };
+    const blob = new Blob([JSON.stringify(envelope, null, 2)], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `labverse-research-draft-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+    setResearchDraftStatus("exported");
+  };
+
+  const importResearchDraft = async (event: ReactChangeEvent<HTMLInputElement>) => {
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+    input.value = "";
+    if (!file) return;
+
+    if (file.size > RESEARCH_DRAFT_MAX_IMPORT_BYTES) {
+      setResearchDraftStatus("import-error");
+      return;
+    }
+
+    try {
+      const parsed: unknown = JSON.parse(await file.text());
+      const importedDraft = parseResearchDraftEnvelope(parsed);
+      if (!importedDraft) {
+        setResearchDraftStatus("import-error");
+        return;
+      }
+      setResearchDraft(importedDraft);
+      setResearchDraftDirty(true);
+      setResearchDraftReady(false);
+    } catch {
+      setResearchDraftStatus("import-error");
+    }
   };
 
   const addBenchItem = (item: CatalogueItem) => {
@@ -725,6 +783,15 @@ export default function App() {
                   <div className="research-draft-actions">
                     <button type="submit" className="setup-button">Preview research draft</button>
                     <button type="button" className="clear-draft-button" onClick={clearResearchDraft}>Clear local draft</button>
+                    <button type="button" className="export-draft-button" onClick={exportResearchDraft}
+                      disabled={!Object.values(researchDraft).some((value) => value.trim().length > 0)}>
+                      Export JSON
+                    </button>
+                    <label className="import-draft-button">
+                      Import JSON
+                      <input className="research-import-input" type="file" accept=".json,application/json"
+                        aria-label="Import Research Studio draft JSON" onChange={importResearchDraft} />
+                    </label>
                   </div>
                 </form>
                 <p className="research-storage-status" role="status" aria-live="polite">
@@ -732,6 +799,8 @@ export default function App() {
                   {researchDraftStatus === "empty" && "No local draft saved yet."}
                   {researchDraftStatus === "invalid" && "An unsupported or invalid local draft was found. It was not loaded; clear it or enter a new draft to replace it."}
                   {researchDraftStatus === "unavailable" && "Browser storage is unavailable. This draft may be lost when the page closes."}
+                  {researchDraftStatus === "exported" && "Draft JSON exported. You can keep the file as a backup or move it to another device."}
+                  {researchDraftStatus === "import-error" && "Import rejected. Choose a valid LabVerse Research Studio JSON export (schema version 1; each field up to 5,000 characters). Your current draft was not changed."}
                 </p>
                 {researchDraftReady && (
                   <div className="analysis-state">
