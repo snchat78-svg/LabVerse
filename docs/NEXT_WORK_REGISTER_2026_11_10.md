@@ -582,6 +582,6 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Added local JSON download and validated file restore for the six-field Research Studio draft.
 - Automated browser acceptance inspects the exported envelope, restores all six fields after clear, and rejects future schema, malformed JSON and 5,001-character field values without overwriting the current valid draft.
 - Import accepts schema version 1 only, validates a timestamp and all six text fields, and caps file size at 32 KiB. Files remain user-controlled; no cloud dependency was added.
-- CI status: pending this commit; do not count as verified until typecheck, production build and browser smoke results are read from GitHub Actions.
+- CI ACCEPTED: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 — TypeScript typecheck, Chromium install, Vite production build, preview startup and **31/31 Playwright browser groups PASS**.
 - Phase 4 remains IN PROGRESS; Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
 - **Next after CI acceptance:** review Research Studio protocol-design completeness against the research-method governance. Add only non-executable planning metadata (materials/equipment references, procedure provenance, repeats, measurement units and risk-review status) with the same local versioned portability. Do not generate or approve real Chemistry/Biology methods while Phase 1 source/safety gates remain open.
