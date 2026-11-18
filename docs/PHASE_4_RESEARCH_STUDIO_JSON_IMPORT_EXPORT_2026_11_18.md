@@ -18,14 +18,15 @@ Give users a portable, user-controlled backup and restore path for Research Stud
 
 1. Export a populated six-field draft and inspect the downloaded JSON envelope.
 2. Clear the local draft, import the exported file and verify all six fields round-trip.
-3. Reject a future schema version, a field over the documented limit and malformed JSON.
+3. Reject a future schema version, a field over the documented limit, malformed JSON and a file larger than 32 KiB.
 4. Verify invalid imports do not overwrite the active draft or its local saved copy.
 5. Preserve the existing save/reload/clear, touch, keyboard, desktop drag/drop and subject-navigation coverage.
 
 ## Verification
 
 - Code commit: `0901566387b546086050226f38b5a382ef121b24`.
-- CI status: pending; results will be added after the current GitHub Actions run completes.
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653.
+- TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; Playwright browser smoke **31/31 groups PASS**.
 - Required checks: strict TypeScript typecheck, Vite production build and Playwright browser smoke.
 - This report does not claim cloud sync, automated cross-device transfer, scientific validation, executable protocols or 3D simulation.
 
