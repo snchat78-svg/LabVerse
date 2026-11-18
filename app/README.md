@@ -30,7 +30,7 @@ GitHub Actions runs install, typecheck and build. No local Python, Node or Andro
 - Searchable apparatus/material inventory sourced from the existing single dashboard inventory JSON.
 - Practical-to-candidate-source-item navigation and candidate placeholder workbench setup.
 - Functional workspace switching across Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio.
-- Research Studio session-local draft preview for question, hypothesis, alternatives, variables and controls.
+- Research Studio structured local draft autosave, reload restore, explicit clear and validated JSON export/import for question, hypothesis, alternatives, variables and controls.
 - Scientific Analysis readiness panel that explicitly shows NOT_MODELLED until a validated engine exists.
 - Visible Chemistry reference-only/no-live-use and Biology school-managed/not-supplied-with-kit labels.
 - Task catalogue and selected-item source/evidence/safety information.
@@ -41,7 +41,7 @@ The React app now includes the four workspace destinations, class XI/XII filteri
 
 The Biology with-microscope catalogue now shows its item-level visual audit state. The current GitHub evidence records 25 of 175 physical item detail pages as visually checked against a user-uploaded candidate PDF; the other 150 remain OCR/index-only. This is not official NCERT byte authentication, procurement confirmation or scientific approval.
 
-Research Studio drafts remain session-local and are not saved to cloud. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
+Research Studio drafts persist in browser local storage and can be exported/imported as validated version-1 JSON backup files; files remain user-controlled and are not uploaded or cloud-synced. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
 
 Still not implemented: original/licensed 3D assets and manipulation, deterministic experiment runtime, validated Chemistry/Physics/Biology solvers, reproducible notebook and data pipeline, offline content-pack persistence, full expert/safety/source-rights sign-off, and Android packaging.
 
@@ -67,3 +67,8 @@ Interactive controls include visible `:focus-visible` outlines. Playwright cover
 ## Research Studio draft persistence
 
 Research Studio drafts autosave in browser local storage using schema version 1, restore after reload, and can be cleared explicitly. The six text fields are capped at 5,000 characters and validated on read. Unsupported/malformed schema is not loaded as a current draft. Storage is local to the current browser profile only; there is no cloud sync or server backup. Playwright checks save, reload restore, clear and schema rejection. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757 (28/28 browser groups PASS).
+
+
+## Research Studio JSON portability
+
+Validated JSON export/import is implemented and CI-accepted. Export includes a schema-version-1 envelope and all six fields. Import validates timestamp, schema version, required field types, the 5,000-character field limit and 32 KiB file ceiling. Unsupported, malformed and oversized input is rejected without replacing the current draft. Playwright verifies the downloaded file and clear/import round-trip. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 (31/31 browser groups PASS). This is manual file portability, not automated cross-device sync.
