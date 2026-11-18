@@ -1019,3 +1019,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
 - Next: versioned JSON export/import for user-controlled backup and transfer, with strict schema/length validation and invalid-file rejection.
+
+
+## 2026-11-18 — Phase 4 Research Studio JSON export/import — implementation; CI pending
+
+- **Scope:** add a user-controlled backup/restore path for the versioned Research Studio local draft.
+- **Changed:** `app/src/App.tsx` adds a shared schema validator, JSON download and validated local-file import; `app/src/styles.css` adds scoped action controls; `app/tests/smoke.mjs` exercises download/readback, six-field round-trip and invalid imports.
+- **Validation contract:** version 1 only; valid ISO timestamp; six required string fields; 5,000 characters maximum per field; 32 KiB maximum file size. Invalid imports cannot overwrite the active draft or last valid local save.
+- **Commit:** `0901566387b546086050226f38b5a382ef121b24`.
+- **Report:** `docs/PHASE_4_RESEARCH_STUDIO_JSON_IMPORT_EXPORT_2026_11_18.md`.
+- **Verification:** GitHub Actions will run strict TypeScript typecheck, production build and Playwright browser smoke. Results remain pending until observed.
+- **Boundary:** files remain user-managed; no upload, cloud sync, automated sharing, scientific solver, executable method or 3D implementation is claimed.
+- **Phase status:** Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
