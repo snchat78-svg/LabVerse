@@ -1021,13 +1021,13 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Next: versioned JSON export/import for user-controlled backup and transfer, with strict schema/length validation and invalid-file rejection.
 
 
-## 2026-11-18 — Phase 4 Research Studio JSON export/import — implementation; CI pending
+## 2026-11-18 — Phase 4 Research Studio JSON export/import — verified
 
 - **Scope:** add a user-controlled backup/restore path for the versioned Research Studio local draft.
 - **Changed:** `app/src/App.tsx` adds a shared schema validator, JSON download and validated local-file import; `app/src/styles.css` adds scoped action controls; `app/tests/smoke.mjs` exercises download/readback, six-field round-trip and invalid imports.
 - **Validation contract:** version 1 only; valid ISO timestamp; six required string fields; 5,000 characters maximum per field; 32 KiB maximum file size. Invalid imports cannot overwrite the active draft or last valid local save.
-- **Commit:** `0901566387b546086050226f38b5a382ef121b24`.
+- **Commits:** implementation `0901566387b546086050226f38b5a382ef121b24`; filename assertion fix `4f846543be4d7050dae5240bfe7d3c2300db3ff4`; oversized-file acceptance `44d2ee4dc823f358cf48e9ccaf514dfee40e44e6`.
 - **Report:** `docs/PHASE_4_RESEARCH_STUDIO_JSON_IMPORT_EXPORT_2026_11_18.md`.
-- **Verification:** GitHub Actions will run strict TypeScript typecheck, production build and Playwright browser smoke. Results remain pending until observed.
+- **Verification:** GitHub Actions SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653. TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; Playwright smoke **31/31 groups PASS**.
 - **Boundary:** files remain user-managed; no upload, cloud sync, automated sharing, scientific solver, executable method or 3D implementation is claimed.
 - **Phase status:** Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
