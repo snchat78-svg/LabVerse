@@ -196,7 +196,7 @@ async function main() {
     const downloadPromise = page.waitForEvent("download");
     await page.getByRole("button", {name:"Export JSON"}).click();
     const exportedFile = await downloadPromise;
-    assert.match(exportedFile.suggestedFilename(), /^labverse-research-draft-\\d{4}-\\d{2}-\\d{2}\\.json$/);
+    assert.match(exportedFile.suggestedFilename(), /^labverse-research-draft-\d{4}-\d{2}-\d{2}\.json$/);
     const exportedPath = await exportedFile.path();
     assert.ok(exportedPath, "JSON export must produce a downloadable file");
     const exportedEnvelope = JSON.parse(await readFile(exportedPath, "utf8"));
