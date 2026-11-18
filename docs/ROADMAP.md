@@ -1,3 +1,11 @@
+## Current bounded implementation — 2026-11-18
+
+- Phase 4 Research Studio now includes versioned JSON export/import for the six-field research draft.
+- Import checks schema version 1, timestamp, all six fields, 5,000 characters per field and 32 KiB total file size. Future schema, malformed JSON and over-limit files must be rejected without replacing the current draft.
+- Browser acceptance includes download readback, clear/import round-trip and invalid-file rejection. Commit: `0901566387b546086050226f38b5a382ef121b24`; CI is pending.
+- This improves user-controlled file portability only. It does not add cloud sync, scientific model validation, real 3D or experiment execution.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED.
+
 # LabVerse Master Roadmap — Scientific Discovery Platform
 
 This roadmap controls phase order and is the master execution contract. Class 11–12 is the first content pack; Research Studio and expandable scientific domains are core product capabilities, not optional decoration. All implementation and documentation work must map to a phase and a verifiable deliverable. Do not skip, repeat or silently reorder phases.
