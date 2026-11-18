@@ -39,7 +39,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [React app architecture and current test boundary](app/README.md)
 - [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972)
 
-The React app now passes strict typecheck, production build and 22/22 Chromium smoke groups. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio have functional bounded screens; Biology item-level visual-audit status (25/175) is visible. The mapped-candidate placeholder workbench is not real 3D; Research Studio drafts are session-local and Analysis is explicitly NOT_MODELLED.
+The React app now passes strict typecheck, production build and 22/22 Chromium smoke groups. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio have functional bounded screens; Biology item-level visual-audit status (25/175) is visible. The mapped-candidate placeholder workbench is not real 3D; Research Studio drafts persist in browser local storage and support validated versioned JSON export/import; Analysis is explicitly NOT_MODELLED.
 
 ## Dashboard preview
 
