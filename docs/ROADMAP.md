@@ -2,7 +2,7 @@
 
 - Phase 4 Research Studio now includes versioned JSON export/import for the six-field research draft.
 - Import checks schema version 1, timestamp, all six fields, 5,000 characters per field and 32 KiB total file size. Future schema, malformed JSON and over-limit files must be rejected without replacing the current draft.
-- Browser acceptance includes download readback, clear/import round-trip and invalid-file rejection. Commit: `0901566387b546086050226f38b5a382ef121b24`; CI is pending.
+- Browser acceptance includes download readback, clear/import round-trip for all six fields, and rejection of future schema, malformed JSON, over-limit field and over-32-KiB file. Final CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 (31/31 Playwright groups; typecheck/build/preview PASS). Code commits: `0901566387b546086050226f38b5a382ef121b24`, `4f846543be4d7050dae5240bfe7d3c2300db3ff4`, `44d2ee4dc823f358cf48e9ccaf514dfee40e44e6`.
 - This improves user-controlled file portability only. It does not add cloud sync, scientific model validation, real 3D or experiment execution.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED.
 
