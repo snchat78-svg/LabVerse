@@ -248,7 +248,14 @@ async function main() {
     });
     await page.getByText(/Import rejected/i).waitFor();
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
-    results.push("Research Studio rejects future schema, oversized fields and malformed JSON without overwriting draft");
+
+    await importInput.setInputFiles({
+      name:"oversized-file.json", mimeType:"application/json",
+      buffer:Buffer.alloc(32 * 1024 + 1, 0x20)
+    });
+    await page.getByText(/Import rejected/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
+    results.push("Research Studio rejects future schema, oversized field/file and malformed JSON without overwriting draft");
 
     await page.getByRole("button", {name:"Clear local draft"}).click();
     await page.getByText("No local draft saved yet.").waitFor();
