@@ -3,9 +3,9 @@
 ## Latest Phase 4 work-unit — Static Dashboard ↔ React parity audit — 2026-11-20
 
 - Added a cross-UI Playwright suite and machine-readable parity matrix: `data/catalogues/phase4_static_react_parity_2026_11_20.csv`.
-- Both previews run in CI; compare shared JSON data, subject/task summary, class filter, Physics source navigation, Chemistry/Biology safety disclosures, research and analysis boundaries and mobile layout.
-- Known repeated-item gap: static allows multiple instances of a source item; React currently de-duplicates IDs.
-- CI pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027. Only mark this work-unit accepted after the two app browser suites complete.
+- Both previews run in CI; verified shared JSON data, subject/task summary, class filter, Physics source navigation, Chemistry/Biology safety disclosures, research and analysis boundaries and mobile layout (11/11 parity groups PASS).
+- Known repeated-item gap retained after acceptance: static allows multiple instances of a source item; React currently de-duplicates IDs.
+- CI ACCEPTED: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043 — React smoke **35/35 groups PASS** and static↔React parity **11/11 groups PASS**.
 # LabVerse Next Work & Source Closure Register — 2026-11-10
 
 ## Work completed in this unit
@@ -605,3 +605,11 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - **Readiness checklist accepted:** live text-presence indicators cover objective, provenance, candidate materials/equipment, sample plan, measurement plan, environment, analysis plan and stopping rule; repeat planning and safety-review tracking remain visibly separate. This does not validate scientific content or safety.
 - CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 — 35/35 browser groups PASS.
 - **Next exact task:** complete the Phase 4 static dashboard ↔ React parity audit across workspace navigation, inventory/source details, safety disclosures, responsive touch and keyboard behavior. Do not advance to Phase 5 until this Phase 4 acceptance is complete.
+
+
+## Exact next React work-unit after parity audit — multi-instance apparatus support
+
+- Add an explicit “Add another instance” action or quantity control to the React candidate bench.
+- Each placed instance must have a stable instance ID and retain the original catalogue/source item ID for provenance.
+- Keep normal Add tap idempotent so accidental repeat clicks do not create duplicate instances; only the explicit multi-instance action increases quantity.
+- Test two/three instances, per-instance removal, clear/reset, task-mapped setup and source-ID provenance. Do not imply a validated apparatus connection or 3D object yet.
