@@ -45,9 +45,9 @@ Alongside the original six fields (question, hypothesis, alternative, independen
 
 ## Verification
 
-- CI status pending for head `24e8b911da77218e8d87e5481c6f32093636359e`.
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187 (code head `793271ec7ae2074aacf427292513c7a1504d5bd9`).
 - Required workflow: strict TypeScript typecheck, Vite production build and Playwright browser smoke.
-- Results will be appended after the workflow is observed.
+- Strict TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; Playwright browser smoke **33/33 groups PASS**.
 
 ## Phase boundary
 
