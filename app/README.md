@@ -77,3 +77,8 @@ Validated JSON export/import is implemented and CI-accepted. Export includes a s
 ## Research Studio protocol-planning metadata — schema v2
 
 The current implementation adds 11 structured metadata fields to the original six research-question fields. Older schema-v1 drafts migrate with their six existing fields preserved. Planned repeats are optional and, when supplied, must be an integer from 1 to 100. Each text field is limited to 5,000 characters; JSON imports are limited to 1 MiB. The safety-review state is a user-recorded tracking label only, not a safety approval. The schema-v2 protocol-planning implementation is CI-accepted: https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187 (33/33 browser groups PASS).
+
+
+## Research Studio protocol-readiness checklist
+
+A live checklist marks whether planning notes are present for objective, method/source provenance, candidate equipment/materials, sample plan, measurement plan, environment, analysis plan and stopping rule. It separately displays optional repeats and the safety-review tracking status. The checklist reports text presence only; it does not validate science, data sources, units, sample adequacy, safety or permission to execute. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 (35/35 browser groups PASS).
