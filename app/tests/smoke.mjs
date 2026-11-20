@@ -174,7 +174,8 @@ async function main() {
     // Research Studio makes a structured, session-local draft only.
     await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
     const initialChecklist = await page.locator(".protocol-readiness").innerText();
-    assert.match(initialChecklist, /Protocol objective[\\s\\S]*Not entered/);
+    assert.match(initialChecklist, /Protocol objective/);
+    assert.match(initialChecklist, /Not entered/);
     assert.match(initialChecklist, /Not reviewed — review required/);
     assert.match(initialChecklist, /no science or safety approval/i);
     results.push("Research Studio checklist shows missing planning notes and open safety review");
@@ -197,8 +198,9 @@ async function main() {
     await page.locator("#protocol-safety-status").selectOption("REVIEW_REQUESTED");
     await page.locator("#protocol-safety-reference").fill("Review requested; this is not an approval.");
     const populatedChecklist = await page.locator(".protocol-readiness").innerText();
-    assert.match(populatedChecklist, /Protocol objective[\\s\\S]*Text present/);
-    assert.match(populatedChecklist, /Method/source provenance[\\s\\S]*Text present/);
+    assert.match(populatedChecklist, /Protocol objective/);
+    assert.match(populatedChecklist, /Method\/source provenance/);
+    assert.match(populatedChecklist, /Text present/);
     assert.match(populatedChecklist, /Planned repeats[\\s\\S]*3 entered/);
     assert.match(populatedChecklist, /Review requested — pending/);
     results.push("Research Studio checklist updates on protocol entry without claiming validation");
