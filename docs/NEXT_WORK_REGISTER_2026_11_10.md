@@ -585,3 +585,13 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - CI ACCEPTED: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 — TypeScript typecheck, Chromium install, Vite production build, preview startup and **31/31 Playwright browser groups PASS**.
 - Phase 4 remains IN PROGRESS; Phase 1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
 - **Next after CI acceptance:** review Research Studio protocol-design completeness against the research-method governance. Add only non-executable planning metadata (materials/equipment references, procedure provenance, repeats, measurement units and risk-review status) with the same local versioned portability. Do not generate or approve real Chemistry/Biology methods while Phase 1 source/safety gates remain open.
+
+
+## Latest Phase 4 work-unit — Research Studio protocol-planning metadata — 2026-11-20
+
+- Implementation/report: `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`; code head `24e8b911da77218e8d87e5481c6f32093636359e`.
+- Added 11 protocol-planning fields while preserving the six existing research-question fields. Draft envelope now uses schema version 2.
+- Schema-v1 drafts are migrated without losing their original content; protocol fields begin blank. Planned repeats are optional, otherwise integer 1–100. All text fields max 5,000 characters; import file max 1 MiB.
+- Safety workflow labels remain NOT_REVIEWED / REVIEW_REQUESTED / REFERENCE_RECORDED_NOT_VERIFIED; none means LabVerse has approved a real procedure.
+- CI is pending for the latest head. Only mark this work-unit verified after TypeScript, build and all Playwright checks pass.
+- **Next after acceptance:** add a clear protocol-readiness checklist that identifies missing provenance/measurement/review metadata without calculating scientific results or implying safety approval. Then complete Phase 4 static-preview parity audit before advancing to the 3D phase.
