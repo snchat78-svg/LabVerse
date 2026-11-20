@@ -276,7 +276,7 @@ async function main() {
 
     await importInput.setInputFiles({
       name:"oversized-file.json", mimeType:"application/json",
-      buffer:Buffer.alloc(96 * 1024 + 1, 0x20)
+      buffer:Buffer.alloc(1024 * 1024 + 1, 0x20)
     });
     await page.getByText(/Import rejected/i).waitFor();
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
