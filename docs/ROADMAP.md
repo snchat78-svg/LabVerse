@@ -1,3 +1,10 @@
+## Current bounded implementation — Static Dashboard ↔ React parity — 2026-11-20 (CI pending)
+
+- Added an automated dual-preview Chromium test and parity matrix comparing shared inventory, subject/task totals, class filtering, source mapping, reagent warnings, analysis boundary, Research Studio scope and mobile width.
+- The same inventory JSON is read by static dashboard at runtime and imported by the React app build.
+- A known difference remains open: static workbench supports multiple instances of one source item; React currently suppresses duplicate source IDs. This may matter for apparatus quantity/instance modelling.
+- CI pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027. Do not mark parity accepted until the combined run succeeds.
+
 ## Current bounded implementation — Research Studio protocol-readiness checklist — 2026-11-20 (verified)
 
 - Added a live checklist beside the schema-v2 protocol metadata. It identifies which planning fields contain text and which remain blank, shows the optional repeat-plan state and reflects the safety-review tracking label.
