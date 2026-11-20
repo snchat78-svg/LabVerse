@@ -1031,3 +1031,16 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Verification:** GitHub Actions SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653. TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; preview startup PASS; Playwright smoke **31/31 groups PASS**.
 - **Boundary:** files remain user-managed; no upload, cloud sync, automated sharing, scientific solver, executable method or 3D implementation is claimed.
 - **Phase status:** Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+
+
+## 2026-11-20 — Phase 4 Research Studio protocol-planning metadata — implementation; CI pending
+
+- **Scope:** extend the research question draft into a structured, non-executable protocol-planning record.
+- **Changed:** `app/src/App.tsx` introduces schema v2 and version-1 migration; `app/src/styles.css` adds responsive planning fields; `app/tests/smoke.mjs` tests all-17-field persistence/export/import, migration and repeat validation.
+- **Fields:** protocol objective; source/method provenance; candidate equipment/material references; sample-selection plan; optional planned repeats; measurement and units/instrument range; environment/timing; analysis plan; stopping/exclusion rule; safety-review status/reference.
+- **Data contract:** v1 migration preserves the old six fields; v2 requires all 17 typed fields, one of three safety tracking statuses and blank or integer repeats 1–100. Text fields max 5,000 characters; import file max 1 MiB.
+- **Safety boundary:** this records the user's planning notes only. It does not infer a method, validate a sample size, calculate science, certify a risk assessment or authorize real-world action.
+- **Commits:** initial implementation `3772212a33bc0dc38e72a1784890e66d901cee13`; migration test `048b6e8d8d788ee20bcb3f57ecdfca85cbe3eeaf`; 1 MiB Unicode-safe cap `04de2c1e19d5a0c18aee4a21006d70e64a471ec4`; file-cap test `24e8b911da77218e8d87e5481c6f32093636359e`.
+- **Verification:** GitHub Actions pending. Required checks: strict TypeScript, production build and Playwright smoke.
+- **Report:** `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`.
+- **Phase status:** Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
