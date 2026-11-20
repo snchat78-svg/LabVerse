@@ -96,7 +96,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 function isValidPlannedRepeats(value: string): boolean {
   if (!value.trim()) return true;
-  if (!/^\\d+$/.test(value)) return false;
+  if (!/^\d+$/.test(value)) return false;
   const count = Number(value);
   return Number.isSafeInteger(count) && count >= 1 && count <= 100;
 }
