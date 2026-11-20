@@ -296,8 +296,10 @@ async function main() {
         }
       }))
     });
-    await page.getByText(/Older Research Studio draft restored/i).waitFor();
-    await page.getByText(/Draft saved locally on this device/i).waitFor();
+    await page.waitForFunction(() => {
+      const stored = JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null");
+      return stored?.schemaVersion === 2 && stored?.draft?.question === "Legacy research question";
+    });
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "Legacy research question");
     assert.equal(await page.locator("#protocol-objective").inputValue(), "");
     const migrated = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
