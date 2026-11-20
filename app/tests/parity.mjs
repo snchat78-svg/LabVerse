@@ -72,6 +72,7 @@ async function main() {
     await react.locator(".inventory-filters select").nth(1).selectOption("MEASUREMENT");
     await legacy.locator("#inventory-type").selectOption("apparatus");
     await legacy.locator("#inventory-search").fill("Vernier caliper");
+    await legacy.locator("#category-select").selectOption("MEASUREMENT");
     const reactVernier = react.locator(".item").filter({has:react.locator("strong",{hasText:/^Vernier caliper$/})});
     const staticVernier = legacy.locator('[data-item-id="NCERT-PHY-KIT-003"]');
     await reactVernier.waitFor();
@@ -232,7 +233,7 @@ async function main() {
     await keyboardLegacy.locator("#inventory-search").fill("Vernier caliper");
     await keyboardLegacy.locator("#inventory-search").focus();
     let legacyInspectFocused=false;
-    for(let i=0;i<60;i++){
+    for(let i=0;i<12;i++){
       await keyboardLegacy.keyboard.press("Tab");
       const label=await keyboardLegacy.evaluate(()=>document.activeElement?.getAttribute("aria-label")??"");
       if(label==="Inspect Vernier caliper"){legacyInspectFocused=true;break;}

@@ -75,14 +75,15 @@
       return matchesQuery&&matchesType&&matchesCategory;
     });
     const categories=[...new Set(items.map(i=>i.category||"Other"))].sort();
-    $("#category-filters").innerHTML='<button class="filter-chip '+(state.category==="all"?"active":"")+'" data-category="all">All</button>'+categories.map(c=>'<button class="filter-chip '+(state.category===c?"active":"")+'" data-category="'+esc(c)+'">'+esc(pretty(c))+'</button>').join("");
+    $("#category-filters").innerHTML='<label class="category-filter-label"><span>FILTER BY CATEGORY</span><select id="category-select" aria-label="Filter inventory category"><option value="all">All categories</option>'+categories.map(c=>'<option value="'+esc(c)+'"'+(state.category===c?' selected':'')+'>'+esc(pretty(c))+'</option>').join("")+'</select></label>';
+    $("#category-select").value=state.category;
     $("#inventory-total").textContent=filtered.length+" / "+items.length;
     $("#inventory-list").innerHTML=filtered.length?filtered.map(item=>{
       const extra=item.detail?'<div class="item-detail">'+esc(item.detail)+'</div>':"";
       const quantity=item.quantity?'<span class="mini-badge">Qty: '+esc(item.quantity)+'</span>':"";
       return '<article class="inventory-item '+(state.selected===item.id?"selected":"")+'" draggable="true" data-item-id="'+esc(item.id)+'"><button class="item-inspect" type="button" data-inspect="'+esc(item.id)+'" aria-label="Inspect '+esc(item.name)+'" aria-pressed="'+(state.selected===item.id?'true':'false')+'"><span class="item-name">'+esc(item.name)+'</span><span class="item-category">'+esc(pretty(item.category||item.type))+'</span>'+extra+'<span class="item-meta">'+safetyBadge(item)+quantity+'</span></button><button class="add-item" type="button" data-add="'+esc(item.id)+'" aria-label="Add '+esc(item.name)+' to workbench">+</button></article>';
     }).join(""):'<div class="empty-bench"><strong>No matching records</strong><p>Change the search text or category filter.</p></div>';
-    $$(".filter-chip").forEach(b=>b.addEventListener("click",()=>{state.category=b.dataset.category;renderInventory();}));
+    $("#category-select").addEventListener("change",e=>{state.category=e.target.value;renderInventory();});
     $$(".item-inspect").forEach(b=>b.addEventListener("click",()=>inspectItem(b.dataset.inspect)));
     $$(".add-item").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();addToBench(b.dataset.add);}));
     $$(".inventory-item").forEach(card=>{
