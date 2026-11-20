@@ -1,11 +1,11 @@
-## Latest bounded work-unit — Research Studio protocol planning metadata — 2026-11-20 (CI pending)
+## Latest bounded work-unit — Research Studio protocol planning metadata — 2026-11-20 (verified)
 
 - Implemented Research Studio draft schema version 2 with 11 new planning fields alongside the original six question/hypothesis fields: objective, method/source provenance, candidate materials/equipment references, sample plan, planned repeats, measurement plan, environmental conditions, analysis plan, stopping rule and safety-review tracking/reference.
 - Existing schema-version-1 drafts are migrated into schema version 2 without losing their original six fields; new protocol fields start blank and safety status starts NOT_REVIEWED.
 - Planned repeats are optional; when entered they must be a whole number from 1 to 100. All text fields retain the 5,000-character ceiling; JSON import cap is 1 MiB to accommodate Unicode.
 - Safety status is only a user-recorded workflow note. No state certifies safety, approves a procedure or authorizes real-world execution.
-- Added browser acceptance for all 17 fields in JSON round-trip, schema-1 migration, invalid repeats and the existing app regressions. CI for the latest commit is pending; do not mark verified yet.
-- Code commits: `3772212a33bc0dc38e72a1784890e66d901cee13`, migration test `048b6e8d8d788ee20bcb3f57ecdfca85cbe3eeaf`, Unicode-cap fix `04de2c1e19d5a0c18aee4a21006d70e64a471ec4`, 1 MiB limit test `24e8b911da77218e8d87e5481c6f32093636359e`.
+- Added browser acceptance for all 17 fields in JSON round-trip, schema-1 migration, invalid repeats and the existing app regressions. CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187 — TypeScript typecheck, Chromium install, Vite production build, preview and Playwright browser smoke **33/33 groups PASS**.
+- Code commits: `3772212a33bc0dc38e72a1784890e66d901cee13`, migration test `048b6e8d8d788ee20bcb3f57ecdfca85cbe3eeaf`, Unicode-cap fix `04de2c1e19d5a0c18aee4a21006d70e64a471ec4`, 1 MiB limit test `24e8b911da77218e8d87e5481c6f32093636359e`; repeat-validation regex fix `793271ec7ae2074aacf427292513c7a1504d5bd9`.
 - Report: `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
 
@@ -71,7 +71,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
 - Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and 22/22 Chromium smoke groups PASS on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Broader architecture hardening remains.
-- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and Research Studio local persistence + schema-v2 protocol planning metadata (latest code CI pending); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
+- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and schema-v2 Research Studio protocol planning metadata (33/33 browser groups PASS); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
