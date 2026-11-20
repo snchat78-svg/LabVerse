@@ -593,5 +593,5 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Added 11 protocol-planning fields while preserving the six existing research-question fields. Draft envelope now uses schema version 2.
 - Schema-v1 drafts are migrated without losing their original content; protocol fields begin blank. Planned repeats are optional, otherwise integer 1–100. All text fields max 5,000 characters; import file max 1 MiB.
 - Safety workflow labels remain NOT_REVIEWED / REVIEW_REQUESTED / REFERENCE_RECORDED_NOT_VERIFIED; none means LabVerse has approved a real procedure.
-- CI is pending for the latest head. Only mark this work-unit verified after TypeScript, build and all Playwright checks pass.
+- CI ACCEPTED: https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187 — TypeScript, Chromium, production build, preview and **33/33 Playwright browser groups PASS**.
 - **Next after acceptance:** add a clear protocol-readiness checklist that identifies missing provenance/measurement/review metadata without calculating scientific results or implying safety approval. Then complete Phase 4 static-preview parity audit before advancing to the 3D phase.
