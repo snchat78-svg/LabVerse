@@ -29,9 +29,10 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - Phase 0: DONE — planning/documentation baseline only.
 - Main source-audit phase: Phase 1 — IN PROGRESS.
-- User-authorized dashboard track: Physics, Chemistry and Biology inventory dashboard includes task-to-source item navigation, candidate setup placeholders and item-level Biology audit visibility; static desktop/mobile browser smoke passes 9/9 groups.
-- React/TypeScript/Vite app foundation: IMPLEMENTED and CI-validated (strict typecheck/build plus 22/22 browser groups). Real 3D assets and scientific simulation engines: NOT IMPLEMENTED; candidate source rows are not verified scientific or procurement claims.
-- Phase 1 authentication, safety and expert-review gates remain open; the dashboard shell is allowed to progress in parallel without promoting candidate records.
+- User-authorized parallel dashboard track: Physics, Chemistry and Biology catalogue with class and source-backed practical-group filters, source-to-practical navigation, direct mapped-candidate workbench entry and item-level Biology audit visibility.
+- React/TypeScript/Vite UI foundation: strict typecheck and production build pass; latest React browser smoke **36/36 groups**, static ↔ React parity **13/13 groups**, and static desktop/mobile browser smoke **9/9 groups** pass.
+- Candidate workbench items are 2D placeholders only. Real 3D assets, experiment runtime and scientific solvers are NOT IMPLEMENTED. Source candidates remain unverified for official byte authenticity, procurement equivalence, rights, physical use and scientific validity.
+- Phase 1/1.1 source, safety, rights and expert-review gates remain open; Phase 2 scientific results remain blocked. The dashboard-only track proceeds in parallel without promoting candidate records.
 
 ## React app foundation
 
@@ -39,7 +40,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [React app architecture and current test boundary](app/README.md)
 - [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972)
 
-The React app's latest CI passes strict typecheck, production build, React browser smoke (35/35 groups) and static↔React parity (11/11 groups): https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043. Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio have functional bounded screens; Biology item-level visual-audit status (25/175) is visible. Research Studio supports schema-v2 protocol planning, a live text-presence checklist, local draft persistence and validated JSON export/import. The checklist does not approve science or safety; the mapped-candidate workbench is not real 3D and Scientific Analysis remains NOT_MODELLED.
+Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282 — strict TypeScript/build PASS, React browser smoke **36/36 groups PASS**, static ↔ React parity **13/13 groups PASS**. Static dashboard checks: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294 (PASS); static desktop/mobile browser smoke: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256 (**9/9 groups PASS**). Learning Lab has class and source-backed practical-group filters; mapped practical cards can open the candidate workbench directly. Research Studio supports schema-v2 planning, local draft persistence, validated JSON import/export and a non-approval text-presence checklist. Scientific Analysis remains NOT_MODELLED; candidate workbench items are placeholders, not real 3D or live experiments.
 
 ## Dashboard preview
 

@@ -54,41 +54,16 @@ Still not implemented: original/licensed 3D assets and manipulation, determinist
 - This is a 2D catalogue-placeholder interaction only, not 3D, apparatus connectivity, an executable procedure or a scientific result.
 
 
-## Touch fallback acceptance
+## Current browser acceptance — 2026-11-20
 
-The React app Playwright suite now opens a separate 390×844 CSS-pixel Chromium context with mobile emulation and touch enabled. It confirms a user can select a Physics inventory item and add it to the Virtual Experiment Lab by tapping, without drag gestures; duplicate insertion and mobile horizontal overflow are checked. This is emulated browser coverage, not certification on a physical Android device. Latest CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226264684 (25/25 browser groups PASS).
+- React checks: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282 — strict TypeScript, production build and preview PASS; React browser smoke **36/36 groups PASS**.
+- Cross-UI parity: **13/13 groups PASS**. The same job covers shared catalogue records, subject/class/group filtering, task-to-source mapping, direct practical-to-workbench navigation, safety disclosures, multi-instance candidate behavior, keyboard operation and responsive layout.
+- Static dashboard: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294 — integrity PASS; https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256 — desktop/mobile browser smoke **9/9 groups PASS**.
 
+Practical-group options derive only from the actual `group` field in `dashboard/data/inventory.json` (for example Physics EXPERIMENT / ACTIVITY / PROJECT). No new topic taxonomy is inferred. Class and group filters operate together. Practical cards provide a direct route to the Virtual Experiment Lab with mapped source records inserted as candidate placeholders.
 
-## Keyboard accessibility
+React's ordinary Add action is idempotent; the explicit Add another instance action creates a separate candidate with a distinct instance ID. The static prototype creates a separate instance on each Add. Both preserve the original source ID and support per-instance removal.
 
-Interactive controls include visible `:focus-visible` outlines. Playwright covers a keyboard-only inventory-to-workbench flow using Tab and Enter to select, add and remove a candidate item. Latest CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43226979927 (26/26 browser groups PASS). This is targeted keyboard-flow coverage, not a complete WCAG audit.
+The 390×844 touch-enabled Chromium test is mobile emulation, not certification on a physical Android phone. Keyboard tests cover selected inventory/workbench flows, not a complete WCAG or assistive-technology audit. Static Research Studio remains a roadmap placeholder; React Research Studio contains the structured schema-v2 local workflow. No cloud synchronization is claimed.
 
-
-## Research Studio draft persistence
-
-Research Studio drafts autosave in browser local storage using schema version 1, restore after reload, and can be cleared explicitly. The six text fields are capped at 5,000 characters and validated on read. Unsupported/malformed schema is not loaded as a current draft. Storage is local to the current browser profile only; there is no cloud sync or server backup. Playwright checks save, reload restore, clear and schema rejection. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757 (28/28 browser groups PASS).
-
-
-## Research Studio JSON portability
-
-Validated JSON export/import is implemented and CI-accepted. Export includes a schema-version-1 envelope and all six fields. Import validates timestamp, schema version, required field types, the 5,000-character field limit and 32 KiB file ceiling. Unsupported, malformed and oversized input is rejected without replacing the current draft. Playwright verifies the downloaded file and clear/import round-trip. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 (31/31 browser groups PASS). This is manual file portability, not automated cross-device sync.
-
-
-## Research Studio protocol-planning metadata — schema v2
-
-The current implementation adds 11 structured metadata fields to the original six research-question fields. Older schema-v1 drafts migrate with their six existing fields preserved. Planned repeats are optional and, when supplied, must be an integer from 1 to 100. Each text field is limited to 5,000 characters; JSON imports are limited to 1 MiB. The safety-review state is a user-recorded tracking label only, not a safety approval. The schema-v2 protocol-planning implementation is CI-accepted: https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187 (33/33 browser groups PASS).
-
-
-## Research Studio protocol-readiness checklist
-
-A live checklist marks whether planning notes are present for objective, method/source provenance, candidate equipment/materials, sample plan, measurement plan, environment, analysis plan and stopping rule. It separately displays optional repeats and the safety-review tracking status. The checklist reports text presence only; it does not validate science, data sources, units, sample adequacy, safety or permission to execute. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 (35/35 browser groups PASS).
-
-
-## Static dashboard ↔ React parity audit
-
-A Chromium parity suite now starts both previews and compares shared inventory data, subject and task totals, class filters, source navigation, chemical safety disclosures, placeholder workbench behavior, Research Studio boundaries and mobile width. The matrix and report are maintained in `data/catalogues/phase4_static_react_parity_2026_11_20.csv` and `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`. CI accepted 11/11 cross-UI groups: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043. One known difference is intentionally recorded: static permits multiple instances of one source item; React currently suppresses duplicate source IDs.
-
-
-## Parity acceptance and remaining work
-
-The combined CI run passed strict TypeScript, production build, the React smoke suite (35/35 groups) and the static-dashboard ↔ React parity suite (11/11 groups). The known repeated-item difference remains open. Next implement intentional multiple instances/quantity using stable instance IDs while keeping accidental duplicate Add taps idempotent. Phase 4 remains IN PROGRESS.
+The workbench still displays 2D catalogue placeholders, not actual 3D apparatus. Scientific Analysis stays NOT_MODELLED until a validated domain model exists. Phase 4 remains IN PROGRESS because the mobile workbench tray and analysis panel still need the collapsible bottom-sheet behavior specified in `docs/UI_UX_SPEC.md`. Phase 1/1.1 remains the main active phase and Phase 2 science remains blocked.

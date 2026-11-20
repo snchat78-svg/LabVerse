@@ -1,3 +1,13 @@
+## Current verified status — 2026-11-20
+
+- Main active phase: Phase 1/1.1 source audit and catalogue evidence — IN PROGRESS. The user-authorized dashboard/UI-only track runs in parallel.
+- Current dashboard code: `8be6f5bad1c78da85aeb72967a7ce0d1f5b8937f`.
+- CI: React smoke 36/36 and static ↔ React parity 13/13 PASS (https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282); static dashboard smoke 9/9 PASS (https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256); dashboard integrity PASS (https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294).
+- Implemented in this bounded UI review: class + source-backed practical-group filters; direct practical-card navigation to Virtual Experiment Lab with mapped candidates; accessible keyboard Inspect/Add/Remove; multiple candidate instances with source/instance identity.
+- Phase 4 remains IN PROGRESS because the mobile collapsible bottom-sheet behavior for the tray and analysis panel in `docs/UI_UX_SPEC.md` is still open. Static Research Studio remains a documented placeholder; React Research Studio is structured and local-only.
+- Phase 1/1.1 remains IN PROGRESS. Phase 2 scientific models/results remain BLOCKED. Phase 5 real 3D and Phase 6 runtime remain NOT STARTED. No verified science result or safe real-world procedure is claimed.
+- Next main-phase task: resume Phase 1.1's queued Biology-with-microscope visual/detail review at Kit Box, indexed page 9, using already-submitted project files or a legitimate official retrieval path; do not ask for repeated uploads.
+
 ## Verification update — Research Studio protocol planning — 2026-11-20
 
 - Latest code commit under test: `793271ec7ae2074aacf427292513c7a1504d5bd9`.
@@ -100,8 +110,8 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 0: DONE — planning/documentation baseline only.
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
-- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and 22/22 Chromium smoke groups PASS on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Broader architecture hardening remains.
-- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel, schema-v2 Research Studio protocol planning and live non-approval readiness checklist (35/35 browser groups PASS); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
+- Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and current 36/36 React browser groups PASS. Broader architecture hardening remains.
+- Phase 4: IN PROGRESS — four React workspaces; class, inventory and source-backed practical-group filters; subject task/source coverage and gap disclosures; practical-to-source navigation and direct mapped-candidate workbench entry; candidate multi-instance handling; keyboard and touch-emulation browser coverage; schema-v2 Research Studio with non-approval checklist. Static ↔ React parity is 13/13 groups PASS and static smoke is 9/9. Mobile collapsible workbench tray/analysis bottom sheets from the UI specification remain open. Biology visual audit status remains 25/175.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.

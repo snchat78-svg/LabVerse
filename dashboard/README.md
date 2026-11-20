@@ -17,10 +17,10 @@ No Python, Node installation or paid API is required to view the static dashboar
 ## Included in this starter
 
 - Three subject landing cards and subject-specific workspace navigation.
-- Class XI / XII filters and practical task index.
+- Class XI / XII filters and searchable practical task index, including practical-group filters where the source task records define a group.
 - Searchable instrument, apparatus, specimen, slide, visual-aid and reagent tray.
-- Tap-to-add and drag-and-drop placement to a placeholder workbench.
-- Source/evidence/safety detail panel.
+- Tap-to-add and drag-and-drop placement to a placeholder workbench; mapped practical cards can open the workbench directly with candidate items.
+- Source/evidence/safety detail panel with keyboard-operable Inspect/Add/Remove controls and distinct instance IDs.
 - Separate virtual-only or school-managed reagent labels.
 - Candidate/unauthenticated statuses retained from source records.
 

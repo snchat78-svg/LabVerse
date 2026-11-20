@@ -1,3 +1,11 @@
+## Current hand-off — 2026-11-20
+
+- Main active phase remains Phase 1/1.1; dashboard UI work is a separate user-authorized parallel track.
+- Latest UI code commit: `8be6f5bad1c78da85aeb72967a7ce0d1f5b8937f`; React browser smoke 36/36, static ↔ React parity 13/13, dashboard integrity PASS and static smoke 9/9.
+- Phase 4 exit review found one explicit UI-spec gap: mobile collapsible bottom sheets for the inventory tray and analysis panel remain unimplemented. Phase 4 therefore stays IN PROGRESS; Phase 5/6 must not be started.
+- **Next main-phase work:** continue Phase 1.1 with the already queued Biology-with-microscope Kit Box detail/visual review at indexed page 9. Use the previously submitted file/register or legitimate official retrieval route; do not request a repeat upload.
+- Keep Phase 1/1.1 open until official source bytes/edition, item/page traceability, rights, procurement equivalence, safety and qualified subject review gates pass. Phase 2 scientific models/results remain BLOCKED.
+
 ## Verification update — Research Studio protocol planning — 2026-11-20
 
 - Latest code commit under test: `793271ec7ae2074aacf427292513c7a1504d5bd9`.

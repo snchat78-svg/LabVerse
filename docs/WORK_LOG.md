@@ -1,3 +1,12 @@
+## 2026-11-20 — Phase 4 exit-gate review: practical navigation and group filters verified
+
+- **Code commits:** `5bb08808679d343e8d885ac141ad35a777d3d5d8` (React practical → workbench action); `d9c1710e32590be88737682b699d90af31f4ebfd` (persistent static task-card workbench action); `8be6f5bad1c78da85aeb72967a7ce0d1f5b8937f` (class + source-backed practical-group filters across both UIs).
+- **React CI:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282. Strict TypeScript, build and preview PASS; React smoke **36/36**; static ↔ React parity **13/13**.
+- **Static CI:** dashboard integrity SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294; desktop/mobile browser smoke **9/9** — https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256.
+- **Accepted behavior:** practical-group filter options derive from the task record's existing `group` values; class and group filters combine. Physics Class XI experiment count is 17; Activity count is 13. Practical cards open the candidate workbench directly and add mapped source candidates. Both UIs retain source/instance identity and individually labelled removal.
+- **Exit decision:** Phase 4 remains IN PROGRESS because the UI spec's mobile collapsible bottom-sheet behavior for the inventory tray and analysis panel is still unimplemented. This work-unit does not close Phase 4.
+- **Main-phase next item:** Phase 1.1 Biology-with-microscope Kit Box visual/detail review (indexed page 9), using existing submitted artifacts or legitimate official retrieval. Never request repeat uploads.
+
 ## Verification update — Research Studio protocol planning — 2026-11-20
 
 - Latest code commit under test: `793271ec7ae2074aacf427292513c7a1504d5bd9`.

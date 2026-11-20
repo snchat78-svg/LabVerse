@@ -1,3 +1,12 @@
+## Current verified status — 2026-11-20
+
+- Main execution phase: **Phase 1/1.1 IN PROGRESS** (source, rights, procurement, safety and expert evidence); the user-authorized dashboard UI track runs in parallel.
+- Latest dashboard/UI commit: `8be6f5bad1c78da85aeb72967a7ce0d1f5b8937f`.
+- CI: React smoke **36/36**, static ↔ React parity **13/13**, static dashboard smoke **9/9**, dashboard integrity PASS — https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282, https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256, https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294.
+- Newly covered UI paths: source-backed practical-group filters; mapped practical → candidate workbench direct navigation; keyboard-only Inspect/Add/copy/Remove; 390px touch-emulation without drag.
+- Phase 4 remains **IN PROGRESS**: the UI-spec mobile collapsible bottom sheets for the inventory tray and analysis panel are not yet implemented. Static Research Studio remains a documented placeholder while React contains the structured local schema-v2 flow.
+- Phase 1/1.1 remains open; Phase 2 scientific models/results remain BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED. Do not bypass these dependencies.
+
 ## Verification update — Research Studio protocol planning — 2026-11-20
 
 - Latest code commit under test: `793271ec7ae2074aacf427292513c7a1504d5bd9`.
@@ -50,8 +59,8 @@ This roadmap controls phase order and is the master execution contract. Class 11
 | 0 | Product definition and design baseline | Product vision, requirements, architecture, rules and phase process | DONE — docs only |
 | 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
 | 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | PARTIAL — dashboard read-model subset only; scientific models remain gated by Phase 1 |
-| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — React/TS/Vite app passes strict typecheck, production build and 22/22 Chromium groups; broader architecture hardening remains |
-| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — four React workspaces, filters, source coverage/gap disclosure, candidate bulk-add and Biology detail-audit visibility; static-preview parity remains |
+| 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 app; strict typecheck, production build and 36/36 React browser groups PASS. Broader architecture hardening remains |
+| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — React workspaces, class/inventory/practical-group filters, direct practical-to-candidate-workbench navigation, source/safety disclosures and parity tests (13/13); mobile collapsible tray/analysis bottom sheets remain |
 | 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
 | 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
 | 7 | Chemistry property and reaction engine | Trusted property lookup, curated reactions, stoichiometry, kinetics, equilibrium and visual states | NOT STARTED |
