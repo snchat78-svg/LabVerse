@@ -1057,3 +1057,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **CI:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187. TypeScript typecheck PASS; Chromium setup PASS; Vite production build PASS; preview PASS; Playwright browser smoke **33/33 groups PASS**.
 - **Report:** `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`.
 - **Phase status:** Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
+
+
+## 2026-11-20 — Phase 4 Research Studio live protocol-readiness checklist — verified
+
+- **Scope:** make protocol-planning gaps visible while avoiding a misleading overall readiness score.
+- **Changed:** `app/src/App.tsx` derives live status from protocol metadata; `app/src/styles.css` adds a responsive checklist; `app/tests/smoke.mjs` verifies initial missing fields, populated text-presence states, pending safety review, repeat-plan summary and the pre-existing flows.
+- **Checklist fields:** objective, method/source provenance, candidate materials/equipment references, sample plan, measurement plan, environment, analysis plan and stopping rule. Optional repeats and safety-review status are shown separately.
+- **Boundary:** this is an entry checklist only. It does not validate scientific quality, unit correctness, source authenticity, sample adequacy, safety or execution readiness.
+- **Code head:** `fab766bcebd9a3139367d1bc8f949675a07b2fe5`; checklist implementation `70f9b9558cfb81c31f191f4def511c4b25ba577f`; browser test corrections `dad3252bb5dd0501be2fa0165088cf94317441b4`, `fab766bcebd9a3139367d1bc8f949675a07b2fe5`.
+- **CI:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209. TypeScript, Chromium setup, production build and preview PASS; Playwright smoke **35/35 groups PASS**.
+- **Next:** Phase 4 static dashboard ↔ React parity audit; check workspace navigation, inventory/source details, safety disclosures, touch and keyboard behavior before closing Phase 4.
+
