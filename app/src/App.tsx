@@ -74,7 +74,7 @@ type ResearchDraftEnvelope = {
 const RESEARCH_DRAFT_STORAGE_KEY = "labverse.research-studio.draft.v1";
 const RESEARCH_DRAFT_SCHEMA_VERSION = 2;
 const RESEARCH_DRAFT_MAX_FIELD_LENGTH = 5000;
-const RESEARCH_DRAFT_MAX_IMPORT_BYTES = 96 * 1024;
+const RESEARCH_DRAFT_MAX_IMPORT_BYTES = 1024 * 1024;
 const LEGACY_RESEARCH_DRAFT_FIELDS = [
   "question", "hypothesis", "alternative", "independentVariable", "dependentVariable", "controls"
 ] as const;
