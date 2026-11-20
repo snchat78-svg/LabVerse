@@ -65,8 +65,8 @@ async function main() {
     assert.match(await page.locator("#selected-details").innerText(), /Vernier caliper/);
     assert.equal(await page.locator("#inventory-search").inputValue(), "Vernier caliper");
     await page.locator("#task-search").fill("Vernier calipers");
-    await page.locator('[data-task="RBSE-XI-PHY-EXP-01"]').click();
-    await page.locator("[data-add-linked-setup]").click();
+    await page.locator('[data-open-task-workbench="RBSE-XI-PHY-EXP-01"]').click();
+    assert.equal(await page.locator('.mode-tab[data-mode="virtual"]').getAttribute("class").then(v=>v.includes("active")),true);
     assert.equal(await page.locator("#bench-count").innerText(), "2 objects placed");
     assert.match(await page.locator("#bench-items").innerText(), /Vernier caliper/);
     assert.match(await page.locator("#bench-items").innerText(), /Beam balance/);

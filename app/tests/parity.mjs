@@ -97,7 +97,7 @@ async function main() {
     await reactTask.getByRole("button",{name:/Open candidate workbench with mapped items/}).click();
     assert.equal(await react.locator(".workspace-tabs button.active").innerText(),"Virtual Experiment Lab");
     assert.equal(await react.locator(".bench-item").count(),2);
-    await legacy.locator("#selected-details").getByRole("button",{name:/Open candidate workbench with mapped candidates/}).click();
+    await legacy.locator('[data-open-task-workbench="RBSE-XI-PHY-EXP-01"]').click();
     assert.equal(await legacy.locator('.mode-tab[data-mode="virtual"]').getAttribute("class").then(v=>v.includes("active")),true);
     assert.equal(await legacy.locator("#bench-items .bench-object").count(),2);
     results.push("Practical-to-candidate-workbench direct navigation parity with mapped setup");

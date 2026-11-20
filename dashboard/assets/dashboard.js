@@ -177,8 +177,13 @@
       const count=(t.sourceItemIds||[]).length;
       const linkText=count?count+" candidate source item link"+(count===1?"":"s"):"No source-item link recorded";
       const gap=t.mappingGap?'<div class="task-mapping-gap">'+esc(t.mappingGap)+'</div>':"";
-      return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div>'+gap+'<button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button></article>';
+      return '<article class="task-card"><div class="task-top"><span>CLASS '+esc(t.class)+' · '+esc(t.id)+'</span><span>'+esc(t.sourcePages||"")+'</span></div><strong>'+esc(t.title)+'</strong><small>'+esc(t.group||"TASK")+" · "+esc(t.status||"DESIGN_ONLY")+'</small><div class="task-source-count '+(count?"":"unmapped")+'">'+esc(linkText)+'</div>'+gap+'<div class="task-actions"><button type="button" data-task="'+esc(t.id)+'">Inspect and browse linked items →</button>'+(count?'<button type="button" class="task-workbench-open" data-open-task-workbench="'+esc(t.id)+'">Open candidate workbench →</button>':"")+'</div></article>';
     }).join("")||'<div class="panel-note">No tasks match this filter.</div>';
+    $$("[data-open-task-workbench]").forEach(b=>b.addEventListener("click",()=>{
+      const t=d.tasks.find(x=>x.id===b.dataset.openTaskWorkbench);if(!t)return;
+      addLinkedItemsToBench(t.sourceItemIds||[]);
+      switchMode("virtual");
+    }));
     $$("[data-task]").forEach(b=>b.addEventListener("click",()=>{
       const t=d.tasks.find(x=>x.id===b.dataset.task);if(!t)return;
       const ids=t.sourceItemIds||[];
