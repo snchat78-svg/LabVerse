@@ -173,6 +173,12 @@ async function main() {
 
     // Research Studio makes a structured, session-local draft only.
     await page.locator('.workspace-tabs button', {hasText:"Research Studio"}).click();
+    const initialChecklist = await page.locator(".protocol-readiness").innerText();
+    assert.match(initialChecklist, /Protocol objective[\\s\\S]*Not entered/);
+    assert.match(initialChecklist, /Not reviewed — review required/);
+    assert.match(initialChecklist, /no science or safety approval/i);
+    results.push("Research Studio checklist shows missing planning notes and open safety review");
+
     await page.locator('textarea').nth(0).fill("Does light intensity change the rate of photosynthesis?");
     await page.locator('textarea').nth(1).fill("Increasing light intensity may increase the rate until another factor becomes limiting.");
     await page.locator('textarea').nth(2).fill("CO2 concentration or temperature may be the limiting factor.");
@@ -190,6 +196,13 @@ async function main() {
     await page.locator("#protocol-stopping-rule").fill("Define before execution after risk review.");
     await page.locator("#protocol-safety-status").selectOption("REVIEW_REQUESTED");
     await page.locator("#protocol-safety-reference").fill("Review requested; this is not an approval.");
+    const populatedChecklist = await page.locator(".protocol-readiness").innerText();
+    assert.match(populatedChecklist, /Protocol objective[\\s\\S]*Text present/);
+    assert.match(populatedChecklist, /Method/source provenance[\\s\\S]*Text present/);
+    assert.match(populatedChecklist, /Planned repeats[\\s\\S]*3 entered/);
+    assert.match(populatedChecklist, /Review requested — pending/);
+    results.push("Research Studio checklist updates on protocol entry without claiming validation");
+
     await page.getByRole("button", {name:"Preview research draft"}).click();
     assert.match(await page.locator(".research-workspace").innerText(), /Research draft preview ready/);
     await page.getByText(/Draft saved locally on this device/i).waitFor();
@@ -309,8 +322,10 @@ async function main() {
 
     await page.locator("#protocol-repeats").fill("101");
     await page.getByText(/Planned repeats must be a whole number/i).waitFor();
+    assert.match(await page.locator(".protocol-readiness").innerText(), /Invalid — enter a whole number from 1 to 100/);
     await page.locator("#protocol-repeats").fill("");
     await page.getByText(/Draft saved locally on this device/i).waitFor();
+    assert.match(await page.locator(".protocol-readiness").innerText(), /Not specified \(optional\)/);
     results.push("Research Studio repeat plan accepts blank or bounded whole-number values only");
 
     await page.getByRole("button", {name:"Clear local draft"}).click();

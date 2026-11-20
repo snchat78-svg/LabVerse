@@ -437,6 +437,27 @@ export default function App() {
     if (item) addBenchItem(item);
   };
 
+  const protocolChecklistItems = [
+    {label: "Protocol objective", value: researchDraft.protocolObjective},
+    {label: "Method/source provenance", value: researchDraft.methodProvenance},
+    {label: "Candidate materials/equipment references", value: researchDraft.materialsEquipmentReferences},
+    {label: "Sample/specimen plan", value: researchDraft.samplePlan},
+    {label: "Measurement plan", value: researchDraft.measurementPlan},
+    {label: "Environmental conditions", value: researchDraft.environmentConditions},
+    {label: "Planned analysis", value: researchDraft.analysisPlan},
+    {label: "Stopping rule / exclusion criteria", value: researchDraft.stoppingRule}
+  ];
+  const safetyReviewLabels: Record<SafetyReviewStatus, string> = {
+    NOT_REVIEWED: "Not reviewed — review required",
+    REVIEW_REQUESTED: "Review requested — pending",
+    REFERENCE_RECORDED_NOT_VERIFIED: "Reference entered — not verified"
+  };
+  const repeatPlanningSummary = !researchDraft.plannedRepeats.trim()
+    ? "Not specified (optional)"
+    : isValidPlannedRepeats(researchDraft.plannedRepeats)
+      ? `${researchDraft.plannedRepeats} entered — not a statistical recommendation`
+      : "Invalid — enter a whole number from 1 to 100";
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -884,6 +905,29 @@ export default function App() {
                       </label>
                     </div>
                     <p className="protocol-safety-boundary">Safety status is a user-recorded workflow note only. LabVerse does not certify the protocol as safe; a qualified external review is still required before any real-world activity.</p>
+                    <div className="protocol-readiness" role="status" aria-live="polite">
+                      <div className="protocol-readiness-head">
+                        <strong>Protocol entry checklist</strong>
+                        <span>Text presence only — no science or safety approval</span>
+                      </div>
+                      <ul>
+                        {protocolChecklistItems.map((item) => (
+                          <li key={item.label}>
+                            <span>{item.label}</span>
+                            <strong>{item.value.trim() ? "Text present" : "Not entered"}</strong>
+                          </li>
+                        ))}
+                        <li>
+                          <span>Planned repeats</span>
+                          <strong>{repeatPlanningSummary}</strong>
+                        </li>
+                        <li>
+                          <span>Safety review</span>
+                          <strong>{safetyReviewLabels[researchDraft.safetyReviewStatus]}</strong>
+                        </li>
+                      </ul>
+                      <p>“Text present” only means that a note was entered. LabVerse does not verify source quality, equipment compatibility, units, sample design, analysis suitability or risk assessment here.</p>
+                    </div>
                   </section>
                   <div className="research-draft-actions">
                     <button type="submit" className="setup-button">Preview research draft</button>

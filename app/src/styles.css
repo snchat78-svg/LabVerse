@@ -105,3 +105,16 @@
 .research-protocol-grid input,.research-protocol-grid select{min-height:36px}
 .research-protocol-section .protocol-safety-boundary{margin:13px 0 0;padding:10px;border-left:3px solid #c28a3c;background:#fff8ea;color:#74552b}
 @media(max-width:760px){.research-protocol-grid{grid-template-columns:minmax(0,1fr)}}
+
+
+/* Live protocol-entry checklist: presence indicators, never scientific approval. */
+.protocol-readiness{margin-top:13px;padding:13px;border:1px solid #dce5ec;border-radius:10px;background:#fff}
+.protocol-readiness-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.protocol-readiness-head strong{color:#344d66;font-size:10px}
+.protocol-readiness-head span{color:#8392a2;font-size:8px}
+.protocol-readiness ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 14px;padding:0;margin:12px 0;list-style:none}
+.protocol-readiness li{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;border-bottom:1px solid #edf1f5;padding:6px 0;min-width:0}
+.protocol-readiness li span{color:#64788c;font-size:8px;line-height:1.5}
+.protocol-readiness li strong{color:#415d79;font-size:8px;text-align:right;line-height:1.5}
+.protocol-readiness>p{margin:8px 0 0;color:#7b6a4e;font-size:8px;line-height:1.6}
+@media(max-width:760px){.protocol-readiness ul{grid-template-columns:minmax(0,1fr)}}
