@@ -1092,3 +1092,14 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **CI:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209. TypeScript, Chromium setup, production build and preview PASS; Playwright smoke **35/35 groups PASS**.
 - **Next:** Phase 4 static dashboard ↔ React parity audit; check workspace navigation, inventory/source details, safety disclosures, touch and keyboard behavior before closing Phase 4.
 
+
+
+## 2026-11-20 — Phase 4 static/React keyboard, touch and apparatus parity — implementation; CI pending
+
+- **Audit finding:** the earlier 11/11 static ↔ React parity suite predated the React explicit multi-instance change. It still recorded the old difference. Static inventory inspection was also not keyboard-operable, static Remove controls had generic labels, and paired keyboard/touch behavior was not covered.
+- **Changed:** `dashboard/assets/dashboard.js` adds an accessible Inspect button, preserves focus during inventory re-render, returns focus to the new instance's Remove control, and exposes source/instance IDs with per-instance Remove labels. `dashboard/assets/dashboard.css` adds focus-visible and touch styles. `dashboard/index.html` marks the bench count as a live status.
+- **Tests:** `app/tests/parity.mjs` validates idempotent normal Add, explicit/repeated additional instances, unique instance IDs, source provenance, single-instance removal, keyboard-only Inspect/Add/Remove in both interfaces and a 390px touch flow without drag gestures.
+- **CI trigger:** `.github/workflows/labverse-app-check.yml` now includes static dashboard HTML/assets paths so parity checks run when those files change.
+- **Commit:** `f69b5c0f74c05959154ad18178bebe5f3707bcff`.
+- **CI status at log time:** Dashboard JavaScript/catalogue integrity PASS (run 44686626801); React app checks and dashboard browser smoke still PENDING (runs 44686626741 and 44686626731).
+- **Boundary:** this does not complete Phase 4 or implement real 3D, experiment execution, a scientific solver or physical-device certification. Phase 1/1.1 remains open; Phase 2 remains blocked; Phase 5/6 remain not started.

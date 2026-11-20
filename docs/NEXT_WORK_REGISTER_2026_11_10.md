@@ -625,3 +625,16 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Each placed instance must have a stable instance ID and retain the original catalogue/source item ID for provenance.
 - Keep normal Add tap idempotent so accidental repeat clicks do not create duplicate instances; only the explicit multi-instance action increases quantity.
 - Test two/three instances, per-instance removal, clear/reset, task-mapped setup and source-ID provenance. Do not imply a validated apparatus connection or 3D object yet.
+
+
+## Phase 4 follow-up — static/React keyboard, touch and apparatus parity — 2026-11-20
+
+- Commit: `f69b5c0f74c05959154ad18178bebe5f3707bcff`.
+- The React workbench's explicit multi-instance support had landed, but the earlier parity test still described the previous limitation. This follow-up updates the test and verifies both interfaces retain original source IDs plus unique instance IDs and remove one repeated instance without deleting its sibling.
+- Static dashboard now supports keyboard inspection, visible focus, focus restoration and accessible per-instance removal labels. Paired browser coverage compares keyboard-only and 390px touch flows in React and static dashboard.
+- Workflow trigger filters now include `dashboard/index.html` and `dashboard/assets/**`.
+- Report: `docs/PHASE_4_STATIC_REACT_PARITY_HARDENING_2026_11_20.md`.
+- Dashboard integrity PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626801.
+- React app CI PENDING: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626741. Static dashboard browser smoke PENDING: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
+- Phase 4 remains IN PROGRESS until browser acceptance completes. Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+- **Next action after acceptance:** perform a Phase 4 exit-gate review against all current UI, source-detail, safety-disclosure, keyboard and touch criteria. Do not start scientific engines while Phase 1/1.1 and Phase 2 gates remain open.

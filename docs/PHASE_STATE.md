@@ -1894,3 +1894,14 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Storage is local to the current browser profile only; no server/cloud sync, cross-device backup or collaborative notebook.
 - Phase 4 remains IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - **Next exact action:** user-controlled versioned JSON export/import of Research Studio drafts with strict schema and length validation, valid round-trip and malformed/unsupported file rejection.
+
+
+## Phase 4 — Static dashboard ↔ React parity hardening — 2026-11-20
+
+- Follow-up commit: `f69b5c0f74c05959154ad18178bebe5f3707bcff`.
+- Closed stale test assumptions after React explicit multiple-instance support: normal Add remains idempotent; explicit React Add copy and static repeated Add create distinct instances with retained source identity; per-instance removal leaves sibling instances intact.
+- Static dashboard inventory now provides keyboard-operable inspect buttons, visible focus states, focus restoration after render and transfer to the newly added instance's labelled Remove control. Workbench count is announced through an aria-live status.
+- Extended paired acceptance to keyboard-only inspection/Add/Remove and 390×844 touch-emulation select/Add/copy/Remove paths; drag is not required.
+- Updated CI path filters so edits under `dashboard/index.html` and `dashboard/assets/**` trigger the React parity checks.
+- Verification: dashboard JS syntax/catalogue integrity PASS (run 44686626801). Paired browser workflows pending at the time of this record: React app run 44686626741; dashboard desktop/mobile smoke run 44686626731.
+- Phase gates unchanged: Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.

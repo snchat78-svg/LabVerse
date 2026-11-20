@@ -833,3 +833,14 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - This is device/browser-profile-local persistence only. No cloud sync, server backup, cross-device persistence or collaborative notebook is claimed.
 - Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - Next Phase 4 task: versioned user-controlled JSON export/import, strict schema/field-size validation, successful round-trip and invalid/unsupported file rejection.
+
+
+## Phase 4 — paired static/React accessibility and workbench parity hardening — 2026-11-20
+
+- Follow-up implementation commit: `f69b5c0f74c05959154ad18178bebe5f3707bcff`.
+- Static inventory inspection now has an explicit keyboard-operable control; focus survives selection and moves to the newly added instance's labelled Remove action. Touch-friendly controls and focus-visible styling were added.
+- Parity tests now compare multiple apparatus instances, source/instance identity, individual removal, keyboard-only operation and 390px touch operation in both UIs. The React normal Add action remains duplicate-safe; only its explicit Add copy action creates another apparatus instance.
+- Static dashboard HTML/assets are now included in the React/parity workflow path filters.
+- Dashboard integrity checks PASS; browser checks are pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626741 and https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
+- Research Studio remains more complete in React than in the static starter dashboard; the static view is still an explicit roadmap placeholder. No 3D, validated experiment runtime or science engine is claimed.
+- Phase 4 remains IN PROGRESS pending full acceptance; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
