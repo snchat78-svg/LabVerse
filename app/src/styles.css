@@ -92,3 +92,16 @@
 .import-draft-button{position:relative;overflow:hidden}
 .research-import-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
 .import-draft-button:focus-within{outline:2px solid #245ea8;outline-offset:3px}
+
+
+/* Research Studio protocol planning metadata — separate from executable procedures. */
+.research-protocol-section{margin:18px 0;padding:16px;border:1px solid #dbe5ed;border-radius:12px;background:#f8fafc}
+.research-protocol-heading h3{margin:5px 0 0;color:#243b55;font-size:14px}
+.research-protocol-section>p{margin:9px 0 13px;color:#687b90;font-size:9px;line-height:1.65}
+.research-protocol-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.research-protocol-grid label{display:flex;flex-direction:column;gap:6px;color:#536980;font-size:9px;font-weight:750;min-width:0}
+.research-protocol-grid textarea,.research-protocol-grid input,.research-protocol-grid select{width:100%;min-width:0;border:1px solid #dce5ed;border-radius:8px;background:#fff;padding:10px;color:#293f56;font:inherit;font-size:10px;line-height:1.5}
+.research-protocol-grid textarea{min-height:62px;resize:vertical}
+.research-protocol-grid input,.research-protocol-grid select{min-height:36px}
+.research-protocol-section .protocol-safety-boundary{margin:13px 0 0;padding:10px;border-left:3px solid #c28a3c;background:#fff8ea;color:#74552b}
+@media(max-width:760px){.research-protocol-grid{grid-template-columns:minmax(0,1fr)}}

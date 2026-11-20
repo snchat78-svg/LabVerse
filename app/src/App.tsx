@@ -41,6 +41,7 @@ const subjectMeta: Record<
 
 type SubjectData = (typeof inventoryData.subjects)[SubjectKey];
 
+type SafetyReviewStatus = "NOT_REVIEWED" | "REVIEW_REQUESTED" | "REFERENCE_RECORDED_NOT_VERIFIED";
 type ResearchDraft = {
   question: string;
   hypothesis: string;
@@ -48,44 +49,88 @@ type ResearchDraft = {
   independentVariable: string;
   dependentVariable: string;
   controls: string;
+  protocolObjective: string;
+  methodProvenance: string;
+  materialsEquipmentReferences: string;
+  samplePlan: string;
+  plannedRepeats: string;
+  measurementPlan: string;
+  environmentConditions: string;
+  analysisPlan: string;
+  stoppingRule: string;
+  safetyReviewStatus: SafetyReviewStatus;
+  safetyReviewReference: string;
 };
 type ResearchDraftLoad = {
   draft: ResearchDraft;
-  status: "empty" | "saved" | "invalid" | "unavailable";
+  status: "empty" | "saved" | "migrated" | "invalid" | "unavailable";
 };
-type ResearchDraftStatus = ResearchDraftLoad["status"] | "exported" | "import-error";
+type ResearchDraftStatus = ResearchDraftLoad["status"] | "exported" | "import-error" | "protocol-invalid";
 type ResearchDraftEnvelope = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   savedAt: string;
   draft: ResearchDraft;
 };
 const RESEARCH_DRAFT_STORAGE_KEY = "labverse.research-studio.draft.v1";
-const RESEARCH_DRAFT_SCHEMA_VERSION = 1;
+const RESEARCH_DRAFT_SCHEMA_VERSION = 2;
 const RESEARCH_DRAFT_MAX_FIELD_LENGTH = 5000;
-const RESEARCH_DRAFT_MAX_IMPORT_BYTES = 32 * 1024;
-const RESEARCH_DRAFT_FIELDS: (keyof ResearchDraft)[] = [
+const RESEARCH_DRAFT_MAX_IMPORT_BYTES = 96 * 1024;
+const LEGACY_RESEARCH_DRAFT_FIELDS = [
   "question", "hypothesis", "alternative", "independentVariable", "dependentVariable", "controls"
+] as const;
+const RESEARCH_DRAFT_FIELDS: (keyof ResearchDraft)[] = [
+  "question", "hypothesis", "alternative", "independentVariable", "dependentVariable", "controls",
+  "protocolObjective", "methodProvenance", "materialsEquipmentReferences", "samplePlan",
+  "plannedRepeats", "measurementPlan", "environmentConditions", "analysisPlan", "stoppingRule",
+  "safetyReviewStatus", "safetyReviewReference"
 ];
 const EMPTY_RESEARCH_DRAFT: ResearchDraft = {
   question: "", hypothesis: "", alternative: "",
-  independentVariable: "", dependentVariable: "", controls: ""
+  independentVariable: "", dependentVariable: "", controls: "",
+  protocolObjective: "", methodProvenance: "", materialsEquipmentReferences: "", samplePlan: "",
+  plannedRepeats: "", measurementPlan: "", environmentConditions: "", analysisPlan: "",
+  stoppingRule: "", safetyReviewStatus: "NOT_REVIEWED", safetyReviewReference: ""
 };
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
+function isValidPlannedRepeats(value: string): boolean {
+  if (!value.trim()) return true;
+  if (!/^\\d+$/.test(value)) return false;
+  const count = Number(value);
+  return Number.isSafeInteger(count) && count >= 1 && count <= 100;
+}
+
 function parseResearchDraftEnvelope(value: unknown): ResearchDraft | null {
   if (!isRecord(value) ||
-      value.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION ||
+      (value.schemaVersion !== 1 && value.schemaVersion !== RESEARCH_DRAFT_SCHEMA_VERSION) ||
       typeof value.savedAt !== "string" ||
       !Number.isFinite(Date.parse(value.savedAt)) ||
       !isRecord(value.draft)) return null;
 
   const draftRecord = value.draft;
-  const valid = RESEARCH_DRAFT_FIELDS.every((field) =>
+  const fields = value.schemaVersion === 1
+    ? LEGACY_RESEARCH_DRAFT_FIELDS
+    : RESEARCH_DRAFT_FIELDS;
+  const valid = fields.every((field) =>
     typeof draftRecord[field] === "string" &&
     (draftRecord[field] as string).length <= RESEARCH_DRAFT_MAX_FIELD_LENGTH
   );
   if (!valid) return null;
+
+  if (value.schemaVersion === 1) {
+    return {
+      ...EMPTY_RESEARCH_DRAFT,
+      ...Object.fromEntries(fields.map((field) => [field, draftRecord[field]]))
+    } as ResearchDraft;
+  }
+
+  const status = draftRecord.safetyReviewStatus;
+  if (status !== "NOT_REVIEWED" &&
+      status !== "REVIEW_REQUESTED" &&
+      status !== "REFERENCE_RECORDED_NOT_VERIFIED") return null;
+  if (!isValidPlannedRepeats(draftRecord.plannedRepeats as string)) return null;
+
   return Object.fromEntries(
     RESEARCH_DRAFT_FIELDS.map((field) => [field, draftRecord[field]])
   ) as ResearchDraft;
@@ -98,7 +143,7 @@ function loadResearchDraft(): ResearchDraftLoad {
     const parsed: unknown = JSON.parse(raw);
     const draft = parseResearchDraftEnvelope(parsed);
     return draft
-      ? {draft, status: "saved"}
+      ? {draft, status: parsed && isRecord(parsed) && parsed.schemaVersion === 1 ? "migrated" : "saved"}
       : {draft: {...EMPTY_RESEARCH_DRAFT}, status: "invalid"};
   } catch {
     return {draft: {...EMPTY_RESEARCH_DRAFT}, status: "unavailable"};
@@ -171,7 +216,13 @@ export default function App() {
 
   useEffect(() => {
     if (!researchDraftDirty) return;
-    const hasContent = Object.values(researchDraft).some((value) => value.trim().length > 0);
+    if (!isValidPlannedRepeats(researchDraft.plannedRepeats)) {
+      setResearchDraftStatus("protocol-invalid");
+      return;
+    }
+    const hasContent = Object.entries(researchDraft).some(([key, value]) =>
+      key !== "safetyReviewStatus" && value.trim().length > 0
+    );
     try {
       if (!hasContent) {
         window.localStorage.removeItem(RESEARCH_DRAFT_STORAGE_KEY);
@@ -304,7 +355,13 @@ export default function App() {
   };
 
   const exportResearchDraft = () => {
-    if (!Object.values(researchDraft).some((value) => value.trim().length > 0)) return;
+    if (!isValidPlannedRepeats(researchDraft.plannedRepeats)) {
+      setResearchDraftStatus("protocol-invalid");
+      return;
+    }
+    if (!Object.entries(researchDraft).some(([key, value]) =>
+      key !== "safetyReviewStatus" && value.trim().length > 0
+    )) return;
     const envelope: ResearchDraftEnvelope = {
       schemaVersion: RESEARCH_DRAFT_SCHEMA_VERSION,
       savedAt: new Date().toISOString(),
@@ -343,6 +400,7 @@ export default function App() {
       setResearchDraft(importedDraft);
       setResearchDraftDirty(true);
       setResearchDraftReady(false);
+      if (isRecord(parsed) && parsed.schemaVersion === 1) setResearchDraftStatus("migrated");
     } catch {
       setResearchDraftStatus("import-error");
     }
@@ -780,6 +838,53 @@ export default function App() {
                   <label>Controls / conditions to hold constant
                     <textarea maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.controls} onChange={(event) => updateResearchDraft("controls", event.target.value)} />
                   </label>
+                  <section className="research-protocol-section" aria-labelledby="protocol-planning-heading">
+                    <div className="research-protocol-heading">
+                      <div className="eyebrow">PROTOCOL PLANNING — NOT AN EXECUTABLE METHOD</div>
+                      <h3 id="protocol-planning-heading">Experiment design metadata</h3>
+                    </div>
+                    <p>Record what still needs to be specified and sourced. These fields do not generate a procedure, choose a safe dose, validate sample size or authorize a real experiment.</p>
+                    <div className="research-protocol-grid">
+                      <label>Protocol objective
+                        <textarea id="protocol-objective" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.protocolObjective} onChange={(event) => updateResearchDraft("protocolObjective", event.target.value)} />
+                      </label>
+                      <label>Method/source provenance (title, version, pages or URL)
+                        <textarea id="protocol-method-provenance" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.methodProvenance} onChange={(event) => updateResearchDraft("methodProvenance", event.target.value)} />
+                      </label>
+                      <label>Candidate materials/equipment references (IDs or names; not approval)
+                        <textarea id="protocol-materials" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.materialsEquipmentReferences} onChange={(event) => updateResearchDraft("materialsEquipmentReferences", event.target.value)} />
+                      </label>
+                      <label>Sample/specimen selection and inclusion plan
+                        <textarea id="protocol-sample-plan" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.samplePlan} onChange={(event) => updateResearchDraft("samplePlan", event.target.value)} />
+                      </label>
+                      <label>Planned repeats (optional; integer 1–100)
+                        <input id="protocol-repeats" type="number" min="1" max="100" step="1" value={researchDraft.plannedRepeats} onChange={(event) => updateResearchDraft("plannedRepeats", event.target.value)} />
+                      </label>
+                      <label>Measurement plan (observable, unit, instrument range)
+                        <textarea id="protocol-measurement-plan" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.measurementPlan} onChange={(event) => updateResearchDraft("measurementPlan", event.target.value)} />
+                      </label>
+                      <label>Environmental conditions and timing
+                        <textarea id="protocol-environment" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.environmentConditions} onChange={(event) => updateResearchDraft("environmentConditions", event.target.value)} />
+                      </label>
+                      <label>Planned analysis (method to be validated separately)
+                        <textarea id="protocol-analysis" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.analysisPlan} onChange={(event) => updateResearchDraft("analysisPlan", event.target.value)} />
+                      </label>
+                      <label>Stopping rule / exclusion criteria
+                        <textarea id="protocol-stopping-rule" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.stoppingRule} onChange={(event) => updateResearchDraft("stoppingRule", event.target.value)} />
+                      </label>
+                      <label>Safety-review tracking
+                        <select id="protocol-safety-status" value={researchDraft.safetyReviewStatus} onChange={(event) => updateResearchDraft("safetyReviewStatus", event.target.value)}>
+                          <option value="NOT_REVIEWED">Not reviewed — review required</option>
+                          <option value="REVIEW_REQUESTED">Review requested — pending</option>
+                          <option value="REFERENCE_RECORDED_NOT_VERIFIED">External reference recorded — not verified</option>
+                        </select>
+                      </label>
+                      <label>Safety-review evidence reference (optional)
+                        <textarea id="protocol-safety-reference" maxLength={RESEARCH_DRAFT_MAX_FIELD_LENGTH} value={researchDraft.safetyReviewReference} onChange={(event) => updateResearchDraft("safetyReviewReference", event.target.value)} />
+                      </label>
+                    </div>
+                    <p className="protocol-safety-boundary">Safety status is a user-recorded workflow note only. LabVerse does not certify the protocol as safe; a qualified external review is still required before any real-world activity.</p>
+                  </section>
                   <div className="research-draft-actions">
                     <button type="submit" className="setup-button">Preview research draft</button>
                     <button type="button" className="clear-draft-button" onClick={clearResearchDraft}>Clear local draft</button>
@@ -796,6 +901,8 @@ export default function App() {
                 </form>
                 <p className="research-storage-status" role="status" aria-live="polite">
                   {researchDraftStatus === "saved" && "Draft saved locally on this device. It is not uploaded or synced."}
+                  {researchDraftStatus === "migrated" && "Older Research Studio draft restored. New protocol fields are blank; the updated version will be saved locally when you edit or export."}
+                  {researchDraftStatus === "protocol-invalid" && "Planned repeats must be a whole number from 1 to 100, or left blank. The last valid local draft is unchanged."}
                   {researchDraftStatus === "empty" && "No local draft saved yet."}
                   {researchDraftStatus === "invalid" && "An unsupported or invalid local draft was found. It was not loaded; clear it or enter a new draft to replace it."}
                   {researchDraftStatus === "unavailable" && "Browser storage is unavailable. This draft may be lost when the page closes."}

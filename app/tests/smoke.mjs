@@ -179,14 +179,28 @@ async function main() {
     await page.locator(".research-variable-grid input").nth(0).fill("Light intensity");
     await page.locator(".research-variable-grid input").nth(1).fill("Oxygen production rate");
     await page.locator('textarea').nth(3).fill("Plant species, temperature, CO2 availability and measurement duration.");
+    await page.locator("#protocol-objective").fill("Record the research objective before any procedure is considered.");
+    await page.locator("#protocol-method-provenance").fill("Verified source title/version/page or URL to be recorded.");
+    await page.locator("#protocol-materials").fill("Candidate item IDs/names only; identity and compatibility pending.");
+    await page.locator("#protocol-sample-plan").fill("Sample selection and inclusion criteria require domain review.");
+    await page.locator("#protocol-repeats").fill("3");
+    await page.locator("#protocol-measurement-plan").fill("Observable, SI unit, instrument range and uncertainty to be specified.");
+    await page.locator("#protocol-environment").fill("Record temperature, light and timing; ranges not yet validated.");
+    await page.locator("#protocol-analysis").fill("Planned comparison only; statistical method requires review.");
+    await page.locator("#protocol-stopping-rule").fill("Define before execution after risk review.");
+    await page.locator("#protocol-safety-status").selectOption("REVIEW_REQUESTED");
+    await page.locator("#protocol-safety-reference").fill("Review requested; this is not an approval.");
     await page.getByRole("button", {name:"Preview research draft"}).click();
     assert.match(await page.locator(".research-workspace").innerText(), /Research draft preview ready/);
     await page.getByText(/Draft saved locally on this device/i).waitFor();
     const storedDraft = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
-    assert.equal(storedDraft.schemaVersion, 1);
+    assert.equal(storedDraft.schemaVersion, 2);
     assert.equal(Number.isFinite(Date.parse(storedDraft.savedAt)), true);
     assert.equal(storedDraft.draft.question, "Does light intensity change the rate of photosynthesis?");
-    results.push("Research Studio versioned local autosave and draft preview");
+    assert.equal(storedDraft.draft.protocolObjective, "Record the research objective before any procedure is considered.");
+    assert.equal(storedDraft.draft.plannedRepeats, "3");
+    assert.equal(storedDraft.draft.safetyReviewStatus, "REVIEW_REQUESTED");
+    results.push("Research Studio schema-v2 autosave includes protocol-planning metadata");
 
     await page.reload({waitUntil:"networkidle"});
     await page.locator(".subject-card.teal").click();
@@ -200,7 +214,7 @@ async function main() {
     const exportedPath = await exportedFile.path();
     assert.ok(exportedPath, "JSON export must produce a downloadable file");
     const exportedEnvelope = JSON.parse(await readFile(exportedPath, "utf8"));
-    assert.equal(exportedEnvelope.schemaVersion, 1);
+    assert.equal(exportedEnvelope.schemaVersion, 2);
     assert.equal(Number.isFinite(Date.parse(exportedEnvelope.savedAt)), true);
     assert.deepEqual(exportedEnvelope.draft, storedDraft.draft);
     results.push("Research Studio JSON export contains versioned complete draft");
@@ -219,7 +233,18 @@ async function main() {
     assert.equal(await page.locator(".research-variable-grid input").nth(0).inputValue(), exportedEnvelope.draft.independentVariable);
     assert.equal(await page.locator(".research-variable-grid input").nth(1).inputValue(), exportedEnvelope.draft.dependentVariable);
     assert.equal(await page.locator(".research-workspace textarea").nth(3).inputValue(), exportedEnvelope.draft.controls);
-    results.push("Research Studio JSON import/export round-trip restores all six fields");
+    assert.equal(await page.locator("#protocol-objective").inputValue(), exportedEnvelope.draft.protocolObjective);
+    assert.equal(await page.locator("#protocol-method-provenance").inputValue(), exportedEnvelope.draft.methodProvenance);
+    assert.equal(await page.locator("#protocol-materials").inputValue(), exportedEnvelope.draft.materialsEquipmentReferences);
+    assert.equal(await page.locator("#protocol-sample-plan").inputValue(), exportedEnvelope.draft.samplePlan);
+    assert.equal(await page.locator("#protocol-repeats").inputValue(), exportedEnvelope.draft.plannedRepeats);
+    assert.equal(await page.locator("#protocol-measurement-plan").inputValue(), exportedEnvelope.draft.measurementPlan);
+    assert.equal(await page.locator("#protocol-environment").inputValue(), exportedEnvelope.draft.environmentConditions);
+    assert.equal(await page.locator("#protocol-analysis").inputValue(), exportedEnvelope.draft.analysisPlan);
+    assert.equal(await page.locator("#protocol-stopping-rule").inputValue(), exportedEnvelope.draft.stoppingRule);
+    assert.equal(await page.locator("#protocol-safety-status").inputValue(), exportedEnvelope.draft.safetyReviewStatus);
+    assert.equal(await page.locator("#protocol-safety-reference").inputValue(), exportedEnvelope.draft.safetyReviewReference);
+    results.push("Research Studio JSON import/export round-trip restores all 17 research fields");
 
     await importInput.setInputFiles({
       name:"unsupported-schema.json", mimeType:"application/json",
@@ -236,8 +261,8 @@ async function main() {
     await importInput.setInputFiles({
       name:"over-limit.json", mimeType:"application/json",
       buffer:Buffer.from(JSON.stringify({
-        schemaVersion:1, savedAt:new Date().toISOString(),
-        draft:{question:"x".repeat(5001),hypothesis:"",alternative:"",independentVariable:"",dependentVariable:"",controls:""}
+        schemaVersion:2, savedAt:new Date().toISOString(),
+        draft:{...exportedEnvelope.draft, question:"x".repeat(5001)}
       }))
     });
     await page.getByText(/Import rejected/i).waitFor();
@@ -251,11 +276,40 @@ async function main() {
 
     await importInput.setInputFiles({
       name:"oversized-file.json", mimeType:"application/json",
-      buffer:Buffer.alloc(32 * 1024 + 1, 0x20)
+      buffer:Buffer.alloc(96 * 1024 + 1, 0x20)
     });
     await page.getByText(/Import rejected/i).waitFor();
     assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), exportedEnvelope.draft.question);
     results.push("Research Studio rejects future schema, oversized field/file and malformed JSON without overwriting draft");
+
+    await importInput.setInputFiles({
+      name:"legacy-v1.json", mimeType:"application/json",
+      buffer:Buffer.from(JSON.stringify({
+        schemaVersion:1, savedAt:new Date().toISOString(),
+        draft:{
+          question:"Legacy research question",
+          hypothesis:"Legacy hypothesis",
+          alternative:"Legacy alternative",
+          independentVariable:"Legacy IV",
+          dependentVariable:"Legacy DV",
+          controls:"Legacy controls"
+        }
+      }))
+    });
+    await page.getByText(/Older Research Studio draft restored/i).waitFor();
+    await page.getByText(/Draft saved locally on this device/i).waitFor();
+    assert.equal(await page.locator(".research-workspace textarea").nth(0).inputValue(), "Legacy research question");
+    assert.equal(await page.locator("#protocol-objective").inputValue(), "");
+    const migrated = await page.evaluate(() => JSON.parse(localStorage.getItem("labverse.research-studio.draft.v1") || "null"));
+    assert.equal(migrated.schemaVersion, 2);
+    assert.equal(migrated.draft.safetyReviewStatus, "NOT_REVIEWED");
+    results.push("Research Studio v1 import migrates legacy six-field drafts into schema v2 without data loss");
+
+    await page.locator("#protocol-repeats").fill("101");
+    await page.getByText(/Planned repeats must be a whole number/i).waitFor();
+    await page.locator("#protocol-repeats").fill("");
+    await page.getByText(/Draft saved locally on this device/i).waitFor();
+    results.push("Research Studio repeat plan accepts blank or bounded whole-number values only");
 
     await page.getByRole("button", {name:"Clear local draft"}).click();
     await page.getByText("No local draft saved yet.").waitFor();
