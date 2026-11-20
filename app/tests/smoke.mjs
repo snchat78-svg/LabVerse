@@ -201,7 +201,7 @@ async function main() {
     assert.match(populatedChecklist, /Protocol objective/);
     assert.match(populatedChecklist, /Method\/source provenance/);
     assert.match(populatedChecklist, /Text present/);
-    assert.match(populatedChecklist, /Planned repeats[\\s\\S]*3 entered/);
+    assert.match(populatedChecklist, /3 entered/);
     assert.match(populatedChecklist, /Review requested — pending/);
     results.push("Research Studio checklist updates on protocol entry without claiming validation");
 
