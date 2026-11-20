@@ -1,3 +1,12 @@
+## Latest Phase 4 work-unit — Static Dashboard ↔ React parity audit — 2026-11-20 (CI pending)
+
+- Added a single Chromium parity test that opens both the static dashboard and React app previews and compares the shared inventory payload, subject counts, class filtering, Physics source mapping, Chemistry/Biology reagent disclosures, workbench behavior, Research Studio boundaries and responsive width.
+- CI now starts the static dashboard with a local Python HTTP server in addition to the React production preview; no new runtime package is added.
+- Machine-readable matrix: `data/catalogues/phase4_static_react_parity_2026_11_20.csv`; report: `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`.
+- One known behavior difference is explicitly recorded: static permits multiple identical source-item instances; React currently de-duplicates same source IDs. This is not silently treated as parity.
+- CI run pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027; do not mark audit accepted until both React smoke and the new parity suite pass.
+- Phase 4 remains IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+
 ## Latest bounded work-unit — Research Studio live protocol-readiness checklist — 2026-11-20 (verified)
 
 - Added a live entry checklist to Research Studio for objective, method/source provenance, candidate materials/equipment references, sample plan, measurement plan, environmental conditions, analysis plan and stopping rule.
