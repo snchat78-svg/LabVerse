@@ -1,3 +1,15 @@
+## Verification update — Research Studio protocol planning — 2026-11-20
+
+- Latest code commit under test: `793271ec7ae2074aacf427292513c7a1504d5bd9`.
+- GitHub Actions: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187
+- Strict TypeScript typecheck: PASS.
+- Chromium install: PASS.
+- Production build: PASS.
+- Production preview startup: PASS.
+- Playwright browser smoke: **33/33 groups PASS**, including all 17-field JSON round-trip, schema-v1 migration, bounded repeat validation, unsupported/oversized/malformed import rejection, desktop drag/drop, keyboard operation, Android-sized touch fallback and mobile layout.
+- The schema-v2 protocol-planning work-unit is CI-verified. Phase 4 overall remains IN PROGRESS; this does not mark Phase 4 complete.
+
+
 
 
 ## 2026-11-20 — Phase 4 static dashboard ↔ React parity audit — verified
