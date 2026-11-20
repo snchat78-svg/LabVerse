@@ -54,11 +54,11 @@ async function main() {
       has:page.locator("strong", {hasText:/^Vernier caliper$/})
     }).click();
     assert.match(await page.locator(".detail-panel").innerText(), /NCERT-PHY-KIT-003/);
-    await vernierTask.getByRole("button", {name:/Add mapped candidates to workbench/}).click();
-    await page.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
+    await vernierTask.getByRole("button", {name:/Open candidate workbench with mapped items/}).click();
+    assert.equal(await page.locator(".workspace-tabs button.active").innerText(), "Virtual Experiment Lab");
     assert.equal(await page.locator(".bench-item").count(), 2);
     assert.match(await page.locator(".bench-panel").innerText(), /CANDIDATE PLACEHOLDER/);
-    results.push("Practical source links and candidate placeholder setup");
+    results.push("Practical-to-workbench direct navigation with mapped candidate setup");
     // Desktop drag/drop adds source-catalogue candidates; repeated IDs stay unique.
     await page.locator(".content-grid .search").first().fill("Stopwatch with split timeout");
     const stopwatchItem = page.locator(".item").filter({has:page.locator("strong", {hasText:/^Stopwatch with split timeout$/})});

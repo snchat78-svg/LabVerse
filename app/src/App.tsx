@@ -436,6 +436,12 @@ export default function App() {
       return [...current, ...additions];
     });
   };
+  const openSelectedTaskWorkbench = () => {
+    if (selectedTaskItems.length === 0) return;
+    addSelectedTaskItems();
+    setRequestedWorkspace(null);
+    setActiveWorkspace("virtual");
+  };
   const handleInventoryDragStart = (event: ReactDragEvent<HTMLButtonElement>, itemId: string) => {
     event.dataTransfer.setData("text/plain", itemId);
     event.dataTransfer.effectAllowed = "copy";
@@ -785,8 +791,8 @@ export default function App() {
                                   <small>{item.id} · {statusLabel(item)}</small>
                                 </button>
                               ))}
-                              <button type="button" className="setup-button" onClick={addSelectedTaskItems}>
-                                Add mapped candidates to workbench
+                              <button type="button" className="setup-button" onClick={openSelectedTaskWorkbench}>
+                                Open candidate workbench with mapped items →
                               </button>
                             </>
                           )}

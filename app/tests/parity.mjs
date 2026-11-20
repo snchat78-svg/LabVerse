@@ -94,7 +94,13 @@ async function main() {
     await legacy.locator('[data-focus-source="NCERT-PHY-KIT-003"]').click();
     assert.match(await react.locator(".detail-panel").innerText(),/NCERT-PHY-KIT-003/);
     assert.match(await legacy.locator("#selected-details").innerText(),/Vernier caliper/);
-    results.push("Physics practical-to-candidate-source navigation parity");
+    await reactTask.getByRole("button",{name:/Open candidate workbench with mapped items/}).click();
+    assert.equal(await react.locator(".workspace-tabs button.active").innerText(),"Virtual Experiment Lab");
+    assert.equal(await react.locator(".bench-item").count(),2);
+    await legacy.locator("#selected-details").getByRole("button",{name:/Open candidate workbench with mapped candidates/}).click();
+    assert.equal(await legacy.locator('.mode-tab[data-mode="virtual"]').getAttribute("class").then(v=>v.includes("active")),true);
+    assert.equal(await legacy.locator("#bench-items .bench-object").count(),2);
+    results.push("Practical-to-candidate-workbench direct navigation parity with mapped setup");
 
     await react.locator(".back-button").click();
     await legacy.locator("#back-home").click();
