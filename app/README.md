@@ -82,3 +82,8 @@ The current implementation adds 11 structured metadata fields to the original si
 ## Research Studio protocol-readiness checklist
 
 A live checklist marks whether planning notes are present for objective, method/source provenance, candidate equipment/materials, sample plan, measurement plan, environment, analysis plan and stopping rule. It separately displays optional repeats and the safety-review tracking status. The checklist reports text presence only; it does not validate science, data sources, units, sample adequacy, safety or permission to execute. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 (35/35 browser groups PASS).
+
+
+## Static dashboard ↔ React parity audit
+
+A Chromium parity suite now starts both previews and compares shared inventory data, subject and task totals, class filters, source navigation, chemical safety disclosures, placeholder workbench behavior, Research Studio boundaries and mobile width. The matrix and report are maintained in `data/catalogues/phase4_static_react_parity_2026_11_20.csv` and `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`. One known difference is intentionally recorded: static permits multiple instances of one source item; React currently suppresses duplicate source IDs.

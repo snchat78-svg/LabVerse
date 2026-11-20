@@ -1,0 +1,196 @@
+import { chromium } from "playwright";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+
+const APP_URL = "http://127.0.0.1:4174/";
+const STATIC_URL = "http://127.0.0.1:4173/dashboard/";
+
+async function main() {
+  const browser = await chromium.launch({headless:true});
+  const errors = [];
+  const results = [];
+  try {
+    const react = await browser.newPage({viewport:{width:1440,height:1000}});
+    const legacy = await browser.newPage({viewport:{width:1440,height:1000}});
+    for (const page of [react, legacy]) {
+      page.on("pageerror", error => errors.push(error.message));
+      page.on("console", message => {
+        if (message.type() === "error") errors.push(message.text());
+      });
+    }
+
+    const sourceCatalogue = JSON.parse(await readFile(
+      new URL("../../dashboard/data/inventory.json", import.meta.url), "utf8"
+    ));
+    await Promise.all([
+      react.goto(APP_URL,{waitUntil:"networkidle"}),
+      legacy.goto(STATIC_URL,{waitUntil:"networkidle"})
+    ]);
+    await react.locator(".hero-row h1").waitFor();
+    await legacy.locator("#stat-tasks").waitFor({state:"visible"});
+
+    const staticCatalogue = await legacy.evaluate(async () => {
+      const response = await fetch("./data/inventory.json");
+      if (!response.ok) throw new Error("Static dashboard inventory fetch failed");
+      return response.json();
+    });
+    assert.deepEqual(staticCatalogue, sourceCatalogue, "Static dashboard must load the committed shared inventory file");
+    assert.equal(sourceCatalogue.stats.rbseTaskIds, 171);
+    assert.match(await react.locator(".stats").innerText(), /171/);
+    assert.equal(await react.locator(".subject-card").count(), 3);
+    assert.equal(await legacy.locator(".subject-card[data-subject]").count(), 3);
+    assert.equal(await legacy.locator("#stat-tasks").innerText(), "171");
+    for (const subject of [
+      {name:"Physics",reactClass:"violet",staticCount:"#physics-count",expected:"105"},
+      {name:"Chemistry",reactClass:"amber",staticCount:"#chemistry-count",expected:"53"},
+      {name:"Biology",reactClass:"teal",staticCount:"#biology-count",expected:"175"}
+    ]) {
+      assert.match(await react.locator(".subject-card."+subject.reactClass).innerText(), new RegExp(subject.name));
+      assert.match(await react.locator(".subject-card."+subject.reactClass).innerText(), new RegExp(subject.expected+" catalogue records"));
+      assert.equal(await legacy.locator(subject.staticCount).innerText(), subject.expected);
+    }
+    results.push("Shared source catalogue, 171 RBSE tasks and three subject summaries");
+
+    for (const label of ["Learning Lab","Virtual Experiment Lab","Scientific Analysis","Research Studio"]) {
+      assert.match(await react.locator(".sidebar").innerText(), new RegExp(label));
+      assert.match(await legacy.locator(".sidebar").innerText(), new RegExp(label));
+    }
+    results.push("Both UIs expose all four workspace destinations");
+
+    await react.locator(".subject-card.violet").click();
+    await legacy.locator('.subject-card[data-subject="physics"]').click();
+    await react.locator(".class-select select").selectOption("XI");
+    await legacy.locator("#class-select").selectOption("XI");
+    assert.equal(await react.locator(".task-list .task").count(), 41);
+    assert.equal(await legacy.locator("#task-count").innerText(), "41 tasks");
+    await react.locator(".class-select select").selectOption("ALL");
+    await legacy.locator("#class-select").selectOption("ALL");
+    results.push("Physics Class XI filter parity (41 task records)");
+
+    await react.locator(".content-grid .search").first().fill("Vernier caliper");
+    await react.locator(".inventory-filters select").nth(0).selectOption("apparatus");
+    await react.locator(".inventory-filters select").nth(1).selectOption("MEASUREMENT");
+    await legacy.locator("#inventory-type").selectOption("apparatus");
+    await legacy.locator("#inventory-search").fill("Vernier caliper");
+    const reactVernier = react.locator(".item").filter({has:react.locator("strong",{hasText:/^Vernier caliper$/})});
+    const staticVernier = legacy.locator('[data-item-id="NCERT-PHY-KIT-003"]');
+    await reactVernier.waitFor();
+    await staticVernier.waitFor();
+    await reactVernier.click();
+    await staticVernier.click();
+    assert.match(await react.locator(".detail-panel").innerText(), /NCERT-PHY-KIT-003/);
+    assert.match(await legacy.locator("#selected-details").innerText(), /NCERT-PHY-KIT-003/);
+    assert.match(await react.locator(".detail-panel").innerText(), /NCERT Physics kit manual 13164/);
+    assert.match(await legacy.locator("#selected-details").innerText(), /NCERT Physics kit manual 13164/);
+    results.push("Shared Physics inventory search, type/category filters and source identity detail");
+
+    await react.locator(".practical-panel .search").fill("Vernier calipers");
+    await legacy.locator("#task-search").fill("Vernier calipers");
+    const reactTask = react.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-EXP-01"});
+    await reactTask.getByRole("button",{name:/Inspect mapped items/}).click();
+    await reactTask.locator(".mapped-item").filter({has:react.locator("strong",{hasText:/^Vernier caliper$/})}).click();
+    await legacy.locator('[data-task="RBSE-XI-PHY-EXP-01"]').click();
+    await legacy.locator('[data-focus-source="NCERT-PHY-KIT-003"]').click();
+    assert.match(await react.locator(".detail-panel").innerText(),/NCERT-PHY-KIT-003/);
+    assert.match(await legacy.locator("#selected-details").innerText(),/Vernier caliper/);
+    results.push("Physics practical-to-candidate-source navigation parity");
+
+    await react.locator(".back-button").click();
+    await legacy.locator("#back-home").click();
+    await react.locator(".subject-card.amber").click();
+    await legacy.locator('.subject-card[data-subject="chemistry"]').click();
+    await react.locator(".inventory-filters select").nth(0).selectOption("reagent");
+    await react.locator(".content-grid .search").first().fill("Acetic acid");
+    await legacy.locator("#inventory-type").selectOption("reagent");
+    await legacy.locator("#inventory-search").fill("Acetic acid");
+    const reactAcetic = react.locator(".item").filter({has:react.locator("strong",{hasText:/^Acetic acid$/})});
+    const staticAcetic = legacy.locator('[data-item-id="MSCL-MAN-REAG-002"]');
+    await reactAcetic.waitFor();
+    await staticAcetic.waitFor();
+    await reactAcetic.click();
+    await staticAcetic.click();
+    assert.match(await react.locator(".detail-panel").innerText(),/Reference only \/ no live use/i);
+    assert.match(await legacy.locator("#analysis-copy").innerText(),/source-listed reference only/i);
+    results.push("Chemistry reagent reference-only / no-live-use disclosure parity");
+
+    await react.locator(".back-button").click();
+    await legacy.locator("#back-home").click();
+    await react.locator(".subject-card.teal").click();
+    await legacy.locator('.subject-card[data-subject="biology"]').click();
+    await react.locator(".inventory-filters select").nth(0).selectOption("reagent");
+    await react.locator(".content-grid .search").first().fill("Mercury");
+    await legacy.locator("#inventory-type").selectOption("reagent");
+    await legacy.locator("#inventory-search").fill("Mercury");
+    const reactMercury = react.locator(".item").filter({has:react.locator("strong",{hasText:/^Mercury$/})});
+    const staticMercury = legacy.locator('[data-item-id="NCERT-BIO-MANUAL-REAG-033"]');
+    await reactMercury.waitFor();
+    await staticMercury.waitFor();
+    await reactMercury.click();
+    await staticMercury.click();
+    assert.match(await react.locator(".detail-panel").innerText(),/not supplied with kit/i);
+    assert.match(await legacy.locator("#analysis-copy").innerText(),/not supplied|reference only/i);
+    results.push("Biology school-managed / not-supplied reagent disclosure parity");
+
+    await react.locator(".back-button").click();
+    await legacy.locator("#back-home").click();
+    await react.locator(".subject-card.violet").click();
+    await legacy.locator('.subject-card[data-subject="physics"]').click();
+    await react.locator(".workspace-tabs button",{hasText:"Virtual Experiment Lab"}).click();
+    await react.locator(".content-grid .search").first().fill("Vernier caliper");
+    await react.locator(".item").filter({has:react.locator("strong",{hasText:/^Vernier caliper$/})}).click();
+    const reactAdd = react.locator(".detail-panel").getByRole("button",{name:"Add selected item as candidate placeholder"});
+    await reactAdd.click();
+    await reactAdd.click();
+    assert.equal(await react.locator(".bench-item").count(),1,"React candidate bench de-duplicates repeated source IDs");
+    assert.match(await react.locator(".bench-panel").innerText(),/CANDIDATE PLACEHOLDER/);
+
+    await legacy.locator("#inventory-search").fill("Vernier caliper");
+    const staticItem = legacy.locator('[data-item-id="NCERT-PHY-KIT-003"]');
+    await staticItem.locator("[data-add]").click();
+    await staticItem.locator("[data-add]").click();
+    assert.equal(await legacy.locator("#bench-items .bench-object").count(),2,"Static prototype currently permits multiple instances of one catalogue ID");
+    assert.match(await legacy.locator("#bench-items").innerText(),/PLACEHOLDER/);
+    await legacy.locator("#reset-bench").click();
+    results.push("Candidate placeholder bench parity; known difference: static allows repeated instances, React currently de-duplicates");
+
+    await react.locator(".back-button").click();
+    await legacy.locator("#back-home").click();
+    await react.locator(".sidebar .nav-link").filter({hasText:"Research Studio"}).click();
+    await legacy.locator('.side-link[data-view="research"]').click();
+    assert.match(await react.locator(".workspace-launch").innerText(),/Choose a subject direction/);
+    await react.locator(".workspace-launch-actions button").filter({hasText:"Biology"}).click();
+    assert.equal(await react.locator(".workspace-tabs button.active").innerText(),"Research Studio");
+    assert.equal(await react.locator(".research-protocol-section").count(),1);
+    assert.equal(await legacy.locator("#module-title").innerText(),"Research Studio");
+    assert.equal(await legacy.locator(".module-card").count(),3);
+    assert.match(await legacy.locator("#module-view").innerText(),/ROADMAP IMPLEMENTATION PENDING/);
+    results.push("Research Studio: React structured workspace vs static roadmap placeholder (documented enhancement)");
+
+    await react.locator(".back-button").click();
+    await react.locator(".subject-card.violet").click();
+    await react.locator(".workspace-tabs button",{hasText:"Scientific Analysis"}).click();
+    await legacy.locator("#back-home").click();
+    await legacy.locator('.subject-card[data-subject="physics"]').click();
+    assert.match(await react.locator(".analysis-workspace").innerText(),/No validated scientific model connected/);
+    assert.match(await react.locator(".analysis-workspace").innerText(),/No calculated or predicted result/);
+    assert.match(await legacy.locator("#analysis-copy").innerText(),/No scientific result is generated until a validated model is connected/);
+    results.push("Both scientific analysis panels preserve the NOT_MODELLED/no-results boundary");
+
+    await react.setViewportSize({width:390,height:844});
+    await legacy.setViewportSize({width:390,height:844});
+    assert.equal(await react.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1),false,"React mobile layout must not overflow");
+    assert.equal(await legacy.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1),false,"Static dashboard mobile layout must not overflow");
+    results.push("Responsive parity at a 390px mobile viewport");
+
+    assert.deepEqual(errors,[],"Neither UI should produce browser runtime or console errors");
+    console.log("LabVerse static ↔ React parity: "+results.length+" groups passed.");
+    for (const result of results) console.log("PASS:",result);
+  } finally {
+    await browser.close();
+  }
+}
+
+main().catch(error=>{
+  console.error(error);
+  process.exitCode=1;
+});

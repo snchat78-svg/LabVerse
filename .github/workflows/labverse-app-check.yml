@@ -59,5 +59,21 @@ jobs:
           cat /tmp/labverse-app-preview.log
           exit 1
 
+      - name: Start static dashboard preview
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory .. > /tmp/labverse-static-dashboard.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4173/dashboard/index.html > /dev/null; then
+              echo "Static dashboard preview ready"
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/labverse-static-dashboard.log
+          exit 1
+
       - name: Run React app browser smoke tests
         run: npm run test:smoke
+
+      - name: Run static dashboard to React parity tests
+        run: npm run test:parity
