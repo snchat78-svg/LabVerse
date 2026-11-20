@@ -169,7 +169,7 @@ async function main() {
     await react.locator(".back-button").click();
     await react.locator(".subject-card.violet").click();
     await react.locator(".workspace-tabs button",{hasText:"Scientific Analysis"}).click();
-    await legacy.locator("#back-home").click();
+    await legacy.locator("#module-back").click();
     await legacy.locator('.subject-card[data-subject="physics"]').click();
     assert.match(await react.locator(".analysis-workspace").innerText(),/No validated scientific model connected/);
     assert.match(await react.locator(".analysis-workspace").innerText(),/No calculated or predicted result/);
