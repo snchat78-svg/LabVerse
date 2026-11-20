@@ -38,10 +38,11 @@ GitHub Actions now starts the static dashboard preview alongside the React previ
 
 ## Verification
 
-- Status: pending the cross-UI CI run for this report's code commit.
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043.
+- Strict TypeScript typecheck PASS; Chromium install PASS; Vite production build PASS; React and static previews PASS; React smoke **35/35 groups PASS**; static↔React parity **11/11 groups PASS**.
 - Existing React suite remains required.
 - This audit does not validate real 3D, a scientific solver, live physical method, procurement equivalence, safety approval or physical Android behavior.
 
 ## Phase boundary and next action
 
-Phase 4 remains IN PROGRESS. Fix or explicitly scope the repeated-item/quantity gap, complete the static-preview accessibility/responsive review, and keep the static and React behavior boundaries documented before advancing to Phase 5.
+Phase 4 remains IN PROGRESS. The parity test has accepted the current shared-source, navigation, traceability, safety and responsive contract, but a real behavior difference remains: static accepts multiple instances of one item; React de-duplicates source IDs. Next implement explicit multi-instance/quantity support with stable instance IDs while preserving accidental double-tap protection. Static keyboard-specific acceptance and physical Android testing remain open. Do not advance to Phase 5 until Phase 4 exit criteria are met.
