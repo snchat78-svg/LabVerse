@@ -1,3 +1,11 @@
+
+
+## Latest Phase 4 work-unit — Static Dashboard ↔ React parity audit — 2026-11-20
+
+- Added a cross-UI Playwright suite and machine-readable parity matrix: `data/catalogues/phase4_static_react_parity_2026_11_20.csv`.
+- Both previews run in CI; compare shared JSON data, subject/task summary, class filter, Physics source navigation, Chemistry/Biology safety disclosures, research and analysis boundaries and mobile layout.
+- Known repeated-item gap: static allows multiple instances of a source item; React currently de-duplicates IDs.
+- CI pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027. Only mark this work-unit accepted after the two app browser suites complete.
 # LabVerse Next Work & Source Closure Register — 2026-11-10
 
 ## Work completed in this unit
