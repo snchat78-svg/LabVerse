@@ -70,11 +70,23 @@ async function main() {
     await stopwatchItem.dragTo(page.locator(".bench-panel"));
     assert.equal(await page.locator(".bench-item").count(), 3, "the same catalogue ID must not be duplicated");
     results.push("Virtual workbench desktop drag-and-drop and duplicate prevention");
-    await page.locator(".bench-item").filter({hasText:"Stopwatch with split timeout"})
-      .getByRole("button", {name:"Remove Stopwatch with split timeout from workbench"}).click();
+    const stopwatchRows = page.locator('.bench-item[data-source-id="NCERT-PHY-KIT-009"]');
+    assert.equal(await stopwatchRows.count(), 1);
+    await stopwatchRows.getByRole("button", {name:"Add another instance of Stopwatch with split timeout"}).click();
+    assert.equal(await page.locator(".bench-item").count(), 4);
+    assert.equal(await stopwatchRows.count(), 2);
+    assert.notEqual(
+      await stopwatchRows.nth(0).getAttribute("data-instance-id"),
+      await stopwatchRows.nth(1).getAttribute("data-instance-id")
+    );
+    results.push("Virtual workbench explicit copies have unique instance IDs and shared source provenance");
+    await stopwatchRows.first().getByRole("button", {name:"Remove Stopwatch with split timeout instance 1 from workbench"}).click();
+    assert.equal(await page.locator(".bench-item").count(), 3);
+    assert.equal(await stopwatchRows.count(), 1);
+    await stopwatchRows.getByRole("button", {name:"Remove Stopwatch with split timeout instance 1 from workbench"}).click();
     assert.equal(await page.locator(".bench-item").count(), 2);
-    assert.doesNotMatch(await page.locator(".bench-panel").innerText(), /Stopwatch with split timeout/);
-    results.push("Virtual workbench individual item removal");
+    assert.equal(await stopwatchRows.count(), 0);
+    results.push("Virtual workbench removes one repeated instance without deleting its sibling");
 
     // An unmatched project stays visible with the reason; no false source match.
     await page.locator('.workspace-tabs button', {hasText:"Learning Lab"}).click();
@@ -392,6 +404,13 @@ async function main() {
       assert.match(await touchPage.locator(".bench-panel").innerText(), /Vernier caliper/);
       await addButton.click();
       assert.equal(await touchPage.locator(".bench-item").count(), 1, "touch Add action must not duplicate the selected catalogue ID");
+      await touchPage.locator(".bench-item").getByRole("button",{name:"Add another instance of Vernier caliper"}).tap();
+      assert.equal(await touchPage.locator(".bench-item").count(), 2);
+      assert.equal(await touchPage.locator('.bench-item[data-source-id="NCERT-PHY-KIT-003"]').count(), 2);
+      assert.notEqual(
+        await touchPage.locator('.bench-item[data-source-id="NCERT-PHY-KIT-003"]').nth(0).getAttribute("data-instance-id"),
+        await touchPage.locator('.bench-item[data-source-id="NCERT-PHY-KIT-003"]').nth(1).getAttribute("data-instance-id")
+      );
       assert.equal(await touchPage.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1), false);
       results.push("Android-sized touch select-and-add fallback without drag gestures");
     } finally {
@@ -428,10 +447,16 @@ async function main() {
     assert.equal(await keyboardPage.locator(".bench-item").count(), 1);
 
     await keyboardPage.keyboard.press("Tab");
-    assert.match(await keyboardPage.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""), /Remove Vernier caliper from workbench/);
+    assert.match(await keyboardPage.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""), /Add another instance of Vernier caliper/);
     await keyboardPage.keyboard.press("Enter");
+    assert.equal(await keyboardPage.locator(".bench-item").count(), 2);
+    await keyboardPage.keyboard.press("Tab");
+    assert.match(await keyboardPage.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""), /Remove Vernier caliper instance 1 from workbench/);
+    await keyboardPage.keyboard.press("Enter");
+    assert.equal(await keyboardPage.locator(".bench-item").count(), 1);
+    await keyboardPage.locator(".bench-item").getByRole("button",{name:/Remove Vernier caliper instance/}).click();
     assert.equal(await keyboardPage.locator(".bench-item").count(), 0);
-    results.push("Keyboard-only inventory focus, Enter add/remove and visible focus indicators");
+    results.push("Keyboard-only inventory focus, Enter Add/copy/remove and visible focus indicators");
 
     assert.deepEqual(errors,[],"React app must not emit browser errors");
     console.log("LabVerse React app browser smoke: " + results.length + " groups passed.");

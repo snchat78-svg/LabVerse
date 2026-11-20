@@ -118,3 +118,10 @@
 .protocol-readiness li strong{color:#415d79;font-size:8px;text-align:right;line-height:1.5}
 .protocol-readiness>p{margin:8px 0 0;color:#7b6a4e;font-size:8px;line-height:1.6}
 @media(max-width:760px){.protocol-readiness ul{grid-template-columns:minmax(0,1fr)}}
+
+
+/* Multiple candidate instances keep distinct placement IDs and the same source ID. */
+.bench-item-actions{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+.add-bench-instance{border:1px solid #d6e4ef;border-radius:7px;background:#f5f9fd;color:#456985;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer;white-space:nowrap}
+.add-bench-instance:hover{background:#edf5fb;border-color:#b8ccdc}
+.bench-item-actions .remove-bench-item{padding:6px 8px}

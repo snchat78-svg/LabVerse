@@ -175,6 +175,14 @@ type CatalogueItem = {
   };
 };
 
+type BenchEntry = { instanceId: string; item: CatalogueItem };
+
+let benchInstanceCounter = 0;
+function createBenchEntry(item: CatalogueItem): BenchEntry {
+  benchInstanceCounter += 1;
+  return {instanceId: `${item.id}::${benchInstanceCounter}`, item};
+}
+
 function statusLabel(item: CatalogueItem): string {
   const combined = `${item.status} ${item.evidence ?? ""}`.toLowerCase();
   if (combined.includes("not_supplied_with_kit")) {
@@ -211,7 +219,7 @@ export default function App() {
   const [taskSearch, setTaskSearch] = useState("");
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
-  const [benchItems, setBenchItems] = useState<CatalogueItem[]>([]);
+  const [benchItems, setBenchItems] = useState<BenchEntry[]>([]);
   const [benchDropActive, setBenchDropActive] = useState(false);
 
   useEffect(() => {
@@ -407,12 +415,24 @@ export default function App() {
   };
 
   const addBenchItem = (item: CatalogueItem) => {
-    setBenchItems((current) => current.some((existing) => existing.id === item.id) ? current : [...current, item]);
+    const entry = createBenchEntry(item);
+    setBenchItems((current) =>
+      current.some((existing) => existing.item.id === item.id) ? current : [...current, entry]
+    );
+  };
+  const addAnotherBenchInstance = (item: CatalogueItem) => {
+    const entry = createBenchEntry(item);
+    setBenchItems((current) => [...current, entry]);
   };
   const addSelectedTaskItems = () => {
+    const candidateEntries = selectedTaskItems.map(createBenchEntry);
     setBenchItems((current) => {
-      const existing = new Set(current.map((item) => item.id));
-      const additions = selectedTaskItems.filter((item) => !existing.has(item.id));
+      const existing = new Set(current.map((entry) => entry.item.id));
+      const additions = candidateEntries.filter((entry) => {
+        if (existing.has(entry.item.id)) return false;
+        existing.add(entry.item.id);
+        return true;
+      });
       return [...current, ...additions];
     });
   };
@@ -795,12 +815,23 @@ export default function App() {
                 ) : (
                   <>
                     <div className="bench-list">
-                      {benchItems.map((item) => (
-                        <div className="bench-item" key={item.id}>
-                          <div className="bench-item-copy"><strong>{item.name}</strong><small>{item.id} · CANDIDATE PLACEHOLDER</small></div>
-                          <button type="button" className="remove-bench-item" aria-label={`Remove ${item.name} from workbench`} onClick={() => setBenchItems((current) => current.filter((entry) => entry.id !== item.id))}>Remove</button>
-                        </div>
-                      ))}
+                      {benchItems.map((entry,index) => {
+                        const {item,instanceId} = entry;
+                        const instanceNumber = benchItems.slice(0,index+1).filter(candidate => candidate.item.id === item.id).length;
+                        const totalInstances = benchItems.filter(candidate => candidate.item.id === item.id).length;
+                        return (
+                          <div className="bench-item" key={instanceId} data-instance-id={instanceId} data-source-id={item.id}>
+                            <div className="bench-item-copy">
+                              <strong>{item.name}</strong>
+                              <small>{item.id} · Instance {instanceNumber} of {totalInstances} · CANDIDATE PLACEHOLDER</small>
+                            </div>
+                            <div className="bench-item-actions">
+                              <button type="button" className="add-bench-instance" aria-label={`Add another instance of ${item.name}`} onClick={() => addAnotherBenchInstance(item)}>Add copy</button>
+                              <button type="button" className="remove-bench-item" aria-label={`Remove ${item.name} instance ${instanceNumber} from workbench`} onClick={() => setBenchItems(current => current.filter(candidate => candidate.instanceId !== instanceId))}>Remove</button>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                     <button type="button" className="clear-bench" onClick={() => setBenchItems([])}>Clear workbench</button>
                   </>
