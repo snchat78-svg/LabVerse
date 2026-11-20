@@ -52,3 +52,11 @@ Alongside the original six fields (question, hypothesis, alternative, independen
 ## Phase boundary
 
 Phase 4 remains IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models remain BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+
+
+## Additional work-unit — live protocol-readiness checklist — 2026-11-20
+
+- Added a live list that marks planning fields as “Text present” or “Not entered”, shows optional repeats and displays the safety-review tracking label.
+- The checklist makes no quality score or approval claim. Its own note says source quality, equipment compatibility, units, sample design, analysis suitability and risk assessment are not checked.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 — TypeScript, Chromium, build, preview and **35/35 Playwright browser groups PASS**.
+- Tested code head: `fab766bcebd9a3139367d1bc8f949675a07b2fe5`.
