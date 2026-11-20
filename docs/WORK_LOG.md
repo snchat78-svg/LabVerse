@@ -1044,3 +1044,16 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Verification:** GitHub Actions pending. Required checks: strict TypeScript, production build and Playwright smoke.
 - **Report:** `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`.
 - **Phase status:** Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+
+
+## 2026-11-20 — Phase 4 Research Studio protocol-planning metadata — verified
+
+- **Scope:** extend the research question/hypothesis draft into structured, non-executable protocol planning.
+- **Changed:** `app/src/App.tsx` adds schema v2, eleven protocol fields and backward-compatible schema-v1 migration; `app/src/styles.css` adds responsive planning controls; `app/tests/smoke.mjs` tests the full 17-field lifecycle.
+- **Metadata:** objective, source/method provenance, candidate materials/equipment references, sample plan, optional repeats, measurement plan, environment/timing, analysis plan, stopping rule and safety-review tracking/reference.
+- **Validation:** v1 migration preserves the original six fields; v2 validates 17 strings and the safety-status enum; repeats may be blank or integer 1–100; 5,000-character field limit; 1 MiB JSON import limit.
+- **Safety boundary:** these are user-entered planning notes. They do not supply a procedure, approve physical materials, validate statistical power, calculate science or certify safety.
+- **Code commits:** `3772212a33bc0dc38e72a1784890e66d901cee13`; migration test `048b6e8d8d788ee20bcb3f57ecdfca85cbe3eeaf`; Unicode-safe 1 MiB cap `04de2c1e19d5a0c18aee4a21006d70e64a471ec4`; large-file test `24e8b911da77218e8d87e5481c6f32093636359e`; repeat regex fix `793271ec7ae2074aacf427292513c7a1504d5bd9`.
+- **CI:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44674346187. TypeScript typecheck PASS; Chromium setup PASS; Vite production build PASS; preview PASS; Playwright browser smoke **33/33 groups PASS**.
+- **Report:** `docs/PHASE_4_RESEARCH_STUDIO_PROTOCOL_PLANNING_2026_11_20.md`.
+- **Phase status:** Phase 4 remains IN PROGRESS; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
