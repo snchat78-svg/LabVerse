@@ -1,9 +1,9 @@
-## Current bounded implementation — Static Dashboard ↔ React parity — 2026-11-20 (CI pending)
+## Current bounded implementation — Static Dashboard ↔ React parity — 2026-11-20 (verified)
 
 - Added an automated dual-preview Chromium test and parity matrix comparing shared inventory, subject/task totals, class filtering, source mapping, reagent warnings, analysis boundary, Research Studio scope and mobile width.
 - The same inventory JSON is read by static dashboard at runtime and imported by the React app build.
-- A known difference remains open: static workbench supports multiple instances of one source item; React currently suppresses duplicate source IDs. This may matter for apparatus quantity/instance modelling.
-- CI pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027. Do not mark parity accepted until the combined run succeeds.
+- A known difference remains open: static workbench supports multiple instances of one source item; React currently suppresses duplicate source IDs. This matters for apparatus quantity/instance modelling and is the next exact implementation task.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043 — TypeScript, production build, static/React previews, React smoke **35/35 groups PASS** and cross-UI parity **11/11 groups PASS**.
 
 ## Current bounded implementation — Research Studio protocol-readiness checklist — 2026-11-20 (verified)
 
@@ -11,7 +11,7 @@
 - The checklist deliberately reports text presence only. It does not score completeness, validate source quality, check equipment compatibility/units/sample design, approve safety or permit a real-world experiment.
 - CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 — TypeScript typecheck, Chromium setup, production build, preview and Playwright browser smoke **35/35 groups PASS**.
 - Latest tested code head: `fab766bcebd9a3139367d1bc8f949675a07b2fe5`.
-- Next Phase 4 task: static dashboard ↔ React workspace parity audit. Phase 4 remains IN PROGRESS until navigation, source details, safety disclosures and responsive behavior meet the parity acceptance contract.
+- Next Phase 4 task: implement an explicit multi-instance/quantity model in the React candidate workbench, with accidental-tap de-duplication and separate instance IDs, then test it before real 3D work. The parity audit passed its current 11-group contract, but the known bench difference keeps Phase 4 IN PROGRESS.
 
 ## Current bounded implementation — Research Studio protocol planning — 2026-11-20 (verified)
 
