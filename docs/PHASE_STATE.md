@@ -1,3 +1,12 @@
+## Latest bounded work-unit — Research Studio live protocol-readiness checklist — 2026-11-20 (verified)
+
+- Added a live entry checklist to Research Studio for objective, method/source provenance, candidate materials/equipment references, sample plan, measurement plan, environmental conditions, analysis plan and stopping rule.
+- It shows only “Text present” / “Not entered”; repeat count appears as optional/invalid/entered and safety review displays the selected workflow status. No completion score or safety/validity approval is calculated.
+- Its boundary text explicitly says that source quality, equipment compatibility, units, sample design, analysis suitability and risk assessment are not verified by this checklist.
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 — TypeScript, Chromium, production build, preview and Playwright **35/35 groups PASS**.
+- Code head: `fab766bcebd9a3139367d1bc8f949675a07b2fe5`; checklist implementation `70f9b9558cfb81c31f191f4def511c4b25ba577f`; test assertion corrections `dad3252bb5dd0501be2fa0165088cf94317441b4` and `fab766bcebd9a3139367d1bc8f949675a07b2fe5`.
+- Phase 4 remains IN PROGRESS; next bounded task is React/static-dashboard parity audit. Phase 1/1.1 remains IN PROGRESS; Phase 2 scientific models BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
 ## Latest bounded work-unit — Research Studio protocol planning metadata — 2026-11-20 (verified)
 
 - Implemented Research Studio draft schema version 2 with 11 new planning fields alongside the original six question/hypothesis fields: objective, method/source provenance, candidate materials/equipment references, sample plan, planned repeats, measurement plan, environmental conditions, analysis plan, stopping rule and safety-review tracking/reference.
@@ -71,7 +80,7 @@ This is the single source of truth for the current phase. Update it in the same 
 - Phase 1: IN PROGRESS — source/catalogue audit, full task-to-item traceability, rights, safety and subject-expert review remain open.
 - Phase 2: PARTIAL — dashboard-facing source/read-model contract created; scientific domain models and validated rules remain BLOCKED by Phase 1.
 - Phase 3: PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 foundation; strict typecheck, production build and 22/22 Chromium smoke groups PASS on commit `111cf04c087000f43983ef6058e0d7ff31d8aef3`. Broader architecture hardening remains.
-- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel and schema-v2 Research Studio protocol planning metadata (33/33 browser groups PASS); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
+- Phase 4: IN PROGRESS — React includes Learning Lab, candidate placeholder workbench, Scientific Analysis NOT_MODELLED panel, schema-v2 Research Studio protocol planning and live non-approval readiness checklist (35/35 browser groups PASS); inventory type/category filters, per-subject task/source coverage, both unmatched-task reasons, practical-to-item navigation and bulk candidate add are implemented. Biology item-level visual audit status and 25/175 coverage are visible. Static-preview parity and real 3D assets remain.
 - Application code: production-oriented React/TypeScript/Vite foundation now exists alongside the preserved static preview; not yet a complete product.
 - 3D workbench/assets: not implemented; bench objects are 2D catalogue placeholders only.
 - Simulation/research engines: not implemented; no scientific outcomes are computed.
