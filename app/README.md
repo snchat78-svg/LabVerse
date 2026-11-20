@@ -30,7 +30,7 @@ GitHub Actions runs install, typecheck and build. No local Python, Node or Andro
 - Searchable apparatus/material inventory sourced from the existing single dashboard inventory JSON.
 - Practical-to-candidate-source-item navigation and candidate placeholder workbench setup.
 - Functional workspace switching across Learning Lab, Virtual Experiment Lab, Scientific Analysis and Research Studio.
-- Research Studio structured local draft autosave, reload restore, explicit clear and validated JSON export/import for question, hypothesis, alternatives, variables and controls.
+- Research Studio structured local draft autosave, reload restore, explicit clear, versioned JSON export/import and non-executable protocol-planning metadata for question, hypothesis, provenance, candidate materials/equipment, sample plan, repeats, measurements, conditions, analysis and safety-review tracking.
 - Scientific Analysis readiness panel that explicitly shows NOT_MODELLED until a validated engine exists.
 - Visible Chemistry reference-only/no-live-use and Biology school-managed/not-supplied-with-kit labels.
 - Task catalogue and selected-item source/evidence/safety information.
@@ -41,7 +41,7 @@ The React app now includes the four workspace destinations, class XI/XII filteri
 
 The Biology with-microscope catalogue now shows its item-level visual audit state. The current GitHub evidence records 25 of 175 physical item detail pages as visually checked against a user-uploaded candidate PDF; the other 150 remain OCR/index-only. This is not official NCERT byte authentication, procurement confirmation or scientific approval.
 
-Research Studio drafts persist in browser local storage and can be exported/imported as validated version-1 JSON backup files; files remain user-controlled and are not uploaded or cloud-synced. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
+Research Studio drafts persist in browser local storage and can be exported/imported as validated version-2 JSON backup files. Schema-version-1 drafts are migrated without losing the original six fields. Protocol metadata records user planning notes only; safety status is not an approval, methods are not executed and files are not uploaded or cloud-synced. The Virtual Experiment Lab is still a placeholder workbench, not a real 3D environment. Scientific Analysis displays NOT_MODELLED where no validated solver exists. The static dashboard is preserved for parity review.
 
 Still not implemented: original/licensed 3D assets and manipulation, deterministic experiment runtime, validated Chemistry/Physics/Biology solvers, reproducible notebook and data pipeline, offline content-pack persistence, full expert/safety/source-rights sign-off, and Android packaging.
 
@@ -72,3 +72,8 @@ Research Studio drafts autosave in browser local storage using schema version 1,
 ## Research Studio JSON portability
 
 Validated JSON export/import is implemented and CI-accepted. Export includes a schema-version-1 envelope and all six fields. Import validates timestamp, schema version, required field types, the 5,000-character field limit and 32 KiB file ceiling. Unsupported, malformed and oversized input is rejected without replacing the current draft. Playwright verifies the downloaded file and clear/import round-trip. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44245446653 (31/31 browser groups PASS). This is manual file portability, not automated cross-device sync.
+
+
+## Research Studio protocol-planning metadata — schema v2
+
+The current implementation adds 11 structured metadata fields to the original six research-question fields. Older schema-v1 drafts migrate with their six existing fields preserved. Planned repeats are optional and, when supplied, must be an integer from 1 to 100. Each text field is limited to 5,000 characters; JSON imports are limited to 1 MiB. The safety-review state is a user-recorded tracking label only, not a safety approval. The latest code's CI validation is pending.
