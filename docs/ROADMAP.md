@@ -1,3 +1,11 @@
+## Current bounded implementation — Research Studio protocol planning — 2026-11-20 (CI pending)
+
+- Added schema-version-2 Research Studio protocol metadata: objective, method/source provenance, candidate materials/equipment references, sample plan, optional planned repeats, measurement plan/units/instrument range, environment/timing, analysis plan, stopping rule and safety-review status/reference.
+- Backward-compatible schema-v1 migration retains the six existing research fields and starts all new planning fields blank.
+- Repeat count, when provided, is constrained to an integer 1–100; text fields are capped at 5,000 characters and JSON import files at 1 MiB.
+- Browser tests added for all-17-field round-trip, schema-v1 migration and repeat-count validation. CI pending the latest commit.
+- Safety status is a tracking note only, never a safety approval; this metadata does not provide executable procedures, scientific calculations or 3D simulation.
+
 ## Current bounded implementation — 2026-11-18
 
 - Phase 4 Research Studio now includes versioned JSON export/import for the six-field research draft.
