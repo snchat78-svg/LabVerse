@@ -86,4 +86,9 @@ A live checklist marks whether planning notes are present for objective, method/
 
 ## Static dashboard ↔ React parity audit
 
-A Chromium parity suite now starts both previews and compares shared inventory data, subject and task totals, class filters, source navigation, chemical safety disclosures, placeholder workbench behavior, Research Studio boundaries and mobile width. The matrix and report are maintained in `data/catalogues/phase4_static_react_parity_2026_11_20.csv` and `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`. One known difference is intentionally recorded: static permits multiple instances of one source item; React currently suppresses duplicate source IDs.
+A Chromium parity suite now starts both previews and compares shared inventory data, subject and task totals, class filters, source navigation, chemical safety disclosures, placeholder workbench behavior, Research Studio boundaries and mobile width. The matrix and report are maintained in `data/catalogues/phase4_static_react_parity_2026_11_20.csv` and `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`. CI accepted 11/11 cross-UI groups: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043. One known difference is intentionally recorded: static permits multiple instances of one source item; React currently suppresses duplicate source IDs.
+
+
+## Parity acceptance and remaining work
+
+The combined CI run passed strict TypeScript, production build, the React smoke suite (35/35 groups) and the static-dashboard ↔ React parity suite (11/11 groups). The known repeated-item difference remains open. Next implement intentional multiple instances/quantity using stable instance IDs while keeping accidental duplicate Add taps idempotent. Phase 4 remains IN PROGRESS.
