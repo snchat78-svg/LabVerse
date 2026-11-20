@@ -56,3 +56,8 @@ Shared catalogue and task counts; three subject summaries; four workspace destin
 **Next exact action:** perform the Phase 4 exit-gate review against every recorded UI, data, source-detail, safety-disclosure, keyboard and touch acceptance criterion. Do not advance to real 3D or scientific engines while Phase 1/1.1 source/safety evidence is still open and Phase 2 is blocked.
 
 Phase gates remain: Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 4 IN PROGRESS; Phase 5 real 3D NOT STARTED; Phase 6 experiment runtime NOT STARTED.
+
+
+## Exit-review follow-up — 2026-11-20
+
+After this bounded parity work-unit was accepted, the exit review added practical-to-workbench direct navigation and source-backed practical-group filters. Latest CI: React smoke 36/36, static↔React parity 13/13, static desktop/mobile smoke 9/9 and dashboard integrity PASS. See `docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_20.md`. Phase 4 remains IN PROGRESS because mobile tray/analysis collapsible bottom-sheet behavior is still open.
