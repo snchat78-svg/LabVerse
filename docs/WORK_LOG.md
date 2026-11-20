@@ -1,3 +1,14 @@
+
+
+## 2026-11-20 — Phase 4 static dashboard ↔ React parity audit — implementation; CI pending
+
+- **Scope:** compare the preserved static prototype and React application in one automated Chromium run.
+- **Changed:** added `app/tests/parity.mjs`, `npm run test:parity`, and a GitHub Actions step to serve the static dashboard beside the React production preview.
+- **Matrix/report:** `data/catalogues/phase4_static_react_parity_2026_11_20.csv`; `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`.
+- **Expected coverage:** shared inventory payload, overview counts, workspace entry points, Physics class filter, Vernier source record and task navigation, Chemistry no-live-use and Biology not-supplied disclosures, workbench and analysis boundaries, Research Studio capability difference and 390px responsiveness.
+- **Known gap recorded:** static allows multiple repeated instances of an item; React suppresses duplicate IDs. Do not describe this as full behavioral parity.
+- **Verification:** CI pending at https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027; acceptance requires existing React smoke plus the new parity browser suite.
+
 # LabVerse Work Log
 
 Append-only execution history. Each entry records what was actually changed, what was checked, what remains open and where the work is committed. The master phase order is docs/ROADMAP.md; the current gate is docs/PHASE_STATE.md; the execution contract is docs/PHASE_WORKFLOW.md.
