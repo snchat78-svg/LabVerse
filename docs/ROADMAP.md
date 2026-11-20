@@ -1,3 +1,11 @@
+## Current bounded implementation — Research Studio protocol-readiness checklist — 2026-11-20 (verified)
+
+- Added a live checklist beside the schema-v2 protocol metadata. It identifies which planning fields contain text and which remain blank, shows the optional repeat-plan state and reflects the safety-review tracking label.
+- The checklist deliberately reports text presence only. It does not score completeness, validate source quality, check equipment compatibility/units/sample design, approve safety or permit a real-world experiment.
+- CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44675277209 — TypeScript typecheck, Chromium setup, production build, preview and Playwright browser smoke **35/35 groups PASS**.
+- Latest tested code head: `fab766bcebd9a3139367d1bc8f949675a07b2fe5`.
+- Next Phase 4 task: static dashboard ↔ React workspace parity audit. Phase 4 remains IN PROGRESS until navigation, source details, safety disclosures and responsive behavior meet the parity acceptance contract.
+
 ## Current bounded implementation — Research Studio protocol planning — 2026-11-20 (verified)
 
 - Added schema-version-2 Research Studio protocol metadata: objective, method/source provenance, candidate materials/equipment references, sample plan, optional planned repeats, measurement plan/units/instrument range, environment/timing, analysis plan, stopping rule and safety-review status/reference.
