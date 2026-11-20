@@ -638,3 +638,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - React app CI PENDING: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626741. Static dashboard browser smoke PENDING: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
 - Phase 4 remains IN PROGRESS until browser acceptance completes. Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
 - **Next action after acceptance:** perform a Phase 4 exit-gate review against all current UI, source-detail, safety-disclosure, keyboard and touch criteria. Do not start scientific engines while Phase 1/1.1 and Phase 2 gates remain open.
+
+
+## Phase 4 follow-up — static/React keyboard, touch and apparatus parity — VERIFIED 2026-11-20
+
+- Implementation commits: `f69b5c0f74c05959154ad18178bebe5f3707bcff`; category-filter correction: `5ebb0e48dcff7cca7ad9d7ace205720126d5fbb1`.
+- The static dashboard now supports a separate keyboard-accessible Inspect action, visible focus, focus restoration and focus transfer to the newly added candidate's named Remove control. Source and instance IDs remain distinct; individual removal is tested.
+- A first test uncovered that 60 Physics category chips made item inspection impractical by keyboard. Replaced them with one labelled category dropdown and added filter verification.
+- React app CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44687059489 — TypeScript/build/preview PASS, React smoke **36/36 groups PASS**, static ↔ React parity **13/13 groups PASS**.
+- Dashboard integrity SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44687059565. Static desktop/mobile smoke SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
+- Report: `docs/PHASE_4_STATIC_REACT_PARITY_HARDENING_2026_11_20.md`.
+- **Next action:** Phase 4 exit-gate review of the full acceptance register, known UI differences and documented boundaries. Phase 4 remains IN PROGRESS until that review finishes; Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.

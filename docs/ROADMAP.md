@@ -844,3 +844,14 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Dashboard integrity checks PASS; browser checks are pending: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626741 and https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
 - Research Studio remains more complete in React than in the static starter dashboard; the static view is still an explicit roadmap placeholder. No 3D, validated experiment runtime or science engine is claimed.
 - Phase 4 remains IN PROGRESS pending full acceptance; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
+
+
+## Phase 4 — static dashboard ↔ React parity hardening — verified 2026-11-20
+
+- Follow-up implementation commits: `f69b5c0f74c05959154ad18178bebe5f3707bcff` and `5ebb0e48dcff7cca7ad9d7ace205720126d5fbb1`.
+- Static inventory now has a dedicated keyboard-accessible Inspect button, visible focus, restored focus after inventory rerender and focus transfer to the added instance's named Remove button. Workbench rows preserve source identity and distinct instance identity; removal is individually scoped.
+- Replaced 60 Physics category chips with one accessible dropdown. The first parity run exposed this as a real keyboard usability gap; the corrected browser test reaches the inventory item in a bounded Tab sequence and verifies category filtering.
+- Final paired React CI SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44687059489 — strict TypeScript, production build and preview PASS; React smoke **36/36**; static ↔ React parity **13/13**. Dashboard integrity SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44687059565. Static desktop/mobile browser smoke SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
+- Parity coverage includes source/task counts, three subjects, four destinations, filters, evidence/safety detail, candidate workbench repeated instances and per-instance removal, keyboard-only operation and 390px touch operation without drag. The static Research Studio is still a documented roadmap placeholder; React has the structured local Research Studio.
+- These checks do not certify physical Android devices, full WCAG conformance, real 3D, actual experiment runtime or scientific validity.
+- **Next:** Phase 4 exit-gate review of all accepted criteria and known differences. Phase 4 remains IN PROGRESS until that review completes. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.

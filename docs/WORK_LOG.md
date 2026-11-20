@@ -1103,3 +1103,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Commit:** `f69b5c0f74c05959154ad18178bebe5f3707bcff`.
 - **CI status at log time:** Dashboard JavaScript/catalogue integrity PASS (run 44686626801); React app checks and dashboard browser smoke still PENDING (runs 44686626741 and 44686626731).
 - **Boundary:** this does not complete Phase 4 or implement real 3D, experiment execution, a scientific solver or physical-device certification. Phase 1/1.1 remains open; Phase 2 remains blocked; Phase 5/6 remain not started.
+
+
+## 2026-11-20 — Phase 4 static/React keyboard, touch and apparatus parity — VERIFIED
+
+- **Implementation:** static dashboard has a labelled keyboard-accessible Inspect action, focus retention across inventory rerender, and focus transfer to the new candidate's named Remove button. Candidate instances expose original source IDs and unique instance IDs; each can be removed independently.
+- **Accessibility correction:** the first parity workflow found a practical blocker: Physics had 60 category buttons in the tab order. Replaced the category chip row with a single labelled dropdown matching the React filter pattern, then updated the test to verify the category selection.
+- **Commits:** `f69b5c0f74c05959154ad18178bebe5f3707bcff`; dropdown correction `5ebb0e48dcff7cca7ad9d7ace205720126d5fbb1`.
+- **Final CI:** React app checks SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44687059489. Strict TypeScript, Chromium setup, build and previews PASS; React browser smoke **36/36 groups PASS**; static ↔ React parity **13/13 groups PASS**.
+- **Dashboard integrity:** SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44687059565. Static desktop/mobile smoke: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
+- **Acceptance coverage:** shared inventory/catalogue/task summaries, all four workspace destinations, source details and safety disclosures, multiple apparatus instances, provenance and instance IDs, individual removal, keyboard-only operation in both dashboards, 390px touch-emulation without drag, and preserved NOT_MODELLED/no-results disclosures.
+- **Known implementation difference:** static Research Studio remains a roadmap placeholder; React Research Studio contains the structured schema-v2 local draft workflow. This is documented rather than hidden. Tests do not represent physical-device certification, complete accessibility certification, real 3D or a scientific solver.
+- **Next:** Phase 4 exit-gate review. Phase 4 remains IN PROGRESS until that review is recorded; Phase 1/1.1 is still open, Phase 2 is blocked, and Phase 5/6 are not started.

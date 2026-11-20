@@ -1905,3 +1905,16 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Updated CI path filters so edits under `dashboard/index.html` and `dashboard/assets/**` trigger the React parity checks.
 - Verification: dashboard JS syntax/catalogue integrity PASS (run 44686626801). Paired browser workflows pending at the time of this record: React app run 44686626741; dashboard desktop/mobile smoke run 44686626731.
 - Phase gates unchanged: Phase 4 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+
+## Phase 4 verification — static dashboard ↔ React parity hardening — VERIFIED 2026-11-20
+
+- Implementation commits: `f69b5c0f74c05959154ad18178bebe5f3707bcff` and keyboard-filter correction `5ebb0e48dcff7cca7ad9d7ace205720126d5fbb1`.
+- Static inventory now has a dedicated keyboard-operable Inspect control, focus-visible styling, focus restoration after selection and focus transfer to the newly added instance's specifically named Remove control. Candidate rows preserve source ID and expose distinct instance IDs; removal is per instance.
+- Static category chips were replaced with one accessible category dropdown after a browser test revealed that Physics exposed 60 category buttons, making item inspection impractical to reach by keyboard. The parity test now verifies the category dropdown and its filter result.
+- Final React workflow: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44687059489. Strict TypeScript, Chromium setup, production build, preview startup and React browser smoke **36/36 groups PASS**; static ↔ React parity **13/13 groups PASS**.
+- Dashboard integrity workflow: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44687059565.
+- Separate static desktop/mobile smoke: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731. Latest paired parity run additionally covers 390×844 touch flows for both implementations.
+- Paired tests cover shared inventory and task counts, three subjects/four workspaces, source-detail and safety disclosures, multiple apparatus instances, original source and unique instance identity, per-instance removal, keyboard-only Inspect/Add/Remove, 390px touch use without drag, Research Studio's documented React/static difference, and NOT_MODELLED/no-result boundaries.
+- **Next exact action:** conduct a Phase 4 exit-gate review against all recorded acceptance criteria and explicit known differences. Keep Phase 4 IN PROGRESS until the review proves the gate; do not start real 3D or scientific engines while Phase 1/1.1 evidence and Phase 2 model gates remain open.
+- Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 4 IN PROGRESS pending exit-gate review; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
