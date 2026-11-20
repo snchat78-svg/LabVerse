@@ -217,6 +217,7 @@ export default function App() {
   const [itemTypeFilter, setItemTypeFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [taskSearch, setTaskSearch] = useState("");
+  const [taskGroupFilter, setTaskGroupFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
   const [benchItems, setBenchItems] = useState<BenchEntry[]>([]);
@@ -308,17 +309,23 @@ export default function App() {
   ).length;
   const biologyAuditPendingCount = biologyAuditItems.length - biologyAuditCheckedCount;
 
+  const taskGroups = useMemo(() => {
+    if (!activeData) return [];
+    return [...new Set(activeData.tasks.map((task) => task.group).filter((group): group is string => Boolean(group)))].sort();
+  }, [activeData]);
+
   const tasks = useMemo(() => {
     if (!activeData) return [];
     const query = taskSearch.trim().toLowerCase();
     return activeData.tasks.filter((task) => {
       const matchesClass = classFilter === "ALL" || task.class === classFilter;
+      const matchesGroup = taskGroupFilter === "all" || task.group === taskGroupFilter;
       const matchesText =
         !query ||
         [task.id, task.title, task.group ?? ""].join(" ").toLowerCase().includes(query);
-      return matchesClass && matchesText;
+      return matchesClass && matchesGroup && matchesText;
     });
-  }, [activeData, classFilter, taskSearch]);
+  }, [activeData, classFilter, taskGroupFilter, taskSearch]);
 
   const goHome = () => {
     setActiveSubject(null);
@@ -328,6 +335,7 @@ export default function App() {
     setItemTypeFilter("all");
     setCategoryFilter("all");
     setTaskSearch("");
+    setTaskGroupFilter("all");
     setSelectedItem(null);
     setSelectedTaskId(null);
     setBenchItems([]);
@@ -346,6 +354,7 @@ export default function App() {
     setItemTypeFilter("all");
     setCategoryFilter("all");
     setTaskSearch("");
+    setTaskGroupFilter("all");
     setSelectedItem(null);
     setSelectedTaskId(null);
     setBenchItems([]);
@@ -749,13 +758,27 @@ export default function App() {
                 <div><div className="eyebrow">RBSE CLASS 11–12</div><h2>Practical catalogue</h2></div>
                 <strong>{tasks.length} tasks</strong>
               </div>
-              <input
-                className="search"
-                type="search"
-                value={taskSearch}
-                onChange={(event) => setTaskSearch(event.target.value)}
-                placeholder="Search practicals..."
-              />
+              <div className="task-filters">
+                <input
+                  className="search"
+                  type="search"
+                  value={taskSearch}
+                  onChange={(event) => setTaskSearch(event.target.value)}
+                  placeholder="Search practicals..."
+                  aria-label="Search practicals"
+                />
+                <select
+                  className="task-group-filter"
+                  aria-label="Filter practicals by group"
+                  value={taskGroupFilter}
+                  onChange={(event) => setTaskGroupFilter(event.target.value)}
+                >
+                  <option value="all">All practical groups</option>
+                  {taskGroups.map((group) => (
+                    <option key={group} value={group}>{group.replaceAll("_", " ")}</option>
+                  ))}
+                </select>
+              </div>
               <div className="task-list">
                 {tasks.map((task) => {
                   const mappedCount = task.sourceItemIds.length;

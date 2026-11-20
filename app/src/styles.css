@@ -125,3 +125,7 @@
 .add-bench-instance{border:1px solid #d6e4ef;border-radius:7px;background:#f5f9fd;color:#456985;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer;white-space:nowrap}
 .add-bench-instance:hover{background:#edf5fb;border-color:#b8ccdc}
 .bench-item-actions .remove-bench-item{padding:6px 8px}
+
+
+/* Practical catalogue group filter uses the source task-group taxonomy. */
+.task-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.55fr);gap:8px;align-items:center}.task-filters .search{margin:14px 0 8px}.task-group-filter{width:100%;min-width:0;border:1px solid #e3e9ef;border-radius:8px;background:#fbfcfe;color:#465b74;padding:10px 11px;font-size:10px}.task-group-filter:focus-visible{outline:3px solid #2878c7;outline-offset:2px}@media(max-width:760px){.task-filters{grid-template-columns:1fr}}

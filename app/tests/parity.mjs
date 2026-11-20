@@ -63,9 +63,15 @@ async function main() {
     await legacy.locator("#class-select").selectOption("XI");
     assert.equal(await react.locator(".task-list .task").count(), 41);
     assert.equal(await legacy.locator("#task-count").innerText(), "41 tasks");
+    await react.getByRole("combobox",{name:"Filter practicals by group"}).selectOption("ACTIVITY");
+    await legacy.locator("#task-group-filter").selectOption("ACTIVITY");
+    assert.equal(await react.locator(".task-list .task").count(),13);
+    assert.equal(await legacy.locator("#task-count").innerText(),"13 tasks");
+    await react.getByRole("combobox",{name:"Filter practicals by group"}).selectOption("all");
+    await legacy.locator("#task-group-filter").selectOption("all");
     await react.locator(".class-select select").selectOption("ALL");
     await legacy.locator("#class-select").selectOption("ALL");
-    results.push("Physics Class XI filter parity (41 task records)");
+    results.push("Physics Class XI and practical-group filter parity (41 XI tasks / 13 Activity tasks)");
 
     await react.locator(".content-grid .search").first().fill("Vernier caliper");
     await react.locator(".inventory-filters select").nth(0).selectOption("apparatus");

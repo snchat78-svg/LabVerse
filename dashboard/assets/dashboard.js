@@ -2,7 +2,7 @@
   "use strict";
   const $ = (selector, root=document) => root.querySelector(selector);
   const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
-  const state = { data:null, subject:null, view:"overview", mode:"learning", category:"all", type:"all", query:"", taskQuery:"", bench:[], selected:null, classFilter:"ALL" };
+  const state = { data:null, subject:null, view:"overview", mode:"learning", category:"all", type:"all", query:"", taskQuery:"", taskGroupFilter:"all", bench:[], selected:null, classFilter:"ALL" };
   const modeCopy = {
     learning:"Browse mapped practicals, equipment and source evidence. Practical pages open as catalogue records in this starter build.",
     virtual:"Arrange catalogue objects in the workbench. This build uses 2D placeholders; real 3D models and experiment actions are the next implementation layer.",
@@ -48,7 +48,7 @@
   }
   function openSubject(subject){
     if(!state.data.subjects[subject])return;
-    state.subject=subject;state.view="subject";state.mode="learning";state.category="all";state.type="all";state.query="";state.taskQuery="";state.bench=[];state.selected=null;
+    state.subject=subject;state.view="subject";state.mode="learning";state.category="all";state.type="all";state.query="";state.taskQuery="";state.taskGroupFilter="all";state.bench=[];state.selected=null;
     $("#overview-view").hidden=true;$("#module-view").hidden=true;$("#subject-view").hidden=false;
     const d=state.data.subjects[subject];
     const taskCount=d.tasks.filter(t=>state.classFilter==="ALL"||t.class===state.classFilter).length;
@@ -168,9 +168,15 @@
     const d=state.data.subjects[state.subject];
     const coverage=state.data.traceabilityCoverage?.[state.subject];
     if(coverage)$("#traceability-note").textContent=coverage.tasksWithSourceItemLinks+"/"+coverage.taskCount+" tasks have candidate source-item links; "+coverage.tasksWithoutSourceItemLinks+" remain without a source-item match.";
+    const groups=[...new Set(d.tasks.map(t=>t.group).filter(Boolean))].sort();
+    $("#task-group-filter").innerHTML='<option value="all">All practical groups</option>'+groups.map(group=>'<option value="'+esc(group)+'">'+esc(pretty(group))+'</option>').join("");
+    $("#task-group-filter").value=state.taskGroupFilter;
     const tasks=d.tasks.filter(t=>{
       const q=state.taskQuery.toLowerCase();
-      return (state.classFilter==="ALL"||t.class===state.classFilter)&&(!q||[t.title,t.id,t.group].join(" ").toLowerCase().includes(q));
+      const matchesClass=state.classFilter==="ALL"||t.class===state.classFilter;
+      const matchesGroup=state.taskGroupFilter==="all"||t.group===state.taskGroupFilter;
+      const matchesText=!q||[t.title,t.id,t.group].join(" ").toLowerCase().includes(q);
+      return matchesClass&&matchesGroup&&matchesText;
     });
     $("#task-count").textContent=tasks.length+" tasks";
     $("#task-list").innerHTML=tasks.map(t=>{
@@ -215,6 +221,7 @@
     $("#inventory-search").addEventListener("input",e=>{state.query=e.target.value;renderInventory();});
     $("#inventory-type").addEventListener("change",e=>{state.type=e.target.value;state.category="all";renderInventory();});
     $("#task-search").addEventListener("input",e=>{state.taskQuery=e.target.value;renderTasks();});
+    $("#task-group-filter").addEventListener("change",e=>{state.taskGroupFilter=e.target.value;renderTasks();});
     $("#class-select").addEventListener("change",e=>{state.classFilter=e.target.value;if(state.subject){renderTasks();} });
     $$(".mode-tab").forEach(b=>b.addEventListener("click",()=>switchMode(b.dataset.mode)));
     $("#reset-bench").addEventListener("click",()=>{state.bench=[];state.selected=null;renderBench();$("#analysis-title").textContent="No experiment running";$("#analysis-copy").textContent="Place an item to inspect its source, attributes and readiness. No scientific result is generated until a validated model is connected.";$("#selected-details").innerHTML='<span class="detail-label">SELECTED ITEM</span><strong>Nothing selected</strong><p>Choose an item from the tray or workbench.</p>';showToast("Workbench reset");});

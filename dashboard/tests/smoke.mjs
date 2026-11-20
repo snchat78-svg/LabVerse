@@ -21,9 +21,14 @@ async function main() {
     assert.equal(await page.locator("#biology-count").innerText(), "175");
     results.push("Dashboard overview and source counts");
 
-    // Physics: search + tap-to-add + bench reset.
+    // Physics: source-backed practical group filter plus inventory interaction.
     await page.locator('.subject-card[data-subject="physics"]').click();
     await page.getByRole("heading", { name: "Physics Lab" }).waitFor();
+    await page.locator("#class-select").selectOption("XI");
+    await page.locator("#task-group-filter").selectOption("EXPERIMENT");
+    assert.equal(await page.locator("#task-count").innerText(), "17 tasks");
+    await page.locator("#task-group-filter").selectOption("all");
+    await page.locator("#class-select").selectOption("ALL");
     await page.locator("#inventory-search").fill("Vernier caliper");
     const vernier = page.locator('[data-item-id="NCERT-PHY-KIT-003"]');
     await vernier.waitFor();

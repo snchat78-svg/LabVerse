@@ -45,7 +45,10 @@ async function main() {
     await page.locator(".class-select select").selectOption("XI");
     assert.match(await page.locator(".practical-panel .panel-head").innerText(), /41 tasks/);
     assert.equal(await page.locator(".task-list article").count(), 41);
-    results.push("Class XI task filter");
+    await page.getByRole("combobox", {name:"Filter practicals by group"}).selectOption("EXPERIMENT");
+    assert.equal(await page.locator(".task-list article").count(), 17);
+    await page.getByRole("combobox", {name:"Filter practicals by group"}).selectOption("all");
+    results.push("Class and practical-group filter");
 
     // Practical -> candidate source item -> placeholder bench.
     const vernierTask = page.locator(".task-list .task").filter({hasText:"RBSE-XI-PHY-EXP-01"});
