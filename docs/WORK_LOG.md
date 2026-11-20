@@ -1,13 +1,13 @@
 
 
-## 2026-11-20 — Phase 4 static dashboard ↔ React parity audit — implementation; CI pending
+## 2026-11-20 — Phase 4 static dashboard ↔ React parity audit — verified
 
 - **Scope:** compare the preserved static prototype and React application in one automated Chromium run.
 - **Changed:** added `app/tests/parity.mjs`, `npm run test:parity`, and a GitHub Actions step to serve the static dashboard beside the React production preview.
 - **Matrix/report:** `data/catalogues/phase4_static_react_parity_2026_11_20.csv`; `docs/PHASE_4_STATIC_DASHBOARD_REACT_PARITY_AUDIT_2026_11_20.md`.
 - **Expected coverage:** shared inventory payload, overview counts, workspace entry points, Physics class filter, Vernier source record and task navigation, Chemistry no-live-use and Biology not-supplied disclosures, workbench and analysis boundaries, Research Studio capability difference and 390px responsiveness.
-- **Known gap recorded:** static allows multiple repeated instances of an item; React suppresses duplicate IDs. Do not describe this as full behavioral parity.
-- **Verification:** CI pending at https://github.com/snchat78-svg/LabVerse/actions/runs/44676432027; acceptance requires existing React smoke plus the new parity browser suite.
+- **Known gap retained after audit:** static allows multiple repeated instances of an item; React suppresses duplicate IDs. This is a real quantity/instance-model difference; next implement explicit multiple instances while retaining accidental duplicate-tap protection.
+- **Verification:** CI SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043. TypeScript PASS; Chromium PASS; Vite production build PASS; both previews PASS; existing React browser smoke **35/35 PASS**; new cross-UI parity suite **11/11 PASS**.
 
 # LabVerse Work Log
 
