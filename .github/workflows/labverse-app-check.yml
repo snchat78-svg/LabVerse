@@ -5,11 +5,15 @@ on:
     branches: [main]
     paths:
       - "app/**"
+      - "dashboard/index.html"
+      - "dashboard/assets/**"
       - "dashboard/data/inventory.json"
       - ".github/workflows/labverse-app-check.yml"
   pull_request:
     paths:
       - "app/**"
+      - "dashboard/index.html"
+      - "dashboard/assets/**"
       - "dashboard/data/inventory.json"
       - ".github/workflows/labverse-app-check.yml"
   workflow_dispatch:

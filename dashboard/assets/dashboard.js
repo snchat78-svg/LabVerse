@@ -80,17 +80,21 @@
     $("#inventory-list").innerHTML=filtered.length?filtered.map(item=>{
       const extra=item.detail?'<div class="item-detail">'+esc(item.detail)+'</div>':"";
       const quantity=item.quantity?'<span class="mini-badge">Qty: '+esc(item.quantity)+'</span>':"";
-      return '<article class="inventory-item '+(state.selected===item.id?"selected":"")+'" draggable="true" data-item-id="'+esc(item.id)+'"><div><div class="item-name">'+esc(item.name)+'</div><div class="item-category">'+esc(pretty(item.category||item.type))+'</div>'+extra+'<div class="item-meta">'+safetyBadge(item)+quantity+'</div></div><button class="add-item" type="button" data-add="'+esc(item.id)+'" aria-label="Add '+esc(item.name)+' to workbench">+</button></article>';
+      return '<article class="inventory-item '+(state.selected===item.id?"selected":"")+'" draggable="true" data-item-id="'+esc(item.id)+'"><button class="item-inspect" type="button" data-inspect="'+esc(item.id)+'" aria-label="Inspect '+esc(item.name)+'" aria-pressed="'+(state.selected===item.id?'true':'false')+'"><span class="item-name">'+esc(item.name)+'</span><span class="item-category">'+esc(pretty(item.category||item.type))+'</span>'+extra+'<span class="item-meta">'+safetyBadge(item)+quantity+'</span></button><button class="add-item" type="button" data-add="'+esc(item.id)+'" aria-label="Add '+esc(item.name)+' to workbench">+</button></article>';
     }).join(""):'<div class="empty-bench"><strong>No matching records</strong><p>Change the search text or category filter.</p></div>';
     $$(".filter-chip").forEach(b=>b.addEventListener("click",()=>{state.category=b.dataset.category;renderInventory();}));
+    $$(".item-inspect").forEach(b=>b.addEventListener("click",()=>inspectItem(b.dataset.inspect)));
     $$(".add-item").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();addToBench(b.dataset.add);}));
     $$(".inventory-item").forEach(card=>{
-      card.addEventListener("click",e=>{if(e.target.closest("button"))return;inspectItem(card.dataset.itemId);});
       card.addEventListener("dragstart",e=>{e.dataTransfer.setData("text/plain",card.dataset.itemId);e.dataTransfer.effectAllowed="copy";});
     });
   }
   function inspectItem(id){
     const item=allItems(state.subject).find(x=>x.id===id);if(!item)return;
+    const active=document.activeElement;
+    const restoreFocus=active instanceof HTMLElement && active.dataset.inspect===id
+      ? "inspect"
+      : active instanceof HTMLElement && active.dataset.add===id ? "add" : null;
     state.selected=id;
     const blocked=item.type==="reagent"||/NO_LIVE_USE|NOT_SUPPLIED_WITH_KIT|SAFETY_REVIEW_REQUIRED/i.test(item.status||"");
     $("#analysis-title").textContent=item.name;$("#analysis-copy").textContent=blocked?"This entry is a source-listed reference only. The source does not establish concentration, quantity, supply status or permission for physical handling.":"This catalogue record can be inspected. A validated scientific model or executable measurement rule is not yet attached.";
@@ -103,11 +107,17 @@
     if(item.safety)rows.push(["Safety note",item.safety]);
     $("#selected-details").innerHTML='<span class="detail-label">SELECTED ITEM</span><strong>'+esc(item.name)+'</strong>'+rows.map(([k,v])=>'<div class="detail-row"><span>'+esc(k)+'</span><span>'+esc(v)+'</span></div>').join("");
     state.selected=id;renderInventory();
+    if(restoreFocus){
+      const target=restoreFocus==="inspect"?"data-inspect":"data-add";
+      document.querySelector("["+target+"=\""+CSS.escape(id)+"\"]")?.focus();
+    }
   }
   function addToBench(id){
     const item=allItems(state.subject).find(x=>x.id===id);if(!item)return;
-    state.bench.push({...item,instanceId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7)});
+    const entry={...item,instanceId:Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7)};
+    state.bench.push(entry);
     state.selected=id;renderBench();inspectItem(id);
+    document.querySelector('[data-remove="'+CSS.escape(entry.instanceId)+'"]')?.focus();
     showToast(item.type==="reagent"?"Added as a virtual reference placeholder":"Added to the workbench");
   }
   function addLinkedItemsToBench(ids){
@@ -128,7 +138,10 @@
   }
   function renderBench(){
     const bench=$("#bench-items"),empty=$("#empty-bench");
-    bench.innerHTML=state.bench.map((item,index)=>'<article class="bench-object"><button class="remove-object" type="button" data-remove="'+esc(item.instanceId)+'" aria-label="Remove item">×</button><span class="object-symbol">'+(item.type==="reagent"?"◌":item.type==="specimen"?"⌬":item.type==="slide"?"▤":"◇")+'</span><strong>'+esc(item.name)+'</strong><small>'+esc(pretty(item.category||item.type))+' · '+(item.type==="reagent"?"REFERENCE ONLY":"PLACEHOLDER")+'</small></article>').join("");
+    bench.innerHTML=state.bench.map((item,index)=>{
+      const instanceNumber=state.bench.slice(0,index+1).filter(candidate=>candidate.id===item.id).length;
+      return '<article class="bench-object" data-source-id="'+esc(item.id)+'" data-instance-id="'+esc(item.instanceId)+'"><button class="remove-object" type="button" data-remove="'+esc(item.instanceId)+'" aria-label="Remove '+esc(item.name)+' instance '+instanceNumber+' from workbench">×</button><span class="object-symbol">'+(item.type==="reagent"?"◌":item.type==="specimen"?"⌬":item.type==="slide"?"▤":"◇")+'</span><strong>'+esc(item.name)+'</strong><small>'+esc(pretty(item.category||item.type))+' · '+(item.type==="reagent"?"REFERENCE ONLY":"PLACEHOLDER")+'</small></article>';
+    }).join("");
     const has=state.bench.length>0;bench.style.display=has?"flex":"none";empty.style.display=has?"none":"block";
     $("#bench-count").textContent=state.bench.length+" objects placed";
     $$("[data-remove]").forEach(b=>b.addEventListener("click",()=>{state.bench=state.bench.filter(x=>x.instanceId!==b.dataset.remove);renderBench();}));
