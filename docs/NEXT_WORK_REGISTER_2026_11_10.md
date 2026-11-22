@@ -1,7 +1,7 @@
 ## Current hand-off — 2026-11-22 (after Phase 4 exit-gate review)
 
 - Phase 4 is DONE for its bounded Dashboard and Workspace Navigation scope. Final review: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
-- Final React CI on 5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760 — TypeScript/build PASS, React browser smoke 37/37, static↔React parity 13/13.
+- Final React CI on d5b95afaa22f8d8bc8a40ad03511232cbb97c02c: https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164 — TypeScript/build PASS, React browser smoke 37/37, static↔React parity 13/13; mobile fixed-bottom dock and Add-to-workbench return behavior included.
 - Static dashboard code remained unchanged: smoke 9/9 PASS https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665; integrity PASS https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820.
 - Next active task (Phase 1.1): Biology-with-microscope Kit Box, PDF page 9 (printed page 4). Recover existing uploaded bytes internally or use an accessible official NCERT path; verify size/SHA-256, then visually inspect and update only evidence actually shown. No repeat upload request.
 - Current source blocker: official attachment URL is known but the 59,585,913-byte PDF could not be retrieved; two historical 199-page/59,620,970-byte upload records have distinct SHA-256 hashes and must remain separate. See docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md.

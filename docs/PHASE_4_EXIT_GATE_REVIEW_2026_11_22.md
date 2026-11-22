@@ -24,24 +24,24 @@ This does NOT mean LabVerse is a completed virtual laboratory, production releas
 | Desktop drag, touch Add and repeated instances | PASS | Source ID and instance ID kept distinct; accidental duplicate Add avoided |
 | Keyboard Inspect/Add/copy/Remove | PASS | Tab/Enter operation, visible focus and individually labelled removal tested |
 | Narrow mobile layout and touch without drag | PASS WITH SCOPE | 390×844 touch-enabled browser emulation; no horizontal overflow; not physical-device certification |
-| Mobile inventory and analysis bottom sheets | PASS | Workbench appears first; two sheets collapse/expand one at a time; item selection reveals details |
+| Mobile inventory and analysis bottom sheets | PASS (React app) | Fixed viewport-bottom dock; workbench remains primary; sheets collapse/expand one at a time; selecting an item reveals details; adding it closes the dock and returns to the workbench. Static dashboard retains its separate responsive layout and is not claimed to have identical bottom-sheet visuals |
 | Scientific Analysis boundary | PASS | Missing validated domain solver is explicitly NOT_MODELLED; no calculated/predicted result is fabricated |
 | Research Studio | PASS WITH SCOPE | React schema-v2 local draft, JSON import/export and planning checklist are tested; not cloud sync |
-| Static ↔ React parity | PASS WITH DOCUMENTED DIFFERENCE | 13 parity groups pass; static Research Studio intentionally remains a generic roadmap placeholder while React has structured local planning |
+| Static ↔ React parity | PASS WITH DOCUMENTED DIFFERENCES | 13 parity groups pass; static Research Studio intentionally remains a generic roadmap placeholder; static dashboard does not duplicate the React fixed-bottom mobile sheet visual treatment |
 
 ## CI and reproducible evidence
 
 ### Current React code
 
-- Final code commit: 5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d.
-- GitHub Actions: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760.
+- Final code commit: `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c` (includes fixed-bottom dock hardening `1a8cf456f277603640dda183012ee58ab8c91650`).
+- GitHub Actions: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164.
 - Strict TypeScript typecheck: PASS.
 - Chromium installation: PASS.
 - Production build and preview startup: PASS.
 - Static preview startup for paired tests: PASS.
 - React browser smoke: 37/37 groups PASS.
 - Static ↔ React parity browser suite: 13/13 groups PASS.
-- New mobile regression covers workbench-before-sheets order, open/close, one-sheet-at-a-time behavior and automatically revealed item analysis after selection.
+- New mobile regression covers fixed viewport-bottom positioning, workbench-before-dock order, open/collapse/switch, one-sheet-at-a-time behavior, item selection revealing Analysis/Source Details, Add closing the dock and returning to the workbench, and subsequent touch Add-copy/remove.
 
 ### Static dashboard integrity and browser evidence
 
@@ -74,6 +74,10 @@ This does NOT mean LabVerse is a completed virtual laboratory, production releas
 | 7–9 — domain science engines | NOT STARTED | Require reviewed Phase 2 models and source evidence |
 
 Phase 4 was a user-authorised UI-only track running in parallel with Phase 1. Closing its navigation scope does not waive Phase 1/2 dependencies or make Phase 5 eligible.
+
+### Final mobile dock follow-up
+
+The first fixed-bottom dock implementation let the open sheet overlay workbench instance controls. Commit `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c` closes the dock after “Add selected item”, returning to the workbench. The final regression run above passes the fixed position, sheet toggles, selection, return-to-workbench and Add-copy/remove behavior.
 
 ## Next exact work
 

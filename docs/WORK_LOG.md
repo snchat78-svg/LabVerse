@@ -1158,3 +1158,14 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Full review: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
 - Next exact action: recover a previously supplied or accessible official Biology-with-microscope Kit Box PDF, verify bytes/hash and visually inspect PDF page 9. Do not ask for another upload.
 
+
+## Final mobile dock regression — verified 2026-11-22
+
+- The collapsible tray/analysis panels are anchored as a true viewport-bottom dock on mobile (`position: fixed`, safe-area-aware bottom offset).
+- Opening either panel keeps the workbench primary and the other panel closed. Selecting an inventory item reveals its Analysis/Source Details. Pressing “Add selected item” then closes the dock and returns control to the workbench, so instance controls are not covered by the overlay.
+- Final code commit: `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c` (includes the fixed dock from `1a8cf456f277603640dda183012ee58ab8c91650`).
+- Final CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164 — TypeScript PASS; production build/preview PASS; React browser smoke 37/37 PASS; static ↔ React parity 13/13 PASS. New mobile check verifies fixed dock positioning, open/collapse/switch, selecting item, Add returning to bench, and touch Add-copy/remove.
+- The first fixed-dock run caught a genuine overlay issue where the open panel blocked workbench instance controls. The final behavior closes the dock after an Add action; the rerun above passes.
+- Static dashboard visual layout remains its own implementation; its existing 390px touch path is covered by parity, but the static dashboard does not claim the React fixed-bottom sheet UI.
+- This remains browser-emulated mobile verification, not a physical Android-device test or full WCAG certification.
+

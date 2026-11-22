@@ -5,8 +5,18 @@
 - Phase 2: BLOCKED pending Phase 1 source authenticity, rights, hazard and expert evidence.
 - Phase 3: PARTIAL (React app foundation, typecheck, production build and CI work; broader architecture hardening remains).
 - Phase 5 real 3D, Phase 6 experiment runtime and Phases 7–9 domain science engines: NOT STARTED. Phase 4 closure does not authorise these; do not bypass Phase 1/2.
-- Final React CI on tested code commit 5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d: TypeScript/build PASS; React smoke 37/37; static↔React parity 13/13 — https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760. Static smoke 9/9 and integrity PASS on unchanged static code head — https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665 and https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820.
+- Final React CI on final tested code commit d5b95afaa22f8d8bc8a40ad03511232cbb97c02c: TypeScript/build PASS; React smoke 37/37; static↔React parity 13/13 — https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164. The mobile inventory/analysis sheets are fixed to the viewport bottom; adding a candidate closes the dock and returns to the workbench. Static smoke 9/9 and integrity PASS on unchanged static code head — https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665 and https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820.
 - Next exact action: recover existing source bytes and visually inspect the Kit Box detail at PDF page 9; do not ask the user to upload it again.
+
+## Final mobile dock regression — verified 2026-11-22
+
+- The collapsible tray/analysis panels are anchored as a true viewport-bottom dock on mobile (`position: fixed`, safe-area-aware bottom offset).
+- Opening either panel keeps the workbench primary and the other panel closed. Selecting an inventory item reveals its Analysis/Source Details. Pressing “Add selected item” then closes the dock and returns control to the workbench, so instance controls are not covered by the overlay.
+- Final code commit: `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c` (includes the fixed dock from `1a8cf456f277603640dda183012ee58ab8c91650`).
+- Final CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164 — TypeScript PASS; production build/preview PASS; React browser smoke 37/37 PASS; static ↔ React parity 13/13 PASS. New mobile check verifies fixed dock positioning, open/collapse/switch, selecting item, Add returning to bench, and touch Add-copy/remove.
+- The first fixed-dock run caught a genuine overlay issue where the open panel blocked workbench instance controls. The final behavior closes the dock after an Add action; the rerun above passes.
+- Static dashboard visual layout remains its own implementation; its existing 390px touch path is covered by parity, but the static dashboard does not claim the React fixed-bottom sheet UI.
+- This remains browser-emulated mobile verification, not a physical Android-device test or full WCAG certification.
 
 ## 2026-11-22 — Phase 4 mobile inventory and analysis bottom sheets — VERIFIED
 

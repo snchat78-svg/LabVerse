@@ -469,7 +469,7 @@ The Biology-with-microscope Kit Box detail review is still awaiting page-9 sourc
 
 ## Phase 4 mobile workspace update — 2026-11-22
 
-The React mobile Virtual Experiment Lab now keeps the workbench ahead of two collapsible inventory and item-analysis sheets. The completed browser verification and known boundaries are recorded in [the Phase 4 report](docs/PHASE_4_MOBILE_BOTTOM_SHEETS_2026_11_22.md). Phase 4 remains in progress pending its full exit-gate review.
+The React mobile Virtual Experiment Lab keeps the workbench ahead of a fixed-bottom inventory/analysis dock. The dock opens one sheet at a time; selecting an item reveals its details, and adding it closes the dock so the workbench controls are reachable. Final CI on commit d5b95afaa22f8d8bc8a40ad03511232cbb97c02c passed: 37/37 React browser groups and 13/13 static↔React parity groups (https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164). The separate static dashboard retains a distinct responsive layout.
 
 
 ## Phase 4 exit-gate decision — 2026-11-22
