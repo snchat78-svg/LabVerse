@@ -1,3 +1,12 @@
+## 2026-11-22 — Phase 1.1 Biology Kit Box page-9 source recovery checkpoint
+
+- The official NCERT Specification Documents index exposes separate Grade 11–12 Biology kit variants with and without microscope. The official with-microscope attachment URL is now recorded: https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf.
+- Retrieval is still blocked: the browser reader rejected the 59,585,913-byte PDF as too large, and the container download attempt failed at DNS resolution. No page-9 image or official-hosted PDF hash was acquired.
+- Historical upload provenance has a real conflict: `SSBK_with_Microscope_copy.pdf` is recorded as 59,620,970 bytes / 199 pages / SHA-256 `c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2`; `SSBK_with_Microscope_222.pdf` is recorded with the same size/page count but SHA-256 `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`. Keep these as distinct source copies.
+- Kit Box row 2 (PDF p.9; printed p.4) remains `OCR_TEXT`; its detail page remains `NOT_VISUALLY_CHECKED_THIS_PASS`. Index label/page visual confirmation is not detail-page verification. No measurement, source status, asset or simulation has been promoted.
+- Report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
+- Next action: recover a previously supplied PDF internally or obtain the official file through a usable source, compare byte count/hash, then render and inspect PDF p.9. Do not ask for a repeat upload.
+
 ## Current verified status — 2026-11-20
 
 - Main execution phase: **Phase 1/1.1 IN PROGRESS** (source, rights, procurement, safety and expert evidence); the user-authorized dashboard UI track runs in parallel.

@@ -460,3 +460,8 @@ Keyboard focus indicators and a Tab/Enter-only inventory-to-workbench add/remove
 ## Phase 4 — Research Studio local drafts
 
 Research Studio drafts now autosave to versioned browser local storage, restore after reload and can be explicitly cleared. Schema validation rejects unsupported draft versions. This is local device/browser storage only—not cloud sync. CI: https://github.com/snchat78-svg/LabVerse/actions/runs/43228437757 (28/28 browser groups PASS). Report: docs/PHASE_4_RESEARCH_STUDIO_LOCAL_DRAFT_PERSISTENCE_2026_11_12.md.
+
+
+## Latest Phase 1.1 source checkpoint — 2026-11-22
+
+The Biology-with-microscope Kit Box detail review is still awaiting page-9 source recovery. The official NCERT attachment path and conflicting historical upload hashes are documented in [the source recovery report](docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md). Existing catalogue values remain OCR-derived; no visual verification or asset promotion is claimed.

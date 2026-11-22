@@ -1,3 +1,14 @@
+## Current hand-off — 2026-11-22
+
+- Main active work remains Phase 1/1.1 source audit; the dashboard/UI-only track continues separately under its own exit criteria.
+- Next source task is unchanged: Biology-with-microscope Kit Box, PDF page 9 (printed page 4). Current GitHub catalogue transcription remains OCR-only; detail-page visual status is not checked.
+- Official NCERT attachment URL is known, but PDF retrieval failed because the 59,585,913-byte response exceeds the available web reader limit and the container could not resolve DNS.
+- Preserve two historical 199-page/59,620,970-byte user-upload copies separately: `c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2` and `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`. Their SHA-256 hashes differ; do not treat them as byte-identical.
+- **Next exact action:** recover existing PDF bytes internally or use an accessible official retrieval path; verify byte count/hash; then visually inspect page 9 and update only source-supported details. Do not ask the user to upload it again.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 4 remains IN PROGRESS pending mobile bottom-sheet behavior; real 3D and runtime remain NOT STARTED.
+- Evidence report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
+
+---
 ## Current hand-off — 2026-11-20
 
 - Main active phase remains Phase 1/1.1; dashboard UI work is a separate user-authorized parallel track.

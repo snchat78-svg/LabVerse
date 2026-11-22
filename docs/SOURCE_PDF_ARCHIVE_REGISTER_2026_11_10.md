@@ -117,3 +117,11 @@ Full evidence and exact URLs are in `docs/PHASE_1_1_OFFICIAL_ATTACHMENT_SIZE_REC
 ## CI verification — official attachment size comparison register (2026-11-10)
 
 The official NCERT response-size comparison register passes source/catalogue validation at https://github.com/snchat78-svg/LabVerse/actions/runs/42783648434 (commit `d03da5ce362b30b27bf101d8b859bff9c9c3dfe7`). The same run checks no-payload/no-official-SHA boundaries, size-match-only and size-mismatch states and revalidates the 53/53 MSCL visual audit. Desktop/mobile smoke 9/9 PASS: https://github.com/snchat78-svg/LabVerse/actions/runs/42783648615. These tests validate committed metadata and safeguards, not official binary authentication.
+
+## 2026-11-22 — Biology-with-microscope Kit Box source recovery checkpoint
+
+- Official NCERT index lists separate Grade 11–12 with-microscope and without-microscope Biology kit specifications. The official with-microscope attachment linked from that index is https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf.
+- The PDF retrieval attempt was rejected by the reader at 59,585,913 bytes; a container-side download failed at DNS resolution. No official binary hash or page image was acquired.
+- Two historical user-upload records are retained separately: `SSBK_with_Microscope_copy.pdf` (59,620,970 bytes; SHA-256 `c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2`) and `SSBK_with_Microscope_222.pdf` (59,620,970 bytes; SHA-256 `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`). Same size does not make them byte-identical; hash values differ.
+- The Kit Box detail is PDF page 9 / printed page 4. Its catalogue transcription remains OCR-only and the detail page remains not visually checked. The index-page check establishes the item label/page locator only.
+- See `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`. No repeat upload request is permitted by the existing archive rule.
