@@ -222,6 +222,10 @@ export default function App() {
   const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
   const [benchItems, setBenchItems] = useState<BenchEntry[]>([]);
   const [benchDropActive, setBenchDropActive] = useState(false);
+  const [mobileOpenSheet, setMobileOpenSheet] = useState<"inventory" | "analysis" | null>(null);
+  const toggleMobileSheet = (sheet: "inventory" | "analysis") => {
+    setMobileOpenSheet(current => current === sheet ? null : sheet);
+  };
 
   useEffect(() => {
     if (!researchDraftDirty) return;
@@ -617,7 +621,7 @@ export default function App() {
             )}
           </section>
         ) : activeData ? (
-          <section className="subject-view">
+          <section className={activeWorkspace === "virtual" ? "subject-view virtual-workspace" : "subject-view"}>
             <button className="back-button" onClick={goHome}>← Dashboard</button>
             <div className="eyebrow">{subjectMeta[activeSubject].short}</div>
             <h1>{activeData.name} Lab</h1>
@@ -631,7 +635,7 @@ export default function App() {
                   role="tab"
                   aria-selected={activeWorkspace === workspace}
                   className={activeWorkspace === workspace ? "active" : ""}
-                  onClick={() => setActiveWorkspace(workspace)}
+                  onClick={() => { setActiveWorkspace(workspace); setMobileOpenSheet(null); }}
                 >
                   {workspaceNames[workspace]}
                 </button>
@@ -639,11 +643,21 @@ export default function App() {
             </div>
 
             {activeWorkspace !== "research" && <div className="content-grid">
-              <section className="panel">
-                <div className="panel-head">
+              <section className="panel inventory-sheet" data-mobile-collapsed={mobileOpenSheet !== "inventory"}>
+                <div className="panel-head mobile-sheet-head">
                   <div><div className="eyebrow">SOURCE CATALOGUE</div><h2>Instrument & material inventory</h2></div>
+                  <button
+                    type="button"
+                    className="mobile-sheet-toggle"
+                    aria-expanded={mobileOpenSheet === "inventory"}
+                    aria-controls="inventory-sheet-content"
+                    onClick={() => toggleMobileSheet("inventory")}
+                  >
+                    {mobileOpenSheet === "inventory" ? "Close tray" : "Open inventory tray"}
+                  </button>
                   <strong>{items.length} / {activeData.inventory.length + activeData.reagents.length}</strong>
                 </div>
+                <div id="inventory-sheet-content" className="mobile-sheet-content">
                 {activeSubject === "biology" && (
                   <div className="visual-audit-coverage" role="note">
                     <strong>With-microscope detail pages: {biologyAuditCheckedCount} / {biologyAuditItems.length} visually checked</strong>
@@ -699,10 +713,23 @@ export default function App() {
                   ))}
                   {items.length === 0 && <p className="empty">No items match this search.</p>}
                 </div>
+                </div>
               </section>
 
-              <section className="panel detail-panel">
-                <div className="eyebrow">SOURCE / EVIDENCE</div>
+              <section className="panel detail-panel analysis-sheet" data-mobile-collapsed={mobileOpenSheet !== "analysis"}>
+                <div className="panel-head mobile-sheet-head">
+                  <div><div className="eyebrow">SOURCE / EVIDENCE</div><h2>Selected item analysis</h2></div>
+                  <button
+                    type="button"
+                    className="mobile-sheet-toggle"
+                    aria-expanded={mobileOpenSheet === "analysis"}
+                    aria-controls="analysis-sheet-content"
+                    onClick={() => toggleMobileSheet("analysis")}
+                  >
+                    {mobileOpenSheet === "analysis" ? "Close analysis" : "Open analysis panel"}
+                  </button>
+                </div>
+                <div id="analysis-sheet-content" className="mobile-sheet-content">
                 {selectedItem ? (
                   <>
                     <h2>{selectedItem.name}</h2>
@@ -745,6 +772,7 @@ export default function App() {
                     <p>Source identity, evidence and safety notes appear here.</p>
                   </div>
                 )}
+                </div>
               </section>
             </div>}
 

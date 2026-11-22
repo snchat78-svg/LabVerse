@@ -394,6 +394,22 @@ async function main() {
       await touchPage.locator(".subject-card.violet").click();
       await touchPage.getByRole("heading", {name:"Physics Lab"}).waitFor();
       await touchPage.locator('.workspace-tabs button', {hasText:"Virtual Experiment Lab"}).click();
+      const benchPosition = await touchPage.locator(".bench-panel").boundingBox();
+      const trayPosition = await touchPage.locator(".inventory-sheet").boundingBox();
+      assert.ok(benchPosition && trayPosition && benchPosition.y < trayPosition.y,
+        "mobile workbench must remain before the collapsible bottom sheets");
+      assert.equal(await touchPage.getByRole("button", {name:"Open inventory tray"}).getAttribute("aria-expanded"), "false");
+      await touchPage.getByRole("button", {name:"Open inventory tray"}).tap();
+      assert.equal(await touchPage.getByRole("button", {name:"Close tray"}).getAttribute("aria-expanded"), "true");
+      assert.equal(await touchPage.locator("#inventory-sheet-content").isVisible(), true);
+      await touchPage.getByRole("button", {name:"Open analysis panel"}).tap();
+      assert.equal(await touchPage.getByRole("button", {name:"Open inventory tray"}).getAttribute("aria-expanded"), "false");
+      assert.equal(await touchPage.getByRole("button", {name:"Close analysis"}).getAttribute("aria-expanded"), "true");
+      assert.equal(await touchPage.locator("#analysis-sheet-content").isVisible(), true);
+      await touchPage.getByRole("button", {name:"Open inventory tray"}).tap();
+      assert.equal(await touchPage.getByRole("button", {name:"Open analysis panel"}).getAttribute("aria-expanded"), "false");
+      assert.equal(await touchPage.locator("#inventory-sheet-content").isVisible(), true);
+      results.push("Mobile inventory and analysis bottom sheets expand, collapse and switch without overlapping the workbench");
       await touchPage.locator(".content-grid .search").first().fill("Vernier caliper");
       const touchItem = touchPage.locator(".item").filter({
         has:touchPage.locator("strong", {hasText:/^Vernier caliper$/})

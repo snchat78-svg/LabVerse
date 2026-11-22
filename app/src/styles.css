@@ -129,3 +129,65 @@
 
 /* Practical catalogue group filter uses the source task-group taxonomy. */
 .task-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.55fr);gap:8px;align-items:center}.task-filters .search{margin:14px 0 8px}.task-group-filter{width:100%;min-width:0;border:1px solid #e3e9ef;border-radius:8px;background:#fbfcfe;color:#465b74;padding:10px 11px;font-size:10px}.task-group-filter:focus-visible{outline:3px solid #2878c7;outline-offset:2px}@media(max-width:760px){.task-filters{grid-template-columns:1fr}}
+
+
+/* Mobile workbench bottom sheets: the canvas stays ahead of the collapsible panels. */
+.mobile-sheet-toggle{display:none}
+.mobile-sheet-content{min-width:0}
+@media(max-width:760px){
+  .subject-view.virtual-workspace{display:flex;flex-direction:column}
+  .subject-view.virtual-workspace .content-grid{display:contents}
+  .subject-view.virtual-workspace .bench-panel{order:1;min-height:32vh;margin-top:0}
+  .subject-view.virtual-workspace .inventory-sheet{order:2}
+  .subject-view.virtual-workspace .analysis-sheet{order:3}
+  .panel.inventory-sheet,.panel.analysis-sheet{
+    padding:0;
+    overflow:hidden;
+    border-radius:13px;
+    box-shadow:0 5px 18px #1d34500d;
+  }
+  .mobile-sheet-head{
+    min-height:58px;
+    margin:0;
+    padding:10px 12px;
+    gap:8px;
+  }
+  .mobile-sheet-head>div{min-width:0;flex:1}
+  .mobile-sheet-head .eyebrow{font-size:7px;margin-bottom:4px}
+  .mobile-sheet-head h2{font-size:11px;line-height:1.35}
+  .mobile-sheet-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:36px;
+    padding:8px 10px;
+    border:1px solid #d7e8e4;
+    border-radius:9px;
+    background:#eef8f5;
+    color:#147e70;
+    font-size:9px;
+    font-weight:800;
+    white-space:nowrap;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .mobile-sheet-toggle:focus-visible{
+    outline:3px solid #159b8866;
+    outline-offset:2px;
+  }
+  .mobile-sheet-content{
+    max-height:58vh;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:0 12px 13px;
+  }
+  .inventory-sheet[data-mobile-collapsed="true"] .mobile-sheet-content,
+  .analysis-sheet[data-mobile-collapsed="true"] .mobile-sheet-content{
+    display:none;
+  }
+  .subject-view.virtual-workspace .bench-panel{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+}

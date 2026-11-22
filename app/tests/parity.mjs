@@ -280,6 +280,7 @@ async function main() {
       assert.equal(await touchLegacy.evaluate(()=>navigator.maxTouchPoints>0),true);
       await touchReact.locator(".subject-card.violet").tap();
       await touchReact.locator(".workspace-tabs button",{hasText:"Virtual Experiment Lab"}).tap();
+      await touchReact.getByRole("button",{name:"Open inventory tray"}).tap();
       await touchReact.locator(".content-grid .search").first().fill("Vernier caliper");
       await touchReact.locator(".item").filter({has:touchReact.locator("strong",{hasText:/^Vernier caliper$/})}).tap();
       await touchReact.locator(".detail-panel").getByRole("button",{name:"Add selected item as candidate placeholder"}).tap();
