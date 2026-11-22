@@ -1169,3 +1169,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Static dashboard visual layout remains its own implementation; its existing 390px touch path is covered by parity, but the static dashboard does not claim the React fixed-bottom sheet UI.
 - This remains browser-emulated mobile verification, not a physical Android-device test or full WCAG certification.
 
+
+## 2026-11-22 — Phase 1.1 internal Library recovery attempt — BLOCKED
+
+- Checked current conversation attachments (0) and the accessible Library PDF inventory/search for `SSBK_with_Microscope_copy.pdf` and `SSBK_with_Microscope_222.pdf`; neither exact source file was available to materialize.
+- The official attachment route had already failed in the reader due to the 59,585,913-byte response limit; a direct local download failed DNS. No new source bytes, hash or page image were obtained.
+- Kit Box row 2 (PDF p.9 / printed p.4) remains OCR-only and not visually checked. No catalogue value is promoted; historic upload hashes remain separate. No repeat upload requested.
+- Next exact action: use a newly accessible official or previously recorded source route; hash bytes, then render and audit page 9. Keep this ordered task blocked until source access is real.
+- Report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.

@@ -1,3 +1,12 @@
+## Current hand-off — 2026-11-22 (source recovery still blocked)
+
+- Phase 4 dashboard/workspace navigation: DONE for bounded prototype scope. Final React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164; 37/37 React smoke, 13/13 static↔React parity, TypeScript and production build PASS. Final code: `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c`; docs: `fa0d0da632b84756188de13346d16e98c9e4abf0`.
+- **Next main task (Phase 1.1):** Biology-with-microscope Kit Box, PDF page 9 (printed page 4). Source recovery was re-attempted in the current conversation and Library; 0 conversation attachments and no exact SSBK PDF in the accessible Library listing/search. Official PDF is still blocked by reader size limit/DNS. See `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
+- Do not ask for repeat upload. Try only a newly accessible official/source route, record exact file size and SHA-256, then render/inspect page 9. Until then the catalogue row stays OCR-only and unpromoted; historic upload hashes remain separate.
+- Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 DONE; Phase 5/6 and Phases 7–9 NOT STARTED.
+
+---
+
 ## Current hand-off — 2026-11-22 (after Phase 4 exit-gate review)
 
 - Phase 4 is DONE for its bounded Dashboard and Workspace Navigation scope. Final review: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.

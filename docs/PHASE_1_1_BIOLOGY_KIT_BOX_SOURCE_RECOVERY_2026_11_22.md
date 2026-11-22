@@ -49,3 +49,16 @@ The sizes and page counts are recorded as equal, but the SHA-256 values differ. 
 Recover either previously supplied PDF bytes from the original conversation/file source or obtain an accessible official copy. Record its exact byte count and SHA-256 first. Then render **PDF page 9** (Kit Box, printed page 4), visually compare the drawing, labels, dimensions, construction details and safety notes against catalogue row 2, and update the row only for details actually visible in that source. If the recovered copy differs from either historical hash, preserve it as a third source record and document the relationship rather than silently overwriting prior evidence.
 
 **Phase outcome:** this is a source-recovery checkpoint only. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 4 remains IN PROGRESS; real 3D and experiment runtime remain NOT STARTED.
+
+## 6. Internal Library recovery attempt — 2026-11-22
+
+After the initial official-host retrieval failure, the current conversation attachments and the user's accessible ChatGPT Library were checked for the exact historical Biology-with-microscope PDF copies.
+
+- Current conversation file list returned **0 attachments**.
+- The accessible Library PDF listing completed without a next page and did not contain either `SSBK_with_Microscope_copy.pdf` or `SSBK_with_Microscope_222.pdf`.
+- A Library content search for both filenames and the Kit Box/page-9 specification did not surface either PDF as a retrievable file. The only matching indexed records were project documentation and unrelated assets, not the source PDF bytes.
+- Therefore no existing PDF bytes could be materialized, no new SHA-256 could be computed, and no PDF page 9 could be rendered in this session.
+
+This is a retrieval-availability result, not evidence that the prior source records were deleted or that the two uploaded files are identical. Keep both historical hashes separate. Do not infer page details from the index, OCR text or a secondary copy. No repeat-upload request is made in this checkpoint.
+
+**Next allowed action:** try a newly accessible official NCERT attachment route or a connector/source location already recorded in the project. On recovery, record exact file size and SHA-256 before rendering PDF page 9 and auditing the Kit Box drawing/labels. If the source remains unavailable, keep this row blocked and do not promote the catalogue fields.

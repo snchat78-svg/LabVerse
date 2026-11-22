@@ -1,3 +1,10 @@
+## 2026-11-22 — Phase 1.1 internal Library recovery attempt
+
+- The exact Biology-with-microscope specification PDFs were not found in current conversation attachments (0 files) or the accessible Library PDF listing/search. The official 59.6 MB attachment retrieval had already failed due reader size limit and DNS failure.
+- No PDF bytes/hash/page image were acquired. Kit Box item 2 remains OCR-only; detail page 9 remains NOT_VISUALLY_CHECKED_THIS_PASS. Both historic upload hashes stay separate.
+- No repeat upload request. Continue only when an accessible official/source route yields bytes; hash before visual inspection. Report: docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED.
+
 ## Current phase decision — 2026-11-22
 
 - Phase 4 — Dashboard and workspace navigation: DONE for its bounded prototype scope. The 2026-11-20 exit review's only OPEN criterion (mobile inventory/analysis collapsible sheets) is now implemented. See docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.

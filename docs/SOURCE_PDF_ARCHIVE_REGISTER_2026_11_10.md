@@ -125,3 +125,11 @@ The official NCERT response-size comparison register passes source/catalogue val
 - Two historical user-upload records are retained separately: `SSBK_with_Microscope_copy.pdf` (59,620,970 bytes; SHA-256 `c88112e9013d37028091214dc5473eb81af6bf6cc54e71b266aee779826517d2`) and `SSBK_with_Microscope_222.pdf` (59,620,970 bytes; SHA-256 `9df41c69800ae3e8da8cac3fae265b8a6c4a4035e4deec16325c32b225309dcb`). Same size does not make them byte-identical; hash values differ.
 - The Kit Box detail is PDF page 9 / printed page 4. Its catalogue transcription remains OCR-only and the detail page remains not visually checked. The index-page check establishes the item label/page locator only.
 - See `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`. No repeat upload request is permitted by the existing archive rule.
+
+## 2026-11-22 — Internal source-byte recovery attempt
+
+- After the 59,585,913-byte official PDF retrieval limit and local DNS failure, checked current-conversation file attachments and the accessible Library PDF inventory/search.
+- Current conversation attachment inventory: 0 files. Library PDF listing completed without pagination and contained neither `SSBK_with_Microscope_copy.pdf` nor `SSBK_with_Microscope_222.pdf`. Library search did not return either PDF as a retrievable file.
+- No source PDF bytes were materialized, no new hash computed and no Kit Box detail page rendered.
+- This does not invalidate the two historical upload records or establish byte identity. Keep both hashes separate; leave Kit Box row OCR-only and its detail page not visually checked. Do not ask for a repeat upload.
+- Report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
