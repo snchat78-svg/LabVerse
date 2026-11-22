@@ -415,6 +415,8 @@ async function main() {
         has:touchPage.locator("strong", {hasText:/^Vernier caliper$/})
       });
       await touchItem.click();
+      assert.equal(await touchPage.getByRole("button", {name:"Close analysis"}).getAttribute("aria-expanded"), "true",
+        "selecting an inventory item must reveal its analysis details on mobile");
       const addButton = touchPage.locator(".detail-panel").getByRole("button", {
         name:"Add selected item as candidate placeholder"
       });

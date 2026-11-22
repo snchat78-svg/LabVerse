@@ -698,7 +698,10 @@ export default function App() {
                     <button
                       key={item.id}
                       className={selectedItem?.id === item.id ? "item selected" : "item"}
-                      onClick={() => setSelectedItem(item)}
+                      onClick={() => {
+                        setSelectedItem(item);
+                        setMobileOpenSheet("analysis");
+                      }}
                       draggable={activeWorkspace === "virtual"}
                       onDragStart={(event) => handleInventoryDragStart(event, item.id)}
                       aria-label={activeWorkspace === "virtual" ? `Select or drag ${item.name} to the candidate workbench` : undefined}
