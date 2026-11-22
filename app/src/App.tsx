@@ -432,6 +432,9 @@ export default function App() {
     setBenchItems((current) =>
       current.some((existing) => existing.item.id === item.id) ? current : [...current, entry]
     );
+    // Return focus to the workbench after a tray action so the fixed mobile dock
+    // does not obscure the new candidate instance controls.
+    setMobileOpenSheet(null);
   };
   const addAnotherBenchInstance = (item: CatalogueItem) => {
     const entry = createBenchEntry(item);

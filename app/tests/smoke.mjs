@@ -429,8 +429,8 @@ async function main() {
       await addButton.click();
       assert.equal(await touchPage.locator(".bench-item").count(), 1);
       assert.match(await touchPage.locator(".bench-panel").innerText(), /Vernier caliper/);
-      await addButton.click();
-      assert.equal(await touchPage.locator(".bench-item").count(), 1, "touch Add action must not duplicate the selected catalogue ID");
+      assert.equal(await touchPage.getByRole("button", {name:"Open analysis panel"}).getAttribute("aria-expanded"), "false",
+        "adding a selected item must close the analysis sheet and return control to the workbench");
       await touchPage.locator(".bench-item").getByRole("button",{name:"Add another instance of Vernier caliper"}).tap();
       assert.equal(await touchPage.locator(".bench-item").count(), 2);
       assert.equal(await touchPage.locator('.bench-item[data-source-id="NCERT-PHY-KIT-003"]').count(), 2);
