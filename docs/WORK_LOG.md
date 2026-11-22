@@ -1134,3 +1134,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Kit Box row 2 (PDF p.9; printed p.4) remains `OCR_TEXT`; its detail page remains `NOT_VISUALLY_CHECKED_THIS_PASS`. Index label/page visual confirmation is not detail-page verification. No measurement, source status, asset or simulation has been promoted.
 - Report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
 - Next action: recover a previously supplied PDF internally or obtain the official file through a usable source, compare byte count/hash, then render and inspect PDF p.9. Do not ask for a repeat upload.
+
+## 2026-11-22 — Phase 4 mobile inventory and analysis bottom sheets — VERIFIED
+
+- React workspace now presents the Virtual Experiment Lab workbench before the inventory and item-analysis panels on mobile.
+- Inventory tray and selected-item analysis are collapsible, accessible bottom-sheet panels. Only one opens at a time; both start collapsed on mobile. Selecting an inventory record opens its analysis/details panel so its current actions remain reachable.
+- Desktop panel content remains visible and the existing tap, drag, add-copy, remove-instance and source-provenance behavior is preserved.
+- Final CI on commit `5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d`: TypeScript typecheck PASS; production build PASS; React browser smoke 37/37 groups PASS; static↔React parity 13/13 groups PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760.
+- The first implementation run exposed a mobile-selection issue (selected-item details stayed collapsed); the fix opens the analysis sheet after selection and was covered by the passing rerun.
+- **Scope boundary:** this is responsive React UI behavior, not physical Android certification, not a real 3D apparatus, not a scientific solver and not an executed experiment. Catalogue objects remain explicitly labelled candidate placeholders. The static dashboard retains its separate implementation; parity still verifies its existing touch workflows.
+- **Phase gates:** this UI work unit is verified. Phase 4 remains IN PROGRESS pending the full exit-gate review; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
+- **Next:** perform the complete Phase 4 exit-gate review against the requirement register, UI specification, static/React differences, source/safety disclosures and all current CI evidence. Keep Phase 1.1 Kit Box PDF page-9 source recovery open; do not promote the OCR values or request a repeat upload.
+

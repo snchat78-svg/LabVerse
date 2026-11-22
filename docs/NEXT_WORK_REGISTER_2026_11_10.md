@@ -1,3 +1,14 @@
+## Current hand-off — 2026-11-22 (after mobile bottom-sheet verification)
+
+- **Last verified work unit:** Phase 4 React mobile inventory/analysis bottom sheets. Commit: `5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d`; CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760 — typecheck/build PASS, React browser smoke 37/37, static↔React parity 13/13.
+- Mobile Virtual Experiment Lab keeps the workbench before its two collapsible panels. Inventory and selected-item analysis panels start closed and open one at a time. Selecting an inventory item opens its analysis/details.
+- **Next exact Phase 4 action:** conduct a full exit-gate review against requirements, UI_UX_SPEC, existing known differences, source/safety disclosures and current test evidence. Do not mark Phase 4 complete before that review.
+- **Phase 1.1 source task remains open:** Biology-with-microscope Kit Box, PDF page 9 (printed page 4). Its catalogue values remain OCR-only. Official NCERT attachment retrieval failed due the 59,585,913-byte reader limit / DNS failure; the two historical user-upload hashes differ and remain separate. See `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`. Recover old bytes or an accessible official copy, compare byte count/hash, then inspect page 9. Do not ask for a repeat upload.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 4 remains IN PROGRESS pending exit review; real 3D and experiment runtime remain NOT STARTED.
+- Report: `docs/PHASE_4_MOBILE_BOTTOM_SHEETS_2026_11_22.md`.
+
+---
+
 ## Current hand-off — 2026-11-22
 
 - Main active work remains Phase 1/1.1 source audit; the dashboard/UI-only track continues separately under its own exit criteria.

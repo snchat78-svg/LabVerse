@@ -465,3 +465,8 @@ Research Studio drafts now autosave to versioned browser local storage, restore 
 ## Latest Phase 1.1 source checkpoint — 2026-11-22
 
 The Biology-with-microscope Kit Box detail review is still awaiting page-9 source recovery. The official NCERT attachment path and conflicting historical upload hashes are documented in [the source recovery report](docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md). Existing catalogue values remain OCR-derived; no visual verification or asset promotion is claimed.
+
+
+## Phase 4 mobile workspace update — 2026-11-22
+
+The React mobile Virtual Experiment Lab now keeps the workbench ahead of two collapsible inventory and item-analysis sheets. The completed browser verification and known boundaries are recorded in [the Phase 4 report](docs/PHASE_4_MOBILE_BOTTOM_SHEETS_2026_11_22.md). Phase 4 remains in progress pending its full exit-gate review.
