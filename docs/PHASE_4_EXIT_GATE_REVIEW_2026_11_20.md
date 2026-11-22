@@ -1,3 +1,5 @@
+> Superseded for current status by the 2026-11-22 review: the mobile bottom-sheet requirement that was OPEN in this 2026-11-20 snapshot passed on 2026-11-22. See docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md. This file remains as the historical review record.
+
 # Phase 4 Exit-Gate Review — 2026-11-20
 
 ## Decision

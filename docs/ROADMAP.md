@@ -1,3 +1,13 @@
+## Current phase decision — 2026-11-22
+
+- Phase 4 — Dashboard and workspace navigation: DONE for its bounded prototype scope. The 2026-11-20 exit review's only OPEN criterion (mobile inventory/analysis collapsible sheets) is now implemented. See docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
+- Phase 1/1.1: IN PROGRESS. The next source task remains Biology-with-microscope Kit Box, PDF p.9 / printed p.4. Its transcription is still OCR-only; the original PDF retrieval blocker and differing historical upload hashes are recorded in docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md.
+- Phase 2: BLOCKED pending Phase 1 source authenticity, rights, hazard and expert evidence.
+- Phase 3: PARTIAL (React app foundation, typecheck, production build and CI work; broader architecture hardening remains).
+- Phase 5 real 3D, Phase 6 experiment runtime and Phases 7–9 domain science engines: NOT STARTED. Phase 4 closure does not authorise these; do not bypass Phase 1/2.
+- Final React CI on tested code commit 5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d: TypeScript/build PASS; React smoke 37/37; static↔React parity 13/13 — https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760. Static smoke 9/9 and integrity PASS on unchanged static code head — https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665 and https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820.
+- Next exact action: recover existing source bytes and visually inspect the Kit Box detail at PDF page 9; do not ask the user to upload it again.
+
 ## 2026-11-22 — Phase 4 mobile inventory and analysis bottom sheets — VERIFIED
 
 - React workspace now presents the Virtual Experiment Lab workbench before the inventory and item-analysis panels on mobile.
@@ -6,8 +16,8 @@
 - Final CI on commit `5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d`: TypeScript typecheck PASS; production build PASS; React browser smoke 37/37 groups PASS; static↔React parity 13/13 groups PASS. Run: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760.
 - The first implementation run exposed a mobile-selection issue (selected-item details stayed collapsed); the fix opens the analysis sheet after selection and was covered by the passing rerun.
 - **Scope boundary:** this is responsive React UI behavior, not physical Android certification, not a real 3D apparatus, not a scientific solver and not an executed experiment. Catalogue objects remain explicitly labelled candidate placeholders. The static dashboard retains its separate implementation; parity still verifies its existing touch workflows.
-- **Phase gates:** this UI work unit is verified. Phase 4 remains IN PROGRESS pending the full exit-gate review; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
-- **Next:** perform the complete Phase 4 exit-gate review against the requirement register, UI specification, static/React differences, source/safety disclosures and all current CI evidence. Keep Phase 1.1 Kit Box PDF page-9 source recovery open; do not promote the OCR values or request a repeat upload.
+- Phase gates: the Phase 4 exit-gate review is complete and Phase 4 is DONE for its bounded dashboard/navigation scope. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 3 remains PARTIAL; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
+- Next: resume Phase 1.1 Biology-with-microscope Kit Box PDF page-9 source recovery. The catalogue row remains OCR-only; compare recovered source hashes before visual inspection. Do not promote existing values or request a repeat upload.
 
 ## 2026-11-22 — Phase 1.1 Biology Kit Box page-9 source recovery checkpoint
 
@@ -80,7 +90,7 @@ This roadmap controls phase order and is the master execution contract. Class 11
 | 1 | Platform scope, source audit and first science catalogue | RBSE/NCERT first pack + scientific source registry + research capability map | IN PROGRESS |
 | 2 | Scientific domain model and evidence contracts | Units, substances, organisms, materials, models, rules, data provenance, hypotheses and observation schemas | PARTIAL — dashboard read-model subset only; scientific models remain gated by Phase 1 |
 | 3 | Codebase foundation and CI | React/TS app shell, lint/typecheck/tests/build and release structure | PARTIAL — pinned React 19 / TypeScript 7 / Vite 8 app; strict typecheck, production build and 36/36 React browser groups PASS. Broader architecture hardening remains |
-| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | IN PROGRESS — React workspaces, class/inventory/practical-group filters, direct practical-to-candidate-workbench navigation, source/safety disclosures and parity tests (13/13); mobile collapsible tray/analysis bottom sheets remain |
+| 4 | Dashboard and workspace navigation | Learning Lab, Virtual Lab, Analysis and Research Studio entry points | DONE — bounded subject/workspace navigation, filters, practical-to-workbench flow, evidence/safety disclosures, Research Studio local-planning scope and mobile collapsible tray/analysis sheets passed the Phase 4 exit review. This is the dashboard/navigation prototype, not a 3D lab or scientific runtime. |
 | 5 | 3D workbench and object interaction | Empty bench, real 3D assets, tap/drag, transform, connect, inspect and reset | NOT STARTED |
 | 6 | Deterministic simulation and experiment runtime | State engine, actions, event history, simulation clock, replay and validation | NOT STARTED |
 | 7 | Chemistry property and reaction engine | Trusted property lookup, curated reactions, stoichiometry, kinetics, equilibrium and visual states | NOT STARTED |

@@ -1146,3 +1146,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - **Phase gates:** this UI work unit is verified. Phase 4 remains IN PROGRESS pending the full exit-gate review; Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 experiment runtime remain NOT STARTED.
 - **Next:** perform the complete Phase 4 exit-gate review against the requirement register, UI specification, static/React differences, source/safety disclosures and all current CI evidence. Keep Phase 1.1 Kit Box PDF page-9 source recovery open; do not promote the OCR values or request a repeat upload.
 
+
+## 2026-11-22 — Phase 4 dashboard/workspace navigation exit review — DONE
+
+- Re-ran the Phase 4 acceptance review using docs/UI_UX_SPEC.md, the previous 2026-11-20 exit matrix, current React/static browser suites and the new mobile bottom-sheet report.
+- The mobile bottom-sheet requirement is no longer open. React mobile workbench is ordered before the tray and selected-item analysis sheets; the two sheets expand one at a time; selecting an item reveals details.
+- Phase-specific acceptance: subject entry points, class/practical search and filters, mapping, mapped practical-to-workbench navigation, source/safety disclosure, candidate placeholder add/copy/remove/reset, keyboard flow, mobile touch, NOT_MODELLED boundary and Research Studio local planning all pass at their documented scope. Static/React Research Studio difference remains explicit.
+- CI: React checks SUCCESS https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760 (TypeScript/build PASS; React smoke 37/37; parity 13/13). Static dashboard smoke 9/9 https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665 and dashboard integrity PASS https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820 on unchanged static code.
+- Full WCAG/assistive-tech review, physical Android certification and low-end-device performance are not claimed; tracked for Phase 20/22. Real 3D, runtime and science engines are out of Phase 4 scope.
+- Decision: Phase 4 DONE for the bounded dashboard/workspace navigation prototype. Phase 3 remains PARTIAL; Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 and Phases 7–9 NOT STARTED.
+- Full review: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
+- Next exact action: recover a previously supplied or accessible official Biology-with-microscope Kit Box PDF, verify bytes/hash and visually inspect PDF page 9. Do not ask for another upload.
+

@@ -1,3 +1,15 @@
+## Current hand-off — 2026-11-22 (after Phase 4 exit-gate review)
+
+- Phase 4 is DONE for its bounded Dashboard and Workspace Navigation scope. Final review: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
+- Final React CI on 5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760 — TypeScript/build PASS, React browser smoke 37/37, static↔React parity 13/13.
+- Static dashboard code remained unchanged: smoke 9/9 PASS https://github.com/snchat78-svg/LabVerse/actions/runs/44689290665; integrity PASS https://github.com/snchat78-svg/LabVerse/actions/runs/44689290820.
+- Next active task (Phase 1.1): Biology-with-microscope Kit Box, PDF page 9 (printed page 4). Recover existing uploaded bytes internally or use an accessible official NCERT path; verify size/SHA-256, then visually inspect and update only evidence actually shown. No repeat upload request.
+- Current source blocker: official attachment URL is known but the 59,585,913-byte PDF could not be retrieved; two historical 199-page/59,620,970-byte upload records have distinct SHA-256 hashes and must remain separate. See docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md.
+- Phase gates: Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 DONE; Phase 5 real 3D, Phase 6 runtime and Phases 7–9 NOT STARTED.
+- Phase 4 does not claim real 3D, scientific results, a physical Android test, full WCAG certification or a release. Accessibility/performance and device validation remain Phase 20/22 work.
+
+---
+
 ## Current hand-off — 2026-11-22 (after mobile bottom-sheet verification)
 
 - **Last verified work unit:** Phase 4 React mobile inventory/analysis bottom sheets. Commit: `5e3ccaf230b1fa68ae0a522c9f31d4de4fc0d72d`; CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44994884760 — typecheck/build PASS, React browser smoke 37/37, static↔React parity 13/13.

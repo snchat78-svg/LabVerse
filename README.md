@@ -470,3 +470,10 @@ The Biology-with-microscope Kit Box detail review is still awaiting page-9 sourc
 ## Phase 4 mobile workspace update — 2026-11-22
 
 The React mobile Virtual Experiment Lab now keeps the workbench ahead of two collapsible inventory and item-analysis sheets. The completed browser verification and known boundaries are recorded in [the Phase 4 report](docs/PHASE_4_MOBILE_BOTTOM_SHEETS_2026_11_22.md). Phase 4 remains in progress pending its full exit-gate review.
+
+
+## Phase 4 exit-gate decision — 2026-11-22
+
+Phase 4 dashboard/workspace navigation is complete at its defined prototype scope. Its final review includes responsive collapsible mobile sheets, practical-to-workbench navigation, source/safety disclosures and the tested candidate-placeholder workflow. Read the exit-gate report: docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md.
+
+This does not mean the scientific laboratory is complete: Phase 1/1.1 remains open, Phase 2 is blocked, Phase 3 is partial, and real 3D/experiment runtime/science engines have not started. The next active task remains Biology-with-microscope Kit Box PDF page 9 source recovery.
