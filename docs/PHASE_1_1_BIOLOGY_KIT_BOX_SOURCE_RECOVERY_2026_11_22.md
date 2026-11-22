@@ -48,7 +48,7 @@ The sizes and page counts are recorded as equal, but the SHA-256 values differ. 
 
 Recover either previously supplied PDF bytes from the original conversation/file source or obtain an accessible official copy. Record its exact byte count and SHA-256 first. Then render **PDF page 9** (Kit Box, printed page 4), visually compare the drawing, labels, dimensions, construction details and safety notes against catalogue row 2, and update the row only for details actually visible in that source. If the recovered copy differs from either historical hash, preserve it as a third source record and document the relationship rather than silently overwriting prior evidence.
 
-**Phase outcome:** this is a source-recovery checkpoint only. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 4 remains IN PROGRESS; real 3D and experiment runtime remain NOT STARTED.
+**Phase outcome:** this is a source-recovery checkpoint only. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 4 dashboard/navigation is DONE for its bounded prototype scope (see `docs/PHASE_4_EXIT_GATE_REVIEW_2026_11_22.md`); real 3D and experiment runtime remain NOT STARTED.
 
 ## 6. Internal Library recovery attempt — 2026-11-22
 
