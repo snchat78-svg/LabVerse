@@ -135,11 +135,20 @@
 .mobile-sheet-toggle{display:none}
 .mobile-sheet-content{min-width:0}
 @media(max-width:760px){
-  .subject-view.virtual-workspace{display:flex;flex-direction:column}
-  .subject-view.virtual-workspace .content-grid{display:contents}
+  .subject-view.virtual-workspace{display:flex;flex-direction:column;padding-bottom:138px}
   .subject-view.virtual-workspace .bench-panel{order:1;min-height:32vh;margin-top:0}
-  .subject-view.virtual-workspace .inventory-sheet{order:2}
-  .subject-view.virtual-workspace .analysis-sheet{order:3}
+  .subject-view.virtual-workspace .content-grid{
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:calc(8px + env(safe-area-inset-bottom, 0px));
+    z-index:30;
+    order:2;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:8px;
+    max-height:calc(100vh - 150px);
+  }
   .panel.inventory-sheet,.panel.analysis-sheet{
     padding:0;
     overflow:hidden;
