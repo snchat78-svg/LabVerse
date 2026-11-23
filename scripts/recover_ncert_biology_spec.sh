@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 # Fetch the official NCERT Biology-with-microscope specification into the
 # ephemeral runner only. Never commit or publish the source PDF itself.
-SOURCE_URL="https://www.ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf"
+SOURCE_URL="https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf"
 EXPECTED_BYTES="59585913"
 WORK_ROOT="${RUNNER_TEMP:-${TMPDIR:-/tmp}}/labverse-biology-source-work"
 ARTIFACT_ROOT="${RUNNER_TEMP:-${TMPDIR:-/tmp}}/labverse-biology-source-review"
@@ -117,7 +117,7 @@ done
 # Ensure the intermediate actually presented by NCERT matches the official
 # Let's Encrypt YE1 certificate before attempting the large source transfer.
 SERVER_YE1_PEM=""
-for CERT in "$WORK_ROOT"/certs-www.ncert.nic.in/*.pem; do
+for CERT in "$WORK_ROOT"/certs-ncert.nic.in/*.pem; do
   CERT_SUBJECT="$(openssl x509 -in "$CERT" -noout -subject -nameopt RFC2253)"
   if [[ "$CERT_SUBJECT" == *"CN=YE1"* && "$CERT_SUBJECT" == *"O=Let's Encrypt"* ]]; then
     SERVER_YE1_PEM="$CERT"
