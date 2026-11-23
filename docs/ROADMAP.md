@@ -920,3 +920,21 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Source map: `docs/PHASE_1_1_EXISTING_RBSE_PRACTICAL_PDF_SOURCE_MAP_2026_11_23.md`.
 - Do not repeat the external NCERT search or request re-upload for the RBSE practical syllabus. Do not confuse these syllabus PDFs with the separate NCERT Biology-with-Microscope kit specification; that narrow Kit Box p.9 source remains unresolved and must not block curriculum extraction from the RBSE PDFs.
 - **Next work-unit:** normalize every in-scope practical/activity/project/spotting record for Class XI/XII × Physics/Chemistry/Biology, with page-level provenance, explicit alternatives and evidence status; join existing catalogue IDs rather than duplicating rows. Keep executable science and Phase 2 gated pending detailed method/safety review.
+
+
+## Product-goal clarification — canonical stockroom + open 3D workbench (2026-11-23)
+
+Read `docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md` before selecting future work. LabVerse's primary experience is NOT a fixed set of pre-scripted practical pages. It is three subject-wise stockrooms with category cabinets/shelves, from which learners pick individual items and assemble an open-ended setup on an initially empty, dark/black 3D workbench. Real object controls and live analysis are enabled only by explicit asset/action contracts and validated science models. Practical guides remain optional templates.
+
+### Phase 4.1 — Subject stockroom cabinet navigation — IN PROGRESS
+- Implemented category shelf buttons generated from existing shared inventory data, counts and All stock navigation in React. Shelf selection uses the existing category filter; no second data catalogue is created.
+- Added Playwright smoke assertions for Physics cabinet navigation and Measurement shelf filtering.
+- Report: `docs/PHASE_4_1_SUBJECT_STOCKROOM_CABINETS_2026_11_23.md`.
+- CI pending; do not mark verified until the app workflow finishes successfully.
+- Next: canonical taxonomy and all-row reachability/metadata audit across Physics, Chemistry and Biology.
+
+### Inventory baseline and non-claims
+Current shared read-model rows: Physics 105 apparatus; Chemistry 53 apparatus/material + 124 historical reagent labels; Biology 175 apparatus/specimen/slide/visual rows + 58 manual reagent labels; 171 RBSE task-index rows. These are catalogue records, not verified current procurement, not all physically safe/approved, and not 3D models. Preserve this distinction in every dashboard and release statement.
+
+### Dependency order
+Stockroom UI and catalogue audit can progress while source recovery is open. Real 3D asset integration, executable actions and live science results remain separately gated by source provenance, asset rights, hazard review and domain model validation. Do not substitute a visual animation for a scientific result.
