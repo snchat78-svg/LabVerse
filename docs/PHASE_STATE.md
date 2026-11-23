@@ -1,3 +1,16 @@
+
+## 2026-11-23 — Phase 4.1 stockroom item-level audit baseline
+
+- Added `data/catalogues/stockroom_item_level_audit_2026_11_23.csv`: **515/515** current inventory/reagent records expanded to auditable rows; no duplicate IDs in this snapshot.
+- Added `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md` with methodology, findings, boundaries and next gate.
+- Reconciled current record counts: Physics 105; Chemistry 177 (53 inventory + 124 historical reagent labels); Biology 233 (175 inventory + 58 manual reagent labels).
+- All 515 rows map to an existing taxonomy entry, but all 515 mappings remain `PROPOSED_NEEDS_REVIEW`; no proposed shelf is treated as domain-approved.
+- Four raw categories remain unresolved across five records: Physics ALIGNMENT (2), Physics LIQUID_TRANSFER (1), Biology DATA_RECORDING (1), Biology SAMPLE_CONTAINER (1).
+- 287 records have exact task links; 228 have no current task link and require scope review (not automatically defects). 184 rows lack safety text. Item-level page evidence is absent from the read model for all 515 rows; task page ranges were not substituted.
+- Asset readiness and action-contract readiness remain NOT_ASSESSED for every row. No scientific result, safety permission or 3D asset is promoted.
+- **Phase status:** Phase 4.1 remains IN PROGRESS. Phase 1/1.1 source authenticity and rights work remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 3 PARTIAL; Phase 5 real 3D NOT STARTED.
+- **Next exact work:** domain-review the four unresolved categories/five affected records and validate all 135 category mappings; then continue item-level provenance, task scope and safety reconciliation. Preserve all source variants and historical reagent disclosures.
+
 ## 2026-11-22 — Phase 1.1 internal Library recovery attempt
 
 - The exact Biology-with-microscope specification PDFs were not found in current conversation attachments (0 files) or the accessible Library PDF listing/search. The official 59.6 MB attachment retrieval had already failed due reader size limit and DNS failure.
