@@ -1,3 +1,11 @@
+## Current hand-off — 2026-11-23 (task-scope and Biology visual-aid review)
+
+- Latest register: `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv` (276 rows) with report `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
+- 228 no-task-link rows = 182 reagent labels + 46 non-reagent items. Do not treat the reagent labels as automatic task-link defects; review source identity/edition/formulation. Domain-review the 46 non-reagent rows as support stock, research-only or true task-crosswalk gaps.
+- Biology visual aids: 50 total; 48 linked, Mitosis/Meiosis cards unlinked. 49 are index-only; item 84 alone has visual sample inspection recorded. Preserve visual_aid as a separate type from specimen/slide.
+- No mixed record types were found in a raw subject/category group in this snapshot; taxonomy remains unapproved. No source/task/safety values changed.
+- **Next exact work:** resolve the 46 non-reagent scope rows and two unlinked visual cards against item-level source pages; separately verify 49 index-only visual-card entries. Continue 515-row item provenance and 184 safety-text gaps. Then complete 135 cabinet decisions and four unmapped category decisions before asset manifest/licence contract and Phase 5.
+
 
 ## Current hand-off — 2026-11-23 (135-category membership crosswalk)
 
