@@ -146,10 +146,60 @@ curl --fail --location --show-error \
   --retry 3 --retry-all-errors --retry-delay 2 \
   --connect-timeout 30 --max-time 180 \
   --cacert "$NCERT_CA_BUNDLE" \
+  --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" \
+  --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
   --cookie-jar "$COOKIE_JAR" \
   --output "$INDEX_HTML" \
   --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nurl_effective=%{url_effective}\\n' \
   "$INDEX_URL" > "$ARTIFACT_ROOT/index-bootstrap.txt"
+
+python3 - "$INDEX_HTML" "$ARTIFACT_ROOT/index-anchor-diagnostic.txt" <<'PY'
+import sys
+from html.parser import HTMLParser
+from pathlib import Path
+
+class PageParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.anchors = []
+        self.current = None
+        self.title = []
+        self.in_title = False
+        self.visible = []
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag.lower() == "title":
+            self.in_title = True
+        if tag.lower() == "a":
+            self.current = {"href": attrs.get("href", ""), "text": ""}
+    def handle_endtag(self, tag):
+        if tag.lower() == "a" and self.current is not None:
+            self.anchors.append(self.current)
+            self.current = None
+        if tag.lower() == "title":
+            self.in_title = False
+    def handle_data(self, data):
+        text = " ".join(data.split())
+        if text:
+            self.visible.append(text)
+            if self.in_title:
+                self.title.append(text)
+            if self.current is not None:
+                self.current["text"] += (" " if self.current["text"] else "") + text
+
+source = Path(sys.argv[1]).read_text(errors="replace")
+parser = PageParser()
+parser.feed(source)
+target = [a for a in parser.anchors if any(k in (a["text"] + " " + a["href"]).lower()
+          for k in ("biology", "microscope", "ssbk", "specification", ".pdf"))]
+with open(sys.argv[2], "w") as out:
+    out.write("title=" + " ".join(parser.title) + "\\n")
+    out.write("anchor_count=" + str(len(parser.anchors)) + "\\n")
+    out.write("target_anchor_count=" + str(len(target)) + "\\n")
+    for a in (target if target else parser.anchors[:40]):
+        out.write("ANCHOR text=" + a["text"][:250] + " | href=" + a["href"][:500] + "\\n")
+    out.write("VISIBLE_TEXT_PREFIX=" + " ".join(parser.visible)[:2500] + "\\n")
+PY
 
 if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
   {
@@ -169,6 +219,8 @@ curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
   --connect-timeout 30 --max-time 1200 \
   --cacert "$NCERT_CA_BUNDLE" \
+  --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" \
+  --header "Accept: application/pdf,application/octet-stream;q=0.9,*/*;q=0.8" \
   --cookie "$COOKIE_JAR" --cookie-jar "$COOKIE_JAR" \
   --referer "$INDEX_URL" \
   --dump-header "$ARTIFACT_ROOT/http-response-headers.txt" \
