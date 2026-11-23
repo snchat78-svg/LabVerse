@@ -1997,3 +1997,6 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - This is cabinet navigation only; not 3D cabinets, real 3D assets, a dark 3D scene, physics/chemistry/biology runtime or scientific simulation.
 - Phase 4 original bounded navigation remains DONE; Phase 4.1 stockroom UX is IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED pending source/rights/hazard gates. UI/catalogue work may proceed in parallel.
 - Next exact work-unit: canonical cabinet taxonomy and item-level completeness/reachability audit for all 515 current rows, retaining source IDs and marking gaps rather than guessing.
+
+- Additional taxonomy groundwork: `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` maps all 135 existing subject/category combinations (Physics 60, Chemistry 30, Biology 45) to proposed cabinet groups without rewriting source categories. All mappings are marked `PROPOSED_NEEDS_REVIEW`; four category rows remain deliberately unmapped pending review.
+- First smoke run caught an ambiguous Playwright selector because several category names contain “MEASUREMENT”; the test was corrected to target the exact shelf label in commit `a3041158285c41fbaad30d0e499ebc9743c5f339`. Corrected CI run is in progress; do not claim pass until final result.
