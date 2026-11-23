@@ -1,3 +1,11 @@
+## 2026-11-23 — Phase 1.2 RBSE practical register
+
+- Added `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` with 147 normalized rows from the existing RBSE 2026–27 syllabus PDFs. Report: `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
+- Coverage includes Physics experiments/activities/projects for XI and XII; Biology major/minor Botany/Zoology and spotting groups for XI and XII; Chemistry source-level practical sections for XI and XII, with alternatives retained.
+- Source page ranges: XI Physics 114–119, Chemistry 123–125, Biology 132–134; XII Physics 124–129, Chemistry 137–140, Biology 144–147. No new PDF search or re-upload was needed.
+- Inventory joins intentionally remain PENDING_ITEM_LEVEL_JOIN; no catalogue IDs, quantities, concentrations, procedures, safety permissions or results were fabricated. Chemistry XI project titles are not itemized in the extracted practical pages.
+- Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; Phase 5 NOT STARTED. Data/docs only; no CI claim.
+
 ## 2026-11-23 — Phase 4.1 task-scope and visual-aid review
 
 - Added `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv`: 276 review rows (all 228 currently unlinked records + all 50 Biology visual aids). Report: `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
