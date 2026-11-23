@@ -700,3 +700,15 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Dashboard integrity SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44687059565. Static desktop/mobile smoke SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/44686626731.
 - Report: `docs/PHASE_4_STATIC_REACT_PARITY_HARDENING_2026_11_20.md`.
 - **Next action:** Phase 4 exit-gate review of the full acceptance register, known UI differences and documented boundaries. Phase 4 remains IN PROGRESS until that review finishes; Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+
+
+## Next active work-unit — normalized six-slice RBSE practical register (2026-11-23)
+
+**Input sources already located (do not search/re-upload again):**
+- `11_2027_copy.pdf`: Class XI RBSE 2026–27; Physics practical pp.114–119, Chemistry practical pp.123–125, Biology practical pp.132–140.
+- `12_2027_copy.pdf`: Class XII RBSE 2026–27; Physics practical pp.124–129, Chemistry practical pp.137–140, Biology practical pp.144–150.
+- Detailed source map: `docs/PHASE_1_1_EXISTING_RBSE_PRACTICAL_PDF_SOURCE_MAP_2026_11_23.md`.
+
+**Deliverable:** one normalized register across all six class/subject slices, including practical kind (experiment/activity/project/spotting/record/viva), source title, source filename/page, class, subject, explicit apparatus/material/specimen evidence, alternative-vs-mandatory status, existing catalogue ID and verification state. Preserve existing row identities/history; deduplicate only by defensible source identity. Mark unsupported fields `PENDING_SOURCE` rather than guessing.
+
+**Acceptance:** all six page ranges represented; page citations for every imported row; alternatives not flattened into mandatory tasks; no source row silently dropped; CI/schema/duplicate checks pass; update PHASE_STATE, ROADMAP, WORK_LOG and this register in the same work-unit. Do not advance Phase 2 science engines until method, rights and hazard evidence is sufficient. The separate NCERT kit Box page-9 retrieval is not a prerequisite for this RBSE curriculum extraction.
