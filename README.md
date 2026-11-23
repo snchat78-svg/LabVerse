@@ -482,3 +482,7 @@ This does not mean the scientific laboratory is complete: Phase 1/1.1 remains op
 ## Phase 1.1 source recovery status — 2026-11-22
 
 The existing Biology-with-microscope PDF was not present in current conversation attachments or the accessible Library PDF listing. The official 59.6 MB source attachment could not be retrieved through the available reader/network path. Kit Box page 9 remains OCR-only and is not visually verified; no source value was promoted. See [the recovery report](docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md). No repeat upload is requested.
+
+## Canonical stockroom and 3D workbench product brief
+
+The full, permanent product requirements are maintained in [`docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md`](docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md). Future contributors and work sessions must read it before choosing the next task. The primary experience is three subject stockrooms with category cabinets/shelves and free-form assembly on an empty, dark 3D workbench; practical templates are optional, not the only allowed workflows. The stockroom is a catalogue view over one source-aware inventory, not three copied lists or duplicate records. Real object actions and scientific outputs must be driven by asset contracts and validated models.
