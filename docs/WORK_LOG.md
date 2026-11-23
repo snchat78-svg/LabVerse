@@ -1,3 +1,11 @@
+## 2026-11-23 — Phase 4.1 task-scope and Biology visual-aid review
+
+- Generated `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv` (276 rows: 228 no-task-link records + 50 Biology visual aids). Report: `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
+- Reconciled no-task-link composition: 182 reagent labels and 46 non-reagent items. The reagent rows are not automatically task-link gaps. The 46 non-reagent rows remain pending source-backed scope disposition.
+- Audited all 50 Biology visual aids: 48 task-linked, two unlinked (Mitosis/Meiosis); 49 index-only and one item-84 visual sample inspection. Kept visual_aid distinct from specimen and slide types.
+- 515-row category/type consistency scan found no mixed record_type within any raw subject/category group. This is not domain approval. No catalogue or scientific/safety values changed; review statuses remain pending.
+- Audit/docs only; no app code or tests changed, so no CI result is claimed. Phase 4.1 remains IN PROGRESS.
+
 
 ## 2026-11-23 — 135-category membership crosswalk
 
