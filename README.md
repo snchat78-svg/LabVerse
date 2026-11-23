@@ -29,8 +29,8 @@ The long-term goal is to let learners and researchers explore scientific questio
 
 - Phase 0: DONE — planning/documentation baseline only.
 - Main source-audit phase: Phase 1 — IN PROGRESS.
-- User-authorized parallel dashboard track: Physics, Chemistry and Biology catalogue with class and source-backed practical-group filters, source-to-practical navigation, direct mapped-candidate workbench entry and item-level Biology audit visibility.
-- React/TypeScript/Vite UI foundation: strict typecheck and production build pass; latest React browser smoke **36/36 groups**, static ↔ React parity **13/13 groups**, and static desktop/mobile browser smoke **9/9 groups** pass.
+- User-authorized dashboard track: subject-wise category cabinet navigation, class/type/search filters, source-to-practical navigation, and the 515-row stockroom item audit baseline (Phase 4.1 IN PROGRESS).
+- React/TypeScript/Vite UI foundation: strict typecheck and production build pass; latest React browser smoke **38/38 groups**, static ↔ React parity **13/13 groups**, and static desktop/mobile browser smoke **9/9 groups** pass.
 - Candidate workbench items are 2D placeholders only. Real 3D assets, experiment runtime and scientific solvers are NOT IMPLEMENTED. Source candidates remain unverified for official byte authenticity, procurement equivalence, rights, physical use and scientific validity.
 - Phase 1/1.1 source, safety, rights and expert-review gates remain open; Phase 2 scientific results remain blocked. The dashboard-only track proceeds in parallel without promoting candidate records.
 
@@ -40,7 +40,7 @@ The long-term goal is to let learners and researchers explore scientific questio
 - [React app architecture and current test boundary](app/README.md)
 - [React app browser validation](https://github.com/snchat78-svg/LabVerse/actions/runs/42750813972)
 
-Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375282 — strict TypeScript/build PASS, React browser smoke **36/36 groups PASS**, static ↔ React parity **13/13 groups PASS**. Static dashboard checks: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294 (PASS); static desktop/mobile browser smoke: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256 (**9/9 groups PASS**). Learning Lab has class and source-backed practical-group filters; mapped practical cards can open the candidate workbench directly. Research Studio supports schema-v2 planning, local draft persistence, validated JSON import/export and a non-approval text-presence checklist. Scientific Analysis remains NOT_MODELLED; candidate workbench items are placeholders, not real 3D or live experiments.
+Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549 — strict TypeScript/build PASS, React browser smoke **38/38 groups PASS**, static ↔ React parity **13/13 groups PASS**. Static dashboard checks: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375294 (PASS); static desktop/mobile browser smoke: https://github.com/snchat78-svg/LabVerse/actions/runs/44688375256 (**9/9 groups PASS**). Learning Lab has class and source-backed practical-group filters; mapped practical cards can open the candidate workbench directly. Research Studio supports schema-v2 planning, local draft persistence, validated JSON import/export and a non-approval text-presence checklist. Scientific Analysis remains NOT_MODELLED; candidate workbench items are placeholders, not real 3D or live experiments.
 
 ## Dashboard preview
 
@@ -58,6 +58,8 @@ Latest React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/446883752
 - [Biology manual 58-entry reagent list](data/catalogues/ncert_biology_manual_reagents_58.csv)
 - [Free GitHub Pages publishing steps](docs/DASHBOARD_PUBLISHING.md)
 - [Three-subject inventory read model](dashboard/data/inventory.json)
+- [Stockroom item-level audit CSV — 515 records](data/catalogues/stockroom_item_level_audit_2026_11_23.csv)
+- [Phase 4.1 stockroom audit report](docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md)
 - [Persistent PDF source registry](data/catalogues/source_pdf_registry_2026_11_10.csv)
 - [Completed and remaining work register](docs/NEXT_WORK_REGISTER_2026_11_10.md)
 - [Three-subject item-to-asset/model/test traceability audit](docs/PHASE_1_1_THREE_SUBJECT_ASSET_MODEL_TRACEABILITY_2026_11_10.md)
