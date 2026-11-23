@@ -1199,3 +1199,6 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Report: `docs/PHASE_4_1_SUBJECT_STOCKROOM_CABINETS_2026_11_23.md`.
 - CI status pending at record creation; do not claim tests passed until workflow result is read.
 - Next: canonical cabinet taxonomy + full inventory reachability/metadata audit; after that, licensed real 3D assets and dark workbench prototype, respecting source/rights/hazard gates.
+
+- Generated `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` with all 135 existing subject/category combinations (Physics 60, Chemistry 30, Biology 45). Raw categories remain unchanged; every cabinet assignment is marked proposed/needs review. Four category groups remain unmapped pending domain review.
+- Initial new Playwright selector matched nine category labels containing the word “MEASUREMENT”; corrected the test to target the exact canonical shelf label. Corrected workflow run `45132091549` is pending at the time of this entry.
