@@ -29,3 +29,10 @@ The React app workflow is triggered by changes under `app/**`; final workflow re
 
 ## Next exact work unit
 Extend cabinet browsing into a complete inventory taxonomy and item-level completeness audit across all three subjects: define canonical cabinet/category taxonomy, reconcile current categories (including mixed and historical categories), verify every catalogue record is reachable, identify duplicate/uncategorised/unknown rows without deleting them, and attach class/task/source/asset-readiness links. Then proceed to the first real 3D workbench only in the order permitted by source, rights and hazard gates.
+
+## Taxonomy groundwork added in the same work session
+
+- Added `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` with all **135 existing subject/category combinations**: Physics 60, Chemistry 30, Biology 45.
+- Each mapping preserves the raw source category and its item count; proposed cabinet grouping is explicitly `PROPOSED_NEEDS_REVIEW`, not a source fact or final mapping.
+- Four categories are deliberately unmapped pending human/domain review: Physics `ALIGNMENT` (2), Physics `LIQUID_TRANSFER` (1), Biology `DATA_RECORDING` (1), Biology `SAMPLE_CONTAINER` (1).
+- No catalogue item or source category was deleted or rewritten. Next work must validate every item row against the proposed shelf, correct composite/ambiguous placements and make every item reachable.
