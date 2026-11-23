@@ -1985,3 +1985,15 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Important distinction: these are RBSE syllabus PDFs, not the separate 199-page NCERT Biology-with-Microscope kit specification. The latter's Kit Box p.9 remains unresolved; historic source hashes remain separate. Do not conflate or re-run the failed external retrieval loop.
 - Phase 1.1 is IN PROGRESS: RBSE curriculum source-map recovered; normalized item-level practical/equipment extraction is next. Phase 2 remains BLOCKED until method-level, rights and hazard evidence is sufficient. Phase 3 PARTIAL; Phase 4 DONE for bounded prototype scope; Phase 5/6 and Phases 7–9 NOT STARTED.
 - Evidence boundary: no fresh byte SHA-256 or visual page-image review was performed in this pass; no detailed procedure, reagent, safety, apparatus spec or scientific result is promoted solely from syllabus text.
+
+
+## 2026-11-23 — Phase 4.1 subject stockroom cabinet navigation — IMPLEMENTED; CI PENDING
+
+- Canonical product goal: `docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md`. Three subject-wise stockrooms (Physics/Chemistry/Biology), cabinet/shelf navigation, free assembly on an empty 3D workbench, supported object controls and scientifically grounded live analysis. Fixed practical templates are optional, never the product's limit.
+- Existing shared inventory read model has 515 catalogue/reagent rows: Physics 105 apparatus; Chemistry 53 apparatus/material + 124 historical reagent labels; Biology 175 item/visual rows + 58 manual reagent labels. 171 task-index rows. These are not authenticated procurement stock, safety approval or existing 3D assets.
+- React subject inventory now renders responsive category cabinet shelves and an All stock shelf, counts derived from the existing catalogue, accessible pressed state and direct shelf-to-category filtering. Added Playwright assertions for Physics stockroom and Measurement shelf navigation.
+- Code commits: `5cd03dd53c2d2a243b0a7ebea77919ffa4089b41`, `2e2d9f71f6b65f5963044d619b540294b53fee79`, test `6b876b63b296d78b6e84fc1b5a6742a638d786b1`. Report: `docs/PHASE_4_1_SUBJECT_STOCKROOM_CABINETS_2026_11_23.md`.
+- CI not yet verified; app workflow is path-triggered by `app/**`. Record its final run before calling this work-unit verified.
+- This is cabinet navigation only; not 3D cabinets, real 3D assets, a dark 3D scene, physics/chemistry/biology runtime or scientific simulation.
+- Phase 4 original bounded navigation remains DONE; Phase 4.1 stockroom UX is IN PROGRESS. Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED pending source/rights/hazard gates. UI/catalogue work may proceed in parallel.
+- Next exact work-unit: canonical cabinet taxonomy and item-level completeness/reachability audit for all 515 current rows, retaining source IDs and marking gaps rather than guessing.
