@@ -1,4 +1,12 @@
 
+## 2026-11-23 — 135-category membership crosswalk
+
+- Added category crosswalk `data/catalogues/stockroom_category_membership_review_2026_11_23.csv`: all 135 taxonomy combinations joined to 515 current inventory/reagent members.
+- Added report `docs/PHASE_4_1_CATEGORY_MEMBERSHIP_REVIEW_2026_11_23.md`.
+- Four previously unmapped category groups now have provisional desk-review cabinet candidates; none is approved. Raw categories, IDs, evidence states and source rows remain unchanged.
+- Next: inspect mixed/ambiguous/evidence-limited groups, then domain review and item-level provenance/safety/task-scope reconciliation. No 3D or science runtime claim.
+
+
 ## 2026-11-23 — Phase 4.1 stockroom item-level audit baseline
 
 - **Files:** `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` (515 records); `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md`.
