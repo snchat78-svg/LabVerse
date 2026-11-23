@@ -938,3 +938,5 @@ Current shared read-model rows: Physics 105 apparatus; Chemistry 53 apparatus/ma
 
 ### Dependency order
 Stockroom UI and catalogue audit can progress while source recovery is open. Real 3D asset integration, executable actions and live science results remain separately gated by source provenance, asset rights, hazard review and domain model validation. Do not substitute a visual animation for a scientific result.
+
+- Taxonomy groundwork added: `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` covers all 135 source category combinations (60 Physics, 30 Chemistry, 45 Biology). All are proposals awaiting review; raw categories and catalogue rows are unchanged. Four ambiguous/unmapped categories remain open.
