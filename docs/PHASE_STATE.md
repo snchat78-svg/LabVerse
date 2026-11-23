@@ -1,4 +1,13 @@
 
+## 2026-11-23 — Phase 4.1 category membership crosswalk
+
+- Added `data/catalogues/stockroom_category_membership_review_2026_11_23.csv`: **135/135** subject/category combinations joined to their actual member records, covering **515/515** inventory/reagent rows.
+- Added `docs/PHASE_4_1_CATEGORY_MEMBERSHIP_REVIEW_2026_11_23.md` with method, four unmapped-category candidates, boundaries and next actions.
+- Four provisional desk-review candidates: Physics ALIGNMENT → Mechanics, Oscillations & Waves; Physics LIQUID_TRANSFER → Fluids & Materials; Biology DATA_RECORDING → Visual Aids; Biology SAMPLE_CONTAINER → Storage & Lab Support.
+- **No category was domain-approved and no raw source category/catalogue record was changed.** Every suggestion is explicitly DESK_REVIEW_CANDIDATE_NOT_DOMAIN_APPROVED.
+- Phase 4.1 remains IN PROGRESS. Next: second pass on mixed/ambiguous/evidence-limited category groups, then expert decision and item-level provenance/safety/task-scope reconciliation. Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D NOT STARTED.
+
+
 ## 2026-11-23 — Phase 4.1 stockroom item-level audit baseline
 
 - Added `data/catalogues/stockroom_item_level_audit_2026_11_23.csv`: **515/515** current inventory/reagent records expanded to auditable rows; no duplicate IDs in this snapshot.
