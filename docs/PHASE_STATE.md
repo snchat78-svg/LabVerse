@@ -1975,3 +1975,13 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Paired tests cover shared inventory and task counts, three subjects/four workspaces, source-detail and safety disclosures, multiple apparatus instances, original source and unique instance identity, per-instance removal, keyboard-only Inspect/Add/Remove, 390px touch use without drag, Research Studio's documented React/static difference, and NOT_MODELLED/no-result boundaries.
 - **Next exact action:** conduct a Phase 4 exit-gate review against all recorded acceptance criteria and explicit known differences. Keep Phase 4 IN PROGRESS until the review proves the gate; do not start real 3D or scientific engines while Phase 1/1.1 evidence and Phase 2 model gates remain open.
 - Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 4 IN PROGRESS pending exit-gate review; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+
+## 2026-11-23 — Existing RBSE practical PDFs recovered and mapped
+
+- Correction to the source-resume record: the user's previously supplied RBSE Class XI/XII syllabus PDFs are available in Library as `11_2027_copy.pdf` (23,343,499 bytes) and `12_2027_copy.pdf` (18,279,805 bytes). They contain all three school practical subjects across both classes; no repeat upload or new external PDF search is needed for this curriculum work.
+- Practical-section anchors: XI Physics pp.114–119, XI Chemistry pp.123–125, XI Biology pp.132–140; XII Physics pp.124–129, XII Chemistry pp.137–140, XII Biology pp.144–150 (PDF page numbers, 1-based).
+- Source map/report: `docs/PHASE_1_1_EXISTING_RBSE_PRACTICAL_PDF_SOURCE_MAP_2026_11_23.md` (commit `d0c6a761faaf83e5cca36dcf685f088367e61611`).
+- Important distinction: these are RBSE syllabus PDFs, not the separate 199-page NCERT Biology-with-Microscope kit specification. The latter's Kit Box p.9 remains unresolved; historic source hashes remain separate. Do not conflate or re-run the failed external retrieval loop.
+- Phase 1.1 is IN PROGRESS: RBSE curriculum source-map recovered; normalized item-level practical/equipment extraction is next. Phase 2 remains BLOCKED until method-level, rights and hazard evidence is sufficient. Phase 3 PARTIAL; Phase 4 DONE for bounded prototype scope; Phase 5/6 and Phases 7–9 NOT STARTED.
+- Evidence boundary: no fresh byte SHA-256 or visual page-image review was performed in this pass; no detailed procedure, reagent, safety, apparatus spec or scientific result is promoted solely from syllabus text.
