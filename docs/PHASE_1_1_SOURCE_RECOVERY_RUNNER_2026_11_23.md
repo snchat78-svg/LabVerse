@@ -1,32 +1,44 @@
-# Phase 1.1 — Official NCERT Biology source recovery runner
+# Phase 1.1 — NCERT Biology source recovery runner
 
 **Date:** 2026-11-23  
-**Work unit:** Recover the official Biology-with-microscope specification and produce a page-9 review artifact without asking for another upload.  
+**Work unit:** Automate secure retrieval and page-level inspection of the official NCERT Biology-with-microscope specification, without requesting another upload.  
 **Branch:** `phase-1-1-source-recovery-runner`
 
-## Why this is the next roadmap task
+## Roadmap fit
 
-The 2026-11-22 master-roadmap hand-off names Biology-with-microscope Kit Box, PDF page 9 (printed page 4), as the next Phase 1.1 source task. The corresponding catalogue item `NCERT-BIO-WM-SPEC-002` remains OCR-only; its detail page has not been visually inspected. Phase 1/1.1 remains IN PROGRESS and Phase 2 remains BLOCKED. Phase 4 is DONE only for its bounded dashboard/navigation prototype. Starting real 3D or scientific solvers now would bypass the recorded phase gates.
+The 2026-11-22 master-roadmap hand-off names Biology-with-microscope Kit Box, PDF page 9 (printed page 4), as the next Phase 1.1 evidence task. Catalogue row `NCERT-BIO-WM-SPEC-002` remains OCR-only and its detail page is not visually checked. Phase 1/1.1 remains IN PROGRESS; Phase 2 is BLOCKED. Phase 4 is DONE only for its bounded dashboard/workspace-navigation prototype. Starting real 3D or scientific solvers now would bypass the recorded authenticity and safety gates.
 
-## Implementation
+## What was implemented
 
-The GitHub Actions workflow `.github/workflows/phase-1-1-ncert-biology-source-recovery.yml` runs `scripts/recover_ncert_biology_spec.sh` on an ephemeral Ubuntu runner. It:
+- `scripts/recover_ncert_biology_spec.sh`: ephemeral-runner source retrieval, TLS chain inspection, official index bootstrap, session cookie isolation, response metadata capture, PDF-signature/size/SHA-256/page-count checks, page-9 render and text extraction.
+- `.github/workflows/phase-1-1-ncert-biology-source-recovery.yml`: manual and branch-push GitHub Actions entry point, shell syntax validation, Poppler installation, recovery step and one-day diagnostic/review artifact.
+- TLS uses the official Let's Encrypt YE1 intermediate and Root YE cross-certificate after verifying certificate identity/fingerprint and the server-presented intermediate. The request uses the certificate-matching `ncert.nic.in` host. Normal hostname and CA verification stay enabled; no `-k`, `--insecure`, anti-bot bypass or untrusted proxy was added.
+- The source PDF and session cookie jar stay in ephemeral runner storage and are deleted/not uploaded. The one-day artifact may contain page-9 review outputs only after PDF signature/page checks, SHA-256 sidecars, TLS diagnostics, HTTP response metadata, NCERT index-bootstrap metadata, sanitized anchor diagnostics and the report.
 
-1. Retrieves the exact official NCERT attachment URL already recorded in the source audit, with retry and HTTP range-resume support.
-2. Checks the previously observed official response byte count (59,585,913), PDF signature, SHA-256 and readable page count.
-3. Renders PDF page 9 and extracts its text for a visual/source comparison.
-4. Uploads only the review image, extracted page text, SHA-256 sidecar and diagnostic report as a one-day GitHub Actions artifact. The source PDF is neither committed nor uploaded as an artifact and is removed from the runner at exit.
-5. Fails closed on download errors, a changed byte count, a non-PDF response or an unreadable/too-short PDF. A failed run still uploads its diagnostic report.
+## Actual CI result and blocker
 
-## Required human review after retrieval
+Latest diagnostic run at the time of the roadmap hand-off: https://github.com/snchat78-svg/LabVerse/actions/runs/45123295045 (head `7641d4964d39c06b68387fa1a3a770675a6d9962`).
 
-- Compare the page-9 illustration, labels, dimensions, material, construction and safety notes with row `NCERT-BIO-WM-SPEC-002`.
-- Keep the existing OCR transcription unchanged until each claim is visually supported.
-- Preserve both prior upload hashes separately. A newly retrieved official file is a third provenance record; do not collapse or overwrite earlier hashes.
-- A successful download/hash/page render is not procurement approval, rights clearance, science validation, safety approval or expert sign-off.
+- Shell syntax validation: PASS.
+- PDF inspection tools installation: PASS.
+- TLS chain and hostname validation: PASS.
+- Source acquisition: BLOCKED — NCERT's server-side browser/session transaction.
+- Diagnostic artifact upload: PASS.
 
-## Scope and current status
+The original direct PDF request was redirected to the site root with a transient `_event_transid`; the response was HTML, not the PDF. The runner then fetched the official specification-index URL first, preserved its short-lived session cookie only within the ephemeral job, and retried with browser-compatible request headers. That URL still returned the generic NCERT home page (HTTP 200 HTML), whose page contained inline `_event_transid` and general homepage navigation but no Biology/Microscope/SSBK anchor. The link parser and response diagnostics were preserved in the one-day artifact.
 
-This work unit automates a previously blocked source retrieval/review path. It does not start Phase 2, implement a scientific engine, add 3D assets, or change application behaviour. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 3 remains PARTIAL; Phase 4 remains DONE for bounded prototype scope; Phase 5 onward remains NOT STARTED.
+This proves the remaining problem is not the TLS chain or PDF parser. The automation receives an NCERT homepage/transaction response instead of the actual specification listing. The browser-side transaction flow is not completed by a plain HTTP session bootstrap.
 
-The result and exact artifact/run evidence must be appended to `PHASE_STATE.md`, `ROADMAP.md`, `NEXT_WORK_REGISTER_2026_11_10.md` and `WORK_LOG.md` after the workflow has actually completed.
+## Evidence state and safety decision
+
+- No valid Biology PDF was obtained. No PDF signature, PDF SHA-256, page count or page-9 image was produced by this work unit.
+- `NCERT-BIO-WM-SPEC-002` stays OCR-only / `NOT_VISUALLY_CHECKED_THIS_PASS`; no catalogue value was promoted.
+- Both historical upload hashes remain separate and unchanged. No repeat upload request was made.
+- CI artifacts are diagnostic-only for the failed retrieval and expire after one day. The raw source PDF, raw HTML response and NCERT session cookie jar are not uploaded or committed.
+- A successful HTTPS response alone is not evidence of PDF authenticity, rights clearance, procurement equivalence, scientific validity, hazard approval or expert review.
+
+## Phase decision and next exact action
+
+Phase 1/1.1 remains IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 DONE for bounded dashboard/workspace-navigation prototype only; Phase 5/6 and Phases 7–9 NOT STARTED.
+
+Next: use an approved interactive browser session capable of completing NCERT's browser-side transaction flow, or find a newly accessible official NCERT mirror/source endpoint. Then obtain the actual PDF bytes, verify signature/size/SHA-256/page count, render PDF page 9, inspect the Kit Box detail, and complete source-rights, hazard and expert review before updating the catalogue. Do not weaken TLS verification, fabricate source data, merge historical hashes or bypass the phase gates.
