@@ -1187,3 +1187,15 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - This corrects the prior resume ambiguity: these RBSE syllabus PDFs are present, while the separate exact NCERT Biology-with-Microscope kit specification PDFs were not found. The two source sets are not interchangeable.
 - No fresh SHA-256 or visual page-image audit was performed; no detailed method, safety rule, apparatus specification or expected result was approved from syllabus text alone.
 - Next: build one normalized six-slice practical register with page-level provenance and alternative/mandatory distinctions; no repeat PDF search.
+
+
+## 2026-11-23 — Phase 4.1 stockroom cabinet navigation implemented
+
+- Re-read the repository README, inventory schema/read model, prior dashboard inventory audit, 3D workbench specification, analysis model, Chemistry engine, Biology model and React implementation before selecting the next task. Existing docs specified a 3D workbench, but the current UI remained a searchable flat inventory list with placeholder bench objects.
+- Recorded the canonical goal in `docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md`: subject-wise stockrooms and cabinet shelves, free-form object selection/assembly, empty dark 3D workbench, meaningful per-asset controls and deterministic evidence-backed outcomes. Fixed practicals are optional templates, not the product limit.
+- Existing data baseline: Physics 105 apparatus; Chemistry 53 apparatus/material + 124 historical reagent labels; Biology 175 item/visual rows + 58 manual reagent labels; 171 RBSE task rows. These are source-aware catalogue rows with different evidence states, not verified current kit stock or 3D models.
+- Implemented responsive React cabinet shelves generated from current category metadata, an All stock shelf, counts, accessible `aria-pressed` state and existing filter integration. Added Playwright assertions for Physics cabinet shelf filtering.
+- Commits: `5cd03dd53c2d2a243b0a7ebea77919ffa4089b41`, `2e2d9f71f6b65f5963044d619b540294b53fee79`, `6b876b63b296d78b6e84fc1b5a6742a638d786b1`.
+- Report: `docs/PHASE_4_1_SUBJECT_STOCKROOM_CABINETS_2026_11_23.md`.
+- CI status pending at record creation; do not claim tests passed until workflow result is read.
+- Next: canonical cabinet taxonomy + full inventory reachability/metadata audit; after that, licensed real 3D assets and dark workbench prototype, respecting source/rights/hazard gates.
