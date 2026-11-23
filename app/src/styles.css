@@ -200,3 +200,19 @@
     justify-content:flex-start;
   }
 }
+
+/* Subject stockroom: category cabinets provide a stable, browsable home for every source record. */
+.stockroom-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:4px 0 10px}
+.stockroom-heading>div{display:flex;flex-direction:column;gap:4px}
+.stockroom-heading span{font-size:8px;letter-spacing:.14em;font-weight:850;color:#65819a}
+.stockroom-heading strong{font-size:13px;color:#203b55}
+.stockroom-heading>small{font-size:8px;color:#8494a5;text-align:right}
+.stockroom-shelves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 14px}
+.stockroom-shelf{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:8px;min-width:0;min-height:58px;padding:9px;border:1px solid #dce5ec;border-radius:9px;background:linear-gradient(180deg,#fff 0%,#f7fafc 100%);text-align:left;cursor:pointer;box-shadow:inset 0 -3px 0 #e8eef3}
+.stockroom-shelf:hover,.stockroom-shelf.active{border-color:#83a9bd;background:#eef6f8;box-shadow:inset 0 -3px 0 #a9c6d2,0 0 0 2px #d8e9ef}
+.stockroom-shelf .shelf-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:7px;background:#e8f0f5;color:#456b86;font-size:15px}
+.stockroom-shelf>span:nth-child(2){display:flex;flex-direction:column;gap:4px;min-width:0}
+.stockroom-shelf strong{overflow-wrap:anywhere;font-size:8px;line-height:1.35;color:#314b64;text-transform:capitalize}
+.stockroom-shelf small{font-size:7px;color:#8291a1}
+.stockroom-shelf>b{align-self:start;min-width:22px;padding:4px 5px;border-radius:6px;background:#e8eef4;color:#48627b;text-align:center;font-size:8px}
+@media(max-width:760px){.stockroom-shelves{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.stockroom-shelf{min-height:54px;padding:7px;grid-template-columns:24px minmax(0,1fr) auto}.stockroom-heading{align-items:flex-start}}
