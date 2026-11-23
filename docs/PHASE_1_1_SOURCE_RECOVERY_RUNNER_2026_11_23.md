@@ -17,7 +17,7 @@ The 2026-11-22 master-roadmap hand-off names Biology-with-microscope Kit Box, PD
 
 ## Actual CI result and blocker
 
-Latest diagnostic run at the time of the roadmap hand-off: https://github.com/snchat78-svg/LabVerse/actions/runs/45123295045 (head `7641d4964d39c06b68387fa1a3a770675a6d9962`).
+Final diagnostic run: https://github.com/snchat78-svg/LabVerse/actions/runs/45123842519 (head `140ed33861bc89b1ced3cfef9e8fa8409875c168`; diagnostic artifact `14794527923`, five files, one-day retention).
 
 - Shell syntax validation: PASS.
 - PDF inspection tools installation: PASS.
@@ -25,7 +25,7 @@ Latest diagnostic run at the time of the roadmap hand-off: https://github.com/sn
 - Source acquisition: BLOCKED — NCERT's server-side browser/session transaction.
 - Diagnostic artifact upload: PASS.
 
-The original direct PDF request was redirected to the site root with a transient `_event_transid`; the response was HTML, not the PDF. The runner then fetched the official specification-index URL first, preserved its short-lived session cookie only within the ephemeral job, and retried with browser-compatible request headers. That URL still returned the generic NCERT home page (HTTP 200 HTML), whose page contained inline `_event_transid` and general homepage navigation but no Biology/Microscope/SSBK anchor. The link parser and response diagnostics were preserved in the one-day artifact.
+The original direct PDF request was redirected to the site root with a transient `_event_transid`; the response was HTML, not the PDF. The runner then fetched the official specification-index URL first, preserved its short-lived session cookie only within the ephemeral job, and retried with browser-compatible request headers. That URL still returned the generic NCERT home page (HTTP 200 HTML), not the specification index. The final diagnostic counted 1,129 anchors and zero Biology/Microscope/SSBK matches; transaction links included `_event_attackname=Cross Site Request Forgery` and `_event_threatcategory=Cross Site Request Forgery`. The sanitized parser output and response diagnostics were preserved in the one-day artifact.
 
 This proves the remaining problem is not the TLS chain or PDF parser. The automation receives an NCERT homepage/transaction response instead of the actual specification listing. The browser-side transaction flow is not completed by a plain HTTP session bootstrap.
 
