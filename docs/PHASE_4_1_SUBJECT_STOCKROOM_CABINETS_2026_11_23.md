@@ -36,3 +36,9 @@ Extend cabinet browsing into a complete inventory taxonomy and item-level comple
 - Each mapping preserves the raw source category and its item count; proposed cabinet grouping is explicitly `PROPOSED_NEEDS_REVIEW`, not a source fact or final mapping.
 - Four categories are deliberately unmapped pending human/domain review: Physics `ALIGNMENT` (2), Physics `LIQUID_TRANSFER` (1), Biology `DATA_RECORDING` (1), Biology `SAMPLE_CONTAINER` (1).
 - No catalogue item or source category was deleted or rewritten. Next work must validate every item row against the proposed shelf, correct composite/ambiguous placements and make every item reachable.
+
+## Final CI result — VERIFIED
+
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549 (test commit `a3041158285c41fbaad30d0e499ebc9743c5f339`).
+- TypeScript typecheck: PASS; production build: PASS; React browser smoke: **38 groups PASS**; static dashboard ↔ React parity: **13 groups PASS**.
+- First test attempt caught an ambiguous substring selector matching multiple measurement-related shelves. The selector was narrowed to the exact shelf label and the corrected run passed. No app-code rollback was required.
