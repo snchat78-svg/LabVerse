@@ -48,9 +48,46 @@ trap 'rm -f "$PDF_PATH"' EXIT
 
 write_report "RUNNING" "Preparing the official source retrieval and validation."
 echo "Downloading official NCERT Biology-with-microscope PDF (resume/retry enabled)."
+# NCERT's current HTTPS endpoint did not provide a verifiable chain to the
+# runner's default CA store. Fetch the official GoDaddy G2 chain over normally
+# verified HTTPS, pin both public SHA-256 fingerprints published by GoDaddy,
+# validate intermediate -> root, then use this narrow bundle for NCERT only.
+GODADDY_CA_DIR="$WORK_ROOT/godaddy-ca"
+mkdir -p "$GODADDY_CA_DIR"
+INTERMEDIATE_DER="$GODADDY_CA_DIR/gdig2.crt"
+INTERMEDIATE_PEM="$GODADDY_CA_DIR/gdig2.crt.pem"
+ROOT_PEM="$GODADDY_CA_DIR/gdroot-g2.crt.pem"
+NCERT_CA_BUNDLE="$GODADDY_CA_DIR/ncert-ca-bundle.pem"
+EXPECTED_INTERMEDIATE_SHA256="973a41276ffd01e027a2aad49e34c37846d3e976ff6a620b6712e33832041aa6"
+EXPECTED_ROOT_SHA256="45140b3247eb9cc8c5b4f0d7b53091f73292089e6e5a63e2749dd3aca9198eda"
+
+curl --fail --location --show-error --retry 3 --retry-all-errors --retry-delay 2 \
+  --connect-timeout 20 --max-time 120 \
+  --output "$INTERMEDIATE_DER" \
+  "https://certs.godaddy.com/repository/gdig2.crt"
+curl --fail --location --show-error --retry 3 --retry-all-errors --retry-delay 2 \
+  --connect-timeout 20 --max-time 120 \
+  --output "$ROOT_PEM" \
+  "https://certs.godaddy.com/repository/gdroot-g2.crt.pem"
+
+ACTUAL_INTERMEDIATE_SHA256="$(sha256sum "$INTERMEDIATE_DER" | awk '{print $1}')"
+ACTUAL_ROOT_SHA256="$(openssl x509 -in "$ROOT_PEM" -outform DER | sha256sum | awk '{print $1}')"
+if [[ "$ACTUAL_INTERMEDIATE_SHA256" != "$EXPECTED_INTERMEDIATE_SHA256" ]]; then
+  write_report "BLOCKED — CA INTERMEDIATE FINGERPRINT MISMATCH" "The downloaded GoDaddy intermediate did not match the fingerprint published in GoDaddy's certificate repository. It was not trusted and the NCERT download was not attempted."
+  exit 1
+fi
+if [[ "$ACTUAL_ROOT_SHA256" != "$EXPECTED_ROOT_SHA256" ]]; then
+  write_report "BLOCKED — CA ROOT FINGERPRINT MISMATCH" "The downloaded GoDaddy root did not match the fingerprint published in GoDaddy's certificate repository. It was not trusted and the NCERT download was not attempted."
+  exit 1
+fi
+openssl x509 -inform DER -in "$INTERMEDIATE_DER" -out "$INTERMEDIATE_PEM"
+openssl verify -CAfile "$ROOT_PEM" "$INTERMEDIATE_PEM"
+cat "$INTERMEDIATE_PEM" "$ROOT_PEM" > "$NCERT_CA_BUNDLE"
+
 curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
   --connect-timeout 30 --max-time 1200 \
+  --cacert "$NCERT_CA_BUNDLE" \
   --continue-at - \
   --output "$PDF_PATH" "$SOURCE_URL"
 
