@@ -1,3 +1,10 @@
+## Current hand-off — 2026-11-23 (RBSE practical register added)
+
+- Latest Phase 1.2 artifact: `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` (147 rows); report `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
+- Source pages: XI Physics 114–119, Chemistry 123–125, Biology 132–134; XII Physics 124–129, Chemistry 137–140, Biology 144–147, from existing `11_2027_copy.pdf` and `12_2027_copy.pdf`.
+- Includes physics experiment/activity/project lists, Biology major/minor/spotting groupings, Chemistry practical groups and alternatives. All catalogue_item_ids are deliberately blank pending exact source-backed join.
+- **Next exact work:** map each practical to existing catalogue IDs and item records via existing task IDs/source references, preserving alternatives and one-to-many links; then identify genuinely missing equipment/materials. Do not invent joins or safety/method details. Continue Phase 4.1 audits separately; Phase 2 remains BLOCKED.
+
 ## Current hand-off — 2026-11-23 (task-scope and Biology visual-aid review)
 
 - Latest register: `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv` (276 rows) with report `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
