@@ -140,34 +140,51 @@ curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
   --connect-timeout 30 --max-time 1200 \
   --cacert "$NCERT_CA_BUNDLE" \
+  --dump-header "$ARTIFACT_ROOT/http-response-headers.txt" \
   --continue-at - \
-  --output "$PDF_PATH" "$SOURCE_URL"
+  --output "$PDF_PATH" \
+  --write-out 'http_code=%{http_code}\ncontent_type=%{content_type}\nsize_download=%{size_download}\nnum_redirects=%{num_redirects}\nurl_effective=%{url_effective}\nremote_ip=%{remote_ip}\n' \
+  "$SOURCE_URL" > "$ARTIFACT_ROOT/curl-metadata.txt"
 
 OBSERVED_BYTES="$(wc -c < "$PDF_PATH" | tr -d '[:space:]')"
-if [[ "$OBSERVED_BYTES" != "$EXPECTED_BYTES" ]]; then
-  write_report "BLOCKED — BYTE COUNT MISMATCH" "The response completed but its byte count differs from the previously observed official-index response. Do not use this copy for page review until the changed source is reconciled."
-  echo "Expected $EXPECTED_BYTES bytes; received $OBSERVED_BYTES bytes." >&2
-  exit 1
-fi
+FILE_SIGNATURE="$(head -c 16 "$PDF_PATH" | od -An -tx1 | tr -s ' ' | sed 's/^ //;s/ $//')"
+FILE_DESCRIPTION="$(file -b "$PDF_PATH")"
+SOURCE_SHA256="$(sha256sum "$PDF_PATH" | awk '{print $1}')"
+{
+  printf 'observed_bytes=%s\n' "$OBSERVED_BYTES"
+  printf 'expected_bytes=%s\n' "$EXPECTED_BYTES"
+  printf 'signature_hex=%s\n' "$FILE_SIGNATURE"
+  printf 'file_description=%s\n' "$FILE_DESCRIPTION"
+  printf 'sha256=%s\n' "$SOURCE_SHA256"
+} > "$ARTIFACT_ROOT/source-inspection.txt"
+printf '%s  %s\n' "$SOURCE_SHA256" "SSBK_with_Microscope.pdf" > "$ARTIFACT_ROOT/source.sha256"
 
 if [[ "$(head -c 5 "$PDF_PATH")" != "%PDF-" ]]; then
-  write_report "BLOCKED — NOT A PDF" "The response has the expected byte count but does not begin with the PDF signature. It may be an error/interstitial response; no page data is trusted."
+  write_report "BLOCKED — RESPONSE IS NOT A PDF" "The TLS-verified HTTP response did not begin with the PDF signature. The response headers, curl metadata, signature and file description were retained for diagnosis; no page data is trusted."
   exit 1
 fi
 
-SOURCE_SHA256="$(sha256sum "$PDF_PATH" | awk '{print $1}')"
-PDF_INFO="$(pdfinfo "$PDF_PATH")"
+PDF_INFO="$(pdfinfo "$PDF_PATH" 2>&1 || true)"
+printf '%s\n' "$PDF_INFO" > "$ARTIFACT_ROOT/pdfinfo.txt"
 PDF_PAGE_COUNT="$(awk -F: '/^Pages:/ {gsub(/[[:space:]]/, "", $2); print $2}' <<< "$PDF_INFO")"
 if [[ -z "$PDF_PAGE_COUNT" || "$PDF_PAGE_COUNT" -lt 9 ]]; then
-  write_report "BLOCKED — PAGE VALIDATION FAILED" "The PDF page count could not be read or the document has fewer than 9 pages. No page image was produced."
+  write_report "BLOCKED — PAGE VALIDATION FAILED" "A PDF-signature response was returned, but pdfinfo could not establish at least 9 readable pages. The response metadata and source SHA-256 are retained; no page image was produced."
   exit 1
 fi
 
-printf '%s  %s\n' "$SOURCE_SHA256" "SSBK_with_Microscope.pdf" > "$ARTIFACT_ROOT/source.sha256"
+SIZE_STATUS="MATCH"
+if [[ "$OBSERVED_BYTES" != "$EXPECTED_BYTES" ]]; then
+  SIZE_STATUS="MISMATCH — CANDIDATE ONLY"
+fi
+
 pdftoppm -f 9 -l 9 -r 180 -png -singlefile "$PDF_PATH" "$ARTIFACT_ROOT/page-009"
 pdftotext -f 9 -l 9 -layout "$PDF_PATH" "$ARTIFACT_ROOT/page-009.txt"
 
-write_report "RETRIEVED — READY FOR HUMAN PAGE REVIEW" "The PDF signature, byte count, SHA-256 and page count were checked. PDF page 9 was rendered to page-009.png and its text extracted to page-009.txt. Compare the actual drawing, labels, dimensions and construction notes against catalogue row NCERT-BIO-WM-SPEC-002 before changing any catalogue evidence state."
-echo "Recovery complete. SHA-256: $SOURCE_SHA256"
-echo "PDF pages: $PDF_PAGE_COUNT"
+if [[ "$SIZE_STATUS" == "MATCH" ]]; then
+  write_report "RETRIEVED — READY FOR HUMAN PAGE REVIEW" "The PDF signature, expected byte count, SHA-256 and page count were checked. PDF page 9 was rendered to page-009.png and its text extracted to page-009.txt. Compare the actual drawing, labels, dimensions and construction notes against catalogue row NCERT-BIO-WM-SPEC-002 before changing any catalogue evidence state."
+else
+  write_report "RETRIEVED — CANDIDATE ONLY; BYTE COUNT MISMATCH" "The TLS-verified official-host response is a readable $PDF_PAGE_COUNT-page PDF and page 9 was rendered, but its $OBSERVED_BYTES bytes differ from the previously observed $EXPECTED_BYTES bytes. The exact source SHA-256 is in source.sha256. Treat this as a new candidate source copy; visually inspect page 9 only as provisional evidence, reconcile the version/size discrepancy, and do not merge or overwrite either historical upload hash."
+fi
+echo "Recovery candidate. SHA-256: $SOURCE_SHA256"
+echo "Observed bytes: $OBSERVED_BYTES; expected bytes: $EXPECTED_BYTES; page count: $PDF_PAGE_COUNT"
 echo "Review artifact directory: $ARTIFACT_ROOT"
