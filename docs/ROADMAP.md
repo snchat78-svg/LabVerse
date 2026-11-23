@@ -911,3 +911,12 @@ Original/licensed 3D apparatus, calibrated instruments, event-driven state, dete
 - Parity coverage includes source/task counts, three subjects, four destinations, filters, evidence/safety detail, candidate workbench repeated instances and per-instance removal, keyboard-only operation and 390px touch operation without drag. The static Research Studio is still a documented roadmap placeholder; React has the structured local Research Studio.
 - These checks do not certify physical Android devices, full WCAG conformance, real 3D, actual experiment runtime or scientific validity.
 - **Next:** Phase 4 exit-gate review of all accepted criteria and known differences. Phase 4 remains IN PROGRESS until that review completes. Phase 1/1.1 remains IN PROGRESS; Phase 2 remains BLOCKED; Phase 5/6 remain NOT STARTED.
+
+
+## Phase 1.1 source resume — existing RBSE PDFs mapped (2026-11-23)
+
+- Use the user's already supplied Library files `11_2027_copy.pdf` and `12_2027_copy.pdf` as the primary Class XI/XII RBSE 2026–27 curriculum sources. They include Physics, Chemistry and Biology practical sections.
+- Exact page map: XI Physics 114–119; XI Chemistry 123–125; XI Biology 132–140; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–150.
+- Source map: `docs/PHASE_1_1_EXISTING_RBSE_PRACTICAL_PDF_SOURCE_MAP_2026_11_23.md`.
+- Do not repeat the external NCERT search or request re-upload for the RBSE practical syllabus. Do not confuse these syllabus PDFs with the separate NCERT Biology-with-Microscope kit specification; that narrow Kit Box p.9 source remains unresolved and must not block curriculum extraction from the RBSE PDFs.
+- **Next work-unit:** normalize every in-scope practical/activity/project/spotting record for Class XI/XII × Physics/Chemistry/Biology, with page-level provenance, explicit alternatives and evidence status; join existing catalogue IDs rather than duplicating rows. Keep executable science and Phase 2 gated pending detailed method/safety review.
