@@ -712,3 +712,14 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 **Deliverable:** one normalized register across all six class/subject slices, including practical kind (experiment/activity/project/spotting/record/viva), source title, source filename/page, class, subject, explicit apparatus/material/specimen evidence, alternative-vs-mandatory status, existing catalogue ID and verification state. Preserve existing row identities/history; deduplicate only by defensible source identity. Mark unsupported fields `PENDING_SOURCE` rather than guessing.
 
 **Acceptance:** all six page ranges represented; page citations for every imported row; alternatives not flattened into mandatory tasks; no source row silently dropped; CI/schema/duplicate checks pass; update PHASE_STATE, ROADMAP, WORK_LOG and this register in the same work-unit. Do not advance Phase 2 science engines until method, rights and hazard evidence is sufficient. The separate NCERT kit Box page-9 retrieval is not a prerequisite for this RBSE curriculum extraction.
+
+
+## Active product work — Phase 4.1 subject stockroom taxonomy and completeness (2026-11-23)
+
+**Canonical brief:** `docs/PRODUCT_VISION_STOCKROOM_AND_3D_WORKBENCH.md`. Read this before future LabVerse work; do not ask the user to repeat the product requirements.
+
+**Completed in current work-unit:** React stockroom category shelves and All stock navigation are implemented from existing shared inventory rows; Playwright coverage added. See `docs/PHASE_4_1_SUBJECT_STOCKROOM_CABINETS_2026_11_23.md`.
+
+**Next exact deliverable:** one taxonomy and inventory reachability audit across all current records (Physics 105; Chemistry 53 + 124 historical reagent labels; Biology 175 + 58 manual reagent labels). Produce row-level mapping: canonical subject, cabinet, shelf, item type, class/session mapping, source ID/page/evidence, safety/rights state, 3D asset readiness, supported action contract readiness, linked practical task IDs. Identify uncategorised, duplicate, ambiguous and missing records; do not silently delete, merge or invent values. All stock must retain every source row. Cabinet categories are views, not duplicate catalogue data.
+
+**After taxonomy:** define asset manifest and licence/provenance contract, then a representative real 3D scene/workbench and asset interaction prototype. Keep real-world chemistry/biology execution and scientific outputs behind Phase 1/2 evidence, rights, hazard and expert-review gates. User's target remains a dark 3D bench where supported items can be picked, placed, rotated, connected and operated; results must be state/model-derived, not pre-scripted decoration.
