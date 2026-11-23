@@ -134,7 +134,7 @@ if [[ "$OFFICIAL_YE1_SHA256" != "$SERVER_YE1_SHA256" ]]; then
   write_report "BLOCKED — SERVER INTERMEDIATE DOES NOT MATCH OFFICIAL YE1" "The YE1 intermediate shown by NCERT did not match the current official Let's Encrypt YE1 certificate. No NCERT source download was attempted."
   exit 1
 fi
-printf 'Verified Let\x27s Encrypt YE1 SHA-256: %s\\n' "$SERVER_YE1_SHA256" >> "$TLS_DIAGNOSTIC"
+printf 'Verified Let\x27s Encrypt YE1 SHA-256: %s\n' "$SERVER_YE1_SHA256" >> "$TLS_DIAGNOSTIC"
 
 # NCERT redirects direct file requests to a session landing page. Bootstrap
 # the official specification index first, preserving only its ephemeral
@@ -150,7 +150,7 @@ curl --fail --location --show-error \
   --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
   --cookie-jar "$COOKIE_JAR" \
   --output "$INDEX_HTML" \
-  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nurl_effective=%{url_effective}\\n' \
+  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nurl_effective=%{url_effective}\n' \
   "$INDEX_URL" > "$ARTIFACT_ROOT/index-bootstrap.txt"
 
 python3 - "$INDEX_HTML" "$ARTIFACT_ROOT/index-anchor-diagnostic.txt" <<'PY'
@@ -203,15 +203,15 @@ PY
 
 if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
   {
-    printf 'index_bytes=%s\\n' "$(wc -c < "$INDEX_HTML" | tr -d '[:space:]')"
-    printf 'index_sha256=%s\\n' "$(sha256sum "$INDEX_HTML" | awk '{print $1}')"
-    printf 'index_file_type=%s\\n' "$(file -b "$INDEX_HTML")"
+    printf 'index_bytes=%s\n' "$(wc -c < "$INDEX_HTML" | tr -d '[:space:]')"
+    printf 'index_sha256=%s\n' "$(sha256sum "$INDEX_HTML" | awk '{print $1}')"
+    printf 'index_file_type=%s\n' "$(file -b "$INDEX_HTML")"
     printf 'index_title='
     grep -oiE '<title[^>]*>[^<]*' "$INDEX_HTML" | head -n 1 | sed 's/<[^>]*>//g' || true
-    printf '\\n-- Relevant HTML context (first 100 lines) --\\n'
-    grep -inE 'SSBK|biology|microscope|specification|grade 11|grade 12|\\.pdf|captcha|access denied|verify' "$INDEX_HTML" | head -n 100 || true
+    printf '\\n-- Relevant HTML context (first 100 lines) --\n'
+    grep -inE 'SSBK|biology|microscope|specification|grade 11|grade 12|\.pdf|captcha|access denied|verify' "$INDEX_HTML" | head -n 100 || true
   } > "$ARTIFACT_ROOT/index-source-link-diagnostic.txt"
-  write_report "BLOCKED — OFFICIAL INDEX DID NOT EXPOSE SOURCE LINK" "The TLS-verified NCERT specification index returned HTTP 200, but its response did not contain the expected Biology-with-microscope PDF filename. A size/hash/type/title and relevant-text diagnostic was retained; no direct file request was attempted."
+  write_report "BLOCKED — NCERT SERVER-SIDE SESSION / TRANSACTION GATE" "TLS verification succeeded and the official index URL returned HTTP 200, but the runner received the generic NCERT home page (HTML title contains a transient _event_transid) rather than the requested specification listing. The page contains no Biology-with-microscope/SSBK anchor. A sanitized title, page type, anchor list and SHA-256 were retained. The source file was not fetched; no TLS bypass or anti-bot workaround was used."
   exit 1
 fi
 
@@ -226,7 +226,7 @@ curl --fail --location --show-error \
   --dump-header "$ARTIFACT_ROOT/http-response-headers.txt" \
   --continue-at - \
   --output "$PDF_PATH" \
-  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nnum_redirects=%{num_redirects}\\nurl_effective=%{url_effective}\\nremote_ip=%{remote_ip}\\n' \
+  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nnum_redirects=%{num_redirects}\\nurl_effective=%{url_effective}\\nremote_ip=%{remote_ip}\n' \
   "$SOURCE_URL" > "$ARTIFACT_ROOT/curl-metadata.txt"
 
 OBSERVED_BYTES="$(wc -c < "$PDF_PATH" | tr -d '[:space:]')"
