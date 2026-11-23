@@ -1,4 +1,12 @@
 
+## Current hand-off — 2026-11-23 (135-category membership crosswalk)
+
+- Latest commit adds `data/catalogues/stockroom_category_membership_review_2026_11_23.csv` (135 category rows; 515 member records) and `docs/PHASE_4_1_CATEGORY_MEMBERSHIP_REVIEW_2026_11_23.md`.
+- Four unmapped category suggestions are provisional only: Physics ALIGNMENT → Mechanics, Oscillations & Waves; Physics LIQUID_TRANSFER → Fluids & Materials; Biology DATA_RECORDING → Visual Aids; Biology SAMPLE_CONTAINER → Storage & Lab Support. No domain approval or raw-category change.
+- **Next exact work:** second-pass review of mixed record types, ambiguous category names and OCR/index-only evidence groups; then prepare category approval decisions and update authoritative taxonomy only with evidence-backed rationale. Continue item-level provenance/safety/task scope.
+- Phase 4.1 IN PROGRESS; Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D NOT STARTED.
+
+
 ## Current hand-off — 2026-11-23 (Phase 4.1 item audit baseline)
 
 - Latest work: item-level audit baseline committed to `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` (515 rows); methodology/report at `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md`.
