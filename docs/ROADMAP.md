@@ -1,4 +1,11 @@
 
+## 2026-11-23 — Phase 4.1 category membership crosswalk
+
+- Reviewed all 135 subject/category combinations against actual members; new crosswalk `data/catalogues/stockroom_category_membership_review_2026_11_23.csv` covers all 515 current records. Report: `docs/PHASE_4_1_CATEGORY_MEMBERSHIP_REVIEW_2026_11_23.md`.
+- Four unmapped categories have provisional navigation candidates only. No mapping is domain-approved and raw source categories remain unchanged.
+- Next gate: review mixed-type, ambiguous and evidence-limited category groups; obtain expert decisions for the four candidates; then continue item-level provenance, safety and task-scope work. Do not promote 3D/action readiness.
+
+
 ## 2026-11-23 — Phase 4.1 stockroom taxonomy and item audit gate
 
 - Phase 4.1 is IN PROGRESS. Category-shelf navigation is implemented and CI-verified, but is not a 3D cabinet.
