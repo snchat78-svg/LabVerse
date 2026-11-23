@@ -1,3 +1,13 @@
+
+## 2026-11-23 — Phase 4.1 stockroom taxonomy and item audit gate
+
+- Phase 4.1 is IN PROGRESS. Category-shelf navigation is implemented and CI-verified, but is not a 3D cabinet.
+- Audit baseline: 515 row-level records created in `data/catalogues/stockroom_item_level_audit_2026_11_23.csv`; report: `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md`.
+- Current counts: Physics 105; Chemistry 177; Biology 233. 135 subject/category combinations are represented. All proposed mappings still require review.
+- Five records in four category combinations remain unmapped (Physics ALIGNMENT ×2, Physics LIQUID_TRANSFER ×1, Biology DATA_RECORDING ×1, Biology SAMPLE_CONTAINER ×1). 287 records have exact practical links; 228 require scope review for no task link. 184 records have no safety text. Item-level page evidence is not present in the read model for any of the 515 rows.
+- **Exit gate before Phase 5 asset expansion:** reviewed taxonomy; item-level source/page/variant/class/session/rights traceability; task-link scope disposition; safety review; asset licence/provenance contract. Do not infer scientific actions from category labels.
+- Phase 1/1.1 remains active for source recovery/authentication. Phase 2 remains blocked for executable scientific models. Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+
 ## 2026-11-22 — Phase 1.1 internal Library recovery attempt
 
 - The exact Biology-with-microscope specification PDFs were not found in current conversation attachments (0 files) or the accessible Library PDF listing/search. The official 59.6 MB attachment retrieval had already failed due reader size limit and DNS failure.
