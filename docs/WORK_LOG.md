@@ -1177,3 +1177,13 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Kit Box row 2 (PDF p.9 / printed p.4) remains OCR-only and not visually checked. No catalogue value is promoted; historic upload hashes remain separate. No repeat upload requested.
 - Next exact action: use a newly accessible official or previously recorded source route; hash bytes, then render and audit page 9. Keep this ordered task blocked until source access is real.
 - Report: `docs/PHASE_1_1_BIOLOGY_KIT_BOX_SOURCE_RECOVERY_2026_11_22.md`.
+
+
+## 2026-11-23 — Existing RBSE practical PDFs located and page-mapped
+
+- Located the user's existing Library PDFs `11_2027_copy.pdf` and `12_2027_copy.pdf`; these are the RBSE 2026–27 Class XI/XII syllabus documents and include Physics, Chemistry and Biology practical sections.
+- Mapped six source slices: XI Physics pp.114–119; XI Chemistry pp.123–125; XI Biology pp.132–140; XII Physics pp.124–129; XII Chemistry pp.137–140; XII Biology pp.144–150.
+- Added source-map report `docs/PHASE_1_1_EXISTING_RBSE_PRACTICAL_PDF_SOURCE_MAP_2026_11_23.md` (commit `d0c6a761faaf83e5cca36dcf685f088367e61611`).
+- This corrects the prior resume ambiguity: these RBSE syllabus PDFs are present, while the separate exact NCERT Biology-with-Microscope kit specification PDFs were not found. The two source sets are not interchangeable.
+- No fresh SHA-256 or visual page-image audit was performed; no detailed method, safety rule, apparatus specification or expected result was approved from syllabus text alone.
+- Next: build one normalized six-slice practical register with page-level provenance and alternative/mandatory distinctions; no repeat PDF search.
