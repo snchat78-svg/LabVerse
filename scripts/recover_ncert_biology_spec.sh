@@ -36,14 +36,14 @@ write_report() {
 }
 
 on_error() {
-  local exit_code="$?"
-  local failed_command="$BASH_COMMAND"
+  local exit_code="$1"
+  local failed_command="$2"
   trap - ERR
-  write_report "BLOCKED / FAILED" "Command failed with exit code $exit_code: `$failed_command`. See the workflow log for the network or PDF-tool diagnostic."
+  write_report "BLOCKED / FAILED" "Command failed with exit code $exit_code: `$failed_command`. See the workflow log and tls-chain-diagnostic.txt for the network or PDF-tool diagnostic."
   echo "Source recovery failed; diagnostic report retained at $REPORT_PATH" >&2
   exit "$exit_code"
 }
-trap on_error ERR
+trap 'on_error "$?" "$BASH_COMMAND"' ERR
 trap 'rm -f "$PDF_PATH"' EXIT
 
 write_report "RUNNING" "Preparing the official source retrieval and validation."
