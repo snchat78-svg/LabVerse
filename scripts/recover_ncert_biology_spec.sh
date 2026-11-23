@@ -152,7 +152,16 @@ curl --fail --location --show-error \
   "$INDEX_URL" > "$ARTIFACT_ROOT/index-bootstrap.txt"
 
 if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
-  write_report "BLOCKED — OFFICIAL INDEX DID NOT EXPOSE SOURCE LINK" "The TLS-verified NCERT specification index was fetched, but it did not contain the expected Biology-with-microscope PDF filename. No direct file request was attempted."
+  {
+    printf 'index_bytes=%s\\n' "$(wc -c < "$INDEX_HTML" | tr -d '[:space:]')"
+    printf 'index_sha256=%s\\n' "$(sha256sum "$INDEX_HTML" | awk '{print $1}')"
+    printf 'index_file_type=%s\\n' "$(file -b "$INDEX_HTML")"
+    printf 'index_title='
+    grep -oiE '<title[^>]*>[^<]*' "$INDEX_HTML" | head -n 1 | sed 's/<[^>]*>//g' || true
+    printf '\\n-- Relevant HTML context (first 100 lines) --\\n'
+    grep -inE 'SSBK|biology|microscope|specification|grade 11|grade 12|\\.pdf|captcha|access denied|verify' "$INDEX_HTML" | head -n 100 || true
+  } > "$ARTIFACT_ROOT/index-source-link-diagnostic.txt"
+  write_report "BLOCKED — OFFICIAL INDEX DID NOT EXPOSE SOURCE LINK" "The TLS-verified NCERT specification index returned HTTP 200, but its response did not contain the expected Biology-with-microscope PDF filename. A size/hash/type/title and relevant-text diagnostic was retained; no direct file request was attempted."
   exit 1
 fi
 
