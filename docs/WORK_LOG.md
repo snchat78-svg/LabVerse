@@ -1202,3 +1202,5 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 
 - Generated `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` with all 135 existing subject/category combinations (Physics 60, Chemistry 30, Biology 45). Raw categories remain unchanged; every cabinet assignment is marked proposed/needs review. Four category groups remain unmapped pending domain review.
 - Initial new Playwright selector matched nine category labels containing the word “MEASUREMENT”; corrected the test to target the exact canonical shelf label. Corrected workflow run `45132091549` is pending at the time of this entry.
+
+- Corrected test workflow: GitHub Actions SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549 (commit `a3041158285c41fbaad30d0e499ebc9743c5f339`). TypeScript typecheck PASS, production build PASS, React browser smoke **38 groups PASS**, static↔React parity **13 groups PASS**. Initial test failure was an ambiguous substring selector, not an application defect; exact shelf label selection fixed it.
