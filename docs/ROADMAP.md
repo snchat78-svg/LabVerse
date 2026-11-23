@@ -1,3 +1,15 @@
+## 2026-11-23 — Phase 1.1 NCERT source-recovery runner result: BLOCKED at server session gate
+
+- Implemented a dedicated GitHub Actions recovery runner for the next roadmap item: NCERT Secondary Stage Biology Kit with Microscope, Kit Box (catalogue row `NCERT-BIO-WM-SPEC-002`), PDF page 9 / printed page 4. Work is isolated on branch `phase-1-1-source-recovery-runner`; no application feature or catalogue data was changed.
+- Corrected TLS trust using the official Let's Encrypt YE1 intermediate and Root YE chain, verified the server-presented intermediate fingerprint, and used the certificate-matching `ncert.nic.in` hostname. TLS validation remains enabled; no insecure flag or certificate bypass is present.
+- GitHub Actions run: https://github.com/snchat78-svg/LabVerse/actions/runs/45123295045 (branch head at that run: `7641d4964d39c06b68387fa1a3a770675a6d9962`). Bash syntax validation PASS; PDF inspection tools installation PASS; source retrieval correctly FAILS CLOSED; diagnostic artifact upload PASS.
+- **Verified blocker:** a direct file request redirects to the NCERT home route with a transient `_event_transid`, which returns HTML rather than PDF. Fetching the official specification-index URL first, retaining its short-lived cookie only in the ephemeral runner, and using browser-compatible headers still returns the generic NCERT homepage (HTTP 200 HTML; inline `_event_transid`); the expected Biology/Microscope/SSBK anchor is absent from the returned page. This is a server-side browser/session transaction gate, not a TLS or PDF-parser failure.
+- No valid PDF bytes were obtained in this run; no PDF SHA-256, page count or page-9 image exists. The CI artifacts contain diagnostic material only. The source PDF, raw HTML page and session cookie jar are not uploaded or committed; CI artifacts expire after one day.
+- `NCERT-BIO-WM-SPEC-002` remains OCR-only / `NOT_VISUALLY_CHECKED_THIS_PASS`. No value was promoted. Both historical upload hashes remain separate and untouched. No repeat upload requested.
+- Phase gates unchanged: Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 3 PARTIAL; Phase 4 DONE for bounded dashboard/workspace-navigation prototype only; Phase 5/6 and Phases 7–9 NOT STARTED.
+- **Next exact action:** use an approved interactive browser session that completes NCERT's browser-side transaction flow, or a newly discoverable official NCERT mirror/source endpoint. Only after actual PDF bytes are obtained should the runner verify the PDF signature, exact size, SHA-256 and page count, render page 9, and request human/source-rights/hazard/expert review. Do not bypass TLS or promote the OCR row.
+- Implementation/report: `docs/PHASE_1_1_SOURCE_RECOVERY_RUNNER_2026_11_23.md`.
+
 ## 2026-11-22 — Phase 1.1 internal Library recovery attempt
 
 - The exact Biology-with-microscope specification PDFs were not found in current conversation attachments (0 files) or the accessible Library PDF listing/search. The official 59.6 MB attachment retrieval had already failed due reader size limit and DNS failure.
