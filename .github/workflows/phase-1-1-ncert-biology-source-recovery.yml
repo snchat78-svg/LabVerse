@@ -9,6 +9,11 @@ on:
       - "scripts/recover_ncert_biology_spec.sh"
   workflow_dispatch:
 
+# Do not launch parallel duplicate NCERT source requests on rapid branch pushes.
+concurrency:
+  group: phase-1-1-source-recovery-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
