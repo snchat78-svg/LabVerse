@@ -1,0 +1,42 @@
+name: LabVerse Phase 1.1 NCERT Biology source recovery
+
+on:
+  push:
+    branches:
+      - phase-1-1-source-recovery-runner
+    paths:
+      - ".github/workflows/phase-1-1-ncert-biology-source-recovery.yml"
+      - "scripts/recover_ncert_biology_spec.sh"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover-source:
+    name: Recover and render official Biology Kit page 9
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Validate recovery script syntax
+        run: bash -n scripts/recover_ncert_biology_spec.sh
+
+      - name: Install PDF inspection tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
+
+      - name: Retrieve and validate official NCERT PDF
+        run: bash scripts/recover_ncert_biology_spec.sh
+
+      - name: Preserve page-9 review material and diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biology-with-microscope-page-9-review
+          path: ${{ runner.temp }}/labverse-biology-source-review/*
+          if-no-files-found: warn
+          retention-days: 1
