@@ -1,3 +1,9 @@
+## 2026-11-23 — Phase 1.2 curriculum normalization
+
+- Normalized the RBSE 2026–27 Class XI/XII practical syllabus into `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` (147 rows) with source file, PDF page, subject, class, practical kind, alternatives, evidence status and pending catalogue join. Report: `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
+- Preserved Physics experiments/activities/projects, Biology Botany/Zoology major/minor and spotting group distinctions, and Chemistry alternatives. No unsupported task or inventory joins were invented.
+- Next: exact source-backed practical-to-catalogue join, one-to-many and alternatives preserved; produce missing-equipment/material gap report. Method-level rights/hazard gates remain before runtime. Phase 1/1.1 IN PROGRESS; Phase 2 BLOCKED.
+
 ## 2026-11-23 — Phase 4.1 task-scope and Biology visual-aid pass
 
 - Added a 276-row review register for all 228 no-task-link records and all 50 Biology visual aids: `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv`. Findings: `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
