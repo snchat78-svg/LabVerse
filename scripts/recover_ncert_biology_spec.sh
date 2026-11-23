@@ -28,8 +28,8 @@ write_report() {
     printf -- '- **Catalogue promotion:** NONE — existing OCR-only row remains unchanged\n\n'
     printf '## Runner result\n\n%s\n\n' "$detail"
     printf '## Integrity and safety boundary\n\n'
-    printf -- '- The downloaded PDF is temporary runner data and is not uploaded as an artifact or committed.\n'
-    printf -- '- Only the page-9 PNG, extracted page text, SHA-256 sidecar and this report may be retained for one day.\n'
+    printf -- '- The source PDF and NCERT session cookie jar remain temporary runner data; neither is uploaded as an artifact or committed.\n'
+    printf -- '- The one-day artifact may contain page-9 review outputs (only after PDF signature/page checks), SHA-256 sidecars, TLS-chain diagnostics, response headers, index-bootstrap metadata, sanitized index anchor/link diagnostics and this report.\n'
     printf -- '- This workflow checks transport integrity and enables visual review; it does not authenticate procurement equivalence, copyright/redistribution rights, scientific validity, safety or expert approval.\n'
     printf -- '- Historical upload hashes remain distinct and are not overwritten by this run.\n'
   } > "$REPORT_PATH"
@@ -150,7 +150,7 @@ curl --fail --location --show-error \
   --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" \
   --cookie-jar "$COOKIE_JAR" \
   --output "$INDEX_HTML" \
-  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nurl_effective=%{url_effective}\n' \
+  --write-out 'http_code=%{http_code}\ncontent_type=%{content_type}\nsize_download=%{size_download}\nurl_effective=%{url_effective}\n' \
   "$INDEX_URL" > "$ARTIFACT_ROOT/index-bootstrap.txt"
 
 python3 - "$INDEX_HTML" "$ARTIFACT_ROOT/index-anchor-diagnostic.txt" <<'PY'
@@ -191,14 +191,14 @@ source = Path(sys.argv[1]).read_text(errors="replace")
 parser = PageParser()
 parser.feed(source)
 target = [a for a in parser.anchors if any(k in (a["text"] + " " + a["href"]).lower()
-          for k in ("biology", "microscope", "ssbk", "specification", ".pdf"))]
+          for k in ("biology", "microscope", "ssbk"))]
 with open(sys.argv[2], "w") as out:
-    out.write("title=" + " ".join(parser.title) + "\\n")
-    out.write("anchor_count=" + str(len(parser.anchors)) + "\\n")
-    out.write("target_anchor_count=" + str(len(target)) + "\\n")
+    out.write("title=" + " ".join(parser.title) + "\n")
+    out.write("anchor_count=" + str(len(parser.anchors)) + "\n")
+    out.write("target_anchor_count=" + str(len(target)) + "\n")
     for a in (target if target else parser.anchors[:40]):
-        out.write("ANCHOR text=" + a["text"][:250] + " | href=" + a["href"][:500] + "\\n")
-    out.write("VISIBLE_TEXT_PREFIX=" + " ".join(parser.visible)[:2500] + "\\n")
+        out.write("ANCHOR text=" + a["text"][:250] + " | href=" + a["href"][:500] + "\n")
+    out.write("VISIBLE_TEXT_PREFIX=" + " ".join(parser.visible)[:2500] + "\n")
 PY
 
 if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
@@ -208,7 +208,7 @@ if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
     printf 'index_file_type=%s\n' "$(file -b "$INDEX_HTML")"
     printf 'index_title='
     grep -oiE '<title[^>]*>[^<]*' "$INDEX_HTML" | head -n 1 | sed 's/<[^>]*>//g' || true
-    printf '\\n-- Relevant HTML context (first 100 lines) --\n'
+    printf '\n-- Relevant HTML context (first 100 lines) --\n'
     grep -inE 'SSBK|biology|microscope|specification|grade 11|grade 12|\.pdf|captcha|access denied|verify' "$INDEX_HTML" | head -n 100 || true
   } > "$ARTIFACT_ROOT/index-source-link-diagnostic.txt"
   write_report "BLOCKED — NCERT SERVER-SIDE SESSION / TRANSACTION GATE" "TLS verification succeeded and the official index URL returned HTTP 200, but the runner received the generic NCERT home page (HTML title contains a transient _event_transid) rather than the requested specification listing. The page contains no Biology-with-microscope/SSBK anchor. A sanitized title, page type, anchor list and SHA-256 were retained. The source file was not fetched; no TLS bypass or anti-bot workaround was used."
@@ -226,7 +226,7 @@ curl --fail --location --show-error \
   --dump-header "$ARTIFACT_ROOT/http-response-headers.txt" \
   --continue-at - \
   --output "$PDF_PATH" \
-  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nnum_redirects=%{num_redirects}\\nurl_effective=%{url_effective}\\nremote_ip=%{remote_ip}\n' \
+  --write-out 'http_code=%{http_code}\ncontent_type=%{content_type}\nsize_download=%{size_download}\nnum_redirects=%{num_redirects}\nurl_effective=%{url_effective}\nremote_ip=%{remote_ip}\n' \
   "$SOURCE_URL" > "$ARTIFACT_ROOT/curl-metadata.txt"
 
 OBSERVED_BYTES="$(wc -c < "$PDF_PATH" | tr -d '[:space:]')"
