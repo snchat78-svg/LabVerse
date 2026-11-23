@@ -296,6 +296,18 @@ export default function App() {
       ]
     : [];
 
+  const stockroomShelves = useMemo(() => {
+    if (!activeData) return [];
+    const counts = new Map<string, number>();
+    [...activeData.inventory, ...activeData.reagents].forEach((item) => {
+      const category = item.category ?? item.type;
+      counts.set(category, (counts.get(category) ?? 0) + 1);
+    });
+    return [...counts.entries()]
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([category, count]) => ({category, count}));
+  }, [activeData]);
+
   const selectedTask = activeData?.tasks.find((task) => task.id === selectedTaskId) ?? null;
   const selectedTaskItems = selectedTask
     ? selectedTask.sourceItemIds
@@ -667,6 +679,35 @@ export default function App() {
                     <span>{biologyAuditPendingCount} items remain OCR/index-only. Uploaded-byte identity to NCERT is not verified.</span>
                   </div>
                 )}
+                <div className="stockroom-heading">
+                  <div><span>SUBJECT STOCKROOM</span><strong>Browse the cabinets</strong></div>
+                  <small>{stockroomShelves.length} shelves · {activeData.inventory.length + activeData.reagents.length} records</small>
+                </div>
+                <div className="stockroom-shelves" aria-label={`${activeData.name} stockroom cabinets`}>
+                  <button
+                    type="button"
+                    className={categoryFilter === "all" ? "stockroom-shelf active" : "stockroom-shelf"}
+                    aria-pressed={categoryFilter === "all"}
+                    onClick={() => { setCategoryFilter("all"); setItemTypeFilter("all"); setSearch(""); }}
+                  >
+                    <span className="shelf-icon">▦</span>
+                    <span><strong>All stock</strong><small>Every catalogue item</small></span>
+                    <b>{activeData.inventory.length + activeData.reagents.length}</b>
+                  </button>
+                  {stockroomShelves.map(({category, count}) => (
+                    <button
+                      type="button"
+                      key={category}
+                      className={categoryFilter === category ? "stockroom-shelf active" : "stockroom-shelf"}
+                      aria-pressed={categoryFilter === category}
+                      onClick={() => { setCategoryFilter(category); setItemTypeFilter("all"); setSearch(""); }}
+                    >
+                      <span className="shelf-icon">▤</span>
+                      <span><strong>{category.replaceAll("_", " ")}</strong><small>Open this cabinet shelf</small></span>
+                      <b>{count}</b>
+                    </button>
+                  ))}
+                </div>
                 <input
                   className="search"
                   type="search"
