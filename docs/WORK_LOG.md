@@ -1,3 +1,12 @@
+
+## 2026-11-23 — Phase 4.1 stockroom item-level audit baseline
+
+- **Files:** `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` (515 records); `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md`.
+- **Method:** joined inventory/reagent rows to task index by exact stable source item ID; joined raw categories to the existing 135-row subject/category taxonomy. No source record was edited, deleted, merged or promoted.
+- **Findings:** 515 total rows; Physics 105, Chemistry 177, Biology 233; no duplicate IDs. 287 task-linked, 228 not currently linked (scope review required). 184 have no safety text. All 515 taxonomy mappings remain proposed/unreviewed; four category combinations affect five unresolved rows. Item-level page evidence is absent from current read model for all rows.
+- **Boundary:** no source page, class, session, safety approval, asset readiness or action contract was invented. Task page ranges were not represented as item-level page proof. Reagents remain gated for identity-specific hazard/SDS and supply review.
+- **Next:** validate 135 category mappings and resolve five unmapped rows; then source/rights/safety/task-scope audit. Phase 4.1 remains IN PROGRESS; real 3D and scientific runtime remain NOT STARTED.
+
 ## 2026-11-20 — Phase 4 exit-gate review: practical navigation and group filters verified
 
 - **Code commits:** `5bb08808679d343e8d885ac141ad35a777d3d5d8` (React practical → workbench action); `d9c1710e32590be88737682b699d90af31f4ebfd` (persistent static task-card workbench action); `8be6f5bad1c78da85aeb72967a7ce0d1f5b8937f` (class + source-backed practical-group filters across both UIs).
