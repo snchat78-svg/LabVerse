@@ -25,7 +25,7 @@ async function main() {
     await page.getByRole("heading", {name:"Physics Lab"}).waitFor();
     assert.ok(await page.locator(".stockroom-shelf").count() > 1, "Physics stockroom must expose category cabinets");
     assert.match(await page.locator(".stockroom-heading").innerText(), /Browse the cabinets/);
-    await page.locator(".stockroom-shelf").filter({hasText:"MEASUREMENT"}).click();
+    await page.locator(".stockroom-shelf").filter({has:page.locator("strong", {hasText:/^MEASUREMENT$/})}).click();
     assert.equal(await page.locator(".inventory-filters select").nth(1).inputValue(), "MEASUREMENT");
     assert.ok(await page.locator(".item").count() >= 3, "measurement shelf should show its catalogue contents");
     await page.getByRole("button", {name:/All stock/}).click();
