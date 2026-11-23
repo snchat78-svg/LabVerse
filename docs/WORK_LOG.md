@@ -1,3 +1,9 @@
+## 2026-11-23 — RBSE practical register (Phase 1.2)
+
+- Created `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` (147 normalized rows) from the already supplied RBSE 2026–27 PDFs. XI pages: Physics 114–119, Chemistry 123–125, Biology 132–134. XII pages: Physics 124–129, Chemistry 137–140, Biology 144–147.
+- Kept Physics experiment/activity/project types separate; Biology Botany/Zoology major/minor and spotting groups distinct; Chemistry alternatives explicit. Report: `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
+- Catalogue joins remain pending rather than guessed. No procedures, concentrations, hazard permissions or outcomes were fabricated. No application code changed; no CI claim.
+
 ## 2026-11-23 — Phase 4.1 task-scope and Biology visual-aid review
 
 - Generated `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv` (276 rows: 228 no-task-link records + 50 Biology visual aids). Report: `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
