@@ -1,3 +1,11 @@
+
+## Current hand-off — 2026-11-23 (Phase 4.1 item audit baseline)
+
+- Latest work: item-level audit baseline committed to `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` (515 rows); methodology/report at `docs/PHASE_4_1_STOCKROOM_ITEM_LEVEL_AUDIT_2026_11_23.md`.
+- Phase 4.1 remains IN PROGRESS. All 515 proposed taxonomy mappings still need domain review; four raw category combinations (five records) are unmapped. 287 records have exact practical task links; 228 need scope disposition. 184 rows lack safety text. Item-level page evidence is missing from the current read model for all rows.
+- **Next exact task:** validate all 135 proposed category mappings against actual member rows; domain-review the five unmapped records; record reviewed rationale without silently changing raw categories. Then reconcile item-level source/page/edition/variant/class/session/rights, no-task-link scope and safety.
+- Phase 1/1.1 Biology-with-microscope Kit Box page-9 source recovery remains blocked; do not ask for repeat upload. Phase 2 remains BLOCKED; Phase 5 real 3D remains NOT STARTED pending asset contract and evidence gates.
+
 ## Current hand-off — 2026-11-22 (source recovery still blocked)
 
 - Phase 4 dashboard/workspace navigation: DONE for bounded prototype scope. Final React CI: https://github.com/snchat78-svg/LabVerse/actions/runs/44995645164; 37/37 React smoke, 13/13 static↔React parity, TypeScript and production build PASS. Final code: `d5b95afaa22f8d8bc8a40ad03511232cbb97c02c`; docs: `fa0d0da632b84756188de13346d16e98c9e4abf0`.
