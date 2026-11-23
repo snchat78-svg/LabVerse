@@ -48,41 +48,42 @@ trap 'rm -f "$PDF_PATH"' EXIT
 
 write_report "RUNNING" "Preparing the official source retrieval and validation."
 echo "Downloading official NCERT Biology-with-microscope PDF (resume/retry enabled)."
-# NCERT's current HTTPS endpoint did not provide a verifiable chain to the
-# runner's default CA store. Fetch the official GoDaddy G2 chain over normally
-# verified HTTPS, pin both public SHA-256 fingerprints published by GoDaddy,
-# validate intermediate -> root, then use this narrow bundle for NCERT only.
-GODADDY_CA_DIR="$WORK_ROOT/godaddy-ca"
-mkdir -p "$GODADDY_CA_DIR"
-INTERMEDIATE_DER="$GODADDY_CA_DIR/gdig2.crt"
-INTERMEDIATE_PEM="$GODADDY_CA_DIR/gdig2.crt.pem"
-ROOT_PEM="$GODADDY_CA_DIR/gdroot-g2.crt.pem"
-NCERT_CA_BUNDLE="$GODADDY_CA_DIR/ncert-ca-bundle.pem"
-EXPECTED_INTERMEDIATE_SHA256="973a41276ffd01e027a2aad49e34c37846d3e976ff6a620b6712e33832041aa6"
-EXPECTED_ROOT_SHA256="45140b3247eb9cc8c5b4f0d7b53091f73292089e6e5a63e2749dd3aca9198eda"
+# The NCERT leaf certificate is issued by Let's Encrypt YE1. The server
+# presents the leaf + YE1, but omits Root YE. Fetch the current official
+# Let's Encrypt intermediate and Root YE cross-signed by the established
+# ISRG Root X2, then verify the chain to the runner's normal system roots.
+LE_CA_DIR="$WORK_ROOT/letsencrypt-ca"
+mkdir -p "$LE_CA_DIR"
+YE1_PEM="$LE_CA_DIR/int-ye1.pem"
+ROOT_YE_CROSS_PEM="$LE_CA_DIR/root-ye-by-x2.pem"
+NCERT_CA_BUNDLE="$LE_CA_DIR/ncert-ca-bundle.pem"
 
 curl --fail --location --show-error --retry 3 --retry-all-errors --retry-delay 2 \
   --connect-timeout 20 --max-time 120 \
-  --output "$INTERMEDIATE_DER" \
-  "https://certs.godaddy.com/repository/gdig2.crt"
+  --output "$YE1_PEM" \
+  "https://letsencrypt.org/certs/gen-y/int-ye1.pem"
 curl --fail --location --show-error --retry 3 --retry-all-errors --retry-delay 2 \
   --connect-timeout 20 --max-time 120 \
-  --output "$ROOT_PEM" \
-  "https://certs.godaddy.com/repository/gdroot-g2.crt.pem"
+  --output "$ROOT_YE_CROSS_PEM" \
+  "https://letsencrypt.org/certs/gen-y/root-ye-by-x2.pem"
 
-ACTUAL_INTERMEDIATE_SHA256="$(sha256sum "$INTERMEDIATE_DER" | awk '{print $1}')"
-ACTUAL_ROOT_SHA256="$(openssl x509 -in "$ROOT_PEM" -outform DER | sha256sum | awk '{print $1}')"
-if [[ "$ACTUAL_INTERMEDIATE_SHA256" != "$EXPECTED_INTERMEDIATE_SHA256" ]]; then
-  write_report "BLOCKED — CA INTERMEDIATE FINGERPRINT MISMATCH" "The downloaded GoDaddy intermediate did not match the fingerprint published in GoDaddy's certificate repository. It was not trusted and the NCERT download was not attempted."
+YE1_SUBJECT="$(openssl x509 -in "$YE1_PEM" -noout -subject -nameopt RFC2253)"
+YE1_ISSUER="$(openssl x509 -in "$YE1_PEM" -noout -issuer -nameopt RFC2253)"
+ROOT_YE_SUBJECT="$(openssl x509 -in "$ROOT_YE_CROSS_PEM" -noout -subject -nameopt RFC2253)"
+ROOT_YE_ISSUER="$(openssl x509 -in "$ROOT_YE_CROSS_PEM" -noout -issuer -nameopt RFC2253)"
+if [[ "$YE1_SUBJECT" != *"CN=YE1"* || "$YE1_ISSUER" != *"CN=Root YE"* ]]; then
+  write_report "BLOCKED — UNEXPECTED LET'S ENCRYPT INTERMEDIATE" "The official Let’s Encrypt intermediate file did not have the expected YE1 → Root YE identity."
   exit 1
 fi
-if [[ "$ACTUAL_ROOT_SHA256" != "$EXPECTED_ROOT_SHA256" ]]; then
-  write_report "BLOCKED — CA ROOT FINGERPRINT MISMATCH" "The downloaded GoDaddy root did not match the fingerprint published in GoDaddy's certificate repository. It was not trusted and the NCERT download was not attempted."
+if [[ "$ROOT_YE_SUBJECT" != *"CN=Root YE"* || "$ROOT_YE_ISSUER" != *"CN=ISRG Root X2"* ]]; then
+  write_report "BLOCKED — UNEXPECTED ROOT CROSS-CERTIFICATE" "The downloaded Root YE certificate was not the expected cross-signed Root YE → ISRG Root X2 certificate."
   exit 1
 fi
-openssl x509 -inform DER -in "$INTERMEDIATE_DER" -out "$INTERMEDIATE_PEM"
-openssl verify -CAfile "$ROOT_PEM" "$INTERMEDIATE_PEM"
-cat "$INTERMEDIATE_PEM" "$ROOT_PEM" > "$NCERT_CA_BUNDLE"
+
+# Preserve the runner's normal trust store and add only this cross-signed
+# intermediate root certificate. TLS hostname and chain verification remain on.
+cat /etc/ssl/certs/ca-certificates.crt "$ROOT_YE_CROSS_PEM" > "$NCERT_CA_BUNDLE"
+openssl verify -CAfile "$NCERT_CA_BUNDLE" -untrusted "$ROOT_YE_CROSS_PEM" "$YE1_PEM"
 
 # Record the presented chains for both official hostnames. This is diagnostic
 # only: the page PDF is fetched only by curl after normal certificate checks.
@@ -112,6 +113,28 @@ for TLS_HOST in ncert.nic.in www.ncert.nic.in; do
     printf '\n'
   } >> "$TLS_DIAGNOSTIC"
 done
+
+# Ensure the intermediate actually presented by NCERT matches the official
+# Let's Encrypt YE1 certificate before attempting the large source transfer.
+SERVER_YE1_PEM=""
+for CERT in "$WORK_ROOT"/certs-www.ncert.nic.in/*.pem; do
+  CERT_SUBJECT="$(openssl x509 -in "$CERT" -noout -subject -nameopt RFC2253)"
+  if [[ "$CERT_SUBJECT" == *"CN=YE1"* && "$CERT_SUBJECT" == *"O=Let's Encrypt"* ]]; then
+    SERVER_YE1_PEM="$CERT"
+    break
+  fi
+done
+if [[ -z "$SERVER_YE1_PEM" ]]; then
+  write_report "BLOCKED — NCERT YE1 INTERMEDIATE NOT PRESENTED" "The official hostname did not present the expected Let's Encrypt YE1 intermediate. Inspect tls-chain-diagnostic.txt; no download was attempted."
+  exit 1
+fi
+OFFICIAL_YE1_SHA256="$(openssl x509 -in "$YE1_PEM" -outform DER | sha256sum | awk '{print $1}')"
+SERVER_YE1_SHA256="$(openssl x509 -in "$SERVER_YE1_PEM" -outform DER | sha256sum | awk '{print $1}')"
+if [[ "$OFFICIAL_YE1_SHA256" != "$SERVER_YE1_SHA256" ]]; then
+  write_report "BLOCKED — SERVER INTERMEDIATE DOES NOT MATCH OFFICIAL YE1" "The YE1 intermediate shown by NCERT did not match the current official Let's Encrypt YE1 certificate. No NCERT source download was attempted."
+  exit 1
+fi
+printf 'Verified Let\x27s Encrypt YE1 SHA-256: %s\\n' "$SERVER_YE1_SHA256" >> "$TLS_DIAGNOSTIC"
 
 curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
