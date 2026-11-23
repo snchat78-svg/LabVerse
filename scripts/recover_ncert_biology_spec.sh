@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 # Fetch the official NCERT Biology-with-microscope specification into the
 # ephemeral runner only. Never commit or publish the source PDF itself.
-SOURCE_URL="https://ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf"
+SOURCE_URL="https://www.ncert.nic.in/division/dek/pdf/SSBK_with_Microscope.pdf"
 EXPECTED_BYTES="59585913"
 WORK_ROOT="${RUNNER_TEMP:-${TMPDIR:-/tmp}}/labverse-biology-source-work"
 ARTIFACT_ROOT="${RUNNER_TEMP:-${TMPDIR:-/tmp}}/labverse-biology-source-review"
@@ -83,6 +83,35 @@ fi
 openssl x509 -inform DER -in "$INTERMEDIATE_DER" -out "$INTERMEDIATE_PEM"
 openssl verify -CAfile "$ROOT_PEM" "$INTERMEDIATE_PEM"
 cat "$INTERMEDIATE_PEM" "$ROOT_PEM" > "$NCERT_CA_BUNDLE"
+
+# Record the presented chains for both official hostnames. This is diagnostic
+# only: the page PDF is fetched only by curl after normal certificate checks.
+TLS_DIAGNOSTIC="$ARTIFACT_ROOT/tls-chain-diagnostic.txt"
+for TLS_HOST in ncert.nic.in www.ncert.nic.in; do
+  TLS_OUTPUT="$WORK_ROOT/tls-$TLS_HOST.txt"
+  CERT_DIR="$WORK_ROOT/certs-$TLS_HOST"
+  mkdir -p "$CERT_DIR"
+  timeout 25 openssl s_client -connect "$TLS_HOST:443" -servername "$TLS_HOST" -showcerts \
+    </dev/null > "$TLS_OUTPUT" 2>&1 || true
+  awk -v cert_dir="$CERT_DIR" '
+    /-----BEGIN CERTIFICATE-----/ { count++; cert_file=sprintf("%s/cert-%02d.pem", cert_dir, count); in_cert=1 }
+    in_cert { print > cert_file }
+    /-----END CERTIFICATE-----/ { close(cert_file); in_cert=0 }
+    END { print count+0 }
+  ' "$TLS_OUTPUT" > "$WORK_ROOT/cert-count-$TLS_HOST.txt"
+  {
+    printf '## %s\n' "$TLS_HOST"
+    printf 'Certificates presented: %s\n' "$(cat "$WORK_ROOT/cert-count-$TLS_HOST.txt")"
+    if compgen -G "$CERT_DIR/*.pem" > /dev/null; then
+      for CERT in "$CERT_DIR"/*.pem; do
+        openssl x509 -in "$CERT" -noout -subject -issuer -dates -fingerprint -sha256
+      done
+    else
+      grep -E 'verify error|Verify return code|connect:|Connection refused|Name or service not known' "$TLS_OUTPUT" || true
+    fi
+    printf '\n'
+  } >> "$TLS_DIAGNOSTIC"
+done
 
 curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
