@@ -1,3 +1,10 @@
+## 2026-11-23 — Phase 4.1 task-scope and Biology visual-aid pass
+
+- Added a 276-row review register for all 228 no-task-link records and all 50 Biology visual aids: `data/catalogues/stockroom_scope_and_visual_aid_review_2026_11_23.csv`. Findings: `docs/PHASE_4_1_TASK_SCOPE_AND_VISUAL_AID_REVIEW_2026_11_23.md`.
+- 182/228 unlinked rows are reagent labels (124 historical Chemistry + 58 manual Biology); these are not automatically practical-task defects. The remaining 46 non-reagent records need evidence-backed supporting-stock/research/task-gap decisions.
+- Biology visual aids remain separate from specimens/slides: 50 total, 48 linked, 2 unlinked; 49 index-only and one item-84 visual sample inspected. No raw categories or task links were changed. No mixed record types were found within a raw subject/category group in this snapshot.
+- Next: source-page provenance and scope disposition, visual-card page verification, safety review and asset rights contract. Phase 4.1 remains IN PROGRESS; do not start real 3D before gates.
+
 
 ## 2026-11-23 — Phase 4.1 category membership crosswalk
 
