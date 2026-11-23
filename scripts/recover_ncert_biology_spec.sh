@@ -136,14 +136,36 @@ if [[ "$OFFICIAL_YE1_SHA256" != "$SERVER_YE1_SHA256" ]]; then
 fi
 printf 'Verified Let\x27s Encrypt YE1 SHA-256: %s\\n' "$SERVER_YE1_SHA256" >> "$TLS_DIAGNOSTIC"
 
+# NCERT redirects direct file requests to a session landing page. Bootstrap
+# the official specification index first, preserving only its ephemeral
+# session cookie for the subsequent request. Never upload the cookie jar.
+INDEX_URL="https://ncert.nic.in/division/dek/specification_documents.php?ln=en"
+INDEX_HTML="$WORK_ROOT/official-specification-index.html"
+COOKIE_JAR="$WORK_ROOT/ncert-session.cookies"
+curl --fail --location --show-error \
+  --retry 3 --retry-all-errors --retry-delay 2 \
+  --connect-timeout 30 --max-time 180 \
+  --cacert "$NCERT_CA_BUNDLE" \
+  --cookie-jar "$COOKIE_JAR" \
+  --output "$INDEX_HTML" \
+  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nurl_effective=%{url_effective}\\n' \
+  "$INDEX_URL" > "$ARTIFACT_ROOT/index-bootstrap.txt"
+
+if ! grep -Fq "SSBK_with_Microscope.pdf" "$INDEX_HTML"; then
+  write_report "BLOCKED — OFFICIAL INDEX DID NOT EXPOSE SOURCE LINK" "The TLS-verified NCERT specification index was fetched, but it did not contain the expected Biology-with-microscope PDF filename. No direct file request was attempted."
+  exit 1
+fi
+
 curl --fail --location --show-error \
   --retry 5 --retry-all-errors --retry-delay 4 \
   --connect-timeout 30 --max-time 1200 \
   --cacert "$NCERT_CA_BUNDLE" \
+  --cookie "$COOKIE_JAR" --cookie-jar "$COOKIE_JAR" \
+  --referer "$INDEX_URL" \
   --dump-header "$ARTIFACT_ROOT/http-response-headers.txt" \
   --continue-at - \
   --output "$PDF_PATH" \
-  --write-out 'http_code=%{http_code}\ncontent_type=%{content_type}\nsize_download=%{size_download}\nnum_redirects=%{num_redirects}\nurl_effective=%{url_effective}\nremote_ip=%{remote_ip}\n' \
+  --write-out 'http_code=%{http_code}\\ncontent_type=%{content_type}\\nsize_download=%{size_download}\\nnum_redirects=%{num_redirects}\\nurl_effective=%{url_effective}\\nremote_ip=%{remote_ip}\\n' \
   "$SOURCE_URL" > "$ARTIFACT_ROOT/curl-metadata.txt"
 
 OBSERVED_BYTES="$(wc -c < "$PDF_PATH" | tr -d '[:space:]')"
