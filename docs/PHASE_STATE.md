@@ -2056,3 +2056,10 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Combined dedicated Phase 1.1 index coverage is now **158 records** across the six class/subject streams (previous 65 + new 93). XI Chemistry is section/group level where the syllabus does not enumerate every task individually. XII Chemistry alternatives are retained; Biology Annexure repeats are not double-counted.
 - All new rows remain NOT_JOINED_IN_THIS_PASS / SYLLABUS_TITLE_ONLY / NOT_REVIEWED. No apparatus, recipes, procedures, hazards, results or safety permissions invented. Existing 147-row Phase 1.2 register remains separate pending deduplication/reconciliation.
 - Phase 1.1 remains IN PROGRESS. Next: exact crosswalk to practical-task and stockroom records; report unmatched/one-to-many/alternative cases. Phase 2 remains BLOCKED; Phase 4.1 remains IN PROGRESS; Phase 5 real 3D NOT STARTED.
+
+
+## Latest update — 2026-11-24
+
+- Phase 1.1 now has a 158-row curriculum-to-task identity crosswalk. See `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`.
+- Identity crosswalk totals: 46 exact stable IDs; 27 unique punctuation-normalized IDs; 6 exact-title candidates requiring ID review; 18 group-level only; 61 pending review.
+- These are task-identity links only. Candidate source item IDs remain unverified and no inventory IDs were promoted. Phase 1.2 147-row reconciliation is still pending. Phase 2 BLOCKED; Phase 5/6 remain NOT STARTED.
