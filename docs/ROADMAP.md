@@ -991,3 +991,7 @@ Stockroom UI and catalogue audit can progress while source recovery is open. Rea
 ## Phase 1.1 progress — 2026-11-24
 
 The two Phase 1.1 indices (158 records) have been cross-referenced against the 171-row task traceability index. Status: 46 exact stable-ID, 27 unique punctuation-normalized ID, 6 exact-title candidates needing ID review, 18 group-level-only and 61 pending review. See `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`. This does not approve item-level catalogue links; next reconcile the separate 147-row register, then verify candidate item IDs against source records. Phase 2 remains blocked.
+
+## 2026-11-24 progress — accelerated curriculum reconciliation
+
+Phase 1.1 now has a 147-row Phase 1.2-to-158-row Phase 1.1 candidate reconciliation artifact. It is triage only: 67 high-similarity candidates, 65 possible candidates, 10 ambiguous, 4 without unique candidate and 1 group-level candidate. No fuzzy match is treated as verified. Next execution priority is source-page adjudication and then bulk exact item-ID checks against inventory. Phase 2 remains blocked by evidence gates; no real 3D/runtime claim.
