@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:smoke": "node tests/smoke.mjs",
-    "test:parity": "node tests/parity.mjs"
+    "test:parity": "node tests/parity.mjs",
+    "test:stockroom-coverage": "node tests/stockroom-coverage.mjs"
   },
   "dependencies": {
     "react": "19.3.1",
