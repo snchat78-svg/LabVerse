@@ -81,3 +81,6 @@ jobs:
 
       - name: Run static dashboard to React parity tests
         run: npm run test:parity
+
+      - name: Run complete item-level stockroom coverage
+        run: npm run test:stockroom-coverage
