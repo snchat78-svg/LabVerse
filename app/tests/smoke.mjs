@@ -115,6 +115,10 @@ async function main() {
     await page.locator(".back-button").click();
     await page.locator(".subject-card.amber").click();
     await page.getByRole("heading", {name:"Chemistry Lab"}).waitFor();
+    await page.getByRole("button", {name:/Glassware & Volumetric Ware/}).click();
+    assert.equal(await page.locator(".item").count(), 13, "Chemistry glassware cabinet should expose all 13 mapped rows");
+    await page.getByRole("button", {name:/All stock/}).click();
+    assert.equal(await page.locator(".item").count(), 177, "Chemistry All stock must expose apparatus plus reagent references");
     await page.locator(".content-grid .search").first().fill("Acetic acid");
     await page.locator(".item").filter({has:page.locator("strong", {hasText:/^Acetic acid$/})}).click();
     assert.match(await page.locator(".detail-panel").innerText(), /Reference only \/ no live use/i);
@@ -123,6 +127,15 @@ async function main() {
     await page.locator(".back-button").click();
     await page.locator(".subject-card.teal").click();
     await page.getByRole("heading", {name:"Biology Lab"}).waitFor();
+    await page.getByRole("button", {name:/Data & Recording/}).click();
+    assert.equal(await page.locator(".item").count(), 1, "Biology data-recording cabinet should expose Graph Paper");
+    assert.match((await page.locator(".item").allInnerTexts()).join(" "), /Graph Paper/);
+    await page.getByRole("button", {name:/All stock/}).click();
+    await page.getByRole("button", {name:/Samples & Containers/}).click();
+    assert.equal(await page.locator(".item").count(), 1, "Biology sample-container cabinet should expose the Petri dish");
+    assert.match((await page.locator(".item").allInnerTexts()).join(" "), /Petri Dish/);
+    await page.getByRole("button", {name:/All stock/}).click();
+    assert.equal(await page.locator(".item").count(), 233, "Biology All stock must expose all 233 catalogue and reagent-reference rows");
     const auditCoverage = page.locator(".visual-audit-coverage");
     assert.match(await auditCoverage.innerText(), /25 \/ 175 visually checked/i);
     assert.match(await auditCoverage.innerText(), /150 items remain OCR\/index-only/i);
