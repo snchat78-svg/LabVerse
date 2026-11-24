@@ -2073,4 +2073,10 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Verification: read 147 + 158 GitHub rows; generated 147-row CSV; status totals = 147. Data-only work; no CI run claimed.
 - Phase 1.1 remains IN PROGRESS. Phase 2 remains BLOCKED pending method provenance, rights and hazard evidence. Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
 - Next: source-page review of high-similarity rows in batches, then exact task-ID to inventory item reconciliation. No inventory IDs promoted in this pass.
-\n\n## 2026-11-24 — Bulk candidate item inventory-presence audit\n\n- Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`. The crosswalk's 158 curriculum records yielded 514 candidate item-ID references (128 unique); all 514 checked references were present in the dashboard catalogue and 0 were absent.\n- This is strictly an ID-presence result, not proof of task necessity, physical stock, procurement, safety, rights, or expert validation. PDF curriculum evidence remains authoritative for curriculum wording; candidate links remain unpromoted.\n- No expert/safety/rights/procurement status was upgraded. Phase 1.1 remains in progress pending source/task join review; Phase 2 and real 3D/runtime gates remain unchanged.\n
+
+
+## 2026-11-24 — Bulk candidate item inventory-presence audit
+
+- Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`. The crosswalk's 158 curriculum records yielded 514 candidate item-ID references (128 unique); all 514 checked references were present in the dashboard catalogue and 0 were absent.
+- This is strictly an ID-presence result, not proof of task necessity, physical stock, procurement, safety, rights, or expert validation. PDF curriculum evidence remains authoritative for curriculum wording; candidate links remain unpromoted.
+- No expert/safety/rights/procurement status was upgraded. Phase 1.1 remains in progress pending source/task join review; Phase 2 and real 3D/runtime gates remain unchanged.
