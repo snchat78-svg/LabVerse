@@ -1242,3 +1242,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Initial new Playwright selector matched nine category labels containing the word “MEASUREMENT”; corrected the test to target the exact canonical shelf label. Corrected workflow run `45132091549` is pending at the time of this entry.
 
 - Corrected test workflow: GitHub Actions SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549 (commit `a3041158285c41fbaad30d0e499ebc9743c5f339`). TypeScript typecheck PASS, production build PASS, React browser smoke **38 groups PASS**, static↔React parity **13 groups PASS**. Initial test failure was an ambiguous substring selector, not an application defect; exact shelf label selection fixed it.
+
+
+## 2026-11-24 — Phase 1.1 remaining syllabus streams
+
+- Extracted existing RBSE Library PDF pages and added 93 normalized index rows across XI Chemistry (7 source groups), XII Physics (39), XII Chemistry (20) and XII Biology (27). CSV: `data/curriculum/rbse_2026_2027_remaining_streams_index_2026_11_24.csv`; report: `docs/PHASE_1_1_REMAINING_STREAMS_INDEX_2026_11_24.md`.
+- Page evidence: XI Chemistry 123–125; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–147. Combined dedicated Phase 1.1 index now 158 rows with the prior 65-row XI Physics/Biology batch.
+- Kept chemistry alternatives and biology syllabus/spotting group semantics; Annexure repeats not counted again. No task/item joins, methods, chemical recipes, hazards, approvals or simulated outcomes fabricated.
+- Data/docs only; no application code or CI result claimed. Next: reconcile exact task and inventory crosswalks without duplicate rows.
