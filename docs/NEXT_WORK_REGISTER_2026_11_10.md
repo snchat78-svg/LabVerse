@@ -782,3 +782,12 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Dedicated Phase 1.1 indexes now contain 158 records across XI Physics, Chemistry, Biology and XII Physics, Chemistry, Biology. XI Chemistry uses 7 section/group records; XII Physics 39; XII Chemistry 20; XII Biology 27.
 - Exact PDF page provenance is recorded; all new rows remain unjoined and not safety-reviewed. Existing 147-row Phase 1.2 register is intentionally separate.
 - **Next exact work:** reconcile Phase 1.1 indices to the Phase 1.2 practical register, then link to stockroom items only where source evidence supports exact stable IDs. Preserve alternatives and one-to-many links; produce unmatched and missing-equipment reports. No invented joins or methods.
+
+
+## 2026-11-24 — Next work (accelerated)
+
+- Completed first-pass comparison of all 147 Phase 1.2 rows against 158 Phase 1.1 stable-ID rows.
+- Artifacts: `data/curriculum/rbse_2026_27_register_to_curriculum_reconciliation_2026_11_24.csv` and `docs/PHASE_1_1_REGISTER_RECONCILIATION_2026_11_24.md`.
+- Review buckets: 67 high similarity, 65 possible, 10 ambiguous, 4 no unique candidate, 1 group-level. These are NOT approved joins; title similarity is triage only.
+- **Next exact work:** inspect the 67 high-similarity candidates in source order against source PDF page wording and the 171-row task traceability index; bulk-check their candidate source item IDs against `dashboard/data/inventory.json`. Then resolve the remaining buckets. Preserve one-to-many and alternatives; never promote similarity alone.
+- Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
