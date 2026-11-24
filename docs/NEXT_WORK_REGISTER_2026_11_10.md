@@ -805,3 +805,5 @@ Next batch (parallel subject lanes):
 5. Update task traceability only where the PDF/source supports a curriculum fact; expert, safety, rights, procurement, and physical-stock gates remain separate.
 
 Do not mark Phase 1.1 complete until the remaining join and relevance review is closed.
+
+- Completed PDF page inspection in parallel across all six lanes: XI Physics pp.114–119, XI Chemistry pp.123–125, XI Biology pp.132–140, XII Physics pp.124–129, XII Chemistry pp.137–140, XII Biology pp.144–150. Next is per-record wording-to-candidate relevance reconciliation.
