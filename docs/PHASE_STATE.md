@@ -2090,3 +2090,12 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Four formerly unresolved categories now have explicit proposed destinations: Physics ALIGNMENT → Alignment & Levelling; Physics LIQUID_TRANSFER → Liquid Handling & Transfer; Biology DATA_RECORDING → Data & Recording; Biology SAMPLE_CONTAINER → Samples & Containers. Proposals remain `PROPOSED_NEEDS_REVIEW`, not approved taxonomy.
 - Report: `docs/PHASE_4_1_ITEM_LEVEL_STOCKROOM_REACHABILITY_AUDIT_2026_11_24.md`. The audit retains source/evidence/procurement boundaries; 515 catalogue rows are not authenticated physical stock, safety clearance, rights clearance or 3D assets.
 - Phase 4.1 remains IN PROGRESS. Next: validate proposed cabinet destinations against actual stockroom navigation and add all-row All stock/cabinet reachability tests. Do not start Phase 5 real 3D solely from this data audit.
+
+
+## 2026-11-24 — Phase 4.1 React cabinet integration — CI RUNNING
+
+- Added `app/src/stockroomTaxonomy.ts` generated from the canonical subject/category taxonomy; React now groups stockroom shelf buttons by proposed cabinet and filters items through the selected cabinet while preserving the raw source category filter and All stock.
+- Added Physics smoke coverage for Measurement & Metrology, Alignment & Levelling (Spirit level + Plumb line), and the full 105-row All stock view. Updated selector assertion to avoid strict multi-match locator behaviour.
+- Commits: taxonomy module `4ec84e64b7acfe5816954eb13dfd8ab607ba44e8`; app `15456ea76718e8ea74c569a525ccd86440d0a282`; smoke test `f7f9a5381692e18ad1d106b0884b8c761caff91d`; smoke locator correction `93b1fcb8c2d1e2f9d2fa84ab1b553273f1c6777d`.
+- GitHub Actions run #80: https://github.com/snchat78-svg/LabVerse/actions/runs/45365935422. Dependency installation and TypeScript typecheck have passed; Chromium, production build, browser smoke and parity steps are still running/pending. Do not mark CI green until final conclusion is SUCCESS.
+- Phase 4.1 remains IN PROGRESS pending full workflow and cabinet taxonomy review. No 3D assets/runtime claims.
