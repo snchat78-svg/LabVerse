@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ChangeEvent as ReactChangeEvent, type DragEvent as ReactDragEvent } from "react";
 import inventoryData from "../../dashboard/data/inventory.json";
+import { cabinetBySubjectCategory } from "./stockroomTaxonomy";
 
 type SubjectKey = "physics" | "chemistry" | "biology";
 type ClassFilter = "ALL" | "XI" | "XII";
@@ -216,6 +217,7 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [itemTypeFilter, setItemTypeFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [cabinetFilter, setCabinetFilter] = useState("all");
   const [taskSearch, setTaskSearch] = useState("");
   const [taskGroupFilter, setTaskGroupFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState<CatalogueItem | null>(null);
@@ -268,6 +270,7 @@ export default function App() {
     return catalogueRows.filter((item) => {
       const matchesType = itemTypeFilter === "all" || item.type === itemTypeFilter;
       const matchesCategory = categoryFilter === "all" || item.category === categoryFilter;
+      const matchesCabinet = cabinetFilter === "all" || cabinetBySubjectCategory[activeSubject ?? ""]?.[item.category ?? ""] === cabinetFilter;
       const matchesQuery =
         !query ||
         [
@@ -276,9 +279,9 @@ export default function App() {
           item.detail ?? "",
           item.source ?? ""
         ].join(" ").toLowerCase().includes(query);
-      return matchesType && matchesCategory && matchesQuery;
+      return matchesType && matchesCategory && matchesCabinet && matchesQuery;
     });
-  }, [activeData, search, itemTypeFilter, categoryFilter]);
+  }, [activeData, activeSubject, search, itemTypeFilter, categoryFilter, cabinetFilter]);
 
   const availableCategories = useMemo(() => {
     if (!activeData) return [];
@@ -297,16 +300,16 @@ export default function App() {
     : [];
 
   const stockroomShelves = useMemo(() => {
-    if (!activeData) return [];
+    if (!activeData || !activeSubject) return [];
     const counts = new Map<string, number>();
     [...activeData.inventory, ...activeData.reagents].forEach((item) => {
-      const category = item.category ?? item.type;
-      counts.set(category, (counts.get(category) ?? 0) + 1);
+      const cabinet = cabinetBySubjectCategory[activeSubject]?.[item.category ?? ""] ?? "Other / Needs review";
+      counts.set(cabinet, (counts.get(cabinet) ?? 0) + 1);
     });
     return [...counts.entries()]
       .sort(([left], [right]) => left.localeCompare(right))
-      .map(([category, count]) => ({category, count}));
-  }, [activeData]);
+      .map(([cabinet, count]) => ({cabinet, count}));
+  }, [activeData, activeSubject]);
 
   const selectedTask = activeData?.tasks.find((task) => task.id === selectedTaskId) ?? null;
   const selectedTaskItems = selectedTask
@@ -350,6 +353,7 @@ export default function App() {
     setSearch("");
     setItemTypeFilter("all");
     setCategoryFilter("all");
+    setCabinetFilter("all");
     setTaskSearch("");
     setTaskGroupFilter("all");
     setSelectedItem(null);
@@ -369,6 +373,7 @@ export default function App() {
     setSearch("");
     setItemTypeFilter("all");
     setCategoryFilter("all");
+    setCabinetFilter("all");
     setTaskSearch("");
     setTaskGroupFilter("all");
     setSelectedItem(null);
@@ -681,29 +686,29 @@ export default function App() {
                 )}
                 <div className="stockroom-heading">
                   <div><span>SUBJECT STOCKROOM</span><strong>Browse the cabinets</strong></div>
-                  <small>{stockroomShelves.length} shelves · {activeData.inventory.length + activeData.reagents.length} records</small>
+                  <small>{stockroomShelves.length} cabinets · {activeData.inventory.length + activeData.reagents.length} records</small>
                 </div>
                 <div className="stockroom-shelves" aria-label={`${activeData.name} stockroom cabinets`}>
                   <button
                     type="button"
-                    className={categoryFilter === "all" ? "stockroom-shelf active" : "stockroom-shelf"}
-                    aria-pressed={categoryFilter === "all"}
-                    onClick={() => { setCategoryFilter("all"); setItemTypeFilter("all"); setSearch(""); }}
+                    className={cabinetFilter === "all" ? "stockroom-shelf active" : "stockroom-shelf"}
+                    aria-pressed={cabinetFilter === "all"}
+                    onClick={() => { setCabinetFilter("all"); setCategoryFilter("all"); setItemTypeFilter("all"); setSearch(""); }}
                   >
                     <span className="shelf-icon">▦</span>
                     <span><strong>All stock</strong><small>Every catalogue item</small></span>
                     <b>{activeData.inventory.length + activeData.reagents.length}</b>
                   </button>
-                  {stockroomShelves.map(({category, count}) => (
+                  {stockroomShelves.map(({cabinet, count}) => (
                     <button
                       type="button"
-                      key={category}
-                      className={categoryFilter === category ? "stockroom-shelf active" : "stockroom-shelf"}
-                      aria-pressed={categoryFilter === category}
-                      onClick={() => { setCategoryFilter(category); setItemTypeFilter("all"); setSearch(""); }}
+                      key={cabinet}
+                      className={cabinetFilter === cabinet ? "stockroom-shelf active" : "stockroom-shelf"}
+                      aria-pressed={cabinetFilter === cabinet}
+                      onClick={() => { setCabinetFilter(cabinet); setCategoryFilter("all"); setItemTypeFilter("all"); setSearch(""); }}
                     >
                       <span className="shelf-icon">▤</span>
-                      <span><strong>{category.replaceAll("_", " ")}</strong><small>Open this cabinet shelf</small></span>
+                      <span><strong>{cabinet}</strong><small>Browse {cabinet.toLowerCase()}</small></span>
                       <b>{count}</b>
                     </button>
                   ))}
