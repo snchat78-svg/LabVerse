@@ -2080,3 +2080,5 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`. The crosswalk's 158 curriculum records yielded 514 candidate item-ID references (128 unique); all 514 checked references were present in the dashboard catalogue and 0 were absent.
 - This is strictly an ID-presence result, not proof of task necessity, physical stock, procurement, safety, rights, or expert validation. PDF curriculum evidence remains authoritative for curriculum wording; candidate links remain unpromoted.
 - No expert/safety/rights/procurement status was upgraded. Phase 1.1 remains in progress pending source/task join review; Phase 2 and real 3D/runtime gates remain unchanged.
+
+- Also inspected the uploaded RBSE PDF practical sections across all six lanes: XI Physics 114–119, Chemistry 123–125, Biology 132–140; XII Physics 124–129, Chemistry 137–140, Biology 144–150. Curriculum source pages are now checked; task-to-item relevance remains under review.
