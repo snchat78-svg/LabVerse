@@ -1268,4 +1268,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Generated a 147-row candidate reconciliation CSV with same-class/subject title similarity, one-to-one candidate consumption, and explicit review states. Results: 67 high-similarity review, 65 possible-match review, 10 ambiguous, 4 no unique candidate, 1 group-level review.
 - Added a report explaining method, limits and next work. Similarity is explicitly not treated as source proof; no item IDs promoted.
 - Verified output row count and status total = 147. Data-only pass; no CI run claimed.
-\n\n## 2026-11-24 — Bulk candidate item ID-presence audit\n\n- Compared 158 curriculum crosswalk records and 514 candidate item-ID references against 515 IDs in the current dashboard catalogue. 514 references exist; 0 are absent.\n- Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`.\n- The check validates only catalogue ID existence. It does not prove a practical-item relationship, physical stock, procurement, safety, rights, or expert review. No status was promoted on those dimensions.\n- Next: parallel Physics/Chemistry/Biology PDF-to-task-to-catalogue relevance review.\n
+
+
+## 2026-11-24 — Bulk candidate item ID-presence audit
+
+- Compared 158 curriculum crosswalk records and 514 candidate item-ID references against 515 IDs in the current dashboard catalogue. 514 references exist; 0 are absent.
+- Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`.
+- The check validates only catalogue ID existence. It does not prove a practical-item relationship, physical stock, procurement, safety, rights, or expert review. No status was promoted on those dimensions.
+- Next: parallel Physics/Chemistry/Biology PDF-to-task-to-catalogue relevance review.
