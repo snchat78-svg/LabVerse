@@ -2114,3 +2114,10 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Smoke coverage now exercises Physics Measurement & Metrology, Alignment & Levelling and 105-row All stock; Chemistry Glassware & Volumetric Ware and 177-row All stock; Biology Data & Recording, Samples & Containers and 233-row All stock. Biology/chemistry tests retain reagent and safety disclosure checks.
 - A Vite bundle-size warning remains (main JS chunk ~586 kB before gzip); build succeeds. Track code-splitting/performance as a follow-up, not a release failure.
 - This verifies current navigation/test paths, not every item-to-task relationship, expert approval of all taxonomy proposals, procurement, safety/rights, 3D models or scientific runtime. Phase 4.1 remains IN PROGRESS pending full taxonomy review and item-level exactly-once/reachability acceptance across all 515 records.
+
+
+## 2026-11-24 — Expanded three-subject cabinet tests verified
+
+- GitHub Actions run #81 SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45366247565 (commit `89807d49b8c5a13a9e7f5bee9cc45e24dcacf460`). TypeScript typecheck PASS; production build PASS; React browser smoke 38 groups PASS; static↔React parity 13 groups PASS.
+- Additional smoke checks: Physics All stock 105; Chemistry Glassware & Volumetric Ware 13 and All stock 177; Biology Data & Recording (Graph Paper), Samples & Containers (Petri Dish), All stock 233. Run log confirms the three-subject paths passed.
+- Remaining: exhaustive DOM-level exactly-once proof for every one of 515 rows and subject review of proposed cabinet taxonomy. Phase 4.1 remains IN PROGRESS; Phase 5 asset manifest/real 3D is not started until the Phase 4.1 gate closes.
