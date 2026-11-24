@@ -1317,3 +1317,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - GitHub Actions run #81 SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45366247565 (commit `89807d49b8c5a13a9e7f5bee9cc45e24dcacf460`). TypeScript typecheck PASS; production build PASS; React browser smoke 38 groups PASS; static↔React parity 13 groups PASS.
 - Additional smoke checks: Physics All stock 105; Chemistry Glassware & Volumetric Ware 13 and All stock 177; Biology Data & Recording (Graph Paper), Samples & Containers (Petri Dish), All stock 233. Run log confirms the three-subject paths passed.
 - Remaining: exhaustive DOM-level exactly-once proof for every one of 515 rows and subject review of proposed cabinet taxonomy. Phase 4.1 remains IN PROGRESS; Phase 5 asset manifest/real 3D is not started until the Phase 4.1 gate closes.
+
+
+## 2026-11-24 — Cross-subject cabinet reachability smoke tests PASS
+
+- GitHub Actions run #81 SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45366247565 (commit `89807d49b8c5a13a9e7f5bee9cc45e24dcacf460`). TypeScript typecheck, production build, React browser smoke and static dashboard ↔ React parity all passed.
+- Browser smoke now verifies Physics Measurement & Metrology, Alignment & Levelling and all 105 Physics rows; Chemistry Glassware & Volumetric Ware (13 rows) and All stock (177 apparatus + reagent-reference rows); Biology Data & Recording (Graph Paper), Samples & Containers (Petri Dish) and All stock (233 catalogue + reagent-reference rows).
+- This verifies these selected cabinet routes and current All stock totals in the UI, not every cabinet row individually or expert approval of all taxonomy proposals. Chemistry reagent references and Biology manual reagent references are not confirmed physical kit stock.
+- Phase 4.1 remains IN PROGRESS. Next gate: add a data-driven automated assertion covering all 515 IDs (exactly once in All stock and one mapped cabinet), review taxonomy proposals across all 135 category rows, then only close Phase 4.1 after that gate passes.
