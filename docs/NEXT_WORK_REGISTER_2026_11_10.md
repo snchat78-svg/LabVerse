@@ -791,4 +791,17 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 - Review buckets: 67 high similarity, 65 possible, 10 ambiguous, 4 no unique candidate, 1 group-level. These are NOT approved joins; title similarity is triage only.
 - **Next exact work:** inspect the 67 high-similarity candidates in source order against source PDF page wording and the 171-row task traceability index; bulk-check their candidate source item IDs against `dashboard/data/inventory.json`. Then resolve the remaining buckets. Preserve one-to-many and alternatives; never promote similarity alone.
 - Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
-\n\n## 2026-11-24 — Next parallel batch: source and relevance reconciliation\n\nCompleted this batch: `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`. All 514 candidate item-ID references were checked against the dashboard catalogue (514 present; 0 absent). This is not task-level or stock verification.\n\nNext batch (parallel subject lanes):\n1. Physics: reconcile each curriculum/task join and candidate item against RBSE PDF wording/pages and catalogue detail.\n2. Chemistry: separately preserve experiment/activity/project alternatives and reconcile reagent/glassware candidates; do not merge alternatives.\n3. Biology: reconcile specimen, microscope, slide, and reagent candidates against exact PDF requirements.\n4. Cross-subject: resolve pending/title/group-only joins and publish unresolved gaps.\n5. Update task traceability only where the PDF/source supports a curriculum fact; expert, safety, rights, procurement, and physical-stock gates remain separate.\n\nDo not mark Phase 1.1 complete until the remaining join and relevance review is closed.\n
+
+
+## 2026-11-24 — Next parallel batch: source and relevance reconciliation
+
+Completed this batch: `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`. All 514 candidate item-ID references were checked against the dashboard catalogue (514 present; 0 absent). This is not task-level or stock verification.
+
+Next batch (parallel subject lanes):
+1. Physics: reconcile each curriculum/task join and candidate item against RBSE PDF wording/pages and catalogue detail.
+2. Chemistry: separately preserve experiment/activity/project alternatives and reconcile reagent/glassware candidates; do not merge alternatives.
+3. Biology: reconcile specimen, microscope, slide, and reagent candidates against exact PDF requirements.
+4. Cross-subject: resolve pending/title/group-only joins and publish unresolved gaps.
+5. Update task traceability only where the PDF/source supports a curriculum fact; expert, safety, rights, procurement, and physical-stock gates remain separate.
+
+Do not mark Phase 1.1 complete until the remaining join and relevance review is closed.
