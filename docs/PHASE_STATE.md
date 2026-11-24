@@ -2082,3 +2082,11 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - No expert/safety/rights/procurement status was upgraded. Phase 1.1 remains in progress pending source/task join review; Phase 2 and real 3D/runtime gates remain unchanged.
 
 - Also inspected the uploaded RBSE PDF practical sections across all six lanes: XI Physics 114–119, Chemistry 123–125, Biology 132–140; XII Physics 124–129, Chemistry 137–140, Biology 144–150. Curriculum source pages are now checked; task-to-item relevance remains under review.
+
+
+## 2026-11-24 — Phase 4.1 item-level reachability audit
+
+- Added `data/catalogues/stockroom_item_level_reachability_audit_2026_11_24.csv`: all 515 catalogue/reagent rows joined to 135 subject/category taxonomy rows; 515 unique IDs, no duplicate ID groups, and no missing category mapping rows after proposing four item-led cabinet destinations.
+- Four formerly unresolved categories now have explicit proposed destinations: Physics ALIGNMENT → Alignment & Levelling; Physics LIQUID_TRANSFER → Liquid Handling & Transfer; Biology DATA_RECORDING → Data & Recording; Biology SAMPLE_CONTAINER → Samples & Containers. Proposals remain `PROPOSED_NEEDS_REVIEW`, not approved taxonomy.
+- Report: `docs/PHASE_4_1_ITEM_LEVEL_STOCKROOM_REACHABILITY_AUDIT_2026_11_24.md`. The audit retains source/evidence/procurement boundaries; 515 catalogue rows are not authenticated physical stock, safety clearance, rights clearance or 3D assets.
+- Phase 4.1 remains IN PROGRESS. Next: validate proposed cabinet destinations against actual stockroom navigation and add all-row All stock/cabinet reachability tests. Do not start Phase 5 real 3D solely from this data audit.
