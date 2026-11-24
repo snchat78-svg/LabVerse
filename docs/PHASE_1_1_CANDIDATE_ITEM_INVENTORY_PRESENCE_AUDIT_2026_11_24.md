@@ -44,3 +44,8 @@ PDF-derived curriculum records and page references remain the source authority f
 2. Resolve remaining pending/title/group-level joins without collapsing Chemistry alternatives or optional practicals.
 3. Run subject-wise candidate-item relevance review using each practical's actual PDF wording and the item detail/evidence fields.
 4. Keep Phase 2 evidence gates and Phase 5/6 implementation gates unchanged until their own evidence and tests exist.
+
+
+## PDF source-page coverage inspected in this batch
+
+The corresponding RBSE PDF sections were also read for all six class/subject lanes: Class XI Physics pp. 114–119, Chemistry pp. 123–125, Biology pp. 132–140; Class XII Physics pp. 124–129, Chemistry pp. 137–140, Biology pp. 144–150. These page ranges are confirmed as present/read in the uploaded 2026–2027 syllabus PDFs. This confirms the curriculum source-page basis, but does not automatically validate candidate equipment relevance or non-curriculum gates.
