@@ -1,3 +1,13 @@
+
+
+## 2026-11-24 — Phase 1.1 curriculum-to-task identity crosswalk
+
+- Added `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` (158 rows) and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`.
+- Joined the two Phase 1.1 indices (65 + 93) to the existing 171-row task traceability index. Results: 46 exact stable-ID; 27 unique punctuation-normalized ID; 6 exact-title matches requiring ID review; 18 group-level-only; 61 pending review.
+- Candidate source item IDs were copied only from matched task traceability rows and remain unverified candidates. No catalogue item IDs were promoted. The separate 147-row Phase 1.2 register remains to be reconciled; do not add 147 and 158 as unique practical counts.
+- No procedure, safety, quantity, concentration, permission, measurement or result data was invented. Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Verification: input counts 65, 93 and 171 were read from GitHub; output CSV generated with 158 records and status totals sum to 158. Read-back verification follows.
+
 ## Latest progress hand-off — 2026-11-24
 
 **Completed first source-backed curriculum batch:** `data/curriculum/rbse_2026_2027_class_xi_physics_biology_practical_index.csv` (65 entries; Class XI Physics 41 and Biology 24). Report: `docs/PHASE_1_1_CLASS_XI_PHYSICS_BIOLOGY_PRACTICAL_INDEX_2026_11_24.md`. Source is existing `11_2027_copy.pdf`: Physics pp.115–119 and Biology pp.132–134. Stable IDs and source pages are included; catalogue joins remain NOT_JOINED and no procedures/safety approvals were invented.
