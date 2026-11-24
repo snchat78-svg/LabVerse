@@ -1,3 +1,10 @@
+## 2026-11-24 — Phase 1.1 first normalized curriculum batch
+
+- Added `data/curriculum/rbse_2026_2027_class_xi_physics_biology_practical_index.csv`: 65 source-backed Class XI records (Physics 41: 17 experiments, 13 activities across sections A/B, 11 projects; Biology 24: Botany/Zoology major/minor and 11 spotting groups).
+- Source pages: Class XI Physics PDF pp.115–119 (evaluation context p.114); Biology pp.132–134 from existing `11_2027_copy.pdf`. Report: `docs/PHASE_1_1_CLASS_XI_PHYSICS_BIOLOGY_PRACTICAL_INDEX_2026_11_24.md`.
+- Stable curriculum IDs assigned. Existing task catalogue joins intentionally remain NOT_JOINED; entries are syllabus titles/groups, not procedures or safety-approved actions. No reagent recipes, practical methods or science outputs inferred.
+- Phase 1.1 IN PROGRESS; Phase 2 BLOCKED. Next: normalize Class XI Chemistry and all Class XII streams, then join IDs to existing task catalogue with page evidence.
+
 ## 2026-11-23 — Phase 1.2 RBSE practical register
 
 - Added `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` with 147 normalized rows from the existing RBSE 2026–27 syllabus PDFs. Report: `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
