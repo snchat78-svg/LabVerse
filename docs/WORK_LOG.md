@@ -1276,3 +1276,5 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` and `docs/PHASE_1_1_CANDIDATE_ITEM_INVENTORY_PRESENCE_AUDIT_2026_11_24.md`.
 - The check validates only catalogue ID existence. It does not prove a practical-item relationship, physical stock, procurement, safety, rights, or expert review. No status was promoted on those dimensions.
 - Next: parallel Physics/Chemistry/Biology PDF-to-task-to-catalogue relevance review.
+
+- Inspected all six RBSE practical source-page ranges (XI Physics 114–119; XI Chemistry 123–125; XI Biology 132–140; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–150). Curriculum page presence is confirmed; candidate-to-practical relevance still needs row-level review.
