@@ -2106,3 +2106,11 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45365935422 (run #80, commit `93b1fcb8c2d1e2f9d2fa84ab1b553273f1c6777d`). TypeScript typecheck PASS; production build PASS; React browser smoke PASS including Measurement & Metrology cabinet, Alignment & Levelling cabinet (2 tools), and all 105 Physics rows in All stock; static dashboard ↔ React parity PASS.
 - This verifies the current React integration and tested Physics paths only. It does not approve all 135 taxonomy proposals, test every Chemistry/Biology cabinet path, certify procurement/safety/rights, or implement 3D assets/runtime.
 - Phase 4.1 remains IN PROGRESS. Next: add equivalent Chemistry and Biology cabinet/All stock reachability tests and automated all-515-row uniqueness/reachability assertions; subject-review the proposed cabinet taxonomy before closing the phase.
+
+
+## 2026-11-24 — Phase 4.1 three-subject cabinet smoke verification SUCCESS
+
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45366247565 (run #81, commit `89807d49b8c5a13a9e7f5bee9cc45e24dcacf460`). TypeScript typecheck PASS; production build PASS; React browser smoke **38 groups PASS**; static↔React parity **13 groups PASS**.
+- Smoke coverage now exercises Physics Measurement & Metrology, Alignment & Levelling and 105-row All stock; Chemistry Glassware & Volumetric Ware and 177-row All stock; Biology Data & Recording, Samples & Containers and 233-row All stock. Biology/chemistry tests retain reagent and safety disclosure checks.
+- A Vite bundle-size warning remains (main JS chunk ~586 kB before gzip); build succeeds. Track code-splitting/performance as a follow-up, not a release failure.
+- This verifies current navigation/test paths, not every item-to-task relationship, expert approval of all taxonomy proposals, procurement, safety/rights, 3D models or scientific runtime. Phase 4.1 remains IN PROGRESS pending full taxonomy review and item-level exactly-once/reachability acceptance across all 515 records.
