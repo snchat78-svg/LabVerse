@@ -1286,3 +1286,12 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Added row-level audit CSV and report; updated the taxonomy with proposals for Physics alignment tools/liquid transfer and Biology data recording/sample containers. Proposals stay `PROPOSED_NEEDS_REVIEW`.
 - No physical stock, procurement, safety, rights, 3D asset or scientific runtime status was upgraded. No CI run is claimed for this data-only batch.
 - Next: integrate the canonical cabinet map into React, prove all 515 IDs are reachable exactly once from All stock and through the appropriate cabinet, then run the app workflow.
+
+
+## 2026-11-24 — Phase 4.1 React cabinet integration — CI RUNNING
+
+- Added `app/src/stockroomTaxonomy.ts` generated from the canonical subject/category taxonomy; React now groups stockroom shelf buttons by proposed cabinet and filters items through the selected cabinet while preserving the raw source category filter and All stock.
+- Added Physics smoke coverage for Measurement & Metrology, Alignment & Levelling (Spirit level + Plumb line), and the full 105-row All stock view. Updated selector assertion to avoid strict multi-match locator behaviour.
+- Commits: taxonomy module `4ec84e64b7acfe5816954eb13dfd8ab607ba44e8`; app `15456ea76718e8ea74c569a525ccd86440d0a282`; smoke test `f7f9a5381692e18ad1d106b0884b8c761caff91d`; smoke locator correction `93b1fcb8c2d1e2f9d2fa84ab1b553273f1c6777d`.
+- GitHub Actions run #80: https://github.com/snchat78-svg/LabVerse/actions/runs/45365935422. Dependency installation and TypeScript typecheck have passed; Chromium, production build, browser smoke and parity steps are still running/pending. Do not mark CI green until final conclusion is SUCCESS.
+- Phase 4.1 remains IN PROGRESS pending full workflow and cabinet taxonomy review. No 3D assets/runtime claims.
