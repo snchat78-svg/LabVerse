@@ -807,3 +807,11 @@ Next batch (parallel subject lanes):
 Do not mark Phase 1.1 complete until the remaining join and relevance review is closed.
 
 - Completed PDF page inspection in parallel across all six lanes: XI Physics pp.114–119, XI Chemistry pp.123–125, XI Biology pp.132–140, XII Physics pp.124–129, XII Chemistry pp.137–140, XII Biology pp.144–150. Next is per-record wording-to-candidate relevance reconciliation.
+
+
+## Active work — Phase 4.1 item-level reachability (2026-11-24)
+
+- Latest audit covers all 515 rows across Physics (105), Chemistry apparatus (53) + historical reagent labels (124), and Biology items (175) + manual reagent labels (58). All 515 IDs are unique and all 135 subject/category pairs have a proposed cabinet destination.
+- Four previously unmapped categories now have item-led proposals: Physics ALIGNMENT, Physics LIQUID_TRANSFER, Biology DATA_RECORDING and Biology SAMPLE_CONTAINER. They remain proposals needing subject review.
+- Deliverables: `data/catalogues/stockroom_item_level_reachability_audit_2026_11_24.csv`, `docs/PHASE_4_1_ITEM_LEVEL_STOCKROOM_REACHABILITY_AUDIT_2026_11_24.md`.
+- Next exact action: inspect the React stockroom shelf/category rendering and integrate a canonical taxonomy-backed cabinet view without changing raw source categories or duplicating catalogue records; add tests for all 515 IDs, unique appearance in All stock, and cabinet reachability. Run CI before marking verified.
