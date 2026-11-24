@@ -1,3 +1,10 @@
+## 2026-11-24 — Phase 1.1 curriculum extraction batch 1
+
+- Read the existing Library RBSE Class XI syllabus PDF directly; no re-upload or external source substitution.
+- Committed 65 normalized curriculum records: Class XI Physics 17 experiments + 13 activities + 11 projects; Biology 4 Botany major + 2 Zoology major + 5 Botany minor + 2 Zoology minor + 11 syllabus spotting groups.
+- CSV: `data/curriculum/rbse_2026_2027_class_xi_physics_biology_practical_index.csv`; report: `docs/PHASE_1_1_CLASS_XI_PHYSICS_BIOLOGY_PRACTICAL_INDEX_2026_11_24.md`.
+- Page provenance captured (Physics 115–119; Biology 132–134). No task joins, detailed methods, safety or science runtime claims made. Continue remaining streams next.
+
 ## 2026-11-23 — RBSE practical register (Phase 1.2)
 
 - Created `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` (147 normalized rows) from the already supplied RBSE 2026–27 PDFs. XI pages: Physics 114–119, Chemistry 123–125, Biology 132–134. XII pages: Physics 124–129, Chemistry 137–140, Biology 144–147.
