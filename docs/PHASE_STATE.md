@@ -2063,3 +2063,13 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - Phase 1.1 now has a 158-row curriculum-to-task identity crosswalk. See `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`.
 - Identity crosswalk totals: 46 exact stable IDs; 27 unique punctuation-normalized IDs; 6 exact-title candidates requiring ID review; 18 group-level only; 61 pending review.
 - These are task-identity links only. Candidate source item IDs remain unverified and no inventory IDs were promoted. Phase 1.2 147-row reconciliation is still pending. Phase 2 BLOCKED; Phase 5/6 remain NOT STARTED.
+
+## 2026-11-24 — Accelerated Phase 1.2 register reconciliation
+
+- Added `data/curriculum/rbse_2026_27_register_to_curriculum_reconciliation_2026_11_24.csv`: all 147 Phase 1.2 register rows compared against the 158 stable-ID Phase 1.1 curriculum crosswalk rows.
+- Added `docs/PHASE_1_1_REGISTER_RECONCILIATION_2026_11_24.md`.
+- Triage: 67 HIGH_SIMILARITY_REVIEW, 65 POSSIBLE_MATCH_REVIEW, 10 AMBIGUOUS_REVIEW, 4 NO_UNIQUE_CANDIDATE, 1 GROUP_LEVEL_REVIEW. Similarity is not proof; no record was promoted as an exact source join.
+- Candidate matching is restricted to same class/subject and consumes a curriculum ID once. Chemistry granularity/alternatives and Biology group structures remain review constraints.
+- Verification: read 147 + 158 GitHub rows; generated 147-row CSV; status totals = 147. Data-only work; no CI run claimed.
+- Phase 1.1 remains IN PROGRESS. Phase 2 remains BLOCKED pending method provenance, rights and hazard evidence. Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Next: source-page review of high-similarity rows in batches, then exact task-ID to inventory item reconciliation. No inventory IDs promoted in this pass.
