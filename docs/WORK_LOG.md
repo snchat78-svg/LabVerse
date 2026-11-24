@@ -1278,3 +1278,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Next: parallel Physics/Chemistry/Biology PDF-to-task-to-catalogue relevance review.
 
 - Inspected all six RBSE practical source-page ranges (XI Physics 114–119; XI Chemistry 123–125; XI Biology 132–140; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–150). Curriculum page presence is confirmed; candidate-to-practical relevance still needs row-level review.
+
+
+## 2026-11-24 — Phase 4.1 item-level reachability batch
+
+- Audited all 515 current item/reagent rows against the 135-row subject/category taxonomy. 515 unique IDs; 0 duplicate ID groups; 0 missing category mappings after four proposed cabinet destinations.
+- Added row-level audit CSV and report; updated the taxonomy with proposals for Physics alignment tools/liquid transfer and Biology data recording/sample containers. Proposals stay `PROPOSED_NEEDS_REVIEW`.
+- No physical stock, procurement, safety, rights, 3D asset or scientific runtime status was upgraded. No CI run is claimed for this data-only batch.
+- Next: integrate the canonical cabinet map into React, prove all 515 IDs are reachable exactly once from All stock and through the appropriate cabinet, then run the app workflow.
