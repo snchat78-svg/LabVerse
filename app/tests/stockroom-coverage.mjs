@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 
 const inventory = JSON.parse(await readFile("../dashboard/data/inventory.json", "utf8"));
 const taxonomySource = await readFile("src/stockroomTaxonomy.ts", "utf8");
-const taxonomyMatch = taxonomySource.match(/export const cabinetBySubjectCategory: Record<string, Record<string, string>> = ([\\s\\S]*);\\s*$/);
+const taxonomyMatch = taxonomySource.match(/export const cabinetBySubjectCategory: Record<string, Record<string, string>> = ([\s\S]*);\s*$/);
 assert.ok(taxonomyMatch, "generated taxonomy object must be parseable");
 const taxonomy = JSON.parse(taxonomyMatch[1]);
 const subjects = ["physics", "chemistry", "biology"];
@@ -44,7 +44,7 @@ try {
     checkedAllStock += allIds.length;
 
     for (const [cabinet, ids] of expectedByCabinet) {
-      const cabinetButton = page.getByRole("button", {name:new RegExp(cabinet.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&"))});
+      const cabinetButton = page.getByRole("button", {name:new RegExp(cabinet)});
       assert.equal(await cabinetButton.count(), 1, subject + ": cabinet navigation missing or duplicated: " + cabinet);
       await cabinetButton.click();
       const cabinetIds = await page.locator(".item[data-item-id]").evaluateAll(nodes => nodes.map(node => node.getAttribute("data-item-id")));
