@@ -1260,3 +1260,11 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Page evidence: XI Chemistry 123–125; XII Physics 124–129; XII Chemistry 137–140; XII Biology 144–147. Combined dedicated Phase 1.1 index now 158 rows with the prior 65-row XI Physics/Biology batch.
 - Kept chemistry alternatives and biology syllabus/spotting group semantics; Annexure repeats not counted again. No task/item joins, methods, chemical recipes, hazards, approvals or simulated outcomes fabricated.
 - Data/docs only; no application code or CI result claimed. Next: reconcile exact task and inventory crosswalks without duplicate rows.
+
+
+## 2026-11-24 — Accelerated Phase 1.2 register reconciliation
+
+- Read the live 147-row Phase 1.2 register and 158-row Phase 1.1 curriculum/task crosswalk from GitHub.
+- Generated a 147-row candidate reconciliation CSV with same-class/subject title similarity, one-to-one candidate consumption, and explicit review states. Results: 67 high-similarity review, 65 possible-match review, 10 ambiguous, 4 no unique candidate, 1 group-level review.
+- Added a report explaining method, limits and next work. Similarity is explicitly not treated as source proof; no item IDs promoted.
+- Verified output row count and status total = 147. Data-only pass; no CI run claimed.
