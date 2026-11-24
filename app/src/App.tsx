@@ -747,6 +747,7 @@ export default function App() {
                     <button
                       key={item.id}
                       className={selectedItem?.id === item.id ? "item selected" : "item"}
+                      data-item-id={item.id}
                       onClick={() => {
                         setSelectedItem(item);
                         setMobileOpenSheet("analysis");
