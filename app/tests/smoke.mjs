@@ -23,13 +23,17 @@ async function main() {
     // Physics catalogue search and source detail
     await page.locator(".subject-card.violet").click();
     await page.getByRole("heading", {name:"Physics Lab"}).waitFor();
-    assert.ok(await page.locator(".stockroom-shelf").count() > 1, "Physics stockroom must expose category cabinets");
+    assert.ok(await page.locator(".stockroom-shelf").count() > 1, "Physics stockroom must expose cabinet navigation");
     assert.match(await page.locator(".stockroom-heading").innerText(), /Browse the cabinets/);
-    await page.locator(".stockroom-shelf").filter({has:page.locator("strong", {hasText:/^MEASUREMENT$/})}).click();
-    assert.equal(await page.locator(".inventory-filters select").nth(1).inputValue(), "MEASUREMENT");
-    assert.ok(await page.locator(".item").count() >= 3, "measurement shelf should show its catalogue contents");
+    await page.getByRole("button", {name:/Measurement & Metrology/}).click();
+    assert.ok(await page.locator(".item").count() >= 3, "measurement cabinet should show its catalogue contents");
+    assert.ok(await page.getByRole("button", {name:/Alignment & Levelling/}).count() === 1, "alignment tools must have a dedicated cabinet");
+    await page.getByRole("button", {name:/Alignment & Levelling/}).click();
+    assert.equal(await page.locator(".item").count(), 2, "both alignment tools must be reachable from their cabinet");
+    assert.match(await page.locator(".item").innerText(), /Spirit level|Plumb line/);
     await page.getByRole("button", {name:/All stock/}).click();
     assert.equal(await page.locator(".inventory-filters select").nth(1).inputValue(), "all");
+    assert.equal(await page.locator(".item").count(), 105, "All stock must expose all Physics catalogue rows");
     results.push("Subject stockroom category cabinets and All stock navigation");
     const inventorySearch = page.locator(".content-grid .search").first();
     await inventorySearch.fill("Vernier caliper");
