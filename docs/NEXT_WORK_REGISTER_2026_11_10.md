@@ -764,3 +764,11 @@ The older "MSCL item 7 / Conical Flask next" note is historical; it is supersede
 **Taxonomy input already generated:** `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` (135 subject/category rows). Review every proposed cabinet placement; explicitly resolve Physics ALIGNMENT, Physics LIQUID_TRANSFER, Biology DATA_RECORDING and Biology SAMPLE_CONTAINER. Then perform item-by-item reachability, source/class/safety/asset metadata audit without dropping or duplicating rows.
 
 **Current verification:** GitHub Actions SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549; TypeScript/build PASS, React smoke 38 groups PASS, static↔React parity 13 groups PASS. The first ambiguous category selector test was corrected and the rerun is green.
+
+
+## Latest hand-off — 2026-11-24 (all remaining syllabus streams indexed)
+
+- Added `data/curriculum/rbse_2026_2027_remaining_streams_index_2026_11_24.csv` (93 records) and report `docs/PHASE_1_1_REMAINING_STREAMS_INDEX_2026_11_24.md`.
+- Dedicated Phase 1.1 indexes now contain 158 records across XI Physics, Chemistry, Biology and XII Physics, Chemistry, Biology. XI Chemistry uses 7 section/group records; XII Physics 39; XII Chemistry 20; XII Biology 27.
+- Exact PDF page provenance is recorded; all new rows remain unjoined and not safety-reviewed. Existing 147-row Phase 1.2 register is intentionally separate.
+- **Next exact work:** reconcile Phase 1.1 indices to the Phase 1.2 practical register, then link to stockroom items only where source evidence supports exact stable IDs. Preserve alternatives and one-to-many links; produce unmatched and missing-equipment reports. No invented joins or methods.
