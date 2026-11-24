@@ -25,3 +25,10 @@ A mapped cabinet is a proposed navigation destination only; it does not mean the
 2. Review item-level duplicate/variant identity, class/session applicability, and source provenance; preserve alternatives.
 3. Only after taxonomy approval, connect the audit to the React stockroom and add tests that every source row is reachable exactly once through All stock and at least one cabinet, without duplicate catalogue records.
 4. Continue asset rights, hazard and action-contract work as separate gates. Phase 4.1 remains IN PROGRESS until cabinet mappings and item-level reachability tests pass.
+
+
+## Follow-up — proposed cabinet destinations added (2026-11-24)
+
+The first audit identified four category keys with no proposed cabinet. Item inspection identified the relevant records: Physics Spirit level and Plumb line; Physics Glass dropper with rubber bulb; Biology Graph Paper; Biology Plastic Petri Dish. The taxonomy now proposes Alignment & Levelling, Liquid Handling & Transfer, Data & Recording, and Samples & Containers respectively. These are item-led navigation proposals only and remain `PROPOSED_NEEDS_REVIEW`.
+
+Updated results: 515 rows, 515 unique IDs, 135 taxonomy rows, zero missing category mapping rows. The row-level CSV records all 515 mappings and retains the explicit non-claims. Next is React integration and automated all-row reachability testing; Phase 4.1 is not complete yet.
