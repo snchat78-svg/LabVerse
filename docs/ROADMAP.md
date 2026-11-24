@@ -1002,3 +1002,5 @@ Phase 1.1 now has a 147-row Phase 1.2-to-158-row Phase 1.1 candidate reconciliat
 - Added `data/catalogues/rbse_curriculum_candidate_item_inventory_presence_audit_2026_11_24.csv` covering 514 candidate item references against 515 unique dashboard catalogue IDs; 514 references resolve and 0 do not.
 - This confirms catalogue ID presence only. It does not establish task necessity, actual stock, procurement, safety, rights, or expert approval. The audit preserves existing verification boundaries.
 - Next: bulk source-page review and subject-wise candidate relevance reconciliation; do not advance blocked Phase 2 or unstarted real 3D/runtime phases on this audit alone.
+
+- PDF source-page inspection now covers all six class/subject practical sections: XI Physics 114–119, Chemistry 123–125, Biology 132–140; XII Physics 124–129, Chemistry 137–140, Biology 144–150. Source presence is confirmed; candidate item relevance is not auto-promoted.
