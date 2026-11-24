@@ -978,3 +978,11 @@ Stockroom UI and catalogue audit can progress while source recovery is open. Rea
 - Taxonomy groundwork added: `data/catalogues/stockroom_category_taxonomy_2026_11_23.csv` covers all 135 source category combinations (60 Physics, 30 Chemistry, 45 Biology). All are proposals awaiting review; raw categories and catalogue rows are unchanged. Four ambiguous/unmapped categories remain open.
 
 - Verification complete: React CI SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549; typecheck/build PASS, React browser smoke 38 groups PASS, static↔React parity 13 groups PASS. The initial ambiguous shelf-test selector was corrected and rerun successfully.
+
+
+## 2026-11-24 — Phase 1.1 all remaining syllabus streams indexed
+
+- Added 93 more source-backed records in `data/curriculum/rbse_2026_2027_remaining_streams_index_2026_11_24.csv` and report `docs/PHASE_1_1_REMAINING_STREAMS_INDEX_2026_11_24.md`.
+- Coverage: XI Chemistry section/group index (7); XII Physics (39); XII Chemistry (20); XII Biology (27). Combined dedicated Phase 1.1 index: 158 records, including the earlier 65 XI Physics/Biology entries.
+- Sources: XI Chemistry PDF pp.123–125; XII Physics pp.124–129; XII Chemistry pp.137–140; XII Biology pp.144–147. Alternatives and syllabus groups preserved; no executable procedures or safety claims.
+- Next: build exact task/catalogue crosswalk against existing Phase 1.2 register and stockroom inventory; do not merge duplicate representations or infer item links. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
