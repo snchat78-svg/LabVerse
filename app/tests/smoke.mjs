@@ -30,7 +30,7 @@ async function main() {
     assert.ok(await page.getByRole("button", {name:/Alignment & Levelling/}).count() === 1, "alignment tools must have a dedicated cabinet");
     await page.getByRole("button", {name:/Alignment & Levelling/}).click();
     assert.equal(await page.locator(".item").count(), 2, "both alignment tools must be reachable from their cabinet");
-    assert.match(await page.locator(".item").innerText(), /Spirit level|Plumb line/);
+    assert.match((await page.locator(".item").allInnerTexts()).join(" "), /Spirit level|Plumb line/);
     await page.getByRole("button", {name:/All stock/}).click();
     assert.equal(await page.locator(".inventory-filters select").nth(1).inputValue(), "all");
     assert.equal(await page.locator(".item").count(), 105, "All stock must expose all Physics catalogue rows");
