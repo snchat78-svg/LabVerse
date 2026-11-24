@@ -1,3 +1,13 @@
+
+
+## 2026-11-24 — Phase 1.1 curriculum-to-task identity crosswalk
+
+- Added `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` (158 rows) and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`.
+- Joined the two Phase 1.1 indices (65 + 93) to the existing 171-row task traceability index. Results: 46 exact stable-ID; 27 unique punctuation-normalized ID; 6 exact-title matches requiring ID review; 18 group-level-only; 61 pending review.
+- Candidate source item IDs were copied only from matched task traceability rows and remain unverified candidates. No catalogue item IDs were promoted. The separate 147-row Phase 1.2 register remains to be reconciled; do not add 147 and 158 as unique practical counts.
+- No procedure, safety, quantity, concentration, permission, measurement or result data was invented. Phase 2 remains BLOCKED; Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+- Verification: input counts 65, 93 and 171 were read from GitHub; output CSV generated with 158 records and status totals sum to 158. Read-back verification follows.
+
 ## 2026-11-24 — Phase 1.1 curriculum extraction batch 1
 
 - Read the existing Library RBSE Class XI syllabus PDF directly; no re-upload or external source substitution.
