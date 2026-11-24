@@ -2047,3 +2047,12 @@ See `docs/PHASE_1_1_BIOLOGY_DETAIL_SOURCE_RECOVERY_RECHECK_2026_11_10.md`. The r
 - First smoke run caught an ambiguous Playwright selector because several category names contain “MEASUREMENT”; the test was corrected to target the exact shelf label in commit `a3041158285c41fbaad30d0e499ebc9743c5f339`. Corrected CI run is in progress; do not claim pass until final result.
 
 - Corrected CI verification: SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45132091549 (commit `a3041158285c41fbaad30d0e499ebc9743c5f339`). TypeScript typecheck PASS; production build PASS; React browser smoke **38 groups PASS**; static↔React parity **13 groups PASS**. The initial run failed only because the test selector matched nine category labels containing “MEASUREMENT”; the exact-label selector correction is included in the successful run.
+
+
+## 2026-11-24 — Phase 1.1 remaining curriculum streams normalized
+
+- Added `data/curriculum/rbse_2026_2027_remaining_streams_index_2026_11_24.csv`: **93 records** — Class XI Chemistry 7 source-section/group entries; Class XII Physics 39 (18 experiments, 14 activities, 7 projects); Class XII Chemistry 20; Class XII Biology 27 (major/minor/spotting choices). Report: `docs/PHASE_1_1_REMAINING_STREAMS_INDEX_2026_11_24.md`.
+- Source pages: XI Chemistry pp.123–125; XII Physics pp.124–129; XII Chemistry pp.137–140; XII Biology pp.144–147. Existing Library PDFs reused.
+- Combined dedicated Phase 1.1 index coverage is now **158 records** across the six class/subject streams (previous 65 + new 93). XI Chemistry is section/group level where the syllabus does not enumerate every task individually. XII Chemistry alternatives are retained; Biology Annexure repeats are not double-counted.
+- All new rows remain NOT_JOINED_IN_THIS_PASS / SYLLABUS_TITLE_ONLY / NOT_REVIEWED. No apparatus, recipes, procedures, hazards, results or safety permissions invented. Existing 147-row Phase 1.2 register remains separate pending deduplication/reconciliation.
+- Phase 1.1 remains IN PROGRESS. Next: exact crosswalk to practical-task and stockroom records; report unmatched/one-to-many/alternative cases. Phase 2 remains BLOCKED; Phase 4.1 remains IN PROGRESS; Phase 5 real 3D NOT STARTED.
