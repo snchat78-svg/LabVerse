@@ -1004,3 +1004,11 @@ Phase 1.1 now has a 147-row Phase 1.2-to-158-row Phase 1.1 candidate reconciliat
 - Next: bulk source-page review and subject-wise candidate relevance reconciliation; do not advance blocked Phase 2 or unstarted real 3D/runtime phases on this audit alone.
 
 - PDF source-page inspection now covers all six class/subject practical sections: XI Physics 114–119, Chemistry 123–125, Biology 132–140; XII Physics 124–129, Chemistry 137–140, Biology 144–150. Source presence is confirmed; candidate item relevance is not auto-promoted.
+
+
+## 2026-11-24 — Phase 4.1 item-level taxonomy/reachability work
+
+- Completed a row-level join of 515 Physics/Chemistry/Biology apparatus and reagent records against 135 taxonomy categories. All 515 IDs are unique; no category row is missing after four explicit cabinet proposals.
+- New row-level audit: `data/catalogues/stockroom_item_level_reachability_audit_2026_11_24.csv`; report: `docs/PHASE_4_1_ITEM_LEVEL_STOCKROOM_REACHABILITY_AUDIT_2026_11_24.md`.
+- Proposed four item-led cabinets for alignment tools, liquid transfer, biology data recording and sample containers. All remain `PROPOSED_NEEDS_REVIEW`; no category was promoted to approved.
+- Next: review the 33 proposed cabinet labels for consistent UX, verify every item appears exactly once in All stock and is reachable through a cabinet in React, add tests, then run CI. Phase 4.1 stays IN PROGRESS until tested; Phase 5 real 3D and Phase 6 runtime remain gated/not started.
