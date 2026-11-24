@@ -986,3 +986,8 @@ Stockroom UI and catalogue audit can progress while source recovery is open. Rea
 - Coverage: XI Chemistry section/group index (7); XII Physics (39); XII Chemistry (20); XII Biology (27). Combined dedicated Phase 1.1 index: 158 records, including the earlier 65 XI Physics/Biology entries.
 - Sources: XI Chemistry PDF pp.123–125; XII Physics pp.124–129; XII Chemistry pp.137–140; XII Biology pp.144–147. Alternatives and syllabus groups preserved; no executable procedures or safety claims.
 - Next: build exact task/catalogue crosswalk against existing Phase 1.2 register and stockroom inventory; do not merge duplicate representations or infer item links. Phase 1.1 IN PROGRESS; Phase 2 BLOCKED.
+
+
+## Phase 1.1 progress — 2026-11-24
+
+The two Phase 1.1 indices (158 records) have been cross-referenced against the 171-row task traceability index. Status: 46 exact stable-ID, 27 unique punctuation-normalized ID, 6 exact-title candidates needing ID review, 18 group-level-only and 61 pending review. See `data/curriculum/rbse_2026_2027_curriculum_to_task_crosswalk_2026_11_24.csv` and `docs/PHASE_1_1_CURRICULUM_TO_TASK_CROSSWALK_2026_11_24.md`. This does not approve item-level catalogue links; next reconcile the separate 147-row register, then verify candidate item IDs against source records. Phase 2 remains blocked.
