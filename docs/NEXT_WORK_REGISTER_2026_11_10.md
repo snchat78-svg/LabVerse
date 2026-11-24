@@ -1,3 +1,9 @@
+## Latest progress hand-off — 2026-11-24
+
+**Completed first source-backed curriculum batch:** `data/curriculum/rbse_2026_2027_class_xi_physics_biology_practical_index.csv` (65 entries; Class XI Physics 41 and Biology 24). Report: `docs/PHASE_1_1_CLASS_XI_PHYSICS_BIOLOGY_PRACTICAL_INDEX_2026_11_24.md`. Source is existing `11_2027_copy.pdf`: Physics pp.115–119 and Biology pp.132–134. Stable IDs and source pages are included; catalogue joins remain NOT_JOINED and no procedures/safety approvals were invented.
+
+**Next exact work:** normalize Class XI Chemistry and Class XII Physics, Chemistry and Biology from the already mapped RBSE PDFs; preserve alternatives and page ranges. Then join normalized IDs to existing task rows without duplicating them. Keep Phase 2 science execution blocked pending method/rights/hazard review.
+
 ## Current hand-off — 2026-11-23 (RBSE practical register added)
 
 - Latest Phase 1.2 artifact: `data/curriculum/rbse_2026_27_practical_register_xi_xii.csv` (147 rows); report `docs/PHASE_1_2_RBSE_PRACTICAL_REGISTER_2026_11_23.md`.
