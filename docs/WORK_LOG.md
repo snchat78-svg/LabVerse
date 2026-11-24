@@ -1295,3 +1295,10 @@ Top-level Phase 2 is not starting because the Phase 1 exit gate remains open ind
 - Commits: taxonomy module `4ec84e64b7acfe5816954eb13dfd8ab607ba44e8`; app `15456ea76718e8ea74c569a525ccd86440d0a282`; smoke test `f7f9a5381692e18ad1d106b0884b8c761caff91d`; smoke locator correction `93b1fcb8c2d1e2f9d2fa84ab1b553273f1c6777d`.
 - GitHub Actions run #80: https://github.com/snchat78-svg/LabVerse/actions/runs/45365935422. Dependency installation and TypeScript typecheck have passed; Chromium, production build, browser smoke and parity steps are still running/pending. Do not mark CI green until final conclusion is SUCCESS.
 - Phase 4.1 remains IN PROGRESS pending full workflow and cabinet taxonomy review. No 3D assets/runtime claims.
+
+
+## 2026-11-24 — Phase 4.1 cabinet integration CI verified
+
+- GitHub Actions SUCCESS: https://github.com/snchat78-svg/LabVerse/actions/runs/45365935422 (run #80, commit `93b1fcb8c2d1e2f9d2fa84ab1b553273f1c6777d`). TypeScript typecheck PASS; production build PASS; React browser smoke PASS including Measurement & Metrology cabinet, Alignment & Levelling cabinet (2 tools), and all 105 Physics rows in All stock; static dashboard ↔ React parity PASS.
+- This verifies the current React integration and tested Physics paths only. It does not approve all 135 taxonomy proposals, test every Chemistry/Biology cabinet path, certify procurement/safety/rights, or implement 3D assets/runtime.
+- Phase 4.1 remains IN PROGRESS. Next: add equivalent Chemistry and Biology cabinet/All stock reachability tests and automated all-515-row uniqueness/reachability assertions; subject-review the proposed cabinet taxonomy before closing the phase.
