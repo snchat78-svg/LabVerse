@@ -1,5 +1,15 @@
 
 
+## 2026-11-25 — Physics catalogue item schedule text readback expanded to all 105 rows
+
+- The NCERT item-schedule crosswalk now records the source label, listed-use paraphrase and printed page for all 105 Physics item serials 2–106 (printed pp. xi–xxv).
+- Physics `item_page_evidence` now states `TABLE_TEXT_READ; IMAGE_VARIANT_REVIEW_OPEN`; the prior 52 candidate-linked item subset is synchronized with the full 105-row crosswalk.
+- The remaining 53 Physics item-schedule rows were text-read too; their absence from the current Class XI Physics candidate links does not mean they are unnecessary for Class XII or other tasks.
+- Evidence limit: no visual image/item-variant verification, dimensional tolerance, quantity, procurement equivalence, actual physical stock, safety, rights or expert approval is claimed.
+- Next: image/variant/source-edition review for the 105 Physics rows, then adjudicate the 41-task gap register. Chemistry/Biology source-item provenance remains pending.
+
+
+
 ## 2026-11-25 — Physics item-schedule provenance extended
 
 - Added `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` for all 105 Physics catalogue rows, mapping serial numbers 2–106 to the NCERT item schedule printed pages xi–xxv and recording paraphrased item name/use.
