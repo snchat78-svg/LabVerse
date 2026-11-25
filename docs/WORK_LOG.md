@@ -1,3 +1,19 @@
+## 2026-11-25 — Phase 4.1 complete item-level reachability CI gate
+
+- **Code/test:** stable source item IDs were exposed on React inventory rows; added `app/tests/stockroom-coverage.mjs`, `npm run test:stockroom-coverage`, and the GitHub Actions step in `.github/workflows/labverse-app-check.yml`.
+- **CI:** Run #86 SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45371257779. TypeScript, Chromium install, build, React smoke, static↔React parity and full stockroom coverage all PASS.
+- **Coverage:** Physics 105/105, Chemistry 177/177 and Biology 233/233 unique IDs. The test checked 515 All stock IDs and 515 cabinet-route memberships; every item was present exactly once in All stock and exactly once in its mapped cabinet across 34 cabinet routes.
+- **Failure/fix trace:** Run #85 failed only because the test's generated taxonomy extraction regex was incorrectly escaped. The parser was corrected at commit `1383b9ec605f70bea5eab48440e530fe66759bf0`; Run #86 is the passing run.
+- **Boundary:** test proves browser-visible reachability against the source JSON and taxonomy mapping; it does not approve taxonomy, physical stock, procurement, item evidence, rights, hazards, assets or 3D operation. Phase 4.1 remains IN PROGRESS.
+
+## 2026-11-25 — Phase 1.1 NCERT Physics manual method alignment
+
+- Added `data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv` (219 rows) and `data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv` (41 task rows); report `docs/PHASE_1_1_NCERT_PHYSICS_METHOD_ALIGNMENT_AUDIT_2026_11_25.md`.
+- Source compared: NCERT *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII*, ISBN 978-93-5292-653-4, with the 41 RBSE source-page-confirmed task titles and the extant catalogue item index.
+- Pair audit results: 82 explicit method components; 66 conditional/ancillary; 5 not confirmed in method; 5 not substitutes for absent Searle's apparatus; 18 item-role/variant mismatches; 43 no comparable NCERT method. All candidates remain NOT_PROMOTED.
+- Corrected the role of item 49 (wire gauze/heating mesh), item 71 (folding scale for optical-bench use) and item 90 (glass-slab protractor). Identified missing task-index candidate references to existing kit items, such as E11's shared resonance/viscosity tube, E14's rubber pad and pinch clip, and Activity A4's method-matched pulley/block/weight-box/spirit-level/pan set.
+- This is an NCERT comparison, not an RBSE-approved procedure, procurement specification or science model. No item joins, hazard permissions, rights or asset readiness are promoted.
+
 ## 2026-11-25 — Phase 1.1 Class XI Physics source-page adjudication
 
 - Source-reviewed all **41/41** Class XI Physics rows in the Phase 1.2 practical register against the existing `11_2027_copy.pdf` (PDF pp.115–119; English practical pages 117–119, Hindi corroboration p.115). Existing source fingerprint: 23,343,499 bytes; SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`.
