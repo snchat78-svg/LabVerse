@@ -1,3 +1,10 @@
+
+
+## Automated validation
+
+- The source-data validator enforces 105 comparison rows, 104 normalized matches, the single `NCERT-PHY-KIT-095` detail exception, and preservation of the source quantity note without modifying the catalogue label.
+- **GitHub Actions Run #5 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45635222749.
+
 # Physics catalogue label and detail comparison — 2026-11-25
 
 ## Result
