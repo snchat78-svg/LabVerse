@@ -1,3 +1,11 @@
+## 2026-11-25 — Physics catalogue item serial/page/name/use crosswalk
+
+- Added `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` with 105 Physics inventory rows (item serials 2–106), printed item-schedule pages xi–xxv, paraphrased NCERT manual item labels and their indexed use.
+- Updated `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` for all 105 Physics rows: `item_page_evidence` now records the NCERT item-schedule printed page while retaining `ITEM_VARIANT_REVIEW_OPEN`.
+- Report: `docs/PHASE_4_1_PHYSICS_ITEM_SCHEDULE_PAGE_CROSSWALK_2026_11_25.md`.
+- Evidence boundary: page location/serial mapping and text-derived item-name/use reference are not a complete visual specification audit; dimensions, quantities, physical stock, procurement equivalence, rights, safety and expert approval remain open.
+- Next: reconcile all 105 current Physics catalogue labels/details/categories with the manual item names/uses; then adjudicate proposed missing links in the 41-task Physics gap register. No source item was promoted.
+
 ## 2026-11-25 — Phase 4.1 complete item-level reachability CI gate
 
 - **Code/test:** stable source item IDs were exposed on React inventory rows; added `app/tests/stockroom-coverage.mjs`, `npm run test:stockroom-coverage`, and the GitHub Actions step in `.github/workflows/labverse-app-check.yml`.
