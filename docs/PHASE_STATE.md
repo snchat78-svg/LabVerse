@@ -1,3 +1,26 @@
+## 2026-11-25 — Physics item schedule text readback complete; E12 method correction
+
+### NCERT Physics catalogue source traceability
+
+- Official source: [NCERT Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII](https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf), ISBN 978-93-5292-653-4.
+- Completed text readback for **105/105 Physics catalogue serial entries** (2–106), with source item label, listed-use paraphrase and printed index page xi–xxv in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
+- All 105 Physics rows in the 515-row stockroom item audit carry the corresponding page reference and `TABLE_TEXT_READ; IMAGE_VARIANT_REVIEW_OPEN`.
+- 52 unique items are used in the existing 219 pair rows for the 41 source-page-confirmed Class XI Physics tasks; the remaining 53 are text-read schedule entries but are not in those current candidate links. The 219-row method audit now carries each item's source name/use and page.
+- **Not visually or physically verified:** item illustrations/physical variant, exact dimensions, supplied quantity, kit edition equivalence, school-owned stock, procurement, safety, rights and expert approval remain OPEN. Text extraction must not be labelled as visual verification.
+
+### Method-audit correction
+
+- NCERT E12 (cooling curve of a hot body, printed p.45) lists a double-walled improvised calorimeter/outer container, two thermometers, stirrer, stopwatch, heater, water, tripod and small water-heating container. Item 49 is not listed in E12; its separate item-schedule use is only a base on a tripod for uniform heating. Corrected the EXP-14/item-49 pair to `NOT_CONFIRMED_IN_METHOD` and documented the additional apparatus/second thermometer gap.
+- Updated method audit counts across 219 candidate pairs: 81 explicit components; 66 conditional/ancillary; 6 not confirmed in method; 5 not substitutes for absent Searle apparatus; 18 role/variant mismatches; 43 without comparable NCERT method. All remain `NOT_PROMOTED`.
+- NCERT item schedule prints serial 79 as “Maganin wire”; source spelling is preserved rather than silently “corrected”. Item 49 label “Wire gauge” is also retained verbatim, without claiming it measures wire diameter.
+
+### Next exact gate
+
+- Complete image/variant/source-edition verification for all 105 Physics catalogue rows (without changing raw catalogue labels prematurely); prioritize identity, variant and quantity ambiguities.
+- After that, adjudicate the 41-task gap register against RBSE source wording and NCERT item-use text; add or amend a candidate link only with explicit evidence and keep it unpromoted pending qualified Physics review.
+- Then continue Chemistry and Biology source-item page/text/variant traceability in the master source order.
+- Phase 1.1 remains **IN PROGRESS**; Phase 2 remains **BLOCKED**. Phase 4.1 remains **IN PROGRESS** despite successful stockroom reachability CI. Phase 5 real 3D and Phase 6 scientific runtime remain **NOT STARTED**.
+
 ## 2026-11-25 — Physics catalogue item schedule identity/use crosswalk
 
 - Expanded `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` to all **105 Physics catalogue rows** with the corresponding NCERT kit serial, printed item-schedule page (xi–xxv), paraphrased manual item name and intended use.
