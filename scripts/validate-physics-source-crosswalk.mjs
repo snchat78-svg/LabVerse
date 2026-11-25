@@ -85,10 +85,10 @@ for (const row of physicsItems) {
   assert.equal(row.item_label_status, "NCERT_INDEX_TABLE_TEXT_READ; ITEM_IMAGE_AND_PHYSICAL_VARIANT_REVIEW_OPEN");
   assert.ok(row.ncert_item_name_use_text_status.includes("PRIMARY_SOURCE_ITEM_SCHEDULE_TEXT_READ"));
 }
-const item49 = physicsItems.find((row) => row.ncert_item_serial_number === "049");
+const item49 = physicsItems.find((row) => Number(row.ncert_item_serial_number) === 49);
 assert.equal(item49?.ncert_manual_item_name, "Wire gauge");
 assert.match(item49?.ncert_manual_item_use_paraphrase ?? "", /base kept on a tripod stand for uniform heating/i);
-const item79 = physicsItems.find((row) => row.ncert_item_serial_number === "079");
+const item79 = physicsItems.find((row) => Number(row.ncert_item_serial_number) === 79);
 assert.equal(item79?.ncert_manual_item_name, "Maganin wire", "Preserve the NCERT schedule's printed item label");
 
 // 2) Candidate-only subset must be exactly the set referenced by the method audit.
