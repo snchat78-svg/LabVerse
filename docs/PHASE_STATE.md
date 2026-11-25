@@ -1,3 +1,10 @@
+## 2026-11-25 — Physics catalogue item schedule identity/use crosswalk
+
+- Expanded `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` to all **105 Physics catalogue rows** with the corresponding NCERT kit serial, printed item-schedule page (xi–xxv), paraphrased manual item name and intended use.
+- Updated the 105 Physics rows in `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` to record their NCERT item-schedule page, while keeping `ITEM_VARIANT_REVIEW_OPEN` explicit.
+- This records listing-page provenance and a text-derived name/use crosswalk; it is not a visual product-specification audit, procurement equivalence or physical-stock proof. Do not silently replace catalogue labels, merge items or promote source records based on this index alone.
+- Next exact Phase 1.1 gate: reconcile the 105 manual item names/uses against each existing catalogue row's detail/category/evidence, prioritize identity/variant exceptions, then adjudicate the 41-task omitted-item suggestions against RBSE source wording.
+
 ## 2026-11-25 — Phase 4.1 515-item reachability gate verified; Phase 1.1 Physics method audit advanced
 
 ### Phase 4.1 stockroom implementation gate
