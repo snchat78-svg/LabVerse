@@ -1,3 +1,10 @@
+## 2026-11-25 — Physics source-data integrity gate established
+
+- Added a dependency-free Node validator `scripts/validate-physics-source-crosswalk.mjs` and workflow `.github/workflows/labverse-source-data-check.yml`.
+- **CI Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491. It verifies the 105-row Physics item schedule crosswalk, 52 candidate IDs, 219 method-alignment pairs, 41 task gap rows and the 515-row stockroom source audit; it also checks the NCERT source item names/use/page binding, no-promotion status and corrected E12 item-49 classification.
+- Initial Run #1 exposed a test-only numeric serial formatting assumption (49 vs 049); numeric comparison fixed the validator. Run #2 passes.
+- **Next:** visual/source-edition and physical variant/dimension/quantity review for all 105 Physics item rows; then adjudicate task gaps and possible supplementary candidates. This automated check is data consistency only, not scientific approval or physical inventory verification.
+
 ## 2026-11-25 — Physics item schedule text readback and method-alignment correction
 
 - **105/105 Physics item schedule rows** (serials 2–106) now have source text name/use paraphrases and printed index-page references xi–xxv in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`. The stockroom item-level audit carries the 105 corresponding Physics page references.
