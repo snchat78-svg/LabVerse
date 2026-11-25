@@ -1,3 +1,10 @@
+## 2026-11-25 — Physics label comparison gate passed
+
+- 105 LabVerse catalogue labels compared with the NCERT item schedule: 104 normalized matches; one detail difference, `NCERT-PHY-KIT-095`, where the manual specifies resistor quantities 1×5Ω, 1×10Ω, 2×20Ω, 1×30Ω. No source catalogue label was changed.
+- Comparison CSV: `data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv`; report: `docs/PHASE_4_1_PHYSICS_CATALOGUE_LABEL_COMPARISON_2026_11_25.md`.
+- **Source-data CI Run #5 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45635222749. The data validator now checks this exact one-row discrepancy.
+- Next exact work remains item image/source edition/physical variant/dimension/quantity review on the 105 Physics rows, followed by the 41-task gap register review.
+
 ## 2026-11-25 — Source-data integrity validator accepted
 
 - Added `scripts/validate-physics-source-crosswalk.mjs` and `.github/workflows/labverse-source-data-check.yml`.
