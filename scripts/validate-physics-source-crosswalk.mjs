@@ -46,12 +46,13 @@ async function readCsv(path) {
     .map((record) => Object.fromEntries(headers.map((header, index) => [header, record[index] ?? ""])));
 }
 
-const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit] = await Promise.all([
+const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison] = await Promise.all([
   readCsv("data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"),
   readCsv("data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"),
-  readCsv("data/catalogues/stockroom_item_level_audit_2026_11_23.csv")
+  readCsv("data/catalogues/stockroom_item_level_audit_2026_11_23.csv"),
+  readCsv("data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv")
 ]);
 
 const pageRanges = [
@@ -155,10 +156,21 @@ for (const row of physicsAudit) {
 }
 assertUnique(stockroomAudit.map((row) => row.record_id), "Stockroom audit IDs must be unique across all subjects");
 
+
+/* 6) Label comparison identifies, but never auto-edits, source/detail differences. */
+assert.equal(labelComparison.length, 105, "Physics catalogue label comparison must contain all 105 rows");
+assertUnique(labelComparison.map((row) => row.catalogue_record_id), "Label comparison item IDs must be unique");
+const labelMismatch = labelComparison.filter((row) => row.normalized_label_match === "FALSE");
+assert.equal(labelMismatch.length, 1, "Expected one source-label/detail difference in this audited snapshot");
+assert.equal(labelMismatch[0]?.catalogue_record_id, "NCERT-PHY-KIT-095");
+assert.equal(labelMismatch[0]?.comparison_status, "DETAIL_QUANTITY_NOT_PRESERVED_IN_LABVERSE_LABEL");
+assert.match(labelMismatch[0]?.manual_schedule_quantity_breakdown ?? "", /20 Ω × 2/);
+assert.match(labelMismatch[0]?.review_action ?? "", /Keep the catalogue label unchanged/);
+
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
 console.log("RBSE task/item method pairs:", methodPairs.length);
 console.log("Source-confirmed task gap rows:", taskGaps.length);
-console.log("Stockroom inventory/reagent audit rows:", stockroomAudit.length);
+console.log("Stockroom inventory/reagent audit rows:", stockroomAudit.length);\nconsole.log("Catalogue label comparisons (one detail exception):", labelComparison.length, "/", labelMismatch.length);
 console.log("Method classifications:", JSON.stringify(actualStatuses));
