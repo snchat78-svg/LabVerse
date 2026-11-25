@@ -1,3 +1,10 @@
+## 2026-11-25 — Physics catalogue label comparison added to CI
+
+- Compared all 105 source item labels against the LabVerse Physics labels: 104 normalized matches, one detail difference on `NCERT-PHY-KIT-095` (the manual gives the exact resistor-set quantities). The catalogue label is retained unchanged; details are in `docs/PHASE_4_1_PHYSICS_CATALOGUE_LABEL_COMPARISON_2026_11_25.md`.
+- Extended the source-data validator to enforce this known one-row difference and preserve the separate composition note.
+- **Run #5 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45635222749.
+- Next: item-image/source edition/physical variant, dimension and quantity review for all 105 Physics rows; then adjudicate possible omitted links in the 41-task equipment-gap register. Phase 1.1 and Phase 4.1 remain IN PROGRESS.
+
 ## 2026-11-25 — Physics source-data integrity gate established
 
 - Added a dependency-free Node validator `scripts/validate-physics-source-crosswalk.mjs` and workflow `.github/workflows/labverse-source-data-check.yml`.
