@@ -7,6 +7,7 @@ on:
       - "scripts/validate-physics-source-crosswalk.mjs"
       - "data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"
       - "data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"
+      - "data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv"
       - "data/catalogues/stockroom_item_level_audit_2026_11_23.csv"
       - "data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"
       - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
