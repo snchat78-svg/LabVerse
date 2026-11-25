@@ -1,3 +1,12 @@
+
+
+## 2026-11-25 — Complete 515-item browser reachability gate verified
+
+- Added full data-driven Playwright coverage at `app/tests/stockroom-coverage.mjs` and enabled it in the React app GitHub Actions workflow.
+- **Run #86 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45371257779. All preceding checks and the new full stockroom coverage step passed.
+- Browser asserted exact unique-ID equality for each subject's All stock and every mapped cabinet: Physics 105, Chemistry 177, Biology 233; total 515 items across 34 subject/cabinet routes. No category mapping was missing in the checked JSON snapshot.
+- This verifies UI reachability only. All 135 taxonomy category assignments remain provisional and pending domain review; physical stock, procurement, item provenance, safety, source rights and real 3D readiness are not verified. Phase 4.1 remains IN PROGRESS.
+
 # LabVerse — Item-level Stockroom Reachability Audit (2026-11-24)
 
 ## Scope and method
