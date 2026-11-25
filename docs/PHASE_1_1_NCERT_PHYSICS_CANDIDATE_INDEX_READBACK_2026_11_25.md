@@ -1,7 +1,9 @@
-# NCERT Physics candidate-item index row readback — 2026-11-25
+# NCERT Physics item-schedule text readback — 2026-11-25
 
-- Isolated the **52 unique Physics catalogue items** referenced by the 219-row Class XI Physics candidate method-alignment audit.
-- All 52 serial rows have an official item-schedule page group and a retrieved text-row reference for item name/use; they remain open for image/physical variant, procurement, safety, rights and expert review.
-- The other **53/105** Physics catalogue rows have serial and page mapping, but have not yet had a row-by-row name/image readback in this work unit. Their status is deliberately marked `ROW_BY_ROW_NAME_AND_IMAGE_MATCH_OPEN`.
-- CSV: `data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv`.
-- This readback supports candidate crosswalk scrutiny, not a claim that the listed school has the physical apparatus or that each is needed in an RBSE task. No IDs are promoted.
+- Read the text-extracted official item-schedule rows for **all 105 current Physics catalogue records**, serials **2–106**, across printed pages **xi–xxv**. The 105-row CSV now stores the NCERT schedule item label and a concise paraphrase of the listed use alongside the current LabVerse catalogue label.
+- The **52 items** that appear in the current 219-row Class XI Physics task-to-item candidate audit are also isolated in `data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv`; the remaining 53 rows are read from the item schedule but are not among those current Class XI Physics candidate links.
+- Exact source spelling is retained where relevant. For example, serial 79 is printed as **“Maganin wire”** in the NCERT schedule; the crosswalk does not silently normalize that label to another spelling. Serial 49 is printed as **“Wire gauge”** and its listed use is a base on a tripod for uniform heating.
+- **Not completed:** visual inspection of every item illustration; physical specification/variant, dimensions, supplied quantities, kit edition correspondence, actual school stock, procurement equivalence, safety, rights and expert review. The 105-row text readback must not be described as a product/asset verification.
+- CSVs: `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` (105 rows); `data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv` (52 candidate-linked rows).
+- Source: [NCERT Physics Laboratory Kit manual, official PDF](https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf), item list pp. xi–xxv.
+- No item was promoted; catalogue raw names/categories were not overwritten. 
