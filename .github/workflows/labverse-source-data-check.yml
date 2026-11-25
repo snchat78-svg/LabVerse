@@ -1,0 +1,39 @@
+name: LabVerse scientific source-data integrity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/validate-physics-source-crosswalk.mjs"
+      - "data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"
+      - "data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"
+      - "data/catalogues/stockroom_item_level_audit_2026_11_23.csv"
+      - "data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"
+      - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
+      - ".github/workflows/labverse-source-data-check.yml"
+  pull_request:
+    paths:
+      - "scripts/validate-physics-source-crosswalk.mjs"
+      - "data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"
+      - "data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"
+      - "data/catalogues/stockroom_item_level_audit_2026_11_23.csv"
+      - "data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"
+      - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
+      - ".github/workflows/labverse-source-data-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-data-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate Physics item and task crosswalks
+        run: node scripts/validate-physics-source-crosswalk.mjs
