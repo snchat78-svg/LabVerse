@@ -4,7 +4,7 @@
 
 - Mapped all **105 current Physics catalogue rows** (`NCERT-PHY-KIT-002` through `NCERT-PHY-KIT-106`) to the serial-number rows in the NCERT *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII* item schedule.
 - Recorded the printed Roman-numeral schedule-page group from the official manual: **pp. xi–xxv**.
-- Added the 105-row crosswalk `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
+- Added the 105-row crosswalk `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` with the catalogue label beside a provisional NCERT schedule-name/use reference. The text fields are not a completed independent row-by-row source-table/image readback.
 - Updated the Physics rows in `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` so `item_page_evidence` now records the printed item-schedule page and explicitly retains `ITEM_VARIANT_REVIEW_OPEN`.
 
 ## Schedule page groups
