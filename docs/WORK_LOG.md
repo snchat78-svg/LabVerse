@@ -1,3 +1,12 @@
+## 2026-11-25 — Physics source-data integrity CI
+
+- Added dependency-free validator: `scripts/validate-physics-source-crosswalk.mjs`.
+- Added independent GitHub Actions workflow: `.github/workflows/labverse-source-data-check.yml`.
+- Validator checks: 105 serial/page/text rows; 52 candidate-linked item IDs; 219 unique task/item pairs with matching manual name/use/page; all candidate links NOT_PROMOTED; expected six classification totals; E12 item-49 not confirmed; 41 unique task gap rows; 515 unique stockroom audit records and 105 Physics page/text evidence rows.
+- **Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491.
+- Run #1 failed only on the validator's assumption that serials were padded to three digits. Changed comparisons to numeric serials at commit `0a836cfad2131afd69278bc49f5284e900e2bd04`; Run #2 passed.
+- This is source-data integrity QA, not a physical science/stock/safety/rights validation.
+
 ## 2026-11-25 — Physics 105-row NCERT item-schedule text readback and E12 correction
 
 - Source read: NCERT official *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII*, item schedule printed pp. xi–xxv and XI experiment/activity methods.
