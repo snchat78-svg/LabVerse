@@ -1,3 +1,15 @@
+## 2026-11-25 — Physics 105-row NCERT item-schedule text readback and E12 correction
+
+- Source read: NCERT official *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII*, item schedule printed pp. xi–xxv and XI experiment/activity methods.
+- Completed text row readback for catalogue serials 2–106: `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` now contains 105 source item labels, page groups and listed-use paraphrases. No visual item-image verification is claimed.
+- Updated all 105 Physics records in the 515-row stockroom item-level audit with the corresponding NCERT item schedule page and text-read/variant-open status.
+- Updated the 52-item candidate subset and attached source item names/uses to all 219 candidate method audit rows.
+- Corrected RBSE EXP-14 / NCERT E12 link for item 49: E12's method lists double-walled calorimeter, two thermometers, stirrer, stopwatch, heater, water and tripod; the item list's item 49 is a tripod base for uniform heating and is not listed in E12. Its method status is now `NOT_CONFIRMED_IN_METHOD`. Updated the 41-row equipment gap register with missing double-wall apparatus/second thermometer/heating arrangement.
+- Method result totals now: 81 explicit; 66 conditional/ancillary; 6 not confirmed; 5 no Searle substitute; 18 role/variant mismatch; 43 no comparable NCERT method. All candidate IDs remain NOT_PROMOTED.
+- The item schedule prints item 79 as “Maganin wire”; that source wording is preserved. It is not silently corrected to a different spelling.
+- Verification: re-read all five relevant CSV outputs from GitHub; row counts = 105 item rows, 52 candidate subset rows, 219 method-pair rows, 41 task gaps, 515 stockroom audit rows; no missing source item/use or page field in the method-pair data.
+- Next: all-105 item image/variant/edition/quantity review; then adjudicate proposed omitted items task-by-task. Phase 1.1 stays IN PROGRESS.
+
 ## 2026-11-25 — Physics catalogue item serial/page/name/use crosswalk
 
 - Added `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` with 105 Physics inventory rows (item serials 2–106), printed item-schedule pages xi–xxv, paraphrased NCERT manual item labels and their indexed use.
