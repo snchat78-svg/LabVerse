@@ -1,3 +1,10 @@
+
+
+## Reproducible validation
+
+- The 105-row full source index, 52-row candidate subset, 219-row method audit, 41-row task gap register and 515-row stockroom audit are checked by `scripts/validate-physics-source-crosswalk.mjs`.
+- **CI Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491. Validation does not replace image, physical variant, procurement or safety review.
+
 # NCERT Physics item-schedule text readback — 2026-11-25
 
 - Read the text-extracted official item-schedule rows for **all 105 current Physics catalogue records**, serials **2–106**, across printed pages **xi–xxv**. The 105-row CSV now stores the NCERT schedule item label and a concise paraphrase of the listed use alongside the current LabVerse catalogue label.
