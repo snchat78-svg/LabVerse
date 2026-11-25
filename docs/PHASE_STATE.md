@@ -1,3 +1,17 @@
+## 2026-11-25 — Phase 1.1 Class XI Physics source-page adjudication
+
+- Source-reviewed all **41/41** Class XI Physics rows in the Phase 1.2 practical register against the existing `11_2027_copy.pdf` (PDF pp.115–119; English practical pages 117–119, Hindi corroboration p.115). Existing source fingerprint: 23,343,499 bytes; SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`.
+- Confirmed curriculum/task identity for 17 experiments, 7 Section A activities, 6 Section B activities and 11 projects. Existing task joins: **28 exact stable-ID** and **13 unique punctuation-normalized-ID** matches. Earlier similarity-only outcomes (including 2 ambiguous and 1 no-unique-candidate) were resolved only for this source-backed lane.
+- Reconciliation CSV now marks these 41 rows `SOURCE_PAGE_CONFIRMED`; the remaining **106** rows are unchanged. Updated status totals: 41 source-confirmed, 57 high-similarity review, 37 possible-match review, 8 ambiguous review, 3 no-unique-candidate and 1 group-level review.
+- The 41 tasks retain **219 candidate item-ID references / 52 unique IDs**; all 219 references exist in the current dashboard catalogue snapshot. This proves ID presence only, not practical relevance, physical stock, procurement equivalence, safety, rights or expert approval. Item relevance remains NOT_ADJUDICATED; catalogue IDs remain NOT_PROMOTED. Fortin barometer project `RBSE-XI-PHY-PRJ-08` still has no candidate item IDs.
+- Preserved source distinctions: both sonometer alternatives in one record; paper-scale least-count choices; the p.118 English/p.115 Hindi wording discrepancy for Activity A7; separate pendulum projects; and separate helical-spring oscillation vs load-extension tasks.
+- Data/report commit: [`2c7ac15a8eaa`](https://github.com/snchat78-svg/LabVerse/commit/2c7ac15a8eaa2f1a5721073538d845335eadc49d). Report: `docs/PHASE_1_1_XI_PHYSICS_SOURCE_PAGE_ADJUDICATION_2026_11_25.md`; row-level audit: `data/curriculum/rbse_xi_physics_source_page_adjudication_2026_11_25.csv`.
+- Verification: 41/41 source-index IDs, task rows and register mappings checked; 219/219 candidate item references found in the inventory-presence audit; 0 missing referenced IDs; reconciliation remains 147 rows. No application code changed. No configured GitHub Actions workflow watches `data/curriculum/**` or `docs/**`, so no CI run is claimed.
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 2 BLOCKED pending method provenance, rights and hazard/expert evidence; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** audit candidate-item relevance for these same 41 Class XI Physics records (219 references / 52 unique IDs) against task wording and item-level source evidence. Classify only source-supported exact links, possible supporting items and evidence-backed gaps; preserve one-to-many links. Do not promote an item merely because its ID exists.
+
 ## 2026-11-24 — Phase 1.1 first normalized curriculum batch
 
 - Added `data/curriculum/rbse_2026_2027_class_xi_physics_biology_practical_index.csv`: 65 source-backed Class XI records (Physics 41: 17 experiments, 13 activities across sections A/B, 11 projects; Biology 24: Botany/Zoology major/minor and 11 spotting groups).
