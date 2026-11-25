@@ -1,3 +1,11 @@
+
+
+## 2026-11-25 — Physics item-schedule provenance extended
+
+- Added `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` for all 105 Physics catalogue rows, mapping serial numbers 2–106 to the NCERT item schedule printed pages xi–xxv and recording paraphrased item name/use.
+- The Physics rows in the 515-row audit now carry their page group in `item_page_evidence`, but remain marked `ITEM_VARIANT_REVIEW_OPEN`.
+- This is index-page/serial provenance, not visual confirmation of every item image/specification, procurement equivalence, physical stock, safety or rights clearance. Chemistry and Biology still need equivalent source-item provenance work.
+
 # Phase 4.1 — Stockroom item-level audit baseline (2026-11-23)
 
 ## Purpose
