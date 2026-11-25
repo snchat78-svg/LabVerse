@@ -172,5 +172,6 @@ console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
 console.log("RBSE task/item method pairs:", methodPairs.length);
 console.log("Source-confirmed task gap rows:", taskGaps.length);
-console.log("Stockroom inventory/reagent audit rows:", stockroomAudit.length);\nconsole.log("Catalogue label comparisons (one detail exception):", labelComparison.length, "/", labelMismatch.length);
+console.log("Stockroom inventory/reagent audit rows:", stockroomAudit.length);
+console.log("Catalogue label comparisons (one detail exception):", labelComparison.length, "/", labelMismatch.length);
 console.log("Method classifications:", JSON.stringify(actualStatuses));
