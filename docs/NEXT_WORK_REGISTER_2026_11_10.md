@@ -1,3 +1,11 @@
+## 2026-11-25 — Physics catalogue source-table readback completed
+
+- Added text item name/use and schedule printed-page references for all 105 Physics item serials 2–106; index page range xi–xxv. See `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
+- All 105 Physics entries in the 515-row stockroom item-level audit now carry schedule-page and table-text-read provenance. The 52 items referenced in 219 Class XI Physics candidate links are isolated in `data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv`; the other 53 are also read from the index table but are not in this 41-task candidate set.
+- Corrected NCERT E12 cooling-curve classification: item 49 (printed label “Wire gauge”; use: base for uniform heating) is NOT_CONFIRMED_IN_METHOD for E12. The double-walled calorimeter, second thermometer, heater and other apparatus gaps are in the EXP-14 row of the 41-task gap register.
+- **Next exact task:** visual/source-edition and physical variant/dimension/quantity review of all 105 Physics inventory rows; only after that, adjudicate the possible omitted task-item links in the 41-row gap register. Don't rewrite catalogue names from a paraphrase or treat source text as procurement/stock proof.
+- Once Physics review has reached a defensible stop point, continue Chemistry and Biology source-item traceability in source order.
+
 ## 2026-11-25 — Physics 105-row item schedule crosswalk committed
 
 - Added serial/page/name/use paraphrase for all 105 Physics inventory entries in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
