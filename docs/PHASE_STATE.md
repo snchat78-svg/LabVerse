@@ -1,3 +1,28 @@
+## 2026-11-25 — Phase 4.1 515-item reachability gate verified; Phase 1.1 Physics method audit advanced
+
+### Phase 4.1 stockroom implementation gate
+
+- Added stable `data-item-id` attributes to React stockroom rows and a Playwright suite `app/tests/stockroom-coverage.mjs`; CI runs it through `npm run test:stockroom-coverage`.
+- **GitHub Actions Run #86: SUCCESS** — https://github.com/snchat78-svg/LabVerse/actions/runs/45371257779. TypeScript typecheck, Chromium install, production build, React browser smoke, static↔React parity and the complete item-level coverage step all passed.
+- Verified **515/515** unique source IDs: Physics 105, Chemistry 177 and Biology 233. Every item appears exactly once in its subject's All stock view and exactly once through its mapped cabinet route; 515 All stock ID memberships and 515 cabinet memberships were asserted. All 34 current subject/cabinet paths (10 Physics, 10 Chemistry, 14 Biology) were traversed by the browser suite. No category mapping was missing in the current snapshot.
+- Run #85 failed in the new suite because the test's generated-taxonomy parser expression was incorrectly escaped; the correction was committed and Run #86 proves the corrected test passes.
+- **Boundary:** this verifies React navigation/reachability against the current JSON snapshot. It does not approve the 135 taxonomy combinations, establish physical stock, item source pages, procurement equivalence, safety, rights or 3D/action readiness.
+
+### Phase 1.1 — Class XI Physics candidate-method alignment
+
+- Added `data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv` (219 task/item rows) and `data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv` (41 task rows), documented in `docs/PHASE_1_1_NCERT_PHYSICS_METHOD_ALIGNMENT_AUDIT_2026_11_25.md`.
+- The 219 references cover 41 RBSE source-page-confirmed Class XI Physics tasks and 52 unique catalogue IDs. Method-alignment results: 82 explicit method components, 66 conditional/ancillary, 5 not confirmed in method text, 5 not substitutes for the absent Searle apparatus, 18 role/variant mismatches and 43 without a comparable NCERT method. **All candidate links remain NOT_PROMOTED.**
+- The comparison uses the separate NCERT *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII* (ISBN 978-93-5292-653-4; item schedule and experiment/activity sections). It does not turn NCERT's analogous procedure into an RBSE-approved method or procurement specification.
+- Corrected evidence: E3 explicitly uses a spherometer, a spherical surface such as a watch glass and a plane glass plate; the NCERT preface says Searle's apparatus was still in progress; Boyle's-law E10 directly uses a 60 mL syringe, holder, 500 g masses and grease; item 49 is wire gauze/heating mesh, not a wire-diameter gauge; item 71's folding metre scale is indexed for optical-bench use; item 90's protractor is indexed for glass-slab angles, not the water-jet large protractor.
+- The 41-row gap register highlights potentially omitted current catalogue items and task materials for review (for example E11's shared resonance/viscosity tube, E14's rubber pad/pinch clip, and A4's pulley/block/weight-box/spirit-level/pan). These are **review candidates**, not automatic new joins.
+- No item, task or asset was promoted; no scientific model or safety permission was created.
+
+### Current phase decision
+
+- Phase 1.1 remains **IN PROGRESS**. Next exact work: complete item-serial and printed-page provenance for the Physics catalogue against the NCERT item schedule, then resolve only source-supported omitted task links identified in the 41-row gap register; continue with the next unreviewed RBSE class/subject stream in source order.
+- Phase 4.1 remains **IN PROGRESS** despite the successful 515-item UI gate; 135 taxonomy decisions and source/page/rights/safety/task-scope/asset gates remain open.
+- Phase 2 remains **BLOCKED**. Phase 5 real 3D and Phase 6 scientific runtime remain **NOT STARTED**.
+
 ## 2026-11-25 — Phase 1.1 Class XI Physics source-page adjudication
 
 - Source-reviewed all **41/41** Class XI Physics rows in the Phase 1.2 practical register against the existing `11_2027_copy.pdf` (PDF pp.115–119; English practical pages 117–119, Hindi corroboration p.115). Existing source fingerprint: 23,343,499 bytes; SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`.
