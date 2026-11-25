@@ -1,3 +1,10 @@
+## 2026-11-25 — Physics 105-row item schedule crosswalk committed
+
+- Added serial/page/name/use paraphrase for all 105 Physics inventory entries in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
+- Physics item-page evidence in the 515-row stockroom audit now points to the NCERT item schedule page group and retains variant review as OPEN.
+- Important distinction: 219 method-alignment rows cover 40 tasks that actually have one or more candidate IDs; the remaining source-page-confirmed RBSE Physics task, PRJ-08 Fortin barometer, has zero candidate links and appears in the 41-row gap register.
+- **Next exact work:** reconcile all 105 Physics item source names/uses with current catalogue labels, details and raw categories; record only evidenced corrections as proposed changes. Continue with the 41-task possible missing links after the row identity pass.
+
 ## 2026-11-25 — Verified 515-item stockroom coverage and Physics method review
 
 - **Run #86 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45371257779. The React browser suite traversed all 34 subject/cabinet routes and checked all 515 unique inventory/reagent IDs: each ID exactly once in All stock and once in its mapped cabinet (Physics 105, Chemistry 177, Biology 233). Typecheck, build, existing app smoke and static↔React parity passed as well.
