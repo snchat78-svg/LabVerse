@@ -1,3 +1,12 @@
+## 2026-11-25 — Physics catalogue label/detail comparison
+
+- Added `data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv` (105 rows) and `docs/PHASE_4_1_PHYSICS_CATALOGUE_LABEL_COMPARISON_2026_11_25.md`.
+- Result: 104 normalized label matches and one detail exception (`NCERT-PHY-KIT-095`): NCERT's item schedule enumerates quantities 1×5Ω, 1×10Ω, 2×20Ω and 1×30Ω; the LabVerse label lists only values. Preserved the current raw catalogue label; no school-stock or procurement quantity is inferred.
+- Extended `scripts/validate-physics-source-crosswalk.mjs` with the 105-row label-comparison check and `.github/workflows/labverse-source-data-check.yml` to run when the comparison changes.
+- **CI Run #5 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45635222749.
+- Runs #3 and #4 failed due to a literal escaped newline in the test script; corrected at `a1a0ad31ed1657d1d71eb38596ac0afff533e422`. Run #5 passed.
+- Next: visual/item-image and physical variant/edition/dimension/quantity review for all 105 Physics catalogue rows, then source-backed adjudication of proposed task-item gaps.
+
 ## 2026-11-25 — Physics source-data integrity CI
 
 - Added dependency-free validator: `scripts/validate-physics-source-crosswalk.mjs`.
