@@ -1,3 +1,11 @@
+## 2026-11-25 — Physics source-data integrity CI gate passed
+
+- Added `scripts/validate-physics-source-crosswalk.mjs` and `.github/workflows/labverse-source-data-check.yml` to make source-data consistency reproducible in GitHub Actions.
+- **Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491. It validated 105 Physics schedule rows (serial 2–106 and page groups), 52 unique candidate items, 219 task/item method pairs, 41 task gap rows and all 515 stockroom audit IDs. It also checks each pair's item name/use/page binding, non-promotion state, method-classification totals and the EXP-14/item-49 correction.
+- Run #1 failed because the test expected zero-padded schedule serials while the data stores numeric serial strings. The validator now compares serials numerically; no catalogue source data was changed by that test fix.
+- This CI gate checks structural/source-data consistency. It does not replace visual image/specification checks, qualified expert review, rights, procurement, actual stock or safety approval.
+- Next Phase 1.1 gate stays: inspect item images/physical variants and source edition for all 105 Physics rows, then adjudicate the 41-task candidate omission/gap register. Phase 1.1 remains IN PROGRESS; Phase 2 remains BLOCKED.
+
 ## 2026-11-25 — Physics item schedule text readback complete; E12 method correction
 
 ### NCERT Physics catalogue source traceability
