@@ -1,3 +1,12 @@
+## 2026-11-25 — Physics item schedule text readback and method-alignment correction
+
+- **105/105 Physics item schedule rows** (serials 2–106) now have source text name/use paraphrases and printed index-page references xi–xxv in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`. The stockroom item-level audit carries the 105 corresponding Physics page references.
+- **52 unique item IDs** connect to the existing 219 candidate task/item references; the other 53 Physics index entries are also text-read but are not in the 41-task Class XI Physics candidate link set. Item images, physical variants, dimensions, quantities and procurement are still OPEN.
+- Updated `ncert_physics_method_alignment_audit` to include NCERT item schedule name/use text on every one of 219 candidate rows. Corrected EXP-14 item 49: NCERT E12's Newton-cooling apparatus does not list the tripod heating-base item; it is now NOT_CONFIRMED_IN_METHOD. The 41-task equipment gap register now exposes the double-wall apparatus and second thermometer gap.
+- Final 219-row status distribution: 81 explicit method components; 66 conditional/ancillary; 6 not confirmed; 5 not substitutes for absent Searle apparatus; 18 item-role/variant mismatches; 43 without comparable NCERT method. No candidate is promoted.
+- **Next work:** visual/source-edition and physical variant/dimension/quantity reconciliation for the 105 Physics item rows; then task-by-task adjudication of the 41-row candidate omission/equipment gap register. Continue with equivalent Chemistry/Biology source item audits after the Physics stream.
+- Phase 1.1 stays IN PROGRESS; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; Phase 5/6 NOT STARTED.
+
 ## 2026-11-25 — Physics catalogue 105-row item schedule name/use crosswalk
 
 - Added NCERT manual serial, item schedule printed page, paraphrased item name and purpose for all 105 Physics catalogue rows in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`; page references span printed pp. xi–xxv.
