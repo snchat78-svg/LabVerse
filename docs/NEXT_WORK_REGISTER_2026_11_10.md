@@ -1,3 +1,5 @@
+# LabVerse Next Work & Source Closure Register — 2026-11-10
+
 ## 2026-11-25 — Phase 1.1 Class XI Physics source-page adjudication
 
 - Source-reviewed all **41/41** Class XI Physics rows in the Phase 1.2 practical register against the existing `11_2027_copy.pdf` (PDF pp.115–119; English practical pages 117–119, Hindi corroboration p.115). Existing source fingerprint: 23,343,499 bytes; SHA-256 `a1899f74bdf72303c0ada379c96b515f11ac3e61ba0d10c30f146b56e345a8c5`.
@@ -130,7 +132,7 @@
 - Both previews run in CI; verified shared JSON data, subject/task summary, class filter, Physics source navigation, Chemistry/Biology safety disclosures, research and analysis boundaries and mobile layout (11/11 parity groups PASS).
 - Known repeated-item gap retained after acceptance: static allows multiple instances of a source item; React currently de-duplicates IDs.
 - CI ACCEPTED: https://github.com/snchat78-svg/LabVerse/actions/runs/44677004043 — React smoke **35/35 groups PASS** and static↔React parity **11/11 groups PASS**.
-# LabVerse Next Work & Source Closure Register — 2026-11-10
+
 
 ## Work completed in this unit
 
