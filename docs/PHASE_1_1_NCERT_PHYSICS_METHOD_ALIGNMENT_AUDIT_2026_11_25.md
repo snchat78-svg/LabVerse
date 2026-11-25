@@ -1,3 +1,12 @@
+
+
+## Automated source-data integrity verification
+
+- Added `scripts/validate-physics-source-crosswalk.mjs` and `.github/workflows/labverse-source-data-check.yml`.
+- **GitHub Actions Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491.
+- Verified 105 item schedule rows, 52 unique candidate-linked items, 219 unique candidate task/item pairs, 41 task gap rows, 515 stockroom audit rows, matching item name/use/page bindings, and all candidate statuses remaining NOT_PROMOTED.
+- The validator also guards against regressing the E12/item-49 classification. This automated check is data integrity only; item images/variants, procurement, physical stock, safety, rights and expert review remain open.
+
 # NCERT Physics manual method-alignment audit — Class XI RBSE Physics
 
 **Date:** 2026-11-25  
