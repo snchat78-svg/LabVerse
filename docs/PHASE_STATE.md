@@ -1,3 +1,11 @@
+## 2026-11-25 — Physics catalogue label comparison and source-data CI extended
+
+- Compared all 105 LabVerse Physics labels to the NCERT schedule labels: **104 normalized matches** and one detail-only difference at `NCERT-PHY-KIT-095`. The NCERT schedule enumerates 1×5Ω, 1×10Ω, 2×20Ω and 1×30Ω; the current LabVerse label lists the values but not those counts. The original label is unchanged. See `data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv` and `docs/PHASE_4_1_PHYSICS_CATALOGUE_LABEL_COMPARISON_2026_11_25.md`.
+- Extended `scripts/validate-physics-source-crosswalk.mjs` and the source-data workflow to enforce the 105-row comparison and guard the one known resistor-set detail exception.
+- **GitHub Actions Run #5 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45635222749. The integrity gate still confirms 105 item rows, 52 candidate IDs, 219 method pairs, 41 task gap rows and 515 stockroom audit rows, and now verifies the 104/1 label comparison.
+- Runs #3/#4 failed because a literal escaped newline caused a validator syntax error; corrected at commit `a1a0ad31ed1657d1d71eb38596ac0afff533e422`. Run #5 passed.
+- Next exact gate: visual/item-image, kit edition and physical variant/dimensions/quantity review across all 105 Physics catalogue rows, then adjudicate the task-gap/supplementary candidate links. No catalog label or physical stock quantity has been changed.
+
 ## 2026-11-25 — Physics source-data integrity CI gate passed
 
 - Added `scripts/validate-physics-source-crosswalk.mjs` and `.github/workflows/labverse-source-data-check.yml` to make source-data consistency reproducible in GitHub Actions.
