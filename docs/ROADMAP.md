@@ -1,3 +1,11 @@
+## 2026-11-25 — Physics catalogue 105-row item schedule name/use crosswalk
+
+- Added NCERT manual serial, item schedule printed page, paraphrased item name and purpose for all 105 Physics catalogue rows in `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`; page references span printed pp. xi–xxv.
+- Updated Physics rows in the 515-row stockroom item-level audit with the mapped item-schedule page and explicit variant-review-open status.
+- The method-alignment CSV contains 219 candidate pair rows across **40 tasks with at least one candidate**; the 41st source-confirmed task (Fortin-barometer project) has zero candidate IDs and is represented by the 41-task gap register. All IDs remain NOT_PROMOTED.
+- **Next exact Phase 1.1 task:** perform row-by-row name/use/detail/category reconciliation for all 105 Physics item rows and record mismatches without overwriting source labels. Then adjudicate possible missing candidate links from the 41-task gap register against exact RBSE wording and item-purpose evidence.
+- Phase 1.1 remains IN PROGRESS; Phase 4.1 remains IN PROGRESS; Phase 2 remains BLOCKED. Phase 5 real 3D and Phase 6 runtime remain NOT STARTED.
+
 ## 2026-11-25 — Verified full stockroom reachability and expanded Physics method evidence
 
 - **Phase 4.1:** Run #86 SUCCESS — https://github.com/snchat78-svg/LabVerse/actions/runs/45371257779. A new Playwright gate traversed all 34 subject/cabinet paths and asserted every one of the 515 inventory/reagent IDs exactly once in All stock and exactly once in its canonical mapped cabinet (Physics 105; Chemistry 177; Biology 233). This completes the automated navigation/reachability work-unit only.
