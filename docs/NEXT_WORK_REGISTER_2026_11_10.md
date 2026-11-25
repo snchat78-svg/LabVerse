@@ -1,3 +1,10 @@
+## 2026-11-25 — Source-data integrity validator accepted
+
+- Added `scripts/validate-physics-source-crosswalk.mjs` and `.github/workflows/labverse-source-data-check.yml`.
+- **Run #2 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45634528491. Checks 105 item schedule rows/pages, 52 candidate items, 219 method pair rows, 41 task gaps, 515 source audit rows, and row bindings/status counts.
+- Run #1 was a validator-only failure from assuming padded serial strings; the test was fixed to compare integer serial values. The data itself was unchanged.
+- Next exact task remains physical/image/edition variant verification for 105 Physics item rows, then source-backed adjudication of proposed candidate supplements in the 41-task gap register.
+
 ## 2026-11-25 — Physics catalogue source-table readback completed
 
 - Added text item name/use and schedule printed-page references for all 105 Physics item serials 2–106; index page range xi–xxv. See `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv`.
