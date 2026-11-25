@@ -1,11 +1,12 @@
-# Physics catalogue item-schedule page provenance — 2026-11-25
+# Physics catalogue item-schedule source crosswalk — 2026-11-25
 
 ## Work completed
 
-- Mapped all **105 current Physics catalogue rows** (`NCERT-PHY-KIT-002` through `NCERT-PHY-KIT-106`) to the serial-number rows in the NCERT *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII* item schedule.
+- Mapped all **105 current Physics catalogue rows** (`NCERT-PHY-KIT-002` through `NCERT-PHY-KIT-106`) to the corresponding serial-number rows in the NCERT *Manual of Secondary Stage Physics Laboratory Kit for Grades XI and XII*.
 - Recorded the printed Roman-numeral schedule-page group from the official manual: **pp. xi–xxv**.
-- Added the 105-row crosswalk `data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv` with the catalogue label beside a provisional NCERT schedule-name/use reference. The text fields are not a completed independent row-by-row source-table/image readback.
-- Updated the Physics rows in `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` so `item_page_evidence` now records the printed item-schedule page and explicitly retains `ITEM_VARIANT_REVIEW_OPEN`.
+- Read the text-extracted **item name and listed-use row for all 105 serial entries** and paraphrased the source use. Source spelling is retained, including the printed label “Maganin wire” (serial 79) and “Wire gauge” (serial 49).
+- The 52 item IDs used in the Class XI Physics candidate-link audit are separately exposed in `data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv`; other 53 schedule rows are also text-read but are not among those current 41-task candidate links.
+- Updated Physics rows in `data/catalogues/stockroom_item_level_audit_2026_11_23.csv` so `item_page_evidence` records the printed item-schedule page and table-text-read status.
 
 ## Schedule page groups
 
@@ -29,11 +30,11 @@
 
 ## Evidence limits
 
-- The NCERT catalogue ID suffix is used as the corresponding kit item serial; the current catalogue contains 105 rows covering serials 2–106. This is a serial crosswalk, not an independent visual or procurement verification of all item descriptions.
+- The NCERT catalogue ID suffix is used as the corresponding kit item serial; this crosswalk retains both the current LabVerse label and the NCERT schedule label/use text.
 - The page field refers to the **item schedule/listing page**, not the experiment method page. Method evidence is recorded separately in `data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv`.
-- Name/variant, dimensions, material, quantities, kit edition, physical school stock, safety, procurement equivalence, rights and subject-expert review remain OPEN. For example, the listed wire-mesh heating support, folding metre scale, and full protractor have distinct intended uses; do not infer a different role from a short catalogue label.
-- No source item was promoted and no catalogue item name or category was changed.
+- This is a **text readback**, not a visual audit of all item pictures, a full physical specification, a procurement verification, or actual school stock. Image/variant, dimensions, materials, quantities, version, safety, procurement equivalence, rights and expert review remain OPEN.
+- No source item was promoted and no catalogue item name/category was overwritten.
 
 ## Current Phase 4.1 consequence
 
-Physics now has item-schedule page provenance at the index-row level for 105/105 current catalogue records. Chemistry and Biology still need the same source-item serial/page and variant audit. Phase 4.1 remains IN PROGRESS; page provenance alone does not clear its broader source, safety, rights or asset gates.
+Physics now has serial/page and item-name/use text crosswalks for 105/105 current catalogue records. Chemistry and Biology still need equivalent source-item serial/page, text, image and variant audit. Phase 4.1 remains IN PROGRESS; text provenance does not clear broader safety, procurement, rights or asset gates.
