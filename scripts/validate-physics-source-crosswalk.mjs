@@ -212,39 +212,22 @@ assert.equal(imageReviewById.get("NCERT-PHY-KIT-007")?.quantity_status, "ASSEMBL
 assert.match(imageReviewById.get("NCERT-PHY-KIT-095")?.source_rating_capacity_or_composition_note ?? "", /20Ω × 2/);
 assert.equal(imageReviewById.get("NCERT-PHY-KIT-095")?.quantity_status, "EXPLICIT_MANUAL_SET_COMPOSITION_NOT_SCHOOL_STOCK_COUNT");
 
-// 8) Page-xii indexed appearance descriptions are supplementary text evidence only.
-// They must never advance direct screenshot/visual-review state or assert dimensions/stock.
-const expectedIndexedAppearance = {
-  6: "Beam balance with a horizontal graduated beam, two pans and a central vertical support mounted on a base.",
-  7: "Laboratory stand assembly consisting of a vertical metal rod, clamps, boss heads and a base plate.",
-  8: "Transparent graduated measuring cylinder with a circular base.",
-  9: "Digital stopwatch with display and attached wrist cord.",
-  10: "Adjustable inclined plane apparatus with a wooden base, sloping track and graduated angle-measuring scale.",
-  11: "Cylindrical steel roller with a bent metal handle attached to its side.",
-  12: "Cylindrical aluminium roller with a bent metal handle attached to its side.",
-  13: "Metallic helical spring with a loop at the top and a circular loop at the bottom, attached to a small pointer-like metal strip.",
-  14: "Set of silver-coloured cylindrical slotted weights stacked together, with a metal hook at the top.",
-  15: "Set of dark-coloured cylindrical slotted weights stacked together, with a large curved hook at the top.",
-  16: "Black, square solid block with a circular hole in the centre of its upper surface.",
-  17: "Metal pulley mounted on an S-shaped black metal clamp, with a screw arrangement for fixing it.",
-  18: "Cluster of small, shiny, spherical metallic steel balls."
-};
+// 8) Official NCERT PDF text-layer appearance descriptions cover every catalogue serial.
+// This is source text extraction, NOT pixel-level visual verification.
+assert.equal(imageVariantReview.length, 105, 'Official PDF appearance audit must cover all 105 catalogue rows');
+assertUnique(imageVariantReview.map(row => row.catalogue_record_id), 'Official PDF appearance IDs must be unique');
+assertUnique(imageVariantReview.map(row => row.ncert_item_serial_number), 'Official PDF appearance serials must be unique');
 for (const row of imageVariantReview) {
+  assert.ok(row.official_pdf_appearance_description.trim(), row.catalogue_record_id + ': official PDF appearance text missing');
+  assert.equal(row.official_pdf_description_evidence_status, 'OFFICIAL_PDF_TEXT_LAYER_EXTRACTION');
+  assert.equal(row.official_pdf_source_url, 'https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf');
   const serial = Number(row.ncert_item_serial_number);
-  if (Object.hasOwn(expectedIndexedAppearance, serial)) {
-    assert.equal(row.indexed_appearance_description, expectedIndexedAppearance[serial], row.catalogue_record_id + ': indexed appearance description changed');
-    assert.equal(row.indexed_appearance_evidence_status, "OFFICIAL_PDF_TEXT_EXTRACTION_PHOTOGRAPH_APPEARANCE_COLUMN_NOT_VISUALLY_VERIFIED");
-    assert.equal(row.indexed_appearance_source_url, "https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf");
-    assert.equal(row.visual_review_status, "NOT_VISUALLY_CHECKED_THIS_PASS", row.catalogue_record_id + ": indexed text must not be promoted to screenshot verification");
-    assert.equal(row.visual_review_pdf_zero_based_page, "");
-    assert.equal(row.visual_review_note, "");
+  if ([2,3,4,5,19,20,21,22,23,24,25,26].includes(serial)) {
+    assert.equal(row.visual_review_status, 'VISUALLY_CHECKED_FROM_OFFICIAL_PDF_SCREENSHOT');
   } else {
-    assert.equal(row.indexed_appearance_description, "");
-    assert.equal(row.indexed_appearance_evidence_status, "");
-    assert.equal(row.indexed_appearance_source_url, "");
+    assert.equal(row.visual_review_status, 'NOT_VISUALLY_CHECKED_THIS_PASS', row.catalogue_record_id + ': text-layer extraction cannot promote a visual check');
   }
 }
-assert.equal(Object.keys(expectedIndexedAppearance).length, 7);
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
