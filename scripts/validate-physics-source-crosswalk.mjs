@@ -246,18 +246,22 @@ assert.ok(physicsTenderGap && /106 numbered item rows/.test(physicsTenderGap.evi
 assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1');
 assert.match(physicsSpecGap.retrieval_authentication_status, /no identifiable SSPhyLaboratoryKit\/Physics specification filename/i);
 
-// 10) Source-backed additional item decisions remain separate from promoted RBSE links.
-assert.equal(itemAdjudication.length, 96, 'Physics additional item adjudication must contain 96 records');
+// 10) Full Class XI Physics task-to-item adjudication remains evidence-separated and unpromoted.
+assert.equal(itemAdjudication.length, 139, 'Class XI Physics task/item adjudication must contain 139 records');
 assertUnique(itemAdjudication.map(row => row.curriculum_record_id + '|' + row.candidate_group_id + '|' + row.candidate_item_id + '|' + row.adjudication_class), 'Physics task-item adjudication pair keys must be unique');
-assert.equal(new Set(itemAdjudication.map(row => row.curriculum_record_id)).size, 25, 'The combined bounded adjudication covers 25 distinct RBSE tasks');
+assert.equal(new Set(itemAdjudication.map(row => row.curriculum_record_id)).size, 41, 'All 41 RBSE Class XI Physics tasks must have adjudication decisions');
+const taskIdsInAdjudication = new Set(itemAdjudication.map(row => row.curriculum_record_id));
+assert.deepEqual([...taskIdsInAdjudication].sort(), taskGaps.map(row => row.rbse_task_id).sort(), 'Adjudicated task IDs must equal the full 41-row canonical RBSE Physics gap register');
 const exactNcertCandidates = itemAdjudication.filter(row => row.adjudication_class === 'EXPLICIT_NCERT_METHOD_COMPONENT_NOT_RBSE_PROVEN');
 const possibleNcertCandidates = itemAdjudication.filter(row => row.adjudication_class.startsWith('POSSIBLE_SUPPORTING_ITEM'));
 const unresolvedNcertRequirements = itemAdjudication.filter(row => row.adjudication_class === 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
 const notSubstituteCandidates = itemAdjudication.filter(row => row.adjudication_class === 'NOT_SUBSTITUTE_FOR_EXPLICITLY_UNAVAILABLE_SEARLE_APPARATUS');
-assert.equal(exactNcertCandidates.length, 57, 'Expected 57 explicit NCERT analogue-method components');
-assert.equal(possibleNcertCandidates.length, 24, 'Expected 23 possible/variant/role candidates');
-assert.equal(unresolvedNcertRequirements.length, 10, 'Expected 11 unresolved method requirements without invented IDs');
+const noEquivalentTasks = itemAdjudication.filter(row => row.adjudication_class === 'NO_EQUIVALENT_NCERT_METHOD_NO_ITEM_RELATION_CONFIRMED');
+assert.equal(exactNcertCandidates.length, 68, 'Expected 68 explicit NCERT analogue-method components');
+assert.equal(possibleNcertCandidates.length, 46, 'Expected 46 possible/variant/role/sample candidates');
+assert.equal(unresolvedNcertRequirements.length, 13, 'Expected 13 unresolved apparatus/material requirements without invented IDs');
 assert.equal(notSubstituteCandidates.length, 5, 'Expected five candidate items explicitly rejected as Searle apparatus substitutes');
+assert.equal(noEquivalentTasks.length, 7, 'Expected seven no-equivalent NCERT method task decisions');
 const taskItemCounts = itemAdjudication.reduce((out, row) => { out[row.curriculum_record_id] = (out[row.curriculum_record_id] ?? 0) + 1; return out; }, {});
 assert.deepEqual(taskItemCounts, {
   'RBSE-XI-PHY-EXP-01': 1,
@@ -284,11 +288,27 @@ assert.deepEqual(taskItemCounts, {
   'RBSE-XI-PHY-ACT-A05': 3,
   'RBSE-XI-PHY-ACT-A06': 5,
   'RBSE-XI-PHY-ACT-A07': 7,
-  'RBSE-XI-PHY-ACT-B06': 3
+  'RBSE-XI-PHY-ACT-B01': 7,
+  'RBSE-XI-PHY-ACT-B02': 3,
+  'RBSE-XI-PHY-ACT-B03': 5,
+  'RBSE-XI-PHY-ACT-B04': 5,
+  'RBSE-XI-PHY-ACT-B05': 1,
+  'RBSE-XI-PHY-ACT-B06': 3,
+  'RBSE-XI-PHY-PRJ-01': 5,
+  'RBSE-XI-PHY-PRJ-02': 1,
+  'RBSE-XI-PHY-PRJ-03': 1,
+  'RBSE-XI-PHY-PRJ-04': 1,
+  'RBSE-XI-PHY-PRJ-05': 1,
+  'RBSE-XI-PHY-PRJ-06': 1,
+  'RBSE-XI-PHY-PRJ-07': 1,
+  'RBSE-XI-PHY-PRJ-08': 1,
+  'RBSE-XI-PHY-PRJ-09': 4,
+  'RBSE-XI-PHY-PRJ-10': 1,
+  'RBSE-XI-PHY-PRJ-11': 5
 }, 'Task-to-item one-to-many group sizes changed');
 for (const row of itemAdjudication) {
   const task = taskGaps.find(candidate => candidate.rbse_task_id === row.curriculum_record_id);
-  assert.ok(task, 'Adjudication row task missing from canonical 41-row gap register: ' + row.curriculum_record_id);
+  assert.ok(task, 'Adjudication row task missing from canonical task-gap register: ' + row.curriculum_record_id);
   assert.equal(row.rbse_source_pdf_page, task.rbse_pdf_page_confirmed);
   assert.equal(row.rbse_task_title, task.rbse_task_title);
   assert.equal(row.ncert_comparable_section, task.ncert_comparable_section);
@@ -303,8 +323,7 @@ for (const row of itemAdjudication) {
     assert.equal(row.ncert_item_schedule_printed_page, item.ncert_item_schedule_printed_page);
     assert.equal(row.ncert_item_schedule_name, item.ncert_manual_item_name);
     assert.equal(row.catalogue_link_promotion_status, 'NOT_PROMOTED');
-  } else {
-    assert.equal(row.adjudication_class, 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
+  } else if (row.adjudication_class === 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED') {
     assert.equal(row.catalogue_link_promotion_status, 'NO_ITEM_ID_ASSIGNED_NO_PROMOTION');
     if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-B06') {
       assert.match(row.ncert_method_evidence, /five weights, each 200g/i);
@@ -312,9 +331,6 @@ for (const row of itemAdjudication) {
     } else if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-09') {
       assert.match(row.ncert_method_evidence, /Searle's apparatus/i);
       assert.match(row.ncert_item_evidence, /No equivalent Searle's apparatus/i);
-    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-12') {
-      assert.match(row.ncert_method_evidence, /rubber band/i);
-      assert.match(row.ncert_item_evidence, /No separate rubber-band row/i);
     } else if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-14') {
       assert.match(row.ncert_method_evidence, /double-walled apparatus/i);
       assert.match(row.ncert_item_evidence, /No separate outer vessel/i);
@@ -336,24 +352,36 @@ for (const row of itemAdjudication) {
     } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A07') {
       assert.match(row.ncert_method_evidence, /sheet of paper and cotton/i);
       assert.match(row.ncert_item_evidence, /No separate paper-sheet\/cotton/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-B01') {
+      assert.match(row.ncert_method_evidence, /500 mL.*paraffin wax/i);
+      assert.match(row.ncert_item_evidence, /No 500 mL metallic jug/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-B03') {
+      assert.match(row.ncert_method_evidence, /glycerine/i);
+      assert.match(row.ncert_item_evidence, /No glycerine item ID/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-PRJ-08') {
+      assert.match(row.ncert_method_evidence, /Fortin barometer/i);
+      assert.match(row.ncert_item_evidence, /No Fortin barometer/i);
     } else {
       assert.equal(false, true, 'Unexpected unresolved no-ID task: ' + row.curriculum_record_id);
     }
+  } else if (row.adjudication_class === 'NO_EQUIVALENT_NCERT_METHOD_NO_ITEM_RELATION_CONFIRMED') {
+    assert.equal(row.catalogue_link_promotion_status, 'NO_ITEM_ID_ASSIGNED_NO_PROMOTION');
+    assert.ok(row.curriculum_record_id === 'RBSE-XI-PHY-ACT-B05' || /^RBSE-XI-PHY-PRJ-(02|03|04|05|06|10)$/.test(row.curriculum_record_id), 'Unexpected no-equivalent task');
+  } else {
+    assert.equal(false, true, 'No-ID row must be unresolved or explicit no-equivalent');
   }
   if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-09') {
     assert.equal(row.analogue_strength, 'NO_METHOD_EQUIVALENT');
-    assert.equal(row.catalogue_link_promotion_status, row.candidate_item_id ? 'NOT_PROMOTED' : 'NO_ITEM_ID_ASSIGNED_NO_PROMOTION');
   }
   assert.equal(row.physical_procurement_status, 'UNKNOWN_NOT_ESTABLISHED_BY_MANUAL');
   assert.equal(row.safety_status, 'NOT_REVIEWED_NO_EXECUTION_APPROVAL');
 }
-assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 86, 'All item-backed candidate records must remain unpromoted');
+assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 119, 'All item-backed candidate rows must remain unpromoted');
 const exp12RubberBand = itemAdjudication.find(row => row.curriculum_record_id === 'RBSE-XI-PHY-EXP-12' && row.candidate_group_id === 'XI-PHY-EXP12-RUBBER-BAND');
 assert.ok(exp12RubberBand, 'EXP-12 rubber-band candidate must remain in the task crosswalk');
 assert.equal(exp12RubberBand.candidate_item_id, 'NCERT-PHY-KIT-048', 'Use the existing Physics rubber-band item rather than leaving a false no-ID gap');
 assert.equal(exp12RubberBand.adjudication_class, 'POSSIBLE_SUPPORTING_ITEM_CONSUMABLE_ROLE');
 assert.equal(exp12RubberBand.catalogue_link_promotion_status, 'NOT_PROMOTED');
-
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
