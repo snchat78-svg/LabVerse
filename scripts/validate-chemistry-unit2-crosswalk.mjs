@@ -68,7 +68,7 @@ assert.deepEqual(
 
 for (const row of crosswalk) {
   assert.match(row.ncert_official_pdf_url, /^https:\/\/ncert\.nic\.in\//);
-  assert.match(row.ncert_primary_source, /2025-26/);
+  assert.match(row.ncert_primary_source, /2025[-–]26/);
   assert.equal(row.current_procurement_status, "NOT_AUTHENTICATED_NO_CURRENT_BOM_OR_PHYSICAL_STOCK_PROOF");
   assert.equal(row.reagent_mapping_status, "NO_REAGENT_OR_PRODUCT_ID_ASSIGNED_BY_THIS_APPARATUS_AUDIT");
   assert.equal(row.rights_status, "NCERT_ALL_RIGHTS_RESERVED_LINK_AND_CITATION_ONLY_NO_COPYING_OF_PROTECTED_TEXT_OR_FIGURES");
