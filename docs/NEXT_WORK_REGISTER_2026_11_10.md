@@ -1,3 +1,17 @@
+## 2026-11-26 — Physics catalogue official PDF appearance text crosswalk complete (105/105)
+
+- Added/paraphrased the official NCERT PDF `Figure/Setup` / `Photograph / Appearance` text for all 105 existing Physics catalogue serials 2–106. Canonical audit columns are `official_pdf_appearance_description`, `official_pdf_description_evidence_status`, and `official_pdf_source_url`; temporary indexed fields were consolidated away.
+- Direct PDF screenshot checks remain a separate lane: only serials 2–5 and 19–26 are visually checked (12/105). The remaining 93 rows are still `NOT_VISUALLY_CHECKED_THIS_PASS`; screenshots for indices 13, 14 and 16 returned HTTP 502/timeouts. No text-only entry was promoted to visual evidence.
+- Preserved source distinctions: serial 7 assembly component counts are not kit counts; serials 14/15 are source weight ratings, not inventory counts; serial 16 and 36 material alternatives remain unresolved; serial 29 keeps both beaker sizes; serial 49 is not interpreted as a wire-diameter gauge; serial 79 source spelling remains; serial 95 resistor composition is not school stock.
+- No inventory IDs, raw catalogue labels, task links, physical dimensions, procurement amounts, method approvals, hazard permissions, asset rights or 3D/runtime states were invented or promoted. NCERT source images were not copied.
+- Extended the source-data validator to require 105 unique PDF appearance-text rows, nonempty descriptions, official source URL and the independent text-only evidence status; direct visual status remains constrained to the prior 12 rows.
+- New report: `docs/PHASE_1_1_PHYSICS_FULL_APPEARANCE_TEXT_AUDIT_2026_11_26.md`.
+- Commits: [105-row audit CSV](https://github.com/snchat78-svg/LabVerse/commit/861f065285eaa042c9e98d0b8f98cc6e71335848), [validator](https://github.com/snchat78-svg/LabVerse/commit/295ec17865900c3354ecc6f22d49ab47f3df8e30), [report](https://github.com/snchat78-svg/LabVerse/commit/ae7afa4293ccdd159b03720370810c3ad368f218).
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 4.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** source-order screenshot retry for printed page xv / serials 27–35 (PDF zero-based index 16), and concurrently inspect NCERT's official Grade XI–XII Physics Laboratory Kit specification document for item dimensions/quantities. The 93 image rows remain visually pending until pixels are successfully inspected.
+
 ## 2026-11-26 — Physics printed page xiii: six more official PDF appearance descriptions captured
 
 - Continued the exact active Physics image/edition/variant audit. Official NCERT PDF text extraction supplies the `Photograph / Appearance` descriptions for serials 13–18 (helical spring; 50g and 500g slotted weights; wooden/plastic block; S-type pulley; steel balls).
