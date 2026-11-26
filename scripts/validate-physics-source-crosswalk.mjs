@@ -212,6 +212,33 @@ assert.equal(imageReviewById.get("NCERT-PHY-KIT-007")?.quantity_status, "ASSEMBL
 assert.match(imageReviewById.get("NCERT-PHY-KIT-095")?.source_rating_capacity_or_composition_note ?? "", /20Ω × 2/);
 assert.equal(imageReviewById.get("NCERT-PHY-KIT-095")?.quantity_status, "EXPLICIT_MANUAL_SET_COMPOSITION_NOT_SCHOOL_STOCK_COUNT");
 
+// 8) Page-xii indexed appearance descriptions are supplementary text evidence only.
+// They must never advance direct screenshot/visual-review state or assert dimensions/stock.
+const expectedIndexedAppearance = {
+  6: "Horizontal graduated beam with two pans and a central vertical support mounted on a base.",
+  7: "Vertical metal rod with clamps, boss heads and a base plate.",
+  8: "Transparent graduated measuring cylinder with a circular base.",
+  9: "Digital stopwatch with a display and an attached wrist cord.",
+  10: "Adjustable inclined-plane apparatus with a wooden base, sloping track and graduated angle scale.",
+  11: "Cylindrical steel roller with a bent metal handle attached at the side.",
+  12: "Cylindrical aluminium roller with a bent metal handle attached at the side."
+};
+for (const row of imageVariantReview) {
+  const serial = Number(row.ncert_item_serial_number);
+  if (Object.hasOwn(expectedIndexedAppearance, serial)) {
+    assert.equal(row.indexed_appearance_description, expectedIndexedAppearance[serial], row.catalogue_record_id + ': indexed appearance description changed');
+    assert.equal(row.indexed_appearance_evidence_status, "OFFICIAL_PDF_SEARCH_INDEX_DESCRIPTION_ONLY_NOT_VISUALLY_VERIFIED");
+    assert.equal(row.indexed_appearance_source_url, "https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf");
+    assert.equal(row.visual_review_status, "NOT_VISUALLY_CHECKED_THIS_PASS", row.catalogue_record_id + ": indexed text must not be promoted to screenshot verification");
+    assert.equal(row.visual_review_pdf_zero_based_page, "");
+    assert.equal(row.visual_review_note, "");
+  } else {
+    assert.equal(row.indexed_appearance_description, "");
+    assert.equal(row.indexed_appearance_evidence_status, "");
+    assert.equal(row.indexed_appearance_source_url, "");
+  }
+}
+assert.equal(Object.keys(expectedIndexedAppearance).length, 7);
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
