@@ -240,7 +240,7 @@ assert.match(physicsSpecGap.official_url_or_discovery_url, /SSPhyLaboratoryKit\.
 assert.match(physicsSpecGap.required_next_action, /without requesting a repeat upload/i);
 assert.match(physicsSpecGap.uploaded_copy_provenance_and_hash, /prior Physics specification PDF submission is acknowledged/i);
 assert.match(physicsSpecGap.retrieval_authentication_status, /No official specification bytes, SHA-256/i);
-assert.ok(physicsManualGap && /106 numbered item rows/.test(physicsManualGap.evidence_level_and_limit), '2018 manual identity must remain separate');
+assert.ok(physicsManualGap && /106-row item schedule/.test(physicsManualGap.evidence_level_and_limit), '2018 manual identity must remain separate');
 assert.ok(physicsTenderGap && /105 vs 106/.test(physicsTenderGap.evidence_level_and_limit), 'GeM 105-item discovery must remain an unresolved separate source');
 assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1');
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
