@@ -46,7 +46,7 @@ async function readCsv(path) {
     .map((record) => Object.fromEntries(headers.map((header, index) => [header, record[index] ?? ""])));
 }
 
-const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison, imageVariantReview, sourceGaps] = await Promise.all([
+const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison, imageVariantReview, sourceGaps, itemAdjudication] = await Promise.all([
   readCsv("data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"),
   readCsv("data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"),
@@ -54,7 +54,8 @@ const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labe
   readCsv("data/catalogues/stockroom_item_level_audit_2026_11_23.csv"),
   readCsv("data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv"),
   readCsv("data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv"),
-  readCsv("data/catalogues/phase1_source_authentication_procurement_gaps.csv")
+  readCsv("data/catalogues/phase1_source_authentication_procurement_gaps.csv"),
+  readCsv("data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv")
 ]);
 
 const pageRanges = [
@@ -243,6 +244,58 @@ assert.match(physicsSpecGap.retrieval_authentication_status, /No official specif
 assert.ok(physicsManualGap && /106-row item schedule/.test(physicsManualGap.evidence_level_and_limit), '2018 manual identity must remain separate');
 assert.ok(physicsTenderGap && /105 vs 106/.test(physicsTenderGap.evidence_level_and_limit), 'GeM 105-item discovery must remain an unresolved separate source');
 assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1');
+assert.match(physicsSpecGap.retrieval_authentication_status, /no identifiable SSPhyLaboratoryKit\\/Physics specification filename/i);
+
+// 10) Source-backed additional item decisions remain separate from promoted RBSE links.
+assert.equal(itemAdjudication.length, 21, 'Physics additional item adjudication must contain the expected 21 records');
+assertUnique(itemAdjudication.map(row => row.curriculum_record_id + '|' + row.candidate_group_id + '|' + row.candidate_item_id + '|' + row.adjudication_class), 'Physics task-item adjudication pair keys must be unique');
+assert.equal(new Set(itemAdjudication.map(row => row.curriculum_record_id)).size, 10, 'The bounded adjudication batch covers 10 distinct RBSE tasks');
+const exactNcertCandidates = itemAdjudication.filter(row => row.adjudication_class === 'EXPLICIT_NCERT_METHOD_COMPONENT_NOT_RBSE_PROVEN');
+const possibleNcertCandidates = itemAdjudication.filter(row => row.adjudication_class.startsWith('POSSIBLE_SUPPORTING_ITEM'));
+const unresolvedNcertRequirements = itemAdjudication.filter(row => row.adjudication_class === 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
+assert.equal(exactNcertCandidates.length, 15, 'Expected 15 explicit NCERT method-component candidates');
+assert.equal(possibleNcertCandidates.length, 5, 'Expected 5 possible/variant/role candidates');
+assert.equal(unresolvedNcertRequirements.length, 1, 'Expected one unresolved method material row without an item ID');
+const taskItemCounts = itemAdjudication.reduce((out, row) => { out[row.curriculum_record_id] = (out[row.curriculum_record_id] ?? 0) + 1; return out; }, {});
+assert.deepEqual(taskItemCounts, {
+  'RBSE-XI-PHY-EXP-04': 1,
+  'RBSE-XI-PHY-EXP-07': 4,
+  'RBSE-XI-PHY-EXP-08': 3,
+  'RBSE-XI-PHY-EXP-10': 1,
+  'RBSE-XI-PHY-EXP-11': 3,
+  'RBSE-XI-PHY-EXP-13': 1,
+  'RBSE-XI-PHY-EXP-16': 2,
+  'RBSE-XI-PHY-EXP-17': 1,
+  'RBSE-XI-PHY-ACT-A02': 2,
+  'RBSE-XI-PHY-ACT-B06': 3
+}, 'Task-to-item one-to-many group sizes changed');
+for (const row of itemAdjudication) {
+  const task = taskGaps.find(candidate => candidate.rbse_task_id === row.curriculum_record_id);
+  assert.ok(task, 'Adjudication row task missing from canonical 41-row gap register: ' + row.curriculum_record_id);
+  assert.equal(row.rbse_source_pdf_page, task.rbse_pdf_page_confirmed);
+  assert.equal(row.rbse_task_title, task.rbse_task_title);
+  assert.equal(row.ncert_comparable_section, task.ncert_comparable_section);
+  assert.equal(row.ncert_method_printed_page, task.ncert_method_page);
+  assert.equal(row.analogue_strength, task.method_strength);
+  assert.equal(row.rbse_method_scope_status, 'RBSE_SYLLABUS_TITLE_ONLY_NO_DETAILED_APPARATUS_LIST_IN_SOURCE_PAGE');
+  if (row.candidate_item_id) {
+    const item = itemById.get(row.candidate_item_id);
+    assert.ok(item, 'Adjudication item ID absent from 105-row item crosswalk: ' + row.candidate_item_id);
+    assert.equal(row.candidate_item_name, item.catalogue_item_name_from_current_inventory);
+    assert.equal(row.ncert_item_schedule_serial, item.ncert_item_serial_number);
+    assert.equal(row.ncert_item_schedule_printed_page, item.ncert_item_schedule_printed_page);
+    assert.equal(row.ncert_item_schedule_name, item.ncert_manual_item_name);
+    assert.equal(row.catalogue_link_promotion_status, 'NOT_PROMOTED');
+  } else {
+    assert.equal(row.adjudication_class, 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
+    assert.equal(row.catalogue_link_promotion_status, 'NO_ITEM_ID_ASSIGNED_NO_PROMOTION');
+    assert.match(row.ncert_method_evidence, /five weights, each 200g/i);
+    assert.match(row.ncert_item_evidence, /no item label.*200g/i);
+  }
+  assert.equal(row.physical_procurement_status, 'UNKNOWN_NOT_ESTABLISHED_BY_MANUAL');
+  assert.equal(row.safety_status, 'NOT_REVIEWED_NO_EXECUTION_APPROVAL');
+}
+assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 20, 'All item-backed candidate records must remain unpromoted');
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
