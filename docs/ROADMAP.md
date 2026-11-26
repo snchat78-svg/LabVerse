@@ -1,3 +1,16 @@
+## 2026-11-26 — Physics task-item adjudication expanded to 52 rows / 15 task IDs
+
+- Extended `data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv` from 21 to **52 rows** by auditing five more RBSE Class XI Physics tasks: EXP-05, EXP-06, EXP-09, EXP-12 and EXP-14. The new batch contains 31 rows; previous decisions remain intact.
+- Cumulative classifications: **29 explicit NCERT analogue-method components**, **14 possible supporting/variant/role candidates**, **5 candidates explicitly recorded as not substitutes for Searle's apparatus**, and **4 unresolved material/apparatus requirements without invented IDs**. There are 48 item-backed rows; all remain `NOT_PROMOTED`. One-to-many task groups are row-level and validator-guarded.
+- Source checks include NCERT manual Experiment 5 p.19, Experiment 6 p.23, Experiment 9/prelude re Searle apparatus, Experiment 12 p.45 and Activity 11 p.88. RBSE syllabus pages continue to provide task titles, not detailed apparatus lists; NCERT analogues are not RBSE approvals.
+- Explicit missing-ID cases are kept distinct: Activity B06's five 200 g weights; EXP-09 Searle apparatus/extension comparator; EXP-12 rubber band; EXP-14 double-walled outer vessel/insulating lid. These are method/index gaps, not proof of current school stock absence.
+- Audit commit: [52-row CSV](https://github.com/snchat78-svg/LabVerse/commit/8d33f3ada063bf24517984a4f3604f7cc4a5ffa3); validator commit: [04c9961](https://github.com/snchat78-svg/LabVerse/commit/04c996109469123ba81b61014ec0a0a408fd34dd); verification/report commit: [4a52a9](https://github.com/snchat78-svg/LabVerse/commit/8e083be9f1c303047c3d5c76d81b09ec9ea6b49a).
+- Complete validator PASS against nine live GitHub-read-back CSVs: 105 Physics index rows; 52 candidate IDs; 219 prior item-method pairs; 41 source-confirmed task gaps; 515 stockroom rows; 105 label comparisons; 105 PDF text-description rows; 12 direct visual checks / 93 pending; 52 adjudication rows across 15 tasks. Workflow watches the CSV and validator, but the latest Actions result is UNCONFIRMED; no CI-green claim.
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** adjudicate the remaining 26 Class XI Physics task-gap rows in source order, beginning EXP-01, EXP-02, EXP-03 and EXP-15, then the unreviewed Activities and Projects. Do not close Phase 1.1 until all RBSE subjects/streams, source procurement, rights, hazard and teacher-review gates are resolved.
+
 ## 2026-11-26 — Physics additional task-to-item relevance adjudication (21 rows, 10 tasks)
 
 - Added `data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv` and report `docs/PHASE_1_1_PHYSICS_ADDITIONAL_ITEM_RELEVANCE_ADJUDICATION_2026_11_26.md`.
