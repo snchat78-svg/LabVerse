@@ -1,3 +1,19 @@
+## 2026-11-26 — Physics printed page xii: indexed appearance text captured; visual gate still blocked
+
+- Resumed the exact next pointer from the live register: NCERT Physics item schedule printed page xii, serials 6–12 (NCERT-PHY-KIT-006 through -012). Earlier completed visual rows (2–5 and 19–26) were left unchanged.
+- The official NCERT PDF was opened on both official hosts: https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf and https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf. The parsed source table confirms item identities and uses on printed page xii (PDF zero-based page index 13).
+- The browser PDF screenshot request timed out on both official hosts for page index 13; a direct binary download also failed. Therefore none of serials 6–12 is marked visually checked.
+- The official PDF search index exposed supplementary Photograph / Appearance descriptions for all seven items. These were paraphrased into three new fields in the existing 105-row audit: indexed_appearance_description, indexed_appearance_evidence_status, and indexed_appearance_source_url. Their status is deliberately OFFICIAL_PDF_SEARCH_INDEX_DESCRIPTION_ONLY_NOT_VISUALLY_VERIFIED.
+- The seven descriptions are clues for later visual comparison only. They do not establish a delivered physical variant, exact dimensions, calibration, manufacturer, material grade, quantity, current stock or procurement. No item IDs, practical links, raw catalogue labels, safety permissions or scientific actions were changed.
+- NCERT's manual retains its ALL RIGHTS RESERVED / prior-permission statement. No NCERT figure/image file was copied into LabVerse or treated as an asset.
+- The source-data validator now asserts all seven descriptions and, critically, fails if any is incorrectly promoted to a screenshot-verified status. The source-data workflow already watches this CSV and validator.
+- Screenshot/visual status remains 12/105 checked, 93/105 pending. The page-xii text-only evidence batch is 7 rows; it does not reduce the pending visual count.
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 4.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** retry direct page-index-13 screenshot retrieval for the same official NCERT PDF (serials 6–12) using an accessible official source route. Do not advance to printed page xiii until page xii has been visually inspected or a source-access audit explicitly records why it remains blocked. Only pixel-inspected items may be marked visually checked.
+- Commits: [audit data](https://github.com/snchat78-svg/LabVerse/commit/65dd07d66fd0b7f1002a2a2fc08d2c9e350e3b21), [validator](https://github.com/snchat78-svg/LabVerse/commit/b8ac98bedbcf24fa22b5c7a804de06f7b0a05062), [report](https://github.com/snchat78-svg/LabVerse/commit/3a03086c36561543d51511883fad9878cb9b6667).
+
 ## 2026-11-26 — Physics item image/edition/variant evidence pass (partial visual review)
 
 - Added a 105-row audit: `data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv`. It joins each existing Physics catalogue ID to the manual serial/page and records image-column presence, actual screenshot-review status, edition history, unresolved physical variant/dimensions/stock, source-listed composition and rights.
