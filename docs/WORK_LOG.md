@@ -14,7 +14,7 @@
 **Next exact task:** retry direct page-index-13 screenshot retrieval for the same official NCERT PDF (serials 6–12) using an accessible official source route. Do not advance to printed page xiii until page xii has been visually inspected or a source-access audit explicitly records why it remains blocked. Only pixel-inspected items may be marked visually checked.
 - Commits: [audit data](https://github.com/snchat78-svg/LabVerse/commit/65dd07d66fd0b7f1002a2a2fc08d2c9e350e3b21), [validator](https://github.com/snchat78-svg/LabVerse/commit/b8ac98bedbcf24fa22b5c7a804de06f7b0a05062), [report](https://github.com/snchat78-svg/LabVerse/commit/3a03086c36561543d51511883fad9878cb9b6667).
 
-- Verification recorded for CI: 105 audit rows; seven new page-xii indexed descriptions; previous 12 visual checks preserved; seven target rows still screenshot-pending. The updated validator guards the text-only boundary. CI status will be read from the run associated with the data commit.
+- Verification: 105 audit rows read back; seven page-xii indexed descriptions present; previous 12 direct visual checks preserved; all seven target rows remain screenshot-pending. The committed validator's full assertion set was executed against all seven GitHub-fetched input CSVs and passed (105 item rows, 52 candidate IDs, 219 method pairs, 41 task gaps, 515 stockroom rows, 105 label comparisons, 12 direct visual checks and 7 indexed descriptions). The workflow watches the updated CSV/validator on main, but the GitHub combined-status endpoint returned no status for the data commit; Actions outcome is UNCONFIRMED, not PASS.
 
 ## 2026-11-26 — Physics item image/edition/variant evidence pass (partial visual review)
 
