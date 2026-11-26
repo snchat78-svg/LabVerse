@@ -1,3 +1,17 @@
+## 2026-11-26 — Physics printed page xiii: six more official PDF appearance descriptions captured
+
+- Continued the exact active Physics image/edition/variant audit. Official NCERT PDF text extraction supplies the `Photograph / Appearance` descriptions for serials 13–18 (helical spring; 50g and 500g slotted weights; wooden/plastic block; S-type pulley; steel balls).
+- Screenshot request for PDF index 14 (printed page xiii) timed out. These six descriptions are explicitly `OFFICIAL_PDF_TEXT_EXTRACTION_PHOTOGRAPH_APPEARANCE_COLUMN_NOT_VISUALLY_VERIFIED`; no direct visual status was promoted.
+- Reclassified the previously committed serials 6–12 to the same more accurate PDF-text-extraction status after the official PDF text became available. Their appearance text remains intact. Serial 16 wooden/plastic alternatives remain explicit; no delivered variant is inferred.
+- Source rows and purpose descriptions are in NCERT official PDF printed page xiii: https://ncert.nic.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf. The source copyright notice requires prior permission for reproduction; no NCERT source image was copied.
+- Existing 12 direct visual checks (serials 2–5 and 19–26) remain unchanged; direct visual review is still 12/105, with 93 pending. Text-extraction appearance coverage is now 13 records (serials 6–18).
+- Extended the source-data validator to assert the six new descriptions and text-only status; existing workflow path filters already watch the audit CSV and validator.
+- Commits: [audit CSV](https://github.com/snchat78-svg/LabVerse/commit/4c0988e75087a169b1573d66c7b76ed37f4e52c0), [validator](https://github.com/snchat78-svg/LabVerse/commit/c702a3bc800fc41692cc229076045d96b4bc5ed9), [report](https://github.com/snchat78-svg/LabVerse/commit/7faabb20c73691a2e025cf130d2cc8d697bfa14f).
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 4.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5/6 NOT STARTED.
+
+**Next exact task:** continue to the next not-yet-audited source page in order: printed page xv, serials 27–35 (page xiv / serials 19–26 are already visually checked). Retry screenshot at PDF page index 16; if unavailable, record text extraction only and do not claim visual verification.
+
 ## 2026-11-26 — Physics printed page xii: indexed appearance text captured; visual gate still blocked
 
 - Resumed the exact next pointer from the live register: NCERT Physics item schedule printed page xii, serials 6–12 (NCERT-PHY-KIT-006 through -012). Earlier completed visual rows (2–5 and 19–26) were left unchanged.
