@@ -13,6 +13,12 @@ on:
       - "data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"
       - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
       - ".github/workflows/labverse-source-data-check.yml"
+      - "dashboard/data/inventory.json"
+      - "data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv"
+      - "data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv"
+      - "data/catalogues/rbse_xi_chemistry_unit2_apparatus_item_candidates_2026_11_26.csv"
+      - "scripts/validate-chemistry-unit2-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   pull_request:
@@ -25,6 +31,12 @@ on:
       - "data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"
       - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
       - ".github/workflows/labverse-source-data-check.yml"
+      - "dashboard/data/inventory.json"
+      - "data/catalogues/rbse_mscl_reagent_crosswalk_reconciliation_2026_11_10.csv"
+      - "data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv"
+      - "data/catalogues/rbse_xi_chemistry_unit2_apparatus_item_candidates_2026_11_26.csv"
+      - "scripts/validate-chemistry-unit2-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   workflow_dispatch:
@@ -44,3 +56,5 @@ jobs:
           node-version: 24
       - name: Validate Physics item and task crosswalks
         run: node scripts/validate-physics-source-crosswalk.mjs
+      - name: Validate Chemistry Unit 2 apparatus candidates
+        run: node scripts/validate-chemistry-unit2-crosswalk.mjs
