@@ -56,3 +56,44 @@ Continue the remaining 31 task rows/possible item omissions in the 41-task Physi
 - Validated 21 rows; 15 explicit NCERT analogue-method components; 5 possible matches; one unresolved no-ID material; 10 task IDs; 20 candidate item rows all NOT_PROMOTED.
 - Preserved one-to-many group counts: EXP-07 4, EXP-08 3, EXP-11 3, EXP-16 2, EXP-17 1, EXP-04 1, EXP-10 1, EXP-13 1, ACT-A02 2, ACT-B06 3.
 - GitHub combined status has no reported run/check for the latest data commit; GitHub Actions is UNCONFIRMED, not green.
+## Batch 2 — five further Class XI Physics tasks (31 additional rows)
+
+### Source-specific decisions
+
+- **EXP-05 / NCERT Experiment 5, printed p.19:** the method names an improvised Gravesand apparatus, two pulleys, rods/S-clamps, wooden block with hook and two sets of slotted weights. Item 17 is an explicit pulley-type candidate; existing slotted-weight IDs 14, 15, 45 and 46 are explicit type candidates, but the required two-set composition is not inferred. Items 7 and 19 remain possible because the exact clamp/block role or variant is not established.
+- **EXP-06 / NCERT Experiment 6, printed p.23:** the method explicitly requires a bob with hook, cotton thread, split cork and stopwatch; existing IDs 21, 40, 41 and 9 are direct analogue-method item candidates. Composite stand ID 7 and folding metre scale ID 71 remain possible, not exact.
+- **EXP-09 / RBSE Searle's apparatus, NCERT preface pp. iii–iv:** NCERT states that Searle's apparatus was still being improvised. The five existing candidate IDs (stand, weights, wires and spring balance) are recorded as **not substitutes**. One separate no-ID Searle apparatus/extension-comparator gap is retained; this does not prove the later procurement specification or school stock omits it.
+- **EXP-12 / NCERT Activity 11, printed p.88:** capillary tube ID 20 and the 250 mL beaker variant within ID 29 are explicit; stand assembly ID 7 and folding meter scale ID 71 are possible due to clamp/scale type differences. The source also requires a rubber band, for which no separate ID appears in the 105-row Physics item index; that is an index-level gap only.
+- **EXP-14 / NCERT Experiment 12, printed p.45:** thermometer ID 31, stopwatch ID 9 and tripod ID 34 are explicit method components. Copper calorimeter ID 32, 100/250 mL beaker ID 29 and spirit lamp ID 35 are possible supports, not the exact double-walled setup or validated heater equivalent. A distinct no-ID gap records the outer vessel/insulating lid assembly; two thermometer units are required by the method but the item index does not establish a supplied count of two.
+
+### Cumulative register status
+
+| Adjudication lane | Rows |
+|---|---:|
+| Explicit NCERT analogue-method component candidates | 29 |
+| Possible supporting / variant / role candidates | 14 |
+| Not a substitute for the explicitly unavailable Searle apparatus | 5 |
+| Unresolved method requirement with no catalogue ID assigned | 4 |
+| **Total** | **52** |
+
+Covered 15 distinct RBSE Class XI Physics task IDs. One-to-many per-task groups remain separate rows in the CSV. All 48 item-backed candidate rows remain `NOT_PROMOTED`; the four no-ID requirements remain unlinked.
+
+### Official source evidence
+
+- NCERT manual Experiment 5: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf#page=20
+- NCERT manual Experiment 6: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf#page=24
+- NCERT manual Experiment 9: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf#page=34
+- NCERT manual Experiment 12: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf#page=46
+- NCERT manual Activity 11: https://ncert.gov.in/division/dek/pdf/Manual_Secondary_Stage_Physics_Laboratory_Kit-11%2612_EN.pdf#page=89
+- The RBSE practical titles are taken from the existing 2026–27 syllabus PDF `11_2027_copy.pdf` and its already committed page-117/118 source-page adjudication. Its syllabus titles are not treated as detailed method apparatus lists.
+
+### Verification
+
+- Complete committed `scripts/validate-physics-source-crosswalk.mjs` executed against nine CSVs fetched from live GitHub: **PASS**.
+- Counts read from those live inputs: Physics item schedule 105; candidate IDs 52; prior method pairs 219; RBSE gap rows 41; stockroom rows 515; item-label comparisons 105; PDF appearance descriptions 105; direct visual checks 12 / 93 pending; cumulative adjudication 52 rows / 15 tasks.
+- Validator asserts each catalogue item ID and source row binding, the exact one-to-many row counts, all 48 item-backed records `NOT_PROMOTED`, five Searle non-substitutes, and all four no-ID requirements separately. Final validator commit: https://github.com/snchat78-svg/LabVerse/commit/04c996109469123ba81b61014ec0a0a408fd34dd.
+- The workflow path filter already watches this adjudication CSV on `main` push and pull request. The current GitHub combined-status endpoint has not yet returned a CI result for the newest data commit; Actions remains UNCONFIRMED, not green.
+
+### Next exact task
+
+Continue the remaining 26 rows in the 41-task Physics gap register in source order, starting with EXP-01, EXP-02, EXP-03 and EXP-15, then move through the unreviewed Activities and Projects. Keep the 93 pending direct source-image checks separate from PDF text evidence. Phase 1.1 cannot close while other RBSE Physics/Chemistry/Biology task streams and the current procurement specification, rights, hazard and teacher-review gates remain open.
