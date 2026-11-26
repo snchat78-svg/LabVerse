@@ -46,13 +46,14 @@ async function readCsv(path) {
     .map((record) => Object.fromEntries(headers.map((header, index) => [header, record[index] ?? ""])));
 }
 
-const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison] = await Promise.all([
+const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison, imageVariantReview] = await Promise.all([
   readCsv("data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"),
   readCsv("data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"),
   readCsv("data/catalogues/stockroom_item_level_audit_2026_11_23.csv"),
-  readCsv("data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv")
+  readCsv("data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv"),
+  readCsv("data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv")
 ]);
 
 const pageRanges = [
@@ -167,6 +168,50 @@ assert.equal(labelMismatch[0]?.comparison_status, "DETAIL_QUANTITY_NOT_PRESERVED
 assert.match(labelMismatch[0]?.manual_schedule_quantity_breakdown ?? "", /20 Ω × 2/);
 assert.match(labelMismatch[0]?.review_action ?? "", /Keep the catalogue label unchanged/);
 
+// 7) Image/edition/physical-variant review keeps partial visual inspection explicit.
+assert.equal(imageVariantReview.length, 105, "Image/variant review must contain all 105 Physics catalogue rows");
+assertUnique(imageVariantReview.map((row) => row.catalogue_record_id), "Image/variant review IDs must be unique");
+assertUnique(imageVariantReview.map((row) => row.ncert_item_serial_number), "Image/variant review serials must be unique");
+const imageReviewById = new Map(imageVariantReview.map((row) => [row.catalogue_record_id, row]));
+const expectedVisualSerials = [2, 3, 4, 5, 19, 20, 21, 22, 23, 24, 25, 26];
+for (const row of imageVariantReview) {
+  const item = itemById.get(row.catalogue_record_id);
+  const comparison = labelComparison.find((candidate) => candidate.catalogue_record_id === row.catalogue_record_id);
+  assert.ok(item, "Image review row has no Physics item crosswalk: " + row.catalogue_record_id);
+  assert.equal(Number(row.ncert_item_serial_number), Number(item.ncert_item_serial_number));
+  assert.equal(row.ncert_item_schedule_printed_page, item.ncert_item_schedule_printed_page);
+  assert.equal(row.ncert_manual_item_name, item.ncert_manual_item_name);
+  assert.equal(row.catalogue_item_name, item.catalogue_item_name_from_current_inventory);
+  assert.equal(row.catalogue_label_comparison_status, comparison?.comparison_status);
+  assert.equal(row.source_image_column_status, "PRESENT_IN_OFFICIAL_ITEM_SCHEDULE_IMAGE_FIGURE_APPEARANCE_COLUMN");
+  assert.match(row.source_edition_history, /October 2018.*January 2019.*March 2020.*August 2024/);
+  assert.equal(row.exact_pdf_impression_status, "EXACT_ONLINE_PDF_IMPRESSION_NOT_IDENTIFIED");
+  assert.equal(row.physical_variant_status, "NOT_VERIFIED_AGAINST_CURRENT_PHYSICAL_SAMPLE_OR_PROCUREMENT_SPEC");
+  assert.equal(row.physical_dimensions_status, "NOT_SPECIFIED_IN_ITEM_SCHEDULE");
+  assert.equal(row.rights_status, "ALL_RIGHTS_RESERVED_PRIOR_PERMISSION_REQUIRED_FOR_REPRODUCTION");
+  assert.equal(row.image_asset_reuse_status, "DO_NOT_REUSE_NCERT_ITEM_IMAGES_UNTIL_WRITTEN_PERMISSION_IS_CONFIRMED");
+  assert.equal(row.procurement_and_school_stock_status, "NOT_ESTABLISHED_BY_MANUAL; SCHOOL_STOCK_AND_PROCUREMENT_NOT_VERIFIED");
+  if (expectedVisualSerials.includes(Number(row.ncert_item_serial_number))) {
+    assert.equal(row.visual_review_status, "VISUALLY_CHECKED_FROM_OFFICIAL_PDF_SCREENSHOT");
+    assert.ok(row.visual_review_note.length > 0, row.catalogue_record_id + ": visual note missing");
+    const expectedPdfPage = Number(row.ncert_item_serial_number) <= 5 ? "12" : "15";
+    assert.equal(row.visual_review_pdf_zero_based_page, expectedPdfPage);
+  } else {
+    assert.equal(row.visual_review_status, "NOT_VISUALLY_CHECKED_THIS_PASS");
+    assert.equal(row.visual_review_pdf_zero_based_page, "");
+    assert.equal(row.visual_review_note, "");
+  }
+}
+const visuallyCheckedSerials = imageVariantReview
+  .filter((row) => row.visual_review_status === "VISUALLY_CHECKED_FROM_OFFICIAL_PDF_SCREENSHOT")
+  .map((row) => Number(row.ncert_item_serial_number)).sort((a, b) => a - b);
+assert.deepEqual(visuallyCheckedSerials, expectedVisualSerials);
+assert.equal(imageVariantReview.filter((row) => row.visual_review_status === "NOT_VISUALLY_CHECKED_THIS_PASS").length, 93);
+assert.match(imageReviewById.get("NCERT-PHY-KIT-007")?.source_rating_capacity_or_composition_note ?? "", /boss heads \(2 each\)/i);
+assert.equal(imageReviewById.get("NCERT-PHY-KIT-007")?.quantity_status, "ASSEMBLY_COMPONENT_LIST_ONLY_NOT_TOTAL_KIT_QUANTITY");
+assert.match(imageReviewById.get("NCERT-PHY-KIT-095")?.source_rating_capacity_or_composition_note ?? "", /20Ω × 2/);
+assert.equal(imageReviewById.get("NCERT-PHY-KIT-095")?.quantity_status, "EXPLICIT_MANUAL_SET_COMPOSITION_NOT_SCHOOL_STOCK_COUNT");
+
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
@@ -174,4 +219,5 @@ console.log("RBSE task/item method pairs:", methodPairs.length);
 console.log("Source-confirmed task gap rows:", taskGaps.length);
 console.log("Stockroom inventory/reagent audit rows:", stockroomAudit.length);
 console.log("Catalogue label comparisons (one detail exception):", labelComparison.length, "/", labelMismatch.length);
+console.log("Physics image/variant review rows (visual screenshots checked):", imageVariantReview.length, "/", visuallyCheckedSerials.length, "; pending:", imageVariantReview.length - visuallyCheckedSerials.length);
 console.log("Method classifications:", JSON.stringify(actualStatuses));
