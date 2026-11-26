@@ -1,3 +1,16 @@
+## 2026-11-26 — Physics procurement specification blocker corrected and CI-gated
+
+- Confirmed three separate evidence records: NCERT manual 13164 (106 source-index rows), current NCERT procurement specification (`SSPhyLaboratoryKit.pdf`), and the GeM discovery of a 105-item attachment (not authenticated).
+- The official NCERT index lists the Physics specification and a prior official-link follow recorded a 42,539,010-byte response length. Current direct open attempts on both official NCERT hosts returned inaccessible; no current spec PDF bytes, SHA-256 or revision were obtained. A prior user-supplied Physics specification is acknowledged, but its filename/hash is not currently surfaced—no repeat upload request.
+- Repaired the misfilled `severity` field for `SRC-MISSING-PHYSICS-INSTRUMENTS` to `BLOCKER_PHASE_1`; preserved all unknown BOM attributes and made internal prior-file recovery/no-repeat-upload explicit.
+- Added validator assertions to keep the manual/specification/GeM evidence separate and guard the no-repeat-upload boundary; added the procurement-gap CSV to both push and pull-request source-data CI filters.
+- Audit report: `docs/PHASE_1_1_PHYSICS_SPECIFICATION_RETRIEVAL_AUDIT_2026_11_26.md`.
+- Commits: [procurement gap register](https://github.com/snchat78-svg/LabVerse/commit/0131c5f0a2e14bc6c59e2353019fbdfbd49328fd), [validator](https://github.com/snchat78-svg/LabVerse/commit/80f8ca04bed9d799be10903d337ca566d7c6c537), [CI workflow](https://github.com/snchat78-svg/LabVerse/commit/af68f4435a30f99c904d7a392e157c24ad4adc9a), [retrieval audit report](https://github.com/snchat78-svg/LabVerse/commit/ef70cdd7a8df57fd27ab4c9c0a20396357df8daa).
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** recover the previously submitted Physics specification internally without requesting another upload. If unavailable, adjudicate the 41 task-item gap candidates from the existing RBSE source pages and NCERT manual, keep all additions NOT_PROMOTED, and defer procurement quantities/dimensions to the missing specification.
+
 ## 2026-11-26 — Physics catalogue official PDF appearance text crosswalk complete (105/105)
 
 - Added/paraphrased the official NCERT PDF `Figure/Setup` / `Photograph / Appearance` text for all 105 existing Physics catalogue serials 2–106. Canonical audit columns are `official_pdf_appearance_description`, `official_pdf_description_evidence_status`, and `official_pdf_source_url`; temporary indexed fields were consolidated away.
