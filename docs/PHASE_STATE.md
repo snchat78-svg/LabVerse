@@ -1,3 +1,18 @@
+## 2026-11-26 — Class XI Physics task-item adjudication sub-unit closed (41/41 tasks; 139 rows)
+
+- The canonical 41-row RBSE Class XI Physics task gap register is now covered by **139 source-evidence decision rows** across 17 experiments, 13 activities and 11 projects.
+- Cumulative categories: 68 explicit NCERT analogue-method components; 46 possible supporting/variant/role/sample candidates; 5 candidates explicitly not substitutes for Searle apparatus; 13 unresolved method/material requirements with no invented catalogue ID; 7 no-equivalent NCERT method task decisions. All **119 item-backed candidates remain NOT_PROMOTED**.
+- RBSE task titles and NCERT analogue methods remain distinct; no RBSE apparatus approval, current procurement, school stock, dimensions, quantities, safety permissions or scientific actions were inferred. One-to-many rows were preserved.
+- Correction: EXP-12's rubber band requirement is now tied to the existing `NCERT-PHY-KIT-048` as a possible consumable-role match rather than an erroneous no-ID gap; item 048 remains NOT_PROMOTED.
+- Visual audit is separate: 105/105 appearance descriptions are sourced from PDF text extraction, but direct image review remains 12/105 checked and 93 pending. No image was copied due to NCERT's prior-permission notice.
+- **Validator PASS:** the committed full validator ran against nine GitHub-fetched CSVs and confirmed exact equality with all 41 task IDs, 139 rows, source-item identity bindings, per-task one-to-many row counts, 119 not-promoted item-backed candidates and existing source-data baselines.
+- GitHub Actions outcome is **UNCONFIRMED**: combined status and associated workflow-run lookup returned no run/check for the latest data commit. Do not claim a green Actions run.
+- Audit report and commit trail: [full 41-task Physics adjudication report](https://github.com/snchat78-svg/LabVerse/commit/5a69c31d3846341d4d89fb2e63c8c395e4842a3c); [139-row CSV](https://github.com/snchat78-svg/LabVerse/commit/af6d1a28bd25f1a6f641c8d00aa926c5fd6cf567); [validator](https://github.com/snchat78-svg/LabVerse/commit/e7cc0e817bdb1b74af3a0ab49e0362fd98b6dbe5).
+
+**Phase status:** Class XI Physics task-item adjudication sub-unit DONE (41/41); Phase 1.1 overall IN PROGRESS; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; Phase 5/6 NOT STARTED.
+
+**Next exact task:** Class XI Chemistry. Recover/authenticate the official NCERT Unit 2 body PDF `kelm202.pdf` (index locator pp.16,18–20), compare it with the already inspected third-party copy, and use primary text only for method/item decisions. The existing Chemistry register has 24 tasks with no task-scoped reagent/product candidates; do not repeat the 41-row reagent crosswalk or the completed 53/53 MSCL visual audit. If official retrieval fails, commit a retrieval audit and preserve no-candidate status without asking for a repeat upload.
+
 ## 2026-11-26 — Physics task-item adjudication expanded to 52 rows / 15 task IDs
 
 - Extended `data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv` from 21 to **52 rows** by auditing five more RBSE Class XI Physics tasks: EXP-05, EXP-06, EXP-09, EXP-12 and EXP-14. The new batch contains 31 rows; previous decisions remain intact.
