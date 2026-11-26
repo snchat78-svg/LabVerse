@@ -53,7 +53,8 @@ const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labe
   readCsv("data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"),
   readCsv("data/catalogues/stockroom_item_level_audit_2026_11_23.csv"),
   readCsv("data/catalogues/ncert_physics_catalogue_label_comparison_2026_11_25.csv"),
-  readCsv("data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv")
+  readCsv("data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv"),
+  readCsv("data/catalogues/phase1_source_authentication_procurement_gaps.csv")
 ]);
 
 const pageRanges = [
@@ -228,6 +229,21 @@ for (const row of imageVariantReview) {
     assert.equal(row.visual_review_status, 'NOT_VISUALLY_CHECKED_THIS_PASS', row.catalogue_record_id + ': text-layer extraction cannot promote a visual check');
   }
 }
+// 9) The current NCERT Physics procurement specification is a separate source gate.
+// Keep the old 13164 manual and the 105-item GeM discovery separate; never invent a BOM.
+assert.ok(Array.isArray(arguments) === false, 'module validator executes without argument injection');
+const physicsSpecGap = sourceGaps.find(row => row.gap_id === 'SRC-MISSING-PHYSICS-INSTRUMENTS');
+const physicsManualGap = sourceGaps.find(row => row.gap_id === 'SRC-NCERT-PHY-MANUAL-13164');
+const physicsTenderGap = sourceGaps.find(row => row.gap_id === 'SRC-GEM-PHYSICS-105-106');
+assert.ok(physicsSpecGap, 'Physics current procurement specification blocker must exist');
+assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1', 'Physics specification severity must not be replaced by attribute prose');
+assert.match(physicsSpecGap.official_url_or_discovery_url, /SSPhyLaboratoryKit\\.pdf/);
+assert.match(physicsSpecGap.required_next_action, /without requesting a repeat upload/i);
+assert.match(physicsSpecGap.uploaded_copy_provenance_and_hash, /prior Physics specification PDF submission is acknowledged/i);
+assert.match(physicsSpecGap.retrieval_authentication_status, /No official specification bytes, SHA-256/i);
+assert.ok(physicsManualGap && /106 numbered item rows/.test(physicsManualGap.evidence_level_and_limit), '2018 manual identity must remain separate');
+assert.ok(physicsTenderGap && /105 vs 106/.test(physicsTenderGap.evidence_level_and_limit), 'GeM 105-item discovery must remain an unresolved separate source');
+assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1');
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
