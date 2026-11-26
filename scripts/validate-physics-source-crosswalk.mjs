@@ -247,19 +247,22 @@ assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1');
 assert.match(physicsSpecGap.retrieval_authentication_status, /no identifiable SSPhyLaboratoryKit\/Physics specification filename/i);
 
 // 10) Source-backed additional item decisions remain separate from promoted RBSE links.
-assert.equal(itemAdjudication.length, 52, 'Physics additional item adjudication must contain 52 records');
+assert.equal(itemAdjudication.length, 96, 'Physics additional item adjudication must contain 96 records');
 assertUnique(itemAdjudication.map(row => row.curriculum_record_id + '|' + row.candidate_group_id + '|' + row.candidate_item_id + '|' + row.adjudication_class), 'Physics task-item adjudication pair keys must be unique');
-assert.equal(new Set(itemAdjudication.map(row => row.curriculum_record_id)).size, 15, 'The combined bounded adjudication covers 15 distinct RBSE tasks');
+assert.equal(new Set(itemAdjudication.map(row => row.curriculum_record_id)).size, 25, 'The combined bounded adjudication covers 25 distinct RBSE tasks');
 const exactNcertCandidates = itemAdjudication.filter(row => row.adjudication_class === 'EXPLICIT_NCERT_METHOD_COMPONENT_NOT_RBSE_PROVEN');
 const possibleNcertCandidates = itemAdjudication.filter(row => row.adjudication_class.startsWith('POSSIBLE_SUPPORTING_ITEM'));
 const unresolvedNcertRequirements = itemAdjudication.filter(row => row.adjudication_class === 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
 const notSubstituteCandidates = itemAdjudication.filter(row => row.adjudication_class === 'NOT_SUBSTITUTE_FOR_EXPLICITLY_UNAVAILABLE_SEARLE_APPARATUS');
-assert.equal(exactNcertCandidates.length, 29, 'Expected 29 explicit NCERT analogue-method component candidates');
-assert.equal(possibleNcertCandidates.length, 14, 'Expected 14 possible/variant/role candidates');
-assert.equal(unresolvedNcertRequirements.length, 4, 'Expected four unresolved material/apparatus requirements without invented IDs');
+assert.equal(exactNcertCandidates.length, 57, 'Expected 57 explicit NCERT analogue-method components');
+assert.equal(possibleNcertCandidates.length, 23, 'Expected 23 possible/variant/role candidates');
+assert.equal(unresolvedNcertRequirements.length, 11, 'Expected 11 unresolved method requirements without invented IDs');
 assert.equal(notSubstituteCandidates.length, 5, 'Expected five candidate items explicitly rejected as Searle apparatus substitutes');
 const taskItemCounts = itemAdjudication.reduce((out, row) => { out[row.curriculum_record_id] = (out[row.curriculum_record_id] ?? 0) + 1; return out; }, {});
 assert.deepEqual(taskItemCounts, {
+  'RBSE-XI-PHY-EXP-01': 1,
+  'RBSE-XI-PHY-EXP-02': 2,
+  'RBSE-XI-PHY-EXP-03': 3,
   'RBSE-XI-PHY-EXP-04': 1,
   'RBSE-XI-PHY-EXP-05': 7,
   'RBSE-XI-PHY-EXP-06': 6,
@@ -271,9 +274,16 @@ assert.deepEqual(taskItemCounts, {
   'RBSE-XI-PHY-EXP-12': 5,
   'RBSE-XI-PHY-EXP-13': 1,
   'RBSE-XI-PHY-EXP-14': 7,
+  'RBSE-XI-PHY-EXP-15': 9,
   'RBSE-XI-PHY-EXP-16': 2,
   'RBSE-XI-PHY-EXP-17': 1,
+  'RBSE-XI-PHY-ACT-A01': 3,
   'RBSE-XI-PHY-ACT-A02': 2,
+  'RBSE-XI-PHY-ACT-A03': 3,
+  'RBSE-XI-PHY-ACT-A04': 8,
+  'RBSE-XI-PHY-ACT-A05': 3,
+  'RBSE-XI-PHY-ACT-A06': 5,
+  'RBSE-XI-PHY-ACT-A07': 7,
   'RBSE-XI-PHY-ACT-B06': 3
 }, 'Task-to-item one-to-many group sizes changed');
 for (const row of itemAdjudication) {
@@ -308,6 +318,24 @@ for (const row of itemAdjudication) {
     } else if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-14') {
       assert.match(row.ncert_method_evidence, /double-walled apparatus/i);
       assert.match(row.ncert_item_evidence, /No separate outer vessel/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-EXP-15') {
+      assert.match(row.ncert_method_evidence, /hanger|paper rider/i);
+      assert.match(row.ncert_item_evidence, /No separate .* item ID/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A01') {
+      assert.match(row.ncert_method_evidence, /white paper sheet/i);
+      assert.match(row.ncert_item_evidence, /No separate rows/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A03') {
+      assert.match(row.ncert_method_evidence, /graph paper/i);
+      assert.match(row.ncert_item_evidence, /No separate graph-paper ID/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A05') {
+      assert.match(row.ncert_method_evidence, /PVC or rubber pipe/i);
+      assert.match(row.ncert_item_evidence, /No dedicated pipe\/nozzle/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A06') {
+      assert.match(row.ncert_method_evidence, /curved metal channel/i);
+      assert.match(row.ncert_item_evidence, /No separate curved channel/i);
+    } else if (row.curriculum_record_id === 'RBSE-XI-PHY-ACT-A07') {
+      assert.match(row.ncert_method_evidence, /sheet of paper and cotton/i);
+      assert.match(row.ncert_item_evidence, /No separate paper-sheet\/cotton/i);
     } else {
       assert.equal(false, true, 'Unexpected unresolved no-ID task: ' + row.curriculum_record_id);
     }
@@ -319,7 +347,7 @@ for (const row of itemAdjudication) {
   assert.equal(row.physical_procurement_status, 'UNKNOWN_NOT_ESTABLISHED_BY_MANUAL');
   assert.equal(row.safety_status, 'NOT_REVIEWED_NO_EXECUTION_APPROVAL');
 }
-assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 48, 'All item-backed candidate records must remain unpromoted');
+assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 85, 'All item-backed candidate records must remain unpromoted');
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
