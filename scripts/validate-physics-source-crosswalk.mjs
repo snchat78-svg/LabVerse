@@ -255,8 +255,8 @@ const possibleNcertCandidates = itemAdjudication.filter(row => row.adjudication_
 const unresolvedNcertRequirements = itemAdjudication.filter(row => row.adjudication_class === 'UNRESOLVED_METHOD_REQUIREMENT_NO_CATALOGUE_ID_ASSIGNED');
 const notSubstituteCandidates = itemAdjudication.filter(row => row.adjudication_class === 'NOT_SUBSTITUTE_FOR_EXPLICITLY_UNAVAILABLE_SEARLE_APPARATUS');
 assert.equal(exactNcertCandidates.length, 57, 'Expected 57 explicit NCERT analogue-method components');
-assert.equal(possibleNcertCandidates.length, 23, 'Expected 23 possible/variant/role candidates');
-assert.equal(unresolvedNcertRequirements.length, 11, 'Expected 11 unresolved method requirements without invented IDs');
+assert.equal(possibleNcertCandidates.length, 24, 'Expected 23 possible/variant/role candidates');
+assert.equal(unresolvedNcertRequirements.length, 10, 'Expected 11 unresolved method requirements without invented IDs');
 assert.equal(notSubstituteCandidates.length, 5, 'Expected five candidate items explicitly rejected as Searle apparatus substitutes');
 const taskItemCounts = itemAdjudication.reduce((out, row) => { out[row.curriculum_record_id] = (out[row.curriculum_record_id] ?? 0) + 1; return out; }, {});
 assert.deepEqual(taskItemCounts, {
@@ -347,7 +347,13 @@ for (const row of itemAdjudication) {
   assert.equal(row.physical_procurement_status, 'UNKNOWN_NOT_ESTABLISHED_BY_MANUAL');
   assert.equal(row.safety_status, 'NOT_REVIEWED_NO_EXECUTION_APPROVAL');
 }
-assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 85, 'All item-backed candidate records must remain unpromoted');
+assert.equal(itemAdjudication.filter(row => row.catalogue_link_promotion_status === 'NOT_PROMOTED').length, 86, 'All item-backed candidate records must remain unpromoted');
+const exp12RubberBand = itemAdjudication.find(row => row.curriculum_record_id === 'RBSE-XI-PHY-EXP-12' && row.candidate_group_id === 'XI-PHY-EXP12-RUBBER-BAND');
+assert.ok(exp12RubberBand, 'EXP-12 rubber-band candidate must remain in the task crosswalk');
+assert.equal(exp12RubberBand.candidate_item_id, 'NCERT-PHY-KIT-048', 'Use the existing Physics rubber-band item rather than leaving a false no-ID gap');
+assert.equal(exp12RubberBand.adjudication_class, 'POSSIBLE_SUPPORTING_ITEM_CONSUMABLE_ROLE');
+assert.equal(exp12RubberBand.catalogue_link_promotion_status, 'NOT_PROMOTED');
+
 console.log("LabVerse Physics source-data crosswalk integrity: PASS");
 console.log("Physics item schedule text rows:", physicsItems.length);
 console.log("Candidate-linked Physics item IDs:", candidateItems.length);
