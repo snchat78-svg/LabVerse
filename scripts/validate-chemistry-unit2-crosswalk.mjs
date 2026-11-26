@@ -99,7 +99,7 @@ assert.match(asbestosRow.safety_status, /ASBESTOS_HAZARD_BLOCKER/);
 
 const pocketBalance = crosswalk.find((row) => row.candidate_catalogue_item_id === "NCERT-MSCL-SPEC-040");
 assert.equal(pocketBalance?.candidate_relationship_class, "NOT_EQUIVALENT_PRECISION_VARIANT");
-assert.match(pocketBalance?.method_requirement ?? "", /±0\.0002 g/);
+assert.match(pocketBalance?.source_method_summary ?? "", /±0\.0002 g/);
 assert.match(itemById.get("NCERT-MSCL-SPEC-040")?.detail ?? "", /0\.1 g/i);
 assert.match(pocketBalance?.reviewer_note ?? "", /not an analytical-balance substitute/i);
 
