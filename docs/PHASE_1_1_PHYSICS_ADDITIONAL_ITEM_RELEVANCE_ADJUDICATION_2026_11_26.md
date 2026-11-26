@@ -49,3 +49,10 @@ These records establish an explicit component relationship to the NCERT analogue
 ## Next exact task
 
 Continue the remaining 31 task rows/possible item omissions in the 41-task Physics gap register, starting with EXP-05, EXP-06, EXP-09, EXP-12 and EXP-14, preserving direct NCERT method matches separately from title-only RBSE scope. Do not promote any candidate until current procurement specification, rights, hazard and qualified teacher/expert gates are resolved.
+## Post-commit verification — 2026-11-26
+
+- Read back the 21-row adjudication CSV and the source inputs from GitHub.
+- Executed the full committed validator from `scripts/validate-physics-source-crosswalk.mjs` against all nine current GitHub-read-back CSV inputs. Result: **PASS**.
+- Validated 21 rows; 15 explicit NCERT analogue-method components; 5 possible matches; one unresolved no-ID material; 10 task IDs; 20 candidate item rows all NOT_PROMOTED.
+- Preserved one-to-many group counts: EXP-07 4, EXP-08 3, EXP-11 3, EXP-16 2, EXP-17 1, EXP-04 1, EXP-10 1, EXP-13 1, ACT-A02 2, ACT-B06 3.
+- GitHub combined status has no reported run/check for the latest data commit; GitHub Actions is UNCONFIRMED, not green.
