@@ -14,6 +14,7 @@ on:
       - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
       - ".github/workflows/labverse-source-data-check.yml"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
+      - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   pull_request:
     paths:
       - "scripts/validate-physics-source-crosswalk.mjs"
@@ -25,6 +26,7 @@ on:
       - "data/curriculum/rbse_xi_physics_method_equipment_gap_review_2026_11_25.csv"
       - ".github/workflows/labverse-source-data-check.yml"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
+      - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   workflow_dispatch:
 
 permissions:
