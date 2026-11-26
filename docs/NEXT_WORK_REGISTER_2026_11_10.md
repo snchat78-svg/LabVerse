@@ -1,3 +1,18 @@
+## 2026-11-26 — Physics item image/edition/variant evidence pass (partial visual review)
+
+- Added a 105-row audit: `data/catalogues/ncert_physics_item_image_variant_review_2026_11_26.csv`. It joins each existing Physics catalogue ID to the manual serial/page and records image-column presence, actual screenshot-review status, edition history, unresolved physical variant/dimensions/stock, source-listed composition and rights.
+- Visually inspected only the rows actually rendered from the official NCERT PDF: serials 2–5 (printed p. xi; PDF screenshot page index 12) and 19–26 (printed p. xiv; index 15): **12/105 checked, 93/105 still pending**. Other page screenshots timed out; no visual verification is claimed for the remaining rows.
+- Source edition evidence: ISBN 978-93-5292-653-4; first edition October 2018; reprints January 2019, March 2020 and August 2024. The exact impression of the online PDF is not identified.
+- The manual states ALL RIGHTS RESERVED and requires prior permission for reproduction. NCERT item images must not be copied into LabVerse assets until written permission is confirmed. Item-schedule dimensions, physical variant equivalence, actual school stock and procurement quantities remain unverified. Item 7 component listing and item 95 resistor composition are retained as source notes, not kit-stock counts.
+- Report: `docs/PHASE_1_1_PHYSICS_ITEM_IMAGE_VARIANT_REVIEW_2026_11_26.md`.
+- Commits: [audit CSV](https://github.com/snchat78-svg/LabVerse/commit/7495a47f0c4e7388883cbc7c3d677c42a5c7d63f), [report](https://github.com/snchat78-svg/LabVerse/commit/f4ef9231cc23d990ead29cc83aaf985d1f638673), [validator](https://github.com/snchat78-svg/LabVerse/commit/d5bf568b2ee1e8f9609b80f3dd51bbdaa9c45f02), [workflow](https://github.com/snchat78-svg/LabVerse/commit/b795a48295669bdacda9f1abf16355f798166908).
+- **Source-data CI Run #8 SUCCESS:** https://github.com/snchat78-svg/LabVerse/actions/runs/45751956098. Validator read back 105 image-review rows, exactly 12 visually checked and 93 pending, alongside the existing 105 item rows, 52 candidate IDs, 219 method pairs, 41 task gaps and 515 stockroom audit rows.
+- No catalogue labels, practical links, inventory quantities or readiness statuses were changed. No application code, 3D asset or experiment runtime was added.
+
+**Phase status:** Phase 1.1 IN PROGRESS; Phase 4.1 IN PROGRESS; Phase 2 BLOCKED; Phase 5 real 3D and Phase 6 runtime NOT STARTED.
+
+**Next exact task:** continue official-PDF screenshot inspection of the remaining 93 item rows in source order, starting printed p. xii (serials 6–12), then p. xiii (13–18), through p. xxv. Record only visible identity/variant evidence. After the image pass, seek exact kit specification/procurement evidence for dimensions and supplied quantities, then resume the 41-task equipment-gap register.
+
 ## 2026-11-25 — Physics label comparison gate passed
 
 - 105 LabVerse catalogue labels compared with the NCERT item schedule: 104 normalized matches; one detail difference, `NCERT-PHY-KIT-095`, where the manual specifies resistor quantities 1×5Ω, 1×10Ω, 2×20Ω, 1×30Ω. No source catalogue label was changed.
