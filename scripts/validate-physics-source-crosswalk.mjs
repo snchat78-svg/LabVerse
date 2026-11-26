@@ -46,7 +46,7 @@ async function readCsv(path) {
     .map((record) => Object.fromEntries(headers.map((header, index) => [header, record[index] ?? ""])));
 }
 
-const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison, imageVariantReview] = await Promise.all([
+const [physicsItems, candidateItems, methodPairs, taskGaps, stockroomAudit, labelComparison, imageVariantReview, sourceGaps] = await Promise.all([
   readCsv("data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"),
   readCsv("data/catalogues/ncert_physics_candidate_item_index_readback_2026_11_25.csv"),
   readCsv("data/curriculum/rbse_xi_physics_ncert_method_alignment_audit_2026_11_25.csv"),
@@ -231,13 +231,12 @@ for (const row of imageVariantReview) {
 }
 // 9) The current NCERT Physics procurement specification is a separate source gate.
 // Keep the old 13164 manual and the 105-item GeM discovery separate; never invent a BOM.
-assert.ok(Array.isArray(arguments) === false, 'module validator executes without argument injection');
 const physicsSpecGap = sourceGaps.find(row => row.gap_id === 'SRC-MISSING-PHYSICS-INSTRUMENTS');
 const physicsManualGap = sourceGaps.find(row => row.gap_id === 'SRC-NCERT-PHY-MANUAL-13164');
 const physicsTenderGap = sourceGaps.find(row => row.gap_id === 'SRC-GEM-PHYSICS-105-106');
 assert.ok(physicsSpecGap, 'Physics current procurement specification blocker must exist');
 assert.equal(physicsSpecGap.severity, 'BLOCKER_PHASE_1', 'Physics specification severity must not be replaced by attribute prose');
-assert.match(physicsSpecGap.official_url_or_discovery_url, /SSPhyLaboratoryKit\\.pdf/);
+assert.match(physicsSpecGap.official_url_or_discovery_url, /SSPhyLaboratoryKit\.pdf/);
 assert.match(physicsSpecGap.required_next_action, /without requesting a repeat upload/i);
 assert.match(physicsSpecGap.uploaded_copy_provenance_and_hash, /prior Physics specification PDF submission is acknowledged/i);
 assert.match(physicsSpecGap.retrieval_authentication_status, /No official specification bytes, SHA-256/i);
