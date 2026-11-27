@@ -668,8 +668,8 @@ assert.equal(chemistryMethodBodyEvidenceRows.length,20); assert.equal(chemistryM
 assert.ok(chemistryMethodBodyEvidenceRows.slice(1).every(row=>row.length===19));
 const mbeHeader=chemistryMethodBodyEvidenceRows[0],mbeIndex=Object.fromEntries(mbeHeader.map((name,i)=>[name,i])),mbeRows=chemistryMethodBodyEvidenceRows.slice(1);
 assert.deepEqual(mbeRows.map(row=>row[mbeIndex.rbse_task_id]),["RBSE-XI-CHEM-PRA-01","RBSE-XI-CHEM-PRA-02","RBSE-XI-CHEM-PRA-03","RBSE-XI-CHEM-PRA-05","RBSE-XI-CHEM-PRA-06","RBSE-XI-CHEM-PRA-07","RBSE-XI-CHEM-PRA-08","RBSE-XI-CHEM-PRA-09","RBSE-XI-CHEM-PRA-10","RBSE-XI-CHEM-PRA-11","RBSE-XI-CHEM-PRA-12","RBSE-XI-CHEM-PRJ-01","RBSE-XI-CHEM-PRJ-02","RBSE-XI-CHEM-PRJ-03","RBSE-XI-CHEM-PRJ-05","RBSE-XI-CHEM-PRJ-06","RBSE-XI-CHEM-PRJ-07","RBSE-XI-CHEM-PRJ-08","RBSE-XII-CHEM-QUAL-01"]);
-assert.equal(mbeRows.filter(row=>row[mbeIndex.body_review_state].startsWith("OFFICIAL_NCERT_HOST_BODY_TEXT_INSPECTED")).length,1);
-assert.equal(mbeRows.filter(row=>/SECONDARY_COPY_BODY_TEXT_INSPECTED|ALTERNATE_HOST_BODY_TEXT_INSPECTED|ALTERNATE_ARCHIVED_BODY_TEXT_INSPECTED/.test(row[mbeIndex.body_review_state])).length,11);
+assert.equal(mbeRows.filter(row=>/^OFFICIAL_NCERT_(?:HOST|NIC_IN)_/.test(row[mbeIndex.body_review_state])).length,11, "official NCERT-hosted method-body records must be counted by source provenance");
+assert.equal(mbeRows.filter(row=>/SECONDARY_COPY_BODY_TEXT_INSPECTED|ALTERNATE_HOST_BODY_TEXT_INSPECTED|ALTERNATE_ARCHIVED_BODY_TEXT_INSPECTED/.test(row[mbeIndex.body_review_state])).length,1, "only the archived alternate-source record remains in this category");
 assert.equal(mbeRows.filter(row=>row[mbeIndex.body_review_state]==="INDEX_ONLY_BODY_NOT_RETRIEVED").length,7);
 assert.ok(mbeRows.every(row=>row[mbeIndex.rbse_pdf_sha256].length===64));
 assert.ok(mbeRows.every(row=>row[mbeIndex.rights_boundary].includes("DO_NOT_COPY_PROTECTED")));
