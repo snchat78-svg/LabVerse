@@ -25,7 +25,10 @@ on:
       - "scripts/validate-chemistry-unit4-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
-  pull_request:
+
+      - "data/catalogues/rbse_xi_chemistry_unit5_source_retrieval_audit_2026_11_27.csv"
+      - "scripts/validate-chemistry-unit5-retrieval.mjs"
+      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"  pull_request:
     paths:
       - "scripts/validate-physics-source-crosswalk.mjs"
       - "data/catalogues/ncert_physics_item_serial_page_crosswalk_2026_11_25.csv"
@@ -47,7 +50,10 @@ on:
       - "scripts/validate-chemistry-unit4-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
-  workflow_dispatch:
+
+      - "data/catalogues/rbse_xi_chemistry_unit5_source_retrieval_audit_2026_11_27.csv"
+      - "scripts/validate-chemistry-unit5-retrieval.mjs"
+      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"  workflow_dispatch:
 
 permissions:
   contents: read
@@ -70,3 +76,5 @@ jobs:
         run: node scripts/validate-chemistry-unit3-crosswalk.mjs
       - name: Validate Chemistry Unit 4 apparatus and reagent candidates
         run: node scripts/validate-chemistry-unit4-crosswalk.mjs
+      - name: Validate Chemistry Unit 5 source retrieval gate
+        run: node scripts/validate-chemistry-unit5-retrieval.mjs
