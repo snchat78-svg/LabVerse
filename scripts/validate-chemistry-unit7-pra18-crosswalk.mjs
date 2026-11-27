@@ -64,7 +64,7 @@ assert.ok(rbse && ncert, "Both source identities must be present");
 assert.match(rbse.source_scope_statement, /No individual ion names are enumerated on these practical pages/i);
 assert.match(rbse.source_identity_state, /OFFICIAL_SERVER_BYTE_IDENTITY_NOT_TESTED/);
 assert.equal(ncert.ion_roster_count, "14 cations; 12 anions; insoluble salts excluded");
-assert.match(ncert.visual_review_state, /PRINTED_P80_SCREENSHOT_FAILED_502/);
+assert.match(ncert.visual_review_state, /PRINTED_P80_ROSTER_SCREENSHOT_FAILED_502/);
 assert.match(ncert.rights_state, /link and citation only/i);
 
 const task = taskTrace.find(row => row.rbse_task_id === taskId);
