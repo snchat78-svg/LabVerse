@@ -80,7 +80,7 @@ for (const row of crosswalk) {
     assert.equal(item.status, "SIMULATION_REFERENCE_ONLY / NO_LIVE_USE");
     assert.equal(row.candidate_source_evidence_state, "OFFICIAL_NCERT_2018_MANUAL_TEXT_EXTRACTION_SIMULATION_REFERENCE_ONLY_NO_LIVE_USE");
     assert.match(row.candidate_reference_detail, /2018 historical manual/);
-    assert.match(row.relationship_reason, /no concentration|no 1 M|no 0\.1 M|no exact 0\.05 M|formulation|synonym/i);
+    assert.match(row.relationship_reason, /no concentration|no 1 M|no 0\.1 M|no exact 0\.05 M|formulation|synonym|does not prove grade/i);
   } else {
     assert.equal(row.candidate_reference_type, "NONE");
     assert.equal(row.candidate_reference_id, "");
