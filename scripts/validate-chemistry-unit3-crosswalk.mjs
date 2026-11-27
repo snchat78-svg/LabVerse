@@ -100,7 +100,7 @@ const paraffinBoiling = crosswalk.find(row =>
   row.rbse_task_id === "RBSE-XI-CHEM-PRA-07" && row.candidate_reference_id === "MSCL-MAN-REAG-059"
 );
 assert.equal(paraffinBoiling?.candidate_relationship_class, "METHOD_LIMITED_OPTION_NOT_GENERAL_EQUIVALENT");
-assert.match(paraffinBoiling?.relationship_reason ?? "", /not use it for high-boiling liquids/i);
+assert.match(paraffinBoiling?.relationship_reason ?? "", /not to use it for high-boiling liquids/i);
 
 const methodRows = new Map(methodEvidence.filter(row => [
   "RBSE-XI-CHEM-PRA-05", "RBSE-XI-CHEM-PRA-06", "RBSE-XI-CHEM-PRA-07"
