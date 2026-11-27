@@ -18,16 +18,35 @@ const [audit,endpoint,source,method]=await Promise.all([
 ]);
 const ids=["RBSE-XI-CHEM-PRA-10","RBSE-XI-CHEM-PRA-11","RBSE-XI-CHEM-PRA-12"];
 const pages={"RBSE-XI-CHEM-PRA-10":"p. 54","RBSE-XI-CHEM-PRA-11":"p. 56","RBSE-XI-CHEM-PRA-12":"p. 58"};
-const url="https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/chemistry/kelm205.pdf";
-const fail="OFFICIAL_INDEX_LINK_RECORDED; 2026-11-27 OFFICIAL_UNIT5_PDF_OPEN_TIMED_OUT_OR_INACCESSIBLE_ON_NCERT_HOSTS; BODY_NOT_RETRIEVED";
-const body="PRIOR_ALTERNATE_HOST_TEXT_ONLY; HOST_EDITION_AND_BYTE_IDENTITY_UNVERIFIED; OFFICIAL_UNIT5_BODY_NOT_RETRIEVED";
-assert.equal(audit.length,3,"exactly three Unit 5 task rows"); assert.deepEqual(audit.map(r=>r.rbse_task_id).sort(),[...ids].sort());
-for(const id of ids){const a=audit.find(r=>r.rbse_task_id===id),e=endpoint.find(r=>r.rbse_task_id===id),s=source.find(r=>r.rbse_task_id===id),m=method.find(r=>r.rbse_task_id===id);
- assert.ok(e&&s&&m,id+": source register row missing"); assert.equal(a.ncert_printed_page_locator,pages[id]); assert.equal(e.printed_locator,pages[id]); assert.equal(m.printed_page_locator,pages[id]);
- assert.equal(a.ncert_official_pdf_url,url); assert.equal(e.official_manual_url,url); assert.equal(s.ncert_method_source_url,url); assert.equal(m.official_pdf_url,url);
- assert.equal(a.official_payload_status,"NOT_RETRIEVED_NO_BYTES_NO_SHA256_NO_PDF_METADATA"); assert.equal(a.apparatus_or_reagent_ids,"NONE_ASSIGNED"); assert.equal(a.candidate_mapping_status,"NO_CANDIDATE_IDS_ASSIGNED; NO_PROMOTION");
- assert.match(a.retrieval_attempts_2026_11_27,/ncert\.nic\.in/); assert.match(a.retrieval_attempts_2026_11_27,/ncert\.gov\.in/); assert.match(a.retrieval_attempts_2026_11_27,/n20\.ncert\.org\.in/);
- assert.equal(e.official_pdf_retrieval_state,fail); assert.equal(e.body_inspection_state,body); assert.equal(s.method_body_review_state,body); assert.equal(m.official_pdf_retrieval_state,fail); assert.equal(m.body_review_state,body);
- assert.match(s.reagent_mapping_state,/NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED/); assert.match(s.safety_and_simulation_boundary,/NO_LIVE_USE_APPROVAL/); assert.match(m.rights_boundary,/ALL_RIGHTS_RESERVED/);
+const originalUrl="https://ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/chemistry/kelm205.pdf";
+const officialHindiUrl="https://www.ncert.nic.in/pdf/publication/sciencelaboratorymanuals/classXI/chemistry%28hindi%29/khlm205.pdf";
+const originalFail="OFFICIAL_INDEX_LINK_RECORDED; 2026-11-27 OFFICIAL_UNIT5_PDF_OPEN_TIMED_OUT_OR_INACCESSIBLE_ON_NCERT_HOSTS; BODY_NOT_RETRIEVED";
+const currentRetrieval="OFFICIAL_NCERT_HINDI_VARIANT_TEXT_LAYER_RETRIEVED; PDF_BINARY_HASH_UNAVAILABLE; ENGLISH_KELM205_NOT_RETRIEVED";
+const currentBody="OFFICIAL_NCERT_NIC_IN_HINDI_UNIT5_TEXT_LAYER_INSPECTED";
+assert.equal(audit.length,3,"exactly three first-pass Unit 5 retrieval-audit rows"); assert.deepEqual(audit.map(r=>r.rbse_task_id).sort(),[...ids].sort());
+for(const id of ids){
+ const a=audit.find(r=>r.rbse_task_id===id),e=endpoint.find(r=>r.rbse_task_id===id),s=source.find(r=>r.rbse_task_id===id),m=method.find(r=>r.rbse_task_id===id);
+ assert.ok(e&&s&&m,id+": source register row missing");
+ assert.equal(a.ncert_printed_page_locator,pages[id]); assert.equal(e.printed_locator,pages[id]); assert.equal(m.printed_page_locator,pages[id]);
+ // The initial retrieval CSV remains an immutable first-attempt snapshot.
+ assert.equal(a.ncert_official_pdf_url,originalUrl); assert.equal(a.official_payload_status,"NOT_RETRIEVED_NO_BYTES_NO_SHA256_NO_PDF_METADATA");
+ assert.equal(a.apparatus_or_reagent_ids,"NONE_ASSIGNED"); assert.equal(a.candidate_mapping_status,"NO_CANDIDATE_IDS_ASSIGNED; NO_PROMOTION");
+ assert.match(a.retrieval_attempts_2026_11_27,/ncert\\.nic\\.in/); assert.match(a.retrieval_attempts_2026_11_27,/ncert\\.gov\\.in/); assert.match(a.retrieval_attempts_2026_11_27,/n20\\.ncert\\.org\\.in/);
+ // Current primary method evidence is the official Hindi NCERT endpoint, not the earlier alternate host.
+ assert.equal(e.official_manual_url,officialHindiUrl); assert.equal(s.ncert_method_source_url,officialHindiUrl); assert.equal(m.official_pdf_url,officialHindiUrl);
+ assert.match(e.official_pdf_retrieval_state,/OFFICIAL_NCERT_HINDI_VARIANT_TEXT_LAYER_RETRIEVED/);
+ assert.match(e.official_pdf_retrieval_state,/PDF_BINARY_HASH_UNAVAILABLE/);
+ assert.match(e.body_inspection_state,new RegExp(currentBody));
+ assert.match(s.method_body_review_state,new RegExp(currentBody));
+ assert.match(m.body_review_state,new RegExp(currentBody));
+ assert.match(m.official_pdf_retrieval_state,/LOCAL_PDF_BYTES_SHA256_AND_SIZE_NOT_CAPTURED/);
+ assert.match(m.source_conflict_or_quality_note,/English \`kelm205\\.pdf\` remains unretrieved/);
+ assert.match(s.reagent_mapping_state,/18 ROWS IN UNIT5 CROSSWALK/);
+ assert.match(s.safety_and_simulation_boundary,/REFERENCE_ONLY_NO_LIVE_USE/);
+ assert.match(m.rights_boundary,/ALL_RIGHTS_RESERVED/);
 }
-console.log("LabVerse Chemistry Unit 5 source retrieval gate: PASS"); console.log("Task rows:",audit.length,"; official body PDFs retrieved: 0; candidate IDs assigned: 0");
+const readback=await readCsv("data/catalogues/rbse_xi_chemistry_unit5_official_hindi_source_readback_2026_11_27.csv");
+assert.equal(readback.length,3,"one official Hindi source readback row per PRA task");
+for(const row of readback){assert.equal(row.official_source_url,officialHindiUrl);assert.equal(row.binary_sha256_state,"NOT_CAPTURED_NO_LOCAL_BYTES_OR_SHA256");}
+console.log("LabVerse Chemistry Unit 5 source retrieval gate: PASS");
+console.log("Initial English-endpoint failure audit preserved as history; official NCERT Hindi text-layer body now inspected for 3 tasks; local PDF binary/SHA-256 still not captured.");
