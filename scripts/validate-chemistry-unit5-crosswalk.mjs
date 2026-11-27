@@ -100,9 +100,9 @@ assert.equal(requireRow("RBSE-XI-CHEM-PRA-10", "glass droppers", "APPARATUS", "N
 assert.equal(requireRow("RBSE-XI-CHEM-PRA-10", "pH paper", "APPARATUS", "NCERT-MSCL-SPEC-046").candidate_relationship_class, "POSSIBLE_INDICATOR_PAPER_TYPE_ONLY");
 assert.ok(crosswalk.some(row => row.rbse_task_id === "RBSE-XI-CHEM-PRA-10" && row.candidate_reference_type === "NONE" && /fresh fruit sample set/i.test(row.method_requirement)));
 
-assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "0.1 M HCl", "REAGENT", "MSCL-MAN-REAG-054").candidate_relationship_class, "HISTORICAL_REAGENT_LABEL_ONLY_FORMULATION_UNVERIFIED");
-assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "0.1 M NaOH", "REAGENT", "MSCL-MAN-REAG-104").candidate_relationship_class, "HISTORICAL_IDENTITY_REFERENCE_ONLY_FORMULATION_UNVERIFIED");
-assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "0.05 M H2SO4", "REAGENT", "MSCL-MAN-REAG-114").candidate_relationship_class, "HISTORICAL_REAGENT_LABEL_ONLY_FORMULATION_UNVERIFIED");
+assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "Hydrochloric-acid chemical-name reference", "REAGENT", "MSCL-MAN-REAG-054").candidate_relationship_class, "HISTORICAL_REAGENT_LABEL_ONLY_FORMULATION_UNVERIFIED");
+assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "Sodium-hydroxide chemical-name reference", "REAGENT", "MSCL-MAN-REAG-104").candidate_relationship_class, "HISTORICAL_IDENTITY_REFERENCE_ONLY_FORMULATION_UNVERIFIED");
+assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "Sulphuric-acid chemical-name reference", "REAGENT", "MSCL-MAN-REAG-114").candidate_relationship_class, "HISTORICAL_REAGENT_LABEL_ONLY_FORMULATION_UNVERIFIED");
 assert.ok(crosswalk.some(row => row.rbse_task_id === "RBSE-XI-CHEM-PRA-11" && row.candidate_reference_type === "NONE" && /Exact hydrochloric-acid solution formulation/.test(row.method_requirement)));
 assert.ok(crosswalk.some(row => row.rbse_task_id === "RBSE-XI-CHEM-PRA-11" && row.candidate_reference_type === "NONE" && /Exact sulphuric-acid solution formulation/.test(row.method_requirement)));
 
