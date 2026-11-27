@@ -65,7 +65,7 @@ for (const row of crosswalk) {
   assert.ok(row.source_evidence_summary.trim());
   assert.ok(row.source_reported_quantity.trim());
   assert.equal(row.candidate_link_status, row.candidate_reference_id ? "NOT_PROMOTED" : "NO_ITEM_ID_ASSIGNED_NO_PROMOTION");
-  assert.ok(!/PROMOTED|LIVE_USE_APPROVED/.test(row.candidate_link_status));
+  assert.ok(["NOT_PROMOTED", "NO_ITEM_ID_ASSIGNED_NO_PROMOTION"].includes(row.candidate_link_status), "Only explicit unpromoted/no-ID states are allowed");
   if (row.candidate_reference_type === "APPARATUS") {
     const item = apparatus.get(row.candidate_reference_id);
     assert.ok(item, "Apparatus ID missing from Chemistry read model: " + row.candidate_reference_id);
