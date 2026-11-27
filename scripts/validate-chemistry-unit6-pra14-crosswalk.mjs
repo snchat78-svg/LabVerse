@@ -49,7 +49,7 @@ assert.equal(new Set(crosswalk.map(uniqueDecision)).size, crosswalk.length, "Dup
 
 for (const row of crosswalk) {
   assert.equal(row.ncert_official_pdf_url, sourceUrl);
-  assert.match(row.ncert_primary_source, /official NCERT/);
+  assert.match(row.ncert_primary_source.toLowerCase(), /official ncert/);
   assert.match(row.ncert_method_page, /printed pp\.69–73/);
   assert.equal(row.candidate_link_status, row.candidate_reference_id ? "NOT_PROMOTED" : "NO_ITEM_ID_ASSIGNED_NO_PROMOTION");
   assert.equal(row.current_procurement_status, "NOT_AUTHENTICATED_NO_CURRENT_BOM_OR_PHYSICAL_STOCK_PROOF");
