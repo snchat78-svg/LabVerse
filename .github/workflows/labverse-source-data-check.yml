@@ -21,6 +21,8 @@ on:
       - "scripts/validate-chemistry-unit2-crosswalk.mjs"
       - "data/catalogues/rbse_xi_chemistry_unit3_apparatus_reagent_candidates_2026_11_26.csv"
       - "scripts/validate-chemistry-unit3-crosswalk.mjs"
+      - "data/catalogues/rbse_xi_chemistry_unit4_apparatus_reagent_candidates_2026_11_27.csv"
+      - "scripts/validate-chemistry-unit4-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   pull_request:
@@ -41,6 +43,8 @@ on:
       - "scripts/validate-chemistry-unit2-crosswalk.mjs"
       - "data/catalogues/rbse_xi_chemistry_unit3_apparatus_reagent_candidates_2026_11_26.csv"
       - "scripts/validate-chemistry-unit3-crosswalk.mjs"
+      - "data/catalogues/rbse_xi_chemistry_unit4_apparatus_reagent_candidates_2026_11_27.csv"
+      - "scripts/validate-chemistry-unit4-crosswalk.mjs"
       - "data/catalogues/phase1_source_authentication_procurement_gaps.csv"
       - "data/curriculum/rbse_xi_physics_additional_item_relevance_adjudication_2026_11_26.csv"
   workflow_dispatch:
@@ -64,3 +68,5 @@ jobs:
         run: node scripts/validate-chemistry-unit2-crosswalk.mjs
       - name: Validate Chemistry Unit 3 apparatus and reagent candidates
         run: node scripts/validate-chemistry-unit3-crosswalk.mjs
+      - name: Validate Chemistry Unit 4 apparatus and reagent candidates
+        run: node scripts/validate-chemistry-unit4-crosswalk.mjs
