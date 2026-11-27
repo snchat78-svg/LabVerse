@@ -660,7 +660,7 @@ assert.match(chemSourceByTask.get("RBSE-XI-CHEM-PRA-18")[chemSourceIndex.ncert_m
 assert.match(chemSourceByTask.get("RBSE-XI-CHEM-PRA-19")[chemSourceIndex.safety_and_simulation_boundary], /SODIUM_FUSION_HIGH_CONSEQUENCE/);
 assert.match(chemSourceByTask.get("RBSE-XII-CHEM-OPT-01")[chemSourceIndex.ncert_method_source_url], /lelm108.pdf/);
 assert.match(chemSourceByTask.get("RBSE-XII-CHEM-OPT-04")[chemSourceIndex.ncert_method_source_url], /lelm111.pdf/);
-assert.ok(chemSourceTasks.every(row => /NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED/.test(row[chemSourceIndex.reagent_mapping_state])));
+assert.ok(chemSourceTasks.every(row => /NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED|CANDIDATE_REFERENCES_ONLY_NOT_ASSIGNED_OR_PROMOTED/.test(row[chemSourceIndex.reagent_mapping_state])));
 console.log("RBSE Chemistry source recheck register: 24/24 rows, archive SHA evidence, NCERT source links and no reagent promotion PASS.");
 
 const chemistryMethodBodyEvidenceRows=parseCsvRows(await readFile(new URL("../../data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv",import.meta.url),"utf8"));
