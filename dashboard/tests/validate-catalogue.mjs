@@ -689,7 +689,7 @@ const endpointMap=new Map(endpointTasks.map(row=>[row[endpointI.rbse_task_id],ro
 assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-02")[endpointI.official_manual_url],/kelm202[.]pdf$/);
 assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-05")[endpointI.official_manual_url],/kelm203[.]pdf$/);
 assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-08")[endpointI.official_manual_url],/kelm204[.]pdf$/);
-assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-10")[endpointI.official_manual_url],/kelm205[.]pdf$/);
+assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-10")[endpointI.official_manual_url],/^https:\/\/www\.ncert\.nic\.in\/.*khlm205[.]pdf$/);
 assert.match(endpointMap.get("RBSE-XI-CHEM-PRJ-01")[endpointI.official_manual_url],/kelm208[.]pdf$/);
 assert.match(endpointMap.get("RBSE-XII-CHEM-QUAL-01")[endpointI.official_manual_url],/lelm107[.]pdf$/);
 assert.match(endpointMap.get("RBSE-XI-CHEM-PRA-02")[endpointI.official_pdf_retrieval_state],/HTTP_502/);
