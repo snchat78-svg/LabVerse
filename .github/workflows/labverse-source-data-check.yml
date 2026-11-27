@@ -53,7 +53,8 @@ on:
 
       - "data/catalogues/rbse_xi_chemistry_unit5_source_retrieval_audit_2026_11_27.csv"
       - "scripts/validate-chemistry-unit5-retrieval.mjs"
-      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"  workflow_dispatch:
+      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"
+  workflow_dispatch:
 
 permissions:
   contents: read
