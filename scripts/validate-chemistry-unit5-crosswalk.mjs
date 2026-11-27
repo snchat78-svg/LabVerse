@@ -106,7 +106,7 @@ assert.equal(requireRow("RBSE-XI-CHEM-PRA-11", "Sulphuric-acid chemical-name ref
 assert.ok(crosswalk.some(row => row.rbse_task_id === "RBSE-XI-CHEM-PRA-11" && row.candidate_reference_type === "NONE" && /Exact hydrochloric-acid solution formulation/.test(row.method_requirement)));
 assert.ok(crosswalk.some(row => row.rbse_task_id === "RBSE-XI-CHEM-PRA-11" && row.candidate_reference_type === "NONE" && /Exact sulphuric-acid solution formulation/.test(row.method_requirement)));
 
-assert.equal(requireRow("RBSE-XI-CHEM-PRA-12", "25 mL pipettes", "APPARATUS", "NCERT-MSCL-SPEC-054").candidate_relationship_class, "NOT_EQUIVALENT_CAPACITY_VARIANT");
+assert.equal(requireRow("RBSE-XI-CHEM-PRA-12", "25 mL pipette requirement", "APPARATUS", "NCERT-MSCL-SPEC-054").candidate_relationship_class, "NOT_EQUIVALENT_CAPACITY_VARIANT");
 assert.equal(requireRow("RBSE-XI-CHEM-PRA-12", "Ethanoic/acetic-acid", "REAGENT", "MSCL-MAN-REAG-002").candidate_relationship_class, "HISTORICAL_SYNONYM_LABEL_ONLY_FORMULATION_UNVERIFIED");
 assert.equal(requireRow("RBSE-XI-CHEM-PRA-12", "Sodium-ethanoate", "REAGENT", "MSCL-MAN-REAG-097").candidate_relationship_class, "HISTORICAL_SYNONYM_LABEL_ONLY_FORMULATION_UNVERIFIED");
 assert.equal(requireRow("RBSE-XI-CHEM-PRA-12", "Ammonium-chloride", "REAGENT", "MSCL-MAN-REAG-013").candidate_relationship_class, "HISTORICAL_IDENTITY_REFERENCE_ONLY_NO_CURRENT_SUPPLY");
