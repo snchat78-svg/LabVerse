@@ -1,3 +1,17 @@
+## 2026-11-27 — Class XI Chemistry Unit 5 official-body retrieval audit (PRA-10/11/12)
+
+- Followed live Unit 4 next pointer: Unit 5 locators p.54 (PRA-10 fruit-juice pH), p.56 (PRA-11 acid/base dilution), p.58 (PRA-12 common-ion effect).
+- NCERT's indexed contents confirm the Unit 5 heading and experiment page locators, but this is index evidence, not the method body. On 2026-11-27 the `kelm205.pdf` direct open timed out on ncert.nic.in; ncert.gov.in returned inaccessible; the n20 alternate host also returned inaccessible; the official index page timed out.
+- No official Unit 5 PDF bytes, SHA-256, ETag, metadata or current edition fingerprint were obtained. The prior alternate-host text remains unauthenticated and is not used to make item/reagent joins.
+- Added the three-row `rbse_xi_chemistry_unit5_source_retrieval_audit_2026_11_27.csv`; updated endpoint, source-recheck and method-body registers for PRA-10/11/12; added `validate-chemistry-unit5-retrieval.mjs` and a GitHub Actions step/path filters.
+- No fruit result/cultivar, acid/base identity/concentration, dilution ratio, common-ion species/concentration basis, apparatus ID, reagent ID, stock, safety permission or live-use procedure was inferred.
+- Report: `docs/PHASE_1_1_CHEMISTRY_UNIT5_SOURCE_RETRIEVAL_AUDIT_2026_11_27.md` (https://github.com/snchat78-svg/LabVerse/commit/3b9ca2a6130ae45e321e33b36cb4701826c2a0d7).
+- Commits: [retrieval audit](https://github.com/snchat78-svg/LabVerse/commit/6ad7edcc7dd93d5ece07557ad3469d882c537273), [endpoint register](https://github.com/snchat78-svg/LabVerse/commit/137e234c8413336fe00890ab5cf3dea85d56068e), [source recheck](https://github.com/snchat78-svg/LabVerse/commit/db1ca180adb57d666c7ae21a2c3ad0098c518eba), [method evidence](https://github.com/snchat78-svg/LabVerse/commit/c7486b1786412eb0495640202d78e6ed48a1c451), [validator](https://github.com/snchat78-svg/LabVerse/commit/c35cc30a887d6853b9cab1300c17e335583f47a1), [workflow](https://github.com/snchat78-svg/LabVerse/commit/ee89ce18f4e7ca47ece527acdeebd7c11807fbe5).
+
+**Phase status:** Phase 1.1 IN PROGRESS; Unit 5 method-body/crosswalk sub-unit BLOCKED on primary retrieval. Phase 2 remains BLOCKED; Phase 4.1 remains IN PROGRESS; real 3D/runtime NOT STARTED.
+
+**Next exact task:** recover the already mapped official `kelm205.pdf` through an accessible NCERT route or prior source records without requesting a repeat upload. If bytes become available, hash and inspect official pp.54/56/58 before creating task-item links. If not, retain no-ID status and move to the next unlocked Phase 1.1 source task; do not use alternate-host text as primary.
+
 ## 2026-11-27 — Class XI Chemistry Unit 4 crosswalk complete (PRA-08/PRA-09; 25 rows)
 
 - Resumed from the live default branch, not the stale Unit 2 pointer: Unit 2 (PRA-02/PRA-03; 26 rows) and Unit 3 (PRA-05/PRA-06/PRA-07; 33 rows) were already present. No Unit 2/3 work was repeated.
