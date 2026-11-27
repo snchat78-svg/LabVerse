@@ -31,7 +31,7 @@ for(const id of ids){
  // The initial retrieval CSV remains an immutable first-attempt snapshot.
  assert.equal(a.ncert_official_pdf_url,originalUrl); assert.equal(a.official_payload_status,"NOT_RETRIEVED_NO_BYTES_NO_SHA256_NO_PDF_METADATA");
  assert.equal(a.apparatus_or_reagent_ids,"NONE_ASSIGNED"); assert.equal(a.candidate_mapping_status,"NO_CANDIDATE_IDS_ASSIGNED; NO_PROMOTION");
- assert.match(a.retrieval_attempts_2026_11_27,/ncert\\.nic\\.in/); assert.match(a.retrieval_attempts_2026_11_27,/ncert\\.gov\\.in/); assert.match(a.retrieval_attempts_2026_11_27,/n20\\.ncert\\.org\\.in/);
+ assert.match(a.retrieval_attempts_2026_11_27,/ncert\.nic\.in/); assert.match(a.retrieval_attempts_2026_11_27,/ncert\.gov\.in/); assert.match(a.retrieval_attempts_2026_11_27,/n20\.ncert\.org\.in/);
  // Current primary method evidence is the official Hindi NCERT endpoint, not the earlier alternate host.
  assert.equal(e.official_manual_url,officialHindiUrl); assert.equal(s.ncert_method_source_url,officialHindiUrl); assert.equal(m.official_pdf_url,officialHindiUrl);
  assert.match(e.official_pdf_retrieval_state,/OFFICIAL_NCERT_HINDI_VARIANT_TEXT_LAYER_RETRIEVED/);
@@ -40,7 +40,7 @@ for(const id of ids){
  assert.match(s.method_body_review_state,new RegExp(currentBody));
  assert.match(m.body_review_state,new RegExp(currentBody));
  assert.match(m.official_pdf_retrieval_state,/LOCAL_PDF_BYTES_SHA256_AND_SIZE_NOT_CAPTURED/);
- assert.match(m.source_conflict_or_quality_note,/English \`kelm205\\.pdf\` remains unretrieved/);
+ assert.match(m.source_conflict_or_quality_note,/English `kelm205\.pdf` remains unretrieved/);
  assert.match(s.reagent_mapping_state,/18 ROWS IN UNIT5 CROSSWALK/);
  assert.match(s.safety_and_simulation_boundary,/REFERENCE_ONLY_NO_LIVE_USE/);
  assert.match(m.rights_boundary,/ALL_RIGHTS_RESERVED/);
