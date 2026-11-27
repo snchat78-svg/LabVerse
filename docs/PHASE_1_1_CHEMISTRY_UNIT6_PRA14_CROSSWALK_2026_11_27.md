@@ -79,4 +79,6 @@ The validator checks row counts and task ID, every candidate ID against the live
 
 PRA-14 Unit 6 source-to-item crosswalk is complete at documentary/reference level. Expert method review is still **PENDING**. Phase 1.1 overall remains **IN PROGRESS**; Phase 2 is **BLOCKED** pending method/safety/rights review; Phase 4.1 remains **IN PROGRESS**; real 3D assets and scientific runtime remain **NOT STARTED**.
 
-**Next exact task:** resolve the expert-method-review gate for PRA-14 without changing the no-live-use state, reconcile the full RBSE practical subtask and indicator choices against NCERT sections 6.1–6.4, and inspect the source's Experiment 2.1 standard-solution dependency. Any future crosswalk extension must preserve the exact volumetric-class/calibration gaps and the no-result boundary. Do not enable live titration until qualified review and SDS/waste approval exist.
+**PRA-14 expert review remains PENDING**: qualified Chemistry method review, RBSE scope reconciliation, Experiment 2.1 standard-solution dependency, volumetric calibration/uncertainty and SDS/waste approval have not been signed off. Do not enable live titration.
+
+**Next sequential source work unit:** Class XI Chemistry PRA-18 — Unit 7 Experiment 7.1, qualitative analysis of one cation and one anion in a supplied salt. Reconcile exact RBSE ion/salt scope with the NCERT Unit 7 ion roster, then record evidence-scoped apparatus/reagent gaps. Specialist review and chemical compatibility gates remain closed; no generic gas-generation or live salt-analysis action.
