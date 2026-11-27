@@ -1,3 +1,15 @@
+## 2026-11-27 — Chemistry Unit 5 retrieval gate verification follow-up
+
+- Completed a live GitHub read-back after the Unit 5 retrieval audit. The three PRA records remain at p.54, p.56 and p.58; no apparatus/reagent IDs are assigned and all remain NOT_PROMOTED.
+- Fixed the Unit 5 validator's missing quote and the source-data workflow's malformed pull_request/workflow_dispatch boundary.
+- Full committed Unit 5 validator execution against the four GitHub-fetched CSV inputs: PASS. Assertions cover task IDs, page locators, official PDF URL, blocked payload/hash state, prior alternate host remaining unauthenticated, no-ID/no-promotion, and rights/safety boundaries.
+- GitHub Actions for the latest workflow-fix commit is still UNCONFIRMED; no green CI claim.
+- Commits: [validator fix](https://github.com/snchat78-svg/LabVerse/commit/ba4cd2d29c34f9d8bc0ed9f434540114893c31f7), [workflow fix](https://github.com/snchat78-svg/LabVerse/commit/6b0ab0b14bc8291db6ef744049dfd99f2f929db1), [audit CSV](https://github.com/snchat78-svg/LabVerse/commit/6ad7edcc7dd93d5ece07557ad3469d882c537273), [report](https://github.com/snchat78-svg/LabVerse/commit/3b9ca2a6130ae45e321e33b36cb4701826c2a0d7).
+
+**Phase status:** Phase 1.1 IN PROGRESS; Unit 5 method-body/crosswalk BLOCKED pending official `kelm205.pdf`; Phase 2 BLOCKED; Phase 4.1 IN PROGRESS; real 3D/runtime NOT STARTED.
+
+**Next exact task:** recover the already-mapped official Unit 5 PDF through an accessible NCERT or prior-source route without requesting another upload. If still unavailable, preserve this no-ID state and follow the next unlocked Phase 1.1 source stream; do not use the alternate-host text as primary.
+
 ## 2026-11-27 — Class XI Chemistry Unit 4 crosswalk complete (PRA-08/PRA-09; 25 rows)
 
 - Resumed from the live default branch, not the stale Unit 2 pointer: Unit 2 (PRA-02/PRA-03; 26 rows) and Unit 3 (PRA-05/PRA-06/PRA-07; 33 rows) were already present. No Unit 2/3 work was repeated.
