@@ -5,7 +5,7 @@ async function readCsv(path) {
  const source = await readFile(new URL(path, root), "utf8");
  const rows=[]; let row=[], value="", quoted=false;
  for(let i=0;i<source.length;i++){const ch=source[i];if(quoted){if(ch==='"'&&source[i+1]==='"'){value+='"';i++;}else if(ch==='"')quoted=false;else value+=ch;}else if(ch==='"')quoted=true;else if(ch===","){row.push(value);value="";}else if(ch==="\n"){row.push(value);rows.push(row);row=[];value="";}else if(ch!=="\r")value+=ch;}
- if(quoted)throw new Error(path+": unterminated CSV field);
+ if(quoted)throw new Error(path+": unterminated CSV field");
  if(value.length||row.length){row.push(value);rows.push(row);}
  const headers=rows.shift(); assert.ok(headers?.length,path+": missing headers"); assert.equal(new Set(headers).size,headers.length,path+": duplicate headers");
  return rows.filter(r=>r.some(v=>v.length)).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??""])));
