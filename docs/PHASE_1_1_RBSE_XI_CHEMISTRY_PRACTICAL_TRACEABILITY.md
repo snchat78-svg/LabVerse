@@ -258,7 +258,7 @@ RBSE source range: user-supplied Class XI 2026–2027 PDF, PDF pages 123–126. 
 
 **Safety boundary:** No arbitrary mixing or gas-generation. Only individually reviewed, bounded virtual test rules; all unknown or hazardous reagent combinations blocked.
 
-**Evidence gap:** The 13 cations and 12 anions are source-listed in RBSE, but the full reagent set, concentrations, group separation rules, confirmatory-test matrix and sample composition are not supplied by the current MSCL equipment register.
+**Evidence gap:** RBSE Class XI Chemistry syllabus 2026–27, subject 41, printed pp.123–126, specifies one cation and one anion and Group 0–VI headings but does not enumerate ion identities. The separate NCERT Class XI Chemistry Laboratory Manual 2025–26, Unit 7 Experiment 7.1, lists 14 cations and 12 anions and excludes insoluble salts; treat these as possible supporting scope only, not an RBSE-exact roster. The full task reagent set, concentrations, group-method equivalence, confirmatory matrix, sample composition and current kit stock remain unverified.
 
 **Review status:** NEEDS_CHEMISTRY_SUBJECT_EXPERT_REVIEW. Source rows are OCR-derived from an unauthenticated upload; reagent identities and concentrations require independent evidence. Assets must be original LabVerse geometry/text, with rights review before release.
 

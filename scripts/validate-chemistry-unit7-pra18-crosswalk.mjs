@@ -49,7 +49,8 @@ assert.ok(scope.every(row => row.reagent_item_link_status === "NO_REAGENT_ID_ASS
 assert.ok(scope.every(row => row.rights_status.startsWith("NCERT_LINK_AND_CITATION_ONLY")));
 assert.ok(scope.every(row => row.safety_status.startsWith("NON_EXECUTABLE_REFERENCE_ONLY")));
 assert.ok(scope.every(row => row.expert_review_status === "PENDING_QUALIFIED_CHEMISTRY_AND_LAB_SAFETY_REVIEW"));
-assert.ok(scope.every(row => !/EXACT_RBSE_MATCH|PROMOTED_FOR_LIVE_USE|LIVE_USE_APPROVED/.test(JSON.stringify(row))));
+assert.ok(scope.every(row => row.relationship_class === "POSSIBLE_NCERT_SUPPORT_ONLY_NOT_EXACT_RBSE_MATCH"));
+assert.ok(scope.every(row => !/PROMOTED_FOR_LIVE_USE|LIVE_USE_APPROVED/.test(JSON.stringify(row))));
 
 const lead = scope.find(row => row.ion_formula === "Pb2+");
 assert.ok(lead, "Lead(II) must remain in roster");
@@ -60,7 +61,7 @@ assert.equal(sourceReadback.length, 2, "Expected separate RBSE and NCERT source 
 const rbse = sourceReadback.find(row => row.source_record_type === "RBSE_BOARD_SYLLABUS");
 const ncert = sourceReadback.find(row => row.source_record_type === "NCERT_OFFICIAL_LABORATORY_MANUAL");
 assert.ok(rbse && ncert, "Both source identities must be present");
-assert.match(rbse.source_scope_statement, /does not enumerate any individual cation or anion identities/i);
+assert.match(rbse.source_scope_statement, /No individual ion names are enumerated on these practical pages/i);
 assert.match(rbse.source_identity_state, /OFFICIAL_SERVER_BYTE_IDENTITY_NOT_TESTED/);
 assert.equal(ncert.ion_roster_count, "14 cations; 12 anions; insoluble salts excluded");
 assert.match(ncert.visual_review_state, /PRINTED_P80_SCREENSHOT_FAILED_502/);
