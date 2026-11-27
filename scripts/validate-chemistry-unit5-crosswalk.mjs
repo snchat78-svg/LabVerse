@@ -91,7 +91,7 @@ for (const row of crosswalk) {
 }
 
 const requireRow = (taskId, fragment, type, id = "") => {
-  const row = crosswalk.find(item => item.rbse_task_id === taskId && item.method_requirement.includes(fragment) && item.candidate_reference_type === type && item.candidate_reference_id === id);
+  const row = crosswalk.find(item => item.rbse_task_id === taskId && item.method_requirement.toLowerCase().includes(fragment.toLowerCase()) && item.candidate_reference_type === type && item.candidate_reference_id === id);
   assert.ok(row, taskId + ": expected row missing for " + fragment);
   return row;
 };
