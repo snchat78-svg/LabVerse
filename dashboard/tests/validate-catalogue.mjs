@@ -676,7 +676,7 @@ assert.ok(mbeRows.every(row=>row[mbeIndex.rights_boundary].includes("DO_NOT_COPY
 const qEvidence=mbeRows.find(row=>row[mbeIndex.rbse_task_id]==="RBSE-XII-CHEM-QUAL-01");
 assert.match(qEvidence[mbeIndex.source_conflict_or_quality_note],/As3[+].*RBSE 2026–27/);
 const pra19Evidence=mbeRows.find(row=>row[mbeIndex.rbse_task_id]==="RBSE-XI-CHEM-PRA-19");
-assert.match(pra19Evidence[mbeIndex.body_review_state],/EXPERIMENT_7\\.2_LASSAIGNE_TEXT_REVIEWED/);
+assert.match(pra19Evidence[mbeIndex.body_review_state],/EXPERIMENT_7\.2_LASSAIGNE_TEXT_REVIEWED/);
 assert.match(pra19Evidence[mbeIndex.rights_boundary],/LINK_AND_CITATION_ONLY/);
 const projectEvidence=mbeRows.filter(row=>row[mbeIndex.rbse_task_id].includes("-PRJ-"));assert.equal(projectEvidence.length,7);
 for(const row of mbeRows){const src=chemSourceTasks.find(item=>item[chemSourceIndex.rbse_task_id]===row[mbeIndex.rbse_task_id]);assert.ok(src&&/NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED|CANDIDATE_REFERENCES_ONLY_NOT_ASSIGNED_OR_PROMOTED/.test(src[chemSourceIndex.reagent_mapping_state]));}
