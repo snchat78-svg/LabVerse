@@ -42,7 +42,7 @@ assert.equal(audit.length, 11, "Expected 11 source/safety audit decisions");
 assert.equal(new Set(audit.map(row => row.audit_record_id)).size, 11, "Audit IDs must be unique");
 assert.ok(audit.every(row => row.rbse_task_id === taskId), "All audit rows must retain PRA-19");
 assert.ok(audit.every(row => row.assigned_item_ids === "" && row.assigned_reagent_ids === ""), "No item or reagent IDs may be assigned");
-assert.ok(audit.every(row => row.safety_boundary.includes("NON_EXECUTABLE") || row.safety_boundary.includes("NO_") || row.safety_boundary.includes("HIGH_CONSEQUENCE") || row.safety_boundary.includes("CYANIDE") || row.safety_boundary.includes("VIOLENT") || row.safety_boundary.includes("PHASE_2_BLOCKED")), "Every row must retain a restrictive safety boundary");
+assert.ok(audit.every(row => row.safety_boundary.includes("NON_EXECUTABLE") || row.safety_boundary.includes("NO_") || row.safety_boundary.includes("HIGH_CONSEQUENCE") || row.safety_boundary.includes("CYANIDE") || row.safety_boundary.includes("VIOLENT") || row.safety_boundary.includes("PHASE_2_BLOCKED") || row.safety_boundary.includes("SODIUM_REACTIVITY") || row.safety_boundary.includes("EXPLOSION")), "Every row must retain a restrictive safety boundary");
 assert.ok(audit.every(row => row.rights_boundary.includes("LINK_AND_CITATION_ONLY") || row.rights_boundary.includes("RBSE_SOURCE_REFERENCE_ONLY") || row.rights_boundary.includes("CREATE_ORIGINAL")), "Every row must retain a rights boundary");
 assert.ok(audit.every(row => row.expert_review_status.includes("PENDING") || row.expert_review_status === "DOCUMENTARY_ONLY"), "Expert approval must remain pending");
 const material = audit.find(row => row.audit_record_id === "MATERIAL_PANEL");
@@ -69,7 +69,7 @@ assert.match(ncert.source_url, /kelm207\.pdf/);
 assert.match(ncert.source_identity_state, /LOCAL_PDF_BYTES_SHA256_AND_BYTE_LENGTH_NOT_CAPTURED/);
 assert.match(ncert.visual_review_state, /PP116_118_119_120/);
 assert.match(ncert.visual_review_state, /P117_SCREENSHOT_TIMEOUT/);
-assert.match(ncert.verified_scope_statement, /possible curriculum support/);
+assert.match(ncert.source_conflict_or_quality_note, /possible curriculum support/);
 
 const recheck = sourceRecheck.find(row => row.rbse_task_id === taskId);
 const endpoint = endpointRegister.find(row => row.rbse_task_id === taskId);
