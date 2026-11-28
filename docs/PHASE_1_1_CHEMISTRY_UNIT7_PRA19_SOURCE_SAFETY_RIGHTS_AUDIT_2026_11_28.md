@@ -28,7 +28,7 @@ These are source-listed method materials, **not** a current kit bill of material
 
 ## 4. Rights and attribution
 
-The repository's scientific source registry classifies NCERT laboratory manuals as **All Rights Reserved**. NCERT's [7 April 2024 copyright press release](https://www.ncert.nic.in/pdf/announcement/notices/Press_Release_Copyright_Infringement-NCERT.pdf) warns against publishing NCERT content without copyright permission. No LabVerse reproduction permission is recorded.
+The repository's scientific source registry classifies NCERT laboratory manuals as **All Rights Reserved**. NCERT's [7 April 2024 copyright press release](https://www.ncert.nic.in/pdf/announcement/notices/Press_Release_Copyright_Infringement-NCERT.pdf) warns that publishing NCERT textbooks or their content for commercial sale without permission may lead to legal action. No LabVerse reproduction permission is recorded.
 
 Use the official source link and citation only. Do not copy protected wording, tables, figures, page images or illustrations into LabVerse. Create original explanations and original/licensed assets, or obtain written permission.
 
