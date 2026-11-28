@@ -664,20 +664,23 @@ assert.ok(chemSourceTasks.every(row => /NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSI
 console.log("RBSE Chemistry source recheck register: 24/24 rows, archive SHA evidence, NCERT source links and no reagent promotion PASS.");
 
 const chemistryMethodBodyEvidenceRows=parseCsvRows(await readFile(new URL("../../data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv",import.meta.url),"utf8"));
-assert.equal(chemistryMethodBodyEvidenceRows.length,20); assert.equal(chemistryMethodBodyEvidenceRows[0].length,19);
+assert.equal(chemistryMethodBodyEvidenceRows.length,21); assert.equal(chemistryMethodBodyEvidenceRows[0].length,19);
 assert.ok(chemistryMethodBodyEvidenceRows.slice(1).every(row=>row.length===19));
 const mbeHeader=chemistryMethodBodyEvidenceRows[0],mbeIndex=Object.fromEntries(mbeHeader.map((name,i)=>[name,i])),mbeRows=chemistryMethodBodyEvidenceRows.slice(1);
-assert.deepEqual(mbeRows.map(row=>row[mbeIndex.rbse_task_id]),["RBSE-XI-CHEM-PRA-01","RBSE-XI-CHEM-PRA-02","RBSE-XI-CHEM-PRA-03","RBSE-XI-CHEM-PRA-05","RBSE-XI-CHEM-PRA-06","RBSE-XI-CHEM-PRA-07","RBSE-XI-CHEM-PRA-08","RBSE-XI-CHEM-PRA-09","RBSE-XI-CHEM-PRA-10","RBSE-XI-CHEM-PRA-11","RBSE-XI-CHEM-PRA-12","RBSE-XI-CHEM-PRJ-01","RBSE-XI-CHEM-PRJ-02","RBSE-XI-CHEM-PRJ-03","RBSE-XI-CHEM-PRJ-05","RBSE-XI-CHEM-PRJ-06","RBSE-XI-CHEM-PRJ-07","RBSE-XI-CHEM-PRJ-08","RBSE-XII-CHEM-QUAL-01"]);
-assert.equal(mbeRows.filter(row=>/^OFFICIAL_NCERT_(?:HOST|NIC_IN)_/.test(row[mbeIndex.body_review_state])).length,11, "official NCERT-hosted method-body records must be counted by source provenance");
+assert.deepEqual(mbeRows.map(row=>row[mbeIndex.rbse_task_id]),["RBSE-XI-CHEM-PRA-01","RBSE-XI-CHEM-PRA-02","RBSE-XI-CHEM-PRA-03","RBSE-XI-CHEM-PRA-05","RBSE-XI-CHEM-PRA-06","RBSE-XI-CHEM-PRA-07","RBSE-XI-CHEM-PRA-08","RBSE-XI-CHEM-PRA-09","RBSE-XI-CHEM-PRA-10","RBSE-XI-CHEM-PRA-11","RBSE-XI-CHEM-PRA-12","RBSE-XI-CHEM-PRJ-01","RBSE-XI-CHEM-PRJ-02","RBSE-XI-CHEM-PRJ-03","RBSE-XI-CHEM-PRJ-05","RBSE-XI-CHEM-PRJ-06","RBSE-XI-CHEM-PRJ-07","RBSE-XI-CHEM-PRJ-08","RBSE-XII-CHEM-QUAL-01","RBSE-XI-CHEM-PRA-19"]);
+assert.equal(mbeRows.filter(row=>/^OFFICIAL_NCERT_(?:HOST|NIC_IN)_/.test(row[mbeIndex.body_review_state])).length,12, "official NCERT-hosted method-body records must be counted by source provenance");
 assert.equal(mbeRows.filter(row=>/SECONDARY_COPY_BODY_TEXT_INSPECTED|ALTERNATE_HOST_BODY_TEXT_INSPECTED|ALTERNATE_ARCHIVED_BODY_TEXT_INSPECTED/.test(row[mbeIndex.body_review_state])).length,1, "only the archived alternate-source record remains in this category");
 assert.equal(mbeRows.filter(row=>row[mbeIndex.body_review_state]==="INDEX_ONLY_BODY_NOT_RETRIEVED").length,7);
 assert.ok(mbeRows.every(row=>row[mbeIndex.rbse_pdf_sha256].length===64));
 assert.ok(mbeRows.every(row=>row[mbeIndex.rights_boundary].includes("DO_NOT_COPY_PROTECTED")));
 const qEvidence=mbeRows.find(row=>row[mbeIndex.rbse_task_id]==="RBSE-XII-CHEM-QUAL-01");
 assert.match(qEvidence[mbeIndex.source_conflict_or_quality_note],/As3[+].*RBSE 2026–27/);
+const pra19Evidence=mbeRows.find(row=>row[mbeIndex.rbse_task_id]==="RBSE-XI-CHEM-PRA-19");
+assert.match(pra19Evidence[mbeIndex.body_review_state],/EXPERIMENT_7\\.2_LASSAIGNE_TEXT_REVIEWED/);
+assert.match(pra19Evidence[mbeIndex.rights_boundary],/LINK_AND_CITATION_ONLY/);
 const projectEvidence=mbeRows.filter(row=>row[mbeIndex.rbse_task_id].includes("-PRJ-"));assert.equal(projectEvidence.length,7);
 for(const row of mbeRows){const src=chemSourceTasks.find(item=>item[chemSourceIndex.rbse_task_id]===row[mbeIndex.rbse_task_id]);assert.ok(src&&/NO_CANDIDATE_REAGENT_OR_PRODUCT_IDS_ASSIGNED|CANDIDATE_REFERENCES_ONLY_NOT_ASSIGNED_OR_PROMOTED/.test(src[chemSourceIndex.reagent_mapping_state]));}
-console.log("Chemistry method-body evidence: 19 tasks; 1 official-host, 11 secondary/alternate, 7 index-only. PASS.");
+console.log("Chemistry method-body evidence: 20 tasks; 12 official-host, 1 secondary/alternate, 7 index-only. PASS.");
 
 
 const chemistryOfficialEndpointRows=parseCsvRows(await readFile(new URL("../../data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv",import.meta.url),"utf8"));
