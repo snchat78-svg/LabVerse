@@ -41,6 +41,22 @@ on:
       - "data/catalogues/rbse_xi_chemistry_unit7_pra18_ion_scope_crosswalk_2026_11_27.csv"
       - "data/catalogues/rbse_xi_chemistry_unit7_pra18_official_source_readback_2026_11_27.csv"
       - "scripts/validate-chemistry-unit7-pra18-crosswalk.mjs"
+      - "data/catalogues/rbse_xi_chemistry_unit7_pra19_source_audit_2026_11_28.csv"
+      - "data/catalogues/rbse_xi_chemistry_unit7_pra19_official_source_readback_2026_11_28.csv"
+      - "scripts/validate-chemistry-unit7-pra19-source-audit.mjs"
+      - "data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"
+      - "data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv"
+      - "data/catalogues/rbse_xi_chemistry_practical_traceability.csv"
+      - "data/catalogues/rbse_xi_chemistry_unit7_pra19_source_audit_2026_11_28.csv"
+      - "data/catalogues/rbse_xi_chemistry_unit7_pra19_official_source_readback_2026_11_28.csv"
+      - "scripts/validate-chemistry-unit7-pra19-source-audit.mjs"
+      - "data/catalogues/rbse_chemistry_method_body_evidence_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_official_unit_endpoint_register_2026_11_12.csv"
+      - "data/catalogues/rbse_2027_chemistry_source_recheck_2026_11_12.csv"
+      - "data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv"
+      - "data/catalogues/rbse_xi_chemistry_practical_traceability.csv"
       - "data/catalogues/rbse_xi_chemistry_practical_traceability.csv"
       - "data/catalogues/rbse_chemistry_task_reagent_evidence_matrix.csv"
   pull_request:
@@ -111,3 +127,5 @@ jobs:
         run: node scripts/validate-chemistry-unit6-pra14-crosswalk.mjs
       - name: Validate Chemistry Unit 7 PRA-18 ion-scope crosswalk
         run: node scripts/validate-chemistry-unit7-pra18-crosswalk.mjs
+      - name: Validate Chemistry Unit 7 PRA-19 source and safety audit
+        run: node scripts/validate-chemistry-unit7-pra19-source-audit.mjs
